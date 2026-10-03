@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Drawer, Dropdown, Grid } from 'antd';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../store/AuthContext';
 import NotificationBell from '../../components/notifications/NotificationBell';
-import { createRewardAdapter } from '../rewardAdapter';
-import { DEMO_REWARDS_CHANGED } from '../rewardEvents';
+import RewardProvider from '../RewardProvider';
+import { useRewards } from '../useRewards';
 import StudentTheme from './StudentTheme';
 import PixelIcon from './PixelIcon';
 
@@ -35,32 +35,8 @@ function StudentNavigation({ onNavigate }) {
 }
 
 function DemoPoints() {
-  const { user } = useAuth();
-  const location = useLocation();
-  const adapter = useMemo(() => {
-    try { return createRewardAdapter(localStorage, user.id); }
-    catch { return null; }
-  }, [user.id]);
-  const [snapshot, setSnapshot] = useState(null);
-  useEffect(() => {
-    let active = true;
-    const read = () => (adapter ? adapter.load() : Promise.reject()).then((data) => { if (active) setSnapshot({ accountId: user.id, balance: data.balance }); })
-      .catch(() => { if (active) setSnapshot({ accountId: user.id, balance: null }); });
-    read();
-    const rewardsChanged = (event) => {
-      if (String(event.detail?.accountId) === String(user.id)) read();
-    };
-    window.addEventListener('focus', read);
-    window.addEventListener('storage', read);
-    window.addEventListener(DEMO_REWARDS_CHANGED, rewardsChanged);
-    return () => {
-      active = false;
-      window.removeEventListener('focus', read);
-      window.removeEventListener('storage', read);
-      window.removeEventListener(DEMO_REWARDS_CHANGED, rewardsChanged);
-    };
-  }, [adapter, user.id, location.key]);
-  const balance = snapshot?.accountId === user.id ? snapshot.balance : null;
+  const { data, status } = useRewards();
+  const balance = status === 'ready' ? data.balance : null;
   return <Link to="/archives/rewards" className="student-points" data-testid="header-demo-points" aria-label={`演示积分${balance === null ? '，查看余额' : ` ${balance}`}，查看积分与徽章`}>
     <PixelIcon name="coin" /><span className="student-points-label">演示积分</span><strong>{balance ?? '—'}</strong><span className="student-demo-tag">演示</span>
   </Link>;
@@ -114,5 +90,6 @@ function Shell({ children }) {
 }
 
 export default function StudentShell({ children }) {
-  return <StudentTheme><a href="#student-main" className="student-skip-link">跳到学习内容</a><Shell>{children}</Shell></StudentTheme>;
+  const { user } = useAuth();
+  return <StudentTheme><RewardProvider key={user.id} accountId={user.id}><a href="#student-main" className="student-skip-link">跳到学习内容</a><Shell>{children}</Shell></RewardProvider></StudentTheme>;
 }

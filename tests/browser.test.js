@@ -100,13 +100,13 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
       await page.goto(`${base}/archives/rewards`);
       await page.getByRole('button', { name: '查看礼品详情' }).first().click();
       await page.getByRole('button', { name: '演示兑换', exact: true }).click();
-      await page.getByRole('button', { name: /取\s*消/ }).click();
-      assert.equal(await page.locator('.ant-statistic-content-value').innerText(), '120');
+      await page.getByRole('button', { name: '返回详情', exact: true }).click();
+      assert.equal(await page.getByTestId('reward-balance').innerText(), '120');
       await page.getByRole('button', { name: '演示兑换', exact: true }).click();
       await page.getByRole('button', { name: '确认演示兑换', exact: true }).click();
       await page.getByText('演示兑换成功', { exact: true }).waitFor();
-      await page.getByRole('button', { name: /完\s*成/, exact: true }).click();
-      assert.equal(await page.locator('.ant-statistic-content-value').innerText(), '80');
+      await page.getByRole('button', { name: '返回礼品', exact: true }).click();
+      assert.equal(await page.getByTestId('reward-balance').innerText(), '80');
       await page.getByRole('tab', { name: '兑换记录', exact: true }).click();
       await page.getByText('演示兑换成功（不发货）').waitFor();
       await page.getByRole('tab', { name: '徽章', exact: true }).click();
@@ -186,8 +186,8 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
       await page.getByText('灵境小智暂未启用，请联系管理员。').waitFor();
       await login('student_chen');
       await page.goto(`${base}/archives/rewards`);
-      await page.locator('.ant-statistic-content-value').waitFor();
-      assert.equal(await page.locator('.ant-statistic-content-value').innerText(), '120');
+      await page.getByTestId('reward-balance').getByText('120', { exact: true }).waitFor();
+      assert.equal(await page.getByTestId('reward-balance').innerText(), '120');
     });
     await t.test('课程撤回、网络错误、账号停用清除失效内容', async () => {
       await page.goto(`${base}/courses/1`);

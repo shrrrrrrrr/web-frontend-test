@@ -2,8 +2,8 @@
   "version": "pixel-v1",
   "title": "晴空观测站 · 原创像素素材库",
   "createdOn": "2026-10-03",
-  "scope": "学生公共布局、探索首页、课程地图；未引入参考图或第三方游戏素材",
-  "preview": "Vite 开发环境 /__pixel-preview；仅学生登录可见，无正式导航入口",
+  "scope": "学生公共布局、探索首页、课程地图及第八轮奖励演示图案；未引入参考图或第三方游戏素材",
+  "preview": "Vite 开发环境 /__pixel-preview；仅学生登录可见，无正式导航入口；第八轮新增 SVG 见 docs/round-08/index.html#assets",
   "sourceFiles": "原PNG母版和SVG源码保留；web/为最近邻缩放与无损编码的派生文件；生成提示词保留在generation-prompts.json。",
   "licenseStatus": {
     "raster": "本项目通过内置图像工具生成，未使用参考图片作为输入。供本项目使用；不作排他版权或第三方素材已获许可的承诺。",
@@ -576,6 +576,66 @@
       "crop": "完整 viewBox，不裁切",
       "scale": "默认24px，预览48px；个别紧凑控件16/20px使用矢量缩放",
       "editableSource": "icons/cat.svg"
+    },
+    {
+      "id": "rewards-gift-notebook",
+      "file": "rewards/gift-notebook.svg",
+      "source": "project-original-svg",
+      "createdOn": "2026-10-04",
+      "width": 128,
+      "height": 128,
+      "purpose": "探索笔记本演示礼品",
+      "editableSource": "rewards/gift-notebook.svg",
+      "usage": "第八轮学生奖励页、详情与素材预览；演示视觉稿，不代表正式奖品或荣誉规则。",
+      "design": "原创整数坐标、直角和阶梯轮廓，深蓝 / 奶油 / 青绿 / 金色；透明背景，无嵌入文字或交互。"
+    },
+    {
+      "id": "rewards-gift-model",
+      "file": "rewards/gift-model.svg",
+      "source": "project-original-svg",
+      "createdOn": "2026-10-04",
+      "width": 128,
+      "height": 128,
+      "purpose": "飞行模型演示礼品",
+      "editableSource": "rewards/gift-model.svg",
+      "usage": "第八轮学生奖励页、详情与素材预览；演示视觉稿，不代表正式奖品或荣誉规则。",
+      "design": "原创整数坐标、直角和阶梯轮廓，深蓝 / 奶油 / 青绿 / 金色；透明背景，无嵌入文字或交互。"
+    },
+    {
+      "id": "rewards-gift-sticker",
+      "file": "rewards/gift-sticker.svg",
+      "source": "project-original-svg",
+      "createdOn": "2026-10-04",
+      "width": 128,
+      "height": 128,
+      "purpose": "探索贴纸演示礼品",
+      "editableSource": "rewards/gift-sticker.svg",
+      "usage": "第八轮学生奖励页、详情与素材预览；演示视觉稿，不代表正式奖品或荣誉规则。",
+      "design": "原创整数坐标、直角和阶梯轮廓，深蓝 / 奶油 / 青绿 / 金色；透明背景，无嵌入文字或交互。"
+    },
+    {
+      "id": "rewards-badge-record",
+      "file": "rewards/badge-record.svg",
+      "source": "project-original-svg",
+      "createdOn": "2026-10-04",
+      "width": 128,
+      "height": 128,
+      "purpose": "记录一次发现：演示已获得徽章",
+      "editableSource": "rewards/badge-record.svg",
+      "usage": "第八轮学生奖励页、详情与素材预览；演示视觉稿，不代表正式奖品或荣誉规则。",
+      "design": "原创整数坐标、直角和阶梯轮廓，深蓝 / 奶油 / 青绿 / 金色；透明背景，无嵌入文字或交互。"
+    },
+    {
+      "id": "rewards-badge-iterate",
+      "file": "rewards/badge-iterate.svg",
+      "source": "project-original-svg",
+      "createdOn": "2026-10-04",
+      "width": 128,
+      "height": 128,
+      "purpose": "尝试再改进：演示未获得徽章",
+      "editableSource": "rewards/badge-iterate.svg",
+      "usage": "第八轮学生奖励页、详情与素材预览；演示视觉稿，不代表正式奖品或荣誉规则。",
+      "design": "原创整数坐标、直角和阶梯轮廓，深蓝 / 奶油 / 青绿 / 金色；透明背景，无嵌入文字或交互。"
     }
   ],
   "webDerivativeReport": "web/derivatives.json"

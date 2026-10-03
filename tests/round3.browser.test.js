@@ -213,7 +213,7 @@ test('第三轮：原创像素双页样板和公共布局验收', { timeout: 240
       await page.getByRole('button', { name: '演示兑换', exact: true }).click();
       await page.getByRole('button', { name: '确认演示兑换', exact: true }).click();
       await page.getByText('演示兑换成功', { exact: true }).waitFor();
-      await page.getByRole('button', { name: /完\s*成/, exact: true }).click();
+      await page.getByRole('button', { name: '返回礼品', exact: true }).click();
       const after = await adapterBalance();
       assert.ok(after < before);
       await page.getByTestId('header-demo-points').getByText(String(after), { exact: true }).waitFor();
@@ -221,7 +221,7 @@ test('第三轮：原创像素双页样板和公共布局验收', { timeout: 240
       assert.match(await page.getByTestId('header-demo-points').innerText(), new RegExp(String(after)));
       await page.getByTestId('header-demo-points').click();
       await page.getByRole('button', { name: '重置演示数据', exact: true }).click();
-      await page.getByRole('button', { name: /确\s*定/, exact: true }).click();
+      await page.getByRole('button', { name: '确认重置演示数据', exact: true }).click();
       await page.getByTestId('header-demo-points').getByText(String(before), { exact: true }).waitFor();
       assert.equal(await adapterBalance(), before, '重置成功后同页顶栏也由适配器恢复余额');
       await home();
