@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { groupLessons, nextTask, safeReturnTo, experimentLink, draftKey } from '../src/student/model.js';
+import { groupLessons, safeReturnTo, draftKey } from '../src/student/model.js';
 import { createDemoRewardAdapter } from '../src/student/rewardAdapter.js';
 import { canRoleAccessPath, homeForRole } from '../src/utils/roleNavigation.js';
 
@@ -15,14 +15,9 @@ test('章节不会丢失未配置课时，不重复出现或自动解锁', () =>
   assert.deepEqual(result.map((group) => group.lessons.map((lesson) => lesson.id)), [[2], [1, 3]]);
   assert.equal(result[0].lessons[0].progress, 60);
 });
-test('待办优先退回修改，不把待评审和已完成再次列入闯关', () => {
-  assert.equal(nextTask([{ id: 1, status: 'pending' }, { id: 2, status: 'submitted' }, { id: 3, status: 'in_progress', report_status: 'rejected' }]).id, 3);
-  assert.equal(nextTask([{ status: 'completed' }, { status: 'submitted' }]), undefined);
-});
 test('实验返回仅接受站内课程链接', () => {
   for (const url of ['//evil.test', 'https://evil.test', '/\\evil.test', 'javascript:alert(1)', '/courses/1%2f/evil', '/courses/1/../../login', '/courses/1\n']) assert.equal(safeReturnTo(url), '/lab', url);
   assert.equal(safeReturnTo('/courses/1/lessons/2/learn?stage=2#report'), '/courses/1/lessons/2/learn?stage=2#report');
-  assert.ok(experimentLink(1, 2, '/courses/1').includes('lesson_id=2'));
 });
 test('草稿键按账号、课程、课时隔离', () => {
   assert.notEqual(draftKey(1, 2, 3), draftKey(2, 2, 3));

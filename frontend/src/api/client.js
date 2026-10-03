@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { message } from 'antd';
+import { accessCheckForError, STUDENT_ACCESS_CHECK } from '../student/accessPolicy';
 
 const API_BASE = import.meta.env.VITE_API_BASE || '/api';
 
@@ -86,6 +87,10 @@ client.interceptors.response.use(
   async (error) => {
     const { config, response } = error;
     const url = config?.url || '';
+    // 下载接口的 JSON 错误同样会被 Axios 包装成 Blob，先恢复真实错误文案。
+    if (typeof Blob !== 'undefined' && response?.data instanceof Blob && response.data.size < 65536) {
+      try { response.data = JSON.parse(await response.data.text()); } catch { /* 非 JSON 文件错误仍交给调用者处理 */ }
+    }
 
     if (response?.status === 401) {
       // 登录接口自身的 401（密码错误）：提示即可，不刷新不登出
@@ -127,12 +132,11 @@ client.interceptors.response.use(
       return Promise.reject(error);
     }
 
-    // 非 401：只提示错误，不登出（网络波动、500 等不会把用户踢回登录页）
-    if ([403, 404].includes(response?.status)) {
-      window.dispatchEvent(new Event('student-access-invalid'));
-    }
+    // 业务对象错误只触发定向重验；不把附件 404 等价成整个学生区域失效。
+    const accessCheck = accessCheckForError(error);
+    if (accessCheck) window.dispatchEvent(new CustomEvent(STUDENT_ACCESS_CHECK, { detail: accessCheck }));
     const msg = response?.data?.error || response?.data?.message || '请求失败';
-    message.error(msg);
+    if (!config?.silent) message.error(msg);
     return Promise.reject(error);
   }
 );

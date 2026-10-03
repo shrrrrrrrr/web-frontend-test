@@ -22,7 +22,7 @@ export default function TaskList() {
   const { user } = useAuth();
   const isStudent = user?.role === 'student';
   const fetcher = useCallback(() => taskAPI.list(status ? { status } : {}), [status]);
-  const { data, loading, error, retry } = useRemote(fetcher);
+  const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true });
   const tasks = useMemo(() => data?.tasks || [], [data]);
   const groups = useMemo(() => [...tasks]
     .sort((a, b) => (statusPriority[a.report_status || a.status] ?? 9) - (statusPriority[b.report_status || b.status] ?? 9))

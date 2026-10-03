@@ -11,7 +11,9 @@
     "lint": "npm --prefix frontend run lint",
     "test": "npm --prefix frontend test",
     "test:backend": "npm --prefix backend test",
-    "test:e2e": "node --test tests/browser.test.js"
+    "test:e2e": "node --test tests/browser.test.js",
+    "test:e2e:round2": "node --test tests/round2.browser.test.js",
+    "test:e2e:access": "node --test tests/access.browser.test.js"
   },
   "devDependencies": {
     "playwright": "^1.63.0"

@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, Form, Input, Button, Typography, message, Space, Select } from 'antd';
+import { Alert, Card, Form, Input, Button, Typography, message, Space, Select } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { archiveAPI, courseAPI } from '../../api';
+import { STUDENT_COURSES_CHANGED } from '../../student/accessPolicy';
 
 const { Title, Text } = Typography;
 
@@ -12,22 +13,45 @@ export default function Reflection() {
   const [loading, setLoading] = useState(false);
   const [enrollments, setEnrollments] = useState([]);
   const [lessons, setLessons] = useState([]);
+  const [accessNotice, setAccessNotice] = useState('');
+  const lessonRequest = useRef(0);
+  const accessibleCoursesRef = useRef(null);
 
   useEffect(() => {
     archiveAPI.getReflections().then((res) => {
-      setEnrollments(res.enrollments || []);
+      setEnrollments((res.enrollments || []).filter((enrollment) => !accessibleCoursesRef.current || accessibleCoursesRef.current.has(String(enrollment.course_id))));
     }).catch(() => {});
   }, []);
 
+  useEffect(() => {
+    const updateCourses = ({ detail }) => {
+      accessibleCoursesRef.current = new Set(detail.courses.map((course) => String(course.id)));
+      const removed = new Set(detail.removedCourseIds.map(String));
+      const selected = enrollments.find((enrollment) => enrollment.enrollment_id === form.getFieldValue('enrollment_id'));
+      setEnrollments((current) => current.filter((enrollment) => !removed.has(String(enrollment.course_id))));
+      if (selected && removed.has(String(selected.course_id))) {
+        lessonRequest.current += 1;
+        form.setFieldsValue({ enrollment_id: undefined, lesson_id: undefined });
+        setLessons([]);
+        setAccessNotice('所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请选择可进入的课程后再提交。');
+      }
+    };
+    window.addEventListener(STUDENT_COURSES_CHANGED, updateCourses);
+    return () => window.removeEventListener(STUDENT_COURSES_CHANGED, updateCourses);
+  }, [enrollments, form]);
+
   const handleCourseChange = async (enrollmentId) => {
+    const sequence = ++lessonRequest.current;
     const enrollment = enrollments.find((e) => e.enrollment_id === enrollmentId);
     form.setFieldValue('lesson_id', undefined);
+    setLessons([]);
+    setAccessNotice('');
     if (!enrollment) { setLessons([]); return; }
     try {
       const res = await courseAPI.detail(enrollment.course_id);
-      setLessons(res.lessons || []);
+      if (sequence === lessonRequest.current) setLessons(res.lessons || []);
     } catch {
-      setLessons([]);
+      if (sequence === lessonRequest.current) setLessons([]);
     }
   };
 
@@ -49,6 +73,7 @@ export default function Reflection() {
         <Title level={4} style={{ margin: 0 }}>✏️ 反思日志</Title>
       </Space>
       <Card>
+        {accessNotice && <Alert type="warning" showIcon title={accessNotice} style={{ marginBottom: 16 }} />}
         <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
           记录今天的学习收获、遇到的困难和下一步计划。每天可提交一次。选择课程与课时后，反思将关联到对应成长档案。
         </Text>

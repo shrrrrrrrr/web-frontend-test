@@ -13,8 +13,10 @@ import PageContainer from '../../components/common/PageContainer';
 import AsyncPageState from '../../components/common/AsyncPageState';
 import { LEARNING_STEPS, REPORT_STATUS } from '../../constants/status';
 import { useAuth } from '../../store/AuthContext';
-import { draftKey, experimentLink } from '../../student/model';
+import { draftKey } from '../../student/model';
 import LessonWorks from '../../student/LessonWorks';
+import AssociatedExperiments from '../../student/AssociatedExperiments';
+import { availableCardIndex, learningStage } from '../../student/experimentContext';
 
 const { Paragraph, Text, Title } = Typography;
 
@@ -23,13 +25,6 @@ function answerText(value) {
   if (value === true) return '正确';
   if (value === false) return '错误';
   return String(value ?? '-');
-}
-
-function nextStage(data) {
-  if (!data?.progress?.review_completed) return 0;
-  if (!data.progress.cards_done) return 1;
-  if (!data.report || data.report.status === 'rejected') return 2;
-  return 3;
 }
 
 function Exercise({ exercise, onDone }) {
@@ -78,6 +73,8 @@ export default function LessonLearn() {
   const [cardIndex, setCardIndex] = useState(0);
   const [replayUrl, setReplayUrl] = useState('');
   const [activeReplayId, setActiveReplayId] = useState(null);
+  const [resourceError, setResourceError] = useState('');
+  const [replayError, setReplayError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [form] = Form.useForm();
   const reportDraftKey = draftKey(user.id, courseId, lessonId);
@@ -89,20 +86,29 @@ export default function LessonLearn() {
   };
 
   const playReplay = async (replayId) => {
-    setActiveReplayId(replayId);
+    setActiveReplayId(replayId); setReplayError('');
     try { setReplayUrl((await courseAPI.streamUrl(replayId)).url); }
-    catch { setReplayUrl(''); }
+    catch { setReplayUrl(''); setReplayError('课堂回放暂时无法播放，可能已移除或网络中断。请重试或联系导师，其他学习内容仍可继续。'); }
   };
 
-  const load = async () => {
+  const load = async ({ restorePosition = false } = {}) => {
     setLoading(true); setError('');
     try {
       const payload = await learningAPI.lesson(lessonId);
       if (String(payload.course.id) !== String(courseId)) throw new Error('课时与课程不匹配');
       setData(payload);
       const requestedStage = Number(searchParams.get('stage'));
-      setActiveStage(searchParams.has('stage') && Number.isInteger(requestedStage) && requestedStage >= 0 && requestedStage <= nextStage(payload) ? requestedStage : nextStage(payload));
-      setCardIndex((current) => Math.min(current, Math.max(0, payload.cards.length - 1)));
+      const stage = restorePosition && searchParams.has('stage') && Number.isInteger(requestedStage) && requestedStage >= 0 && requestedStage <= learningStage(payload) ? requestedStage : learningStage(payload);
+      const requestedCard = restorePosition ? searchParams.get('cardId') : null;
+      if (requestedCard) {
+        const index = availableCardIndex(payload.cards || [], requestedCard, payload.progress);
+        if (index < 0 || stage !== 1) {
+          navigate(`/courses/${courseId}`, { replace: true, state: { experimentNotice: '原知识卡片已不可访问或尚未解锁，已返回课程地图。' } });
+          return;
+        }
+        setCardIndex(index);
+      } else setCardIndex((current) => Math.min(current, Math.max(0, payload.cards.length - 1)));
+      setActiveStage(stage);
       if (!activeReplayId && payload.replays?.length) await playReplay(payload.replays[0].id);
       if (!payload.report || payload.report.status === 'rejected') {
         let savedDraft = null;
@@ -111,12 +117,20 @@ export default function LessonLearn() {
       }
     } catch (err) {
       setData(null);
+      if (restorePosition && searchParams.has('cardId') && [403, 404].includes(err?.response?.status)) {
+        let target = '/lab';
+        try { await courseAPI.detail(courseId); target = `/courses/${courseId}`; } catch { /* no accessible course to return to */ }
+        const notice = target === '/lab' ? '来源课程已不可访问，已返回实验室。' : '来源课时已不可访问，已返回课程地图。';
+        message.warning(notice);
+        navigate(target, { replace: true, state: { experimentNotice: notice } });
+        return;
+      }
       setError(err?.response?.data?.error || '无法加载本课时，请检查报名和发布状态。');
     } finally { setLoading(false); }
   };
 
   // eslint-disable-next-line react-hooks/set-state-in-effect, react-hooks/exhaustive-deps
-  useEffect(() => { load(); }, [lessonId]);
+  useEffect(() => { load({ restorePosition: true }); }, [courseId, lessonId, searchParams]);
 
   const finishReview = async () => {
     setSubmitting(true);
@@ -139,13 +153,14 @@ export default function LessonLearn() {
   };
 
   const downloadResource = async (resource) => {
+    setResourceError('');
     try {
       const blob = await courseAPI.downloadResource(resource.id);
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement('a');
       anchor.href = url; anchor.download = resource.title || '课堂资料'; anchor.click();
       URL.revokeObjectURL(url);
-    } catch { /* handled by the request client */ }
+    } catch { setResourceError(`“${resource.title || '课堂资料'}”下载失败，文件可能已移除或网络中断。请重试或联系导师，当前学习和草稿不受影响。`); }
   };
 
   const submitReport = (values) => {
@@ -167,26 +182,28 @@ export default function LessonLearn() {
   if (!data) return <PageContainer title="课后学习" extra={<Button onClick={() => navigate('/tasks')}>返回课后任务</Button>}><AsyncPageState loading={loading} error={error} onRetry={load}><Empty /></AsyncPageState></PageContainer>;
 
   const { lesson, cards = [], progress = {}, report } = data;
-  const currentStep = nextStage(data);
+  const currentStep = learningStage(data);
   const activeCard = cards[cardIndex];
   const cardExercisesDone = activeCard?.exercises?.every((exercise) => exercise.attempted) ?? false;
   const stageItems = LEARNING_STEPS.map((title, index) => ({ title, status: index < currentStep ? 'finish' : index === currentStep ? 'process' : 'wait', disabled: index > currentStep }));
 
   return <PageContainer title={lesson.title} description={`${data.course.title} · 按顺序完成三阶段课后学习并等待导师评审`} extra={<Space><Button icon={<ArrowLeftOutlined />} onClick={() => navigate('/tasks')}>返回课后任务</Button><Button onClick={() => navigate(`/courses/${courseId}`)}>课程详情</Button></Space>}>
-    <Space wrap style={{ marginBottom: 16 }}><Button onClick={() => navigate(experimentLink(courseId, lessonId, `/courses/${courseId}/lessons/${lessonId}/learn?stage=${activeStage}`))}>进入滑翔机实验</Button><Text type="secondary">实验完成后可回到当前学习阶段，不会自动提交作品。</Text></Space>
+    <AssociatedExperiments courseId={courseId} lessonId={lessonId} stage={activeStage} cardId={activeStage === 1 ? activeCard?.id : undefined} />
     <Alert type="info" showIcon message={currentStep === 0 ? '先完成课堂回顾，才能学习卡片和练习。' : currentStep === 1 ? '按顺序学完知识卡片并作答配套练习，才能提交报告。' : '报告与作品分别提交、分别评审。'} style={{ marginBottom: 16 }} />
     <div className="learning-workbench">
-      <Card className="learning-sticky content-card" title="学习流程"><Steps direction={screens.md ? 'vertical' : 'horizontal'} size="small" current={currentStep} onChange={setActiveStage} items={stageItems} /></Card>
+      <Card className="learning-sticky content-card" title="学习流程"><Steps direction={screens.md ? 'vertical' : 'horizontal'} size="small" current={activeStage} onChange={setActiveStage} items={stageItems} /></Card>
       <div>
         {activeStage === 0 && <Card className="content-card">
           <Title level={4}>第一阶段：课堂回顾</Title>
           <Paragraph type="secondary">观看课堂回放、回顾本课内容，并按需下载配套资料。完成后请在页面底部确认。</Paragraph>
           <Card size="small" title="课堂回放" style={{ marginBottom: 16 }}>
+            {replayError && <Alert type="warning" showIcon message={replayError} style={{ marginBottom: 12 }} />}
             {replayUrl ? <video key={replayUrl} controls src={replayUrl} style={{ width: '100%', maxHeight: 460, marginBottom: 16, background: '#000', borderRadius: 8 }} /> : <Empty description="本课时暂无课堂回放" />}
             <Space wrap>{data.replays.map((replay) => <Button key={replay.id} type={activeReplayId === replay.id ? 'primary' : 'default'} icon={<PlayCircleOutlined />} onClick={() => playReplay(replay.id)}>{replay.title}</Button>)}</Space>
           </Card>
           <Card size="small" title="配套资料" style={{ marginBottom: 24 }}>
-            {data.resources.length === 0 ? <Empty description="本课时暂无配套资料" /> : data.resources.map((resource) => <Card key={resource.id} size="small" style={{ marginBottom: 8 }}><Space wrap style={{ justifyContent: 'space-between', width: '100%' }}><span><Text strong>{resource.title}</Text>{resource.description && <Text type="secondary"> · {resource.description}</Text>}</span>{resource.has_file && <Button icon={<DownloadOutlined />} onClick={() => downloadResource(resource)}>下载资料</Button>}</Space></Card>)}
+            {resourceError && <Alert type="warning" showIcon message={resourceError} style={{ marginBottom: 12 }} />}
+            {data.resources.length === 0 ? <Empty description="本课时暂无配套资料" /> : data.resources.map((resource) => <Card key={resource.id} size="small" style={{ marginBottom: 8 }}><Space wrap style={{ justifyContent: 'space-between', width: '100%' }}><span><Text strong>{resource.title}</Text>{resource.description && <Text type="secondary"> · {resource.description}</Text>}</span>{resource.has_file ? <Button icon={<DownloadOutlined />} onClick={() => downloadResource(resource)}>下载资料</Button> : <Text type="secondary">暂无附件</Text>}</Space></Card>)}
           </Card>
           {progress.review_completed ? <Alert type="success" showIcon message="课堂回顾已完成" action={<Button onClick={() => setActiveStage(1)}>继续知识卡片</Button>} /> : <Button type="primary" size="large" block loading={submitting} onClick={finishReview}>我已完成课堂回顾</Button>}
         </Card>}

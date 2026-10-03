@@ -1,6 +1,6 @@
 # 星海远航 · 学生端功能框架
 
-本轮使用 React / Vite / Ant Design / React Router / Axios，沿用原前后端锁文件。没有制作最终视觉主题。原项目引用信息见 [SOURCE.md](SOURCE.md)，本轮业务核对及交付见 [docs/round-01.md](docs/round-01.md)。
+本项目使用 React / Vite / Ant Design / React Router / Axios，沿用原前后端锁文件。没有制作最终视觉主题。原项目引用信息见 [SOURCE.md](SOURCE.md)，最新功能修正、验证结果与验收截图见 [第二轮交付](docs/round-02.md)，初始框架记录见 [第一轮交付](docs/round-01.md)。
 
 ## 本地启动
 
@@ -48,9 +48,11 @@ npm test
 npm run build
 npm run test:backend
 npm run test:e2e
+npm run test:e2e:round2
+npm run test:e2e:access
 ```
 
-浏览器测试使用本机 Edge、端口 3117/5179、临时 SQLite 和独立浏览器上下文，不连接生产服务。需先安装上述参考引擎依赖。截图保存在忽略提交的 `test-results/`。测试会自动关闭它启动的服务。
+浏览器测试使用本机 Edge、临时 SQLite 和独立浏览器上下文，不连接生产服务。三个套件分别使用端口 3117/5179、3118/5180、3120/5182。首个回归套件需先安装上述参考引擎依赖；后两个套件不运行物理试飞。失败截图保存在忽略提交的 `test-results/`；第二轮验收截图保存在 `docs/round-02/screenshots/`。测试会自动关闭它启动的服务。后端未变时无需重复运行全部后端测试。
 
 ## 接入状态
 
@@ -58,6 +60,8 @@ npm run test:e2e
 - 本地演示：积分余额和明细、礼品详情与兑换、兑换记录、徽章；每个页面及确认框标明演示，不真实扣分或发货。数据按账号保存于当前浏览器。
 - 待确认：正式奖励规则与后端契约、章节名称和课时分组、正式课程内容、最终视觉。
 
-课程分组在 `frontend/src/student/config.js` 中，当前为空；不虚构章节，未分组课时始终显示。奖励配置集中于 `rewardConfig.js`，适配层位于 `rewardAdapter.js`。
+正式课程分组在 `frontend/src/student/config.js` 中，当前为空；不虚构章节，未分组课时始终显示。正式实验关联在 `experimentConfig.js` 中，当前为空，实验室可独立进入。仅 Vite 开发环境且 `VITE_STUDENT_TEST_CONFIG=1` 时启用明确标注的测试章节及课程 1 / 课时 1 / 卡片 2 的测试关联；生产构建不会启用。测试开关不会创建课程或更改报名关系，第二轮浏览器测试自行准备相应临时数据。
+
+奖励配置集中于 `rewardConfig.js`，适配层位于 `rewardAdapter.js`。
 
 学习报告和作品文字草稿只存当前浏览器，按账号、课程/任务隔离，不保存附件。原先未隔离账号的旧草稿键不会自动导入。

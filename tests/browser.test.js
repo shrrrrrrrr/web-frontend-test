@@ -68,7 +68,7 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
       await login();
       assert.equal(await page.getByRole('menuitem').count(), 3);
       await page.getByRole('button', { name: '进入课程地图' }).click();
-      await page.getByText('认识月球环境', { exact: true }).waitFor();
+      await page.getByRole('link', { name: /第 1 关：认识月球环境/ }).waitFor();
       assert.equal(await page.getByRole('button', { name: '进入课时' }).count(), 3);
       await page.goto(`${base}/dashboard`);
       await page.getByRole('heading', { name: '探索地图', exact: true }).waitFor();
@@ -134,7 +134,9 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
       await page.getByText('未能提交', { exact: true }).waitFor();
       assert.equal(db.prepare('SELECT count(*) AS n FROM works WHERE student_id=4').get().n, 0);
       await page.getByRole('button', { name: '删除文件' }).click();
-      await page.getByRole('button', { name: '提交作品', exact: true }).click();
+      await page.getByRole('button', { name: '删除文件' }).waitFor({ state: 'hidden' });
+      // 等待文件项移除和提交恢复后，以表单提交语义定位，不依赖图标文案。
+      await page.locator('form button[type="submit"]:not(.ant-btn-loading)').click();
       await page.waitForURL('**/courses/1/lessons/1/learn');
       await page.getByText('本地测试作品', { exact: false }).waitFor();
       db.prepare("UPDATE works SET review_status='rejected', reject_reason='请补充依据' WHERE student_id=4").run();
@@ -148,15 +150,18 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
     await t.test('实验独立入口不伪造关联，课程入口恢复阶段，安全返回', async () => {
       await page.goto(`${base}/glider`);
       await page.getByText('关联课程（可选）', { exact: true }).waitFor();
-      assert.equal(await page.locator('.ant-select-selection-item').count(), 0);
+      await page.getByText('独立实验（不关联课程）', { exact: true }).waitFor();
+      await page.getByText('选择课时', { exact: true }).waitFor();
       await page.getByRole('button', { name: /开始试飞/ }).click();
       await page.getByText('结果：', { exact: false }).waitFor({ timeout: 60000 });
       const flight = db.prepare('SELECT status, course_id, lesson_id FROM glider_simulations WHERE student_id=4 ORDER BY id DESC LIMIT 1').get();
       assert.equal(flight.status, 'success');
       assert.equal(flight.course_id, null);
       assert.equal(flight.lesson_id, null);
+      // 正式配置尚无关联，不在每个课时自动提供配套实验；合法旧来源链接仍兼容。
       await page.goto(`${base}/courses/1/lessons/1/learn?stage=2`);
-      await page.getByRole('button', { name: '进入滑翔机实验', exact: true }).click();
+      assert.equal(await page.getByRole('button', { name: '进入滑翔机实验', exact: true }).count(), 0);
+      await page.goto(`${base}/glider?course_id=1&lesson_id=1&returnTo=${encodeURIComponent('/courses/1/lessons/1/learn?stage=2')}`);
       await page.getByRole('button', { name: /返回来源课程/ }).click();
       await page.waitForURL('**/learn?stage=2');
       await page.getByText('第三阶段：学习报告与反思', { exact: true }).waitFor();
@@ -176,23 +181,23 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
     });
     await t.test('课程撤回、网络错误、账号停用清除失效内容', async () => {
       await page.goto(`${base}/courses/1`);
-      await page.getByText('认识月球环境', { exact: true }).waitFor();
+      await page.getByRole('link', { name: /第 1 关：认识月球环境/ }).waitFor();
       db.prepare("UPDATE courses SET status='draft' WHERE id=1").run();
       await page.evaluate(() => window.dispatchEvent(new Event('focus')));
-      await page.getByText('学习内容暂不可用', { exact: true }).waitFor();
-      assert.equal(await page.getByText('认识月球环境', { exact: true }).count(), 0);
+      await page.getByText('当前内容已不可访问', { exact: true }).waitFor();
+      assert.equal(await page.locator('.route-node').count(), 0);
       await page.goto(`${base}/explore`);
       await page.getByText('老师还没有为你分配已发布的课程，请联系老师。').waitFor();
       await context.setOffline(true);
       await page.evaluate(() => window.dispatchEvent(new Event('focus')));
-      await page.getByText('学习内容暂不可用', { exact: true }).waitFor();
+      await page.getByText('权限检查暂未完成', { exact: true }).waitFor();
       await context.setOffline(false);
       await page.getByRole('button', { name: '重新检查', exact: true }).click();
       await page.getByRole('heading', { name: '探索地图', exact: true }).waitFor();
       db.prepare('UPDATE users SET is_active=0 WHERE id=5').run();
       await page.evaluate(() => window.dispatchEvent(new Event('focus')));
       await page.waitForURL('**/login');
-      assert.equal(await page.getByText('认识月球环境', { exact: true }).count(), 0);
+      assert.equal(await page.locator('.route-node').count(), 0);
     });
     assert.deepEqual(errors, [], '无浏览器未捕获异常');
   } catch (error) { console.error(logs.slice(-5000)); throw error; }

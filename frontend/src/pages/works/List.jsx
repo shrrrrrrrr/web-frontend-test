@@ -22,7 +22,7 @@ export default function WorkList() {
     const [works, tasks] = await Promise.all([workAPI.list({ search, course_id: courseId }), user?.role === 'student' ? workAPI.pendingTasks() : Promise.resolve({ tasks: [] })]);
     return { ...works, tasks: tasks.tasks || [] };
   }, [search, courseId, user?.role]);
-  const { data, loading, error, retry } = useRemote(fetcher);
+  const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true });
   const { works = [], tasks = [], courses = [] } = data || {};
 
   const columns = [

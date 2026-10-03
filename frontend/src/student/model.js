@@ -13,12 +13,6 @@ export function groupLessons(lessons, config = []) {
   return groups;
 }
 
-export function nextTask(tasks) {
-  const priority = (task) => task.report_status === 'rejected' ? 0 : task.status === 'in_progress' ? 1 : 2;
-  return tasks.filter((task) => !['completed', 'submitted'].includes(task.status))
-    .sort((a, b) => priority(a) - priority(b) || (a.deadline || '9999').localeCompare(b.deadline || '9999'))[0];
-}
-
 export function safeReturnTo(value, fallback = '/lab') {
   if (typeof value !== 'string' || value.includes('\\') || [...value].some((char) => char.charCodeAt(0) <= 32) || /%2f|%5c/i.test(value)) return fallback;
   if (!/^\/courses\/\d+(?:\/lessons\/\d+\/learn|\/learn)?(?:[?#]|$)/.test(value)) return fallback;
@@ -26,12 +20,6 @@ export function safeReturnTo(value, fallback = '/lab') {
     const url = new URL(value, 'https://local.invalid');
     return url.origin === 'https://local.invalid' ? `${url.pathname}${url.search}${url.hash}` : fallback;
   } catch { return fallback; }
-}
-
-export function experimentLink(courseId, lessonId, returnTo) {
-  const params = new URLSearchParams({ course_id: String(courseId), returnTo: safeReturnTo(returnTo) });
-  if (lessonId) params.set('lesson_id', String(lessonId));
-  return `/glider?${params}`;
 }
 
 export function draftKey(userId, courseId, lessonId) {

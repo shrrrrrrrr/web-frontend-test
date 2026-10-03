@@ -1,53 +1,107 @@
-import { useEffect, useState } from 'react';
-import { Button, Result, Spin } from 'antd';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Alert, Button, Result, Space, Spin } from 'antd';
+import { Link, useLocation } from 'react-router-dom';
 import { authAPI, courseAPI } from '../api';
+import client from '../api/client';
 import { useAuth } from '../store/AuthContext';
+import { currentAccessTarget, removedCourseIds, STUDENT_ACCESS_CHECK, STUDENT_COURSES_CHANGED } from './accessPolicy';
 
-// 后端负责授权。此处重验用于清除学生界面中的失效数据，不作授权替代。
+// 后端负责最终授权。这里只清除已确认失效的页面，并保留与错误无关的输入。
 export default function StudentScope({ children }) {
   const { user } = useAuth();
   const location = useLocation();
-  const [attempt, setAttempt] = useState(0);
-  const [state, setState] = useState({ ready: false, error: '', revision: 0 });
+  const route = useRef(location);
+  const checkRef = useRef(null);
+  const [state, setState] = useState({ userId: user.id, ready: false, warning: '', courses: null, blocked: null, archiveRevision: 0 });
+
+  useEffect(() => {
+    route.current = location;
+    checkRef.current?.();
+  }, [location]); // 阶段/卡片 URL 变化只重验，不重建页面。
+
   useEffect(() => {
     let alive = true;
-    let busy = false;
-    let fingerprint;
-    let invalidated = false;
-    setState({ ready: false, error: '', revision: 0 });
-    const check = async () => {
-      if (busy || invalidated) return;
-      busy = true;
+    let running = false;
+    let queuedObjectCheck = false;
+    let knownCourses;
+    const check = async (verifyObject = false) => {
+      if (running) { queuedObjectCheck ||= verifyObject; return; }
+      running = true;
+      const target = currentAccessTarget(route.current.pathname, route.current.search);
       try {
         const [account, payload] = await Promise.all([authAPI.me(), courseAPI.list()]);
-        if (!alive || invalidated) return;
-        if (account.user.id !== user.id || account.user.role !== 'student') {
+        if (!alive) return;
+        if (String(account.user.id) !== String(user.id) || account.user.role !== 'student') {
           window.location.assign('/'); return;
         }
         if (account.user.force_reset_password) { window.location.assign('/change-password'); return; }
-        const next = JSON.stringify(payload.courses.map((course) => [course.id, course.status, course.updated_at]).sort());
-        const changed = fingerprint !== undefined && next !== fingerprint;
-        fingerprint = next;
-        setState((previous) => ({ ready: true, error: '', revision: previous.revision + (changed ? 1 : 0) }));
+        const courses = payload.courses || [];
+        const removed = knownCourses ? removedCourseIds(knownCourses, courses) : [];
+        const previousIds = knownCourses?.map((course) => String(course.id)).sort().join(',');
+        const nextIds = courses.map((course) => String(course.id)).sort().join(',');
+        if (knownCourses && previousIds !== nextIds) {
+          window.dispatchEvent(new CustomEvent(STUDENT_COURSES_CHANGED, { detail: { removedCourseIds: removed, courses } }));
+        }
+        knownCourses = courses;
+        setState((previous) => ({ ...previous, userId: user.id, ready: true, warning: '', courses,
+          blocked: previous.userId === user.id ? previous.blocked : null,
+          archiveRevision: previous.userId === user.id ? previous.archiveRevision + (removed.length ? 1 : 0) : 0 }));
+
+        // 附件错误无法证明课程撤回。只对当前课程/作品/任务读接口做一次核验，
+        // 成功时不重新装载其数据，更不会重置正在填写的表单。
+        if (target.endpoint && (verifyObject || removed.length)) {
+          try {
+            await client.get(target.endpoint, { studentAccessProbe: true, silent: true });
+            if (alive) setState((previous) => ({ ...previous,
+              blocked: previous.blocked?.key === target.key ? null : previous.blocked }));
+          } catch (error) {
+            if (!alive) return;
+            if ([403, 404].includes(error.response?.status)
+              || (error.response?.status === 400 && error.response?.data?.error === '作品不存在')) {
+              setState((previous) => ({ ...previous, blocked: { key: target.key,
+                reason: error.response?.data?.error || '当前内容已不可访问，可能已撤回或权限发生变化。' } }));
+            } else {
+              setState((previous) => ({ ...previous, warning: '暂时无法重新核验当前内容，请检查网络后重试。页面中的填写内容仍保留。' }));
+            }
+          }
+        }
       } catch (error) {
-        if (alive) setState((previous) => ({ ...previous, ready: false,
-          error: error.response?.data?.error || '暂时无法确认账号与课程权限。已隐藏学习内容，请检查网络后重试。' }));
-      } finally { busy = false; }
+        if (alive) setState((previous) => ({ ...previous, warning: error.response?.data?.error
+          || '暂时无法重新检查账号与课程，请检查网络后重试。已有填写内容仍保留，提交时仍由服务器校验。' }));
+      } finally {
+        running = false;
+        if (alive && queuedObjectCheck) { queuedObjectCheck = false; check(true); }
+      }
     };
-    const invalidate = () => {
-      invalidated = true;
-      setState((previous) => ({ ...previous, ready: false, error: '内容不可访问，可能已撤回或权限发生变化。请重新检查，或返回探索地图。' }));
-    };
+    checkRef.current = check;
     const focus = () => { if (!document.hidden) check(); };
+    const verify = () => check(true);
     check();
     const timer = setInterval(focus, 30000);
     window.addEventListener('focus', focus);
     document.addEventListener('visibilitychange', focus);
-    window.addEventListener('student-access-invalid', invalidate);
-    return () => { alive = false; clearInterval(timer); window.removeEventListener('focus', focus); document.removeEventListener('visibilitychange', focus); window.removeEventListener('student-access-invalid', invalidate); };
-  }, [user.id, location.pathname, location.search, attempt]);
-  if (state.error) return <Result status="warning" title="学习内容暂不可用" subTitle={state.error} extra={<Button onClick={() => setAttempt((value) => value + 1)}>重新检查</Button>} />;
-  if (!state.ready) return <Spin style={{ display: 'block', padding: 64 }} />;
-  return <div key={`${user.id}:${location.pathname}:${location.search}:${state.revision}`}>{children}</div>;
+    window.addEventListener(STUDENT_ACCESS_CHECK, verify);
+    return () => {
+      alive = false; checkRef.current = null; clearInterval(timer);
+      window.removeEventListener('focus', focus);
+      document.removeEventListener('visibilitychange', focus);
+      window.removeEventListener(STUDENT_ACCESS_CHECK, verify);
+    };
+  }, [user.id]);
+
+  if (state.userId !== user.id) return <Spin style={{ display: 'block', padding: 64 }} />;
+  const target = currentAccessTarget(location.pathname, location.search);
+  const missingCourse = target.courseId && state.courses && !state.courses.some((course) => String(course.id) === target.courseId);
+  const blocked = state.blocked?.key === target.key ? state.blocked : null;
+  const retry = <Button onClick={() => checkRef.current?.(true)}>重新检查</Button>;
+  if (missingCourse || blocked) return <Result status="warning" title="当前内容已不可访问"
+    subTitle={missingCourse ? '课程已撤回或报名关系已变化，相关学习内容已清除。请返回探索地图选择可进入的课程。' : blocked.reason}
+    extra={<Space><Link to="/explore"><Button type="primary">返回探索地图</Button></Link>{retry}</Space>} />;
+  if (!state.ready) return state.warning
+    ? <Result status="warning" title="暂时无法确认账号与课程" subTitle={state.warning} extra={retry} />
+    : <Spin style={{ display: 'block', padding: 64 }} />;
+  return <>
+    {state.warning && <Alert type="warning" showIcon title="权限检查暂未完成" description={state.warning} action={retry} style={{ margin: 16 }} />}
+    <div key={`${user.id}:${location.pathname}:${location.pathname === '/archives' ? state.archiveRevision : 0}`}>{children}</div>
+  </>;
 }

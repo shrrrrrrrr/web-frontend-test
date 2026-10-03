@@ -4,6 +4,7 @@ import { Alert, Card, Input, Button, Select, Typography, Grid, Tag, Spin, messag
 import { SendOutlined, RobotOutlined, UserOutlined } from '@ant-design/icons';
 import { aiAPI, courseAPI } from '../../api';
 import { useAuth } from '../../store/AuthContext';
+import { STUDENT_COURSES_CHANGED } from '../../student/accessPolicy';
 
 const { Title, Text } = Typography;
 
@@ -19,7 +20,26 @@ export default function AIAssistant() {
   const [loadError, setLoadError] = useState('');
   const chatEndRef = useRef(null);
   const sequenceRef = useRef(0);
+  const accessibleCoursesRef = useRef(null);
   const screens = Grid.useBreakpoint();
+
+  useEffect(() => {
+    if (user?.role !== 'student') return;
+    const updateCourses = ({ detail }) => {
+      accessibleCoursesRef.current = new Set(detail.courses.map((course) => String(course.id)));
+      const removed = new Set(detail.removedCourseIds.map(String));
+      setCourses((current) => current.filter((course) => !removed.has(String(course.id))));
+      if (removed.has(String(courseId))) {
+        sequenceRef.current += 1;
+        setCourseId(null);
+        setChat([]);
+        setLoading(false);
+        setLoadError('当前课程已不可访问，已清除该课程的提问上下文。请选择其他可进入的课程；尚未发送的问题仍保留。');
+      }
+    };
+    window.addEventListener(STUDENT_COURSES_CHANGED, updateCourses);
+    return () => window.removeEventListener(STUDENT_COURSES_CHANGED, updateCourses);
+  }, [courseId, user?.role]);
 
   useEffect(() => {
     let active = true;
@@ -31,10 +51,11 @@ export default function AIAssistant() {
     setLoadError('');
     aiAPI.getCourses().then((res) => {
       if (!active) return;
-      setCourses(res.courses || []);
+      const available = (res.courses || []).filter((course) => !accessibleCoursesRef.current || accessibleCoursesRef.current.has(String(course.id)));
+      setCourses(available);
       setEnabled(Boolean(res.enabled));
       const requested = Number(params.get('course_id'));
-      if (res.courses?.some((course) => course.id === requested)) setCourseId(requested);
+      if (available.some((course) => course.id === requested)) setCourseId(requested);
     }).catch(() => { if (active) setLoadError('无法加载可提问课程，请刷新页面重试。'); });
     return () => { active = false; sequenceRef.current += 1; };
   }, [params]);
@@ -109,7 +130,7 @@ export default function AIAssistant() {
       </Card>
       <div style={{ display: 'flex', flexDirection: screens.sm ? 'row' : 'column', gap: 8, width: '100%', marginTop: 12 }}>
         <Select style={{ width: screens.sm ? 230 : '100%', flexShrink: 0 }} placeholder="选择课程（必选）" value={courseId} disabled={loading}
-          onChange={(id) => { setCourseId(id); setChat([]); }}
+          onChange={(id) => { setCourseId(id); setChat([]); setLoadError(''); }}
           options={courses.map((course) => ({ label: course.title, value: course.id }))} />
         <Input placeholder="输入与当前课程相关的问题" maxLength={1000} value={question}
           disabled={!enabled || !courseId || loading} onChange={(event) => setQuestion(event.target.value)}

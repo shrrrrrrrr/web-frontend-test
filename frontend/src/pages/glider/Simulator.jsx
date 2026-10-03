@@ -6,10 +6,11 @@ import {
 } from 'antd';
 import { ArrowLeftOutlined, RocketOutlined, ThunderboltOutlined } from '@ant-design/icons';
 import { gliderAPI } from '../../api/glider';
-import { courseAPI } from '../../api';
+import { courseAPI, learningAPI } from '../../api';
 import { formatBeijingTime } from '../../utils/date';
 import { useAuth } from '../../store/AuthContext';
-import { safeReturnTo } from '../../student/model';
+import { resolveExperimentReturn } from '../../student/experimentContext';
+import { STUDENT_COURSES_CHANGED } from '../../student/accessPolicy';
 
 const { Title, Text } = Typography;
 
@@ -40,7 +41,8 @@ export default function GliderSimulator() {
   const [params] = useSearchParams();
   const sourceCourse = params.get('course_id');
   const sourceLesson = params.get('lesson_id');
-  const returnTo = safeReturnTo(params.get('returnTo'));
+  const requestedReturn = params.get('returnTo');
+  const sourceKey = JSON.stringify([sourceCourse, sourceLesson, requestedReturn]);
   const { user } = useAuth();
   const [form] = Form.useForm();
   const [history, setHistory] = useState([]);
@@ -48,6 +50,7 @@ export default function GliderSimulator() {
   const [viewingId, setViewingId] = useState(null);
   const [viewing, setViewing] = useState(null);
   const [img, setImg] = useState({ trajectory: null, telemetry: null, video: null });
+  const [resultFileError, setResultFileError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [waitSec, setWaitSec] = useState(0);
   const [pollFailed, setPollFailed] = useState(false);
@@ -61,6 +64,22 @@ export default function GliderSimulator() {
   const [courseId, setCourseId] = useState(undefined);
   const [lessons, setLessons] = useState([]);
   const [lessonId, setLessonId] = useState(undefined);
+  const [returnTo, setReturnTo] = useState('/lab');
+  const [returning, setReturning] = useState(false);
+  const [checkedSource, setCheckedSource] = useState(null);
+  const contextPending = user?.role === 'student' && (contextLoading || checkedSource !== sourceKey);
+
+  const verifySource = () => resolveExperimentReturn({ courseId: sourceCourse, lessonId: sourceLesson, returnTo: requestedReturn }, { course: courseAPI.detail, lesson: learningAPI.lesson });
+  const returnToSource = async () => {
+    if (user?.role !== 'student') { navigate('/dashboard'); return; }
+    if (!sourceCourse) { navigate('/lab'); return; }
+    setReturning(true);
+    try {
+      const resolution = await verifySource();
+      if (resolution.reason) message.warning(resolution.reason);
+      navigate(resolution.path, { state: { experimentNotice: resolution.reason } });
+    } finally { setReturning(false); }
+  };
 
   const loadHistory = async () => {
     try {
@@ -105,23 +124,46 @@ export default function GliderSimulator() {
         const list = res.courses || [];
         setCourses(list);
         if (sourceCourse) {
-          const source = list.find((course) => String(course.id) === sourceCourse);
-          if (!source) { setContextError('来源课程已不可用，请返回实验室独立进入。'); setContextLoading(false); return; }
-          courseAPI.detail(source.id).then((d) => {
+          resolveExperimentReturn({ courseId: sourceCourse, lessonId: sourceLesson, returnTo: requestedReturn }, { course: courseAPI.detail, lesson: learningAPI.lesson }).then((resolution) => {
             if (!alive) return;
-            if (sourceLesson && !d.lessons.some((lesson) => String(lesson.id) === sourceLesson && lesson.status !== 'cancelled')) {
-              setContextError('来源课时已不可用，请返回课程地图。'); return;
-            }
-            setCourseId(source.id); setLessons(d.lessons || []);
+            setReturnTo(resolution.path);
+            if (!resolution.available) { setContextError(resolution.reason.replaceAll('已返回', '请返回')); setCourseId(undefined); setLessonId(undefined); setLessons([]); return; }
+            setContextError('');
+            setCourseId(Number(sourceCourse)); setLessons(resolution.detail.lessons || []);
             setLessonId(sourceLesson ? Number(sourceLesson) : undefined);
-            form.setFieldsValue({ course_id: source.id, lesson_id: sourceLesson ? Number(sourceLesson) : undefined });
+            form.setFieldsValue({ course_id: Number(sourceCourse), lesson_id: sourceLesson ? Number(sourceLesson) : undefined });
           }).catch(() => { if (alive) setContextError('无法确认来源课程，请重试。'); })
-            .finally(() => { if (alive) setContextLoading(false); });
+            .finally(() => { if (alive) { setContextLoading(false); setCheckedSource(sourceKey); } });
+        } else {
+          setContextError(''); setCourseId(undefined); setLessonId(undefined); setLessons([]); setReturnTo('/lab');
+          form.setFieldsValue({ course_id: undefined, lesson_id: undefined });
+          setContextLoading(false); setCheckedSource(sourceKey);
         }
       })
-      .catch(() => { if (alive && sourceCourse) { setContextError('无法确认来源课程，请重试。'); setContextLoading(false); } });
+      .catch(() => {
+        if (!alive) return;
+        if (sourceCourse) setContextError('无法确认来源课程，请重试。');
+        else { setContextError(''); setCourseId(undefined); setLessonId(undefined); setLessons([]); setReturnTo('/lab'); form.setFieldsValue({ course_id: undefined, lesson_id: undefined }); }
+        setContextLoading(false); setCheckedSource(sourceKey);
+      });
     return () => { alive = false; };
-  }, [user?.role, form, sourceCourse, sourceLesson]);
+  }, [user?.role, form, sourceCourse, sourceLesson, requestedReturn, sourceKey]);
+
+  useEffect(() => {
+    const updateCourses = (event) => {
+      const { courses: availableCourses = [], removedCourseIds = [] } = event.detail || {};
+      setCourses(availableCourses);
+      if (!removedCourseIds.some((id) => String(id) === String(sourceCourse || courseId))) return;
+      setCourseId(undefined); setLessonId(undefined); setLessons([]);
+      form.setFieldsValue({ course_id: undefined, lesson_id: undefined });
+      if (sourceCourse) {
+        setContextError('来源课程已撤回或报名关系已变化，请返回实验室自由使用。');
+        setReturnTo('/lab');
+      } else message.warning('关联课程已不可访问，已清除课程和课时关联。你仍可独立试飞。');
+    };
+    window.addEventListener(STUDENT_COURSES_CHANGED, updateCourses);
+    return () => window.removeEventListener(STUDENT_COURSES_CHANGED, updateCourses);
+  }, [courseId, form, sourceCourse]);
 
   const handleCourseChange = async (value) => {
     setCourseId(value);
@@ -185,12 +227,13 @@ export default function GliderSimulator() {
   useEffect(() => {
     if (!viewing) return undefined;
     if (viewing.status !== 'success') {
-      const t = setTimeout(() => setImg({ trajectory: null, telemetry: null, video: null }), 0);
+      const t = setTimeout(() => { setImg({ trajectory: null, telemetry: null, video: null }); setResultFileError(''); }, 0);
       return () => clearTimeout(t);
     }
     let alive = true;
     const mimeOf = (name) => (name.endsWith('.mp4') ? 'video/mp4' : name.endsWith('.png') ? 'image/png' : 'application/octet-stream');
     const urls = [];
+    const missingFiles = [];
     const load = async (name) => {
       try {
         const res = await gliderAPI.file(viewing.id, name);
@@ -199,7 +242,7 @@ export default function GliderSimulator() {
         const url = URL.createObjectURL(blob);
         urls.push(url);
         return url;
-      } catch { return null; }
+      } catch { missingFiles.push(name === 'trajectory3d.png' ? '航迹图' : '飞行遥测图'); return null; }
     };
     // 视频改走签名流式地址：支持 Range 拖动，避免整段 blob 下载
     const loadVideo = async () => {
@@ -207,7 +250,7 @@ export default function GliderSimulator() {
         const res = await gliderAPI.streamUrl(viewing.id);
         if (!alive || !res.url) return null;
         return res.url;
-      } catch { return null; }
+      } catch { missingFiles.push('飞行回放'); return null; }
     };
     const hasVideo = !!viewing.result?.files?.video;
     (async () => {
@@ -216,7 +259,10 @@ export default function GliderSimulator() {
         load('flight_telemetry.png'),
         hasVideo ? loadVideo() : Promise.resolve(null),
       ]);
-      if (alive) setImg({ trajectory, telemetry, video });
+      if (alive) {
+        setImg({ trajectory, telemetry, video });
+        setResultFileError(missingFiles.length ? `${missingFiles.join('、')}暂时无法加载，可能文件已移除或网络中断。试飞参数和数值结果仍可查看，请刷新记录后重试。` : '');
+      }
     })();
     // 卸载/切换记录时释放对象 URL，避免反复查看累积内存
     return () => {
@@ -228,8 +274,19 @@ export default function GliderSimulator() {
   const startSim = async (values) => {
     setSubmitting(true);
     try {
-      if (contextError || contextLoading) throw new Error('请先确认来源课程');
-      if (courseId) await courseAPI.detail(courseId);
+      if (contextError || contextPending) throw new Error('请先确认来源课程');
+      if (sourceCourse) {
+        const resolution = await verifySource();
+        setReturnTo(resolution.path);
+        if (!resolution.available) {
+          setContextError(resolution.reason.replaceAll('已返回', '请返回'));
+          setCourseId(undefined); setLessonId(undefined); setLessons([]);
+          throw new Error(resolution.reason.replaceAll('已返回', '请返回'));
+        }
+      } else if (courseId) {
+        const detail = await courseAPI.detail(courseId);
+        if (lessonId && !detail.lessons.some((lesson) => String(lesson.id) === String(lessonId) && lesson.status !== 'cancelled')) throw new Error('关联课时已不可用，请重新选择课时或独立试飞。');
+      }
       const r = await gliderAPI.simulate({
         dihedral_deg: values.dihedral,
         cg_x: values.cg,
@@ -248,7 +305,7 @@ export default function GliderSimulator() {
       message.success('模拟已开始，正在计算…');
       loadHistory();
     } catch (err) {
-      message.error(err?.response?.data?.error || '启动模拟失败');
+      message.error(err?.response?.data?.error || err?.message || '启动模拟失败');
     } finally {
       setSubmitting(false);
     }
@@ -273,7 +330,7 @@ export default function GliderSimulator() {
   const isStudent = user?.role === 'student';
   const engineChecking = !engineInfo && !engineError;
   const engineReady = engineInfo?.ready === true;
-  const canSubmit = isStudent && engineReady && !contextError && !contextLoading;
+  const canSubmit = isStudent && engineReady && !contextError && !contextPending;
   const blockedReason = !isStudent
     ? ''
     : engineChecking
@@ -282,12 +339,12 @@ export default function GliderSimulator() {
         ? `无法确认实验环境：${engineError}`
         : !engineReady
           ? '模拟引擎暂不可用，请稍后再试或联系老师。'
-          : contextLoading ? '正在确认来源课程…' : contextError;
+          : contextPending ? '正在确认来源课程…' : contextError;
 
   return (
     <div>
       <Space style={{ marginBottom: 16 }}>
-        <Button icon={<ArrowLeftOutlined />} onClick={() => navigate(user?.role === 'student' ? returnTo : '/dashboard')}>{returnTo === '/lab' ? '返回实验室' : '返回来源课程'}</Button>
+        <Button icon={<ArrowLeftOutlined />} loading={returning} disabled={contextPending} onClick={returnToSource}>{sourceCourse && (!contextError || returnTo !== '/lab') ? '返回来源课程' : '返回实验室'}</Button>
         <Title level={4} style={{ margin: 0 }}>🛩️ 滑翔机模拟实验室</Title>
       </Space>
 
@@ -470,6 +527,7 @@ export default function GliderSimulator() {
                       message={<Text strong>结果：{meta.label}</Text>}
                       description={STATE_TIPS[viewing.state] || '模拟完成。'}
                     />
+                    {resultFileError && <Alert type="warning" showIcon message={resultFileError} />}
                     <Row gutter={[8, 8]}>
                       <Col xs={12} sm={8}><Statistic title="滑翔时长" value={viewing.glide_time_s} suffix="s" /></Col>
                       <Col xs={12} sm={8}><Statistic title="水平距离" value={viewing.result?.distance_m ?? '—'} suffix="m" /></Col>
