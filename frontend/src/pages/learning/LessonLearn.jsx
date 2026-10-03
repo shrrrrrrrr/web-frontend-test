@@ -106,7 +106,10 @@ export default function LessonLearn() {
       if (String(payload.course.id) !== String(courseId)) throw new Error('课时与课程不匹配');
       setData(payload);
       const requestedStage = Number(searchParams.get('stage'));
-      const stage = restorePosition && searchParams.has('stage') && Number.isInteger(requestedStage) && requestedStage >= 0 && requestedStage <= learningStage(payload) ? requestedStage : learningStage(payload);
+      // 已有报告可从原评审页回看；资料调整后的学习阶段不能吞掉档案的只读跳转。
+      // 报告表单仍按 progress.report_unlocked 禁用，提交规则没有改变。
+      const savedReportStage = payload.report && (requestedStage === 2 || requestedStage === 3);
+      const stage = restorePosition && searchParams.has('stage') && Number.isInteger(requestedStage) && requestedStage >= 0 && (requestedStage <= learningStage(payload) || savedReportStage) ? requestedStage : learningStage(payload);
       const requestedCard = restorePosition ? searchParams.get('cardId') : null;
       if (requestedCard) {
         const index = availableCardIndex(payload.cards || [], requestedCard, payload.progress);

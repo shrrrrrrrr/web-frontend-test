@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Button } from 'antd';
 import PixelIcon from './PixelIcon';
 
-export function PixelButton({ className = '', ...props }) {
-  return <Button className={`pixel-button ${className}`} {...props} />;
+export function PixelButton({ className = '', children, 'aria-label': ariaLabel, ...props }) {
+  // 加载图标属于装饰，不能让原按钮的可访问名称在请求前后变化。
+  return <Button className={`pixel-button ${className}`} aria-label={ariaLabel || (typeof children === 'string' ? children : undefined)} {...props}>{children}</Button>;
 }
 
 export function PixelPanel({ children, className = '', as: Element = 'section', ...props }) {

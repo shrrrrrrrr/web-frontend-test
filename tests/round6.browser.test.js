@@ -12,7 +12,8 @@ const root = path.resolve(import.meta.dirname, '..');
 const require = createRequire(path.join(root, 'backend/package.json'));
 const Database = require('better-sqlite3');
 const scratch = mkdtempSync(path.join(tmpdir(), 'star-voyage-round6-'));
-const shots = path.join(root, 'docs/round-06/screenshots');
+const delivery = process.env.ROUND6_CAPTURE_DELIVERY === '1';
+const shots = path.join(root, delivery ? 'docs/round-06/screenshots' : 'test-results/round6');
 const base = 'http://127.0.0.1:5187';
 const apiBase = 'http://127.0.0.1:3125';
 const env = { ...process.env, NODE_ENV: 'test', DB_PATH: path.join(scratch, 'round6.db'),
@@ -132,7 +133,7 @@ test('第六轮：实验室、真实试飞、局部状态及作品课程边界',
       await shot(page,'04-chart-preview-real-mobile-scrolled',false);
       await page.keyboard.press('Escape');await page.locator('.ant-image-preview').waitFor({state:'hidden'});
       await page.setViewportSize({width:1440,height:900});
-      writeFileSync(path.join(root,'docs/round-06/real-flight.json'),JSON.stringify({engine:'reference',parameters:posts[0],recordId:realId,state:row.state,metrics:realRecord.result,glide_time_s:row.glide_time,course_id:row.course_id,lesson_id:row.lesson_id},null,2));
+      writeFileSync(path.join(root,delivery ? 'docs/round-06/real-flight.json' : 'test-results/round6-real-flight.json'),JSON.stringify({engine:'reference',parameters:posts[0],recordId:realId,state:row.state,metrics:realRecord.result,glide_time_s:row.glide_time,course_id:row.course_id,lesson_id:row.lesson_id},null,2));
     });
     await scenario('同条重开、独立文件重试、历史参数与编辑值不混淆',async()=>{
       await page.locator('#speed').fill('42');
@@ -223,7 +224,7 @@ test('第六轮：实验室、真实试飞、局部状态及作品课程边界',
       await page.goto(base+'/works/51');await page.getByText(/该作品所属课程已不可访问/).waitFor();assert.equal(await page.getByText('正文应直接开始，没有孤立零',{exact:true}).count(),0);
       db.prepare("UPDATE courses SET status='published' WHERE id=1").run();await page.goto(base+'/works');await page.getByRole('link',{name:'最新退回作品（测试）',exact:true}).waitFor();db.prepare("UPDATE enrollments SET status='removed' WHERE student_id=4 AND course_id=1").run();await page.evaluate(()=>window.dispatchEvent(new Event('focus')));await page.getByRole('link',{name:'最新退回作品（测试）',exact:true}).waitFor({state:'hidden'});await page.getByRole('link',{name:'同名另一课程作品（测试）',exact:true}).waitFor();
       await page.goto(base+'/works/51');await page.getByText(/该作品所属课程已不可访问/).waitFor();
-      db.prepare("UPDATE enrollments SET status='removed' WHERE student_id=4").run();await page.goto(base+'/works');await page.locator('.ant-table .ant-empty-description').waitFor();assert.equal(await page.locator('.ant-table-tbody a').count(),0);
+      db.prepare("UPDATE enrollments SET status='removed' WHERE student_id=4").run();await page.goto(base+'/works');await page.getByText(/暂无作品记录/).waitFor();assert.equal(await page.locator('.archive-work-row').count(),0);
       await page.goto(base+'/glider');await page.getByText('实验环境就绪，可以开始试飞。',{exact:true}).waitFor();assert.ok(await page.getByRole('button',{name:'开始试飞',exact:true}).isEnabled());
       db.prepare("UPDATE enrollments SET status='active' WHERE student_id=4").run();
       await page.route('**/api/works?**',r=>r.fulfill({status:503,json:{error:'作品列表读取失败（注入）'}}));await page.goto(base+'/works');await page.locator('.ant-result-subtitle').filter({hasText:'作品列表读取失败（注入）'}).waitFor();await page.unroute('**/api/works?**');

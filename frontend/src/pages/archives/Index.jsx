@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Card, Tree, Button, Typography, Spin, Descriptions, Tag, List, Space, Progress, Modal, Input, message, Row, Col, Statistic, Timeline } from 'antd';
 import { UserOutlined, FileTextOutlined } from '@ant-design/icons';
 import { archiveAPI } from '../../api';
 import { useAuth } from '../../store/AuthContext';
 import { formatBeijingTime } from '../../utils/date';
+import StudentArchive from '../../student/StudentArchive';
 
 const { Title, Text } = Typography;
 
 export default function ArchiveIndex() {
-  const navigate = useNavigate();
+  const { user } = useAuth();
+  return user?.role === 'student' ? <StudentArchive /> : <StaffArchive />;
+}
+
+function StaffArchive() {
   const { user } = useAuth();
   const [treeData, setTreeData] = useState([]);
   const [archive, setArchive] = useState(null);
@@ -58,29 +62,6 @@ export default function ArchiveIndex() {
     } catch { /* handled */ }
     finally { setDetailLoading(false); }
   };
-
-  // Student view: show own archive
-  if (user?.role === 'student') {
-    return (
-      <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-          <Title level={4} style={{ margin: 0 }}>📂 我的成长档案</Title>
-          <Space wrap><Button onClick={() => navigate('/archives/rewards')}>积分与徽章（演示）</Button><Button onClick={() => navigate('/works')}>我的作品</Button><Button type="primary" onClick={() => navigate('/archives/reflection')}>写反思日志</Button></Space>
-        </div>
-        {detailLoading ? <Spin /> : archive ? (
-          <ArchiveDetail archive={archive} />
-        ) : (
-          <Card>
-            <Button type="primary" onClick={async () => {
-              setDetailLoading(true);
-              try { const res = await archiveAPI.generate(user.id); setArchive(res); } catch { /* handled */ }
-              finally { setDetailLoading(false); }
-            }}>查看我的档案</Button>
-          </Card>
-        )}
-      </div>
-    );
-  }
 
   if (loading) return <Spin size="large" style={{ display: 'block', margin: '100px auto' }} />;
 

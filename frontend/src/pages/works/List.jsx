@@ -2,8 +2,8 @@ import { useState, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Table, Card, Button, Tag, Space, Input, Typography, List, Select, Alert } from 'antd';
 import { EyeOutlined } from '@ant-design/icons';
-import { courseAPI, workAPI } from '../../api';
-import { loadStudentWorks } from '../../student/workListModel';
+import { workAPI } from '../../api';
+import StudentWorks from '../../student/StudentWorks';
 import { useAuth } from '../../store/AuthContext';
 import { formatBeijingTime } from '../../utils/date';
 import useRemote from '../../student/useRemote';
@@ -16,11 +16,15 @@ const getStatus = (work) => work.review_status === 'rejected' && work.has_newer_
 
 export default function WorkList() {
   const { user } = useAuth();
+  return user?.role === 'student' ? <StudentWorks /> : <StaffWorkList />;
+}
+
+function StaffWorkList() {
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [courseId, setCourseId] = useState();
   const fetcher = useCallback(async () => {
-    if (user?.role === 'student') return loadStudentWorks({ courses: courseAPI.list, works: (params) => workAPI.list(params, { silent: true }), tasks: workAPI.pendingTasks }, { search, courseId });
     const [works, tasks] = await Promise.all([workAPI.list({ search, course_id: courseId }), user?.role === 'student' ? workAPI.pendingTasks() : Promise.resolve({ tasks: [] })]);
     return { ...works, tasks: tasks.tasks || [] };
   }, [search, courseId, user?.role]);

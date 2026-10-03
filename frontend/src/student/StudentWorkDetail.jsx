@@ -71,6 +71,7 @@ export default function StudentWorkDetail() {
         <StudySection number="F" title="导师反馈" description={`以下反馈对应第 ${work.version || 1} 版。`}>
           {review || work.reject_reason ? <div className={`study-feedback${work.review_status === 'rejected' ? ' study-feedback--rejected' : ''}`}>
             {review?.reviewer_name && <p className="study-help">评审导师：{review.reviewer_name}</p>}
+            {(review?.updated_at || review?.created_at) && <p className="study-help">评审时间：{formatBeijingTime(review.updated_at || review.created_at)}</p>}
             <h4>导师评语</h4><p className="study-prose">{review?.comment || '导师暂未留下评语。'}</p>
             <h4>修改建议</h4><p className="study-prose">{review?.suggestion || work.reject_reason || '暂无修改建议。'}</p>
             {review && work.review_status === 'approved' && <ul className="study-scores">{dimensions.map(([key, label]) => <li key={key}><span>{label}</span><strong>{review[key] == null ? '未评分' : `${review[key]} 分`}</strong></li>)}</ul>}

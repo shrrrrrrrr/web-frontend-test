@@ -85,7 +85,7 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
       await page.getByText('月球环境调研', { exact: true }).waitFor();
       await page.goto(`${base}/works`);
       await page.getByRole('heading', { name: '我的作品', exact: true }).waitFor();
-      await page.getByRole('button', { name: '提交作品', exact: true }).first().waitFor();
+      await page.getByRole('link', { name: '提交作品', exact: true }).first().waitFor();
       await page.goto(`${base}/courses/1/learn`);
       await page.getByRole('heading', { name: '课程回顾：月球基地设计师' }).waitFor();
       await page.goto(`${base}/explore`);
