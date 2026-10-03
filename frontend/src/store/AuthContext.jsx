@@ -1,0 +1,78 @@
+/* eslint-disable react-refresh/only-export-components, react-hooks/set-state-in-effect */
+import { createContext, useContext, useState, useEffect } from 'react';
+import { authAPI } from '../api';
+import { saveAuthSession } from '../utils/authSession';
+
+const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const logout = () => {
+    const refresh_token = localStorage.getItem('refresh_token');
+    if (refresh_token) {
+      authAPI.logout(refresh_token).catch(() => {});
+    }
+    localStorage.removeItem('token');
+    localStorage.removeItem('refresh_token');
+    localStorage.removeItem('user');
+    setUser(null);
+  };
+
+  // 初始加载：从 localStorage 恢复用户信息，并验证 token
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    let active = true;
+    if (token) {
+        authAPI.me().then((res) => {
+          if (!active) return;
+          setUser(res.user);
+          localStorage.setItem('user', JSON.stringify(res.user));
+        }).catch(() => {
+          if (active) setUser(null);
+        }).finally(() => { if (active) setLoading(false); });
+    } else setLoading(false);
+    const changed = (event) => {
+      if (event.key === 'user' || (event.key === 'token' && !event.newValue)) window.location.assign('/');
+    };
+    window.addEventListener('storage', changed);
+    return () => { active = false; window.removeEventListener('storage', changed); };
+  }, []);
+
+  const applySession = (res) => {
+    const nextUser = saveAuthSession(localStorage, res);
+    setUser(nextUser);
+    return nextUser;
+  };
+
+  const login = async (username, password) => applySession(await authAPI.login(username, password));
+
+  // 改密已撤销旧会话，先保存新凭证再继续请求业务接口。
+  const changePassword = async (data) => applySession(await authAPI.changePassword(data));
+
+  const register = async (data) => {
+    return await authAPI.register(data);
+  };
+
+  // 重新拉取当前用户（修改密码后用于清除 force_reset_password 标志）
+  const refreshUser = () => {
+    return authAPI.me().then((res) => {
+      setUser(res.user);
+      localStorage.setItem('user', JSON.stringify(res.user));
+      return res.user;
+    });
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, loading, login, register, logout, refreshUser, changePassword }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+export function useAuth() {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error('useAuth must be used within AuthProvider');
+  return ctx;
+}

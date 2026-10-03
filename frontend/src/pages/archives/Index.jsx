@@ -1,0 +1,205 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Card, Tree, Button, Typography, Spin, Descriptions, Tag, List, Space, Progress, Modal, Input, message, Row, Col, Statistic, Timeline } from 'antd';
+import { UserOutlined, FileTextOutlined } from '@ant-design/icons';
+import { archiveAPI } from '../../api';
+import { useAuth } from '../../store/AuthContext';
+import { formatBeijingTime } from '../../utils/date';
+
+const { Title, Text } = Typography;
+
+export default function ArchiveIndex() {
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const [treeData, setTreeData] = useState([]);
+  const [archive, setArchive] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [detailLoading, setDetailLoading] = useState(false);
+  const [selectedStudentId, setSelectedStudentId] = useState(null);
+  const [recordOpen, setRecordOpen] = useState(false);
+  const [record, setRecord] = useState('');
+
+  useEffect(() => {
+    if (user?.role === 'student') {
+      return;
+    }
+    archiveAPI.getTree().then((res) => {
+      const tree = res.tree || res;
+      if (tree.schools) {
+        setTreeData(tree.schools.map((school) => ({
+          title: `🏫 ${school.name}`,
+          key: `school-${school.id}`,
+          children: (school.classes || []).map((cls) => ({
+            title: `📚 ${cls.grade ? `${cls.grade} - ` : ''}${cls.name}`,
+            key: `class-${cls.id}`,
+            children: [
+              ...(cls.roles?.student || []).map((s) => ({
+                title: s.real_name,
+                key: `user-${s.id}`, icon: <UserOutlined />, isLeaf: true,
+              })),
+            ],
+          })),
+        })));
+      }
+    }).catch(() => {}).finally(() => setLoading(false));
+  }, [user?.role]);
+
+  const handleSelect = async (keys) => {
+    if (!keys.length) return;
+    const key = keys[0];
+    if (!key.startsWith('user-')) return;
+    const studentId = key.replace('user-', '');
+    setSelectedStudentId(studentId);
+    setArchive(null);
+    setDetailLoading(true);
+    try {
+      const res = await archiveAPI.generate(studentId);
+      setArchive(res);
+    } catch { /* handled */ }
+    finally { setDetailLoading(false); }
+  };
+
+  // Student view: show own archive
+  if (user?.role === 'student') {
+    return (
+      <div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
+          <Title level={4} style={{ margin: 0 }}>📂 我的成长档案</Title>
+          <Space wrap><Button onClick={() => navigate('/archives/rewards')}>积分与徽章（演示）</Button><Button onClick={() => navigate('/works')}>我的作品</Button><Button type="primary" onClick={() => navigate('/archives/reflection')}>写反思日志</Button></Space>
+        </div>
+        {detailLoading ? <Spin /> : archive ? (
+          <ArchiveDetail archive={archive} />
+        ) : (
+          <Card>
+            <Button type="primary" onClick={async () => {
+              setDetailLoading(true);
+              try { const res = await archiveAPI.generate(user.id); setArchive(res); } catch { /* handled */ }
+              finally { setDetailLoading(false); }
+            }}>查看我的档案</Button>
+          </Card>
+        )}
+      </div>
+    );
+  }
+
+  if (loading) return <Spin size="large" style={{ display: 'block', margin: '100px auto' }} />;
+
+  return (
+    <div>
+      <Title level={4}>📂 成长档案</Title>
+      {user?.role === 'academic_mentor' && <Text type="secondary" style={{ display: 'block', marginBottom: 12 }}>仅展示您创建或受邀授课的课程相关学生，包含历史报名关系；停用或归档不会删除历史档案。</Text>}
+      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+        <Card title="学生列表" style={{ width: 320, flex: '0 0 320px', maxWidth: '100%', maxHeight: '70vh', overflow: 'auto' }}>
+          {treeData.length ? <Tree treeData={treeData} onSelect={handleSelect} showIcon defaultExpandAll={false} /> : <Text type="secondary">暂无可查看的学生</Text>}
+        </Card>
+        <Card title="档案详情" style={{ flex: 1, minWidth: 320 }}>
+          {detailLoading ? <Spin /> : archive ? <><Space style={{ marginBottom: 16 }}><Button onClick={() => window.print()}>导出 PDF</Button>{['admin', 'academic_mentor'].includes(user?.role) && <Button type="primary" onClick={() => setRecordOpen(true)}>添加成长记录</Button>}</Space><ArchiveDetail archive={archive} /></> : <Text type="secondary">请从左侧选择学生查看档案</Text>}
+        </Card>
+      </div>
+      <Modal title="添加成长记录" open={recordOpen} onCancel={() => setRecordOpen(false)} onOk={async () => { if (!record.trim()) return; await archiveAPI.addGrowthRecord({ student_id: selectedStudentId, description: record }); message.success('成长记录已添加'); setRecord(''); setRecordOpen(false); handleSelect([`user-${selectedStudentId}`]); }}><Input.TextArea rows={4} value={record} onChange={(e) => setRecord(e.target.value)} /></Modal>
+    </div>
+  );
+}
+
+function ArchiveDetail({ archive }) {
+  if (!archive) return null;
+  // 概览统计：参与课程 / 项目作品（版本根去重） / 作品迭代（版本数） / 反思 / 评价
+  const overview = [
+    { label: '参与课程', value: archive.courses?.length ?? 0 },
+    { label: '项目作品', value: new Set((archive.works || []).map((w) => w.parent_work_id || w.id)).size },
+    { label: '作品迭代', value: (archive.works || []).filter((w) => w.parent_work_id).length },
+    { label: '反思日志', value: archive.reflections?.length ?? 0 },
+    { label: '导师评价', value: archive.evaluations?.length ?? 0 },
+  ];
+  // 时间轴：成长记录为唯一事件源；作品仅在无对应成长记录时兜底合成（按 work_id 匹配，遗留数据按标题+时间完全匹配）
+  const timeline = [
+    ...(archive.growthRecords || []).map((g) => ({ at: g.created_at, text: g.description, kind: g.event_type })),
+    ...(archive.works || [])
+      .filter((w) => !(archive.growthRecords || []).some((g) => g.work_id === w.id
+        || (g.work_id == null && g.created_at === w.created_at && g.description === `提交作品《${w.title}》`)))
+      .map((w) => ({ at: w.created_at, text: `提交作品《${w.title}》`, kind: 'work' })),
+    ...(archive.reflections || []).map((r) => ({ at: r.created_at, text: `提交反思：${r.lesson_title || '课程反思'}`, kind: 'reflection' })),
+  ].filter((t) => t.at).sort((a, b) => String(b.at).localeCompare(String(a.at)));
+  const kindColor = (kind) => (kind === 'work' ? 'blue' : kind === 'reflection' ? 'green' : 'gray');
+  return (
+    <div>
+      <Descriptions column={2} size="small" bordered style={{ marginBottom: 16 }}>
+        <Descriptions.Item label="姓名">{archive.student?.real_name}</Descriptions.Item>
+        <Descriptions.Item label="学校">{archive.student?.school_name}</Descriptions.Item>
+        <Descriptions.Item label="班级">{archive.student?.class_name}</Descriptions.Item>
+        <Descriptions.Item label="生成时间">{archive.generatedAt}</Descriptions.Item>
+      </Descriptions>
+
+      {/* 概览统计 */}
+      <Title level={5}>成长概览</Title>
+      <Row gutter={16} style={{ marginBottom: 16 }}>
+        {overview.map((o) => (
+          <Col xs={12} sm={6} key={o.label}><Card size="small"><Statistic title={o.label} value={o.value} /></Card></Col>
+        ))}
+      </Row>
+
+      <Title level={5}>能力评分</Title>
+      <Space direction="vertical" style={{ width: '100%', marginBottom: 16 }}>{[['problem_discovery','问题发现'],['solution_design','方案设计'],['hands_on','动手操作'],['data_analysis','数据分析'],['presentation','表达展示']].map(([key,label]) => <div key={key}><Text>{label}：{archive.ability?.[key] || 0} / 5</Text><Progress percent={(archive.ability?.[key] || 0) * 20} showInfo={false} /></div>)}</Space>
+
+      {/* 成长时间轴 */}
+      <Title level={5}>成长时间轴</Title>
+      {timeline.length > 0 ? (
+        <Timeline style={{ marginBottom: 16 }}
+          items={timeline.map((t) => ({
+            color: kindColor(t.kind),
+            children: (
+              <div>
+                <Text>{t.text}</Text>
+                <br />
+                <Text type="secondary" style={{ fontSize: 12 }}>{formatBeijingTime(t.at)}</Text>
+              </div>
+            ),
+          }))}
+        />
+      ) : (
+        <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>暂无成长记录</Text>
+      )}
+
+      <Title level={5}>参与课程</Title>
+      <List dataSource={archive.courses || []} renderItem={(c) => (
+        <List.Item><Tag>{c.difficulty}</Tag> {c.title}</List.Item>
+      )} />
+
+      <Title level={5}>提交作品</Title>
+      <List dataSource={archive.works || []} renderItem={(w) => (
+        <List.Item><FileTextOutlined style={{ marginRight: 8 }} />{w.title}</List.Item>
+      )} />
+
+      <Title level={5}>反思日志</Title>
+      <List dataSource={archive.reflections || []} renderItem={(r) => (
+        <List.Item>
+          <List.Item.Meta
+            title={r.lesson_title || '—'}
+            description={
+              <Space direction="vertical" size={0}>
+                {r.difficulty && <Text>困难：{r.difficulty}</Text>}
+                {r.solution && <Text>解决方式：{r.solution}</Text>}
+                {r.improvement && <Text>改进收获：{r.improvement}</Text>}
+                {r.new_question && <Text>新问题：{r.new_question}</Text>}
+              </Space>
+            }
+          />
+        </List.Item>
+      )} />
+
+      {archive.evaluations?.length > 0 && (
+        <>
+          <Title level={5}>导师评价</Title>
+          <List dataSource={archive.evaluations} renderItem={(ev) => (
+            <List.Item>
+              <List.Item.Meta
+                title={`${ev.evaluator_name} 的评价`}
+                description={`${ev.eval_type ? `${ev.eval_type} · ` : ''}${ev.score != null ? `得分 ${ev.score}` : ''}${ev.comment ? `：${ev.comment}` : ''}`}
+              />
+            </List.Item>
+          )} />
+        </>
+      )}
+    </div>
+  );
+}

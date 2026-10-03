@@ -1,0 +1,19 @@
+{
+  "name": "star-voyage-student",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev -- --host 127.0.0.1",
+    "server": "node scripts/local-server.cjs",
+    "db:init": "npm --prefix backend run db:init",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "test": "npm --prefix frontend test",
+    "test:backend": "npm --prefix backend test",
+    "test:e2e": "node --test tests/browser.test.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

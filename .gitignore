@@ -1,0 +1,28 @@
+.vscode/
+node_modules/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.db
+*.db-wal
+*.db-shm
+backend/uploads/
+backend/private_uploads/
+uploads/
+private_uploads/
+__pycache__/
+.venv/
+dist/
+build/
+
+# 滑翔机模拟：只跟踪引擎源码，忽略第三方 novaPhy 交付包与本地产物
+simulation/novaphy-0.4.0-cpu-cp311-linux-x86_64/
+simulation/glider/output/
+simulation/glider/imgui.ini
+
+# 本地方案/规划文档：留在本地评审，不入库（docs/ 内既有已跟踪文件不受影响）
+test-results/
+*.log
+playwright-report/

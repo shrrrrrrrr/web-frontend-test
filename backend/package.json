@@ -1,0 +1,35 @@
+{
+  "name": "pbl-platform",
+  "version": "1.0.0",
+  "description": "全重实验室大中小贯通科创育人 PBL 数字化平台",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "node --test",
+    "db:init": "node database/init.js",
+    "db:reset": "node database/init.js --force",
+    "db:provision": "node database/provision.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^13.0.2",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "jszip": "^3.10.2",
+    "mammoth": "^1.12.3",
+    "multer": "^2.4.0",
+    "pdf-parse": "^2.4.5",
+    "pinyin-pro": "^3.29.3",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "overrides": {
+    "qs": "^6.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
