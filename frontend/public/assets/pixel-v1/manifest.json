@@ -4,7 +4,7 @@
   "createdOn": "2026-10-03",
   "scope": "学生公共布局、探索首页、课程地图；未引入参考图或第三方游戏素材",
   "preview": "Vite 开发环境 /__pixel-preview；仅学生登录可见，无正式导航入口",
-  "sourceFiles": "本目录PNG即原始母版，SVG即可编辑源码；generation-prompts.json保留生成提示词",
+  "sourceFiles": "原PNG母版和SVG源码保留；web/为最近邻缩放与无损编码的派生文件；生成提示词保留在generation-prompts.json。",
   "licenseStatus": {
     "raster": "本项目通过内置图像工具生成，未使用参考图片作为输入。供本项目使用；不作排他版权或第三方素材已获许可的承诺。",
     "vector": "本项目原创SVG源码，可随本项目修改维护。",
@@ -24,7 +24,55 @@
       "crop": "cover，保持比例，允许场景边缘裁切；不能裁掉独立HTML文本",
       "scale": "image-rendering: pixelated；大母版按显示尺寸缩小；避免把小预览反复插值放大",
       "editableSource": "hero-voyage.png",
-      "promptSource": "generation-prompts.json#hero-voyage"
+      "promptSource": "generation-prompts.json#hero-voyage",
+      "webDerivatives": [
+        {
+          "file": "web/hero-voyage-640.webp",
+          "width": 640,
+          "height": 215,
+          "bytes": 154088,
+          "alphaRange": [
+            255,
+            255
+          ],
+          "reductionPercentVsMaster": 89.47
+        },
+        {
+          "file": "web/hero-voyage-960.webp",
+          "width": 960,
+          "height": 323,
+          "bytes": 304102,
+          "alphaRange": [
+            255,
+            255
+          ],
+          "reductionPercentVsMaster": 79.22
+        },
+        {
+          "file": "web/hero-voyage-1280.webp",
+          "width": 1280,
+          "height": 430,
+          "bytes": 481262,
+          "alphaRange": [
+            255,
+            255
+          ],
+          "reductionPercentVsMaster": 67.11
+        },
+        {
+          "file": "web/hero-voyage-2162.webp",
+          "width": 2162,
+          "height": 727,
+          "bytes": 1146438,
+          "alphaRange": [
+            255,
+            255
+          ],
+          "reductionPercentVsMaster": 21.65
+        }
+      ],
+      "webMethod": "Pillow NEAREST resize + lossless WebP (exact alpha); no palette reduction or blur",
+      "masterSha256": "1b574685c04c4541c7c9cbb3f65f2387e790395d6c8403e17a6dd647ece3f708"
     },
     {
       "file": "course-voyage.png",
@@ -39,7 +87,44 @@
       "crop": "cover，保持比例，允许场景边缘裁切；不能裁掉独立HTML文本",
       "scale": "image-rendering: pixelated；大母版按显示尺寸缩小；避免把小预览反复插值放大",
       "editableSource": "course-voyage.png",
-      "promptSource": "generation-prompts.json#course-voyage"
+      "promptSource": "generation-prompts.json#course-voyage",
+      "webDerivatives": [
+        {
+          "file": "web/course-voyage-320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 113768,
+          "alphaRange": [
+            255,
+            255
+          ],
+          "reductionPercentVsMaster": 94.02
+        },
+        {
+          "file": "web/course-voyage-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 361932,
+          "alphaRange": [
+            255,
+            255
+          ],
+          "reductionPercentVsMaster": 80.97
+        },
+        {
+          "file": "web/course-voyage-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 697994,
+          "alphaRange": [
+            255,
+            255
+          ],
+          "reductionPercentVsMaster": 63.29
+        }
+      ],
+      "webMethod": "Pillow NEAREST resize + lossless WebP (exact alpha); no palette reduction or blur",
+      "masterSha256": "33534a4a3dcd682c4d0cecb2acc3c673fc16770ec335d928adf5dbef973a9a4d"
     },
     {
       "file": "island-observatory.png",
@@ -54,7 +139,44 @@
       "crop": "contain，保留完整轮廓，不非等比拉伸",
       "scale": "image-rendering: pixelated；大母版按显示尺寸缩小；避免把小预览反复插值放大",
       "editableSource": "island-observatory.png",
-      "promptSource": "generation-prompts.json#island-observatory"
+      "promptSource": "generation-prompts.json#island-observatory",
+      "webDerivatives": [
+        {
+          "file": "web/island-observatory-192.webp",
+          "width": 192,
+          "height": 175,
+          "bytes": 19266,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 96.78
+        },
+        {
+          "file": "web/island-observatory-384.webp",
+          "width": 384,
+          "height": 351,
+          "bytes": 59086,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 90.13
+        },
+        {
+          "file": "web/island-observatory-576.webp",
+          "width": 576,
+          "height": 526,
+          "bytes": 114054,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 80.95
+        }
+      ],
+      "webMethod": "Pillow NEAREST resize + lossless WebP (exact alpha); no palette reduction or blur",
+      "masterSha256": "54d1c718ba9be919793c141f2536e9e11be9cb02522fda877b52ab4728f0266e"
     },
     {
       "file": "island-relay.png",
@@ -69,7 +191,44 @@
       "crop": "contain，保留完整轮廓，不非等比拉伸",
       "scale": "image-rendering: pixelated；大母版按显示尺寸缩小；避免把小预览反复插值放大",
       "editableSource": "island-relay.png",
-      "promptSource": "generation-prompts.json#island-relay"
+      "promptSource": "generation-prompts.json#island-relay",
+      "webDerivatives": [
+        {
+          "file": "web/island-relay-192.webp",
+          "width": 192,
+          "height": 205,
+          "bytes": 33112,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 96.18
+        },
+        {
+          "file": "web/island-relay-384.webp",
+          "width": 384,
+          "height": 410,
+          "bytes": 99136,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 88.56
+        },
+        {
+          "file": "web/island-relay-576.webp",
+          "width": 576,
+          "height": 615,
+          "bytes": 192988,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 77.73
+        }
+      ],
+      "webMethod": "Pillow NEAREST resize + lossless WebP (exact alpha); no palette reduction or blur",
+      "masterSha256": "73ef7d94eec0b7f0fe5881e2bb011a060946f252ad2c9950440cefe61a6587ae"
     },
     {
       "file": "companion-cat.png",
@@ -84,7 +243,77 @@
       "crop": "contain，保留完整轮廓，不非等比拉伸",
       "scale": "image-rendering: pixelated；大母版按显示尺寸缩小；避免把小预览反复插值放大",
       "editableSource": "companion-cat.png",
-      "promptSource": "generation-prompts.json#companion-cat"
+      "promptSource": "generation-prompts.json#companion-cat",
+      "webDerivatives": [
+        {
+          "file": "web/companion-cat-32.webp",
+          "width": 32,
+          "height": 32,
+          "bytes": 1240,
+          "alphaRange": [
+            0,
+            254
+          ],
+          "reductionPercentVsMaster": 99.85
+        },
+        {
+          "file": "web/companion-cat-48.webp",
+          "width": 48,
+          "height": 48,
+          "bytes": 2524,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 99.69
+        },
+        {
+          "file": "web/companion-cat-64.webp",
+          "width": 64,
+          "height": 64,
+          "bytes": 4342,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 99.47
+        },
+        {
+          "file": "web/companion-cat-96.webp",
+          "width": 96,
+          "height": 96,
+          "bytes": 9060,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 98.89
+        },
+        {
+          "file": "web/companion-cat-144.webp",
+          "width": 144,
+          "height": 144,
+          "bytes": 17726,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 97.82
+        },
+        {
+          "file": "web/companion-cat-192.webp",
+          "width": 192,
+          "height": 192,
+          "bytes": 28422,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 96.51
+        }
+      ],
+      "webMethod": "Pillow NEAREST resize + lossless WebP (exact alpha); no palette reduction or blur",
+      "masterSha256": "be73f4e2486f23c2fb05979c94462bacea58ab092127a8ad67370e0dc821f048"
     },
     {
       "file": "planet-ring-v2.png",
@@ -99,7 +328,33 @@
       "crop": "contain，保留完整轮廓，不非等比拉伸",
       "scale": "image-rendering: pixelated；大母版按显示尺寸缩小；避免把小预览反复插值放大",
       "editableSource": "planet-ring-v2.png",
-      "promptSource": "generation-prompts.json#planet-ring-v2"
+      "promptSource": "generation-prompts.json#planet-ring-v2",
+      "webDerivatives": [
+        {
+          "file": "web/planet-ring-v2-192.webp",
+          "width": 192,
+          "height": 144,
+          "bytes": 10132,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 97.42
+        },
+        {
+          "file": "web/planet-ring-v2-384.webp",
+          "width": 384,
+          "height": 288,
+          "bytes": 30402,
+          "alphaRange": [
+            0,
+            255
+          ],
+          "reductionPercentVsMaster": 92.25
+        }
+      ],
+      "webMethod": "Pillow NEAREST resize + lossless WebP (exact alpha); no palette reduction or blur",
+      "masterSha256": "2547bc888a0bc00664704de541c6de09f24e1ad3f89e35f2ed4613cba9156648"
     },
     {
       "file": "icons/map.svg",
@@ -322,5 +577,6 @@
       "scale": "默认24px，预览48px；个别紧凑控件16/20px使用矢量缩放",
       "editableSource": "icons/cat.svg"
     }
-  ]
+  ],
+  "webDerivativeReport": "web/derivatives.json"
 }
