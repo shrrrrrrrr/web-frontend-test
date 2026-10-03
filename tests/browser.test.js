@@ -178,6 +178,7 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
       await page.waitForURL('**/lab');
     });
     await t.test('伙伴收起重开、启用状态、奖励账号隔离', async () => {
+      await page.getByRole('button', { name: '打开学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '收起学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '打开学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '向灵境小智提问', exact: true }).click();

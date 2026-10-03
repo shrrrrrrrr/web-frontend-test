@@ -1,0 +1,2308 @@
+{
+  "description": "真实 Edge 采样：图片文件字节与浏览器选择资源；不包含加载时延结论。transferSize=0可表示缓存，encodedBodySize不含HTTP响应头。",
+  "browser": "154.0.4258.37",
+  "generatedAt": "2026-10-03T10:04:33.393Z",
+  "masters": [
+    {
+      "filename": "hero-voyage.png",
+      "bytes": 1463302
+    },
+    {
+      "filename": "course-voyage.png",
+      "bytes": 1901454
+    },
+    {
+      "filename": "island-observatory.png",
+      "bytes": 598788
+    },
+    {
+      "filename": "island-relay.png",
+      "bytes": 866670
+    },
+    {
+      "filename": "planet-ring-v2.png",
+      "bytes": 392351
+    },
+    {
+      "filename": "companion-cat.png",
+      "bytes": 814710
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "home-desktop-1440-1x",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "pathname": "/explore",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 767px) 640px, (max-width: 991px) calc(100vw - 48px), calc(100vw - 264px)",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "complete": true,
+          "naturalWidth": 1176,
+          "renderedWidth": 1172,
+          "renderedHeight": 165.58,
+          "loading": "eager",
+          "fetchPriority": "high",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 481262
+        },
+        {
+          "alt": "探索课程插画",
+          "src": "/assets/pixel-v1/web/course-voyage-320.webp",
+          "srcset": "/assets/pixel-v1/web/course-voyage-320.webp 320w, /assets/pixel-v1/web/course-voyage-640.webp 640w, /assets/pixel-v1/web/course-voyage-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 72px), (max-width: 1199px) 240px, 272px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "complete": true,
+          "naturalWidth": 272,
+          "renderedWidth": 252,
+          "renderedHeight": 172,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 113768
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        }
+      ]
+    },
+    {
+      "label": "map-desktop-1440-1x",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "complete": true,
+          "naturalWidth": 1429,
+          "renderedWidth": 830,
+          "renderedHeight": 480,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 1146438,
+          "decodedBodySize": 1146438,
+          "transferSize": 1146738,
+          "fileBytes": 1146438
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 273.52,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 99136,
+          "decodedBodySize": 99136,
+          "transferSize": 99436,
+          "fileBytes": 99136
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 1146438,
+          "transferSize": 1146738
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "encodedBodySize": 59086,
+          "transferSize": 59386
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "encodedBodySize": 99136,
+          "transferSize": 99436
+        }
+      ]
+    },
+    {
+      "label": "home-tablet-768-1x",
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "dpr": 1
+      },
+      "pathname": "/explore",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 767px) 640px, (max-width: 991px) calc(100vw - 48px), calc(100vw - 264px)",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-960.webp",
+          "complete": true,
+          "naturalWidth": 720,
+          "renderedWidth": 716,
+          "renderedHeight": 165.58,
+          "loading": "eager",
+          "fetchPriority": "high",
+          "encodedBodySize": 304102,
+          "decodedBodySize": 304102,
+          "transferSize": 304402,
+          "fileBytes": 304102
+        },
+        {
+          "alt": "探索课程插画",
+          "src": "/assets/pixel-v1/web/course-voyage-320.webp",
+          "srcset": "/assets/pixel-v1/web/course-voyage-320.webp 320w, /assets/pixel-v1/web/course-voyage-640.webp 640w, /assets/pixel-v1/web/course-voyage-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 72px), (max-width: 1199px) 240px, 272px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "complete": true,
+          "naturalWidth": 240,
+          "renderedWidth": 216,
+          "renderedHeight": 189.61,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 113768
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-960.webp",
+          "encodedBodySize": 304102,
+          "transferSize": 304402
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        }
+      ]
+    },
+    {
+      "label": "map-tablet-768-1x",
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "complete": true,
+          "naturalWidth": 1249,
+          "renderedWidth": 722,
+          "renderedHeight": 420,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 481262,
+          "decodedBodySize": 481262,
+          "transferSize": 300,
+          "fileBytes": 481262
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 19266,
+          "decodedBodySize": 19266,
+          "transferSize": 19566,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 205.13,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 33112,
+          "decodedBodySize": 33112,
+          "transferSize": 33412,
+          "fileBytes": 33112
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 19266,
+          "decodedBodySize": 19266,
+          "transferSize": 19566,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 481262,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "encodedBodySize": 19266,
+          "transferSize": 19566
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "encodedBodySize": 33112,
+          "transferSize": 33412
+        }
+      ]
+    },
+    {
+      "label": "home-mobile-390-1x",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "pathname": "/explore",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 767px) 640px, (max-width: 991px) calc(100vw - 48px), calc(100vw - 264px)",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-640.webp",
+          "complete": true,
+          "naturalWidth": 640,
+          "renderedWidth": 354,
+          "renderedHeight": 175.08,
+          "loading": "eager",
+          "fetchPriority": "high",
+          "encodedBodySize": 154088,
+          "decodedBodySize": 154088,
+          "transferSize": 154388,
+          "fileBytes": 154088
+        },
+        {
+          "alt": "探索课程插画",
+          "src": "/assets/pixel-v1/web/course-voyage-320.webp",
+          "srcset": "/assets/pixel-v1/web/course-voyage-320.webp 320w, /assets/pixel-v1/web/course-voyage-640.webp 640w, /assets/pixel-v1/web/course-voyage-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 72px), (max-width: 1199px) 240px, 272px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "complete": true,
+          "naturalWidth": 317,
+          "renderedWidth": 318,
+          "renderedHeight": 180,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 113768,
+          "decodedBodySize": 113768,
+          "transferSize": 300,
+          "fileBytes": 113768
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-640.webp",
+          "encodedBodySize": 154088,
+          "transferSize": 154388
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "encodedBodySize": 113768,
+          "transferSize": 300
+        }
+      ]
+    },
+    {
+      "label": "map-mobile-390-1x",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "complete": true,
+          "naturalWidth": 1249,
+          "renderedWidth": 360,
+          "renderedHeight": 420,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 481262
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 205.13,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 33112
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        }
+      ]
+    },
+    {
+      "label": "partner-expanded-desktop-1440-1x",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "complete": true,
+          "naturalWidth": 1429,
+          "renderedWidth": 830,
+          "renderedHeight": 480,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1146438
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 273.52,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 99136
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "48px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "complete": true,
+          "naturalWidth": 48,
+          "renderedWidth": 48,
+          "renderedHeight": 48,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 2524,
+          "decodedBodySize": 2524,
+          "transferSize": 2824,
+          "fileBytes": 2524
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "encodedBodySize": 2524,
+          "transferSize": 2824
+        }
+      ]
+    },
+    {
+      "label": "partner-expanded-tablet-768-1x",
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "complete": true,
+          "naturalWidth": 1249,
+          "renderedWidth": 722,
+          "renderedHeight": 420,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 481262
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 205.13,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 33112
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "48px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "complete": true,
+          "naturalWidth": 48,
+          "renderedWidth": 48,
+          "renderedHeight": 48,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 2524
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        }
+      ]
+    },
+    {
+      "label": "partner-expanded-mobile-390-1x",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "complete": true,
+          "naturalWidth": 1249,
+          "renderedWidth": 360,
+          "renderedHeight": 420,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 481262
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 205.13,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 33112
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "48px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "complete": true,
+          "naturalWidth": 48,
+          "renderedWidth": 48,
+          "renderedHeight": 48,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 2524
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-home-desktop-1440-1x",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "pathname": "/explore",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 767px) 640px, (max-width: 991px) calc(100vw - 48px), calc(100vw - 264px)",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "complete": true,
+          "naturalWidth": 1176,
+          "renderedWidth": 1172,
+          "renderedHeight": 165.58,
+          "loading": "eager",
+          "fetchPriority": "high",
+          "encodedBodySize": 481262,
+          "decodedBodySize": 481262,
+          "transferSize": 481562,
+          "fileBytes": 481262
+        },
+        {
+          "alt": "探索课程插画",
+          "src": "/assets/pixel-v1/web/course-voyage-320.webp",
+          "srcset": "/assets/pixel-v1/web/course-voyage-320.webp 320w, /assets/pixel-v1/web/course-voyage-640.webp 640w, /assets/pixel-v1/web/course-voyage-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 72px), (max-width: 1199px) 240px, 272px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "complete": true,
+          "naturalWidth": 272,
+          "renderedWidth": 252,
+          "renderedHeight": 172,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 113768,
+          "decodedBodySize": 113768,
+          "transferSize": 114068,
+          "fileBytes": 113768
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 1240,
+          "decodedBodySize": 1240,
+          "transferSize": 1540,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 481262,
+          "transferSize": 481562
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 1240,
+          "transferSize": 1540
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "encodedBodySize": 113768,
+          "transferSize": 114068
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-map-desktop-1440-1x",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "complete": true,
+          "naturalWidth": 1429,
+          "renderedWidth": 830,
+          "renderedHeight": 480,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 1146438,
+          "decodedBodySize": 1146438,
+          "transferSize": 1146738,
+          "fileBytes": 1146438
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 273.52,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 99136,
+          "decodedBodySize": 99136,
+          "transferSize": 99436,
+          "fileBytes": 99136
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 1146438,
+          "transferSize": 1146738
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "encodedBodySize": 59086,
+          "transferSize": 59386
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "encodedBodySize": 99136,
+          "transferSize": 99436
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-partner-expanded-desktop-1440-1x",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "complete": true,
+          "naturalWidth": 1429,
+          "renderedWidth": 830,
+          "renderedHeight": 480,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 1146438,
+          "decodedBodySize": 1146438,
+          "transferSize": 1146738,
+          "fileBytes": 1146438
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 273.52,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 99136,
+          "decodedBodySize": 99136,
+          "transferSize": 99436,
+          "fileBytes": 99136
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "48px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "complete": true,
+          "naturalWidth": 48,
+          "renderedWidth": 48,
+          "renderedHeight": 48,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 2524,
+          "decodedBodySize": 2524,
+          "transferSize": 2824,
+          "fileBytes": 2524
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 1146438,
+          "transferSize": 1146738
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "encodedBodySize": 59086,
+          "transferSize": 59386
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "encodedBodySize": 99136,
+          "transferSize": 99436
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "encodedBodySize": 2524,
+          "transferSize": 2824
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-home-desktop-1440-2x",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 2
+      },
+      "pathname": "/explore",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 767px) 640px, (max-width: 991px) calc(100vw - 48px), calc(100vw - 264px)",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "complete": true,
+          "naturalWidth": 1176,
+          "renderedWidth": 1172,
+          "renderedHeight": 165.58,
+          "loading": "eager",
+          "fetchPriority": "high",
+          "encodedBodySize": 1146438,
+          "decodedBodySize": 1146438,
+          "transferSize": 1146738,
+          "fileBytes": 1146438
+        },
+        {
+          "alt": "探索课程插画",
+          "src": "/assets/pixel-v1/web/course-voyage-320.webp",
+          "srcset": "/assets/pixel-v1/web/course-voyage-320.webp 320w, /assets/pixel-v1/web/course-voyage-640.webp 640w, /assets/pixel-v1/web/course-voyage-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 72px), (max-width: 1199px) 240px, 272px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-640.webp",
+          "complete": true,
+          "naturalWidth": 272,
+          "renderedWidth": 252,
+          "renderedHeight": 172,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 361932,
+          "decodedBodySize": 361932,
+          "transferSize": 362232,
+          "fileBytes": 361932
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 4342,
+          "decodedBodySize": 4342,
+          "transferSize": 4642,
+          "fileBytes": 4342
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 1146438,
+          "transferSize": 1146738
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "encodedBodySize": 4342,
+          "transferSize": 4642
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-640.webp",
+          "encodedBodySize": 361932,
+          "transferSize": 362232
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-map-desktop-1440-2x",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 2
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "complete": true,
+          "naturalWidth": 1429,
+          "renderedWidth": 830,
+          "renderedHeight": 480,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1146438
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-576.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 114054,
+          "decodedBodySize": 114054,
+          "transferSize": 114354,
+          "fileBytes": 114054
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-576.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 273.52,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 192988,
+          "decodedBodySize": 192988,
+          "transferSize": 193288,
+          "fileBytes": 192988
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-576.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 114054,
+          "decodedBodySize": 114054,
+          "transferSize": 114354,
+          "fileBytes": 114054
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 4342
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-576.webp",
+          "encodedBodySize": 114054,
+          "transferSize": 114354
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-576.webp",
+          "encodedBodySize": 192988,
+          "transferSize": 193288
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-partner-expanded-desktop-1440-2x",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 2
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "complete": true,
+          "naturalWidth": 1429,
+          "renderedWidth": 830,
+          "renderedHeight": 480,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1146438
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-576.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 114054,
+          "decodedBodySize": 114054,
+          "transferSize": 114354,
+          "fileBytes": 114054
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-576.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 273.52,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 192988,
+          "decodedBodySize": 192988,
+          "transferSize": 193288,
+          "fileBytes": 192988
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-576.webp",
+          "complete": true,
+          "naturalWidth": 256,
+          "renderedWidth": 256,
+          "renderedHeight": 233.94,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 114054,
+          "decodedBodySize": 114054,
+          "transferSize": 114354,
+          "fileBytes": 114054
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "48px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-96.webp",
+          "complete": true,
+          "naturalWidth": 48,
+          "renderedWidth": 48,
+          "renderedHeight": 48,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 9060,
+          "decodedBodySize": 9060,
+          "transferSize": 9360,
+          "fileBytes": 9060
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-576.webp",
+          "encodedBodySize": 114054,
+          "transferSize": 114354
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-576.webp",
+          "encodedBodySize": 192988,
+          "transferSize": 193288
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-96.webp",
+          "encodedBodySize": 9060,
+          "transferSize": 9360
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-home-mobile-390-1x",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "pathname": "/explore",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 767px) 640px, (max-width: 991px) calc(100vw - 48px), calc(100vw - 264px)",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-640.webp",
+          "complete": true,
+          "naturalWidth": 640,
+          "renderedWidth": 354,
+          "renderedHeight": 175.08,
+          "loading": "eager",
+          "fetchPriority": "high",
+          "encodedBodySize": 154088,
+          "decodedBodySize": 154088,
+          "transferSize": 154388,
+          "fileBytes": 154088
+        },
+        {
+          "alt": "探索课程插画",
+          "src": "/assets/pixel-v1/web/course-voyage-320.webp",
+          "srcset": "/assets/pixel-v1/web/course-voyage-320.webp 320w, /assets/pixel-v1/web/course-voyage-640.webp 640w, /assets/pixel-v1/web/course-voyage-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 72px), (max-width: 1199px) 240px, 272px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "complete": true,
+          "naturalWidth": 317,
+          "renderedWidth": 318,
+          "renderedHeight": 180,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 113768,
+          "decodedBodySize": 113768,
+          "transferSize": 114068,
+          "fileBytes": 113768
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 1240,
+          "decodedBodySize": 1240,
+          "transferSize": 1540,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-640.webp",
+          "encodedBodySize": 154088,
+          "transferSize": 154388
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 1240,
+          "transferSize": 1540
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-320.webp",
+          "encodedBodySize": 113768,
+          "transferSize": 114068
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-map-mobile-390-1x",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "complete": true,
+          "naturalWidth": 1249,
+          "renderedWidth": 360,
+          "renderedHeight": 420,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 481262,
+          "decodedBodySize": 481262,
+          "transferSize": 481562,
+          "fileBytes": 481262
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 19266,
+          "decodedBodySize": 19266,
+          "transferSize": 19566,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 205.13,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 33112,
+          "decodedBodySize": 33112,
+          "transferSize": 33412,
+          "fileBytes": 33112
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 19266,
+          "decodedBodySize": 19266,
+          "transferSize": 19566,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 1240
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 481262,
+          "transferSize": 481562
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "encodedBodySize": 19266,
+          "transferSize": 19566
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "encodedBodySize": 33112,
+          "transferSize": 33412
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-partner-expanded-mobile-390-1x",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "complete": true,
+          "naturalWidth": 1249,
+          "renderedWidth": 360,
+          "renderedHeight": 420,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 481262,
+          "decodedBodySize": 481262,
+          "transferSize": 481562,
+          "fileBytes": 481262
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 19266,
+          "decodedBodySize": 19266,
+          "transferSize": 19566,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 205.13,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 33112,
+          "decodedBodySize": 33112,
+          "transferSize": 33412,
+          "fileBytes": 33112
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 19266,
+          "decodedBodySize": 19266,
+          "transferSize": 19566,
+          "fileBytes": 19266
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "48px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "complete": true,
+          "naturalWidth": 48,
+          "renderedWidth": 48,
+          "renderedHeight": 48,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 2524,
+          "decodedBodySize": 2524,
+          "transferSize": 2824,
+          "fileBytes": 2524
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-32.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 481262,
+          "transferSize": 481562
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-192.webp",
+          "encodedBodySize": 19266,
+          "transferSize": 19566
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-192.webp",
+          "encodedBodySize": 33112,
+          "transferSize": 33412
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-48.webp",
+          "encodedBodySize": 2524,
+          "transferSize": 2824
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-home-mobile-390-2x",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 2
+      },
+      "pathname": "/explore",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 767px) 640px, (max-width: 991px) calc(100vw - 48px), calc(100vw - 264px)",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "complete": true,
+          "naturalWidth": 640,
+          "renderedWidth": 354,
+          "renderedHeight": 175.08,
+          "loading": "eager",
+          "fetchPriority": "high",
+          "encodedBodySize": 481262,
+          "decodedBodySize": 481262,
+          "transferSize": 481562,
+          "fileBytes": 481262
+        },
+        {
+          "alt": "探索课程插画",
+          "src": "/assets/pixel-v1/web/course-voyage-320.webp",
+          "srcset": "/assets/pixel-v1/web/course-voyage-320.webp 320w, /assets/pixel-v1/web/course-voyage-640.webp 640w, /assets/pixel-v1/web/course-voyage-960.webp 960w",
+          "sizes": "(max-width: 767px) calc(100vw - 72px), (max-width: 1199px) 240px, 272px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-640.webp",
+          "complete": true,
+          "naturalWidth": 317,
+          "renderedWidth": 318,
+          "renderedHeight": 180,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 361932,
+          "decodedBodySize": 361932,
+          "transferSize": 362232,
+          "fileBytes": 361932
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 4342,
+          "decodedBodySize": 4342,
+          "transferSize": 4642,
+          "fileBytes": 4342
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-1280.webp",
+          "encodedBodySize": 481262,
+          "transferSize": 481562
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "encodedBodySize": 4342,
+          "transferSize": 4642
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/course-voyage-640.webp",
+          "encodedBodySize": 361932,
+          "transferSize": 362232
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-map-mobile-390-2x",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 2
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "complete": true,
+          "naturalWidth": 1250,
+          "renderedWidth": 360,
+          "renderedHeight": 420,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 1146438,
+          "decodedBodySize": 1146438,
+          "transferSize": 1146738,
+          "fileBytes": 1146438
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 205.13,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 99136,
+          "decodedBodySize": 99136,
+          "transferSize": 99436,
+          "fileBytes": 99136
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "32px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "complete": true,
+          "naturalWidth": 32,
+          "renderedWidth": 32,
+          "renderedHeight": 32,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 0,
+          "decodedBodySize": 0,
+          "transferSize": 300,
+          "fileBytes": 4342
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 1146438,
+          "transferSize": 1146738
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "encodedBodySize": 59086,
+          "transferSize": 59386
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "encodedBodySize": 99136,
+          "transferSize": 99436
+        }
+      ]
+    },
+    {
+      "label": "fresh-context-partner-expanded-mobile-390-2x",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 2
+      },
+      "pathname": "/courses/1",
+      "images": [
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/hero-voyage-640.webp",
+          "srcset": "/assets/pixel-v1/web/hero-voyage-640.webp 640w, /assets/pixel-v1/web/hero-voyage-960.webp 960w, /assets/pixel-v1/web/hero-voyage-1280.webp 1280w, /assets/pixel-v1/web/hero-voyage-2162.webp 2162w",
+          "sizes": "(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "complete": true,
+          "naturalWidth": 1250,
+          "renderedWidth": 360,
+          "renderedHeight": 420,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 1146438,
+          "decodedBodySize": 1146438,
+          "transferSize": 1146738,
+          "fileBytes": 1146438
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "eager",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-relay-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-relay-192.webp 192w, /assets/pixel-v1/web/island-relay-384.webp 384w, /assets/pixel-v1/web/island-relay-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 205.13,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 99136,
+          "decodedBodySize": 99136,
+          "transferSize": 99436,
+          "fileBytes": 99136
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/island-observatory-192.webp",
+          "srcset": "/assets/pixel-v1/web/island-observatory-192.webp 192w, /assets/pixel-v1/web/island-observatory-384.webp 384w, /assets/pixel-v1/web/island-observatory-576.webp 576w",
+          "sizes": "(max-width: 991px) 192px, 256px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "complete": true,
+          "naturalWidth": 192,
+          "renderedWidth": 192,
+          "renderedHeight": 175.45,
+          "loading": "lazy",
+          "fetchPriority": "auto",
+          "encodedBodySize": 59086,
+          "decodedBodySize": 59086,
+          "transferSize": 59386,
+          "fileBytes": 59086
+        },
+        {
+          "alt": "",
+          "src": "/assets/pixel-v1/web/companion-cat-32.webp",
+          "srcset": "/assets/pixel-v1/web/companion-cat-32.webp 32w, /assets/pixel-v1/web/companion-cat-48.webp 48w, /assets/pixel-v1/web/companion-cat-64.webp 64w, /assets/pixel-v1/web/companion-cat-96.webp 96w, /assets/pixel-v1/web/companion-cat-144.webp 144w, /assets/pixel-v1/web/companion-cat-192.webp 192w",
+          "sizes": "48px",
+          "currentSrc": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-96.webp",
+          "complete": true,
+          "naturalWidth": 48,
+          "renderedWidth": 48,
+          "renderedHeight": 48,
+          "loading": "auto",
+          "fetchPriority": "auto",
+          "encodedBodySize": 9060,
+          "decodedBodySize": 9060,
+          "transferSize": 9360,
+          "fileBytes": 9060
+        }
+      ],
+      "imageResources": [
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-64.webp",
+          "encodedBodySize": 0,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/hero-voyage-2162.webp",
+          "encodedBodySize": 1146438,
+          "transferSize": 1146738
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-observatory-384.webp",
+          "encodedBodySize": 59086,
+          "transferSize": 59386
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/island-relay-384.webp",
+          "encodedBodySize": 99136,
+          "transferSize": 99436
+        },
+        {
+          "url": "http://127.0.0.1:5185/assets/pixel-v1/web/companion-cat-96.webp",
+          "encodedBodySize": 9060,
+          "transferSize": 9360
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Alert, Collapse, Descriptions, Empty, Grid, Space, Typography } from 'antd';
 import { courseAPI } from '../api';
@@ -10,16 +10,14 @@ import { groupsForCourse, studentTestConfigEnabled } from './config';
 import AssociatedExperiments from './AssociatedExperiments';
 import PixelIcon from './visual/PixelIcon';
 import { PixelButton, PixelImage, PixelPanel, PixelProgress, PixelTag } from './visual/PixelUI';
+import { pixelImageProps } from './visual/pixelAssets';
 import './visual/pixel-map.css';
 
 export { default as ExploreHome } from './ExploreHome';
 
 const grades = { primary: '小学', junior: '初中', senior: '高中' };
 const difficulties = { basic: '基础', advanced: '进阶', challenge: '挑战' };
-const sceneModules = [
-  { src: '/assets/pixel-v1/island-observatory.png', width: 1312, height: 1199 },
-  { src: '/assets/pixel-v1/island-relay.png', width: 1213, height: 1296 },
-];
+const sceneModules = ['island-observatory', 'island-relay'];
 
 function learningState(lesson) {
   if (lesson.status === 'cancelled') return { label: '已取消', tone: 'neutral' };
@@ -90,6 +88,71 @@ function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
   </PixelPanel>;
 }
 
+// Connections follow actual DOM positions, including wrapped titles and inline details.
+// They are decoration only: buttons retain all selection and keyboard behavior.
+function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey, onSelect, inlineDetails, details, hasNext }) {
+  const routeRef = useRef(null);
+  const [routePath, setRoutePath] = useState('');
+  useLayoutEffect(() => {
+    const route = routeRef.current;
+    let frame;
+    const draw = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const bounds = route.getBoundingClientRect();
+        const points = [...route.querySelectorAll('.pixel-map-node-marker')].map((marker) => {
+          const rect = marker.getBoundingClientRect();
+          return { x: rect.left - bounds.left + rect.width / 2, y: rect.top - bounds.top + rect.height / 2 };
+        });
+        setRoutePath(points.map((point, index) => {
+          if (!index) return `M ${point.x} ${point.y}`;
+          const previous = points[index - 1];
+          const middle = (point.x + previous.x) / 2;
+          return `L ${middle} ${previous.y} L ${middle} ${point.y} L ${point.x} ${point.y}`;
+        }).join(' '));
+      });
+    };
+    const observer = new ResizeObserver(draw);
+    observer.observe(route);
+    route.querySelectorAll('.pixel-map-route-stop').forEach((stop) => observer.observe(stop));
+    draw();
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
+  }, [group.key, group.lessons.length, inlineDetails]);
+
+  return <section className="route-group pixel-map-region" aria-label={group.title}>
+    <h4 className="pixel-map-region-title"><span className="pixel-map-region-index" aria-hidden="true">{String(groupIndex + 1).padStart(2, '0')}</span>{group.title}</h4>
+    <div className="pixel-map-platform">
+      <div className="pixel-map-region-landscape" aria-hidden="true">
+        <PixelImage {...pixelImageProps(sceneModules[groupIndex % sceneModules.length], '(max-width: 991px) 192px, 256px')} loading={groupIndex ? 'lazy' : 'eager'} className="pixel-map-island" imageStyle={{ objectFit: 'contain' }} fallback={<span />} />
+        <span className="pixel-map-platform-deck" />
+      </div>
+      <div ref={routeRef} className="pixel-map-route-canvas">
+        <svg className="pixel-map-route-track" aria-hidden="true"><path className="pixel-map-track-outline" d={routePath} /><path className="pixel-map-track-dashes" d={routePath} /></svg>
+      <ol className="pixel-map-route">
+        {group.lessons.map((lesson, index) => {
+          const state = learningState(lesson);
+          const isCurrent = current?.id === lesson.id;
+          const isSelected = selected?.id === lesson.id;
+          const row = Math.floor(index / 2);
+          const column = row % 2 ? (index % 2 ? 1 : 2) : (index % 2 ? 2 : 1);
+          return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.id} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 2 ? '0px' : '44px', '--stop-row': row + 1, '--stop-column': column }}>
+            <span className="pixel-map-stop-platform" aria-hidden="true" />
+            <button type="button" className="route-node" aria-current={isCurrent ? 'step' : undefined} aria-pressed={isSelected} aria-controls="selected-lesson-details"
+              aria-label={'第 ' + lesson.routeNumber + ' 关：' + lesson.title + '，' + state.label + (isCurrent ? '，当前课时' : '')}
+              onClick={() => onSelect({ key: selectionKey, lessonId: lesson.id })}>
+              <span className="pixel-map-node-marker"><span className="pixel-map-node-number">{lesson.routeNumber}</span>{state.tone === 'success' && <span className="pixel-map-complete-mark" aria-hidden="true"><PixelIcon name="check" size={24} /></span>}{isCurrent && <span className="pixel-map-current-flag">当前学习</span>}</span>
+              <span className="pixel-map-node-label"><strong>{lesson.title}</strong><PixelTag tone={state.tone}>{state.label}</PixelTag><span className="pixel-map-selection-hint">{isSelected ? '已选中 · 查看详情' : '选择此课时'}</span></span>
+            </button>
+            {inlineDetails && isSelected && details}
+          </li>;
+        })}
+      </ol>
+      </div>
+    </div>
+    {hasNext && <span className="pixel-map-region-bridge" aria-hidden="true"><PixelIcon name="continue" size={24} /></span>}
+  </section>;
+}
+
 export function CourseMap() {
   const { id } = useParams();
   const [params] = useSearchParams();
@@ -156,32 +219,9 @@ export function CourseMap() {
           </div>
           {!lessons.length ? <PixelPanel className="pixel-map-empty"><Empty description="这门课程还没有课时，请等待老师发布。" /></PixelPanel> : <div className="pixel-map-layout">
             <div className="pixel-map-stage" aria-label="课程关卡路线">
-              <PixelImage src="/assets/pixel-v1/hero-voyage.png" width={2162} height={727} className="pixel-map-sky" imageStyle={{ objectPosition: '70% 38%' }} fallback={<span />} />
+              <PixelImage {...pixelImageProps('hero-voyage', '(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw')} className="pixel-map-sky" imageStyle={{ objectPosition: '20% 20%' }} fallback={<span />} />
               <div className="pixel-map-route-content">
-                {groups.map((group, groupIndex) => {
-                  const scene = sceneModules[groupIndex % sceneModules.length];
-                  return <section key={group.key} className="route-group pixel-map-region" aria-label={group.title}>
-                    <h4 className="pixel-map-region-title">{group.title}</h4>
-                    <PixelImage {...scene} className="pixel-map-island" imageStyle={{ objectFit: 'contain' }} fallback={<span />} />
-                    <ol className="pixel-map-route" style={{ '--region-count': group.lessons.length }}>
-                      {group.lessons.map((lesson) => {
-                        const state = learningState(lesson);
-                        const isCurrent = current?.id === lesson.id;
-                        const isSelected = selected?.id === lesson.id;
-                        return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.id}>
-                          <button type="button" className="route-node" aria-current={isCurrent ? 'step' : undefined} aria-pressed={isSelected} aria-controls="selected-lesson-details"
-                            aria-label={'第 ' + lesson.routeNumber + ' 关：' + lesson.title + '，' + state.label + (isCurrent ? '，当前课时' : '')}
-                            onClick={() => setSelection({ key: selectionKey, lessonId: lesson.id })}>
-                            <span className="pixel-map-node-marker"><span className="pixel-map-node-number">{lesson.routeNumber}</span>{isCurrent && <span className="pixel-map-current-flag">当前</span>}</span>
-                            <span className="pixel-map-node-label"><strong>{lesson.title}</strong><PixelTag tone={state.tone}>{state.label}</PixelTag></span>
-                          </button>
-                          {!screens.lg && isSelected && details}
-                        </li>;
-                      })}
-                    </ol>
-                    {groupIndex < groups.length - 1 && <span className="pixel-map-region-bridge" aria-hidden="true"><PixelIcon name="continue" size={16} /></span>}
-                  </section>;
-                })}
+                {groups.map((group, groupIndex) => <CourseRouteRegion key={group.key} group={group} groupIndex={groupIndex} current={current} selected={selected} selectionKey={selectionKey} onSelect={setSelection} inlineDetails={!screens.lg} details={details} hasNext={groupIndex < groups.length - 1} />)}
               </div>
               <p className="pixel-map-route-note">路线表示学习顺序，可用课时都能进入。</p>
             </div>

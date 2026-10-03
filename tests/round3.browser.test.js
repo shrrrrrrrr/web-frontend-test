@@ -12,7 +12,8 @@ const root = path.resolve(import.meta.dirname, '..');
 const require = createRequire(path.join(root, 'backend/package.json'));
 const Database = require('better-sqlite3');
 const scratch = mkdtempSync(path.join(tmpdir(), 'star-voyage-round3-'));
-const shots = path.join(root, 'docs/round-03/screenshots');
+// Historical deliverables stay immutable; later regressions write disposable output.
+const shots = path.join(root, 'test-results/round3/screenshots');
 const base = 'http://127.0.0.1:5184';
 const apiBase = 'http://127.0.0.1:3122';
 const env = { ...process.env, NODE_ENV: 'test', DB_PATH: path.join(scratch, 'round3.db'),
@@ -33,7 +34,10 @@ async function waitFor(url) {
 async function readyImageLayout(page) {
   await page.evaluate(async () => {
     await document.fonts.ready;
-    await Promise.all([...document.images].map((image) => image.complete
+    await Promise.all([...document.images].filter((image) => {
+      const rect = image.getBoundingClientRect();
+      return rect.bottom > 0 && rect.top < innerHeight && rect.width > 0;
+    }).map((image) => image.complete
       ? Promise.resolve() : new Promise((resolve) => { image.addEventListener('load', resolve, { once: true }); image.addEventListener('error', resolve, { once: true }); })));
   });
   await page.waitForTimeout(200);
@@ -254,6 +258,7 @@ test('第三轮：原创像素双页样板和公共布局验收', { timeout: 240
 
     await t.test('伙伴收起重开与原助手入口，小屏报告表单保留且不被遮挡', async () => {
       await home();
+      await page.getByRole('button', { name: '打开学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '收起学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '打开学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '向灵境小智提问', exact: true }).click();
@@ -263,6 +268,7 @@ test('第三轮：原创像素双页样板和公共布局验收', { timeout: 240
       await page.setViewportSize({ width: 390, height: 844 });
       await page.getByLabel('学习总结', { exact: true }).fill('第三轮视觉验收草稿；共用布局不能改变保存和提交规则。');
       await noPartnerObstruction(page, page.getByLabel('学习总结', { exact: true }));
+      await page.getByRole('button', { name: '打开学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '收起学习伙伴', exact: true }).click();
       await noPartnerObstruction(page, page.getByRole('button', { name: '提交学习报告与反思', exact: true }));
       await page.reload();
@@ -315,10 +321,17 @@ test('第三轮：原创像素双页样板和公共布局验收', { timeout: 240
     await t.test('素材组件预览可浏览，学生主题不污染管理员页面', async () => {
       await page.goto(`${base}/__pixel-preview`);
       await page.getByRole('heading', { name: /素材|组件/ }).first().waitFor();
+      // 网页预览按需加载派生图，原始母版通过独立链接保留。
+      for (const figure of await page.locator('.pixel-preview-asset').all()) {
+        await figure.scrollIntoViewIfNeeded();
+        await readyImageLayout(page);
+      }
+      await page.evaluate(() => window.scrollTo(0, 0));
       await readyImageLayout(page);
       const pixelImages = await page.locator('img[src*="/assets/pixel-v1/"]').evaluateAll((images) => images.map((image) => ({ src: image.getAttribute('src'), ok: image.complete && image.naturalWidth > 0 })));
       for (const asset of ['hero-voyage.png', 'course-voyage.png', 'island-observatory.png', 'island-relay.png', 'planet-ring-v2.png', 'companion-cat.png']) {
-        assert.ok(pixelImages.some((image) => image.src.endsWith(asset)), `预览展示原创素材：${asset}`);
+        assert.ok(pixelImages.some((image) => image.src.includes(`/web/${asset.replace('.png', '')}-`)), `预览展示原创素材的网页版本：${asset}`);
+        assert.equal(await page.locator(`a[href="/assets/pixel-v1/${asset}"]`).count(), 1, `原始母版仍可查看：${asset}`);
       }
       assert.ok(pixelImages.every((image) => image.ok), `预览图片加载成功：${JSON.stringify(pixelImages)}`);
       await page.screenshot({ path: path.join(shots, '10-asset-component-preview.png'), fullPage: true, animations: 'disabled' });

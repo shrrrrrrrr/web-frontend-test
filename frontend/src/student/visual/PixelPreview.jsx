@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Alert } from 'antd';
 import { PixelButton, PixelImage, PixelPanel, PixelProgress, PixelTag } from './PixelUI';
 import PixelIcon from './PixelIcon';
+import { pixelImageProps } from './pixelAssets';
 
 const icons = ['map', 'lab', 'archive', 'continue', 'back', 'notification', 'coin', 'help', 'user', 'close', 'menu', 'chevron-down', 'check', 'clock', 'pin', 'book', 'cat'];
 const assets = [
@@ -40,8 +41,8 @@ export default function PixelPreview() {
     <PixelPanel><div className="pixel-preview-row">{icons.map((name) => <div className="pixel-preview-icon" key={name}><PixelIcon name={name} size={48} /><span>{name}</span></div>)}</div></PixelPanel>
     <h2>成套场景与伙伴</h2>
     <div className="pixel-preview-assets">{assets.map((asset) => <PixelPanel as="figure" className="pixel-preview-asset" key={asset.file}>
-      <PixelImage src={`/assets/pixel-v1/${asset.file}`} alt={asset.title} width={4} height={3} loading="lazy" />
-      <figcaption><strong>{asset.title}</strong><div>{asset.file}</div><p>{asset.note}</p></figcaption>
+      <PixelImage {...pixelImageProps(asset.file.replace('.png', ''), '(max-width: 600px) calc(100vw - 80px), 320px')} alt={asset.title} width={4} height={3} loading="lazy" />
+      <figcaption><strong>{asset.title}</strong><div><a href={`/assets/pixel-v1/${asset.file}`} target="_blank" rel="noreferrer">{asset.file} · 查看母版</a></div><p>{asset.note}</p></figcaption>
     </PixelPanel>)}</div>
   </div>;
 }

@@ -8,10 +8,11 @@ import { buildHomeTodos, filterCourses, nextScheduledLesson } from './homeModel'
 import { loadExploreHome } from './homeData';
 import { PixelButton, PixelImage, PixelPanel, PixelProgress, PixelTag } from './visual/PixelUI';
 import PixelIcon from './visual/PixelIcon';
+import { pixelImageProps } from './visual/pixelAssets';
 import './visual/pixel-home.css';
 
 const fetchHome = () => loadExploreHome({ courseAPI, taskAPI });
-const assets = '/assets/pixel-v1/';
+const coverSizes = '(max-width: 767px) calc(100vw - 72px), (max-width: 1199px) 240px, 272px';
 const reportLabels = { approved: '报告已通过', submitted: '报告待评审', rejected: '报告需修改' };
 const workLabels = { approved: '作品已通过', pending: '作品待评审', rejected: '作品需修改' };
 const grades = { primary: '小学', junior: '初中', senior: '高中' };
@@ -47,13 +48,14 @@ function NextLesson({ lesson }) {
   }]} />;
 }
 
-function CourseCard({ course, detail }) {
+function CourseCard({ course, detail, first }) {
   const navigate = useNavigate();
   return <PixelPanel as="article" className="home-course-card" data-testid="home-course-card">
     <div className="home-course-cover">
-      <PixelImage src={course.cover_image || `${assets}course-voyage.png`} width={1536} height={1024}
+      <PixelImage {...(course.cover_image ? { src: course.cover_image, width: 1536, height: 1024, decoding: 'async' } : pixelImageProps('course-voyage', coverSizes))}
+        loading={first ? 'eager' : 'lazy'} fetchPriority={first ? 'auto' : 'low'}
         alt={course.cover_image ? `${course.title}封面` : '探索课程插画'}
-        fallback={<PixelImage src={`${assets}course-voyage.png`} alt="探索课程插画" width={1536} height={1024} />} />
+        fallback={<PixelImage {...pixelImageProps('course-voyage', coverSizes)} alt="探索课程插画" />} />
       {!course.cover_image && <span className="home-cover-label">探索课程</span>}
     </div>
     <div className="home-course-copy">
@@ -77,7 +79,7 @@ export default function ExploreHome() {
   const nextLesson = nextScheduledLesson(data?.courseDetails);
   return <div className="pixel-home">
     <header className="home-horizon">
-      <PixelImage className="home-horizon-image" src={`${assets}hero-voyage.png`} width={2162} height={727} alt="" fetchPriority="high" />
+      <PixelImage className="home-horizon-image" {...pixelImageProps('hero-voyage', '(max-width: 767px) 640px, (max-width: 991px) calc(100vw - 48px), calc(100vw - 264px)')} alt="" loading="eager" fetchPriority="high" />
       <div className="home-horizon-copy"><span className="home-eyebrow">STAR VOYAGE / 2057</span><h1>探索地图</h1><p>选择课程，继续你的探索。课程由老师分配。</p></div>
       <span className="home-horizon-label" aria-hidden="true">KEEP EXPLORING</span>
     </header>
@@ -99,7 +101,7 @@ export default function ExploreHome() {
         </div>
         {!data?.courses.length ? <PixelPanel><Empty description="老师还没有为你分配已发布的课程，请联系老师。" /></PixelPanel>
           : !courses.length ? <PixelPanel><Empty description="没有找到匹配的课程，请换个词或清空搜索。" /></PixelPanel>
-            : <div className="home-course-list">{courses.map((course) => <CourseCard key={course.id} course={course} detail={data?.courseDetails.find((entry) => String(entry.course.id) === String(course.id))} />)}</div>}
+            : <div className="home-course-list">{courses.map((course, index) => <CourseCard key={course.id} course={course} first={index === 0} detail={data?.courseDetails.find((entry) => String(entry.course.id) === String(course.id))} />)}</div>}
       </section>
       <div className="home-secondary"><NextLesson lesson={nextLesson} /><nav aria-label="学习快捷入口"><Link to="/tasks">课后任务</Link><Link to="/works">我的作品</Link><Link to="/archives/reflection">反思日志</Link></nav></div>
     </AsyncPageState>

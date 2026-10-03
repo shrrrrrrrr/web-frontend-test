@@ -98,7 +98,8 @@ function Shell({ children }) {
   const screens = Grid.useBreakpoint();
   const compact = !screens.lg;
   const [navigationOpen, setNavigationOpen] = useState(false);
-  return <div className="student-shell">
+  const { pathname } = useLocation();
+  return <div className={`student-shell${pathname !== '/change-password' ? ' student-shell--partner' : ''}${pathname === '/glider' ? ' student-shell--experiment' : ''}`}>
     {!compact && <aside className="student-sidebar"><StudentNavigation /></aside>}
     <div className="student-shell-main">
       <StudentHeader compact={compact} navigationOpen={navigationOpen} onOpenNavigation={() => setNavigationOpen(true)} />

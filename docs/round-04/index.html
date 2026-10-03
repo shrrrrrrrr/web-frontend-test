@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>星海远航 · 第三 / 四轮视觉对比</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f0e4c6;color:#102d40;font:16px/1.65 "Microsoft YaHei",sans-serif}
+    header{padding:32px max(20px,calc((100vw - 1440px)/2));background:#102d40;color:#fff9e9}h1{font-size:28px;margin:0 0 12px}h2{font-size:23px;margin:0 0 16px}h3{font-size:18px;margin:0 0 12px}p{margin:8px 0}header a{color:#bceadb}main{max-width:1480px;margin:auto;padding:24px 20px}a{color:#087f78}a:focus-visible,select:focus-visible{outline:3px solid #087f78;outline-offset:3px}
+    .controls{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin:0 0 24px}select{font:inherit;padding:8px;background:#fff9e9;border:2px solid #102d40}section{margin:0 0 32px;padding:20px;background:#fff9e9;border:2px solid #102d40}figure{margin:0;min-width:0}figcaption{margin:0 0 8px;font-weight:bold}.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}.shot{display:block;max-width:100%;height:auto;margin:auto;border:1px solid #b8c7c9}.mobile .shot{max-height:760px}.tablet .shot{max-height:900px}.note{font-size:14px;color:#526974}.new{color:#06675f}.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}.checks figure{padding:12px;background:#f0e4c6}.checks .shot{max-height:640px}.asset-row{display:flex;align-items:center;flex-wrap:wrap;gap:24px}.checker{display:flex;align-items:center;justify-content:center;min-width:120px;min-height:120px;background:repeating-conic-gradient(#d9e4e5 0% 25%,#fff9e9 0% 50%) 50%/16px 16px}.checker img{image-rendering:pixelated;object-fit:contain}.dark{background:#102d40}.assets figure{max-width:340px}.assets figcaption{font-size:14px}code{overflow-wrap:anywhere}[hidden]{display:none!important}@media(max-width:700px){.pair{grid-template-columns:1fr}header{padding:24px 20px}h1{font-size:24px}section{padding:14px}main{padding:20px 12px}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>晴空观测站 · 视觉精修对比</h1>
+    <p>第四轮 / 2026-10-03 · 保留真实学习流程，等待视觉验收</p>
+    <p>本页展示本地 Edge 的真实浏览器截图。所有课程、学生、章节与长标题均为隔离测试数据。</p>
+    <p><a href="../round-04.md">完整交付说明与验证结果</a> · <a href="../round-03/index.html">第三轮原始图集</a> · <a href="resource-usage.json">实际图片资源记录</a></p>
+  </header>
+  <main>
+    <div class="controls"><label for="viewport">选择验收尺寸</label><select id="viewport"><option value="desktop-1440">桌面 1440×900</option><option value="tablet-768">平板 768×1024</option><option value="mobile-390">窄屏 390×844</option></select><span class="note">点击截图查看原始尺寸。默认首屏未滚动、未局部裁切。</span></div>
+    <div id="comparisons"></div>
+    <section>
+      <h2>长地图与学习伙伴</h2>
+      <p>16 个真实测试课时，含未分组课时。以下为滚动后的视口，分别展示收起和展开状态；不与五课时首屏混作同一状态。</p>
+      <div id="long-map"></div>
+    </section>
+    <section>
+      <h2>长标题与就近详情</h2>
+      <p>选择长标题测试课时后的滚动视口。编号与真实标题保留，窄屏详情接在选中节点之后。</p>
+      <div id="long-title"></div>
+    </section>
+    <section>
+      <h2>表单、弹层与原实验</h2>
+      <p class="note">这些页面仅检查公共壳与伙伴是否影响原操作，未扩展主体视觉设计。</p>
+      <div class="checks">
+        <figure><figcaption>窄屏通知弹层 / 操作后</figcaption><a href="screenshots/06-notifications-mobile-390.png"><img class="shot" loading="lazy" src="screenshots/06-notifications-mobile-390.png" alt="390px 通知弹层，学习伙伴位于底部"></a></figure>
+        <figure><figcaption>窄屏报告表单 / 滚动后</figcaption><a href="screenshots/07-report-form-mobile-390.png"><img class="shot" loading="lazy" src="screenshots/07-report-form-mobile-390.png" alt="390px 报告表单与底部学习伙伴"></a></figure>
+        <figure><figcaption>报告确认框 / 打开后</figcaption><a href="screenshots/08-report-confirm-mobile-390.png"><img class="shot" loading="lazy" src="screenshots/08-report-confirm-mobile-390.png" alt="390px 报告确认框位于伙伴上方"></a></figure>
+        <figure><figcaption>原实验控制 / 滚动后</figcaption><a href="screenshots/09-experiment-controls-mobile-390.png"><img class="shot" loading="lazy" src="screenshots/09-experiment-controls-mobile-390.png" alt="390px 原滑翔机控制及展开伙伴"></a></figure>
+      </div>
+      <p><a href="screenshots/06-notifications-desktop-1440.png">桌面通知</a> · <a href="screenshots/10-cover-fallback-desktop-1440.png">后端封面失败回退</a></p>
+    </section>
+    <section class="assets">
+      <h2>相同母版，合适的网页尺寸</h2>
+      <p>最近邻缩放 + 无损 WebP，保留透明边缘。下方小猫按实际 CSS 尺寸显示，可在浅底与深底检查轮廓；母版链接保留。</p>
+      <div class="asset-row">
+        <figure><div class="checker"><img src="../../frontend/public/assets/pixel-v1/web/companion-cat-64.webp" width="32" height="32" alt="收起状态32像素小猫"></div><figcaption>收起 32 CSS px<br>2× 版本 4,342 B</figcaption></figure>
+        <figure><div class="checker dark"><img src="../../frontend/public/assets/pixel-v1/web/companion-cat-96.webp" width="48" height="48" alt="展开状态48像素小猫"></div><figcaption>展开 48 CSS px<br>2× 版本 9,060 B</figcaption></figure>
+        <figure><div class="checker"><img src="../../frontend/public/assets/pixel-v1/web/island-observatory-384.webp" width="192" height="175" alt="观测浮岛透明边缘预览"></div><figcaption>窄屏浮岛 192 CSS px<br>2× 版本 59,086 B</figcaption></figure>
+        <figure><img class="shot" src="../../frontend/public/assets/pixel-v1/web/course-voyage-320.webp" width="320" height="213" alt="通用科研群岛封面"><figcaption>通用封面 320w / 113,768 B<br>后端提供封面时优先用真实封面</figcaption></figure>
+      </div>
+      <p><a href="../../frontend/public/assets/pixel-v1/companion-cat.png">小猫母版 814,710 B</a> · <a href="../../frontend/public/assets/pixel-v1/course-voyage.png">封面母版 1,901,454 B</a> · <a href="../../frontend/public/assets/pixel-v1/manifest.json">完整素材清单</a></p>
+      <p class="note">图像字节变化不代表测得的加载时间改善。实际选择与缓存记录见资源 JSON。</p>
+    </section>
+  </main>
+  <script>
+    const sizes = [
+      {id:'desktop-1440', name:'1440×900 桌面', cls:'desktop', oldHome:'01-home-desktop-1440.png', oldMap:'02-map-desktop-1440.png'},
+      {id:'tablet-768', name:'768×1024 平板', cls:'tablet', oldHome:'04-home-tablet-768.png', oldMap:'05-map-tablet-768.png'},
+      {id:'mobile-390', name:'390×844 窄屏', cls:'mobile', oldHome:'04-home-mobile-390.png', oldMap:'05-map-mobile-390.png'}
+    ];
+    function figure(url, label) {
+      const node=document.createElement('figure'),caption=document.createElement('figcaption'),link=document.createElement('a'),img=document.createElement('img');
+      caption.textContent=label; link.href=url; img.src=url; img.alt=label; img.className='shot'; img.loading='lazy'; link.append(img); node.append(caption,link); return node;
+    }
+    for (const size of sizes) {
+      const panel=document.createElement('div'); panel.dataset.size=size.id; panel.className=size.cls;
+      for (const [name,oldFile,newFile] of [['探索首页',size.oldHome,'01-home'],['课程地图',size.oldMap,'02-map']]) {
+        const section=document.createElement('section'),title=document.createElement('h2'),pair=document.createElement('div');
+        title.textContent=`${name} · ${size.name} · 默认首屏`; pair.className='pair';
+        pair.append(figure(`../round-03/screenshots/${oldFile}`,'第三轮 · d503fde'),figure(`screenshots/${newFile}-${size.id}.png`,'第四轮 · 精修后'));
+        section.append(title,pair); panel.append(section);
+      }
+      const detail=document.createElement('section'),heading=document.createElement('h2');heading.textContent=`${size.name} · 选中课时详情 / 操作后`;
+      detail.append(heading,figure(`screenshots/03-map-selected-${size.id}.png`,'第四轮 · 实际选中状态'));panel.append(detail);document.querySelector('#comparisons').append(panel);
+      const long=document.createElement('div');long.dataset.size=size.id;long.className=`pair ${size.cls}`;
+      long.append(figure(`screenshots/04-long-map-compact-${size.id}.png`,`${size.name} · 滚动后 / 伙伴收起`),figure(`screenshots/05-long-map-expanded-${size.id}.png`,`${size.name} · 滚动后 / 伙伴展开`));document.querySelector('#long-map').append(long);
+      const title=document.createElement('div');title.dataset.size=size.id;title.className=size.cls;title.append(figure(`screenshots/11-long-title-${size.id}.png`,`${size.name} · 长标题课时 / 滚动后`));document.querySelector('#long-title').append(title);
+    }
+    function choose() { for(const node of document.querySelectorAll('[data-size]'))node.hidden=node.dataset.size!==document.querySelector('#viewport').value; }
+    document.querySelector('#viewport').addEventListener('change',choose);choose();
+  </script>
+</body>
+</html>

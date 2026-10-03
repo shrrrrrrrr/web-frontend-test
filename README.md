@@ -1,6 +1,6 @@
 # 星海远航 · 学生端功能框架
 
-本项目使用 React / Vite / Ant Design / React Router / Axios，沿用原前后端锁文件。第三轮已制作「晴空观测站」原创像素素材和探索首页、课程地图两张视觉样板，等待视觉方向确认。最新截图、验证与素材来源见 [第三轮交付](docs/round-03.md)，视觉约束见 [DESIGN.md](DESIGN.md)。原项目引用见 [SOURCE.md](SOURCE.md)，此前记录见 [第二轮](docs/round-02.md) 和 [第一轮](docs/round-01.md)。
+本项目使用 React / Vite / Ant Design / React Router / Axios，沿用原前后端锁文件。第四轮已精修「晴空观测站」地图场景、随时可达的学习伙伴及网页图片版本，停在视觉验收阶段。最新结果见 [第四轮交付](docs/round-04.md) 和 [第三/四轮对比图集](docs/round-04/index.html)，视觉约束见 [DESIGN.md](DESIGN.md)。原项目引用见 [SOURCE.md](SOURCE.md)，此前记录见 [第三轮](docs/round-03.md)、[第二轮](docs/round-02.md) 和 [第一轮](docs/round-01.md)。
 
 ## 本地启动
 
@@ -51,11 +51,12 @@ npm run test:e2e
 npm run test:e2e:round2
 npm run test:e2e:access
 npm run test:e2e:round3
+npm run test:e2e:round4
 ```
 
-浏览器测试使用本机 Edge、临时 SQLite 和独立浏览器上下文，不连接生产服务。四个套件分别使用端口 3117/5179、3118/5180、3120/5182、3122/5184。首个回归套件需先安装上述参考引擎依赖；其余套件不运行物理试飞。失败截图及第二轮重新验证截图保存在忽略提交的 `test-results/`，不会覆盖历史第二轮交付图。第三轮验收截图保存在 `docs/round-03/screenshots/`。测试会自动关闭它启动的服务。后端未变时无需重复运行全部后端测试。
+浏览器测试使用本机 Edge、临时 SQLite 和独立浏览器上下文，不连接生产服务。五个套件分别使用端口 3117/5179、3118/5180、3120/5182、3122/5184、3123/5185。首个回归套件需先安装上述参考引擎依赖；其余套件不运行物理试飞。失败截图及第二、三轮重跑截图保存在忽略提交的 `test-results/`，不覆盖历史交付图。第四轮截图及实际图片资源记录保存在 `docs/round-04/`。测试会自动关闭它启动的服务。后端未变时无需重复运行全部后端测试。
 
-学生登录后可在开发服务器访问 `http://127.0.0.1:5173/__pixel-preview` 浏览原创素材及组件状态。该路由不进入生产构建，也不加入正式学生导航。生成本轮合成课程样板截图使用 `npm run test:e2e:round3`，无需重置开发库。
+学生登录后可在开发服务器访问 `http://127.0.0.1:5173/__pixel-preview` 浏览原创素材及组件状态。该路由不进入生产构建，也不加入正式学生导航。生成本轮合成课程样板截图使用 `npm run test:e2e:round4`，无需重置开发库。网页图片已提交，日常启动无需重新生成；复现派生文件可用现有 Pillow 环境运行 `.\.venv\Scripts\python.exe scripts/build-pixel-web-assets.py`，不会改写 PNG 母版。
 
 ## 接入状态
 
