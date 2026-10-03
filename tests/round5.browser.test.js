@@ -12,7 +12,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const require = createRequire(path.join(root, 'backend/package.json'));
 const Database = require('better-sqlite3');
 const scratch = mkdtempSync(path.join(tmpdir(), 'star-voyage-round5-'));
-const shots = path.join(root, 'docs/round-05/screenshots');
+const shots = path.join(root, process.env.ROUND5_CAPTURE_DELIVERY === '1' ? 'docs/round-05/screenshots' : 'test-results/round5');
 const base = 'http://127.0.0.1:5186';
 const apiBase = 'http://127.0.0.1:3124';
 const env = { ...process.env, NODE_ENV: 'test', DB_PATH: path.join(scratch, 'round5.db'),
@@ -142,11 +142,17 @@ test('第五轮：真实学习与作品提交、版本、反馈及学生视觉',
         if (i === 0) await section.getByRole('radio', { name: '猜测结果', exact: true }).check();
         if (i === 1) {
           for (const option of ['条件', '结果']) {
-            await section.getByText(option, { exact: true }).click();
-            assert.ok(await section.getByRole('checkbox', { name: option, exact: true }).isChecked());
+            const checkbox = section.getByRole('checkbox', { name: option, exact: true });
+            await checkbox.focus(); await checkbox.press('Space');
+            await page.waitForFunction((element) => element.checked, await checkbox.elementHandle());
+            assert.ok(await checkbox.isChecked());
           }
         }
-        if (i === 2) await section.getByRole('radio', { name: '正确', exact: true }).check();
+        if (i === 2) {
+          const radio = section.getByRole('radio', { name: '正确', exact: true });
+          await radio.focus(); await radio.press('Space');
+          await page.waitForFunction((element) => element.checked, await radio.elementHandle());
+        }
         if (i >= 3) await section.getByPlaceholder('填写答案').fill(i === 3 ? '结果' : '证据');
         await section.getByRole('button', { name: '提交答案', exact: true }).click();
         await section.getByText(i === 0 ? '已作答，本题回答不正确' : '回答正确', { exact: true }).waitFor();

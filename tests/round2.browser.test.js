@@ -138,8 +138,8 @@ test('第二轮：待办、课时路线、实验定位和局部错误', { timeou
       await page.getByRole('button', { name: '滑翔机实验（测试关联）', exact: true }).click();
       await page.waitForURL('**/glider?**');
       await page.getByRole('button', { name: /返回来源课程/ }).waitFor();
-      await page.getByText('功能验收课程（测试数据）', { exact: true }).waitFor();
-      await page.getByText('认识月球环境', { exact: true }).waitFor();
+      await page.locator('.flight-context').getByText('功能验收课程（测试数据）', { exact: true }).waitFor();
+      await page.locator('.flight-context').getByText('认识月球环境', { exact: true }).waitFor();
       await page.waitForFunction(() => !document.body.innerText.includes('正在检测实验环境'));
       await page.screenshot({ path: path.join(shots, '05-experiment.png'), fullPage: true, animations: 'disabled' });
       await page.getByRole('button', { name: /返回来源课程/ }).click();
@@ -150,6 +150,7 @@ test('第二轮：待办、课时路线、实验定位和局部错误', { timeou
       await page.getByRole('heading', { name: '空间规划设计', exact: true }).waitFor();
       assert.equal(await page.getByRole('button', { name: /滑翔机实验/ }).count(), 0);
       await page.goto(`${base}/glider`);
+      await page.getByText('关联课程 / 课时（可选）', { exact: true }).click();
       await page.getByText('关联课程（可选）', { exact: true }).waitFor();
       await page.getByText('独立实验（不关联课程）', { exact: true }).waitFor();
       await page.getByText('选择课时', { exact: true }).waitFor();

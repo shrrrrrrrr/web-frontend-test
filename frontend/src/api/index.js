@@ -78,7 +78,7 @@ export const studentAPI = {
 };
 
 export const workAPI = {
-  list: (params) => client.get('/works', { params }),
+  list: (params, options = {}) => client.get('/works', { ...options, params }),
   uploadOptions: () => client.get('/works/upload-options'),
   // 不能手动指定 multipart Content-Type：浏览器需要自行补充 boundary，
   // 否则 Multer 无法解析附件字段。

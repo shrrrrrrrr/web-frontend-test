@@ -1,40 +1,21 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
-  Row, Col, Card, Form, InputNumber, Button, Tag, Space, Spin, message,
-  Statistic, Alert, List, Typography, Empty, Result, Select, Divider,
+  Row, Col, Card, Form, Button, Tag, Space, Spin, message,
+  Statistic, Alert, List, Typography, Empty, Result,
 } from 'antd';
-import { ArrowLeftOutlined, RocketOutlined, ThunderboltOutlined } from '@ant-design/icons';
+import { ArrowLeftOutlined, RocketOutlined } from '@ant-design/icons';
 import { gliderAPI } from '../../api/glider';
 import { courseAPI, learningAPI } from '../../api';
 import { formatBeijingTime } from '../../utils/date';
 import { useAuth } from '../../store/AuthContext';
 import { resolveExperimentReturn } from '../../student/experimentContext';
+import useGliderRecords from './useGliderRecords';
+import { stateMeta, STATE_TIPS } from './gliderModel';
+import StudentGliderWorkspace from '../../student/StudentGliderWorkspace';
 import { STUDENT_COURSES_CHANGED } from '../../student/accessPolicy';
 
 const { Title, Text } = Typography;
-
-const STATE_META = {
-  ok: { color: 'green', label: '正常滑翔' },
-  landed: { color: 'blue', label: '成功着陆' },
-  hard_landing: { color: 'orange', label: '重着陆（触地过快）' },
-  'crashed(roll)': { color: 'red', label: '横滚失控坠毁' },
-  'stalled/slow': { color: 'orange', label: '失速下坠' },
-  timedout: { color: 'default', label: '超时结束' },
-};
-
-const STATE_TIPS = {
-  ok: '滑翔机在设定时间内稳定飞行，气动布局比较合适，可以试试更高更远的目标。',
-  landed: '飞机平稳落地，这是一次成功的试飞！',
-  hard_landing: '飞机下降太快，重重地“砸”在了地面上。试试把平尾偏角调小一些，或增大机翼、减轻重量。',
-  'crashed(roll)': '飞机发生了横滚失控。试试增大机翼上反角、把重心往前移，或适当提高投放速度。',
-  'stalled/slow': '飞机失速下坠了。试试把重心往前移一些、减小平尾上抬角度，或提高一点投放速度。',
-  timedout: '在设定时间内飞行稳定、没有落地。',
-};
-
-function stateMeta(state) {
-  return STATE_META[state] || { color: 'default', label: state || '—' };
-}
 
 export default function GliderSimulator() {
   const navigate = useNavigate();
@@ -45,16 +26,12 @@ export default function GliderSimulator() {
   const sourceKey = JSON.stringify([sourceCourse, sourceLesson, requestedReturn]);
   const { user } = useAuth();
   const [form] = Form.useForm();
-  const [history, setHistory] = useState([]);
-  const [loadingHistory, setLoadingHistory] = useState(true);
-  const [viewingId, setViewingId] = useState(null);
-  const [viewing, setViewing] = useState(null);
+  const records = useGliderRecords();
+  const { history, loadingHistory, historyError, loadHistory, viewingId, viewing, waitSec, pollFailed, pollTimedOut, openRecord, revision } = records;
   const [img, setImg] = useState({ trajectory: null, telemetry: null, video: null });
   const [resultFileError, setResultFileError] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const [waitSec, setWaitSec] = useState(0);
-  const [pollFailed, setPollFailed] = useState(false);
-  const [pollTimedOut, setPollTimedOut] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [engineInfo, setEngineInfo] = useState(null);
   const [engineError, setEngineError] = useState(null);
   // 试飞课程/课时关联（决策 D-7）
@@ -81,13 +58,7 @@ export default function GliderSimulator() {
     } finally { setReturning(false); }
   };
 
-  const loadHistory = async () => {
-    try {
-      const res = await gliderAPI.list();
-      setHistory(res.items || []);
-    } catch { setHistory([]); message.error('加载试飞记录失败，请重试'); }
-  };
-
+  const [engineAttempt, setEngineAttempt] = useState(0);
   // 进入页面检测引擎就绪状态（结果缓存于后端 60s）
   // 注意：探测失败不能静默吞掉——否则按钮看似可用、点击却毫无反应，排查成本极高
   useEffect(() => {
@@ -100,19 +71,7 @@ export default function GliderSimulator() {
         setEngineError(err?.response?.data?.error || err?.message || '无法获取实验环境状态');
       });
     return () => { alive = false; };
-  }, []);
-
-  // 进入页面加载我的试飞记录（延迟一拍再发起，避免在 effect 内同步 setState）
-  useEffect(() => {
-    let alive = true;
-    const t = setTimeout(() => {
-      gliderAPI.list()
-        .then((res) => { if (alive) setHistory(res.items || []); })
-        .catch(() => { if (alive) message.error('加载试飞记录失败'); })
-        .finally(() => { if (alive) setLoadingHistory(false); });
-    }, 0);
-    return () => { alive = false; clearTimeout(t); };
-  }, []);
+  }, [engineAttempt]);
 
   // 不自动选中课程；独立进入不产生课程关联。
   useEffect(() => {
@@ -177,55 +136,9 @@ export default function GliderSimulator() {
     } catch { setLessons([]); }
   };
 
-  // 轮询：记录处于 running 时每 2s 刷新，直到 success / error；完成后刷新右侧历史列表
-  // 总等待上限 300s：超过则视为任务卡住，停止轮询并提示刷新记录，避免无限转圈
-  useEffect(() => {
-    if (!viewingId) return undefined;
-    let alive = true;
-    let timer;
-    let fail = 0;
-    let waited = 0;
-    const tick = () => {
-      gliderAPI.detail(viewingId)
-        .then((d) => {
-          if (!alive) return;
-          fail = 0;
-          setPollFailed(false);
-          setViewing(d);
-          if (d.status !== 'running') {
-            clearInterval(timer);
-            setWaitSec(0);
-            setPollTimedOut(false);
-            loadHistory(); // 同步右侧历史列表状态（不再停在“运行中”）
-          } else {
-            waited += 2;
-            setWaitSec(waited);
-            if (waited >= 300) {
-              clearInterval(timer);
-              setPollTimedOut(true);
-              setWaitSec(0);
-              loadHistory();
-            }
-          }
-        })
-        .catch(() => {
-          if (!alive) return;
-          fail += 1;
-          if (fail >= 3) {
-            clearInterval(timer);
-            setPollFailed(true);
-            setWaitSec(0);
-          }
-        });
-    };
-    timer = setInterval(tick, 2000);
-    const first = setTimeout(tick, 0);
-    return () => { alive = false; clearInterval(timer); clearTimeout(first); };
-  }, [viewingId]);
-
   // 模拟成功后加载结果图与飞行回放视频
   useEffect(() => {
-    if (!viewing) return undefined;
+    if (user?.role === 'student' || !viewing) return undefined;
     if (viewing.status !== 'success') {
       const t = setTimeout(() => { setImg({ trajectory: null, telemetry: null, video: null }); setResultFileError(''); }, 0);
       return () => clearTimeout(t);
@@ -269,10 +182,10 @@ export default function GliderSimulator() {
       alive = false;
       urls.forEach((u) => URL.revokeObjectURL(u));
     };
-  }, [viewing]);
+  }, [viewing, user?.role, revision]);
 
   const startSim = async (values) => {
-    setSubmitting(true);
+    setSubmitting(true); setSubmitError('');
     try {
       if (contextError || contextPending) throw new Error('请先确认来源课程');
       if (sourceCourse) {
@@ -298,32 +211,14 @@ export default function GliderSimulator() {
         course_id: courseId,
         lesson_id: courseId ? lessonId : undefined,
       });
-      setViewingId(r.id);
-      setViewing(null);
-      setPollFailed(false);
-      setWaitSec(0);
+      openRecord(r.id);
       message.success('模拟已开始，正在计算…');
       loadHistory();
     } catch (err) {
-      message.error(err?.response?.data?.error || err?.message || '启动模拟失败');
+      setSubmitError(err?.response?.data?.error || err?.message || '启动模拟失败，请稍后重试。');
     } finally {
       setSubmitting(false);
     }
-  };
-
-  const openRecord = (id) => {
-    setViewingId(id);
-    setViewing(null);
-    setPollFailed(false);
-    setWaitSec(0);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // 表单校验未通过时给出明确反馈：否则只有一行小红字，容易被当成“点了没反应”
-  const onFinishFailed = ({ errorFields }) => {
-    const first = errorFields?.[0];
-    message.error(`无法开始试飞：${first?.errors?.[0] || '请先完成表单必填项'}`);
-    if (first?.name) form.scrollToField(first.name);
   };
 
   const meta = useMemo(() => stateMeta(viewing?.state), [viewing]);
@@ -340,6 +235,17 @@ export default function GliderSimulator() {
         : !engineReady
           ? '模拟引擎暂不可用，请稍后再试或联系老师。'
           : contextPending ? '正在确认来源课程…' : contextError;
+
+  if (isStudent) return <StudentGliderWorkspace
+    form={form} records={records} startSim={startSim} submitting={submitting} submitError={submitError}
+    engineChecking={engineChecking} engineReady={engineReady} canSubmit={canSubmit} blockedReason={blockedReason}
+    retryEngine={() => { setEngineInfo(null); setEngineError(null); setEngineAttempt((value) => value + 1); }}
+    sourceCourse={sourceCourse} sourceLesson={sourceLesson} courses={courses} lessons={lessons}
+    courseId={courseId} lessonId={lessonId} handleCourseChange={handleCourseChange} setLessonId={setLessonId}
+    returning={returning} contextPending={contextPending} contextError={contextError}
+    returnLabel={sourceCourse && (!contextError || returnTo !== '/lab') ? '返回来源课程' : '返回实验室'}
+    returnToSource={returnToSource} returnToLab={() => navigate('/lab')}
+  />;
 
   return (
     <div>
@@ -385,115 +291,6 @@ export default function GliderSimulator() {
       <Row gutter={16}>
         {/* 左侧：参数表单 + 结果 */}
         <Col xs={24} lg={15}>
-          {isStudent ? (
-          <Card title={<Space><RocketOutlined /> 试飞参数设计</Space>} style={{ marginBottom: 16 }}>
-            <Form
-              form={form}
-              layout="vertical"
-              initialValues={{ dihedral: 5, cg: 0, speed: 36, wing_area: 17.5, mass: 420, elevator: 0, rudder: 0 }}
-              onFinish={startSim}
-              onFinishFailed={onFinishFailed}
-            >
-              <Form.Item
-                name="course_id"
-                label="关联课程（可选）"
-                extra="留空为独立实验；选择后本次试飞才会关联课程。"
-              >
-                <Select
-                  placeholder="独立实验（不关联课程）"
-                  allowClear
-                  disabled={!!sourceCourse}
-                  value={courseId}
-                  onChange={handleCourseChange}
-                  options={courses.map((c) => ({ value: c.id, label: c.title }))}
-                />
-              </Form.Item>
-              <Form.Item name="lesson_id" label="关联课时（可选）">
-                <Select
-                  placeholder="选择课时"
-                  allowClear
-                  value={lessonId}
-                  onChange={setLessonId}
-                  disabled={!courseId || !!sourceCourse}
-                  options={lessons.map((l) => ({ value: l.id, label: l.title }))}
-                />
-              </Form.Item>
-              <Form.Item
-                name="dihedral"
-                label="机翼上反角（°）"
-                extra="两翼尖向上翘起的角度。上反角越大，横滚方向越稳定，飞机越不容易侧翻。"
-                rules={[{ required: true, message: '请设置上反角' }]}
-              >
-                <InputNumber min={0} max={15} step={0.5} style={{ width: '100%' }} addonAfter="度" />
-              </Form.Item>
-              <Form.Item
-                name="cg"
-                label="重心位置（m，沿机头方向前移量）"
-                extra="重心越靠前，飞机越“头重”、越稳定，但滑翔性能下降；重心太靠后则容易失速翻滚。"
-                rules={[{ required: true, message: '请设置重心位置' }]}
-              >
-                <InputNumber min={-1.5} max={1.5} step={0.1} style={{ width: '100%' }} addonAfter="米" />
-              </Form.Item>
-              <Form.Item
-                name="speed"
-                label="初始投放速度（m/s）"
-                extra="从 150 米高空投放时的初始空速。速度太低可能失速，太高则阻力增加。"
-                rules={[{ required: true, message: '请设置初始速度' }]}
-              >
-                <InputNumber min={15} max={60} step={1} style={{ width: '100%' }} addonAfter="米/秒" />
-              </Form.Item>
-              <Divider titlePlacement="left" plain style={{ marginTop: 0 }}>机身与尾翼（进阶）</Divider>
-              <Row gutter={12}>
-                <Col xs={24} sm={12}>
-                  <Form.Item
-                    name="wing_area"
-                    label="机翼面积（m²）"
-                    extra="越大升力越大、飞得越慢越久。"
-                  >
-                    <InputNumber min={10} max={30} step={0.5} style={{ width: '100%' }} addonAfter="m²" />
-                  </Form.Item>
-                </Col>
-                <Col xs={24} sm={12}>
-                  <Form.Item
-                    name="mass"
-                    label="整机质量（kg）"
-                    extra="越重飞得越快、下沉越快。"
-                  >
-                    <InputNumber min={250} max={700} step={10} style={{ width: '100%' }} addonAfter="kg" />
-                  </Form.Item>
-                </Col>
-                <Col xs={24} sm={12}>
-                  <Form.Item
-                    name="elevator"
-                    label="水平尾翼偏角（°）"
-                    extra="正值上抬（抬头）· 负值下压（俯冲）；角度太大会失速。"
-                  >
-                    <InputNumber min={-15} max={15} step={0.5} style={{ width: '100%' }} addonAfter="度" />
-                  </Form.Item>
-                </Col>
-                <Col xs={24} sm={12}>
-                  <Form.Item
-                    name="rudder"
-                    label="垂直尾翼偏角（°）"
-                    extra="正值机头右偏 · 负值左偏，飞机会转弯。"
-                  >
-                    <InputNumber min={-15} max={15} step={0.5} style={{ width: '100%' }} addonAfter="度" />
-                  </Form.Item>
-                </Col>
-              </Row>
-              <Button type="primary" htmlType="submit" icon={<ThunderboltOutlined />} loading={submitting} block
-                disabled={!canSubmit}>
-                {engineChecking ? '正在检测实验环境…' : '开始试飞'}
-              </Button>
-              {blockedReason && !engineChecking && (
-                <Text type="secondary" style={{ display: 'block', marginTop: 8 }}>
-                  {blockedReason}
-                </Text>
-              )}
-            </Form>
-          </Card>
-          ) : null}
-
           {/* 模拟结果 */}
           {viewingId && (
             <Card
@@ -529,7 +326,7 @@ export default function GliderSimulator() {
                     />
                     {resultFileError && <Alert type="warning" showIcon message={resultFileError} />}
                     <Row gutter={[8, 8]}>
-                      <Col xs={12} sm={8}><Statistic title="滑翔时长" value={viewing.glide_time_s} suffix="s" /></Col>
+                      <Col xs={12} sm={8}><Statistic title="滑翔时长" value={viewing.glide_time_s ?? '—'} suffix="s" /></Col>
                       <Col xs={12} sm={8}><Statistic title="水平距离" value={viewing.result?.distance_m ?? '—'} suffix="m" /></Col>
                       <Col xs={12} sm={8}><Statistic title="升阻比 L/D" value={viewing.result?.glide_ratio ?? '—'} /></Col>
                       <Col xs={12} sm={8}><Statistic title="平均下沉率" value={viewing.result?.mean_sink_mps ?? '—'} suffix="m/s" /></Col>
@@ -580,6 +377,7 @@ export default function GliderSimulator() {
             title={<Space><RocketOutlined /> {isStudent ? '我的试飞记录' : '试飞记录'}</Space>}
             extra={<Button size="small" onClick={loadHistory}>刷新记录</Button>}
           >
+            {historyError && <Alert type="error" showIcon title={historyError} />}
             {loadingHistory ? <Spin /> : (
               history.length === 0 ? <Empty description={isStudent ? '还没有试飞记录，先设计一架试试吧' : '暂无试飞记录'} /> : (
                 <List

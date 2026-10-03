@@ -35,7 +35,7 @@ export default function StudentWorkDetail() {
   const work = data?.work;
   const review = data?.review;
   const versions = data?.versions || [];
-  const revised = work?.review_status === 'rejected' && work.has_newer_version;
+  const revised = work?.review_status === 'rejected' && Boolean(work.has_newer_version);
   const status = revised ? '已修改' : work?.review_status === 'approved' ? '已通过' : work?.review_status === 'rejected' ? '需修改' : '待评审';
   const canRevise = work && String(work.student_id) === String(user.id) && work.review_status === 'rejected' && !work.has_newer_version;
   const download = async () => {

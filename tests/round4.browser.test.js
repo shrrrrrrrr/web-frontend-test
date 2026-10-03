@@ -297,7 +297,7 @@ test('第四轮：地图场景、随时可达伙伴与网页图片派生验收',
       const progressBeforeExperiment = db.prepare('SELECT progress FROM lesson_progress WHERE student_id=4 AND lesson_id=1').get().progress;
       await page.getByRole('button', { name: '滑翔机实验（测试关联）', exact: true }).click();
       await page.waitForURL('**/glider?**');
-      await page.getByRole('heading', { name: '🛩️ 滑翔机模拟实验室', exact: true }).waitFor();
+      await page.getByRole('heading', { name: '滑翔机模拟实验室', exact: true }).waitFor();
       await page.getByRole('button', { name: '打开学习伙伴', exact: true }).click();
       await page.waitForFunction(() => !document.body.innerText.includes('正在检测实验环境'));
       await unobstructed(page.getByRole('button', { name: /开始试飞/ }));

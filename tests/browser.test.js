@@ -157,6 +157,7 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
     });
     await t.test('实验独立入口不伪造关联，课程入口恢复阶段，安全返回', async () => {
       await page.goto(`${base}/glider`);
+      await page.getByText('关联课程 / 课时（可选）', { exact: true }).click();
       await page.getByText('关联课程（可选）', { exact: true }).waitFor();
       await page.getByText('独立实验（不关联课程）', { exact: true }).waitFor();
       await page.getByText('选择课时', { exact: true }).waitFor();

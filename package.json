@@ -16,7 +16,8 @@
     "test:e2e:round3": "node --test tests/round3.browser.test.js",
     "test:e2e:round4": "node --test tests/round4.browser.test.js",
     "test:e2e:round5": "node --test tests/round5.browser.test.js",
-    "test:e2e:access": "node --test tests/access.browser.test.js"
+    "test:e2e:access": "node --test tests/access.browser.test.js",
+    "test:e2e:round6": "node --test tests/round6.browser.test.js"
   },
   "devDependencies": {
     "playwright": "^1.63.0"
