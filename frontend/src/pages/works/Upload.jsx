@@ -1,14 +1,19 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Alert, Card, Form, Input, Upload, Button, message } from 'antd';
+import { Alert, App, Form, Input, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { workAPI, taskAPI } from '../../api';
 import { useAuth } from '../../store/AuthContext';
 import useRemote from '../../student/useRemote';
 import AsyncPageState from '../../components/common/AsyncPageState';
 import PageContainer from '../../components/common/PageContainer';
+import { PixelButton as Button, PixelTag } from '../../student/visual/PixelUI';
+import { StudyHeader, StudySection } from '../../student/visual/StudyUI';
+import PixelIcon from '../../student/visual/PixelIcon';
+import { formatBeijingTime } from '../../utils/date';
 
 function SubmissionForm({ data, parentId }) {
+  const { message } = App.useApp();
   const { user } = useAuth();
   const navigate = useNavigate();
   const [form] = Form.useForm();
@@ -51,18 +56,20 @@ function SubmissionForm({ data, parentId }) {
     } catch (err) { setError(err.response?.data?.error || '提交或附件上传失败，文字和已选附件仍保留在本页面，请检查网络后重试。'); }
     finally { setLoading(false); }
   };
-  return <Card title={`${data.task.course_title} · ${data.task.title}`}>
-    <p>{data.task.description}</p><p>截止：{data.task.deadline || '未设置'}。是否接受提交以服务器返回结果为准。</p>
-    {!allowed ? <Alert type="warning" title="当前作品不能提交新版本" description="只有最新版本被导师退回后才可重新提交。请返回课时查看评审状态。" /> : <Form form={form} layout="vertical" onFinish={submit} onValuesChange={save} disabled={loading}>
+  return <div className="study-submit-layout"><StudySection number="W" title={parentId ? '修改你的作品' : '记录你的成果'} description="给作品起一个名字，用文字或附件展示你的探索。">
+    {!allowed ? <Alert type="warning" title="当前作品不能提交新版本" description="只有最新版本被导师退回后才可重新提交。请返回课时查看评审状态。" /> : <Form form={form} layout="vertical" onFinish={submit} onValuesChange={save} disabled={loading} scrollToFirstError={{ block: 'center', focus: true }}>
       {latest?.reject_reason && <Alert type="warning" title="修改意见" description={latest.reject_reason} />}
       <Alert type={saved.includes('失败') ? 'error' : 'info'} title={saved} style={{ marginBottom: 16 }} />
-      {error && <Alert type="error" showIcon title="未能提交" description={error} style={{ marginBottom: 16 }} />}
       <Form.Item name="title" label="作品名称" rules={[{ required: true, whitespace: true, message: '请输入作品名称' }]}><Input /></Form.Item>
-      <Form.Item name="description" label="成果文字"><Input.TextArea rows={5} /></Form.Item>
-      <Form.Item label="附件（与文字至少提供一项）"><Upload beforeUpload={(value) => { setFile(value); return false; }} maxCount={1} onRemove={() => setFile(null)}><Button icon={<UploadOutlined />}>选择附件</Button></Upload></Form.Item>
-      <Button type="primary" htmlType="submit" loading={loading}>提交作品</Button>
+      <Form.Item name="description" label="成果文字" extra="说明你做了什么、依据是什么，以及改进的过程。"><Input.TextArea rows={6} /></Form.Item>
+      <section className="study-subsection"><h4>附件与提交</h4>
+        <Form.Item label="附件（与文字至少提供一项）" extra="一次提交 1 个文件，最大 100 MB。附件不会保存在浏览器草稿中。"><Upload beforeUpload={(value) => { setFile(value); return false; }} maxCount={1} onRemove={() => setFile(null)}><Button icon={<UploadOutlined />}>选择附件</Button></Upload></Form.Item>
+        <p className="study-help">支持 JPG、JPEG、PNG、GIF、WebP、MP4、WebM、PDF、DOC、DOCX、PPT、PPTX、ZIP、OBJ、GLB、GLTF、STL；文件类型、内容和大小由服务器检查。</p>
+      </section>
+      <div className="study-submit-result" aria-live="polite">{error && <Alert type="error" showIcon title="未能提交" description={error} />}</div>
+      <div className="study-actions"><Button type="primary" htmlType="submit" loading={loading}>提交作品</Button><p>提交后等待导师评审；学习报告需在课时中单独提交。</p></div>
     </Form>}
-  </Card>;
+  </StudySection><aside className="study-context" aria-label="作品任务信息"><h3>这次要完成的任务</h3><PixelTag tone={parentId ? 'warning' : 'current'}>{parentId ? '退回修改 · 新版本' : '首次提交'}</PixelTag><dl><dt>所属课程</dt><dd>{data.task.course_title}</dd><dt>作品任务</dt><dd>{data.task.title}</dd><dt>任务说明</dt><dd className="study-prose">{data.task.description || '老师尚未填写任务说明。'}</dd><dt>截止时间</dt><dd>{data.task.deadline ? formatBeijingTime(data.task.deadline) : '未设置'}</dd>{latest && <><dt>当前已有版本</dt><dd>第 {latest.version} 版</dd></>}</dl><p>是否接受提交以服务器校验为准。</p></aside></div>;
 }
 
 export default function WorkUpload() {
@@ -72,7 +79,8 @@ export default function WorkUpload() {
   const parentId = params.get('parent_work_id');
   const fetcher = useCallback(() => taskId ? taskAPI.detail(taskId) : Promise.reject(new Error('请从课时中的任务入口提交作品。')), [taskId]);
   const { data, loading, error, retry } = useRemote(fetcher);
-  return <PageContainer title="提交作品" extra={<Button onClick={() => navigate(data ? `/courses/${data.task.course_id}/lessons/${data.task.lesson_id}/learn` : '/tasks')}>返回课时或任务</Button>}>
-    <AsyncPageState loading={loading} error={error} onRetry={retry}>{data && <SubmissionForm key={`${taskId}:${parentId}`} data={data} parentId={parentId} />}</AsyncPageState>
-  </PageContainer>;
+  return <PageContainer><div className="study-workspace">
+    <StudyHeader eyebrow={<><PixelIcon name="archive" />作品提交</>} title="提交作品" description={parentId ? '根据导师意见改进，保留每一次探索的版本。' : '把你的观察、方案和验证过程整理成作品。'}><Button icon={<PixelIcon name="back" />} onClick={() => navigate(data ? `/courses/${data.task.course_id}/lessons/${data.task.lesson_id}/learn` : '/tasks')}>返回课时或任务</Button></StudyHeader>
+    <AsyncPageState loading={loading} error={error === 'Network Error' ? '网络连接失败，请检查连接后重新加载。' : error} onRetry={retry}>{data && <SubmissionForm key={`${taskId}:${parentId}`} data={data} parentId={parentId} />}</AsyncPageState>
+  </div></PageContainer>;
 }

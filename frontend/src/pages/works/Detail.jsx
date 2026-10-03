@@ -5,6 +5,7 @@ import { ArrowLeftOutlined, DownloadOutlined } from '@ant-design/icons';
 import { workAPI } from '../../api';
 import { useAuth } from '../../store/AuthContext';
 import { formatBeijingTime } from '../../utils/date';
+import StudentWorkDetail from '../../student/StudentWorkDetail';
 
 const { Title } = Typography;
 const dimensions = [['problem_discovery', '问题发现'], ['solution_design', '方案设计'], ['hands_on', '动手操作'], ['data_analysis', '数据分析'], ['presentation', '表达展示']];
@@ -23,6 +24,12 @@ function getFileType(work) {
 }
 
 export default function WorkDetail() {
+  const { user } = useAuth();
+  const { id } = useParams();
+  return user?.role === 'student' ? <StudentWorkDetail key={id} /> : <StaffWorkDetail />;
+}
+
+function StaffWorkDetail() {
   const { id } = useParams(); const { user } = useAuth(); const navigate = useNavigate();
   const [data, setData] = useState(null); const [loading, setLoading] = useState(true);
   useEffect(() => { workAPI.detail(id).then(setData).catch(() => message.error('加载失败')).finally(() => setLoading(false)); }, [id]);

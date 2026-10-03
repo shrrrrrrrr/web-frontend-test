@@ -179,7 +179,7 @@ test('第二轮：待办、课时路线、实验定位和局部错误', { timeou
       await page.goto(`${base}/courses/1/lessons/1/learn?stage=2`);
       await page.getByLabel('学习总结', { exact: true }).fill('附件失败后这段正在填写的内容必须保留。');
       await page.getByText('课堂回顾', { exact: true }).first().click();
-      const resource = page.locator('.ant-card').filter({ has: page.getByText('缺失附件测试资料', { exact: true }) }).last();
+      const resource = page.locator('.study-resource').filter({ has: page.getByText('缺失附件测试资料', { exact: true }) });
       await resource.getByRole('button', { name: /下载资料/ }).click();
       await page.getByText(/资料.*(下载失败|未能下载|不可用)|附件.*(不存在|不可用)/).first().waitFor();
       await page.getByRole('heading', { name: '认识月球环境', exact: true }).waitFor();

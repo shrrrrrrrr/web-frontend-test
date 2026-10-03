@@ -104,6 +104,7 @@
 .student-partner p { font-size: 13px; margin: 0; }
 .student-partner-toggle { display: inline-flex; align-items: center; flex-shrink: 0; justify-content: center; gap: 8px; min-height: 40px; padding: 0 8px; border: 0; color: #102d40; background: transparent; font: inherit; font-size: 14px; cursor: pointer; }
 .student-partner-toggle:hover { background: #f0e4c6; }
+.student-partner-toggle { order: 2; }
 .student-pixel .student-partner-toggle:focus-visible { outline-offset: -3px; outline-color: #087f78; }
 .student-partner--collapsed .student-partner-bar { min-height: 42px; padding-block: 1px; }
 .student-partner-image--compact.pixel-image { width: 32px; height: 32px; flex-basis: 32px; }
@@ -169,10 +170,15 @@
     animation-duration: .01ms !important;
     animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
-    transition: none !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
   /* Keep only existing opening/closing transitions that require an end event. */
+  /* Floating alignment measures positions synchronously; never tween its inset. */
+  .student-pixel :is(.ant-select-dropdown, .ant-dropdown, .ant-popover, .ant-tooltip) {
+    transition: none !important;
+  }
   .student-pixel [class*='ant-drawer-'][class*='-motion-'][class*='-active'] {
     transition: opacity .01ms, transform .01ms !important;
   }

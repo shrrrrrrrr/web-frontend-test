@@ -1,0 +1,29 @@
+{
+  "browser": "154.0.4258.37",
+  "screenshots": 53,
+  "localLinks": 59,
+  "filters": [
+    {
+      "size": "1440",
+      "images": 22,
+      "loaded": true
+    },
+    {
+      "size": "768",
+      "images": 15,
+      "loaded": true
+    },
+    {
+      "size": "390",
+      "images": 16,
+      "loaded": true
+    },
+    {
+      "size": "all",
+      "images": 53,
+      "loaded": true
+    }
+  ],
+  "noHorizontalOverflow": true,
+  "pageErrors": []
+}

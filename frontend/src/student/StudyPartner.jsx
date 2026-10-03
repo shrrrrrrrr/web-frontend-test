@@ -36,6 +36,11 @@ export default function StudyPartner() {
   return <aside ref={dock} className={`student-partner${collapsed ? ' student-partner--collapsed' : ''}`} aria-label="学习伙伴" data-testid="study-partner"
     onKeyDown={(event) => { if (event.key === 'Escape' && !collapsed) { event.preventDefault(); close(); } }}>
     <div className="student-partner-bar">
+      <button ref={toggle} type="button" className="student-partner-toggle" aria-label={collapsed ? '打开学习伙伴' : '收起学习伙伴'}
+        aria-expanded={!collapsed} aria-controls={collapsed ? undefined : 'student-partner-actions'} onClick={() => setCollapsed((value) => !value)}>
+        {collapsed ? <PixelImage className="student-partner-image student-partner-image--compact" {...pixelImageProps('companion-cat', '32px')} alt="" fallback={<PixelIcon name="cat" size={32} />} /> : <PixelIcon name="close" size={16} />}
+        <span>{collapsed ? '打开学习伙伴' : '收起学习伙伴'}</span>
+      </button>
       {!collapsed && <div className="student-partner-expanded" id="student-partner-actions">
         <div className="student-partner-intro">
           <PixelImage className="student-partner-image" {...pixelImageProps('companion-cat', '48px')} alt="" fallback={<PixelIcon name="cat" size={48} />} />
@@ -43,11 +48,6 @@ export default function StudyPartner() {
         </div>
         <PixelButton aria-label="向灵境小智提问" onClick={() => navigate(`/dashboard/ai${courseId ? `?course_id=${courseId}` : ''}`)}>向小智提问</PixelButton>
       </div>}
-      <button ref={toggle} type="button" className="student-partner-toggle" aria-label={collapsed ? '打开学习伙伴' : '收起学习伙伴'}
-        aria-expanded={!collapsed} aria-controls={collapsed ? undefined : 'student-partner-actions'} onClick={() => setCollapsed((value) => !value)}>
-        {collapsed ? <PixelImage className="student-partner-image student-partner-image--compact" {...pixelImageProps('companion-cat', '32px')} alt="" fallback={<PixelIcon name="cat" size={32} />} /> : <PixelIcon name="close" size={16} />}
-        <span>{collapsed ? '打开学习伙伴' : '收起学习伙伴'}</span>
-      </button>
     </div>
   </aside>;
 }
