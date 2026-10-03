@@ -12,6 +12,7 @@ import { useAuth } from './store/AuthContext';
 import { ExploreHome, CourseMap } from './student/Explore';
 import Lab from './student/Lab';
 const Rewards = lazy(() => import('./student/Rewards'));
+const PixelPreview = import.meta.env.DEV ? lazy(() => import('./student/visual/PixelPreview')) : null;
 
 function StudentView({ student, legacy }) {
   const { user } = useAuth();
@@ -89,6 +90,7 @@ function App() {
                 <Route path="change-password" element={<ChangePassword />} />
                 <Route index element={<RoleHomeRedirect />} />
                 <Route path="explore" element={guard(<ExploreHome />, ['student'])} />
+                {import.meta.env.DEV && <Route path="__pixel-preview" element={guard(<PixelPreview />, ['student'])} />}
                 <Route path="lab" element={guard(<Lab />, ['student'])} />
                 <Route path="archives/rewards" element={guard(<Rewards />, ['student'])} />
                 <Route path="dashboard" element={guard(<StudentView student={<ExploreHome />} legacy={<Dashboard />} />, ['admin', 'academic_mentor', 'student', 'media'])} />

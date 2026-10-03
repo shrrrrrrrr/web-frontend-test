@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import {
-  Alert, Button, Card, Checkbox, Collapse, Empty, Form, Grid, Input, Modal,
-  Progress, Radio, Space, Steps, Tag, Typography, message,
+  Alert, App, Button, Card, Checkbox, Collapse, Empty, Form, Grid, Input,
+  Progress, Radio, Space, Steps, Tag, Typography,
 } from 'antd';
 import {
   ArrowLeftOutlined, CheckCircleOutlined, DownloadOutlined,
@@ -60,6 +60,7 @@ function Exercise({ exercise, onDone }) {
 }
 
 export default function LessonLearn() {
+  const { message, modal } = App.useApp();
   const { courseId, lessonId } = useParams();
   const { user } = useAuth();
   const [searchParams] = useSearchParams();
@@ -164,7 +165,7 @@ export default function LessonLearn() {
   };
 
   const submitReport = (values) => {
-    Modal.confirm({
+    modal.confirm({
       title: '确认提交学习报告？',
       content: '提交后进入导师评审；若导师退回，可根据意见提交新版本。',
       onOk: async () => {

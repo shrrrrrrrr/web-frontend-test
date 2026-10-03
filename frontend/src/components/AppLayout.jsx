@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 import HeaderBar from './Header';
 import StudentScope from '../student/StudentScope';
 import StudyPartner from '../student/StudyPartner';
+import StudentShell from '../student/visual/StudentShell';
 
 const { Content } = Layout;
 
@@ -29,15 +30,19 @@ export default function AppLayout() {
     return <Navigate to="/change-password" replace />;
   }
 
+  if (user.role === 'student') {
+    return <StudentShell>{location.pathname !== '/change-password'
+      ? <StudentScope><div className="student-content-body"><Outlet /><StudyPartner /></div></StudentScope>
+      : <Outlet />}</StudentShell>;
+  }
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sidebar />
       <Layout style={{ minWidth: 0 }}>
         <HeaderBar />
         <Content style={{ background: '#f5f7fa', minHeight: 360 }}>
-          {user.role === 'student' && location.pathname !== '/change-password'
-            ? <StudentScope><Outlet /><StudyPartner /></StudentScope>
-            : <Outlet />}
+          <Outlet />
         </Content>
       </Layout>
     </Layout>

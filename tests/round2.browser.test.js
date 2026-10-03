@@ -12,7 +12,8 @@ const root = path.resolve(import.meta.dirname, '..');
 const require = createRequire(path.join(root, 'backend/package.json'));
 const Database = require('better-sqlite3');
 const scratch = mkdtempSync(path.join(tmpdir(), 'star-voyage-round2-'));
-const shots = path.join(root, 'docs/round-02/screenshots');
+// 本轮回归截图放在测试输出，保留已经交付的第二轮历史截图。
+const shots = path.join(root, 'test-results/round2');
 const base = 'http://127.0.0.1:5180';
 const apiBase = 'http://127.0.0.1:3118';
 const env = { ...process.env, NODE_ENV: 'test', DB_PATH: path.join(scratch, 'round2.db'),
@@ -96,7 +97,7 @@ test('第二轮：待办、课时路线、实验定位和局部错误', { timeou
       const noWork = page.locator('.ant-list-item').filter({ hasText: '无作品任务的测试课时' });
       if (!(await noWork.count()) && await nextPage.count()) await nextPage.click();
       await noWork.getByRole('button', { name: '继续学习', exact: true }).waitFor();
-      assert.equal(await page.locator('a[href="/courses/1/lessons/2/learn"]').count(), 1);
+      assert.equal(await page.locator('.ant-list-item').filter({ hasText: '空间规划设计' }).getByRole('button', { name: '继续学习', exact: true }).count(), 1);
       await page.screenshot({ path: path.join(shots, '01-home.png'), fullPage: true, animations: 'disabled' });
       await noWork.getByRole('button', { name: '继续学习', exact: true }).click();
       await page.waitForURL('**/courses/1/lessons/4/learn');
@@ -109,14 +110,17 @@ test('第二轮：待办、课时路线、实验定位和局部错误', { timeou
       assert.equal(await page.locator('.route-group').count(), 3);
       assert.equal(await page.locator('.route-node').count(), 5);
       assert.equal(await page.locator('.route-node[aria-current="step"]').count(), 1);
-      const node = page.locator('[data-lesson-id="1"]');
-      for (const text of ['2026-10-10 14:00', '2026-10-10 14:45', '测试实验室 A', '张导师', '45 分钟']) await node.getByText(text, { exact: true }).waitFor();
+      await page.locator('[data-lesson-id="1"] .route-node').click();
+      const detail = page.getByTestId('lesson-details');
+      for (const text of ['2026-10-10 14:00', '2026-10-10 14:45', '测试实验室 A', '张导师', '45 分钟']) await detail.getByText(text, { exact: true }).waitFor();
+      await page.getByRole('button', { name: '课程信息', exact: true }).click();
       await page.getByText('课程说明与准备', { exact: true }).click();
       await page.getByText('测试记录纸', { exact: true }).waitFor();
       await page.waitForTimeout(400); // 等待基础 Collapse 展开后截取完整课程说明。
       await page.screenshot({ path: path.join(shots, '02-map-desktop.png'), fullPage: true, animations: 'disabled' });
       await page.locator('[data-lesson-id="5"] .route-node').focus();
       await page.keyboard.press('Enter');
+      await page.getByTestId('lesson-details').getByRole('button', { name: '进入课时', exact: true }).click();
       await page.waitForURL('**/courses/1/lessons/5/learn');
       await page.goto(`${base}/courses/1`);
       await page.setViewportSize({ width: 390, height: 844 });
@@ -160,6 +164,7 @@ test('第二轮：待办、课时路线、实验定位和局部错误', { timeou
       await page.waitForURL('**/courses/1');
       await page.getByText(/原知识卡片已不可访问/).first().waitFor();
       db.prepare("UPDATE knowledge_cards SET status='published' WHERE id=2").run();
+      await page.getByRole('button', { name: '课程信息', exact: true }).click();
       await page.getByRole('button', { name: '滑翔机实验（测试关联）', exact: true }).click();
       await page.getByRole('button', { name: /返回来源课程/ }).waitFor();
       db.prepare("UPDATE courses SET status='draft' WHERE id=1").run();

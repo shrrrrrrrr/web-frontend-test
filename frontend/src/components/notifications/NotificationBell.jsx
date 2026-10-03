@@ -10,7 +10,7 @@ import { canRoleAccessPath } from '../../utils/roleNavigation';
 
 const { Text } = Typography;
 
-export default function NotificationBell() {
+export default function NotificationBell({ icon, buttonClassName }) {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { unreadCount, reduceUnread } = useNotifications();
@@ -76,7 +76,7 @@ export default function NotificationBell() {
       styles={{ body: { padding: 0 } }}
     >
       <Badge count={unreadCount} overflowCount={99} size="small">
-        <Button type="text" shape="circle" aria-label="通知" icon={<BellOutlined />} />
+        <Button type="text" shape="circle" className={buttonClassName} aria-label="通知" icon={icon || <BellOutlined />} />
       </Badge>
     </Popover>
   );

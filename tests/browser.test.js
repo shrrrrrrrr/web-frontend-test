@@ -66,10 +66,18 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
     };
     await t.test('登录、三个入口、课程地图、旧链接、窄屏', async () => {
       await login();
-      assert.equal(await page.getByRole('menuitem').count(), 3);
+      assert.equal(await page.getByRole('navigation', { name: '学生主导航' }).getByRole('link').count(), 3);
       await page.getByRole('button', { name: '进入课程地图' }).click();
-      await page.getByRole('link', { name: /第 1 关：认识月球环境/ }).waitFor();
-      assert.equal(await page.getByRole('button', { name: '进入课时' }).count(), 3);
+      await page.getByRole('button', { name: /第 1 关：认识月球环境/ }).waitFor();
+      assert.equal(await page.locator('.route-node').count(), 3);
+      for (const lessonId of [1, 2, 3]) {
+        await page.locator(`[data-lesson-id="${lessonId}"] .route-node`).click();
+        const detail = page.getByTestId('lesson-details');
+        await detail.getByRole('button', { name: '进入课时', exact: true }).waitFor();
+        await detail.getByRole('button', { name: '进入课时', exact: true }).click();
+        await page.waitForURL(`**/courses/1/lessons/${lessonId}/learn`);
+        await page.goto(`${base}/courses/1`);
+      }
       await page.goto(`${base}/dashboard`);
       await page.getByRole('heading', { name: '探索地图', exact: true }).waitFor();
       await page.goto(`${base}/tasks`);
@@ -181,7 +189,7 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
     });
     await t.test('课程撤回、网络错误、账号停用清除失效内容', async () => {
       await page.goto(`${base}/courses/1`);
-      await page.getByRole('link', { name: /第 1 关：认识月球环境/ }).waitFor();
+      await page.getByRole('button', { name: /第 1 关：认识月球环境/ }).waitFor();
       db.prepare("UPDATE courses SET status='draft' WHERE id=1").run();
       await page.evaluate(() => window.dispatchEvent(new Event('focus')));
       await page.getByText('当前内容已不可访问', { exact: true }).waitFor();

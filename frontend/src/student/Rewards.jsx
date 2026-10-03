@@ -4,6 +4,7 @@ import { useAuth } from '../store/AuthContext';
 import PageContainer from '../components/common/PageContainer';
 import AsyncPageState from '../components/common/AsyncPageState';
 import { createRewardAdapter } from './rewardAdapter';
+import { notifyDemoRewardsChanged } from './rewardEvents';
 import useRemote from './useRemote';
 
 export default function Rewards() {
@@ -23,14 +24,14 @@ export default function Rewards() {
       okText: '确认演示兑换', cancelText: '取消',
       onOk: async () => {
         setBusy(true);
-        try { setResult(await adapter.redeem(gift.id, requestId)); setGiftId(null); retry(); }
+        try { setResult(await adapter.redeem(gift.id, requestId)); notifyDemoRewardsChanged(user.id); setGiftId(null); retry(); }
         catch (err) { message.error(err.message); retry(); throw err; }
         finally { setBusy(false); }
       },
     });
   };
   const reset = () => modal.confirm({ title: '重置本账号的演示数据？', content: '仅清除当前浏览器中的演示余额和兑换记录。', onOk: async () => {
-    try { await adapter.reset(); retry(); } catch (err) { message.error(err.message); }
+    try { await adapter.reset(); notifyDemoRewardsChanged(user.id); retry(); } catch (err) { message.error(err.message); }
   } });
   return <PageContainer title="积分与徽章" description="这里是可操作的奖励流程演示，正式规则尚未制定。" extra={<Button onClick={reset}>重置演示数据</Button>}>
     <Alert type="warning" showIcon title="本地演示模式 · 非真实积分、兑换或徽章" description="数据只保存在当前浏览器，并按登录账号隔离。不会发放礼品，不会把练习成绩换算为积分。" style={{ marginBottom: 16 }} />
