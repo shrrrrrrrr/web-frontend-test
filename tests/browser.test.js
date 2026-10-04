@@ -87,7 +87,7 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
       await page.getByRole('heading', { name: '我的作品', exact: true }).waitFor();
       await page.getByRole('link', { name: '提交作品', exact: true }).first().waitFor();
       await page.goto(`${base}/courses/1/learn`);
-      await page.getByRole('heading', { name: '课程回顾：月球基地设计师' }).waitFor();
+      await page.getByRole('heading', { name: '回看课程资料' }).waitFor();
       await page.goto(`${base}/explore`);
       await page.setViewportSize({ width: 390, height: 844 });
       await page.getByRole('button', { name: '进入课程地图' }).waitFor();
@@ -183,7 +183,7 @@ test('真实本地 API 的学生流程与故障回归', { timeout: 180000 }, asy
       await page.getByRole('button', { name: '收起学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '打开学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '向灵境小智提问', exact: true }).click();
-      await page.getByText('灵境小智暂未启用，请联系管理员。').waitFor();
+      await page.getByText('灵境小智暂未启用').waitFor();
       await login('student_chen');
       await page.goto(`${base}/archives/rewards`);
       await page.getByTestId('reward-balance').getByText('120', { exact: true }).waitFor();

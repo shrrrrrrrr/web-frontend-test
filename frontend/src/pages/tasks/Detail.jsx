@@ -1,3 +1,4 @@
+import StudentTaskRedirect from '../../student/StudentTaskRedirect';
 import { useCallback, useEffect, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { Button, Card, Descriptions, List, Result, Space, Spin, Tag, Typography } from 'antd';
@@ -8,6 +9,11 @@ import { useAuth } from '../../store/AuthContext';
 const statusText = { pending: '待完成', in_progress: '进行中', submitted: '已提交', completed: '已完结' };
 
 export default function TaskDetail() {
+  const { user } = useAuth();
+  return user?.role === 'student' ? <StudentTaskRedirect key={user.id} /> : <LegacyTaskDetail />;
+}
+
+function LegacyTaskDetail() {
   const { id } = useParams(); const navigate = useNavigate(); const { user } = useAuth(); const [data, setData] = useState(null); const [loading, setLoading] = useState(true); const [error, setError] = useState('');
   const load = useCallback(() => {
     setLoading(true);

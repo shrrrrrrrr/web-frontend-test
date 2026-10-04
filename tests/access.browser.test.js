@@ -167,7 +167,7 @@ test('权限错误仅清理失效对象，保留不相关输入（真实本地 A
       // 只启用现有界面以测试未发送输入；不发送请求、不配置模型或密钥。
       db.prepare('UPDATE ai_settings SET enabled=1 WHERE id=1').run();
       await page.goto(`${base}/dashboard/ai?course_id=1`);
-      const question = page.getByPlaceholder('输入与当前课程相关的问题');
+      const question = page.getByLabel('我想问', { exact: true });
       await question.fill('这是一段尚未发送的测试问题。');
       db.prepare("UPDATE courses SET status='draft' WHERE id=2").run();
       await recheck();
@@ -175,9 +175,9 @@ test('权限错误仅清理失效对象，保留不相关输入（真实本地 A
       assert.equal(await question.isEnabled(), true);
       db.prepare("UPDATE courses SET status='draft' WHERE id=1").run();
       await recheck();
-      await page.getByText(/当前课程已不可访问，已清除该课程的提问上下文/).waitFor();
+      await page.getByText(/当前课程已不可访问，已清除该课程的回答与引用/).waitFor();
       assert.equal(await question.inputValue(), '这是一段尚未发送的测试问题。');
-      assert.equal(await question.isDisabled(), true);
+      assert.equal(await page.getByRole('button', { name: '发送问题', exact: true }).isDisabled(), true);
       assert.doesNotMatch(await page.locator('.ant-select').first().innerText(), /月球基地设计师/);
     });
     assert.deepEqual(errors, [], '无浏览器未捕获异常');

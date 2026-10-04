@@ -1,3 +1,4 @@
+import StudentAssistant from '../../student/StudentAssistant';
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Alert, Card, Input, Button, Select, Typography, Grid, Tag, Spin, message } from 'antd';
@@ -9,6 +10,11 @@ import { STUDENT_COURSES_CHANGED } from '../../student/accessPolicy';
 const { Title, Text } = Typography;
 
 export default function AIAssistant() {
+  const { user } = useAuth();
+  return user?.role === 'student' ? <StudentAssistant /> : <LegacyAssistant />;
+}
+
+function LegacyAssistant() {
   const [params] = useSearchParams();
   const { user } = useAuth();
   const [courses, setCourses] = useState([]);

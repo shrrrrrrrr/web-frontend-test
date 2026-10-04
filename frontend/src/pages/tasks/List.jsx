@@ -1,3 +1,4 @@
+import StudentTasks from '../../student/StudentTasks';
 import { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card, Empty, Progress, Select, Space, Tag, Typography } from 'antd';
@@ -17,6 +18,11 @@ function studentState(task) {
 }
 
 export default function TaskList() {
+  const { user } = useAuth();
+  return user?.role === 'student' ? <StudentTasks key={user.id} /> : <LegacyTaskList />;
+}
+
+function LegacyTaskList() {
   const [status, setStatus] = useState();
   const navigate = useNavigate();
   const { user } = useAuth();

@@ -262,7 +262,7 @@ test('第三轮：原创像素双页样板和公共布局验收', { timeout: 240
       await page.getByRole('button', { name: '收起学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '打开学习伙伴', exact: true }).click();
       await page.getByRole('button', { name: '向灵境小智提问', exact: true }).click();
-      await page.getByText('灵境小智暂未启用，请联系管理员。').waitFor();
+      await page.getByText('灵境小智暂未启用').waitFor();
       db.prepare("UPDATE lesson_learning_reports SET status='rejected',review_comment='视觉验收报告退回' WHERE student_id=4 AND lesson_id=1").run();
       await page.goto(`${base}/courses/1/lessons/1/learn?stage=2`);
       await page.setViewportSize({ width: 390, height: 844 });
@@ -279,7 +279,7 @@ test('第三轮：原创像素双页样板和公共布局验收', { timeout: 240
     });
 
     await t.test('旧入口保持可达，课程知识卡片到实验再返回原卡片', async () => {
-      for (const [href, name] of [['/dashboard', '探索地图'], ['/courses', '探索地图'], ['/tasks', '课后任务'], ['/works', '我的作品'], ['/courses/1/learn', '课程回顾：功能验收课程（测试数据）']]) {
+      for (const [href, name] of [['/dashboard', '探索地图'], ['/courses', '探索地图'], ['/tasks', '课后任务'], ['/works', '我的作品'], ['/courses/1/learn', '回看课程资料']]) {
         await page.goto(base + href);
         await page.getByRole('heading', { name, exact: true }).waitFor();
       }
