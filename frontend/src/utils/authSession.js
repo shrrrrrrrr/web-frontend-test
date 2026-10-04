@@ -1,7 +1,9 @@
 // Browser persistence guards only; token protocol and server authorization are unchanged.
 export const AUTH_SESSION_ENDED = 'auth-session-ended';
 export const AUTH_KEYS = ['token', 'refresh_token', 'user'];
-const PENDING = 'auth-session-pending';
+export const AUTH_SESSION_STATE = 'auth-session-state';
+export const AUTH_PENDING = 'auth-session-pending';
+const PENDING = AUTH_PENDING;
 const BLOCKED = 'auth-session-blocked';
 let revision = 0, stopped = false, memoryNotice = null;
 export const sessionRevision = () => revision;
@@ -28,24 +30,26 @@ export function readAuthSession(storage) {
   try { target = source(storage); } catch { throw storageError('get', '浏览器不允许访问登录存储。请允许本站存储后重试，或重新登录。'); }
   try {
     if (target.getItem(PENDING)) throw storageError('incomplete', '上次登录信息未完整保存，请恢复浏览器存储后重新登录。');
-    return { token: target.getItem('token'), refresh_token: target.getItem('refresh_token') };
+    const result = { token: target.getItem('token'), refresh_token: target.getItem('refresh_token') };
+    if (target.getItem(PENDING)) throw storageError('incomplete', '上次登录信息未完整保存，请恢复浏览器存储后重新登录。');
+    return result;
   } catch (error) {
     if (error.code === 'AUTH_STORAGE') throw error;
     throw storageError('read', '无法读取登录信息，请检查浏览器存储权限后重试。');
   }
 }
-export function saveAuthSession(storage, session) {
+export function saveAuthSession(storage, session, kind = 'login') {
   if (!session?.token || !session?.refresh_token || !session?.user?.id) throw new Error('服务端未返回完整登录信息，请重新登录。');
   let target;
   try { target = source(storage); } catch { throw storageError('get', '浏览器不允许保存登录信息，请允许本站存储后重新登录。'); }
   try {
     // A marker prevents a partially saved set from being restored on a later page load.
     target.setItem(PENDING, '1');
-    for (const key of AUTH_KEYS) target.removeItem(key);
     target.setItem('token', session.token);
     target.setItem('refresh_token', session.refresh_token);
     target.setItem('user', JSON.stringify(session.user));
     target.removeItem(PENDING);
+    target.setItem(AUTH_SESSION_STATE, JSON.stringify({ kind, accountId: session.user.id, nonce: globalThis.crypto.randomUUID() }));
     return session.user;
   } catch {
     // Keep the marker if cleanup cannot complete.
@@ -66,12 +70,27 @@ export function getSessionNotice() {
 export function persistentSessionBlocked() {
   try { return window.sessionStorage.getItem(BLOCKED) === '1'; } catch { return false; }
 }
+export function suspendAuthSession(reason) {
+  stopped = true; revision++;
+  try { window.sessionStorage.setItem(BLOCKED, '1'); } catch { /* Runtime fence remains. */ }
+  setSessionNotice(reason);
+  window.dispatchEvent(new CustomEvent(AUTH_SESSION_ENDED));
+}
+export function publishSessionEvent(kind) {
+  try { window.localStorage.setItem(AUTH_SESSION_STATE, JSON.stringify({ kind, nonce: globalThis.crypto.randomUUID() })); } catch { /* Identity keys and runtime fences remain the fallback. */ }
+}
+export function sharedSessionHint() {
+  const storage = window.localStorage;
+  if (storage.getItem(PENDING)) return { pending: true };
+  return { token: storage.getItem('token'), user: JSON.parse(storage.getItem('user') || 'null'), event: JSON.parse(storage.getItem(AUTH_SESSION_STATE) || 'null') };
+}
 export function stopAuthSession(reason) {
   stopped = true; revision++;
   try { window.sessionStorage.setItem(BLOCKED, '1'); } catch { /* Runtime guard still stops this page. */ }
   const clean = clearAuthSession(() => window.localStorage);
   const notice = reason + (clean ? '' : ' 浏览器暂时无法清理全部登录记录；当前页面已停止使用，请恢复存储后重新登录。');
   setSessionNotice(notice);
+  publishSessionEvent('ended');
   window.dispatchEvent(new CustomEvent(AUTH_SESSION_ENDED, { detail: { reason: notice } }));
   return clean;
 }

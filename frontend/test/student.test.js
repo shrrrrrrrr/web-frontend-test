@@ -2,12 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { groupLessons, safeReturnTo, draftKey } from '../src/student/model.js';
 import { createDemoRewardAdapter } from '../src/student/rewardAdapter.js';
+import { initialRewardState, redeemReward } from '../src/student/rewardModel.js';
 import { canRoleAccessPath, homeForRole } from '../src/utils/roleNavigation.js';
 
-function memoryStorage() {
-  const values = new Map();
-  return { getItem: (key) => values.get(key), setItem: (key, value) => values.set(key, value), removeItem: (key) => values.delete(key) };
-}
 
 test('章节不会丢失未配置课时，不重复出现或自动解锁', () => {
   const lessons = [{ id: 1, progress: 0 }, { id: 2, progress: 60 }, { id: 3, progress: 100 }];
@@ -31,26 +28,14 @@ test('学生新旧路由兼容，其他角色首页不变', () => {
   assert.equal(canRoleAccessPath('teacher', '/archives/rewards'), false);
   assert.equal(canRoleAccessPath('student', '/mentor/reviews'), false);
 });
-test('演示兑换扣减、幂等、记录、限制和账号隔离', async () => {
-  const storage = memoryStorage();
-  const a = createDemoRewardAdapter(storage, 1);
-  const b = createDemoRewardAdapter(storage, 2);
-  await a.redeem('notebook', 'request-1');
-  await a.redeem('notebook', 'request-1');
-  assert.equal((await a.load()).balance, 80);
-  assert.equal((await a.load()).records.length, 1);
-  assert.equal((await a.load()).ledger[0].amount, -40);
-  assert.equal((await b.load()).balance, 120);
-  await a.redeem('notebook', 'request-2');
-  await assert.rejects(a.redeem('notebook', 'request-3'), /上限/);
-  await assert.rejects(a.redeem('model', 'request-4'), /还差/);
-  await assert.rejects(a.redeem('sticker', 'request-5'), /库存/);
-  assert.equal((await a.load()).balance, 40);
-  await a.reset();
-  assert.equal((await a.load()).balance, 120);
+test('演示纯规则：扣减、幂等、明细及独立初始状态', () => {
+  const a=initialRewardState(),b=initialRewardState();
+  redeemReward(a,'notebook','request-1');redeemReward(a,'notebook','request-1');
+  assert.equal(a.balance,80);assert.equal(a.records.length,1);assert.equal(a.ledger[0].amount,-40);assert.equal(b.balance,120);
+  redeemReward(a,'notebook','request-2');assert.throws(()=>redeemReward(a,'notebook','request-3'),/上限/);
+  assert.throws(()=>redeemReward(a,'model','request-4'),/还差/);assert.throws(()=>redeemReward(a,'sticker','request-5'),/库存/);assert.equal(a.balance,40);
 });
-test('存储失败不能伪造兑换成功', async () => {
-  const adapter = createDemoRewardAdapter({ getItem: () => null, setItem: () => { throw new Error('quota'); } }, 1);
-  await assert.rejects(adapter.redeem('notebook', 'failure'), /保存失败/);
-  assert.equal((await adapter.load()).balance, 120);
+test('数据库不可用不能静默回退到旧存储或内存成功', async () => {
+  let reads=0;const adapter=createDemoRewardAdapter({getItem(){reads++;return null;}},1,{indexedDB:()=>{throw Error('denied');}});
+  await assert.rejects(adapter.redeem('notebook','failure'),{code:'DB_UNAVAILABLE'});await assert.rejects(adapter.load(),{code:'DB_UNAVAILABLE'});assert.equal(reads,0);
 });

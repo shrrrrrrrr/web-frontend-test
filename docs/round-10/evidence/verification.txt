@@ -1,0 +1,329 @@
+COMMAND: npm run lint
+
+> star-voyage-student@0.1.0 lint
+> npm --prefix frontend run lint
+
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+
+COMMAND: npm test
+
+> star-voyage-student@0.1.0 test
+> npm --prefix frontend test
+
+
+> frontend@0.0.0 test
+> node --test test/*.test.js
+
+✔ 附件 404 只产生重验请求；模拟文件、通知、反馈错误不影响课程页 (1.0023ms)
+✔ 权限复核不会递归派发；登录与强制改密沿用独立全局处理 (0.1227ms)
+✔ 课程、课时、作品和卡片错误按真实请求对象分类，状态不作完成判定 (17.3674ms)
+✔ 实验来源失效不会变成实验页失效；阶段与卡片查询不会重设页面身份 (1.388ms)
+✔ 只有移除的课程触发其页面刷新，更新时间和其他课程变化不清空表单 (0.3056ms)
+✔ 同名课程只按 ID 与有效报名关联，记录与统计共用展示集合 (12.5984ms)
+✔ 聚合必须与原作品集合一致；无评分与真实零分区分 (0.682ms)
+✔ 历史退回显示已修改，最新退回保留修改入口；迭代不制造新项目 (0.2808ms)
+✔ 时间轴按 work_id 去除作品兜底，无关联系统记录隐藏，不猜标题时间 (0.359ms)
+✔ 结束前重验课程及报名，撤回发生在读取期间也不能发布旧作品 (0.3953ms)
+✔ 归属请求失败拒绝展示；档案部分失败保留已核验课程并明确错误 (0.57ms)
+✔ 报告状态独立；无任务、未提交和未解锁不互相混同 (0.2735ms)
+✔ 正式配置不自动关联滑翔机；测试绑定精确到指定课程、课时、阶段、卡片 (1.8971ms)
+✔ 实验入口保存真实卡片ID，返回重新核验并恢复学习阶段和卡片 (1.3719ms)
+✔ 来源卡片下架或重新未解锁时回退可访问课程地图 (0.4823ms)
+✔ 课时取消回退课程地图，课程撤回回退实验室 (0.3149ms)
+✔ 学习包请求期间课程撤回时再次确认，避免回到失效地图 (0.1826ms)
+✔ 返回地址不能跨站、跨课程、跨课时，也不能跳到未解锁阶段 (0.2379ms)
+✔ 独立实验不读取课程，网络失败明确说明无法核验 (0.3387ms)
+✔ 报告通过或待评审时，最新作品退回仍提供独立修改入口 (0.8949ms)
+✔ 没有作品任务的未完成课时仍可继续，摘要不猜测报告或卡片状态 (9.1621ms)
+✔ 同课时多个任务只产生一个继续学习，报告退回也只产生一个修改报告 (0.3439ms)
+✔ 作品与报告保持独立，修改报告和修改作品均可到达 (0.263ms)
+✔ 报告通过不会覆盖服务端仍未完成的课时学习进度 (0.1522ms)
+✔ 未提交作品提供任务位置入口，不从课时进度推断作品已完成 (0.118ms)
+✔ 取消的课时、已失效课程及没有课时摘要的任务不会回流到首页 (0.1331ms)
+✔ 摘要加载限制课程请求并发，且不请求任何完整课时内容 (39.7604ms)
+✔ 课程在列表和详情请求之间撤回时清除该课程，其他课程仍保留 (1.0542ms)
+✔ 任务摘要失败保留已确认课时继续学习，并明确提示待办未完整加载 (0.5287ms)
+✔ 课程搜索不改变分配关系，下一节课排除取消/过期场次并使用北京时间 (0.6454ms)
+✔ 奖励纯规则保持原数值和固定徽章 (1.7437ms)
+✔ v1 验证保留合法原值，不重新计算；损坏数据明确拒绝 (3.2324ms)
+✔ 同确认纯规则去重，条件拒绝不修改传入状态 (0.7954ms)
+✔ 共享状态按账号和键订阅，focus / clear 同步，卸载清理且订阅不重复 (8.3719ms)
+✔ 交错读取只接受最新快照；短暂故障保留列表但状态失效；卸载后迟到响应无效 (1.6678ms)
+✔ 已提交操作后回读失败不改写结果；广播内容不能直接成为余额 (1.3406ms)
+✔ 作品按可访问课程 ID 查询，重名无影响；并发最多3、去重、搜索透传 (31.4531ms)
+✔ 列表加载途中课程撤回，已返回作品也被丢弃 (0.3864ms)
+✔ 无有效课程/失效筛选不发起无限定作品查询，错误不伪装为空 (1.6ms)
+✔ 指标缺失显示破折号，真实零值保留 (0.4286ms)
+✔ 会话读取、getter 及方法故障均为可识别存储错误，不信任用户缓存 (2.1931ms)
+✔ 保存完整凭据；部分写失败清理全部身份键；清理失败保留 pending，禁止恢复混合账号 (3.2243ms)
+✔ 退出清理逐项尝试；session notice 不依赖可用 sessionStorage (0.417ms)
+✔ 反馈附件保留后端扩展名/MIME/数量/10MiB 边界，GIF 不支持 (0.3298ms)
+✔ 通知路径只允许合法角色站内目标；请求超时不猜测写结果 (1.4496ms)
+✔ 地图按服务端课时顺序编号，分组不丢未归属课时 (1.1701ms)
+✔ 当前节点优先合法来源，其次进行中；不产生跨课时门槛 (0.9933ms)
+✔ 章节不连续时分成连续区域，连线不会跳过中间未分组课时 (0.2203ms)
+✔ 排课时间不擅自转换时区，缺失值显示待安排 (0.084ms)
+✔ 章节不会丢失未配置课时，不重复出现或自动解锁 (1.1523ms)
+✔ 实验返回仅接受站内课程链接 (0.3047ms)
+✔ 草稿键按账号、课程、课时隔离 (0.1882ms)
+✔ 学生新旧路由兼容，其他角色首页不变 (0.3807ms)
+✔ 演示纯规则：扣减、幂等、明细及独立初始状态 (1.3818ms)
+✔ 数据库不可用不能静默回退到旧存储或内存成功 (0.4852ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 55
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 426.5807
+
+
+COMMAND: npm run build
+
+> star-voyage-student@0.1.0 build
+> npm --prefix frontend run build
+
+
+> frontend@0.0.0 build
+> vite build
+
+vite v8.2.1 building client environment for production...
+transforming...
+✓ 3272 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                 3.87 kB │ gzip:   1.05 kB
+dist/assets/pixel-archive-DrFSakwf.css          7.36 kB │ gzip:   1.62 kB
+dist/assets/StudyUI-DSOOYV36.css               10.03 kB │ gzip:   2.07 kB
+dist/assets/pixel-service-m6kMJ5eZ.css         11.68 kB │ gzip:   2.54 kB
+dist/assets/Rewards-CUbCjl-g.css               12.01 kB │ gzip:   2.44 kB
+dist/assets/index-v8l_fk8Q.css                 46.08 kB │ gzip:   8.97 kB
+dist/assets/row-BDlfZ6Eg.js                     0.06 kB │ gzip:   0.08 kB
+dist/assets/extends-CvVTau-c.js                 0.23 kB │ gzip:   0.18 kB
+dist/assets/status-CXNA8hw5.js                  0.23 kB │ gzip:   0.22 kB
+dist/assets/FeedbackStatusTag-Cb16Pt3P.js       0.27 kB │ gzip:   0.22 kB
+dist/assets/FeedbackPriorityTag-rAAb03Uj.js     0.27 kB │ gzip:   0.23 kB
+dist/assets/collapse-DNXyBCq_.js                0.38 kB │ gzip:   0.22 kB
+dist/assets/useMergedMask-BFTX6akI.js           0.46 kB │ gzip:   0.31 kB
+dist/assets/feedbackFiles-BW-Ii2md.js           0.63 kB │ gzip:   0.55 kB
+dist/assets/LeftOutlined-BLqsM7pl.js            0.83 kB │ gzip:   0.57 kB
+dist/assets/RightOutlined-DEYzHLmX.js           0.83 kB │ gzip:   0.57 kB
+dist/assets/ArrowLeftOutlined-BfVJzYYW.js       0.87 kB │ gzip:   0.61 kB
+dist/assets/FileOutlined-BdO7pJb0.js            0.88 kB │ gzip:   0.61 kB
+dist/assets/ActionButton-DrB-8scM.js            0.89 kB │ gzip:   0.55 kB
+dist/assets/DownloadOutlined-BNrjjh3T.js        0.95 kB │ gzip:   0.62 kB
+dist/assets/PlayCircleOutlined-DOQA61us.js      1.00 kB │ gzip:   0.64 kB
+dist/assets/TempPasswordModal-DiBvqeyQ.js       1.01 kB │ gzip:   0.64 kB
+dist/assets/PurePanel-wEbRr0U4.js               1.02 kB │ gzip:   0.64 kB
+dist/assets/EyeOutlined-DdOr9Jcj.js             1.13 kB │ gzip:   0.72 kB
+dist/assets/NotificationLevelTag-BEDsjBCr.js    1.15 kB │ gzip:   0.65 kB
+dist/assets/SearchOutlined-C_QpYIsV.js          1.16 kB │ gzip:   0.73 kB
+dist/assets/FeedbackFilters-DxVuro-O.js         1.19 kB │ gzip:   0.57 kB
+dist/assets/feedback-C1a5veMy.js                1.21 kB │ gzip:   0.60 kB
+dist/assets/useClosable-B3OcR6nS.js             1.24 kB │ gzip:   0.66 kB
+dist/assets/modal-BKpFxMTw.js                   1.40 kB │ gzip:   0.76 kB
+dist/assets/RocketOutlined-BUetdYiT.js          1.60 kB │ gzip:   1.00 kB
+dist/assets/useBreakpoint-BCPY1u2V.js           1.85 kB │ gzip:   0.89 kB
+dist/assets/ArchiveRecords-XVO5P4eN.js          1.90 kB │ gzip:   1.05 kB
+dist/assets/StudentList-Xl88FDsm.js             1.95 kB │ gzip:   1.16 kB
+dist/assets/style-DBdZoKgn.js                   1.97 kB │ gzip:   0.83 kB
+dist/assets/ReviewList-BK1hTH3H.js              2.14 kB │ gzip:   1.23 kB
+dist/assets/School-Vti22O0n.js                  2.24 kB │ gzip:   1.18 kB
+dist/assets/Input-TN-ADMOn.js                   2.39 kB │ gzip:   1.14 kB
+dist/assets/Dashboard-pcKyxhwL.js               2.39 kB │ gzip:   1.17 kB
+dist/assets/date-D3egdRiN.js                    2.43 kB │ gzip:   1.08 kB
+dist/assets/ContentHub-DYgwHcHw.js              2.47 kB │ gzip:   1.38 kB
+dist/assets/row-BrlcFmjK.js                     2.52 kB │ gzip:   1.32 kB
+dist/assets/Detail-2k4KpfPm.js                  2.64 kB │ gzip:   1.36 kB
+dist/assets/List-DJBBuacR.js                    2.67 kB │ gzip:   1.40 kB
+dist/assets/Detail-DlmzBE4E.js                  2.88 kB │ gzip:   1.47 kB
+dist/assets/Form-BmOhLuCH.js                    3.04 kB │ gzip:   1.53 kB
+dist/assets/ChangePassword-B4YJqm5U.js          3.04 kB │ gzip:   1.60 kB
+dist/assets/List-CgH2DobC.js                    3.11 kB │ gzip:   1.63 kB
+dist/assets/style-CvIBM0v-.js                   3.16 kB │ gzip:   1.22 kB
+dist/assets/StudentDetail-BoxXEPpN.js           3.20 kB │ gzip:   1.40 kB
+dist/assets/StudyUI-B6W2U74J.js                 3.23 kB │ gzip:   1.22 kB
+dist/assets/List-DBqySUGc.js                    3.24 kB │ gzip:   1.72 kB
+dist/assets/AISettings-Bp00jStj.js              3.35 kB │ gzip:   1.75 kB
+dist/assets/popconfirm-YqzNdAqh.js              3.54 kB │ gzip:   1.57 kB
+dist/assets/experimentContext-1aCo5Rj4.js       3.58 kB │ gzip:   1.71 kB
+dist/assets/pixel-archive-B77zwJcE.js           3.64 kB │ gzip:   1.76 kB
+dist/assets/AIKnowledge-mll9zbSA.js             3.73 kB │ gzip:   1.95 kB
+dist/assets/statistic-DgNzKF37.js               4.13 kB │ gzip:   1.91 kB
+dist/assets/AuthContext-B-4kI3Tk.js             4.27 kB │ gzip:   1.99 kB
+dist/assets/List-C5LpLG6I.js                    4.30 kB │ gzip:   2.13 kB
+dist/assets/Learning-Bnn7qy7V.js                4.35 kB │ gzip:   1.86 kB
+dist/assets/useForm-BN6ZLoQj.js                 4.71 kB │ gzip:   2.11 kB
+dist/assets/empty-DhWg0dGF.js                   4.75 kB │ gzip:   2.07 kB
+dist/assets/Form-Bu69q2p4.js                    5.02 kB │ gzip:   2.57 kB
+dist/assets/Manage-DgfiZo-d.js                  5.04 kB │ gzip:   2.40 kB
+dist/assets/ReviewDetail-B37Z1RRR.js            5.68 kB │ gzip:   2.56 kB
+dist/assets/Upload-B71ENVr-.js                  6.11 kB │ gzip:   3.03 kB
+dist/assets/es-Ik0B4-jI.js                      6.18 kB │ gzip:   2.46 kB
+dist/assets/AI-DQZh1uE6.js                      6.31 kB │ gzip:   3.30 kB
+dist/assets/alert-CEGzmlVV.js                   6.36 kB │ gzip:   2.68 kB
+dist/assets/LessonContentEditor-DNEJ6xtY.js     6.70 kB │ gzip:   2.81 kB
+dist/assets/List-BG1Wcs9q.js                    6.75 kB │ gzip:   2.86 kB
+dist/assets/Reflection-DbJJZZTG.js              7.38 kB │ gzip:   3.24 kB
+dist/assets/switch-CzUZrDZf.js                  7.50 kB │ gzip:   2.56 kB
+dist/assets/spin-kKfFZN18.js                    7.50 kB │ gzip:   3.12 kB
+dist/assets/dayjs.min-CLFftfrj.js               7.84 kB │ gzip:   3.38 kB
+dist/assets/tag-CVMx97ve.js                     8.53 kB │ gzip:   3.35 kB
+dist/assets/Detail-DwWl1CVl.js                  8.64 kB │ gzip:   3.63 kB
+dist/assets/card-DDBPQEip.js                    9.26 kB │ gzip:   3.26 kB
+dist/assets/Index-2fI8hvC-.js                   9.35 kB │ gzip:   3.63 kB
+dist/assets/skeleton-Cjnz_FLA.js                9.44 kB │ gzip:   3.23 kB
+dist/assets/Detail-DYpjOWwt.js                 10.14 kB │ gzip:   4.41 kB
+dist/assets/input-BjAZXXIz.js                  11.06 kB │ gzip:   5.16 kB
+dist/assets/Detail-DT5qeVpN.js                 11.45 kB │ gzip:   4.23 kB
+dist/assets/Rewards-B0clDKcQ.js                13.13 kB │ gzip:   4.51 kB
+dist/assets/List-BHG4RS3I.js                   14.21 kB │ gzip:   5.03 kB
+dist/assets/progress-6OKJ6KFK.js               14.77 kB │ gzip:   5.70 kB
+dist/assets/checkbox-9lGLtMBe.js               15.07 kB │ gzip:   5.28 kB
+dist/assets/Detail-COgF0lH3.js                 18.36 kB │ gzip:   6.39 kB
+dist/assets/Index-B0r_XWvl.js                  18.77 kB │ gzip:   6.76 kB
+dist/assets/input-number-5vGIMgXt.js           20.96 kB │ gzip:   7.60 kB
+dist/assets/LessonLearn-DuxV34Bi.js            22.20 kB │ gzip:   8.37 kB
+dist/assets/pagination-WjPG_Vyk.js             24.08 kB │ gzip:   7.26 kB
+dist/assets/useModal-MnG7WDeG.js               25.21 kB │ gzip:   8.70 kB
+dist/assets/UploadOutlined-rsbGjxmJ.js         31.79 kB │ gzip:  11.35 kB
+dist/assets/result-BsjX-laP.js                 34.55 kB │ gzip:  10.84 kB
+dist/assets/timeline-BGzH9Vnv.js               36.28 kB │ gzip:  10.29 kB
+dist/assets/tree-B0mLclz8.js                   50.44 kB │ gzip:  15.61 kB
+dist/assets/tabs-CDlVGz0R.js                   58.71 kB │ gzip:  18.53 kB
+dist/assets/Simulator-DR3Shjmh.js              61.00 kB │ gzip:  22.17 kB
+dist/assets/select-BAtohuo0.js                 69.34 kB │ gzip:  23.66 kB
+dist/assets/table-BwVLvmVe.js                  90.93 kB │ gzip:  30.25 kB
+dist/assets/api-DTG498y9.js                    97.60 kB │ gzip:  34.49 kB
+dist/assets/index-Bz9Ys2lI.js                 234.86 kB │ gzip:  73.93 kB
+dist/assets/jsx-runtime-DM-UpxCW.js           503.88 kB │ gzip: 166.06 kB
+
+✓ built in 575ms
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+
+COMMAND: npm run test:e2e:round10
+
+> star-voyage-student@0.1.0 test:e2e:round10
+> node --test --test-concurrency=1 tests/round10.browser.test.js tests/round10-rewards.browser.test.js
+
+Browser: 154.0.4258.37
+▶ 第十轮：原生 IndexedDB 迁移、提交与 120 组双标签压力验证
+  ✔ 原样迁移并保留 v1 备份；重置/重开不重导入；已迁移账号不再读取 v1 (1135.0218ms)
+  ✔ 并发首次迁移与兑换不覆盖已提交状态；并发同编号仅一笔；不同账号隔离 (400.0156ms)
+  ✔ 损坏/不可读迁移源不被覆盖；迁移 put 后中止无初始化标记；直接重置恢复 (281.5967ms)
+  ✔ 数据库不可用、open 失败及真实升级 blocked 均可重试，不虚构持久成功 (230.1556ms)
+  ✔ 提交后取消与回读/广播失败不撤销事实；广播只触发数据库重读 (423.0386ms)
+Stress: {"browser":"154.0.4258.37","started":"2026-10-04T07:21:11.333Z","finished":"2026-10-04T07:21:18.640Z","groups":120,"thirdTabSamples":[9,19,29,39,49,59,69,79,89,99,109,119],"failures":[]}
+  ✔ 120 组混合事务顺序，逐组读取两页持久状态，12 次新第三标签抽检 (7693.0383ms)
+✔ 第十轮：原生 IndexedDB 迁移、提交与 120 组双标签压力验证 (11409.7112ms)
+Browser: 154.0.4258.37
+Session observation {"verificationStatus":200,"path":"/feedback/new","title":"【测试】刷新时保留我的反馈"}
+▶ 第十轮：跨标签会话与通知批量回归（真实隔离 API）
+  ✔ 同账号真实过期凭据刷新，另一标签反馈输入和 DOM 不应丢失 (5449.1138ms)
+  ✔ 真实全部已读延迟期间切换筛选，写成功必须重读当前列表 (2697.5853ms)
+  ✔ 主动刷新保留独立反思、回复及其他角色表单；同账号迟到成功响应仍有效 (11868.2399ms)
+  ✔ 真实 401 单次刷新保留另一标签输入，后台复核暂时失败也不卸载 (3923.4758ms)
+  ✔ 配对边界：真实退出和换账号清除另一标签表单，旧响应不得覆盖新账号 (10303.6019ms)
+  ✔ 配对边界：真实停用和 FORCE_RESET 使另一标签清理旧内容 (8032.7273ms)
+  ✔ 批量延迟期间切分页：成功/失败/回读失败提示保留，重读不重复写入 (7306.7301ms)
+  ✔ 批量写已提交但响应迟到，退出换账号后不显示旧结果 (3580.9556ms)
+Concurrent real refresh groups: 20, failures: 0
+  ✔ 两个标签同时主动刷新只进行一次真实凭据轮换 (5070.8516ms)
+  ✔ 旧账号刷新响应迟到，不能覆盖另一标签新登录的凭据或表单 (5440.5675ms)
+  ✔ 实际奖励页：v1 迁移、双标签最终一致、轮换保留弹窗、窄屏数据库错误 (25454.6275ms)
+✔ 第十轮：跨标签会话与通知批量回归（真实隔离 API） (90879.2061ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 103059.3856
+
+
+COMMAND: node --test --test-concurrency=1 tests/round8.browser.test.js tests/round9.browser.test.js
+▶ 第八轮：奖励视觉、本地存储与双标签一致性
+  ✔ 真实浏览器演示：四标签、三尺寸、详情取消与键盘焦点 (10806.567ms)
+  ✔ 事务在 put 成功后中止：失败重试保留同次编号，刷新持久化与原限制 (7030.3177ms)
+  ✔ 数据库 getter / 读取 / 损坏 / 重置失败可恢复，不自动覆盖 (5535.7014ms)
+  ✔ 实际双标签广播同步：详情、顶栏、列表、焦点及旧版本隔离 (22451.3828ms)
+  ✔ 实际 IndexedDB 事务：兑换→重置、重置→兑换、竞争最后限兑与两页一致 (48409.055ms)
+  ✔ 离开/退出中止尚未提交事务，已提交事实保留，账号隔离且不依赖 Web Locks (24719.759ms)
+  ✔ 长历史与窄屏分页、弹窗焦点约束、素材正常加载 (2050.411ms)
+  ✔ 拒绝存储后首次挂载奖励页仍可重试，背景更新保留标签与滚动 (777.0811ms)
+✔ 第八轮：奖励视觉、本地存储与双标签一致性 (125479.4683ms)
+▶ 第九轮：认证、通知和反馈视觉与容错（隔离真实 API + 指定故障注入）
+  ✔ 登录：三尺寸、键盘显示切换、校验与真实错误密码/频控 (3128.4685ms)
+  ✔ 登录网络/超时故障注入保留表单；真实学生登录进入探索 (1653.7862ms)
+  ✔ 强制改密不可绕过、无通知请求；真实新凭证与普通改密三尺寸 (5868.0192ms)
+  ✔ 真实其他角色首页与管理功能保持原角色布局 (4924.2708ms)
+  ✔ localStorage getter/getItem 故障结束恢复；sessionStorage 禁用不阻断登录 (4609.1856ms)
+  ✔ 登录部分写入失败不进业务；退出清理失败立即移除内容并可重新登录 (2883.9485ms)
+  ✔ 通知真实空态、三尺寸列表/详情/最近弹层、GET 自动已读与标未读 (6068.0907ms)
+  ✔ 通知筛选与分页、批量真实范围、清理确认及最后一页回退 (3389.6741ms)
+  ✔ 最近通知合法路径跳转、不允许路径回退；计数失败不伪装为零 (1204.7076ms)
+  ✔ 通知 A 切 B 失败、迟到 A、动作迟到；列表筛选迟到均不串对象 (1974.1876ms)
+  ✔ 通知写成功回读失败显示真实结果，重试只读取 (729.5658ms)
+  ✔ 反馈真实空态与表单三尺寸；合法文件、类型/数量/大小校验及失败保留 (7125.8126ms)
+  ✔ 反馈授权附件下载与真实 404 不清回复；普通回复失败保留并可真实发送 (1008.1924ms)
+  ✔ 反馈回复写成功回读失败仅重新 GET，不重复 POST (1264.537ms)
+  ✔ 真实管理员内部备注不可见、解决确认与重新处理；重开失败保留、焦点恢复 (4305.1376ms)
+  ✔ 反馈 A 切 B 的真实 403/404、迟到返回与路由后动作不串对象 (2251.6661ms)
+  ✔ 反馈筛选迟到/读取失败隔离，长内容与三尺寸表单底部可达 (3471.4472ms)
+  ✔ 回复超时未确认不伪造失败或成功；重复点击只发一个请求 (1730.3263ms)
+  ✔ 真实有效 refresh 轮换与并发去重，旧账号迟到请求不能覆盖新账号 (2850.5895ms)
+  ✔ 账号停用及并发 401 刷新只一次；强制重置全局处理与受限业务不循环 (1708.9502ms)
+  ✔ 管理员反馈详情保留优先级、状态和内部备注操作，没有学生外壳 (2417.6674ms)
+  ✔ 通知账号切换不残留旧列表/计数；浏览器无未捕获异常 (1955.9309ms)
+✔ 第九轮：认证、通知和反馈视觉与容错（隔离真实 API + 指定故障注入） (68421.1404ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 194610.0987
+
+
+COMMAND: node --test --test-concurrency=1 tests/access.browser.test.js tests/round5.browser.test.js
+▶ 权限错误仅清理失效对象，保留不相关输入（真实本地 API）
+  ✔ 真实附件 404 显示局部错误，学习页和导航继续存在 (1734.4362ms)
+  ✔ 附件 404、无关课程拒绝和课程更新时间变化不重建正在填写的报告 (147.0367ms)
+  ✔ 不相关课程撤回和后台网络失败保留当前报告，重试可恢复检查 (191.7265ms)
+  ✔ 真实当前课程撤回清除学习内容并保留可用导航 (241.4324ms)
+  ✔ 单个课时对象失效时仅清当前页，课程仍可进入 (1679.9401ms)
+  ✔ 反思课程撤回仅移除关联，未提交正文保留 (1631.7459ms)
+  ✔ 助手课程撤回清除课程上下文，保留尚未发送的问题 (1183.9076ms)
+✔ 权限错误仅清理失效对象，保留不相关输入（真实本地 API） (9976.0378ms)
+▶ 第五轮：真实学习与作品提交、版本、反馈及学生视觉
+  ✔ 四阶段锁定原因、回放与附件局部失败、三尺寸首屏 (5921.3558ms)
+  ✔ 五种题型、一次作答、答错仍可完成、卡片顺序与阅读布局 (7317.9121ms)
+  ✔ 无题卡片、指定实验返回卡片、无卡片不自动通过与无作品任务 (7002.7539ms)
+  ✔ 折叠必填字段展开定位、全部报告字段草稿恢复、提交失败与待评审 (12251.1235ms)
+  ✔ 报告退回修改、新版本通过，作品入口独立且不被报告状态隐藏 (4913.8475ms)
+  ✔ 作品首次提交、字段校验、草稿恢复、上传失败后文字和附件保留 (7531.3347ms)
+  ✔ 最新退回作品可修改、旧版本只读已修改、作品附件局部失败与版本切换 (12926.4415ms)
+  ✔ 小智顺向Tab到提问、Escape回焦点、窄屏报告确认无遮挡 (3508.536ms)
+  ✔ 管理员和导师保留原评审表单；导师真实评分后学生可查看维度 (11109.2731ms)
+  ✔ 作品详情网络失败可重试，真实课程撤回清除作品内容 (9596.5525ms)
+✔ 第五轮：真实学习与作品提交、版本、反馈及学生视觉 (84553.0976ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 95202.639

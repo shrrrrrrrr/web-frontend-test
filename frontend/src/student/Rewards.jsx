@@ -2,10 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Alert, Empty, Modal, Pagination, Spin, Tabs } from 'antd';
 import { Link } from 'react-router-dom';
 import PageContainer from '../components/common/PageContainer';
-import { useAuth } from '../store/AuthContext';
 import { formatBeijingTime } from '../utils/date';
 import { useRewards } from './useRewards';
-import { notifyDemoRewardsChanged } from './rewardEvents';
 import { PixelButton, PixelImage, PixelPanel, PixelTag } from './visual/PixelUI';
 import PixelIcon from './visual/PixelIcon';
 import { StudyHeader } from './visual/StudyUI';
@@ -43,8 +41,7 @@ function RecordList({ data, ledger = false, highlight }) {
 }
 
 export default function Rewards() {
-  const { user } = useAuth();
-  const { data, status, error, refreshing, store } = useRewards();
+  const { data, status, error, refreshing, syncWarning, store } = useRewards();
   const [activeTab, setActiveTab] = useState('gifts');
   const [dialog, setDialog] = useState(null);
   const [operationError, setOperationError] = useState(null);
@@ -82,7 +79,6 @@ export default function Rewards() {
         if (signal.aborted) return;
         setDialog({ kind: 'success', record });
       }
-      notifyDemoRewardsChanged(user.id);
     } catch (err) { if (!signal.aborted) setOperationError(err); }
     finally { if (!signal.aborted) { inFlight.current = false; setBusy(false); } }
   };
@@ -104,6 +100,7 @@ export default function Rewards() {
       <div className="reward-balance"><PixelIcon name="coin" size={36} /><div><span>演示积分余额</span><strong data-testid="reward-balance">{status === 'ready' ? data.balance : status === 'loading' ? '读取中' : '暂不可读取'}</strong></div></div>
       <div className="reward-scope"><PixelTag tone="neutral">本地演示，规则待定</PixelTag><p>只保存在本浏览器，按当前账号隔离。<br />不会扣除真实积分，也不会真实发货。</p></div>
     </PixelPanel>
+    {syncWarning && <Alert className="reward-notice" type="warning" showIcon title="跨页面显示提醒" description={syncWarning} />}
     {notice && <Alert className="reward-notice" type="success" showIcon title={notice} closable />}
     {error && <Alert className="reward-notice" type="error" showIcon title="演示数据暂不可用" description={<>{error.message}{data && <p>下面保留上次读取的列表，当前兑换条件暂停使用。</p>}</>} action={<PixelButton onClick={store.refresh} loading={refreshing}>重试读取</PixelButton>} />}
     {status === 'loading' && <div className="reward-loading"><Spin /><p>正在读取本账号的演示记录</p></div>}

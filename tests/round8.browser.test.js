@@ -7,6 +7,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { randomBytes } from 'node:crypto';
 import { chromium } from 'playwright';
+import { readRewardAccount, writeRewardAccount, watchRewardTransactions, holdRewardDatabase, releaseRewardDatabase, waitRewardWrite, failRewardPut, restoreRewardPut } from './helpers/rewardBrowser.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const require = createRequire(path.join(root, 'backend/package.json'));
@@ -76,17 +77,13 @@ test('第八轮：奖励视觉、本地存储与双标签一致性', { timeout: 
     await Promise.all([waitFor(base),waitFor(apiBase+'/api/health')]);
     browser=await chromium.launch({channel:'msedge',headless:true});
     const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'reduce'});
-    await context.addInitScript(()=>{
-      window.rewardStorageRemovals=0;
-      window.addEventListener('storage',event=>{if(event.key?.startsWith('star-voyage:rewards:')&&event.newValue===null)window.rewardStorageRemovals++;});
-    });
-    const page=await context.newPage();page.setDefaultTimeout(12000);
+        const page=await context.newPage();page.setDefaultTimeout(12000);
     const errors=[];page.on('pageerror',e=>errors.push(e.message));
     const key='star-voyage:rewards:demo:v1:4';
     const button=(name,p=page)=>p.getByRole('button',{name,exact:true});
     const tab=(name,p=page)=>p.getByRole('tab',{name,exact:true}).click();
     const balance=async(value,p=page)=>{await p.getByTestId('reward-balance').getByText(String(value),{exact:true}).waitFor();await p.getByTestId('header-demo-points').getByText(String(value),{exact:true}).waitFor();};
-    const saved=(p=page)=>p.evaluate(k=>JSON.parse(localStorage.getItem(k)),key);
+    const saved=async(p=page)=>(await readRewardAccount(p,4))?.state;
     const gift=async(id='notebook',p=page)=>{await tab('礼品',p);await p.locator('[data-gift='+id+']').getByRole('button',{name:'查看礼品详情',exact:true}).click();};
     const start=async(p=page)=>{await gift('notebook',p);await button('演示兑换',p).click();};
     const close=async(p=page)=>{await p.keyboard.press('Escape');await p.getByRole('dialog').waitFor({state:'hidden'});};
@@ -95,7 +92,7 @@ test('第八轮：奖励视觉、本地存储与双标签一致性', { timeout: 
     const scenario=async(name,run)=>{let failure;await t.test(name,async()=>{try{await run();}catch(error){failure=error;console.error(page.url(),(await page.locator('body').innerText()).slice(0,6000));await page.screenshot({path:path.join(root,'test-results/round8-failure.png'),fullPage:true});throw error;}});if(failure)throw failure;};
     await login(page);await page.getByTestId('header-demo-points').click();await balance(120);
     await scenario('真实浏览器演示：四标签、三尺寸、详情取消与键盘焦点',async()=>{
-      assert.equal(await saved(),null);
+      assert.equal((await saved()).records.length,0);
       await sizes(page,'01-gifts-demo-first');
       assert.ok(await page.locator('[data-gift=notebook]').evaluate(el=>el.getBoundingClientRect().top<900));
       await tab('兑换记录');await page.getByText('还没有演示兑换记录',{exact:true}).waitFor();await sizes(page,'02-empty-records-demo-first');
@@ -106,100 +103,96 @@ test('第八轮：奖励视觉、本地存储与双标签一致性', { timeout: 
         await sizes(page,'05-badge-'+id+'-demo-modal');await close();assert.ok(await trigger.evaluate(el=>el===document.activeElement));
       }
       await gift();await sizes(page,'06-gift-detail-demo-modal');
-      await button('演示兑换').click();await sizes(page,'07-confirm-demo-modal');await button('返回详情').click();await close();await balance(120);assert.equal(await saved(),null);
+      await button('演示兑换').click();await sizes(page,'07-confirm-demo-modal');await button('返回详情').click();await close();await balance(120);assert.equal((await saved()).records.length,0);
       for(const [id,reason,prefix] of [['model','还差 40 演示积分','08-insufficient'],['sticker','演示库存不足','09-out-of-stock']]){
         await gift(id);assert.ok(await button('演示兑换').isDisabled());await page.getByRole('dialog').getByText(reason,{exact:true}).waitFor();await sizes(page,prefix+'-demo-modal');await close();
       }
       await page.getByRole('tab',{name:'礼品',exact:true}).focus();await page.keyboard.press('ArrowRight');await page.keyboard.press('Enter');await page.locator('#reward-tabs-tab-ledger').getAttribute('aria-selected').then(v=>assert.equal(v,'true'));
     });
-    await scenario('写入失败保留同次确认，快速重复与重试仅一条扣分，刷新持久化',async()=>{
-      await page.evaluate(()=>{window.rewardTestSet=Storage.prototype.setItem;window.rewardTestIds=[];Storage.prototype.setItem=function(k,v){if(k.startsWith('star-voyage:rewards:')){window.rewardTestIds.push(JSON.parse(v).records[0].id);throw new DOMException('Injected quota','QuotaExceededError');}return window.rewardTestSet.call(this,k,v);};});
-      await start();await button('确认演示兑换').click();await page.getByText('未完成演示兑换',{exact:true}).waitFor();assert.equal(await page.getByRole('dialog').count(),1);await balance(120);assert.equal(await saved(),null);
-      await sizes(page,'10-write-failure-injected-modal');
-      await page.evaluate(()=>{Storage.prototype.setItem=function(k,v){if(k.startsWith('star-voyage:rewards:'))window.rewardTestIds.push(JSON.parse(v).records[0].id);return window.rewardTestSet.call(this,k,v);};});
-      await button('重试本次兑换').evaluate(el=>{el.click();el.click();});
-      await page.getByText('演示兑换成功',{exact:true}).waitFor();await balance(80);
-      const ids=await page.evaluate(()=>window.rewardTestIds);assert.equal(new Set(ids).size,1);assert.equal((await saved()).records.length,1);
-      await sizes(page,'11-success-demo-modal');await button('查看本次兑换记录').click();await page.getByText('本次兑换',{exact:true}).waitFor();
-      await sizes(page,'12-records-demo-first');await tab('积分明细');await sizes(page,'13-ledger-demo-first');
-      await page.evaluate(()=>{Storage.prototype.setItem=window.rewardTestSet;});await page.reload();await balance(80);
-      await start();await button('确认演示兑换').click();await page.getByText('演示兑换成功',{exact:true}).waitFor();await button('返回礼品').click();await balance(40);
-      await gift();await page.getByRole('dialog').getByText('已达到演示兑换次数上限',{exact:true}).waitFor();assert.ok(await button('演示兑换').isDisabled());await sizes(page,'14-limit-demo-modal');await close();
-    });
-    await scenario('存储 getter / getItem / 损坏 / removeItem 故障可恢复，不白屏或自动删除',async()=>{
-      await page.evaluate(()=>{window.rewardTestDescriptor=Object.getOwnPropertyDescriptor(window,'localStorage');Object.defineProperty(window,'localStorage',{configurable:true,get(){throw new DOMException('Injected getter denial','SecurityError');}});});
-      await sync();await page.getByTestId('reward-balance').getByText('暂不可读取',{exact:true}).waitFor();assert.match(await page.getByTestId('header-demo-points').innerText(),/—/);await page.getByText(/浏览器拒绝提供存储/).waitFor();await sizes(page,'15-storage-getter-injected-first');
-      await page.evaluate(()=>Object.defineProperty(window,'localStorage',window.rewardTestDescriptor));await button('重试读取').click();await balance(40);
-      await page.evaluate(()=>{window.rewardTestGet=Storage.prototype.getItem;Storage.prototype.getItem=function(k){if(k.startsWith('star-voyage:rewards:'))throw new Error('Injected read failure');return window.rewardTestGet.call(this,k);};});
-      await sync();await page.getByText(/无法读取当前浏览器的演示数据/).waitFor();await sizes(page,'16-read-failure-injected-first');
-      await page.evaluate(()=>{Storage.prototype.getItem=window.rewardTestGet;});await button('重试读取').click();await balance(40);
-      const previous=await saved();await page.evaluate(k=>localStorage.setItem(k,'{broken-json'),key);await sync();await page.getByText(/本账号的演示数据损坏/).waitFor();assert.equal(await page.evaluate(k=>localStorage.getItem(k),key),'{broken-json');await sizes(page,'17-corrupt-injected-first');
-      await button('重置演示数据').click();await sizes(page,'18-reset-demo-modal');await button('取消').click();assert.equal(await page.evaluate(k=>localStorage.getItem(k),key),'{broken-json');
-      await page.evaluate(()=>{window.rewardTestRemove=Storage.prototype.removeItem;Storage.prototype.removeItem=function(k){if(k.startsWith('star-voyage:rewards:'))throw new Error('Injected reset failure');return window.rewardTestRemove.call(this,k);};});
-      await button('重置演示数据').click();await button('确认重置演示数据').click();await page.getByText('未完成重置',{exact:true}).waitFor();await sizes(page,'19-reset-failure-injected-modal');assert.equal(await page.getByRole('dialog').count(),1);assert.equal(await page.evaluate(k=>localStorage.getItem(k),key),'{broken-json');
-      await page.evaluate(()=>{Storage.prototype.removeItem=window.rewardTestRemove;});await button('重试重置').click();await page.getByRole('dialog').waitFor({state:'hidden'});await balance(120);
-      await page.evaluate(({key,previous})=>localStorage.setItem(key,JSON.stringify(previous)),{key,previous});await sync();await balance(40);await reset();
-    });
-    await scenario('实际双标签 storage 同步：详情、顶栏、列表、焦点和清空事件',async()=>{
-      const second=await context.newPage();second.setDefaultTimeout(12000);second.on('pageerror',e=>errors.push(e.message));await second.goto(base+'/archives/rewards');await balance(120,second);
-      await gift('model',second);await start();await button('确认演示兑换').click();await page.getByText('演示兑换成功',{exact:true}).waitFor();await balance(80);await balance(80,second);await second.getByRole('dialog').getByText('还差 80 演示积分',{exact:true}).waitFor();
-      await close(second);await tab('积分明细',second);await second.locator('.reward-amount strong').getByText('-40',{exact:true}).waitFor();
-      await tab('兑换记录',second);await second.getByText('演示兑换成功（不发货）',{exact:true}).waitFor();
-      await button('返回礼品').click();await reset();await balance(120,second);assert.equal(await second.getByRole('tab',{name:'兑换记录',exact:true}).getAttribute('aria-selected'),'true');await second.getByText('还没有演示兑换记录',{exact:true}).waitFor();
-      // A controlled same-page write deliberately omits the custom event; returning focus repairs it.
-      await second.evaluate(async()=>{const {createRewardAdapter}=await import('/src/student/rewardAdapter.js');await createRewardAdapter(localStorage,4).redeem('notebook','focus-case');});
-      await second.evaluate(()=>window.dispatchEvent(new Event('focus')));await balance(80,second);await balance(80);
-      await second.evaluate(k=>{localStorage.removeItem(k);window.dispatchEvent(new StorageEvent('storage',{key:null}));},key);await balance(120,second);await balance(120);
-      await second.close();
-    });
-    await scenario('实际 Web Locks：双标签兑换与重置排队，两个顺序及最终 UI 一致',async()=>{
-      const second=await context.newPage();await second.goto(base+'/archives/rewards');await balance(120,second);
-      const hold=async()=>{await second.evaluate(k=>{window.rewardLockReady=false;window.rewardLockDone=navigator.locks.request(k,()=>{window.rewardLockReady=true;return new Promise(r=>{window.releaseRewardLock=r;});});},key);await second.waitForFunction(()=>window.rewardLockReady);};
-      const release=async()=>{
-        await second.evaluate(()=>{window.releaseRewardLock();});
-        // Await both queued writes, not the intermediate balance after the first write.
-        await second.waitForFunction(async(k)=>{const state=await navigator.locks.query();return ![...state.held,...state.pending].some(lock=>lock.name===k);},key,{timeout:45000});
-      };
-      const waitQueue=async(count)=>{await second.waitForFunction(async({key,count})=>(await navigator.locks.query()).pending.filter(x=>x.name===key).length===count,{key,count});};
-      const beforeRemoval=await page.evaluate(()=>window.rewardStorageRemovals);
-      await hold();await start();await button('确认演示兑换').click();await waitQueue(1);await button('重置演示数据',second).click();await button('确认重置演示数据',second).click();await waitQueue(2);
-      assert.equal(await page.getByRole('dialog').count(),1);await release();
-      // Lock completion and delivery of the other tab's storage event are separate tasks.
-      await page.waitForFunction(before=>window.rewardStorageRemovals>before,beforeRemoval,{timeout:45000});
-      await balance(120);await balance(120,second);await second.getByRole('dialog').waitFor({state:'hidden'});await page.getByText('演示记录已变化',{exact:true}).waitFor();await button('返回礼品').click();assert.equal(await saved(),null);
-      await hold();await button('重置演示数据',second).click();await button('确认重置演示数据',second).click();await waitQueue(1);await start();await button('确认演示兑换').click();await waitQueue(2);await release();await page.getByText('演示兑换成功',{exact:true}).waitFor();await balance(80);await balance(80,second);assert.equal((await saved()).records.length,1);await button('返回礼品').click();
-      await hold();await start();await start(second);await button('确认演示兑换').click();await button('确认演示兑换',second).click();await waitQueue(2);await release();await balance(40);await balance(40,second);assert.equal((await saved()).records.length,2);assert.equal(await page.getByRole('dialog').count(),1);assert.equal(await second.getByRole('dialog').count(),1);
-      // Only one additional redemption fits the unchanged per-account limit.
-      assert.equal(await page.getByText('未完成演示兑换',{exact:true}).count()+await second.getByText('未完成演示兑换',{exact:true}).count(),1);
-      await close();await close(second);await reset();await second.close();
-    });
-    await scenario('离开与退出清理在途操作，账号隔离，无锁同步回退，其他角色无学生弹层',async()=>{
-      const holder=await context.newPage();await holder.goto(base+'/archives/rewards');await balance(120,holder);
-      const hold=async()=>{await holder.evaluate(k=>{window.ready=false;navigator.locks.request(k,()=>{window.ready=true;return new Promise(r=>{window.release=r;});});},key);await holder.waitForFunction(()=>window.ready);};
-      await hold();await start();await button('确认演示兑换').click();
-      // Browser history navigation unmounts the reward page even while a modal operation is pending.
-      await page.evaluate(()=>{history.pushState({},'', '/archives');window.dispatchEvent(new PopStateEvent('popstate'));});
-      await page.locator('.archive-workspace').waitFor();await holder.evaluate(()=>window.release());await page.waitForTimeout(100);assert.equal(await saved(),null);assert.equal(await page.getByRole('dialog').count(),0);
-      await page.getByTestId('header-demo-points').click();await balance(120);await hold();await start();await button('确认演示兑换').click();
-      // Cross-tab auth invalidation destroys this account's outstanding page.
-      await holder.evaluate(()=>{localStorage.removeItem('token');localStorage.removeItem('refresh_token');localStorage.removeItem('user');});
-      await page.waitForURL('**/login');await holder.evaluate(()=>window.release());await holder.close();
-      await login(page,'student_chen');await page.getByTestId('header-demo-points').click();await balance(120);assert.equal(await page.getByRole('dialog').count(),0);
-      await page.evaluate(()=>Object.defineProperty(navigator,'locks',{configurable:true,value:undefined}));
-      await start();await button('确认演示兑换').click();await page.getByText('演示兑换成功',{exact:true}).waitFor();await balance(80);await button('返回礼品').click();assert.equal(await saved(),null);
-      await page.evaluate(()=>delete navigator.locks);
-      await button('个人中心').click();await page.getByRole('menuitem',{name:'退出登录',exact:true}).click();await login(page);await page.getByTestId('header-demo-points').click();await balance(120);
-      for(const [username,password] of [['adminpbl','admin123'],['mentor_zhang','mentor123'],['teacher_li','teacher123']]){
-        const other=await browser.newPage();await login(other,username,password);assert.equal(await other.locator('.student-pixel').count(),0);await other.goto(base+'/archives/rewards');await other.getByText('当前身份无法访问此页面',{exact:true}).waitFor();assert.equal(await other.locator('.reward-workspace,.reward-modal-root').count(),0);await other.close();
-      }
-      assert.deepEqual(errors,[]);
-    });
+    await scenario('事务在 put 成功后中止：失败重试保留同次编号，刷新持久化与原限制',async()=>{
+  await failRewardPut(page);
+  await start();await button('确认演示兑换').click();await page.getByText('未完成演示兑换',{exact:true}).waitFor();
+  assert.equal(await page.getByRole('dialog').count(),1);await balance(120);assert.equal((await saved()).records.length,0);
+  const failedId=await page.evaluate(()=>window.rewardAttemptIds.at(-1));assert.ok(failedId);
+  await sizes(page,'10-write-failure-injected-modal');
+  await restoreRewardPut(page);await button('重试本次兑换').evaluate(el=>{el.click();el.click();});
+  await page.getByText('演示兑换成功',{exact:true}).waitFor();await balance(80);
+  assert.equal((await saved()).records.length,1);assert.equal((await saved()).records[0].id,failedId);
+  await sizes(page,'11-success-demo-modal');await button('查看本次兑换记录').click();await page.getByText('本次兑换',{exact:true}).waitFor();
+  await sizes(page,'12-records-demo-first');await tab('积分明细');await sizes(page,'13-ledger-demo-first');
+  await page.reload();await balance(80);await start();await button('确认演示兑换').click();await page.getByText('演示兑换成功',{exact:true}).waitFor();await button('返回礼品').click();await balance(40);
+  await gift();await page.getByRole('dialog').getByText('已达到演示兑换次数上限',{exact:true}).waitFor();assert.ok(await button('演示兑换').isDisabled());await sizes(page,'14-limit-demo-modal');await close();
+});
+    await scenario('数据库 getter / 读取 / 损坏 / 重置失败可恢复，不自动覆盖',async()=>{
+  await page.evaluate(()=>{window.rewardTestDescriptor=Object.getOwnPropertyDescriptor(window,'indexedDB');Object.defineProperty(window,'indexedDB',{configurable:true,get(){throw new DOMException('Injected getter denial','SecurityError');}});});
+  await sync();await page.getByTestId('reward-balance').getByText('暂不可读取',{exact:true}).waitFor();assert.match(await page.getByTestId('header-demo-points').innerText(),/—/);await sizes(page,'15-storage-getter-injected-first');
+  await page.evaluate(()=>Object.defineProperty(window,'indexedDB',window.rewardTestDescriptor));await button('重试读取').click();await balance(40);
+  await page.evaluate(()=>{window.rewardTestTransaction=IDBDatabase.prototype.transaction;IDBDatabase.prototype.transaction=function(names,mode,...rest){if(this.name==='star-voyage-rewards'&&mode==='readonly')throw new Error('Injected read failure');return window.rewardTestTransaction.call(this,names,mode,...rest);};});
+  await sync();await page.getByText(/暂时无法读取奖励数据库/).waitFor();await sizes(page,'16-read-failure-injected-first');
+  await page.evaluate(()=>{IDBDatabase.prototype.transaction=window.rewardTestTransaction;});await button('重试读取').click();await balance(40);
+  await writeRewardAccount(page,4,{state:{balance:120,records:[null],ledger:[]}});await sync();await page.getByText(/本账号的演示数据损坏/).waitFor();
+  assert.deepEqual((await readRewardAccount(page)).state.records,[null]);await sizes(page,'17-corrupt-injected-first');
+  await button('重置演示数据').click();await sizes(page,'18-reset-demo-modal');await button('取消').click();assert.deepEqual((await saved()).records,[null]);
+  await failRewardPut(page);await button('重置演示数据').click();await button('确认重置演示数据').click();await page.getByText('未完成重置',{exact:true}).waitFor();await sizes(page,'19-reset-failure-injected-modal');
+  assert.deepEqual((await saved()).records,[null]);assert.equal(await page.getByRole('dialog').count(),1);
+  await restoreRewardPut(page);await button('重试重置').click();await page.getByRole('dialog').waitFor({state:'hidden'});await balance(120);
+  assert.equal((await readRewardAccount(page)).initialized,true);
+});
+    await scenario('实际双标签广播同步：详情、顶栏、列表、焦点及旧版本隔离',async()=>{
+  const second=await context.newPage();second.setDefaultTimeout(12000);second.on('pageerror',e=>errors.push(e.message));await second.goto(base+'/archives/rewards');await balance(120,second);
+  await gift('model',second);await start();await button('确认演示兑换').click();await page.getByText('演示兑换成功',{exact:true}).waitFor();await balance(80);await balance(80,second);await second.getByRole('dialog').getByText('还差 80 演示积分',{exact:true}).waitFor();
+  await close(second);await tab('积分明细',second);await second.locator('.reward-amount strong').getByText('-40',{exact:true}).waitFor();
+  await tab('兑换记录',second);await second.getByText('演示兑换成功（不发货）',{exact:true}).waitFor();
+  await button('返回礼品').click();await reset();await balance(120,second);assert.equal(await second.getByRole('tab',{name:'兑换记录',exact:true}).getAttribute('aria-selected'),'true');await second.getByText('还没有演示兑换记录',{exact:true}).waitFor();
+  // A direct fixture write omits invalidation. Returning focus must read the database.
+  const source=await saved();source.balance=80;source.records=[{id:'focus-case',giftId:'notebook',title:'探索笔记本（演示）',cost:40,time:'2026-01-02T03:04:00Z',status:'演示兑换成功（不发货）'}];
+  source.ledger.unshift({id:'focus-case',title:'演示兑换：探索笔记本（演示）',amount:-40,time:'2026-01-02T03:04:00Z'});
+  await writeRewardAccount(second,4,{state:source});await second.evaluate(()=>window.dispatchEvent(new Event('focus')));await balance(80,second);
+  await page.evaluate(()=>window.dispatchEvent(new Event('focus')));await balance(80);
+  await second.evaluate(k=>localStorage.setItem(k,JSON.stringify({balance:0,records:[],ledger:[]})),key);
+  await page.getByText(/检测到旧页面更改了旧版演示记录/).waitFor();await balance(80);
+  await reset();await balance(120,second);await second.close();
+});
+    await scenario('实际 IndexedDB 事务：兑换→重置、重置→兑换、竞争最后限兑与两页一致',async()=>{
+  const second=await context.newPage();second.setDefaultTimeout(12000);await second.goto(base+'/archives/rewards');await balance(120,second);
+  const prepare=async()=>{await watchRewardTransactions(page);await watchRewardTransactions(second);await holdRewardDatabase(second);};
+  await prepare();await start();await button('确认演示兑换').click();await waitRewardWrite(page);await button('重置演示数据',second).click();await button('确认重置演示数据',second).click();await waitRewardWrite(second);
+  assert.equal(await page.getByText('演示兑换成功',{exact:true}).count(),0);
+  await releaseRewardDatabase(second);await balance(120);await balance(120,second);await second.getByRole('dialog').waitFor({state:'hidden'});await page.getByText('演示记录已变化',{exact:true}).waitFor();await button('返回礼品').click();
+  assert.equal((await saved()).records.length,0);assert.equal((await saved()).ledger.length,1);
+  await prepare();await button('重置演示数据',second).click();await button('确认重置演示数据',second).click();await waitRewardWrite(second);
+  await start();await button('确认演示兑换').click();await waitRewardWrite(page);await releaseRewardDatabase(second);
+  await page.getByText('演示兑换成功',{exact:true}).waitFor();await balance(80);await balance(80,second);assert.equal((await saved()).records.length,1);assert.equal((await saved()).ledger.length,2);await button('返回礼品').click();
+  await prepare();await start();await start(second);await button('确认演示兑换').click();await button('确认演示兑换',second).click();await waitRewardWrite(page);await waitRewardWrite(second);await releaseRewardDatabase(second);
+  await balance(40);await balance(40,second);assert.equal((await saved()).records.length,2);assert.equal((await saved()).ledger.length,3);
+  await page.waitForFunction(()=>document.querySelector('.reward-modal .ant-btn-loading')===null);
+  await second.waitForFunction(()=>document.querySelector('.reward-modal .ant-btn-loading')===null);
+  assert.equal(await page.getByText('未完成演示兑换',{exact:true}).count()+await second.getByText('未完成演示兑换',{exact:true}).count(),1);
+  await close();await close(second);await reset();await balance(120,second);await second.close();
+});
+    await scenario('离开/退出中止尚未提交事务，已提交事实保留，账号隔离且不依赖 Web Locks',async()=>{
+  const holder=await context.newPage();await holder.goto(base+'/archives/rewards');await balance(120,holder);
+  await watchRewardTransactions(page);await holdRewardDatabase(holder);await start();await button('确认演示兑换').click();await waitRewardWrite(page);
+  await page.evaluate(()=>{history.pushState({},'', '/archives');window.dispatchEvent(new PopStateEvent('popstate'));});
+  await page.locator('.archive-workspace').waitFor();await releaseRewardDatabase(holder);assert.equal((await saved()).records.length,0);assert.equal(await page.getByRole('dialog').count(),0);
+  await page.getByTestId('header-demo-points').click();await balance(120);await watchRewardTransactions(page);await holdRewardDatabase(holder);await start();await button('确认演示兑换').click();await waitRewardWrite(page);
+  await holder.evaluate(()=>{localStorage.removeItem('token');localStorage.removeItem('refresh_token');localStorage.removeItem('user');});
+  await page.waitForURL('**/login');await releaseRewardDatabase(holder);assert.equal((await saved()).records.length,0);await holder.close();
+  await login(page,'student_chen');await page.getByTestId('header-demo-points').click();await balance(120);assert.equal(await page.getByRole('dialog').count(),0);
+  await page.evaluate(()=>Object.defineProperty(navigator,'locks',{configurable:true,value:undefined}));
+  await start();await button('确认演示兑换').click();await page.getByText('演示兑换成功',{exact:true}).waitFor();await balance(80);await button('返回礼品').click();
+  assert.equal((await readRewardAccount(page,5)).state.records.length,1);assert.equal((await saved()).records.length,0);
+  await page.evaluate(()=>delete navigator.locks);
+  await button('个人中心').click();await page.getByRole('menuitem',{name:'退出登录',exact:true}).click();await login(page);await page.getByTestId('header-demo-points').click();await balance(120);
+  for(const [username,password] of [['adminpbl','admin123'],['mentor_zhang','mentor123'],['teacher_li','teacher123']]){
+    const other=await browser.newPage();await login(other,username,password);assert.equal(await other.locator('.student-pixel').count(),0);await other.goto(base+'/archives/rewards');await other.getByText('当前身份无法访问此页面',{exact:true}).waitFor();assert.equal(await other.locator('.reward-workspace,.reward-modal-root').count(),0);await other.close();
+  }
+  assert.deepEqual(errors,[]);
+});
     await scenario('长历史与窄屏分页、弹窗焦点约束、素材正常加载',async()=>{
-      await page.evaluate(async()=>{
-        const {createRewardAdapter}=await import('/src/student/rewardAdapter.js');const initial=await createRewardAdapter(localStorage,4).load();
-        const records=Array.from({length:11},(_,i)=>({id:'history-'+i,giftId:'notebook',title:'探索笔记本（演示）— 历史兼容布局测试，较长名称仍应完整换行 '+i,cost:40,time:'2026-01-02T03:04:00.000Z',status:'演示兑换成功（不发货）'}));
-        localStorage.setItem('star-voyage:rewards:demo:v1:4',JSON.stringify({...initial,records}));window.dispatchEvent(new CustomEvent('student-demo-rewards-changed',{detail:{accountId:4}}));
-      });
+      const initial=await saved();
+      const records=Array.from({length:11},(_,i)=>({id:'history-'+i,giftId:'notebook',title:'探索笔记本（演示）— 历史兼容布局测试，较长名称仍应完整换行 '+i,cost:40,time:'2026-01-02T03:04:00.000Z',status:'演示兑换成功（不发货）'}));
+      await writeRewardAccount(page,4,{state:{...initial,records}});await sync();
       await tab('兑换记录');await page.getByRole('listitem',{name:'2',exact:true}).click();assert.equal(await page.locator('.reward-record-list>li').count(),3);await sizes(page,'20-long-records-fixture-scrolled',page.locator('.reward-history'));
       await reset();await gift();await page.setViewportSize({width:390,height:844});
       for(let i=0;i<12;i++){await page.keyboard.press('Tab');assert.ok(await page.evaluate(()=>!!document.activeElement.closest('.ant-modal')));}
@@ -210,9 +203,9 @@ test('第八轮：奖励视觉、本地存储与双标签一致性', { timeout: 
 
     await scenario('拒绝存储后首次挂载奖励页仍可重试，背景更新保留标签与滚动',async()=>{
       await page.locator('.study-header-context a').click();await page.locator('.archive-counts dd').first().waitFor();
-      await page.evaluate(()=>{window.rewardTestDescriptor=Object.getOwnPropertyDescriptor(window,'localStorage');Object.defineProperty(window,'localStorage',{configurable:true,get(){throw new DOMException('Injected getter denial before reward mount','SecurityError');}});});
+      await page.evaluate(()=>{window.rewardTestDescriptor=Object.getOwnPropertyDescriptor(window,'indexedDB');Object.defineProperty(window,'indexedDB',{configurable:true,get(){throw new DOMException('Injected getter denial before reward mount','SecurityError');}});});
       await page.getByTestId('header-demo-points').click();await page.getByTestId('reward-balance').getByText('暂不可读取',{exact:true}).waitFor();assert.equal(await page.locator('.reward-workspace').count(),1);
-      await page.evaluate(()=>Object.defineProperty(window,'localStorage',window.rewardTestDescriptor));await button('重试读取').click();await balance(120);await page.evaluate(()=>window.dispatchEvent(new Event('focus')));
+      await page.evaluate(()=>Object.defineProperty(window,'indexedDB',window.rewardTestDescriptor));await button('重试读取').click();await balance(120);await page.evaluate(()=>window.dispatchEvent(new Event('focus')));
       await page.setViewportSize({width:390,height:844});
       // Establish the narrow-screen scroll position after responsive layout has settled.
       const before=await page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));document.querySelector('[data-gift=sticker]').scrollIntoView({block:'center',behavior:'instant'});await new Promise(r=>requestAnimationFrame(r));return scrollY;});

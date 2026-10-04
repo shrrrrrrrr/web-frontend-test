@@ -1,84 +1,90 @@
-import { rewardDemoConfig as config } from './rewardConfig.js';
-import { rewardStorageKey } from './rewardEvents.js';
+import { rewardStorageKey, notifyDemoRewardsChanged } from './rewardEvents.js';
+import { initialRewardState, validateRewardState, redeemReward, rewardSnapshot, rewardFailure } from './rewardModel.js';
+import { openRewardDatabase, rewardTransaction, REWARD_DATABASE } from './rewardDatabase.js';
 
-function failure(code, message) { return Object.assign(new Error(message), { code }); }
-
-// Lazy access keeps a denied browser getter inside the recoverable operation.
+const corrupt = () => rewardFailure('CORRUPT_DATA', '本账号的演示数据损坏。可以重试读取，或确认后重置；当前数据尚未清除。');
+function validateAccount(record) {
+  if (!record?.initialized || record.schemaVersion !== 1 || !Number.isInteger(record.revision) || record.revision < 1) throw corrupt();
+  validateRewardState(record.state);
+  return record;
+}
+// The first argument is a v1 migration source only. It is never a write destination.
 export function createDemoRewardAdapter(storageSource, accountId, options = {}) {
   if (!accountId) throw new Error('请先登录');
-  const key = rewardStorageKey(accountId);
-  const storage = () => {
+  const key = rewardStorageKey(accountId), id = String(accountId);
+  const databaseName = options.databaseName || REWARD_DATABASE;
+  const factory = Object.hasOwn(options, 'indexedDB') ? options.indexedDB : (() => window.indexedDB);
+  let syncWarning = '', initialized = false;
+  const legacyState = () => {
+    let storage, saved;
     try {
-      const value = typeof storageSource === 'function' ? storageSource() : storageSource;
-      if (!value) throw new Error();
-      return value;
-    } catch { throw failure('STORAGE_ACCESS', '浏览器拒绝提供存储，演示余额暂不可读取。请允许本站存储后重试。'); }
+      storage = typeof storageSource === 'function' ? storageSource() : storageSource;
+      if (!storage) throw Error();
+    } catch { throw rewardFailure('STORAGE_ACCESS', '浏览器拒绝读取旧版演示记录。请允许本站存储后重试；旧记录尚未改变。'); }
+    try { saved = storage.getItem(key); }
+    catch { throw rewardFailure('READ_FAILED', '无法读取本账号的旧版演示记录，请恢复存储权限后重试。'); }
+    if (saved === null || saved === undefined) return { state: initialRewardState(), source: 'new' };
+    try { return { state: validateRewardState(JSON.parse(saved)), source: 'v1' }; }
+    catch { throw corrupt(); }
   };
-  const initial = () => ({ balance: config.initialPoints, records: [], ledger: [
-    { id: 'initial', title: '演示初始积分（非真实发放）', amount: config.initialPoints, time: '' },
-  ] });
-  const read = () => {
-    const source = storage();
-    let saved;
-    try { saved = source.getItem(key); }
-    catch { throw failure('READ_FAILED', '无法读取当前浏览器的演示数据，请检查存储权限后重试。'); }
-    if (saved === null || saved === undefined) return initial();
-    try {
-      const value = JSON.parse(saved);
-      if (!value || !Number.isFinite(value.balance) || value.balance < 0 || !Array.isArray(value.records) || !Array.isArray(value.ledger)
-        || value.records.some((r) => !r || typeof r.id !== 'string' || typeof r.giftId !== 'string' || typeof r.title !== 'string' || !Number.isFinite(r.cost) || typeof r.time !== 'string')
-        || value.ledger.some((r) => !r || typeof r.id !== 'string' || typeof r.title !== 'string' || !Number.isFinite(r.amount) || typeof r.time !== 'string')) throw new Error();
-      return value;
-    } catch { throw failure('CORRUPT_DATA', '本账号的演示数据损坏。可以重试读取，或确认后重置；当前数据尚未清除。'); }
+  const read = db => rewardTransaction(db, 'readonly', (store, done) => {
+    const request = store.get(id);
+    request.onsuccess = () => done(request.result);
+  });
+  const ensure = async (db, signal) => {
+    const existing = await read(db);
+    if (existing !== undefined) return validateAccount(existing); // Do not touch localStorage again.
+    const legacy = legacyState(); // Preparation outside the live readwrite transaction.
+    return rewardTransaction(db, 'readwrite', (store, done, fail) => {
+      const request = store.get(id);
+      request.onsuccess = () => {
+        try {
+          if (request.result !== undefined) { done(validateAccount(request.result)); return; }
+          const account = { accountId: id, schemaVersion: 1, initialized: true, source: legacy.source,
+            initializedAt: new Date().toISOString(), revision: 1, state: legacy.state };
+          store.put(account); done(account);
+        } catch (error) { fail(error); }
+      };
+    }, { signal, write: true });
   };
-  const condition = (gift, state) => {
-    const count = state.records.filter((record) => record.giftId === gift.id).length;
-    if (count >= gift.limit) return '已达到演示兑换次数上限';
-    if (count >= gift.stock) return '演示库存不足';
-    if (state.balance < gift.cost) return `还差 ${gift.cost - state.balance} 演示积分`;
-    return '';
+  const withDatabase = async operation => {
+    const db = await openRewardDatabase(factory, databaseName);
+    try { return await operation(db); } finally { db.close(); }
   };
-  const snapshot = () => {
-    const state = read();
-    return { ...state, mode: 'demo', gifts: config.gifts.map((gift) => ({ ...gift, blockedReason: condition(gift, state),
-      remaining: Math.max(0, gift.stock - state.records.filter((record) => record.giftId === gift.id).length) })), badges: config.badges };
-  };
-  const exclusive = (execute, signal) => {
-    const run = () => { signal?.throwIfAborted(); return execute(); };
-    const locks = Object.hasOwn(options, 'locks') ? options.locks : (typeof window !== 'undefined' ? globalThis.navigator?.locks : null);
-    // Both writes share an account lock. The synchronous fallback is not cross-tab atomic.
-    return locks ? locks.request(key, signal ? { signal } : {}, run) : run();
+  const change = async (kind, giftId, requestId, { signal } = {}) => {
+    signal?.throwIfAborted();
+    const result = await withDatabase(async db => {
+      if (kind !== 'reset' && !initialized) { await ensure(db, signal); initialized = true; }
+      return rewardTransaction(db, 'readwrite', (store, done, fail) => {
+        const request = store.get(id);
+        request.onsuccess = () => {
+          try {
+            const existing = request.result;
+            if (kind === 'reset') {
+              // Confirmed reset also recovers corrupt/missing state, without reading a broken v1 source.
+              const account = { accountId: id, schemaVersion: 1, initialized: true, source: 'reset',
+                initializedAt: existing?.initializedAt || new Date().toISOString(),
+                revision: Number.isInteger(existing?.revision) && existing.revision >= 1 ? existing.revision + 1 : 1, state: initialRewardState() };
+              store.put(account); done(rewardSnapshot(account.state)); return;
+            }
+            const account = validateAccount(existing);
+            const { record, changed } = redeemReward(account.state, giftId, requestId);
+            if (changed) { account.revision++; store.put(account); }
+            done(record);
+          } catch (error) { fail(error); }
+        };
+      }, { signal, write: true });
+    });
+    // This runs only after complete. Broadcast failure must never turn a committed write into failure.
+    initialized = true;
+    syncWarning = notifyDemoRewardsChanged(accountId);
+    return result;
   };
   return {
     mode: 'demo',
-    load: async () => snapshot(),
-    redeem: async (giftId, requestId, { signal } = {}) => exclusive(() => {
-      const state = read();
-      if (!requestId) throw failure('REQUEST_INVALID', '缺少兑换确认编号，请重新打开详情。');
-      const previous = state.records.find((record) => record.id === requestId);
-      if (previous) return previous;
-      const gift = config.gifts.find((item) => item.id === giftId);
-      if (!gift) throw failure('REQUEST_INVALID', '演示礼品不存在');
-      const reason = condition(gift, state);
-      if (reason) throw failure('RULE_BLOCKED', reason);
-      const record = { id: requestId, giftId, title: gift.title, cost: gift.cost, time: new Date().toISOString(), status: '演示兑换成功（不发货）' };
-      state.balance -= gift.cost;
-      state.records.unshift(record);
-      state.ledger.unshift({ id: requestId, title: `演示兑换：${gift.title}`, amount: -gift.cost, time: record.time });
-      const source = storage();
-      try { source.setItem(key, JSON.stringify(state)); }
-      catch { throw failure('WRITE_FAILED', '演示保存失败，未扣除积分。请检查浏览器存储空间或权限后，重试本次兑换。'); }
-      return record;
-    }, signal),
-    reset: async ({ signal } = {}) => exclusive(() => {
-      const source = storage();
-      try { source.removeItem(key); }
-      catch { throw failure('RESET_FAILED', '重置失败，演示记录未清除。请检查浏览器存储权限后重试。'); }
-      try { return snapshot(); }
-      catch { throw failure('RESET_VERIFY', '演示记录已清除，但暂时无法读取重置后的余额。请恢复存储权限后重试读取。'); }
-    }, signal),
+    load: () => withDatabase(async db => { const account = await ensure(db); initialized = true; return { ...rewardSnapshot(account.state), syncWarning }; }),
+    redeem: (giftId, requestId, settings) => change('redeem', giftId, requestId, settings),
+    reset: settings => change('reset', undefined, undefined, settings),
   };
 }
-
-// No formal reward API exists. Preserve the replaceable load/redeem/reset contract.
 export const createRewardAdapter = createDemoRewardAdapter;
