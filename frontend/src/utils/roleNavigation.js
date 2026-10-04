@@ -61,7 +61,7 @@ const ROLE_PATH_RULES = {
 };
 
 export function canRoleAccessPath(role, path) {
-  if (!path || !path.startsWith('/')) return false;
+  if (typeof path !== 'string' || !path.startsWith('/') || path.startsWith('//') || path.includes('\\') || [...path].some((char) => char.charCodeAt(0) <= 32 || char.charCodeAt(0) === 127 || char.charCodeAt(0) === 92)) return false;
   const pathname = path.split(/[?#]/, 1)[0];
   return [...COMMON_RULES, ...(ROLE_PATH_RULES[role] || [])].some((rule) => rule.test(pathname));
 }

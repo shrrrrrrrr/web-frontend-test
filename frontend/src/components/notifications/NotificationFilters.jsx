@@ -12,7 +12,7 @@ export default function NotificationFilters({ value, onChange }) {
     <Space wrap>
       <Select
         allowClear
-        placeholder="阅读状态"
+        placeholder="阅读状态" aria-label="阅读状态"
         value={value.read}
         options={notificationReadOptions}
         onChange={(read) => update('read', read)}
@@ -20,7 +20,7 @@ export default function NotificationFilters({ value, onChange }) {
       />
       <Select
         allowClear
-        placeholder="通知分类"
+        placeholder="通知分类" aria-label="通知分类"
         value={value.category}
         options={notificationCategoryOptions}
         onChange={(category) => update('category', category)}
@@ -28,7 +28,7 @@ export default function NotificationFilters({ value, onChange }) {
       />
       <Select
         allowClear
-        placeholder="通知级别"
+        placeholder="通知级别" aria-label="通知级别"
         value={value.level}
         options={notificationLevelOptions}
         onChange={(level) => update('level', level)}

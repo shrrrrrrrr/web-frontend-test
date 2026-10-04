@@ -31,8 +31,9 @@ async function login(page, username = 'student_wang', password = 'student123') {
   await page.goto(`${base}/login`);
   await page.getByPlaceholder('账号', { exact: true }).fill(username);
   await page.getByPlaceholder('密码', { exact: true }).fill(password);
-  await page.getByRole('button', { name: /登\s*录/ }).click();
+  await page.getByRole('button', { name: '登录', exact: true }).click();
   await page.waitForURL((url) => url.pathname !== '/login');
+  await page.getByRole('button', { name: '登录', exact: true }).waitFor({ state: 'hidden' });
 }
 async function noOverflow(page) {
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), '页面无横向溢出');
@@ -75,6 +76,10 @@ test('第八轮：奖励视觉、本地存储与双标签一致性', { timeout: 
     await Promise.all([waitFor(base),waitFor(apiBase+'/api/health')]);
     browser=await chromium.launch({channel:'msedge',headless:true});
     const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'reduce'});
+    await context.addInitScript(()=>{
+      window.rewardStorageRemovals=0;
+      window.addEventListener('storage',event=>{if(event.key?.startsWith('star-voyage:rewards:')&&event.newValue===null)window.rewardStorageRemovals++;});
+    });
     const page=await context.newPage();page.setDefaultTimeout(12000);
     const errors=[];page.on('pageerror',e=>errors.push(e.message));
     const key='star-voyage:rewards:demo:v1:4';
@@ -150,10 +155,18 @@ test('第八轮：奖励视觉、本地存储与双标签一致性', { timeout: 
     await scenario('实际 Web Locks：双标签兑换与重置排队，两个顺序及最终 UI 一致',async()=>{
       const second=await context.newPage();await second.goto(base+'/archives/rewards');await balance(120,second);
       const hold=async()=>{await second.evaluate(k=>{window.rewardLockReady=false;window.rewardLockDone=navigator.locks.request(k,()=>{window.rewardLockReady=true;return new Promise(r=>{window.releaseRewardLock=r;});});},key);await second.waitForFunction(()=>window.rewardLockReady);};
-      const release=()=>second.evaluate(()=>{window.releaseRewardLock();});
+      const release=async()=>{
+        await second.evaluate(()=>{window.releaseRewardLock();});
+        // Await both queued writes, not the intermediate balance after the first write.
+        await second.waitForFunction(async(k)=>{const state=await navigator.locks.query();return ![...state.held,...state.pending].some(lock=>lock.name===k);},key,{timeout:45000});
+      };
       const waitQueue=async(count)=>{await second.waitForFunction(async({key,count})=>(await navigator.locks.query()).pending.filter(x=>x.name===key).length===count,{key,count});};
+      const beforeRemoval=await page.evaluate(()=>window.rewardStorageRemovals);
       await hold();await start();await button('确认演示兑换').click();await waitQueue(1);await button('重置演示数据',second).click();await button('确认重置演示数据',second).click();await waitQueue(2);
-      assert.equal(await page.getByRole('dialog').count(),1);await release();await balance(120);await balance(120,second);await second.getByRole('dialog').waitFor({state:'hidden'});await page.getByText('演示记录已变化',{exact:true}).waitFor();await button('返回礼品').click();assert.equal(await saved(),null);
+      assert.equal(await page.getByRole('dialog').count(),1);await release();
+      // Lock completion and delivery of the other tab's storage event are separate tasks.
+      await page.waitForFunction(before=>window.rewardStorageRemovals>before,beforeRemoval,{timeout:45000});
+      await balance(120);await balance(120,second);await second.getByRole('dialog').waitFor({state:'hidden'});await page.getByText('演示记录已变化',{exact:true}).waitFor();await button('返回礼品').click();assert.equal(await saved(),null);
       await hold();await button('重置演示数据',second).click();await button('确认重置演示数据',second).click();await waitQueue(1);await start();await button('确认演示兑换').click();await waitQueue(2);await release();await page.getByText('演示兑换成功',{exact:true}).waitFor();await balance(80);await balance(80,second);assert.equal((await saved()).records.length,1);await button('返回礼品').click();
       await hold();await start();await start(second);await button('确认演示兑换').click();await button('确认演示兑换',second).click();await waitQueue(2);await release();await balance(40);await balance(40,second);assert.equal((await saved()).records.length,2);assert.equal(await page.getByRole('dialog').count(),1);assert.equal(await second.getByRole('dialog').count(),1);
       // Only one additional redemption fits the unchanged per-account limit.
@@ -168,7 +181,7 @@ test('第八轮：奖励视觉、本地存储与双标签一致性', { timeout: 
       await page.evaluate(()=>{history.pushState({},'', '/archives');window.dispatchEvent(new PopStateEvent('popstate'));});
       await page.locator('.archive-workspace').waitFor();await holder.evaluate(()=>window.release());await page.waitForTimeout(100);assert.equal(await saved(),null);assert.equal(await page.getByRole('dialog').count(),0);
       await page.getByTestId('header-demo-points').click();await balance(120);await hold();await start();await button('确认演示兑换').click();
-      // Existing cross-tab auth protocol forces reload, destroying this account's outstanding page.
+      // Cross-tab auth invalidation destroys this account's outstanding page.
       await holder.evaluate(()=>{localStorage.removeItem('token');localStorage.removeItem('refresh_token');localStorage.removeItem('user');});
       await page.waitForURL('**/login');await holder.evaluate(()=>window.release());await holder.close();
       await login(page,'student_chen');await page.getByTestId('header-demo-points').click();await balance(120);assert.equal(await page.getByRole('dialog').count(),0);
@@ -200,7 +213,10 @@ test('第八轮：奖励视觉、本地存储与双标签一致性', { timeout: 
       await page.evaluate(()=>{window.rewardTestDescriptor=Object.getOwnPropertyDescriptor(window,'localStorage');Object.defineProperty(window,'localStorage',{configurable:true,get(){throw new DOMException('Injected getter denial before reward mount','SecurityError');}});});
       await page.getByTestId('header-demo-points').click();await page.getByTestId('reward-balance').getByText('暂不可读取',{exact:true}).waitFor();assert.equal(await page.locator('.reward-workspace').count(),1);
       await page.evaluate(()=>Object.defineProperty(window,'localStorage',window.rewardTestDescriptor));await button('重试读取').click();await balance(120);await page.evaluate(()=>window.dispatchEvent(new Event('focus')));
-      await page.setViewportSize({width:390,height:844});await page.locator('[data-gift=sticker]').scrollIntoViewIfNeeded();const before=await page.evaluate(()=>scrollY);await sync();await balance(120);assert.ok(Math.abs(await page.evaluate(()=>scrollY)-before)<2);await tab('徽章');await sync();assert.equal(await page.locator('#reward-tabs-tab-badges').getAttribute('aria-selected'),'true');await page.setViewportSize({width:1440,height:900});assert.deepEqual(errors,[]);
+      await page.setViewportSize({width:390,height:844});
+      // Establish the narrow-screen scroll position after responsive layout has settled.
+      const before=await page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));document.querySelector('[data-gift=sticker]').scrollIntoView({block:'center',behavior:'instant'});await new Promise(r=>requestAnimationFrame(r));return scrollY;});
+      await sync();await balance(120);const after=await page.evaluate(()=>scrollY);assert.ok(Math.abs(after-before)<2, `背景读取保留滚动：${before} → ${after}`);await tab('徽章');await sync();assert.equal(await page.locator('#reward-tabs-tab-badges').getAttribute('aria-selected'),'true');await page.setViewportSize({width:1440,height:900});assert.deepEqual(errors,[]);
     });
   } finally {if(browser)await browser.close();server.kill();vite.kill();db.close();writeFileSync(path.join(root,'test-results/round8-server.log'),logs);}
 });

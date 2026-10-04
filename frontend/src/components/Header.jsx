@@ -33,7 +33,7 @@ export default function HeaderBar() {
       borderBottom: '1px solid #f0f0f0', height: 56
     }}>
       <Space size="middle">
-        <NotificationBell />
+        {!user?.force_reset_password && <NotificationBell />}
         <Button
           type="text"
           icon={<MessageOutlined />}

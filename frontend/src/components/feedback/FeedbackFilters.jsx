@@ -14,7 +14,7 @@ export default function FeedbackFilters({ value, onChange, admin = false }) {
       {admin && (
         <Input.Search
           allowClear
-          placeholder="编号、标题或提交人"
+          placeholder="编号、标题或提交人" aria-label="编号、标题或提交人"
           defaultValue={value.search}
           onSearch={(search) => update('search', search)}
           style={{ width: 240 }}
@@ -22,7 +22,7 @@ export default function FeedbackFilters({ value, onChange, admin = false }) {
       )}
       <Select
         allowClear
-        placeholder="状态"
+        placeholder="状态" aria-label="状态"
         value={value.status}
         options={feedbackStatusOptions}
         onChange={(status) => update('status', status)}
@@ -30,7 +30,7 @@ export default function FeedbackFilters({ value, onChange, admin = false }) {
       />
       <Select
         allowClear
-        placeholder="反馈类型"
+        placeholder="反馈类型" aria-label="反馈类型"
         value={value.type}
         options={feedbackTypeOptions}
         onChange={(type) => update('type', type)}
@@ -40,7 +40,7 @@ export default function FeedbackFilters({ value, onChange, admin = false }) {
         <>
           <Select
             allowClear
-            placeholder="关联模块"
+            placeholder="关联模块" aria-label="关联模块"
             value={value.module}
             options={feedbackModuleOptions}
             onChange={(module) => update('module', module)}
@@ -48,7 +48,7 @@ export default function FeedbackFilters({ value, onChange, admin = false }) {
           />
           <Select
             allowClear
-            placeholder="优先级"
+            placeholder="优先级" aria-label="优先级"
             value={value.priority}
             options={feedbackPriorityOptions}
             onChange={(priority) => update('priority', priority)}

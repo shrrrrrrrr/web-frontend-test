@@ -63,7 +63,7 @@ function StudentHeader({ compact, navigationOpen, onOpenNavigation }) {
       <DemoPoints />
       <NotificationBell icon={<PixelIcon name="notification" />} buttonClassName="student-notification-button" />
       <button type="button" className="student-header-button student-help" aria-label="帮助与反馈" onClick={feedback}><PixelIcon name="help" /><span>帮助与反馈</span></button>
-      <Dropdown trigger={['click']} menu={{ items }} placement="bottomRight">
+      <Dropdown trigger={['click']} menu={{ items }} placement="bottomRight" rootClassName="student-pixel service-menu">
         <button type="button" className="student-header-button student-profile" aria-label="个人中心"><PixelIcon name="user" /><span>{user.real_name || user.username}</span><PixelIcon name="chevron-down" size={16} /></button>
       </Dropdown>
     </div>
@@ -90,6 +90,7 @@ function Shell({ children }) {
 }
 
 export default function StudentShell({ children }) {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  if (user.force_reset_password) return <StudentTheme><div className="forced-shell"><header className="forced-header"><strong>星海远航 · 账号设置</strong><button type="button" onClick={logout}>退出登录</button></header><main id="student-main">{children}</main></div></StudentTheme>;
   return <StudentTheme><RewardProvider key={user.id} accountId={user.id}><a href="#student-main" className="student-skip-link">跳到学习内容</a><Shell>{children}</Shell></RewardProvider></StudentTheme>;
 }
