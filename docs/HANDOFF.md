@@ -1,6 +1,6 @@
 # 当前交接说明
 
-本文件描述第十二轮交付的当前实现。总入口：[图集](acceptance/index.html) · [验收矩阵](round-12/matrix.md) · [执行结果](round-12.md) · [待办边界](BOUNDARIES.md)。教学内容及真实奖励不在本次前端完成声明内。
+本文件描述第十二轮交付的当前实现。权限恢复补修及当前版本复验见 [补修说明](round-12/patch/README.md)。总入口：[图集](acceptance/index.html) · [验收矩阵](round-12/matrix.md) · [执行结果](round-12.md) · [待办边界](BOUNDARIES.md)。教学内容及真实奖励不在本次前端完成声明内。
 
 ## 模块与实现位置
 

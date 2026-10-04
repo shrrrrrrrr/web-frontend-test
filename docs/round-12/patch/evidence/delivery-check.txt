@@ -1,0 +1,6 @@
+Changed delivery documents: 10; existing local link targets: 193.
+Patch screenshots: [{"src":"screenshots/01-retry-network-390.png","width":390,"height":844},{"src":"screenshots/02-restored-draft-1365.png","width":1365,"height":900}]
+Patch gallery no horizontal overflow: 1365x900
+Patch gallery no horizontal overflow: 768x1024
+Patch gallery no horizontal overflow: 390x844
+Patch gallery uncaught browser errors: 0.

@@ -1,0 +1,20 @@
+Isolated empty-directory init + local-server: ready; existing dependencies reused.
+Browser: 154.0.4258.37
+▶ 第十二轮：公共状态、连续学生旅程与正式产物
+  ✔ 公共加载：身份未知保持中性、课程检查可读、路由加载无假进度 (2729.1184ms)
+  ✔ 学生未知地址与 403：三尺寸、错误焦点、Tab 和真实恢复 (2963.9543ms)
+  ✔ 其他角色未知地址恢复到原首页且没有学生样式 (4356.5258ms)
+  ✔ 暂时检查失败可重试；明确对象/课程失效清内容并返回有效入口 (8933.8888ms)
+Journey reference flight: {"engine":"reference","parameters":{"dihedral_deg":5,"cg_x":0,"speed":36,"wing_area":17.5,"mass":420,"elevator_deg":0,"rudder_deg":0,"course_id":1,"lesson_id":1},"state":"landed","status":"success","result":{"params":{"dihedral_deg":5,"cg_x":0,"speed":36,"alt":150,"autolevel":false,"wing_area":17.5,"mass":420,"elevator_deg":0,"rudder_deg":0,"v_ref":31},"backend":"reference","renderer":"mpl","reason":"landed","glide_time_s":72.75,"distance_m":2287.1,"alt_start":150,"alt_end":1.5,"mean_sink_mps":2.041,"mean_speed_mps":31.73,"glide_ratio":15.4,"steps":8731,"files":{"summary":"summary.json","csv":"flight_telemetry.csv","telemetry_png":"flight_telemetry.png","trajectory_png":"trajectory3d.png","trace":"flight_trace.npz","trace_bin":"flight_trace.bin"},"trajectory_saved":true},"course_id":1,"lesson_id":1}
+  ✔ 连续真实旅程：待办→地图→卡片→参考引擎→原卡片→报告作品→导师评审→档案 (12911.7902ms)
+  ✔ 正式 dist：登录、探索、真实课时深链刷新、全局入口、403、测试路由与映射关闭 (3360.6546ms)
+  ✔ 实际 Python 路径缺失：禁止假试飞、参数保留并提供重新检查环境 (1659.5293ms)
+✔ 第十二轮：公共状态、连续学生旅程与正式产物 (38759.2854ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 39041.7975

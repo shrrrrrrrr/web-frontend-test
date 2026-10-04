@@ -1,0 +1,76 @@
+{
+  "recordedAt": "2026-10-04T09:23:56.964Z",
+  "baseline": "f5989eb2ad49702b63c0ce5ce01090e3b18c19ba",
+  "version": "Baseline plus the patch committed with this record; source and test fingerprints identify the exact tested files.",
+  "sourceAndTestSha256": {
+    "frontend/src/student/StudentScope.jsx": "d0aead36ea49dc32657ee5129068e062fa7d59b948a3adaa787409c318235661",
+    "tests/access.browser.test.js": "e298687ee78940bea3c4afa444f3e431e12e066f7b74281e5a434aaf700c9566",
+    "tests/round10.browser.test.js": "8da1b121bf1befb1b4bbed6d6432907e5eb4c3def0d9da198927329811f30ca2",
+    "tests/round11.browser.test.js": "233aa0539e4699e3a6c107e9726d22ee2faff17b84575d91d19f379c27c961bd",
+    "tests/round12.browser.test.js": "dfc8c3e3a07a941475ab7ad7e5b01b98d222902c3eef7b2fae65a46777e6944b"
+  },
+  "checks": {
+    "lint": "passed",
+    "build": "passed; existing 503.88 kB chunk warning retained",
+    "unitTests": 58,
+    "browserBusinessScenarios": 48,
+    "browserParents": 4,
+    "browserTotal": 52,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": [
+    {
+      "suite": "access",
+      "log": "access-after-fix.txt",
+      "businessScenarios": 7,
+      "parentTests": 1,
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "round10",
+      "log": "round10.txt",
+      "businessScenarios": 11,
+      "parentTests": 1,
+      "total": 12,
+      "passed": 12,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "round11",
+      "log": "round11.txt",
+      "businessScenarios": 23,
+      "parentTests": 1,
+      "total": 24,
+      "passed": 24,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "round12",
+      "log": "round12.txt",
+      "businessScenarios": 7,
+      "parentTests": 1,
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "newCoverage": {
+    "uiRecoveryPathAddedInsideExistingAccessScenario": 1,
+    "withdrawnCourseRetryAssertionAddedInsideExistingRound12Scenario": 1,
+    "additionalTopLevelScenarios": 0
+  },
+  "counts": "48 scenarios were rerun once in the final valid set; debugging and earlier runs are not added. Historical 122 scenarios at f5989eb are separate, not all rerun on this patch.",
+  "repeatedRefreshGroups": 20,
+  "rewardStressGroupsRerun": 0,
+  "screenshots": [
+    "../screenshots/01-retry-network-390.png",
+    "../screenshots/02-restored-draft-1365.png"
+  ]
+}

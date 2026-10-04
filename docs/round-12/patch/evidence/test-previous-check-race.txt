@@ -1,0 +1,112 @@
+▶ 权限错误仅清理失效对象，保留不相关输入（真实本地 API）
+  ✔ 真实附件 404 显示局部错误，学习页和导航继续存在 (1389.7014ms)
+  ✔ 附件 404、无关课程拒绝和课程更新时间变化不重建正在填写的报告 (71.0329ms)
+  ✔ 不相关课程撤回和后台网络失败保留当前报告，重试可恢复检查 (100.4688ms)
+FAILED ACCESS PAGE 真实当前课程撤回清除学习内容并保留可用导航 http://127.0.0.1:5182/courses/1/lessons/1/learn 跳到学习内容
+星海远航
+STAR VOYAGE · 2057
+探索地图
+选择课程 · 继续学习
+实验室
+提出假设 · 动手验证
+成长档案
+记录发现 · 看见成长
+✦
+
+每一个好问题，
+都是探索的起点。
+
+KEEP EXPLORING
+PBL 科创学习平台
+探索 · 实践 · 发现
+演示积分
+120
+演示
+帮助与反馈
+王小明
+月球基地设计师
+认识月球环境
+
+正在查看：学习报告与反思
+
+返回课程地图
+返回课后任务
+本课时进度
+60%
+
+回顾 25% · 卡片 35%
+报告反思 25% · 导师评审 15%
+
+01
+课堂回顾
+已完成
+02
+知识卡片与练习
+已完成
+03
+学习报告与反思
+正在查看 · 待完成
+04
+导师评审
+未解锁
+提交报告后查看
+查看本课时任务与作品 ↓
+03
+第三阶段：学习报告与反思
+
+记录学到了什么，以及你准备怎样改进。报告与作品分别提交、分别评审。
+
+已保存到当前浏览器，仅当前账号可恢复。附件不会保存在草稿中。
+草稿不会上传服务器；换设备无法恢复。提交成功后清除本地草稿。
+学习记录
+学习总结
+关键收获
+应用设想
+困难与疑问
+下一步计划
+结构化反思（必填）
+提交学习报告与反思
+
+提交后等待导师评审；退回后可按意见修改。
+
+W
+本课时任务与作品
+
+查看作品要求、提交版本和导师意见。
+
+作品与学习报告分别保存和评审。这里的作品提交不会替代上方的学习报告。
+月球环境调研
+
+用AI助手查找月球环境数据，完成环境调研表
+
+截止：未设置
+
+提交作品
+打开学习伙伴
+  ✖ 真实当前课程撤回清除学习内容并保留可用导航 (10139.2467ms)
+ACCESS RECOVERY: UI map reentry; same account GET learning/lessons/1 = 200; original document retained.
+ACCESS RECOVERY: real 404 + test 403 + network + inactive enrollment stayed blocked; pending real 200 stayed blocked; retry restored original report draft in same document.
+  ✔ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (4958.3598ms)
+  ✔ 反思课程撤回仅移除关联，未提交正文保留 (1476.8418ms)
+  ✔ 助手课程撤回清除课程上下文，保留尚未发送的问题 (1104.1514ms)
+✖ 权限错误仅清理失效对象，保留不相关输入（真实本地 API） (21654.5327ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21961.7034
+
+✖ failing tests:
+
+test at tests\access.browser.test.js:118:13
+✖ 真实当前课程撤回清除学习内容并保留可用导航 (10139.2467ms)
+  page.waitForResponse: Timeout 10000ms exceeded while waiting for event "response"
+      at recheck (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:69:29)
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:120:13)
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:118:13) {
+    name: 'TimeoutError',
+    log: []
+  }

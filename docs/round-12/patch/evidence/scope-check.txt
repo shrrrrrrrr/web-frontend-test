@@ -1,0 +1,18 @@
+Baseline: f5989eb2ad49702b63c0ce5ce01090e3b18c19ba
+Tracked changes are limited to StudentScope blocked presentation, two related browser tests and handoff documentation.
+StudentScope request/check/listener/key/account logic unchanged: PASS
+Backend, simulation, package/lock files, auth/API, reward configuration and round6/10/11 test implementations unchanged: PASS
+Original round12 txt/json evidence and 18 screenshots unchanged: PASS
+New files confined to docs/round-12/patch: PASS
+Sole intended push target: https://github.com/shrrrrrrrr/web-frontend-test.git
+Changed tracked files:
+DESIGN.md
+README.md
+docs/HANDOFF.md
+docs/acceptance/index.html
+docs/round-12.md
+docs/round-12/evidence/commands.md
+docs/round-12/matrix.md
+frontend/src/student/StudentScope.jsx
+tests/access.browser.test.js
+tests/round12.browser.test.js

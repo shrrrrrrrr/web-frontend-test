@@ -1,0 +1,50 @@
+▶ 权限错误仅清理失效对象，保留不相关输入（真实本地 API）
+  ✔ 真实附件 404 显示局部错误，学习页和导航继续存在 (1358.7098ms)
+  ✔ 附件 404、无关课程拒绝和课程更新时间变化不重建正在填写的报告 (78.707ms)
+  ✔ 不相关课程撤回和后台网络失败保留当前报告，重试可恢复检查 (97.2955ms)
+  ✔ 真实当前课程撤回清除学习内容并保留可用导航 (107.8371ms)
+ACCESS RECOVERY: UI map reentry; same account GET learning/lessons/1 = 200; original document retained.
+FAILED ACCESS PAGE 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 http://127.0.0.1:5182/courses/1/lessons/1/learn 跳到学习内容
+导航
+120
+演示
+当前内容已不可访问
+
+测试对象暂不可访问
+暂时无法重新核验当前内容，请检查网络后重试。页面中的填写内容仍保留。
+
+返回探索地图
+重新检查
+  ✖ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (4607.7532ms)
+  ✔ 反思课程撤回仅移除关联，未提交正文保留 (1480.5817ms)
+  ✔ 助手课程撤回清除课程上下文，保留尚未发送的问题 (1151.8355ms)
+✖ 权限错误仅清理失效对象，保留不相关输入（真实本地 API） (11452.7929ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11772.3123
+
+✖ failing tests:
+
+test at tests\access.browser.test.js:129:13
+✖ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (4607.7532ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1))
+
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/access.browser.test.js:194:14)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/access.browser.test.js:129:5)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

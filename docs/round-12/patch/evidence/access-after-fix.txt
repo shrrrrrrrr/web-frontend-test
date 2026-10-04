@@ -1,0 +1,19 @@
+▶ 权限错误仅清理失效对象，保留不相关输入（真实本地 API）
+  ✔ 真实附件 404 显示局部错误，学习页和导航继续存在 (1397.2388ms)
+  ✔ 附件 404、无关课程拒绝和课程更新时间变化不重建正在填写的报告 (79.6913ms)
+  ✔ 不相关课程撤回和后台网络失败保留当前报告，重试可恢复检查 (123.3107ms)
+  ✔ 真实当前课程撤回清除学习内容并保留可用导航 (110.8998ms)
+ACCESS RECOVERY: UI map reentry; same account GET learning/lessons/1 = 200; original document retained.
+ACCESS RECOVERY: real 404 + test 403 + network + inactive enrollment stayed blocked; pending real 200 stayed blocked; retry restored original report draft in same document.
+  ✔ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (4933.9048ms)
+  ✔ 反思课程撤回仅移除关联，未提交正文保留 (1424.1346ms)
+  ✔ 助手课程撤回清除课程上下文，保留尚未发送的问题 (1051.2348ms)
+✔ 权限错误仅清理失效对象，保留不相关输入（真实本地 API） (11621.1475ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11936.874

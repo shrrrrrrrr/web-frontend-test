@@ -1,0 +1,67 @@
+▶ 权限错误仅清理失效对象，保留不相关输入（真实本地 API）
+  ✔ 真实附件 404 显示局部错误，学习页和导航继续存在 (1338.3533ms)
+  ✔ 附件 404、无关课程拒绝和课程更新时间变化不重建正在填写的报告 (73.1242ms)
+  ✔ 不相关课程撤回和后台网络失败保留当前报告，重试可恢复检查 (127.6679ms)
+  ✔ 真实当前课程撤回清除学习内容并保留可用导航 (111.5419ms)
+ACCESS RECOVERY: UI map reentry; same account GET learning/lessons/1 = 200; original document retained.
+FAILED ACCESS PAGE 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 http://127.0.0.1:5182/courses/1/lessons/1/learn 跳到学习内容
+星海远航
+STAR VOYAGE · 2057
+探索地图
+选择课程 · 继续学习
+实验室
+提出假设 · 动手验证
+成长档案
+记录发现 · 看见成长
+✦
+
+每一个好问题，
+都是探索的起点。
+
+KEEP EXPLORING
+PBL 科创学习平台
+探索 · 实践 · 发现
+演示积分
+120
+演示
+帮助与反馈
+王小明
+当前内容已不可访问
+
+课时不存在或尚未报名
+
+返回探索地图
+课时不存在或尚未报名
+  ✖ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (1524.5487ms)
+  ✔ 反思课程撤回仅移除关联，未提交正文保留 (1394.9096ms)
+  ✔ 助手课程撤回清除课程上下文，保留尚未发送的问题 (1026.6604ms)
+✖ 权限错误仅清理失效对象，保留不相关输入（真实本地 API） (8200.9888ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8518.3789
+
+✖ failing tests:
+
+test at tests\access.browser.test.js:129:13
+✖ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (1524.5487ms)
+  AssertionError [ERR_ASSERTION]: 旧挡板必须允许真实重新核验，无需刷新或重登
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/access.browser.test.js:174:14)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/access.browser.test.js:129:5)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,8 +1,8 @@
 # 星海远航 · 学生端前端
 
-当前约定的学生端改版已完成，第十二轮全流程验收与交接已完成。沿用 React / Vite / Ant Design / React Router / Axios，后端及参考仿真来自固定源码基线。课程由后台分配；学生不自行选课或退课。其他角色保留原工作台和管理页面。
+当前约定的学生端改版与第十二轮交接已交付，权限恢复补修等待最终复核。沿用 React / Vite / Ant Design / React Router / Axios，后端及参考仿真来自固定源码基线。课程由后台分配；学生不自行选课或退课。其他角色保留原工作台和管理页面。
 
-**[打开总验收图集](docs/acceptance/index.html)** · [当前交接说明](docs/HANDOFF.md) · [本轮结果与日志](docs/round-12.md) · [待办与能力边界](docs/BOUNDARIES.md)
+**[打开总验收图集](docs/acceptance/index.html)** · [当前交接说明](docs/HANDOFF.md) · [第十二轮历史结果](docs/round-12.md) · [当前补修与复验](docs/round-12/patch/README.md) · [待办与能力边界](docs/BOUNDARIES.md)
 
 ## 当前入口
 
@@ -43,7 +43,7 @@ npm run test:acceptance
 
 `test:acceptance` 顺序运行选定的权限、第三/五至十二轮套件，包含完整奖励业务、120 组原生事务、真实凭证刷新、本地 HTTPS provider 和两次不同用途的参考试飞。它启动自己的临时数据库与端口，不使用现有业务库。需要已安装 Edge、参考 Python 环境；回放测试另需系统 ffmpeg，第十一轮本地 HTTPS 需要 Git 附带的 OpenSSL（可通过 `ROUND11_OPENSSL` 指定）。具体脚本、端口、场景统计、限制见 [本轮验收](docs/round-12.md)。
 
-单模块脚本为 `test:e2e:access`、`test:e2e:round2` 至 `test:e2e:round12`，另保留最早 `test:e2e`。历史套件不是每轮都全跑；最终实际结果以第十二轮日志为准。
+单模块脚本为 `test:e2e:access`、`test:e2e:round2` 至 `test:e2e:round12`，另保留最早 `test:e2e`。历史套件不是每轮都全跑；历史完整验收与当前补修的指定四套件结果分别记录，见第十二轮文档及补修日志。
 
 ## 数据与交接边界
 

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第十二轮补修 · 权限恢复验收</title>
+<style>
+:root{font-family:'Microsoft YaHei',sans-serif;color:#102d40;background:#f0e4c6;line-height:1.7}*{box-sizing:border-box}body{margin:0}header,main,footer{max-width:1180px;margin:auto;padding:24px}header{background:#102d40;color:#fff9e9}h1{font-size:28px;margin:0}h2{font-size:22px}a{color:#087f78}header a{color:#bceadb}nav{display:flex;flex-wrap:wrap;gap:16px}figure{margin:16px 0 32px;background:#fff9e9;border:2px solid #102d40;padding:16px}img{display:block;max-width:100%;height:auto;margin:auto}.narrow{max-height:700px}figcaption{margin-top:12px}a:focus-visible{outline:3px solid #c38510;outline-offset:4px}@media(max-width:540px){header,main,footer{padding:16px}h1{font-size:24px}figure{padding:10px}}
+</style>
+<header><p>第十二轮 · 验收补修</p><h1>恢复有效课时的站内访问</h1><p>在原单页会话中返回地图、重新进入课时，再由真实接口核验恢复。</p><nav><a href="README.md">补修说明与实际结果</a><a href="evidence/commands.md">命令与日志</a><a href="../../acceptance/index.html">返回总验收入口</a></nav></header>
+<main>
+<p>这两张图片来自修复后的真实 Edge 浏览器。课程、账号和报告文字均为隔离 SQLite 的测试资料，积分仍是本机演示。未重拍历史图集。</p>
+<section><h2>1. 核验网络失败：继续阻断，并保留再次尝试</h2>
+<figure><a href="screenshots/01-retry-network-390.png"><img class="narrow" src="screenshots/01-retry-network-390.png" width="390" height="844" alt="390 像素窄屏：课时失效挡板保留返回探索地图与重新检查，网络失败提示可见，正文不显示"></a><figcaption>390 × 844。先用真实接口验证课时失效；随后模拟 403 与网络中断。失败没有被视作成功，仍可点击“重新检查”。</figcaption></figure></section>
+<section><h2>2. 真实核验通过：恢复课时与原报告草稿</h2>
+<figure><a href="screenshots/02-restored-draft-1365.png"><img src="screenshots/02-restored-draft-1365.png" width="1365" height="900" alt="1365 像素桌面：真实核验通过后学习报告恢复，原未提交的测试文字仍在，并显示本账号浏览器草稿恢复提示"></a><figcaption>1365 × 900。恢复全过程未使用整页刷新、新标签或重新登录。原报告草稿按现有账号与课时规则恢复，未新增存储，也未提交报告。</figcaption></figure></section>
+<p>真实 404、模拟 403、报名移除、核验中的阻断，以及课程撤回的断言见 <a href="evidence/access-after-fix.txt">权限回归日志</a>与<a href="README.md">结果表</a>。截图本身不代替业务断言。</p>
+</main><footer>只完成本次权限恢复及文档勘误，等待最终复核。</footer>
+</html>

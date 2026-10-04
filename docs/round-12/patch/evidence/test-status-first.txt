@@ -1,0 +1,58 @@
+▶ 权限错误仅清理失效对象，保留不相关输入（真实本地 API）
+  ✔ 真实附件 404 显示局部错误，学习页和导航继续存在 (1391.1711ms)
+  ✔ 附件 404、无关课程拒绝和课程更新时间变化不重建正在填写的报告 (75.115ms)
+  ✔ 不相关课程撤回和后台网络失败保留当前报告，重试可恢复检查 (143.6247ms)
+  ✔ 真实当前课程撤回清除学习内容并保留可用导航 (114.7486ms)
+ACCESS RECOVERY: UI map reentry; same account GET learning/lessons/1 = 200; original document retained.
+FAILED ACCESS PAGE 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 http://127.0.0.1:5182/courses/1/lessons/1/learn 跳到学习内容
+星海远航
+STAR VOYAGE · 2057
+探索地图
+选择课程 · 继续学习
+实验室
+提出假设 · 动手验证
+成长档案
+记录发现 · 看见成长
+✦
+
+每一个好问题，
+都是探索的起点。
+
+KEEP EXPLORING
+PBL 科创学习平台
+探索 · 实践 · 发现
+演示积分
+120
+演示
+帮助与反馈
+王小明
+当前内容已不可访问
+
+课时不存在或尚未报名
+
+返回探索地图
+重新检查
+  ✖ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (11545.4781ms)
+  ✔ 反思课程撤回仅移除关联，未提交正文保留 (1407.8818ms)
+  ✔ 助手课程撤回清除课程上下文，保留尚未发送的问题 (1028.7787ms)
+✖ 权限错误仅清理失效对象，保留不相关输入（真实本地 API） (18191.2482ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 18509.2915
+
+✖ failing tests:
+
+test at tests\access.browser.test.js:129:13
+✖ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (11545.4781ms)
+  page.waitForResponse: Timeout 10000ms exceeded while waiting for event "response"
+      at retryDenied (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:145:31)
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:178:13)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:129:5) {
+    name: 'TimeoutError',
+    log: []
+  }

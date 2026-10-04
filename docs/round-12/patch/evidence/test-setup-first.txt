@@ -1,0 +1,68 @@
+▶ 权限错误仅清理失效对象，保留不相关输入（真实本地 API）
+  ✔ 真实附件 404 显示局部错误，学习页和导航继续存在 (1386.0514ms)
+  ✔ 附件 404、无关课程拒绝和课程更新时间变化不重建正在填写的报告 (79.413ms)
+  ✔ 不相关课程撤回和后台网络失败保留当前报告，重试可恢复检查 (98.9739ms)
+  ✔ 真实当前课程撤回清除学习内容并保留可用导航 (143.7154ms)
+FAILED ACCESS PAGE 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 http://127.0.0.1:5182/courses/1/lessons/1/learn 跳到学习内容
+星海远航
+STAR VOYAGE · 2057
+探索地图
+选择课程 · 继续学习
+实验室
+提出假设 · 动手验证
+成长档案
+记录发现 · 看见成长
+✦
+
+每一个好问题，
+都是探索的起点。
+
+KEEP EXPLORING
+PBL 科创学习平台
+探索 · 实践 · 发现
+演示积分
+120
+演示
+帮助与反馈
+王小明
+当前内容已不可访问
+
+课时不存在或尚未报名
+
+返回探索地图
+课时不存在或尚未报名
+  ✖ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (1591.2614ms)
+  ✔ 反思课程撤回仅移除关联，未提交正文保留 (1428.979ms)
+  ✔ 助手课程撤回清除课程上下文，保留尚未发送的问题 (1032.8657ms)
+✖ 权限错误仅清理失效对象，保留不相关输入（真实本地 API） (8190.913ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8517.7913
+
+✖ failing tests:
+
+test at tests\access.browser.test.js:129:13
+✖ 课时失效后经真实地图站内重入，核验恢复且保留原报告草稿 (1591.2614ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  undefined !== 200
+
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/access.browser.test.js:171:14)
+      at runNextTicks (node:internal/process/task_queues:65:5)
+      at process.processImmediate (node:internal/timers:472:9)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/access.browser.test.js:129:5)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

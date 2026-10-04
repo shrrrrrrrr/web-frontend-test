@@ -96,8 +96,10 @@ export default function StudentScope({ children }) {
   const blocked = state.blocked?.key === target.key ? state.blocked : null;
   const retry = <Button onClick={() => checkRef.current?.(true)}>重新检查</Button>;
   if (missingCourse || blocked) return <StudentPageStatus title="当前内容已不可访问"
-    description={missingCourse ? '课程已撤回或报名关系已变化，相关学习内容已清除。请返回探索地图选择可进入的课程。' : blocked.reason}>
+    description={<>{missingCourse ? '课程已撤回或报名关系已变化，相关学习内容已清除。请返回探索地图选择可进入的课程。' : blocked.reason}
+      {state.warning && <><br /><span role="status">{state.warning}</span></>}</>}>
     <Link to="/explore" className="student-status-return">返回探索地图</Link>
+    {retry}
   </StudentPageStatus>;
   if (!state.ready) return state.warning
     ? <StudentPageStatus title="暂时无法确认账号与课程" description="暂时无法连接服务来确认你的账号与课程。这不代表课程已撤回，请检查网络后重新检查。">{retry}</StudentPageStatus>
