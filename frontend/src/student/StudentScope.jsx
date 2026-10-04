@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Alert, Button, Result, Space, Spin } from 'antd';
+import { Alert, Button } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
+import { PageLoading, StudentPageStatus } from '../components/PageStatus';
 import { authAPI, courseAPI } from '../api';
 import client from '../api/client';
 import { useAuth } from '../store/AuthContext';
@@ -89,17 +90,18 @@ export default function StudentScope({ children }) {
     };
   }, [user.id]);
 
-  if (state.userId !== user.id) return <Spin style={{ display: 'block', padding: 64 }} />;
+  if (state.userId !== user.id) return <PageLoading>正在确认可进入的课程，请稍候。</PageLoading>;
   const target = currentAccessTarget(location.pathname, location.search);
   const missingCourse = target.courseId && state.courses && !state.courses.some((course) => String(course.id) === target.courseId);
   const blocked = state.blocked?.key === target.key ? state.blocked : null;
   const retry = <Button onClick={() => checkRef.current?.(true)}>重新检查</Button>;
-  if (missingCourse || blocked) return <Result status="warning" title="当前内容已不可访问"
-    subTitle={missingCourse ? '课程已撤回或报名关系已变化，相关学习内容已清除。请返回探索地图选择可进入的课程。' : blocked.reason}
-    extra={<Space><Link to="/explore"><Button type="primary">返回探索地图</Button></Link>{retry}</Space>} />;
+  if (missingCourse || blocked) return <StudentPageStatus title="当前内容已不可访问"
+    description={missingCourse ? '课程已撤回或报名关系已变化，相关学习内容已清除。请返回探索地图选择可进入的课程。' : blocked.reason}>
+    <Link to="/explore" className="student-status-return">返回探索地图</Link>
+  </StudentPageStatus>;
   if (!state.ready) return state.warning
-    ? <Result status="warning" title="暂时无法确认账号与课程" subTitle={state.warning} extra={retry} />
-    : <Spin style={{ display: 'block', padding: 64 }} />;
+    ? <StudentPageStatus title="暂时无法确认账号与课程" description="暂时无法连接服务来确认你的账号与课程。这不代表课程已撤回，请检查网络后重新检查。">{retry}</StudentPageStatus>
+    : <PageLoading>正在确认可进入的课程，请稍候。</PageLoading>;
   return <>
     {state.warning && <Alert type="warning" showIcon title="权限检查暂未完成" description={state.warning} action={retry} style={{ margin: 16 }} />}
     <div key={`${user.id}:${location.pathname}:${location.pathname === '/archives' ? state.archiveRevision : 0}`}>{children}</div>

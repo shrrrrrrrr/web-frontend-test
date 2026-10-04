@@ -1,0 +1,343 @@
+
+> star-voyage-student@0.1.0 test:acceptance
+> node --test --test-concurrency=1 tests/access.browser.test.js tests/round3.browser.test.js tests/round5.browser.test.js tests/round6.browser.test.js tests/round7.browser.test.js tests/round8.browser.test.js tests/round9.browser.test.js tests/round10.browser.test.js tests/round10-rewards.browser.test.js tests/round11.browser.test.js tests/round12.browser.test.js
+
+▶ 权限错误仅清理失效对象，保留不相关输入（真实本地 API）
+  ✔ 真实附件 404 显示局部错误，学习页和导航继续存在 (1372.5666ms)
+  ✔ 附件 404、无关课程拒绝和课程更新时间变化不重建正在填写的报告 (84.0337ms)
+  ✔ 不相关课程撤回和后台网络失败保留当前报告，重试可恢复检查 (147.83ms)
+FAILED ACCESS PAGE 真实当前课程撤回清除学习内容并保留可用导航 http://127.0.0.1:5182/courses/1/lessons/1/learn 跳到学习内容
+星海远航
+STAR VOYAGE · 2057
+探索地图
+选择课程 · 继续学习
+实验室
+提出假设 · 动手验证
+成长档案
+记录发现 · 看见成长
+✦
+
+每一个好问题，
+都是探索的起点。
+
+KEEP EXPLORING
+PBL 科创学习平台
+探索 · 实践 · 发现
+演示积分
+120
+演示
+帮助与反馈
+王小明
+当前内容已不可访问
+
+课程已撤回或报名关系已变化，相关学习内容已清除。请返回探索地图选择可进入的课程。
+
+返回探索地图
+  ✖ 真实当前课程撤回清除学习内容并保留可用导航 (10091.3303ms)
+FAILED ACCESS PAGE 单个课时对象失效时仅清当前页，课程仍可进入 http://127.0.0.1:5182/courses/1/lessons/1/learn?stage=2 跳到学习内容
+星海远航
+STAR VOYAGE · 2057
+探索地图
+选择课程 · 继续学习
+实验室
+提出假设 · 动手验证
+成长档案
+记录发现 · 看见成长
+✦
+
+每一个好问题，
+都是探索的起点。
+
+KEEP EXPLORING
+PBL 科创学习平台
+探索 · 实践 · 发现
+演示积分
+120
+演示
+帮助与反馈
+王小明
+当前内容已不可访问
+
+课时不存在或尚未报名
+
+返回探索地图
+  ✖ 单个课时对象失效时仅清当前页，课程仍可进入 (11365.5219ms)
+  ✔ 反思课程撤回仅移除关联，未提交正文保留 (1694.3441ms)
+  ✔ 助手课程撤回清除课程上下文，保留尚未发送的问题 (1178.1756ms)
+✖ 权限错误仅清理失效对象，保留不相关输入（真实本地 API） (28359.6679ms)
+Browser: 154.0.4258.37
+▶ 第十轮：原生 IndexedDB 迁移、提交与 120 组双标签压力验证
+  ✔ 原样迁移并保留 v1 备份；重置/重开不重导入；已迁移账号不再读取 v1 (963.6523ms)
+  ✔ 并发首次迁移与兑换不覆盖已提交状态；并发同编号仅一笔；不同账号隔离 (341.8649ms)
+  ✔ 损坏/不可读迁移源不被覆盖；迁移 put 后中止无初始化标记；直接重置恢复 (253.4344ms)
+  ✔ 数据库不可用、open 失败及真实升级 blocked 均可重试，不虚构持久成功 (206.8484ms)
+  ✔ 提交后取消与回读/广播失败不撤销事实；广播只触发数据库重读 (374.4396ms)
+Stress: {"browser":"154.0.4258.37","started":"2026-10-04T08:35:45.226Z","finished":"2026-10-04T08:35:51.324Z","groups":120,"thirdTabSamples":[9,19,29,39,49,59,69,79,89,99,109,119],"failures":[]}
+  ✔ 120 组混合事务顺序，逐组读取两页持久状态，12 次新第三标签抽检 (6380.9182ms)
+✔ 第十轮：原生 IndexedDB 迁移、提交与 120 组双标签压力验证 (9640.208ms)
+Browser: 154.0.4258.37
+Session observation {"verificationStatus":200,"path":"/feedback/new","title":"【测试】刷新时保留我的反馈"}
+▶ 第十轮：跨标签会话与通知批量回归（真实隔离 API）
+  ✔ 同账号真实过期凭据刷新，另一标签反馈输入和 DOM 不应丢失 (4811.9228ms)
+  ✔ 真实全部已读延迟期间切换筛选，写成功必须重读当前列表 (2505.0846ms)
+  ✔ 主动刷新保留独立反思、回复及其他角色表单；同账号迟到成功响应仍有效 (11635.0379ms)
+  ✔ 真实 401 单次刷新保留另一标签输入，后台复核暂时失败也不卸载 (3801.302ms)
+  ✔ 配对边界：真实退出和换账号清除另一标签表单，旧响应不得覆盖新账号 (10523.4653ms)
+  ✔ 配对边界：真实停用和 FORCE_RESET 使另一标签清理旧内容 (8562.0987ms)
+  ✔ 批量延迟期间切分页：成功/失败/回读失败提示保留，重读不重复写入 (6589.9699ms)
+  ✔ 批量写已提交但响应迟到，退出换账号后不显示旧结果 (3339.3537ms)
+Concurrent real refresh groups: 20, failures: 0
+  ✔ 两个标签同时主动刷新只进行一次真实凭据轮换 (5644.1089ms)
+  ✔ 旧账号刷新响应迟到，不能覆盖另一标签新登录的凭据或表单 (5267.101ms)
+  ✔ 实际奖励页：v1 迁移、双标签最终一致、轮换保留弹窗、窄屏数据库错误 (24212.3906ms)
+✔ 第十轮：跨标签会话与通知批量回归（真实隔离 API） (88349.7195ms)
+Browser: 154.0.4258.37
+▶ 第十一轮：小智、任务兼容、资料回看及真实双标签回归
+  ✔ 小智课程：加载、失败重读、明确停用、无课程、有效/无效参数 (5082.0688ms)
+  ✔ 真实 HTTPS provider：安全长文本、真实五类来源、附件局部失败及三尺寸 (6417.9047ms)
+  ✔ 小智输入：空白、1000 字、IME Enter、快速重复、非流式等待 (1383.1067ms)
+  ✔ 小智服务错误：忙碌/额度/密钥、主动恢复与后输入不被覆盖 (5350.522ms)
+  ✔ 真实 scope、无来源、资料变更返回 AI_CONTEXT_CHANGED (1470.8135ms)
+  ✔ 课程集合真实变化：新增、无关移除保留聊天，当前移除清引用并拒绝迟到回答 (5075.1266ms)
+  ✔ 任务：四筛选、报告通过作品退回、同名课程、无任务课时、三尺寸 (2387.2209ms)
+  ✔ 任务：缺失进度、空态、筛选晚到、失败重试及撤回清范围 (2276.425ms)
+  ✔ 任务详情：加载/重试三尺寸、replace、不可访问与离页迟到 (5425.3902ms)
+  ✔ 课程资料：真实五区、历史已修改/最新退回、授权下载、原生视频三尺寸 (2198.8622ms)
+  ✔ 回放/作品单区 503 与附件 404：其他区保留、局部重试 (5064.7234ms)
+  ✔ 回放：A→B 迟到、同 ID 重取、取址失败、媒体错误/过期主动恢复 (5975.5006ms)
+  ✔ 真实撤回清媒体/作品；主课程 400 和 503 不发布旧内容 (6228.088ms)
+  ✔ 真实跨标签 refresh：小智草稿/聊天/在途回复、任务筛选、原生播放器持续保留 (19862.7256ms)
+  ✔ 真实跨标签退出/换号、停用、FORCE_RESET：清问答与媒体，晚到回复不回写 (23641.5052ms)
+  ✔ 键盘/减少动画、阅读来源不被新回复抢滚动、未知来源无假链接 (1544.3351ms)
+  ✔ 真实 provider 超时：等待最终错误，原问题可主动恢复，无自动重发 (31690.8002ms)
+  ✔ AI_ACCESS_CHANGED 直接拒绝、执行中停用、缺少配置：保留真实服务提示 (1684.8119ms)
+  ✔ 下载重复点击与迟到结果：离页或真实撤回后不触发文件保存 (3579.0491ms)
+  ✔ 作品列表返回期间撤回：不发布授权缺口返回的旧作品 (1264.6772ms)
+  ✔ 任务详情重新读取与权限改变之间的迟到结果不能跳转 (1169.0804ms)
+  ✔ 较多任务和本人版本：三尺寸长标题换行、无回放/资料局部空态 (1549.4494ms)
+  ✔ 管理员/导师原 AI 与任务页保留；教师/新媒体路径限制不扩张 (4913.0781ms)
+✔ 第十一轮：小智、任务兼容、资料回看及真实双标签回归 (147334.26ms)
+Isolated empty-directory init + local-server: ready; existing dependencies reused.
+Browser: 154.0.4258.37
+▶ 第十二轮：公共状态、连续学生旅程与正式产物
+  ✔ 公共加载：身份未知保持中性、课程检查可读、路由加载无假进度 (2642.8562ms)
+  ✔ 学生未知地址与 403：三尺寸、错误焦点、Tab 和真实恢复 (3918.8527ms)
+  ✔ 其他角色未知地址恢复到原首页且没有学生样式 (4882.6727ms)
+  ✔ 暂时检查失败可重试；明确对象/课程失效清内容并返回有效入口 (6222.0838ms)
+Journey reference flight: {"engine":"reference","parameters":{"dihedral_deg":5,"cg_x":0,"speed":36,"wing_area":17.5,"mass":420,"elevator_deg":0,"rudder_deg":0,"course_id":1,"lesson_id":1},"state":"landed","status":"success","result":{"params":{"dihedral_deg":5,"cg_x":0,"speed":36,"alt":150,"autolevel":false,"wing_area":17.5,"mass":420,"elevator_deg":0,"rudder_deg":0,"v_ref":31},"backend":"reference","renderer":"mpl","reason":"landed","glide_time_s":72.75,"distance_m":2287.1,"alt_start":150,"alt_end":1.5,"mean_sink_mps":2.041,"mean_speed_mps":31.73,"glide_ratio":15.4,"steps":8731,"files":{"summary":"summary.json","csv":"flight_telemetry.csv","telemetry_png":"flight_telemetry.png","trajectory_png":"trajectory3d.png","trace":"flight_trace.npz","trace_bin":"flight_trace.bin"},"trajectory_saved":true},"course_id":1,"lesson_id":1}
+  ✔ 连续真实旅程：待办→地图→卡片→参考引擎→原卡片→报告作品→导师评审→档案 (18961.717ms)
+  ✔ 正式 dist：登录、探索、真实课时深链刷新、全局入口、403、测试路由与映射关闭 (3807.1739ms)
+  ✔ 实际 Python 路径缺失：禁止假试飞、参数保留并提供重新检查环境 (1851.18ms)
+✔ 第十二轮：公共状态、连续学生旅程与正式产物 (44216.6935ms)
+▶ 第三轮：原创像素双页样板和公共布局验收
+  ✔ 登录后三入口、一个主待办，1440×900课程卡与CTA位于默认首屏 (584.3142ms)
+  ✔ 具体待办跳转保留，其他待办展开仍逐项可操作 (684.261ms)
+  ✔ 地图真实节点、章节、选择详情、键盘进入与课程信息资源 (1201.1311ms)
+  ✔ 768与390默认首屏截图，地图纵向、导航及主要操作无遮挡 (3774.2369ms)
+  ✔ 顶栏演示积分来自适配器，真实兑换流程更新余额；通知个人中心和帮助可达 (6190.0939ms)
+  ✔ 伙伴收起重开与原助手入口，小屏报告表单保留且不被遮挡 (3467.0204ms)
+  ✔ 旧入口保持可达，课程知识卡片到实验再返回原卡片 (5855.9491ms)
+  ✔ 后端已有课程封面优先，图片404降级仍保留真实名称与进入按钮 (2188.4037ms)
+  ✔ 素材组件预览可浏览，学生主题不污染管理员页面 (4305.3941ms)
+✔ 第三轮：原创像素双页样板和公共布局验收 (30534.1619ms)
+▶ 第五轮：真实学习与作品提交、版本、反馈及学生视觉
+  ✔ 四阶段锁定原因、回放与附件局部失败、三尺寸首屏 (5727.8804ms)
+  ✔ 五种题型、一次作答、答错仍可完成、卡片顺序与阅读布局 (7174.0139ms)
+  ✔ 无题卡片、指定实验返回卡片、无卡片不自动通过与无作品任务 (6749.8187ms)
+  ✔ 折叠必填字段展开定位、全部报告字段草稿恢复、提交失败与待评审 (12336.5387ms)
+  ✔ 报告退回修改、新版本通过，作品入口独立且不被报告状态隐藏 (4869.067ms)
+  ✔ 作品首次提交、字段校验、草稿恢复、上传失败后文字和附件保留 (7350.3495ms)
+  ✔ 最新退回作品可修改、旧版本只读已修改、作品附件局部失败与版本切换 (11847.7826ms)
+  ✔ 小智顺向Tab到提问、Escape回焦点、窄屏报告确认无遮挡 (3157.8866ms)
+  ✔ 管理员和导师保留原评审表单；导师真实评分后学生可查看维度 (10074.1392ms)
+  ✔ 作品详情网络失败可重试，真实课程撤回清除作品内容 (9483.2955ms)
+✔ 第五轮：真实学习与作品提交、版本、反馈及学生视觉 (81093.5422ms)
+▶ 第六轮：实验室、真实试飞、局部状态及作品课程边界
+  ✔ 真实接口：实验选择、默认参数、空历史与三尺寸 (3329.0912ms)
+  ✔ 真实参考引擎：七参数映射、自由空关联、六指标及两张科学图 (8621.7429ms)
+  ✔ 同条重开、独立文件重试、历史参数与编辑值不混淆 (1992.7238ms)
+  ✔ 故障注入：运行/超时恢复/三次读取失败/迟到响应/缺失与零 (4821.0996ms)
+  ✔ 环境/提交/历史/计算失败可恢复，失败不清空参数 (2269.5033ms)
+  ✔ 旧 MP4：真实签名与视频播放，媒体内容为兼容性测试夹具 (509.3796ms)
+星海远航
+STAR VOYAGE · 2057
+PBL 科创学习平台
+晴空观测站 / OBSERVATORY
+从一个好问题，
+开始新的探索。
+
+观察、尝试、记录。
+每一次发现，都让我们向前一步。
+
+01 / 准备出发
+KEEP EXPLORING ↗
+欢迎回来
+登录你的账号
+
+继续课程探索，记录新的发现。
+
+登录已失效，请重新登录；如账号被停用，请联系老师。
+账号
+密码
+显示
+登 录
+
+还没有账号？请联系管理员创建。
+
+探索 · 实践 · 发现
+每一步，都有新的可能。
+{ hidden: [ [ 'SPAN', 'pixel-icon ' ], [ 'svg', {} ] ], buttons: [] }
+e use `size` instead.
+16:42:46 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:46 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:48 [vite] (client) [console.error] Warning: [antd: message] Static function can not consume context like dynamic theme. Please use 'App' component instead.
+16:42:49 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:49 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:49 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:49 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:49 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:49 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:49 [vite] (client) [console.error] Warning: Instance created by `useForm` is not connected to any Form element. Forget to pass `form` prop?
+16:42:50 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:50 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:50 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:50 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:50 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:50 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:53 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:53 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:53 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:53 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:54 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:55 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:55 [vite] (client) [console.error] Warning: [antd: Drawer] `width` is deprecated. Please use `size` instead.
+16:42:55 [vite] (client) [console.error] Warning: Instance created by `useForm` is not connected to any Form element. Forget to pass `form` prop?
+[API POST /api/auth/refresh] → 401: {"error":"登录已过期，请重新登录"}
+16:42:55 [vite] (client) [console.error] Warning: [antd: message] Static function can not consume context like dynamic theme. Please use 'App' component instead.
+16:42:55 [vite] (client) [console.error] Warning: [antd: message] Static function can not consume context like dynamic theme. Please use 'App' component instead.
+
+  ✖ 真实来源核验：卡片精确返回、固定关联、卡片/课时/课程失效回退 (21853.3629ms)
+✖ 第六轮：实验室、真实试飞、局部状态及作品课程边界 (45828.3213ms)
+▶ 第七轮：档案、成果浏览与独立反思，隔离真实 API
+  ✔ 自动加载、同名课程、真实记录与聚合范围，三尺寸概览 (2931.4106ms)
+  ✔ 报告按需读取，无作品任务课时与真实零分，报告作品独立 (6096.5241ms)
+  ✔ 报告读取失败不冒充未提交，迟到课时报告不覆盖新选择 (6090.3693ms)
+  ✔ 三种反馈分区、原能力维度、成长去重与无法归属降级 (3525.3076ms)
+  ✔ 作品总列表搜索、筛选、版本、待办与详情反馈，三尺寸 (6045.6688ms)
+  ✔ 部分失败、归属核验失败及刷新恢复，不冒充空成果 (9374.7751ms)
+  ✔ 真实课程撤回、报名移除清理统计，迟到档案不复活内容 (1686.1941ms)
+  ✔ 反思必填、真实提交和返回档案，三尺寸表单 (4299.2243ms)
+  ✔ 日限额、网络失败与课程失效保留所有文字；快速切课防迟到 (11014.6092ms)
+  ✔ 新学生无成果，管理员/导师/教师保留原页面与权限 (15473.2684ms)
+✔ 第七轮：档案、成果浏览与独立反思，隔离真实 API (68934.777ms)
+▶ 第八轮：奖励视觉、本地存储与双标签一致性
+  ✔ 真实浏览器演示：四标签、三尺寸、详情取消与键盘焦点 (9802.8518ms)
+  ✔ 事务在 put 成功后中止：失败重试保留同次编号，刷新持久化与原限制 (6803.5532ms)
+  ✔ 数据库 getter / 读取 / 损坏 / 重置失败可恢复，不自动覆盖 (5318.4383ms)
+  ✔ 实际双标签广播同步：详情、顶栏、列表、焦点及旧版本隔离 (24429.2143ms)
+  ✔ 实际 IndexedDB 事务：兑换→重置、重置→兑换、竞争最后限兑与两页一致 (45089.2314ms)
+  ✔ 离开/退出中止尚未提交事务，已提交事实保留，账号隔离且不依赖 Web Locks (20392.5961ms)
+  ✔ 长历史与窄屏分页、弹窗焦点约束、素材正常加载 (1898.9821ms)
+  ✔ 拒绝存储后首次挂载奖励页仍可重试，背景更新保留标签与滚动 (689.2677ms)
+✔ 第八轮：奖励视觉、本地存储与双标签一致性 (117023.4928ms)
+▶ 第九轮：认证、通知和反馈视觉与容错（隔离真实 API + 指定故障注入）
+  ✔ 登录：三尺寸、键盘显示切换、校验与真实错误密码/频控 (2797.1889ms)
+  ✔ 登录网络/超时故障注入保留表单；真实学生登录进入探索 (1396.9316ms)
+  ✔ 强制改密不可绕过、无通知请求；真实新凭证与普通改密三尺寸 (5703.8989ms)
+  ✔ 真实其他角色首页与管理功能保持原角色布局 (4413.6954ms)
+  ✔ localStorage getter/getItem 故障结束恢复；sessionStorage 禁用不阻断登录 (4257.9868ms)
+  ✔ 登录部分写入失败不进业务；退出清理失败立即移除内容并可重新登录 (2688.3186ms)
+  ✔ 通知真实空态、三尺寸列表/详情/最近弹层、GET 自动已读与标未读 (5947.3249ms)
+  ✔ 通知筛选与分页、批量真实范围、清理确认及最后一页回退 (3231.5565ms)
+  ✔ 最近通知合法路径跳转、不允许路径回退；计数失败不伪装为零 (1049.2238ms)
+  ✔ 通知 A 切 B 失败、迟到 A、动作迟到；列表筛选迟到均不串对象 (1952.4328ms)
+  ✔ 通知写成功回读失败显示真实结果，重试只读取 (730.6881ms)
+  ✔ 反馈真实空态与表单三尺寸；合法文件、类型/数量/大小校验及失败保留 (6834.3252ms)
+  ✔ 反馈授权附件下载与真实 404 不清回复；普通回复失败保留并可真实发送 (1001.8674ms)
+  ✔ 反馈回复写成功回读失败仅重新 GET，不重复 POST (1189.852ms)
+  ✔ 真实管理员内部备注不可见、解决确认与重新处理；重开失败保留、焦点恢复 (4175.1931ms)
+  ✔ 反馈 A 切 B 的真实 403/404、迟到返回与路由后动作不串对象 (2264.8851ms)
+  ✔ 反馈筛选迟到/读取失败隔离，长内容与三尺寸表单底部可达 (3402.2268ms)
+  ✔ 回复超时未确认不伪造失败或成功；重复点击只发一个请求 (1674.2508ms)
+  ✔ 真实有效 refresh 轮换与并发去重，旧账号迟到请求不能覆盖新账号 (2864.9856ms)
+  ✔ 账号停用及并发 401 刷新只一次；强制重置全局处理与受限业务不循环 (1624.629ms)
+  ✔ 管理员反馈详情保留优先级、状态和内部备注操作，没有学生外壳 (2020.7344ms)
+  ✔ 通知账号切换不残留旧列表/计数；浏览器无未捕获异常 (1928.4315ms)
+✔ 第九轮：认证、通知和反馈视觉与容错（隔离真实 API + 指定故障注入） (64858.6668ms)
+ℹ tests 131
+ℹ suites 0
+ℹ pass 126
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 729815.3363
+
+✖ failing tests:
+
+test at tests\access.browser.test.js:118:13
+✖ 真实当前课程撤回清除学习内容并保留可用导航 (10091.3303ms)
+  locator.click: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '返回探索地图', exact: true })[22m
+
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:125:71)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:118:5) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '返回探索地图', exact: true })" ]
+  }
+
+test at tests\access.browser.test.js:129:13
+✖ 单个课时对象失效时仅清当前页，课程仍可进入 (11365.5219ms)
+  locator.click: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '重新检查', exact: true })[22m
+
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:143:69)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\access.browser.test.js:129:5) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '重新检查', exact: true })" ]
+  }
+
+test at tests\round6.browser.test.js:89:58
+✖ 真实来源核验：卡片精确返回、固定关联、卡片/课时/课程失效回退 (21853.3629ms)
+  locator.waitFor: Timeout 15000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText('实验环境就绪，可以开始试飞。', { exact: true }) to be visible[22m
+
+      at C:\Users\shr\Desktop\nmg前端\app\tests\round6.browser.test.js:210:86
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\round6.browser.test.js:89:82)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\round6.browser.test.js:89:50)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\round6.browser.test.js:202:5) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByText('实验环境就绪，可以开始试飞。', { exact: true }) to be visible" ]
+  }
+
+test at tests\round6.browser.test.js:65:1
+✖ 第六轮：实验室、真实试飞、局部状态及作品课程边界 (45828.3213ms)
+  locator.waitFor: Timeout 15000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText('实验环境就绪，可以开始试飞。', { exact: true }) to be visible[22m
+
+      at C:\Users\shr\Desktop\nmg前端\app\tests\round6.browser.test.js:210:86
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\round6.browser.test.js:89:82)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\round6.browser.test.js:89:50)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\round6.browser.test.js:202:5) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByText('实验环境就绪，可以开始试飞。', { exact: true }) to be visible" ]
+  }

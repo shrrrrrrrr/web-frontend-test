@@ -122,7 +122,7 @@ test('权限错误仅清理失效对象，保留不相关输入（真实本地 A
       assert.equal(await page.getByLabel('学习总结', { exact: true }).count(), 0);
       assert.equal(await page.getByRole('heading', { name: '认识月球环境', exact: true }).count(), 0);
       assert.equal(await page.getByRole('navigation', { name: '学生主导航' }).getByRole('link').count(), 3);
-      await page.getByRole('button', { name: '返回探索地图', exact: true }).click();
+      await page.getByRole('link', { name: '返回探索地图', exact: true }).click();
       await page.getByText('老师还没有为你分配已发布的课程，请联系老师。').waitFor();
     });
 
@@ -139,8 +139,12 @@ test('权限错误仅清理失效对象，保留不相关输入（真实本地 A
       await page.getByText('当前内容已不可访问', { exact: true }).waitFor();
       assert.equal(await page.getByLabel('学习总结', { exact: true }).count(), 0);
       assert.equal(await page.getByRole('navigation', { name: '学生主导航' }).getByRole('link').count(), 3);
+      assert.equal(await page.getByRole('button', { name: '重新检查', exact: true }).count(), 0, '明确失效只返回有效入口');
+      await page.getByRole('link', { name: '返回探索地图', exact: true }).click();
+      await page.getByRole('heading', { name: '探索地图', exact: true }).waitFor();
       db.prepare('UPDATE lessons SET status=? WHERE id=1').run(status);
-      await page.getByRole('button', { name: '重新检查', exact: true }).click();
+      // 后端恢复课时后重新进入；不通过旧挡板重试声称失效内容仍有效。
+      await page.goto(`${base}/courses/1/lessons/1/learn?stage=2`);
       await page.getByLabel('学习总结', { exact: true }).waitFor();
       assert.equal(await page.getByLabel('学习总结', { exact: true }).inputValue(), '错误隔离测试：这段未提交报告必须保留。');
     });

@@ -1,74 +1,62 @@
-# 星海远航 · 学生端功能框架
+# 星海远航 · 学生端前端
 
-本项目使用 React / Vite / Ant Design / React Router / Axios，沿用原前后端锁文件。第五轮将「晴空观测站」视觉用于具体课时学习、作品提交及学生作品详情，保留第四轮首页和地图。最新结果见 [第五轮交付](docs/round-05.md) 和 [学习与作品截图图集](docs/round-05/index.html)，视觉约束见 [DESIGN.md](DESIGN.md)。原项目引用见 [SOURCE.md](SOURCE.md)，此前记录见 [第四轮](docs/round-04.md)、[第三轮](docs/round-03.md)、[第二轮](docs/round-02.md) 和 [第一轮](docs/round-01.md)。
+当前约定的学生端改版已完成，第十二轮全流程验收与交接已完成。沿用 React / Vite / Ant Design / React Router / Axios，后端及参考仿真来自固定源码基线。课程由后台分配；学生不自行选课或退课。其他角色保留原工作台和管理页面。
 
-## 本地启动
+**[打开总验收图集](docs/acceptance/index.html)** · [当前交接说明](docs/HANDOFF.md) · [本轮结果与日志](docs/round-12.md) · [待办与能力边界](docs/BOUNDARIES.md)
 
-建议 Node.js 22.12 或以上；本次实际使用 Node.js 26.2.0。执行目录为本 README 所在的 `app`。
+## 当前入口
 
-```powershell
-npm ci
-npm --prefix frontend ci
-npm --prefix backend ci
-npm run db:init
-```
+| 学生路径 | 内容 |
+| --- | --- |
+| `/explore` | 首页待办与已分配课程；`/courses/:id` 真实课时地图 |
+| `/courses/:courseId/lessons/:lessonId/learn` | 回顾、卡片练习、报告反思、导师评审、独立作品任务 |
+| `/lab`、`/glider` | 自由实验、七参数试飞、结果/图表和历史；已配置课程来源精确返回 |
+| `/archives`、`/works` | 本人档案、课程记录、作品版本与导师反馈 |
+| `/archives/reflection` | 独立反思；沿用原日配额 |
+| `/archives/rewards` | 积分、礼品、兑换记录、徽章的**本地演示** |
+| `/dashboard/ai` | 灵境小智单次提问与真实来源，取决于后台配置 |
+| `/notifications`、`/feedback`、`/change-password` | 通知、帮助反馈、改密；顶栏及个人菜单可达 |
 
-`db:init` 创建原项目的**本地合成测试数据**，已有业务数据时会拒绝覆盖；不要使用 `db:reset`。数据库和上传文件已排除版本管理。不要将初始化账号部署到公网。
+旧 `/dashboard`、`/courses`、`/tasks`、`/tasks/:id`、`/courses/:id/learn` 与通知链接保留。强制改密先于任何学习。未知地址与无权页面有恢复入口，隐藏菜单不替代服务器授权。
 
-在两个终端分别启动：
+## 启动
+
+有已配置的本地环境时，在仓库根目录分别开两个终端：
 
 ```powershell
 npm run server
-```
-
-```powershell
 npm run dev
 ```
 
-访问 http://127.0.0.1:5173 。学生测试账号：`student_wang`，密码：`student123`。其他本地测试账号在原初始化脚本中。登录采用账号而非姓名。
+打开 `http://127.0.0.1:5173`。API 默认 `127.0.0.1:3000`。已有数据库只启动，**不要执行 reset**。未配置或首次克隆请按 [最小启动、空库与构建预览](docs/HANDOFF.md#启动与环境) 设置自己的本地变量、安装锁定依赖和初始化空库。
 
-原初始化课程是“月球基地设计师”，页面从接口读取名称，不会将它改名或硬编码为“星海远航”。原初始化数据没有知识卡片，因此其卡片阶段会如实显示等待导师发布。浏览器自动化测试会在独立临时数据库中补充测试卡片，验证完整学习流程，不会写入这个开发数据库。
+本轮实测 Windows Node 26.2.0、npm 11.13.0、Python 3.12.10 / NumPy 2.5.3 / Matplotlib 3.11.2 / Pillow 12.3.0。验证复用了已有依赖，在全新临时目录初始化隔离库；**没有验证全新机器联网安装**。自动化使用 Windows Edge，仿真使用 reference，未验证 Linux novaPhy。
 
-## 可选：运行原滑翔机参考引擎
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install numpy matplotlib Pillow
-```
-
-`npm run server` 检测到此虚拟环境时，使用原 `reference` 引擎。没有环境时页面如实展示引擎状态；不会伪造试飞结果。生产 novaPhy 环境由原项目配置决定，本轮未验证 novaPhy。仿真配置与完整依赖参考 `simulation/glider/README.md`。
-
-默认前端代理到 `http://127.0.0.1:3000`，可通过启动 Vite 时的 `API_PROXY_TARGET` 环境变量指定测试后端；无需改业务接口。
-
-## 验证
+## 复验
 
 ```powershell
 npm run lint
 npm test
 npm run build
-npm run test:backend
-npm run test:e2e
-npm run test:e2e:round2
-npm run test:e2e:access
-npm run test:e2e:round3
-npm run test:e2e:round4
-npm run test:e2e:round5
+npm run test:acceptance
 ```
 
-浏览器测试使用本机 Edge、临时 SQLite 和独立浏览器上下文，不连接生产服务。六个套件分别使用端口 3117/5179、3118/5180、3120/5182、3122/5184、3123/5185、3124/5186。首个回归套件需先安装上述参考引擎依赖；其余套件不运行物理试飞。失败截图及第二至四轮重跑截图保存在忽略提交的 `test-results/`，不覆盖历史交付图。第五轮截图保存在 `docs/round-05/screenshots/`；运行 `node scripts/build-round5-gallery.mjs` 可重建离线图集。测试会自动关闭它启动的服务。后端未变时无需重复运行全部后端测试。
+`test:acceptance` 顺序运行选定的权限、第三/五至十二轮套件，包含完整奖励业务、120 组原生事务、真实凭证刷新、本地 HTTPS provider 和两次不同用途的参考试飞。它启动自己的临时数据库与端口，不使用现有业务库。需要已安装 Edge、参考 Python 环境；回放测试另需系统 ffmpeg，第十一轮本地 HTTPS 需要 Git 附带的 OpenSSL（可通过 `ROUND11_OPENSSL` 指定）。具体脚本、端口、场景统计、限制见 [本轮验收](docs/round-12.md)。
 
-学生登录后可在开发服务器访问 `http://127.0.0.1:5173/__pixel-preview` 浏览原创素材及组件状态。该路由不进入生产构建，也不加入正式学生导航。生成本轮合成学习与作品截图使用 `npm run test:e2e:round5`，无需重置开发库。网页图片已提交，日常启动无需重新生成；复现派生文件可用现有 Pillow 环境运行 `.\.venv\Scripts\python.exe scripts/build-pixel-web-assets.py`，不会改写 PNG 母版。
+单模块脚本为 `test:e2e:access`、`test:e2e:round2` 至 `test:e2e:round12`，另保留最早 `test:e2e`。历史套件不是每轮都全跑；最终实际结果以第十二轮日志为准。
 
-## 接入状态
+## 数据与交接边界
 
-- 真实接口：账号、强制改密、课程、课时、任务、知识卡片、练习、学习报告与反思、作品与版本、评审结果、档案、反馈、通知、学习助手、滑翔机。
-- 本地演示：积分余额和明细、礼品详情与兑换、兑换记录、徽章；每个页面及确认框标明演示，不真实扣分或发货。数据按账号保存于当前浏览器的原生 IndexedDB。
-- 待确认：正式奖励规则与后端契约、章节名称和课时分组、正式课程内容、最终视觉。
+- 登录/学习/作品/报告/档案/反思/通知/反馈/助手/试飞复用真实接口，报告和作品不合并，原完成与评分规则不变。
+- 正式教学内容、章节和实验绑定未提供。`courseGroups={}`、`EXPERIMENT_ASSOCIATIONS=[]`；只有 DEV 且 `VITE_STUDENT_TEST_CONFIG=1` 才启用明确的合成配置。生产产物不开测试预览页。
+- 奖励仍为账号隔离的 IndexedDB 演示，初始 120；没有真实积分、库存、跨设备同步或发货。旧数据一次迁移，重置不重新导入，旧标签需刷新，代码回退不等于数据回退。
+- 小智本轮只验收本地测试 provider 链路，未验收外部付费服务或答案质量；没有后台聊天历史、流式输出或取消执行。
+- 历史 MP4 可播放；新试飞是数据与科学图表，trace 三维渲染器未实现。原后端本人历史作品的课程有效性缺口仍待修，前端过滤不是后端授权修复。
 
-正式课程分组在 `frontend/src/student/config.js` 中，当前为空；不虚构章节，未分组课时始终显示。正式实验关联在 `experimentConfig.js` 中，当前为空，实验室可独立进入。仅 Vite 开发环境且 `VITE_STUDENT_TEST_CONFIG=1` 时启用明确标注的测试章节及课程 1 / 课时 1 / 卡片 2 的测试关联；生产构建不会启用。测试开关不会创建课程或更改报名关系，第二轮浏览器测试自行准备相应临时数据。
+[设计规范与素材出处](DESIGN.md) · [原源码来源](SOURCE.md) · [完整边界](docs/BOUNDARIES.md)。素材母版、原创 SVG 和派生清单保留；不把原项目代码统称原创。
 
-奖励配置集中于 `rewardConfig.js`，适配层位于 `rewardAdapter.js`。第十轮起使用原生 IndexedDB 数据库 `star-voyage-rewards` 的 `accounts` 仓库；不需要安装数据库库或后端服务。旧 `star-voyage:rewards:demo:v1:${accountId}` 仅在该账号尚未初始化时导入，原备份保留但不再双写；重置保留初始化记录。升级时请刷新旧版本标签，旧页对 v1 的写入不会合并进当前余额。站点存储权限或空间异常会明确报错，不使用临时余额伪装成功。
+## 历史轮次
 
-本轮稳定性验证：`npm run test:e2e:round10`（真实 API 两标签 + 原生事务迁移和 120 组压力），`npm run test:e2e:round8`（完整奖励，不跳过），`npm run test:e2e:round9`（账号/通知/反馈）。第十轮隔离端口 3129/5191、5192；实际结果和最小截图见 [第十轮交付](docs/round-10.md)、[证据图集](docs/round-10/index.html)。历史轮次文档保留其当时实现。
+[第一轮](docs/round-01.md) · [第二轮](docs/round-02.md) · [第三轮](docs/round-03.md) · [第四轮](docs/round-04.md) · [第五轮](docs/round-05.md) · [第六轮](docs/round-06.md) · [第七轮](docs/round-07.md) · [第八轮](docs/round-08.md) · [第九轮](docs/round-09.md) · [第十轮](docs/round-10.md) · [第十一轮](docs/round-11.md)
 
-学习报告和作品文字草稿只存当前浏览器，按账号、课程/任务隔离，不保存附件。原先未隔离账号的旧草稿键不会自动导入。
+历史文档记载当时状态，不覆盖当前交接结论。唯一提交/推送目标为 `shrrrrrrrr/web-frontend-test`；原仓库只读。当前范围交付后停止，等待用户最终验收，不自动增加新阶段。

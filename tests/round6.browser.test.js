@@ -17,7 +17,9 @@ const shots = path.join(root, delivery ? 'docs/round-06/screenshots' : 'test-res
 const base = 'http://127.0.0.1:5187';
 const apiBase = 'http://127.0.0.1:3125';
 const env = { ...process.env, NODE_ENV: 'test', DB_PATH: path.join(scratch, 'round6.db'),
-  JWT_SECRET: randomBytes(32).toString('hex'), UPLOAD_PATH: path.join(scratch, 'uploads'),
+  // 此套件将浏览器快进 10 分钟验证计算超时，避免与真实 15 分钟凭据的提前刷新互相干扰。
+  // 仅临时库沿用既有可配置项；真实默认凭据轮换由 round10/round11 独立验证。
+  JWT_ACCESS_EXPIRES_IN: '60', JWT_SECRET: randomBytes(32).toString('hex'), UPLOAD_PATH: path.join(scratch, 'uploads'),
   FEEDBACK_UPLOAD_PATH: path.join(scratch, 'feedback'), CORS_ORIGIN: base, API_PROXY_TARGET: apiBase,
   GLIDER_BACKEND: 'reference', GLIDER_PYTHON: path.join(root,'.venv/Scripts/python.exe'), GLIDER_RENDERER: 'mpl', VITE_STUDENT_TEST_CONFIG: '1', LOGIN_RATE_LIMIT_IP: '500', LOGIN_RATE_LIMIT_USER: '500' };
 const viewports = [[1440, 900, 'desktop-1440'], [768, 1024, 'tablet-768'], [390, 844, 'mobile-390']];

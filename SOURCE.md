@@ -11,4 +11,6 @@
 - 原目录中的设计交付、素材及源码快照保持不变。
 - 本仓库唯一 origin：https://github.com/shrrrrrrrr/web-frontend-test.git
 
-最新源码的 AI 助手已支持可配置服务与规则回退；前端读取 enabled、origin，不假设已接模型，也不新增接入。
+固定导入基线的当前 AI 后端支持可配置 provider；前端读取真实 enabled、origin。第十一/十二轮通过隔离本地 HTTPS provider 验证链路，未使用真实外部 Key，也不保证外部回答质量。不存在已核实的“模型失败必有规则回退”承诺；未新增模型、聊天历史或流式能力。
+
+像素素材的生成母版、原创 SVG、派生关系与历史参考出处见 [DESIGN.md](DESIGN.md) 和 [素材清单](frontend/public/assets/pixel-v1/manifest.json)。代码与素材各自注明来源，不把原项目复制代码或外部参考统称原创。

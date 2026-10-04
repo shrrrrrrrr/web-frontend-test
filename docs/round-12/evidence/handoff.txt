@@ -1,0 +1,12 @@
+{
+  "browser": "154.0.4258.37",
+  "galleryImages": 34,
+  "round12Images": 18,
+  "viewports": [
+    1440,
+    768,
+    390
+  ],
+  "localLinks": "all exist",
+  "errors": []
+}

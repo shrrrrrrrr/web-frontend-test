@@ -1,0 +1,89 @@
+{
+  "baseline": "88c7b9b36dc7c101199ec7cf5d446b98d68d1493",
+  "browser": "Edge 154.0.4258.37 / Windows",
+  "businessScenarios": 122,
+  "parentTests": 11,
+  "uniqueNodeTests": 133,
+  "finalUnresolvedFailures": 0,
+  "skipped": 0,
+  "unitTests": 58,
+  "transactionGroups": 120,
+  "thirdTabSamples": 12,
+  "concurrentRefreshGroups": 20,
+  "initialCombinedRun": {
+    "tests": 131,
+    "passed": 126,
+    "failed": 5,
+    "failedBusinessScenarios": 3,
+    "failedParents": 2,
+    "remainingLabScenariosCompletedByRerun": 2
+  },
+  "groups": [
+    {
+      "name": "权限错误仅清理失效对象，保留不相关输入（真实本地 API）",
+      "passed": 7,
+      "failed": 0,
+      "log": "evidence/access-final.txt"
+    },
+    {
+      "name": "第十轮：原生 IndexedDB 迁移、提交与 120 组双标签压力验证",
+      "passed": 6,
+      "failed": 0,
+      "log": "evidence/browser.txt"
+    },
+    {
+      "name": "第十轮：跨标签会话与通知批量回归（真实隔离 API）",
+      "passed": 11,
+      "failed": 0,
+      "log": "evidence/browser.txt"
+    },
+    {
+      "name": "第十一轮：小智、任务兼容、资料回看及真实双标签回归",
+      "passed": 23,
+      "failed": 0,
+      "log": "evidence/browser.txt"
+    },
+    {
+      "name": "第十二轮：公共状态、连续学生旅程与正式产物",
+      "passed": 7,
+      "failed": 0,
+      "log": "evidence/round12-final.txt"
+    },
+    {
+      "name": "第三轮：原创像素双页样板和公共布局验收",
+      "passed": 9,
+      "failed": 0,
+      "log": "evidence/browser.txt"
+    },
+    {
+      "name": "第五轮：真实学习与作品提交、版本、反馈及学生视觉",
+      "passed": 10,
+      "failed": 0,
+      "log": "evidence/browser.txt"
+    },
+    {
+      "name": "第六轮：实验室、真实试飞、局部状态及作品课程边界",
+      "passed": 9,
+      "failed": 0,
+      "log": "evidence/lab-final.txt"
+    },
+    {
+      "name": "第七轮：档案、成果浏览与独立反思，隔离真实 API",
+      "passed": 10,
+      "failed": 0,
+      "log": "evidence/browser.txt"
+    },
+    {
+      "name": "第八轮：奖励视觉、本地存储与双标签一致性",
+      "passed": 8,
+      "failed": 0,
+      "log": "evidence/browser.txt"
+    },
+    {
+      "name": "第九轮：认证、通知和反馈视觉与容错（隔离真实 API + 指定故障注入）",
+      "passed": 22,
+      "failed": 0,
+      "log": "evidence/browser.txt"
+    }
+  ]
+}

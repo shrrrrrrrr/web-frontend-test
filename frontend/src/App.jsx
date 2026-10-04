@@ -1,11 +1,13 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ConfigProvider, App as AntApp, Result, Spin } from 'antd';
+import { ConfigProvider, App as AntApp } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import { colors } from './styles/tokens';
 import { AuthProvider } from './store/AuthContext';
 import NotificationProvider from './store/NotificationProvider';
 import AppLayout from './components/AppLayout';
+import { PageLoading } from './components/PageStatus';
+import NotFound from './components/NotFound';
 import Login from './pages/auth/Login';
 import RoleGuard, { RoleHomeRedirect } from './components/RoleGuard';
 import { useAuth } from './store/AuthContext';
@@ -58,11 +60,7 @@ const MentorContentHub = lazy(() => import('./pages/mentor/ContentHub'));
 const guard = (element, roles) => <RoleGuard roles={roles}>{element}</RoleGuard>;
 
 function PageFallback() {
-  return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 320 }}>
-      <Spin size="large" />
-    </div>
-  );
+  return <PageLoading />;
 }
 
 function App() {
@@ -127,7 +125,7 @@ function App() {
                 <Route path="observer" element={guard(<ObserverDashboard />, ['teacher', 'admin'])} />
                 <Route path="observer/students" element={guard(<ObserverStudents />, ['teacher', 'admin'])} />
                 <Route path="observer/students/:studentId" element={guard(<ObserverStudentDetail />, ['teacher', 'admin'])} />
-                <Route path="*" element={<Result status="404" title="页面不存在" subTitle="请通过左侧导航进入功能页面。" />} />
+                <Route path="*" element={<NotFound />} />
               </Route>
               </Routes>
               </Suspense>

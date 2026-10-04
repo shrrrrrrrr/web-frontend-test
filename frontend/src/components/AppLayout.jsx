@@ -1,10 +1,11 @@
 import { Outlet, Navigate, useLocation } from 'react-router-dom';
-import { Layout, Spin } from 'antd';
+import { Layout } from 'antd';
 import { useAuth } from '../store/AuthContext';
 import Sidebar from './Sidebar';
 import HeaderBar from './Header';
 import StudentScope from '../student/StudentScope';
 import StudyPartner from '../student/StudyPartner';
+import { PageLoading } from './PageStatus';
 import StudentShell from '../student/visual/StudentShell';
 
 const { Content } = Layout;
@@ -13,13 +14,7 @@ export default function AppLayout() {
   const { user, loading } = useAuth();
   const location = useLocation();
 
-  if (loading) {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <Spin size="large" tip="加载中..." />
-      </div>
-    );
-  }
+  if (loading) return <PageLoading>正在确认登录状态，请稍候。</PageLoading>;
 
   if (!user) {
     return <Navigate to="/login" replace />;
