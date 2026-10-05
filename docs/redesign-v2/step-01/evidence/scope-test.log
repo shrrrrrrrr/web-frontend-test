@@ -1,0 +1,27 @@
+✅ SQLite 数据库连接成功: D:\Temp\pbl-space-PRX49t\test.db
+✔ 课程列表、作品、任务、档案与试飞范围由服务端限定 (97.0298ms)
+[API GET /api/course-spaces/1/works/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/tasks/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/learning/lessons/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/glider/simulations/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/glider/simulations/3] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/courses/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API POST /api/course-spaces/1/glider/simulate] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API POST /api/course-spaces/1/archives/reflection] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API POST /api/course-spaces/1/works] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+✔ 两个课程均获授权也不能在 A 地址读写 B 对象 (24.9039ms)
+[API GET /api/course-spaces/1/works] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/works/1] → 403: {"error":"无权查看该作品"}
+[API GET /api/glider/simulations/1] → 404: {"error":"模拟记录不存在"}
+✔ 旧 API 保留；课程撤回同时禁止旧对象读取，重新发布恢复 (14.2165ms)
+[API POST /api/course-spaces/1/works] → 404: {"error":"作品对象不属于当前课程"}
+[API GET /api/course-spaces/1/works?course_id=2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+✔ multipart 上传不能绕过课程范围，拒绝后无记录与孤立附件 (21.7726ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 863.9401
