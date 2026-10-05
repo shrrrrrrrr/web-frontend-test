@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-05T11:48:29.543Z",
+  "commit": "57dea89c817583c88481d8e2b5d838b5e500ea86",
+  "url": "http://127.0.0.1:4184",
+  "browser": "154.0.4258.53",
+  "method": "git archive frontend into a fresh ignored cache directory; rebuild with existing dependencies; API proxy uses existing isolated preview 3144; no checkout/reset or data reset; drawers captured fully open",
+  "records": [
+    {
+      "width": 1440,
+      "height": 900,
+      "mapTop": 406.59375,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "mapTop": 406.59375,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mapTop": 497.578125,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "mapTop": 497.578125,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "mapTop": 406.59375,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    }
+  ]
+}

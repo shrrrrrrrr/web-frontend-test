@@ -1,5 +1,5 @@
-@font-face{font-family:'Smiley Sans';src:url('/fonts/smiley-sans/SmileySans.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
-:root{--space-ink:#132a49;--space-blue:#245eb7;--space-paper:#fbf6e8;--space-font:'Smiley Sans','Microsoft YaHei',sans-serif}
+@font-face{font-family:'ChillReunion';src:url('/fonts/chill-reunion/ChillReunion-Round.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+:root{--space-ink:#132a49;--space-blue:#245eb7;--space-paper:#fbf6e8;--space-font:'ChillReunion','Microsoft YaHei',sans-serif;font-synthesis:none}
 body,.student-pixel,button,input,textarea,select,.ant-app,.ant-modal,.ant-message,.ant-notification{font-family:var(--space-font)!important}
 .student-pixel [data-space-theme]{min-height:100vh;background:#e9eff2;color:var(--space-ink)}
 .student-pixel [data-space-theme='voyage']{background:#0a193b;color:#f9f4e5}

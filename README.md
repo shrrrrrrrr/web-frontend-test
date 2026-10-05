@@ -1,8 +1,10 @@
 # PBL 科创平台 · 当前前端
 
-新版第 1/3 步已完成，等待课程选择页与关卡地图视觉验收。基于 `7bf3115` 继续开发，保留原 React / Vite / Ant Design / React Router / Axios 及业务。**当前验收以新版文档为准，旧轮次结论保留为历史。**
+新版第 1/3 步补修完成，等待地图视觉复核；第 2、3 步尚未开始。保留 `7bf3115`、`e25aba5`、`57dea89`，本次在 `57dea89` 上补修字体与场景关卡，保留现有技术栈和业务。**当前验收以补修文档为准，旧轮次结论保留为历史。**
 
-**[新版页面与素材图集](docs/redesign-v2/step-01/index.html)** · [交付与启动](docs/redesign-v2/step-01/README.md) · [验证结果](docs/redesign-v2/step-01/verification.md) · [路由与数据范围](docs/redesign-v2/step-01/routes-and-scope.md)
+**[补修前后对照与素材图集](docs/redesign-v2/step-01/patch/index.html)** · [补修交付](docs/redesign-v2/step-01/patch/README.md) · [本次验证](docs/redesign-v2/step-01/patch/verification.md) · [路由与数据范围](docs/redesign-v2/step-01/routes-and-scope.md)
+
+当前字体为官方 ChillReunion v2.700 Round（寒蝉团圆体圆体），本地 WOFF2、静态 500 字重；包含 OFL 1.1 许可。三种新增透明像素设施仅用于显式宇宙主题，编号、课时标题、状态和路线仍由真实 DOM/SVG 绘制。
 
 ## 当前入口
 
@@ -32,19 +34,19 @@ npm run preview:v2
 
 已有本地业务环境仍分别用 `npm run server`、`npm run dev`，默认 API 3000、前端 5173。已有库只启动，不执行 reset 或为预览覆盖变量。
 
-## 本步复验
+## 本次补修复验
 
 ```powershell
 npm run lint
 npm test
 npm run build
-npm run test:backend
 npm run test:e2e:v2
-node --test tests/round10.browser.test.js
-node --test tests/round10-rewards.browser.test.js
+npm run test:e2e:v2:patch
+# 先启动 preview:v2，再核对 4174 并截图
+node scripts/capture-v2-patch.mjs
 ```
 
-实际结果及日志在新版验证记录。新增课程范围 API 不改变学习、评分和仿真算法；无数据库迁移或依赖升级。奖励仍为账号本地演示，未实现真实发放、发货或跨设备同步。
+实际结果及日志在补修验证记录：lint/build、61 项单测、22 个浏览器业务场景通过。本次没有后端、接口、数据库迁移、依赖或仿真变更，不重复运行全部后端测试。第一步原有课程范围 API 保持不变。奖励仍为账号本地演示，未实现真实发放、发货或跨设备同步。
 
 正式课程 ID、教材、章节和实验绑定待确认，9001/9002 明确标注测试。未绑定课程的旧试飞和作品保留旧本人 API，不自动分配到第一门课；本步没有新增未归属历史浏览页。角色头像、机器人浮窗、内部页面精修、完整文案交接、维护端内容表单均未进入实施。
 
@@ -53,6 +55,8 @@ node --test tests/round10-rewards.browser.test.js
 ## 历史交付
 
 [旧版总验收](docs/acceptance/index.html) · [十二轮交接](docs/HANDOFF.md) · [权限恢复补修](docs/round-12/patch/README.md)
+
+[新版第一步原交付](docs/redesign-v2/step-01/README.md) · [原截图与 Smiley Sans 字体验证记录](docs/redesign-v2/step-01/verification.md)（历史构建，不作为 ChillReunion 验证证据）
 
 [第一轮](docs/round-01.md) · [第二轮](docs/round-02.md) · [第三轮](docs/round-03.md) · [第四轮](docs/round-04.md) · [第五轮](docs/round-05.md) · [第六轮](docs/round-06.md) · [第七轮](docs/round-07.md) · [第八轮](docs/round-08.md) · [第九轮](docs/round-09.md) · [第十轮](docs/round-10.md) · [第十一轮](docs/round-11.md) · [第十二轮](docs/round-12.md)
 

@@ -12,6 +12,7 @@ import PixelIcon from './visual/PixelIcon';
 import { PixelButton, PixelPanel, PixelProgress, PixelTag } from './visual/PixelUI';
 import SceneArt from './space/SceneArt';
 import CourseTodos from './space/CourseTodos';
+import LessonPlace from './space/LessonPlace';
 import {coursePresentation} from './space/identity';
 import './visual/pixel-map.css';
 import './space/map.css';
@@ -92,9 +93,9 @@ function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
   </PixelPanel>;
 }
 
-// Connections follow actual DOM positions, including wrapped titles and inline details.
+// Connections follow landing pads in actual DOM positions, including long titles.
 // They are decoration only: buttons retain all selection and keyboard behavior.
-function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey, onSelect, inlineDetails, details, hasNext }) {
+function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey, onSelect, hasNext, theme }) {
   const routeRef = useRef(null);
   const [routePath, setRoutePath] = useState('');
   useLayoutEffect(() => {
@@ -104,15 +105,15 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const bounds = route.getBoundingClientRect();
-        const points = [...route.querySelectorAll('.pixel-map-node-marker')].map((marker) => {
+        const points = [...route.querySelectorAll('.space-landing-anchor')].map((marker) => {
           const rect = marker.getBoundingClientRect();
           return { x: rect.left - bounds.left + rect.width / 2, y: rect.top - bounds.top + rect.height / 2 };
         });
         setRoutePath(points.map((point, index) => {
           if (!index) return `M ${point.x} ${point.y}`;
           const previous = points[index - 1];
-          const middle = (point.x + previous.x) / 2;
-          return `L ${middle} ${previous.y} L ${middle} ${point.y} L ${point.x} ${point.y}`;
+          const middle = (point.y + previous.y) / 2;
+          return `L ${previous.x} ${middle} L ${point.x} ${middle} L ${point.x} ${point.y}`;
         }).join(' '));
       });
     };
@@ -121,7 +122,7 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
     route.querySelectorAll('.pixel-map-route-stop').forEach((stop) => observer.observe(stop));
     draw();
     return () => { observer.disconnect(); cancelAnimationFrame(frame); };
-  }, [group.key, group.lessons.length, inlineDetails]);
+  }, [group.key, group.lessons.length]);
 
   return <section className="route-group pixel-map-region" aria-label={group.title}>
     <h4 className="pixel-map-region-title"><span className="pixel-map-region-index" aria-hidden="true">{String(groupIndex + 1).padStart(2, '0')}</span>{group.title}</h4>
@@ -135,14 +136,13 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
           const isSelected = selected?.id === lesson.id;
           const row = Math.floor(index / 3);
           const column = row % 2 ? 3-index%3 : index%3+1;
-          return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.id} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 3 === 1 ? '76px' : '0px', '--stop-row': row + 1, '--stop-column': column }}>
+          return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.id} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 3 === 1 ? '58px' : '0px', '--stop-row': row + 1, '--stop-column': column }}>
             <button type="button" className="route-node" aria-current={isCurrent ? 'step' : undefined} aria-pressed={isSelected} aria-controls="selected-lesson-details"
               aria-label={'第 ' + lesson.routeNumber + ' 关：' + lesson.title + '，' + state.label + (isCurrent ? '，当前课时' : '')}
               onClick={() => onSelect({ key: selectionKey, lessonId: lesson.id })}>
-              <span className="pixel-map-node-marker"><span className="pixel-map-node-number">{lesson.routeNumber}</span>{state.tone === 'success' && <span className="pixel-map-complete-mark" aria-hidden="true"><PixelIcon name="check" size={24} /></span>}{isCurrent && <span className="pixel-map-current-flag">当前学习</span>}</span>
-              <span className="pixel-map-node-label"><strong>{lesson.title}</strong><PixelTag tone={state.tone}>{state.label}</PixelTag><span className="pixel-map-selection-hint">{isSelected ? '已选中 · 查看详情' : '选择此课时'}</span></span>
+              <LessonPlace number={lesson.routeNumber} current={isCurrent} selected={isSelected} completed={state.tone==='success'} priority={groupIndex===0&&index<3} theme={theme}/>
+              <span className="pixel-map-node-label"><strong>{lesson.title}</strong><PixelTag tone={state.tone}>{state.label}</PixelTag></span>
             </button>
-            {inlineDetails && isSelected && details}
           </li>;
         })}
       </ol>
@@ -181,7 +181,6 @@ export function CourseMap() {
         <div>
           <Link to="/explore" className="pixel-map-back"><PixelIcon name="back" />返回课程选择</Link>
           <Typography.Title level={2}>{course?.title || '课程地图'}</Typography.Title>
-          <p>选一个关卡，继续你的探索。</p>
         </div>
         {data && <div className="pixel-map-header-actions">
           <PixelButton onClick={() => toggleSection('info')} aria-expanded={openSection === 'info'} aria-controls="course-information" icon={<PixelIcon name="book" />}>课程信息</PixelButton>
@@ -191,7 +190,7 @@ export function CourseMap() {
       {location.state?.experimentNotice && <Alert type="warning" showIcon title={location.state.experimentNotice} className="pixel-map-notice" />}
       <AsyncPageState loading={loading} error={error} onRetry={retry}>
         {data && <>
-          {(studentTestConfigEnabled || look.sample) && <Alert type="warning" showIcon title="测试课程布局：章节与实验安排仅用于验收。" className="pixel-map-notice" />}
+          {(studentTestConfigEnabled || look.sample) && <p className="space-map-test-note">测试布局 · 章节与实验安排仅供验收</p>}
           <PixelPanel className="pixel-map-course-info" id="course-information" hidden={openSection !== 'info'}>
             <Typography.Title level={3}>课程信息</Typography.Title>
             <Typography.Paragraph>{course.description || '老师尚未填写课程简介。'}</Typography.Paragraph>
@@ -217,14 +216,14 @@ export function CourseMap() {
           </PixelPanel>
           <CourseTodos detail={data}/>
           <div className="pixel-map-overview">
-            <div><Typography.Title level={3}>课时路线</Typography.Title><span>{data.lessons.length} 个关卡 · 选择节点查看详情</span></div>
+            <div className="space-route-summary"><Typography.Title level={3}>关卡地图</Typography.Title><span>{data.lessons.length} 个课时</span></div>
             <div className="pixel-map-course-progress"><span>课时学习进度</span><PixelProgress value={data.progress} label="课程课时学习进度" /></div>
           </div>
           {!lessons.length ? <PixelPanel className="pixel-map-empty"><Empty description="这门课程还没有课时，请等待老师发布。" /></PixelPanel> : <div className="pixel-map-layout">
             <div className="pixel-map-stage" aria-label="课程关卡路线">
               <SceneArt name={look.theme==='voyage'?'cosmos':'campus'} vertical={look.theme==='voyage'} className="space-map-art" priority/>
               <div className="pixel-map-route-content">
-                {groups.map((group, groupIndex) => <CourseRouteRegion key={group.key} group={group} groupIndex={groupIndex} current={current} selected={selected} selectionKey={selectionKey} onSelect={next=>{setSelection(next);if(!screens.lg)setDetailOpen(true);}} inlineDetails={false} details={details} hasNext={groupIndex < groups.length - 1} />)}
+                {groups.map((group, groupIndex) => <CourseRouteRegion key={group.key} group={group} groupIndex={groupIndex} current={current} selected={selected} selectionKey={selectionKey} onSelect={next=>{setSelection(next);if(!screens.lg)setDetailOpen(true);}} hasNext={groupIndex < groups.length - 1} theme={look.theme} />)}
               </div>
               <p className="pixel-map-route-note">路线表示学习顺序，可用课时都能进入。</p>
             </div>

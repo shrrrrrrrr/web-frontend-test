@@ -26,7 +26,8 @@
     "test:e2e:round12": "node --test tests/round12.browser.test.js",
     "test:acceptance": "node --test --test-concurrency=1 tests/access.browser.test.js tests/round3.browser.test.js tests/round5.browser.test.js tests/round6.browser.test.js tests/round7.browser.test.js tests/round8.browser.test.js tests/round9.browser.test.js tests/round10.browser.test.js tests/round10-rewards.browser.test.js tests/round11.browser.test.js tests/round12.browser.test.js",
     "preview:v2": "node scripts/preview-v2.mjs",
-    "test:e2e:v2": "node --test --test-concurrency=1 tests/redesign-v2.browser.test.js tests/redesign-v2.states.browser.test.js"
+    "test:e2e:v2": "node --test --test-concurrency=1 tests/redesign-v2.browser.test.js tests/redesign-v2.states.browser.test.js",
+    "test:e2e:v2:patch": "node --test tests/redesign-v2.patch.browser.test.js"
   },
   "devDependencies": {
     "playwright": "^1.63.0"

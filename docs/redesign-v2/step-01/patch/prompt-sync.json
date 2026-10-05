@@ -1,0 +1,18 @@
+[
+  {
+    "path": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\新版改造总指令-北航平台与课程独立空间.md",
+    "sha256": "9e158f838c4dc8da8ad1d604c17b4e08e06bbf885052bdf79589711a39814f4c",
+    "fontLines": [
+      "- 页面文字使用寒蝉团圆体 ChillReunion：`https://github.com/Warren2060/ChillReunion`，替换原得意黑要求，本地部署真实字体文件并保存发行版本及许可。少数显眼的艺术标题可例外；课程真实名称、关卡名和可编辑文字必须仍为 HTML 文本，不写死进生成图片。对字体未覆盖的符号使用必要回退字体。"
+    ],
+    "action": "Already updated to ChillReunion when this patch started; verified and preserved without overwriting."
+  },
+  {
+    "path": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\新版第一步提示词-课程空间与视觉样板.md",
+    "sha256": "5d2bdac68d78c840316119b684884220ee5b14491047962ebe15e39e84ef5dc3",
+    "fontLines": [
+      "从寒蝉团圆体 ChillReunion 官方仓库 `https://github.com/Warren2060/ChillReunion` 获取真实字体文件，替换原得意黑要求；优先以本地 woff2 部署、保留许可，通过字体 token 覆盖学生与管理界面的文本、输入框、弹窗和通知，不仅重命名原 SmileySans 文件。艺术字例外必须明确且少量，不能将课程标题烘焙到背景图片。"
+    ],
+    "action": "Already updated to ChillReunion when this patch started; verified and preserved without overwriting."
+  }
+]

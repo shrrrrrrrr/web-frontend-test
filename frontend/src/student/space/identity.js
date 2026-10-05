@@ -1,5 +1,5 @@
 export const PLATFORM_NAME = 'PBL 科创平台';
-export const PLATFORM_FONT = "'Smiley Sans', 'Microsoft YaHei', sans-serif";
+export const PLATFORM_FONT = "'ChillReunion', 'Microsoft YaHei', sans-serif";
 // 独立视觉配置；绝不覆盖 courses.theme（原教学主题）。正式绑定待课程负责人确认。
 // 9001 仅由隔离验收夹具创建，不修改初始化示例课程，也不声明为正式教材。
 export const COURSE_PRESENTATIONS = Object.freeze({

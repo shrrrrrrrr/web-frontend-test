@@ -26,3 +26,6 @@ simulation/glider/imgui.ini
 test-results/
 *.log
 playwright-report/
+
+# Official font download/extraction scratch; shipped font/license are tracked.
+/tmp/chill-reunion/

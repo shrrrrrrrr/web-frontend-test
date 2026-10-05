@@ -1,0 +1,31 @@
+{
+  "commit": "57dea89",
+  "date": "2026-10-05T09:10:00.061Z",
+  "records": [
+    {
+      "width": 1440,
+      "mapTop": 406.59375,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    },
+    {
+      "width": 768,
+      "mapTop": 406.59375,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    },
+    {
+      "width": 390,
+      "mapTop": 497.578125,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    },
+    {
+      "width": 360,
+      "mapTop": 497.578125,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    },
+    {
+      "width": 844,
+      "mapTop": 406.59375,
+      "font": "\"Smiley Sans\", \"Microsoft YaHei\", sans-serif"
+    }
+  ]
+}

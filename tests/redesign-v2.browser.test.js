@@ -24,7 +24,7 @@ test('新版第 1 步：真实课程空间、样板与学习回归',{timeout:360
   const scenario=async(name,fn)=>{let failure;await t.test(name,async()=>{try{await fn();}catch(e){failure=e;console.log('FAILED URL:',p.url(),(await p.locator('body').innerText()).slice(0,1600));await p.screenshot({path:path.join(out,'failure.png')});throw e;}});if(failure)throw failure;};
   await scenario('平台课程选择：真实分配、无全局待办、单课程不自动跳转、三尺寸字体',async()=>{
    const reads=[];p.on('request',r=>{if(r.url().includes('/api/'))reads.push(r.url());});await login(p);await p.getByTestId('home-course-card').first().waitFor();assert.equal(await p.getByTestId('home-course-card').count(),2);assert.equal(await p.locator('.student-partner').count(),0);assert.equal(await p.locator('.space-sidebar').count(),0);assert.equal(reads.some(u=>/\/api\/(tasks|learning)/.test(u)),false);
-   for(const[width,height]of sizes){await p.setViewportSize({width,height});await shot(p,'selector-'+width);assert.match(await p.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily),/Smiley Sans/);}
+   for(const[width,height]of sizes){await p.setViewportSize({width,height});await shot(p,'selector-'+width);assert.match(await p.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily),/ChillReunion/);}
    db.prepare("UPDATE enrollments SET status='removed' WHERE id=9002").run();await p.reload();await p.getByTestId('home-course-card').first().waitFor();assert.equal(await p.getByTestId('home-course-card').count(),1);assert.equal(new URL(p.url()).pathname,'/explore');db.prepare("UPDATE enrollments SET status='active' WHERE id=9002").run();await p.setViewportSize({width:1440,height:900});
   });
   await scenario('地图真课时、多章节、键盘节点、课时安排与未分组默认主题',async()=>{
@@ -73,7 +73,7 @@ test('新版第 1 步：真实课程空间、样板与学习回归',{timeout:360
   });
   await scenario('平台服务页、普通教师与导师原业务入口及字体保持可用',async()=>{
    for(const route of ['/notifications','/feedback','/change-password']){await p.goto(base+route);await p.locator('.service-page').waitFor();assert.equal(await p.locator('.space-sidebar').count(),0);assert.equal(await p.locator('.student-partner').count(),0);await shot(p,route.slice(1));}
-   for(const [name,password,home]of [['mentor_zhang','mentor123','/dashboard'],['teacher_li','teacher123','/observer'],['adminpbl','admin123','/dashboard']]){const c=await browser.newContext({viewport:{width:1440,height:900}}),q=await c.newPage();try{await login(q,name,password);await q.waitForURL('**'+home);await q.locator('.space-staff-shell').waitFor();assert.match(await q.locator('body').evaluate(e=>getComputedStyle(e).fontFamily),/Smiley Sans/);await shot(q,'role-'+name);}finally{await c.close();}}
+   for(const [name,password,home]of [['mentor_zhang','mentor123','/dashboard'],['teacher_li','teacher123','/observer'],['adminpbl','admin123','/dashboard']]){const c=await browser.newContext({viewport:{width:1440,height:900}}),q=await c.newPage();try{await login(q,name,password);await q.waitForURL('**'+home);await q.locator('.space-staff-shell').waitFor();assert.match(await q.locator('body').evaluate(e=>getComputedStyle(e).fontFamily),/ChillReunion/);await shot(q,'role-'+name);}finally{await c.close();}}
    assert.deepEqual(errors,[]);
   });
   await context.close();console.log('新版业务场景全部通过。');

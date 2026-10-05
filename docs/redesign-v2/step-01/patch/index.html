@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第一步补修 · 视觉复核</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#edf1f5;color:#162b45;font:16px/1.65 system-ui,'Microsoft YaHei',sans-serif}main{max-width:1640px;margin:auto;padding:32px}h1{font-size:30px;margin:0}h2{font-size:23px;margin:30px 0 12px}p{margin:8px 0 16px}.intro{max-width:78em}.links{display:flex;flex-wrap:wrap;gap:12px 26px;margin:18px 0}a{color:#175d99}a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #dca228;outline-offset:4px}.summary{display:flex;gap:24px;flex-wrap:wrap;padding:16px 20px;background:white;border-left:4px solid #346f98}.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:14px 0}.controls select,.controls button{font:inherit;border:1px solid #8b9bb0;background:#fff;padding:6px 12px;color:inherit;cursor:pointer}.controls button[aria-pressed=true]{background:#16395d;color:#fff}.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}figure{margin:0;min-width:0}figcaption{padding:10px 12px;background:#fff;border:1px solid #cbd4df;font-size:15px}.pair img{display:block;max-width:100%;width:auto;height:auto;margin:0 auto}.frame{background:#ccd5df;border:1px solid #a5b4c6;padding:10px;min-height:100px}.frame a{display:block}.note{color:#53647a;font-size:14px}.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.modules .frame{background:#102445;text-align:center}.modules img{width:220px;max-width:100%;image-rendering:pixelated}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.gallery img{display:block;width:100%;height:260px;object-fit:contain;object-position:top;background:#d8e0e8}.gallery a{display:block}details{background:#fff;padding:14px 18px;border:1px solid #cbd4df;margin:16px 0}summary{cursor:pointer;font-weight:600}footer{margin-top:40px;padding-top:20px;border-top:1px solid #b8c7d5}@media(max-width:900px){main{padding:20px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.modules{gap:10px}.pair{gap:12px}}@media(max-width:600px){h1{font-size:24px}.pair,.modules,.gallery{grid-template-columns:1fr}.summary{gap:6px}.gallery img{height:360px}}
+</style></head>
+<body><main>
+<h1>第一步补修 · 字体与场景关卡</h1>
+<p class="intro">真实浏览器页面对照。字体更换为官方 ChillReunion v2.700 Round，关卡落在独立像素设施上。所有课程、章节和材料均为隔离验收用合成内容。</p>
+<nav class="links"><a href="http://127.0.0.1:4174">打开 4174 实际页面</a><a href="README.md">交付与启动</a><a href="verification.md">实际验证结果</a><a href="font-source.json">字体来源与哈希</a><a href="scene-manifest.json">设施 manifest</a></nav>
+<div class="summary"><span><strong>61</strong> 项前端单测通过</span><span><strong>22</strong> 个浏览器业务场景通过</span><span>手机地图上沿 <strong>498 → 304px</strong></span><span>第 2、3 步尚未开始</span></div>
+<h2>同尺寸 · 补修前后</h2>
+<div class="controls"><label for="size">视口</label><select id="size"><option value="1440">1440 × 900 桌面</option><option value="768">768 × 1024 平板</option><option value="390">390 × 844 手机</option><option value="360">360 × 800 窄屏</option><option value="844">844 × 390 横屏</option></select><button type="button" id="map" aria-pressed="true">地图首屏</button><button type="button" id="detail" aria-pressed="false">选中第 1 关详情</button></div>
+<div class="pair"><figure><figcaption>补修前 · 57dea89 · Smiley Sans</figcaption><div class="frame"><a id="before-link" href="before/map-1440.png" target="_blank"><img id="before" src="before/map-1440.png" alt="相同视口的补修前真实页面"></a></div></figure><figure><figcaption>补修后 · ChillReunion · 停机坪关卡</figcaption><div class="frame"><a id="after-link" href="after/map-1440.png" target="_blank"><img id="after" src="after/map-1440.png" alt="相同视口的补修后真实页面"></a></div></figure></div>
+<p class="note">点击原图查看原始尺寸。补修前由 57dea89 独立临时构建在 4184 补拍；补修后来自当前 4174。相同 viewport，不裁切、不合成，详情均等待抽屉完全展开。地图默认当前课时为第 2 关；详情均手动选择第 1 关。桌面右侧详情与手机底部抽屉保留实际安排和任务。</p>
+<h2>透明场景模块</h2>
+<p>仅用于显式配置的宇宙主题。平台、编号、状态和连接线分别实现；模块不会赋予课时名称、章节归属或解锁条件。</p>
+<div class="modules">
+<figure><div class="frame"><img src="../../../../frontend/public/assets/redesign-v2/web/moon-base-384.webp" alt="月面基地透明像素模块"></div><figcaption>月面基地 · 前方空停机坪</figcaption></figure>
+<figure><div class="frame"><img src="../../../../frontend/public/assets/redesign-v2/web/orbital-berth-384.webp" alt="轨道站泊位透明像素模块"></div><figcaption>轨道站泊位 · 青色落点用于选中状态</figcaption></figure>
+<figure><div class="frame"><img src="../../../../frontend/public/assets/redesign-v2/web/asteroid-outpost-384.webp" alt="陨石探测站透明像素模块"></div><figcaption>陨石探测站 · 暖色岩体</figcaption></figure>
+</div>
+<p class="note">三张 1254×1254 RGBA 母版，192/384 最近邻无损 WebP；原校园、宇宙、竖幅和飞船母版不变。数字和教学文字不在生成图内。</p>
+<h2>平台与字体</h2><div class="gallery" id="platform"></div>
+<h2>地图边界与学习回归</h2><div class="gallery" id="states"></div>
+<details><summary>本轮验证范围与未开始事项</summary><p>lint、build、61 项单测、17 个原有新版业务场景及 5 个新增补修场景全部通过。新增场景使用真实临时库/API，图片失败场景为明确请求中断注入。保留真实试飞、草稿、授权失效/恢复、报告与作品独立版本，以及账号本地演示奖励。</p><p>9 个字体场景、24 处文字由浏览器底层字形 API 核验；输入框包含原生搜索 Shadow DOM。文件加载状态、资源 SHA256 和静态 500 字重均有记录。历史日志保持原字体说明。</p><p>后端与仿真没有改动，不重复运行全部后端测试。正式课程内容与绑定仍待确认；本次不开发头像选择、机器人浮窗、教师文案表单、主题动画或新业务。</p></details>
+<footer>新版第 1/3 步补修完成，等待地图视觉复核；第 2、3 步尚未开始。</footer>
+</main><script>
+let kind='map';const size=document.getElementById('size');
+function show(){for(const side of ['before','after']){const path=side+'/'+kind+'-'+size.value+'.png';document.getElementById(side).src=path;document.getElementById(side+'-link').href=path;}for(const id of ['map','detail'])document.getElementById(id).setAttribute('aria-pressed',String(id===kind));}
+size.addEventListener('change',show);for(const id of ['map','detail'])document.getElementById(id).addEventListener('click',()=>{kind=id;show();});
+function gallery(id,items){const root=document.getElementById(id);for(const[file,label]of items){const figure=document.createElement('figure'),a=document.createElement('a'),img=document.createElement('img'),caption=document.createElement('figcaption');a.href='after/'+file+'.png';a.target='_blank';img.src=a.href;img.alt=label;img.loading='lazy';caption.textContent=label;a.append(img);figure.append(a,caption);root.append(figure);}}
+gallery('platform',[
+ ['login-1440','登录 · 1440×900'],['selector-1440','课程选择 · 1440×900'],['personal-1440','我的 · 1440×900'],
+ ['login-768','登录 · 768×1024'],['selector-768','课程选择 · 768×1024'],['personal-768','我的 · 768×1024'],
+ ['login-390','登录 · 390×844'],['selector-390','课程选择 · 390×844'],['personal-390','我的 · 390×844'],
+ ['font-dialog-390','礼品浮层 · 本地演示'],['role-mentor_zhang','执行导师 · 原工作台'],['role-adminpbl','管理员 · 原工作台'],['role-teacher_li','只读教师 · 学情观察']]);
+gallery('states',[
+ ['mobile-sidebar','手机插画侧栏与飞船'],['default-map-1440','另一课程 · 通用校园主题'],['map-390-full','6 课时手机完整地图'],
+ ['nodes-0-390','0 课时 · 等待发布'],['nodes-1-390','1 课时 · 未分组通用课程'],['nodes-20-390','20 课时 · 通用课程长名称'],
+ ['voyage-20-1440','20 课时宇宙路线 · 两章节及其他课时'],['voyage-20-390','20 课时宇宙路线 · 手机全页'],['place-fallback-390','设施图片失败 · 仍可选择'],
+ ['image-fallback','全部场景图片失败'],['network-error-390','课程接口错误 · 可重试'],['empty-390','无分配课程 · 可恢复'],
+ ['sticky-return','滚动后返回课程地图'],['course-flight','真实 reference 引擎试飞'],['return-card','试飞返回原知识卡片']]);
+</script></body></html>

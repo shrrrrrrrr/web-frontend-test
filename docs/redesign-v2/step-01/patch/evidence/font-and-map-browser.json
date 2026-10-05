@@ -1,0 +1,763 @@
+{
+  "date": "2026-10-05T11:36:00.095Z",
+  "browser": "154.0.4258.53",
+  "sizes": [
+    [
+      1440,
+      900
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      360,
+      800
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "viewportRecords": [
+    {
+      "width": 1440,
+      "height": 900,
+      "mapTop": 308.875,
+      "firstNodeBottom": 673.875,
+      "firstNodeText": "01\n观察与提问\n尚未开始"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "mapTop": 308.875,
+      "firstNodeBottom": 673.875,
+      "firstNodeText": "01\n观察与提问\n尚未开始"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mapTop": 303.875,
+      "firstNodeBottom": 644.875,
+      "firstNodeText": "01\n观察与提问\n尚未开始"
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "mapTop": 303.875,
+      "firstNodeBottom": 644.875,
+      "firstNodeText": "01\n观察与提问\n尚未开始"
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "mapTop": 308.875,
+      "firstNodeBottom": 673.875,
+      "firstNodeText": "01\n观察与提问\n尚未开始"
+    }
+  ],
+  "fontRecords": [
+    {
+      "label": "login",
+      "url": "http://127.0.0.1:5198/login",
+      "loaded": [
+        {
+          "family": "ChillReunion",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "records": [
+        {
+          "selector": "h1",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "32px",
+            "weight": "700",
+            "text": "PBL 科创平台"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 8
+            }
+          ]
+        },
+        {
+          "selector": "label",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "16px",
+            "weight": "700",
+            "text": "账号"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "selector": "input",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "18px",
+            "weight": "400",
+            "text": "寒蝉团圆体验证123"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 10
+            }
+          ]
+        },
+        {
+          "selector": "button",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "18px",
+            "weight": "400",
+            "text": "显示"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        }
+      ],
+      "resource": {
+        "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+        "status": 200,
+        "bytes": 1912304,
+        "signature": "wOF2",
+        "sha256": "4f4e36dd0601c5fa325c6634649494767e9e7a0da8cc7b1fc9496ba1f7438288"
+      }
+    },
+    {
+      "label": "selector",
+      "url": "http://127.0.0.1:5198/explore",
+      "loaded": [
+        {
+          "family": "ChillReunion",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "records": [
+        {
+          "selector": "h1",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "32px",
+            "weight": "400",
+            "text": "选择一门课程"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 6
+            }
+          ]
+        },
+        {
+          "selector": "input",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "16px",
+            "weight": "400",
+            "text": "测试"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 2
+            },
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 2
+            }
+          ]
+        },
+        {
+          "selector": ".space-course-card h2",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "29px",
+            "weight": "400",
+            "text": "星海远航 · 视觉测试课程"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        }
+      ],
+      "resource": {
+        "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+        "status": 200,
+        "bytes": 1912304,
+        "signature": "wOF2",
+        "sha256": "4f4e36dd0601c5fa325c6634649494767e9e7a0da8cc7b1fc9496ba1f7438288"
+      }
+    },
+    {
+      "label": "personal",
+      "url": "http://127.0.0.1:5198/me",
+      "loaded": [
+        {
+          "family": "ChillReunion",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "records": [
+        {
+          "selector": ".space-personal-header h1",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "32px",
+            "weight": "700",
+            "text": "王小明"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "selector": ".reward-scope p",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "14px",
+            "weight": "400",
+            "text": "只保存在本浏览器，按当前账号隔离。不会扣除真实积分，也不会真实发货。"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 34
+            }
+          ]
+        },
+        {
+          "selector": ".reward-balance strong",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "28px",
+            "weight": "700",
+            "text": "120"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 3
+            }
+          ]
+        }
+      ],
+      "resource": {
+        "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+        "status": 200,
+        "bytes": 1912304,
+        "signature": "wOF2",
+        "sha256": "4f4e36dd0601c5fa325c6634649494767e9e7a0da8cc7b1fc9496ba1f7438288"
+      }
+    },
+    {
+      "label": "reward-dialog",
+      "url": "http://127.0.0.1:5198/me",
+      "loaded": [
+        {
+          "family": "ChillReunion",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "records": [
+        {
+          "selector": ".ant-modal-title",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "18px",
+            "weight": "600",
+            "text": "探索笔记本（演示）"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 9
+            }
+          ]
+        },
+        {
+          "selector": ".reward-dialog-body p",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "16px",
+            "weight": "400",
+            "text": "40 演示积分"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 6
+            }
+          ]
+        },
+        {
+          "selector": ".reward-detail-heading h3",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "18px",
+            "weight": "700",
+            "text": "探索笔记本（演示）"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 9
+            }
+          ]
+        }
+      ],
+      "resource": {
+        "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+        "status": 200,
+        "bytes": 1912304,
+        "signature": "wOF2",
+        "sha256": "4f4e36dd0601c5fa325c6634649494767e9e7a0da8cc7b1fc9496ba1f7438288"
+      }
+    },
+    {
+      "label": "map",
+      "url": "http://127.0.0.1:5198/courses/9001",
+      "loaded": [
+        {
+          "family": "ChillReunion",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "records": [
+        {
+          "selector": ".pixel-map-header h2",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "20px",
+            "weight": "500",
+            "text": "星海远航 · 视觉测试课程"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": ".pixel-map-node-label strong",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "16px",
+            "weight": "500",
+            "text": "观察与提问"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".space-map-test-note",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "14px",
+            "weight": "400",
+            "text": "测试布局 · 章节与实验安排仅供验收"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 18
+            }
+          ]
+        }
+      ],
+      "resource": {
+        "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+        "status": 200,
+        "bytes": 1912304,
+        "signature": "wOF2",
+        "sha256": "4f4e36dd0601c5fa325c6634649494767e9e7a0da8cc7b1fc9496ba1f7438288"
+      }
+    },
+    {
+      "label": "lesson",
+      "url": "http://127.0.0.1:5198/courses/9001/lessons/90011/learn",
+      "loaded": [
+        {
+          "family": "ChillReunion",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "records": [
+        {
+          "selector": ".study-header h2",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "25px",
+            "weight": "600",
+            "text": "观察与提问"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".study-workspace p",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "16px",
+            "weight": "400",
+            "text": "正在查看：课堂回顾"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 9
+            }
+          ]
+        }
+      ],
+      "resource": {
+        "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+        "status": 200,
+        "bytes": 1912304,
+        "signature": "wOF2",
+        "sha256": "4f4e36dd0601c5fa325c6634649494767e9e7a0da8cc7b1fc9496ba1f7438288"
+      }
+    },
+    {
+      "label": "mentor_zhang",
+      "url": "http://127.0.0.1:5198/dashboard",
+      "loaded": [
+        {
+          "family": "ChillReunion",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "records": [
+        {
+          "selector": ".ant-menu-title-content",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "16px",
+            "weight": "400",
+            "text": "工作台"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "selector": ".ant-layout-content .ant-typography",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "22px",
+            "weight": "600",
+            "text": "👋 欢迎回来，张导师"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 9
+            },
+            {
+              "familyName": "Segoe UI Emoji",
+              "postScriptName": "SegoeUIEmoji",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        }
+      ],
+      "resource": {
+        "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+        "status": 200,
+        "bytes": 1912304,
+        "signature": "wOF2",
+        "sha256": "4f4e36dd0601c5fa325c6634649494767e9e7a0da8cc7b1fc9496ba1f7438288"
+      }
+    },
+    {
+      "label": "adminpbl",
+      "url": "http://127.0.0.1:5198/dashboard",
+      "loaded": [
+        {
+          "family": "ChillReunion",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "records": [
+        {
+          "selector": ".ant-menu-title-content",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "16px",
+            "weight": "400",
+            "text": "工作台"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 3
+            }
+          ]
+        },
+        {
+          "selector": ".ant-layout-content .ant-typography",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "22px",
+            "weight": "600",
+            "text": "👋 欢迎回来，管理员"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 9
+            },
+            {
+              "familyName": "Segoe UI Emoji",
+              "postScriptName": "SegoeUIEmoji",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        }
+      ],
+      "resource": {
+        "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+        "status": 200,
+        "bytes": 1912304,
+        "signature": "wOF2",
+        "sha256": "4f4e36dd0601c5fa325c6634649494767e9e7a0da8cc7b1fc9496ba1f7438288"
+      }
+    },
+    {
+      "label": "teacher_li",
+      "url": "http://127.0.0.1:5198/observer",
+      "loaded": [
+        {
+          "family": "ChillReunion",
+          "status": "loaded",
+          "weight": "500"
+        }
+      ],
+      "records": [
+        {
+          "selector": ".ant-menu-title-content",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "16px",
+            "weight": "400",
+            "text": "观察工作台"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 5
+            }
+          ]
+        },
+        {
+          "selector": ".ant-layout-content .ant-typography",
+          "computed": {
+            "family": "ChillReunion, \"Microsoft YaHei\", sans-serif",
+            "size": "34px",
+            "weight": "600",
+            "text": "学情观察"
+          },
+          "rendered": [
+            {
+              "familyName": "寒蝉团圆体 Round",
+              "postScriptName": "ChillReunion_Round",
+              "isCustomFont": true,
+              "glyphCount": 4
+            }
+          ]
+        }
+      ],
+      "resource": {
+        "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+        "status": 200,
+        "bytes": 1912304,
+        "signature": "wOF2",
+        "sha256": "4f4e36dd0601c5fa325c6634649494767e9e7a0da8cc7b1fc9496ba1f7438288"
+      }
+    }
+  ],
+  "fontRequests": [
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 304
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 304
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5198/fonts/chill-reunion/ChillReunion-Round.woff2",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "data": "全新隔离 SQLite 测试库，0/1/20 课时来自真实 API，图片失败为请求中断注入。"
+}
