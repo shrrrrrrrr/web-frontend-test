@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import Link from './space/SpaceLink';
+
 import { Alert } from 'antd';
-import { courseAPI, workAPI } from '../api';
+import {useCourseApis} from './useCourseApis';
 import { useAuth } from '../store/AuthContext';
 import useRemoteResource from '../hooks/useRemoteResource';
 import { ServicePage, ReadState } from '../components/ServiceUI';
@@ -21,7 +23,8 @@ export default function CourseReview() {
   return <Review key={`${user.id}:${id}`} id={id} studentId={user.id} />;
 }
 function Review({ id, studentId }) {
-  const read = useCallback(() => courseAPI.detail(id), [id]);
+ const {courseAPI}=useCourseApis();
+  const read = useCallback(() => courseAPI.detail(id), [id,courseAPI]);
   const { data, loading, error, reload } = useCourseResource(read, id);
   return <ServicePage title="回看课程资料" eyebrow="探索地图 / 课程资料" description={data?.course.title || '课后回看课堂内容，查找资料与提交记录。'} actions={<Link to={`/courses/${id}`}>返回课程地图</Link>}>
     {error ? <PixelPanel className="compat-main-error"><Alert role="alert" type="warning" title={courseReadError(error)} description={requestError(error)} /><div className="compat-row-actions"><PixelButton onClick={reload}>重新读取课程</PixelButton><Link to="/explore">返回探索地图</Link></div></PixelPanel>
@@ -38,16 +41,17 @@ function Review({ id, studentId }) {
   </ServicePage>;
 }
 function WorksRegion({ courseId, studentId, onCourseInvalid }) {
+ const {courseAPI,workAPI}=useCourseApis();
   const read = useCallback(async () => {
     const payload = await workAPI.list({ course_id: courseId });
-    // 此列表的后端课程授权缺口尚未修复。只在主课程成功且回读仍有效后展示本人版本。
+    // 课程空间接口按真实对象归属过滤；课程回读成功后再展示本人版本。
     try { await courseAPI.detail(courseId); }
     catch (error) {
       if ([403, 404].includes(error.response?.status) || (error.response?.status === 400 && error.response?.data?.error === '课程不存在')) void onCourseInvalid();
       throw error;
     }
     return (payload.works || []).filter(work => String(work.student_id) === String(studentId));
-  }, [courseId, studentId, onCourseInvalid]);
+  }, [courseId, studentId, onCourseInvalid,courseAPI,workAPI]);
   const state = useRemoteResource(read);
   return <StudySection number="05" title="我的提交" description="作品及其版本记录，报告仍在课时学习页。" className="review-works">
     <ReadState {...state} object="提交记录" empty={!state.data?.length} emptyText="本课程还没有作品提交记录。">
@@ -56,7 +60,8 @@ function WorksRegion({ courseId, studentId, onCourseInvalid }) {
   </StudySection>;
 }
 function ReplayRegion({ courseId }) {
-  const read = useCallback(() => courseAPI.listReplays(courseId), [courseId]);
+ const {courseAPI}=useCourseApis();
+  const read = useCallback(() => courseAPI.listReplays(courseId), [courseId,courseAPI]);
   const state = useRemoteResource(read);
   const [selection, setSelection] = useState(null);
   const [player, setPlayer] = useState({ loading: false, error: null, url: '' });

@@ -1,9 +1,10 @@
+import {useCourseApis} from '../../student/useCourseApis';
 import StudentTasks from '../../student/StudentTasks';
 import { useCallback, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useCourseNavigate as useNavigate} from '../../student/useCourseApis';
+
 import { Button, Card, Empty, Progress, Select, Space, Tag, Typography } from 'antd';
 import { RightOutlined } from '@ant-design/icons';
-import { taskAPI } from '../../api';
 import { useAuth } from '../../store/AuthContext';
 import useRemote from '../../student/useRemote';
 import AsyncPageState from '../../components/common/AsyncPageState';
@@ -23,11 +24,12 @@ export default function TaskList() {
 }
 
 function LegacyTaskList() {
+ const {taskAPI}=useCourseApis();
   const [status, setStatus] = useState();
   const navigate = useNavigate();
   const { user } = useAuth();
   const isStudent = user?.role === 'student';
-  const fetcher = useCallback(() => taskAPI.list(status ? { status } : {}), [status]);
+  const fetcher = useCallback(() => taskAPI.list(status ? { status } : {}), [status,taskAPI]);
   const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true });
   const tasks = useMemo(() => data?.tasks || [], [data]);
   const groups = useMemo(() => [...tasks]

@@ -37,18 +37,18 @@ test('来源卡片下架或重新未解锁时回退可访问课程地图', async
   assert.equal(availableCardIndex(payload.cards, 102, { review_completed: false }), -1);
 });
 
-test('课时取消回退课程地图，课程撤回回退实验室', async () => {
+test('课时取消回退课程地图，课程撤回回退课程选择', async () => {
   const lessonRemoved = await resolveExperimentReturn(context, { course: async () => ({ ...detail, lessons: [] }), lesson: async () => assert.fail('取消课时不读取学习包') });
   assert.equal(lessonRemoved.path, '/courses/1');
   const courseRemoved = await resolveExperimentReturn(context, { course: denied, lesson: async () => assert.fail('撤回课程不读取学习包') });
-  assert.equal(courseRemoved.path, '/lab');
+  assert.equal(courseRemoved.path, '/explore');
   assert.match(courseRemoved.reason, /撤回/);
 });
 
 test('学习包请求期间课程撤回时再次确认，避免回到失效地图', async () => {
   let reads = 0;
   const result = await resolveExperimentReturn(context, { course: async () => { if (++reads === 1) return detail; return denied(); }, lesson: denied });
-  assert.equal(result.path, '/lab');
+  assert.equal(result.path, '/explore');
   assert.equal(reads, 2);
 });
 
@@ -60,10 +60,10 @@ test('返回地址不能跨站、跨课程、跨课时，也不能跳到未解�
   }
 });
 
-test('独立实验不读取课程，网络失败明确说明无法核验', async () => {
+test('无课程旧实验入口引导课程选择，网络失败明确说明无法核验', async () => {
   const independent = await resolveExperimentReturn({}, { course: () => assert.fail('独立实验不得自动关联课程') });
-  assert.equal(independent.path, '/lab');
+  assert.equal(independent.path, '/explore');
   const offline = await resolveExperimentReturn(context, { course: async () => { throw new Error('offline'); } });
-  assert.equal(offline.path, '/lab');
+  assert.equal(offline.path, '/explore');
   assert.match(offline.reason, /暂时无法确认/);
 });

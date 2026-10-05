@@ -44,6 +44,8 @@ const ROLE_PATH_RULES = {
     /^\/archives$/,
   ],
   student: [
+    /^\/me$/,
+    /^\/courses\/\d+\/(?:lab|glider|archives|reflection|assistant|tasks(?:\/\d+)?|works(?:\/(?:upload|\d+))?)$/,
     /^\/explore$/,
     /^\/lab$/,
     /^\/archives\/rewards$/,

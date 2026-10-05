@@ -1,7 +1,7 @@
+import { useCourseApis } from './useCourseApis';
 import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { Alert, Collapse, Descriptions, Empty, Grid, Space, Typography } from 'antd';
-import { courseAPI } from '../api';
+import { Alert, Collapse, Descriptions, Empty, Grid, Drawer, Space, Typography } from 'antd';
 import AsyncPageState from '../components/common/AsyncPageState';
 import PageContainer from '../components/common/PageContainer';
 import useRemote from './useRemote';
@@ -9,15 +9,18 @@ import { buildCourseRoute, currentLesson, scheduleTime } from './routeModel';
 import { groupsForCourse, studentTestConfigEnabled } from './config';
 import AssociatedExperiments from './AssociatedExperiments';
 import PixelIcon from './visual/PixelIcon';
-import { PixelButton, PixelImage, PixelPanel, PixelProgress, PixelTag } from './visual/PixelUI';
-import { pixelImageProps } from './visual/pixelAssets';
+import { PixelButton, PixelPanel, PixelProgress, PixelTag } from './visual/PixelUI';
+import SceneArt from './space/SceneArt';
+import CourseTodos from './space/CourseTodos';
+import {coursePresentation} from './space/identity';
 import './visual/pixel-map.css';
+import './space/map.css';
 
 export { default as ExploreHome } from './ExploreHome';
 
 const grades = { primary: '小学', junior: '初中', senior: '高中' };
 const difficulties = { basic: '基础', advanced: '进阶', challenge: '挑战' };
-const sceneModules = ['island-observatory', 'island-relay'];
+
 
 function learningState(lesson) {
   if (lesson.status === 'cancelled') return { label: '已取消', tone: 'neutral' };
@@ -27,6 +30,7 @@ function learningState(lesson) {
 }
 
 function CourseResources({ resources, courseId }) {
+  const { courseAPI } = useCourseApis();
   const [errors, setErrors] = useState({});
   const [pending, setPending] = useState({});
   const download = async (resource) => {
@@ -122,10 +126,6 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
   return <section className="route-group pixel-map-region" aria-label={group.title}>
     <h4 className="pixel-map-region-title"><span className="pixel-map-region-index" aria-hidden="true">{String(groupIndex + 1).padStart(2, '0')}</span>{group.title}</h4>
     <div className="pixel-map-platform">
-      <div className="pixel-map-region-landscape" aria-hidden="true">
-        <PixelImage {...pixelImageProps(sceneModules[groupIndex % sceneModules.length], '(max-width: 991px) 192px, 256px')} loading={groupIndex ? 'lazy' : 'eager'} className="pixel-map-island" imageStyle={{ objectFit: 'contain' }} fallback={<span />} />
-        <span className="pixel-map-platform-deck" />
-      </div>
       <div ref={routeRef} className="pixel-map-route-canvas">
         <svg className="pixel-map-route-track" aria-hidden="true"><path className="pixel-map-track-outline" d={routePath} /><path className="pixel-map-track-dashes" d={routePath} /></svg>
       <ol className="pixel-map-route">
@@ -133,10 +133,9 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
           const state = learningState(lesson);
           const isCurrent = current?.id === lesson.id;
           const isSelected = selected?.id === lesson.id;
-          const row = Math.floor(index / 2);
-          const column = row % 2 ? (index % 2 ? 1 : 2) : (index % 2 ? 2 : 1);
-          return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.id} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 2 ? '0px' : '44px', '--stop-row': row + 1, '--stop-column': column }}>
-            <span className="pixel-map-stop-platform" aria-hidden="true" />
+          const row = Math.floor(index / 3);
+          const column = row % 2 ? 3-index%3 : index%3+1;
+          return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.id} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 3 === 1 ? '76px' : '0px', '--stop-row': row + 1, '--stop-column': column }}>
             <button type="button" className="route-node" aria-current={isCurrent ? 'step' : undefined} aria-pressed={isSelected} aria-controls="selected-lesson-details"
               aria-label={'第 ' + lesson.routeNumber + ' 关：' + lesson.title + '，' + state.label + (isCurrent ? '，当前课时' : '')}
               onClick={() => onSelect({ key: selectionKey, lessonId: lesson.id })}>
@@ -154,16 +153,19 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
 }
 
 export function CourseMap() {
+  const { courseAPI } = useCourseApis();
   const { id } = useParams();
+  const look=coursePresentation(id);
+  const [detailOpen,setDetailOpen]=useState(false);
   const [params] = useSearchParams();
   const location = useLocation();
   const screens = Grid.useBreakpoint();
   const [selection, setSelection] = useState(null);
   const [openSection, setOpenSection] = useState(null);
-  const fetcher = useCallback(() => courseAPI.detail(id), [id]);
+  const fetcher = useCallback(() => courseAPI.detail(id), [id,courseAPI]);
   const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true, courseId: id });
   const current = currentLesson(data?.lessons || [], params.get('lesson'));
-  const groups = buildCourseRoute(data?.lessons || [], groupsForCourse(id));
+  const groups = buildCourseRoute(data?.lessons || [], look.groups.length?look.groups:groupsForCourse(id));
   const lessons = groups.flatMap((group) => group.lessons);
   const selectionKey = id + ':' + (params.get('lesson') || '');
   const selectedId = selection?.key === selectionKey ? selection.lessonId : (params.get('lesson') || current?.id);
@@ -174,10 +176,10 @@ export function CourseMap() {
   const toggleSection = (section) => setOpenSection((previous) => previous === section ? null : section);
 
   return <PageContainer>
-    <div className="pixel-map">
+    <div className="pixel-map space-map" data-map-theme={look.theme}>
       <header className="pixel-map-header">
         <div>
-          <Link to="/explore" className="pixel-map-back"><PixelIcon name="back" />返回探索地图</Link>
+          <Link to="/explore" className="pixel-map-back"><PixelIcon name="back" />返回课程选择</Link>
           <Typography.Title level={2}>{course?.title || '课程地图'}</Typography.Title>
           <p>选一个关卡，继续你的探索。</p>
         </div>
@@ -189,7 +191,7 @@ export function CourseMap() {
       {location.state?.experimentNotice && <Alert type="warning" showIcon title={location.state.experimentNotice} className="pixel-map-notice" />}
       <AsyncPageState loading={loading} error={error} onRetry={retry}>
         {data && <>
-          {studentTestConfigEnabled && <Alert type="warning" showIcon title="测试课程布局：章节与实验安排仅用于验收。" className="pixel-map-notice" />}
+          {(studentTestConfigEnabled || look.sample) && <Alert type="warning" showIcon title="测试课程布局：章节与实验安排仅用于验收。" className="pixel-map-notice" />}
           <PixelPanel className="pixel-map-course-info" id="course-information" hidden={openSection !== 'info'}>
             <Typography.Title level={3}>课程信息</Typography.Title>
             <Typography.Paragraph>{course.description || '老师尚未填写课程简介。'}</Typography.Paragraph>
@@ -205,7 +207,7 @@ export function CourseMap() {
               { key: 'story', label: '课程情境', children: course.story_line || '老师尚未填写' },
               { key: 'materials', label: '准备材料', children: course.materials_needed || '暂未提供准备要求' },
             ]} /> }]} />
-            <div className="pixel-map-info-links"><Link to={'/courses/' + id + '/learn'}>课程回顾与资料</Link><Link to={'/dashboard/ai?course_id=' + id}>向学习伙伴提问</Link>
+            <div className="pixel-map-info-links"><Link to={'/courses/' + id + '/learn'}>课程回顾与资料</Link><Link to={'/courses/' + id + '/assistant'}>向学习伙伴提问</Link>
               {current && <Link to={'/courses/' + id + '/lessons/' + current.id + '/learn'}>继续当前课时：{current.title}</Link>}
             </div>
             <AssociatedExperiments courseId={id} />
@@ -213,20 +215,23 @@ export function CourseMap() {
           <PixelPanel className="pixel-map-course-info" id="course-resources" hidden={openSection !== 'resources'}>
             <CourseResources resources={data.resources || []} courseId={id} />
           </PixelPanel>
+          <CourseTodos detail={data}/>
           <div className="pixel-map-overview">
             <div><Typography.Title level={3}>课时路线</Typography.Title><span>{data.lessons.length} 个关卡 · 选择节点查看详情</span></div>
             <div className="pixel-map-course-progress"><span>课时学习进度</span><PixelProgress value={data.progress} label="课程课时学习进度" /></div>
           </div>
           {!lessons.length ? <PixelPanel className="pixel-map-empty"><Empty description="这门课程还没有课时，请等待老师发布。" /></PixelPanel> : <div className="pixel-map-layout">
             <div className="pixel-map-stage" aria-label="课程关卡路线">
-              <PixelImage {...pixelImageProps('hero-voyage', '(max-width: 991px) 1250px, (max-width: 2200px) 1430px, 65vw')} className="pixel-map-sky" imageStyle={{ objectPosition: '20% 20%' }} fallback={<span />} />
+              <SceneArt name={look.theme==='voyage'?'cosmos':'campus'} vertical={look.theme==='voyage'} className="space-map-art" priority/>
               <div className="pixel-map-route-content">
-                {groups.map((group, groupIndex) => <CourseRouteRegion key={group.key} group={group} groupIndex={groupIndex} current={current} selected={selected} selectionKey={selectionKey} onSelect={setSelection} inlineDetails={!screens.lg} details={details} hasNext={groupIndex < groups.length - 1} />)}
+                {groups.map((group, groupIndex) => <CourseRouteRegion key={group.key} group={group} groupIndex={groupIndex} current={current} selected={selected} selectionKey={selectionKey} onSelect={next=>{setSelection(next);if(!screens.lg)setDetailOpen(true);}} inlineDetails={false} details={details} hasNext={groupIndex < groups.length - 1} />)}
               </div>
               <p className="pixel-map-route-note">路线表示学习顺序，可用课时都能进入。</p>
             </div>
+            <Drawer open={!screens.lg&&detailOpen} onClose={()=>setDetailOpen(false)} title="关卡详情" placement="bottom" height="85dvh" rootClassName="student-pixel space-lesson-drawer">{details}</Drawer>
             {screens.lg && <aside className="pixel-map-aside" aria-label="选中课时详情">{details}</aside>}
           </div>}
+          <nav className="space-map-extra" aria-label="课程学习入口"><Link to={'/courses/'+id+'/tasks'}>课后任务</Link><Link to={'/courses/'+id+'/works'}>我的作品</Link><Link to={'/courses/'+id+'/reflection'}>反思日志</Link></nav>
         </>}
       </AsyncPageState>
     </div>

@@ -1,9 +1,10 @@
+import { useCourseApis } from '../../student/useCourseApis';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { gliderAPI } from '../../api/glider';
 
 // A new revision deliberately rereads even the same record. Every request belongs
 // to one effect lifetime, so late responses cannot replace a newly opened record.
 export default function useGliderRecords() {
+  const { gliderAPI } = useCourseApis();
   const [selection, setSelection] = useState({ id: null, revision: 0 });
   const [viewing, setViewing] = useState(null);
   const [waitSec, setWaitSec] = useState(0);
@@ -22,7 +23,7 @@ export default function useGliderRecords() {
     } catch {
       if (request === historyRequest.current) { setHistory([]); setHistoryError('试飞记录加载失败，请重试。'); }
     } finally { if (request === historyRequest.current) setLoadingHistory(false); }
-  }, []);
+  }, [gliderAPI]);
   useEffect(() => {
     const timer = setTimeout(loadHistory, 0);
     return () => { clearTimeout(timer); historyRequest.current += 1; };
@@ -53,7 +54,7 @@ export default function useGliderRecords() {
     const first = setTimeout(tick, 0);
     const deadline = setTimeout(() => { if (active) { stop(); setPollTimedOut(true); setWaitSec(300); loadHistory(); } }, 300000);
     return stop;
-  }, [selection, loadHistory]);
+  }, [selection, loadHistory,gliderAPI]);
   return { history, loadingHistory, historyError, loadHistory, viewingId: selection.id,
     viewing, waitSec, pollFailed, pollTimedOut, openRecord, revision: selection.revision };
 }
@@ -61,6 +62,7 @@ export default function useGliderRecords() {
 // Each file has its own loading/error/retry lifecycle. URLs are revoked on retry,
 // record switch and unmount; a late response never creates an orphaned blob URL.
 export function useGliderFile(id, name, revision = 0) {
+  const { gliderAPI } = useCourseApis();
   const [attempt, setAttempt] = useState(0);
   const [state, setState] = useState({ key: '', status: 'loading', url: null });
   const key = JSON.stringify([id, name, revision, attempt]);
@@ -77,7 +79,7 @@ export function useGliderFile(id, name, revision = 0) {
       } catch { if (active) setState({ key, status: 'error', url: null }); }
     })();
     return () => { active = false; if (objectUrl) URL.revokeObjectURL(objectUrl); };
-  }, [id, name, key]);
+  }, [id, name, key,gliderAPI]);
   return { ...(state.key === key ? state : { status: 'loading', url: null }),
     retry: () => setAttempt((value) => value + 1),
     fail: () => setState({ key, status: 'error', url: null }) };

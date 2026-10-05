@@ -15,7 +15,7 @@ export function groupLessons(lessons, config = []) {
 
 export function safeReturnTo(value, fallback = '/lab') {
   if (typeof value !== 'string' || value.includes('\\') || [...value].some((char) => char.charCodeAt(0) <= 32) || /%2f|%5c/i.test(value)) return fallback;
-  if (!/^\/courses\/\d+(?:\/lessons\/\d+\/learn|\/learn)?(?:[?#]|$)/.test(value)) return fallback;
+  if (!/^\/courses\/\d+(?:\/lessons\/\d+\/learn|\/(?:learn|lab|glider|archives|reflection|assistant|tasks(?:\/\d+)?|works(?:\/(?:upload|\d+))?))?(?:[?#]|$)/.test(value)) return fallback;
   try {
     const url = new URL(value, 'https://local.invalid');
     return url.origin === 'https://local.invalid' ? `${url.pathname}${url.search}${url.hash}` : fallback;

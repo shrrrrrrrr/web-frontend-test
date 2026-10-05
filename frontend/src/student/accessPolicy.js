@@ -11,7 +11,10 @@ export function accessCheckForError(error) {
   const { config = {}, response } = error;
   if (config.studentAccessProbe || ![403, 404].includes(response?.status)
     || response.data?.code === 'FORCE_RESET') return null;
-  const path = pathOf(config.url);
+  const raw = pathOf(config.url);
+  const scoped = raw.match(/^\/course-spaces\/(\d+)(\/.*)$/);
+  const path = scoped ? scoped[2] : raw;
+  if (scoped) return { path:raw, courseId:scoped[1], reason:response.data?.error };
   const courseId = path.match(/^\/courses\/(\d+)(?:\/|$)/)?.[1];
   const lessonId = path.match(/^\/learning\/lessons\/(\d+)(?:\/|$)/)?.[1];
   const workId = path.match(/^\/works\/(\d+)(?:\/|$)/)?.[1];
@@ -31,9 +34,15 @@ export function accessCheckForError(error) {
 export function currentAccessTarget(pathname, search = '') {
   const params = new URLSearchParams(search);
   const lesson = pathname.match(/^\/courses\/(\d+)\/lessons\/(\d+)\/learn\/?$/);
-  if (lesson) return { key: pathname, courseId: lesson[1], endpoint: `/learning/lessons/${lesson[2]}` };
+  if (lesson) return { key: pathname, courseId: lesson[1], endpoint: `/course-spaces/${lesson[1]}/learning/lessons/${lesson[2]}` };
   const course = pathname.match(/^\/courses\/(\d+)(?:\/learn)?\/?$/);
   if (course) return { key: pathname, courseId: course[1], endpoint: `/courses/${course[1]}` };
+  const space = pathname.match(/^\/courses\/(\d+)\/(.*)$/);
+  if (space) {
+    const object=space[2].match(/^(works|tasks)\/(\d+)$/);
+    const endpoint=object?'/course-spaces/'+space[1]+'/'+object[0]:'/courses/'+space[1];
+    return {key:pathname,courseId:space[1],endpoint};
+  }
   const object = pathname.match(/^\/(works|tasks)\/(\d+)\/?$/);
   if (object) return { key: pathname, endpoint: `/${object[1]}/${object[2]}` };
   if (pathname === '/works/upload' && /^\d+$/.test(params.get('task_id') || '')) {

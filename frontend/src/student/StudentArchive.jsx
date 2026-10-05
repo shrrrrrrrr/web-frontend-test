@@ -1,7 +1,9 @@
+import { useCourseApis, useCourseId } from './useCourseApis';
 import { useCallback, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import Link from './space/SpaceLink';
+import {useCourseNavigate as useNavigate} from './useCourseApis';
+
 import { Alert, Collapse, Empty, Select, Tabs } from 'antd';
-import { archiveAPI, courseAPI } from '../api';
 import { useAuth } from '../store/AuthContext';
 import { formatBeijingTime } from '../utils/date';
 import PageContainer from '../components/common/PageContainer';
@@ -15,14 +17,15 @@ import { ReflectionFields, WorkRecords } from './ArchiveRecords';
 import ArchiveReports from './ArchiveReports';
 import './visual/pixel-archive.css';
 
-const api = { courses: courseAPI.list, enrollments: archiveAPI.getReflections, archive: archiveAPI.generate };
 export default function StudentArchive() {
+  const { archiveAPI, courseAPI } = useCourseApis();
   const { user } = useAuth();
   const navigate = useNavigate();
   const [tab, setTab] = useState('courses');
-  const [courseId, setCourseId] = useState();
+  const spaceId=useCourseId();
+  const [courseId, setCourseId] = useState(spaceId?Number(spaceId):undefined);
   const [refreshing, setRefreshing] = useState(false);
-  const fetcher = useCallback(() => loadStudentArchive(api, user.id), [user.id]);
+  const fetcher = useCallback(() => loadStudentArchive({ courses: courseAPI.list, enrollments: archiveAPI.getReflections, archive: archiveAPI.generate }, user.id), [user.id,courseAPI,archiveAPI]);
   const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true });
   const archive = data?.archive;
   const selection = data?.courses.some((course) => String(course.id) === String(courseId)) ? courseId : undefined;
@@ -31,7 +34,7 @@ export default function StudentArchive() {
     {archive ? archive.courses.length ? <ul className="archive-course-list">{archive.courses.map((course) => <li key={course.enrollment_id}><div><Link className="archive-record-title" to={`/courses/${course.course_id}`}>{course.course_title}</Link><p>参与于 {formatBeijingTime(course.enrolled_at)}</p><p>{course.completed_at ? `课程完成于 ${formatBeijingTime(course.completed_at)}` : '尚无课程完成日期'}</p></div><PixelTag tone="current">参与课程</PixelTag></li>)}</ul> : <Empty description="暂无当前可展示的课程记录。" /> : <p>课程参与记录暂未读取，下方仍可查看已核验课程的课时。</p>}
     <section className="archive-report-browser" aria-label="课时报告查询"><h4>课时学习与报告</h4><p className="study-help">先选课程，再选课时。每份报告的状态独立保留。</p>
       {courseId && !selection && <Alert type="warning" title="所选课程已不可访问，请重新选择。" />}
-      <label className="archive-select-label" htmlFor="archive-course">选择课程</label><Select id="archive-course" className="archive-select" placeholder="选择课程" allowClear value={selection} onChange={setCourseId} options={(data?.courses || []).map((course) => ({ value: course.id, label: `${course.title} · #${course.id}` }))} />
+      <label className="archive-select-label" htmlFor="archive-course">选择课程</label><Select id="archive-course" disabled={!!spaceId} className="archive-select" placeholder="选择课程" allowClear value={selection} onChange={setCourseId} options={(data?.courses || []).map((course) => ({ value: course.id, label: `${course.title} · #${course.id}` }))} />
       {selection ? <ArchiveReports key={selection} courseId={selection} /> : <p className="archive-choice-note">{data?.courses.length ? '尚未选择课程。选择后可浏览课时，查看报告和导师意见。' : '暂无可进入的课程，请联系老师确认课程安排。'}</p>}
     </section>
   </StudySection>;
@@ -61,7 +64,7 @@ export default function StudentArchive() {
         {data.archiveError && <Alert type="warning" showIcon title="部分资料读取失败" description={data.archiveError} action={<PixelButton onClick={reload}>重试档案</PixelButton>} />}
         <PixelPanel className="archive-overview" aria-label="成长概览"><div className="archive-identity"><PixelIcon name="user" size={32} /><div><strong>{archive?.student.real_name || user.real_name || '我的学习记录'}</strong><p>{archive?.student.school_name || '学校未提供'} · {archive?.student.class_name || '班级未提供'}</p></div></div>
           <dl className="archive-counts">{[['courses', '参与课程'], ['projects', '项目作品'], ['iterations', '作品迭代'], ['reflections', '反思记录'], ['evaluations', '课程评价']].map(([field, label]) => <div key={field}><dt>{label}</dt><dd>{archive ? archive.counts[field] : '—'}</dd></div>)}</dl>
-          <p className="archive-scope-note">课程相关记录仅展示当前可进入的课程；个人人工成长记录单独保留。{archive && `资料读取于 ${archive.generatedAt}`}</p>
+          <p className="archive-scope-note">课程相关记录仅展示当前可进入的课程；仅展示本课程有明确关联的记录；未关联的历史记录不会自动归入本课程。{archive && `资料读取于 ${archive.generatedAt}`}</p>
         </PixelPanel>
         <Tabs className="archive-tabs" activeKey={tab} onChange={setTab} items={[
           { key: 'courses', label: '课程记录', children: coursesContent },

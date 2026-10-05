@@ -1,0 +1,52 @@
+{
+  "backend": "reference",
+  "course_id": 9001,
+  "lesson_id": 90011,
+  "status": "success",
+  "state": "landed",
+  "parameters": {
+    "dihedral_deg": 5,
+    "cg_x": 0,
+    "speed": 36,
+    "wing_area": 17.5,
+    "mass": 420,
+    "elevator_deg": 0,
+    "rudder_deg": 0,
+    "course_id": 9001,
+    "lesson_id": 90011
+  },
+  "result": {
+    "params": {
+      "dihedral_deg": 5,
+      "cg_x": 0,
+      "speed": 36,
+      "alt": 150,
+      "autolevel": false,
+      "wing_area": 17.5,
+      "mass": 420,
+      "elevator_deg": 0,
+      "rudder_deg": 0,
+      "v_ref": 31
+    },
+    "backend": "reference",
+    "renderer": "mpl",
+    "reason": "landed",
+    "glide_time_s": 72.75,
+    "distance_m": 2287.1,
+    "alt_start": 150,
+    "alt_end": 1.5,
+    "mean_sink_mps": 2.041,
+    "mean_speed_mps": 31.73,
+    "glide_ratio": 15.4,
+    "steps": 8731,
+    "files": {
+      "summary": "summary.json",
+      "csv": "flight_telemetry.csv",
+      "telemetry_png": "flight_telemetry.png",
+      "trajectory_png": "trajectory3d.png",
+      "trace": "flight_trace.npz",
+      "trace_bin": "flight_trace.bin"
+    },
+    "trajectory_saved": true
+  }
+}

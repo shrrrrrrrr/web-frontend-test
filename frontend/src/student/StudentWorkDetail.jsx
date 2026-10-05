@@ -1,7 +1,9 @@
+import {useCourseApis} from './useCourseApis';
 import { useCallback, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import {useCourseNavigate as useNavigate} from './useCourseApis';
+
 import { Alert, Select } from 'antd';
-import { courseAPI, workAPI } from '../api';
 import { useAuth } from '../store/AuthContext';
 import { formatBeijingTime } from '../utils/date';
 import PageContainer from '../components/common/PageContainer';
@@ -15,12 +17,13 @@ const dimensions = [['problem_discovery', '问题发现'], ['solution_design', '
 const fileSize = (bytes) => bytes == null ? '未知' : bytes < 1024 ? `${bytes} B` : bytes < 1048576 ? `${(bytes / 1024).toFixed(1)} KB` : `${(bytes / 1048576).toFixed(1)} MB`;
 
 export default function StudentWorkDetail() {
+ const { courseAPI,workAPI }=useCourseApis();
   const { id } = useParams();
   const { user } = useAuth();
   const navigate = useNavigate();
   const fetcher = useCallback(async () => {
     const payload = await workAPI.detail(id);
-    // 原作品接口只校验本人归属，课程发布/报名状态须由现有课程接口再次确认。
+    // 服务端已核验本人及课程有效性；这里再读取课程摘要用于当前页面与返回路径。
     if (!payload.work.course_id) throw new Error('作品未关联当前可访问的课程，请联系老师核对。');
     try { await courseAPI.detail(payload.work.course_id); }
     catch (error) {
@@ -28,7 +31,7 @@ export default function StudentWorkDetail() {
       throw error;
     }
     return payload;
-  }, [id]);
+  }, [id,courseAPI,workAPI]);
   const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true });
   const [downloadError, setDownloadError] = useState('');
   const [downloading, setDownloading] = useState(false);

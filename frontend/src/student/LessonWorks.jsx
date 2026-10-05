@@ -1,7 +1,9 @@
+import {useCourseApis} from './useCourseApis';
 import { useCallback, useEffect, useRef } from 'react';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import Link from './space/SpaceLink';
+
 import { Alert, Empty } from 'antd';
-import { taskAPI, courseAPI } from '../api';
 import AsyncPageState from '../components/common/AsyncPageState';
 import useRemote from './useRemote';
 import { PixelButton, PixelTag } from './visual/PixelUI';
@@ -9,9 +11,10 @@ import { StudySection } from './visual/StudyUI';
 import { formatBeijingTime } from '../utils/date';
 
 function WorkTask({ task, enrollmentId }) {
+ const { taskAPI }=useCourseApis();
   const [paramsFromLocation] = useSearchParams();
   const targetRef = useRef(null);
-  const fetcher = useCallback(() => taskAPI.detail(task.id), [task.id]);
+  const fetcher = useCallback(() => taskAPI.detail(task.id), [task.id,taskAPI]);
   const { data, loading, error, retry } = useRemote(fetcher);
   useEffect(() => {
     if (!loading && !error && data && paramsFromLocation.get('task_id') === String(task.id)) targetRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
@@ -31,9 +34,10 @@ function WorkTask({ task, enrollmentId }) {
 }
 
 export default function LessonWorks({ courseId, lessonId }) {
+ const { courseAPI }=useCourseApis();
   const location = useLocation();
   const sectionRef = useRef(null);
-  const fetcher = useCallback(() => courseAPI.detail(courseId), [courseId]);
+  const fetcher = useCallback(() => courseAPI.detail(courseId), [courseId,courseAPI]);
   const { data, loading, error, retry } = useRemote(fetcher);
   useEffect(() => {
     if (!loading && !error && data && location.hash === '#lesson-works') sectionRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });

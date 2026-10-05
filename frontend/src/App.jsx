@@ -1,7 +1,8 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ConfigProvider, App as AntApp } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
+import { PLATFORM_FONT } from './student/space/identity';
 import { colors } from './styles/tokens';
 import { AuthProvider } from './store/AuthContext';
 import NotificationProvider from './store/NotificationProvider';
@@ -13,7 +14,8 @@ import RoleGuard, { RoleHomeRedirect } from './components/RoleGuard';
 import { useAuth } from './store/AuthContext';
 import { ExploreHome, CourseMap } from './student/Explore';
 import Lab from './student/Lab';
-const Rewards = lazy(() => import('./student/Rewards'));
+const Personal = lazy(() => import('./student/space/Personal'));
+const LegacyEntry = lazy(() => import('./student/space/LegacyEntry'));
 const PixelPreview = import.meta.env.DEV ? lazy(() => import('./student/visual/PixelPreview')) : null;
 
 function StudentView({ student, legacy }) {
@@ -67,6 +69,7 @@ function App() {
   return (
     <ConfigProvider locale={zhCN} theme={{
       token: {
+        fontFamily: PLATFORM_FONT,
         colorPrimary: colors.primary,
         colorBgLayout: colors.pageBg,
         colorBgContainer: colors.surface,
@@ -89,16 +92,27 @@ function App() {
                 <Route index element={<RoleHomeRedirect />} />
                 <Route path="explore" element={guard(<ExploreHome />, ['student'])} />
                 {import.meta.env.DEV && <Route path="__pixel-preview" element={guard(<PixelPreview />, ['student'])} />}
-                <Route path="lab" element={guard(<Lab />, ['student'])} />
-                <Route path="archives/rewards" element={guard(<Rewards />, ['student'])} />
+                <Route path="lab" element={guard(<LegacyEntry />, ['student'])} />
+                <Route path="archives/rewards" element={guard(<Navigate to="/me" replace/>, ['student'])} />
+                <Route path="me" element={guard(<Personal/>, ['student'])} />
                 <Route path="dashboard" element={guard(<StudentView student={<ExploreHome />} legacy={<Dashboard />} />, ['admin', 'academic_mentor', 'student', 'media'])} />
                 <Route path="dashboard/schools/:id" element={guard(<SchoolDetail />, ['admin'])} />
-                <Route path="dashboard/ai" element={guard(<AIAssistant />, ['admin', 'academic_mentor', 'student'])} />
+                <Route path="dashboard/ai" element={guard(<StudentView student={<LegacyEntry/>} legacy={<AIAssistant/>}/>, ['admin', 'academic_mentor', 'student'])} />
                 <Route path="dashboard/ai/settings" element={guard(<AISettings />, ['admin'])} />
-                <Route path="glider" element={guard(<GliderSimulator />, ['admin', 'academic_mentor', 'student'])} />
+                <Route path="glider" element={guard(<StudentView student={<LegacyEntry/>} legacy={<GliderSimulator/>}/>, ['admin', 'academic_mentor', 'student'])} />
                 <Route path="courses" element={guard(<StudentView student={<ExploreHome />} legacy={<CourseList />} />, ['admin', 'academic_mentor', 'student', 'media'])} />
                 <Route path="courses/create" element={guard(<CourseForm />, ['admin', 'academic_mentor'])} />
                 <Route path="courses/:id" element={guard(<StudentView student={<CourseMap />} legacy={<CourseDetail />} />, ['admin', 'academic_mentor', 'student'])} />
+                <Route path="courses/:courseId/lab" element={guard(<Lab/>, ['student'])} />
+                <Route path="courses/:courseId/glider" element={guard(<GliderSimulator/>, ['student'])} />
+                <Route path="courses/:courseId/archives" element={guard(<ArchiveIndex/>, ['student'])} />
+                <Route path="courses/:courseId/reflection" element={guard(<Reflection/>, ['student'])} />
+                <Route path="courses/:courseId/assistant" element={guard(<AIAssistant/>, ['student'])} />
+                <Route path="courses/:courseId/tasks" element={guard(<TaskList/>, ['student'])} />
+                <Route path="courses/:courseId/tasks/:id" element={guard(<TaskDetail/>, ['student'])} />
+                <Route path="courses/:courseId/works" element={guard(<WorkList/>, ['student'])} />
+                <Route path="courses/:courseId/works/upload" element={guard(<WorkUpload/>, ['student'])} />
+                <Route path="courses/:courseId/works/:id" element={guard(<WorkDetail/>, ['student'])} />
                 <Route path="courses/:courseId/ai-knowledge" element={guard(<AIKnowledge />, ['admin', 'academic_mentor'])} />
                 <Route path="courses/:id/learn" element={guard(<Learning />, ['student'])} />
                 <Route path="courses/:courseId/lessons/:lessonId/learn" element={guard(<LessonLearn />, ['student'])} />
@@ -106,13 +120,13 @@ function App() {
                 <Route path="courses/:id/edit" element={guard(<CourseForm />, ['admin', 'academic_mentor'])} />
                 <Route path="students" element={guard(<StudentList />, ['admin', 'academic_mentor'])} />
                 <Route path="students/:id" element={guard(<StudentDetail />, ['admin', 'academic_mentor'])} />
-                <Route path="works" element={guard(<WorkList />, ['admin', 'academic_mentor', 'student'])} />
-                <Route path="works/upload" element={guard(<WorkUpload />, ['student'])} />
-                <Route path="works/:id" element={guard(<WorkDetail />, ['admin', 'academic_mentor', 'student'])} />
-                <Route path="tasks" element={guard(<TaskList />, ['admin', 'academic_mentor', 'student'])} />
-                <Route path="tasks/:id" element={guard(<TaskDetail />, ['admin', 'academic_mentor', 'student'])} />
-                <Route path="archives" element={guard(<ArchiveIndex />, ['admin', 'academic_mentor', 'teacher', 'student'])} />
-                <Route path="archives/reflection" element={guard(<Reflection />, ['student'])} />
+                <Route path="works" element={guard(<StudentView student={<LegacyEntry/>} legacy={<WorkList/>}/>, ['admin', 'academic_mentor', 'student'])} />
+                <Route path="works/upload" element={guard(<StudentView student={<LegacyEntry/>} legacy={<WorkUpload/>}/>, ['student'])} />
+                <Route path="works/:id" element={guard(<StudentView student={<LegacyEntry/>} legacy={<WorkDetail/>}/>, ['admin', 'academic_mentor', 'student'])} />
+                <Route path="tasks" element={guard(<StudentView student={<LegacyEntry/>} legacy={<TaskList/>}/>, ['admin', 'academic_mentor', 'student'])} />
+                <Route path="tasks/:id" element={guard(<StudentView student={<LegacyEntry/>} legacy={<TaskDetail/>}/>, ['admin', 'academic_mentor', 'student'])} />
+                <Route path="archives" element={guard(<StudentView student={<LegacyEntry/>} legacy={<ArchiveIndex/>}/>, ['admin', 'academic_mentor', 'teacher', 'student'])} />
+                <Route path="archives/reflection" element={guard(<StudentView student={<LegacyEntry/>} legacy={<Reflection/>}/>, ['student'])} />
                 <Route path="feedback" element={<FeedbackList />} />
                 <Route path="feedback/new" element={<FeedbackForm />} />
                 <Route path="feedback/manage" element={guard(<FeedbackManage />, ['admin'])} />

@@ -1,9 +1,9 @@
+import {useCourseApis} from '../../student/useCourseApis';
 import StudentTaskRedirect from '../../student/StudentTaskRedirect';
 import { useCallback, useEffect, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { Button, Card, Descriptions, List, Result, Space, Spin, Tag, Typography } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { taskAPI } from '../../api';
 import { useAuth } from '../../store/AuthContext';
 
 const statusText = { pending: '待完成', in_progress: '进行中', submitted: '已提交', completed: '已完结' };
@@ -14,6 +14,7 @@ export default function TaskDetail() {
 }
 
 function LegacyTaskDetail() {
+ const {taskAPI}=useCourseApis();
   const { id } = useParams(); const navigate = useNavigate(); const { user } = useAuth(); const [data, setData] = useState(null); const [loading, setLoading] = useState(true); const [error, setError] = useState('');
   const load = useCallback(() => {
     setLoading(true);
@@ -23,7 +24,7 @@ function LegacyTaskDetail() {
       .then(setData)
       .catch((err) => setError(err?.response?.data?.error || '任务不存在，或当前身份无权查看。'))
       .finally(() => setLoading(false));
-  }, [id]);
+  }, [id,taskAPI]);
   // 路由参数变化时需立即清空上一任务，避免短暂展示无权访问的旧数据。
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { load(); }, [load]);

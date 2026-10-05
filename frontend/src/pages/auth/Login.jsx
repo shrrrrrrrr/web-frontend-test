@@ -8,8 +8,9 @@ import { requestError } from '../../utils/requestError';
 import PasswordInput from '../../components/PasswordInput';
 import StudentTheme from '../../student/visual/StudentTheme';
 import PixelIcon from '../../student/visual/PixelIcon';
-import { PixelImage, PixelPanel, PixelButton } from '../../student/visual/PixelUI';
-import { pixelImageProps } from '../../student/visual/pixelAssets';
+import { PixelPanel, PixelButton } from '../../student/visual/PixelUI';
+import SceneArt from '../../student/space/SceneArt';
+import {PLATFORM_NAME} from '../../student/space/identity';
 import '../../student/visual/pixel-service.css';
 
 export default function Login() {
@@ -28,16 +29,10 @@ export default function Login() {
     } catch (err) { setError(requestError(err, { action: '登录' })); }
     finally { pending.current = false; setBusy(false); }
   };
-  return <StudentTheme><main className="voyage-login">
-    <header className="login-brand"><PixelIcon name="map" size={40} /><div><strong>星海远航</strong><span>STAR VOYAGE · 2057</span></div><small>PBL 科创学习平台</small></header>
+  return <StudentTheme><main className="voyage-login space-login">
+    <header className="login-brand"><PixelIcon name="map" size={40} /><div><strong>{PLATFORM_NAME}</strong><span>账号登录</span></div></header>
     <div className="login-layout">
-      <section className="login-scene" aria-label="探索寄语">
-        <span className="service-eyebrow">晴空观测站 / OBSERVATORY</span>
-        <h1>从一个好问题，<br />开始新的探索。</h1>
-        <p>观察、尝试、记录。<br />每一次发现，都让我们向前一步。</p>
-        <PixelImage {...pixelImageProps('hero-voyage')} alt="" className="login-illustration" />
-        <div className="login-scene-caption"><span>01 / 准备出发</span><span>KEEP EXPLORING ↗</span></div>
-      </section>
+      <section className="login-scene" aria-label="北航校园像素场景"><SceneArt name="campus" priority/><div className="space-login-caption"><h1>{PLATFORM_NAME}</h1></div></section>
       <PixelPanel className="login-panel">
         <span className="service-eyebrow">欢迎回来</span><h2>登录你的账号</h2><p className="service-muted">继续课程探索，记录新的发现。</p>
         {notice && <Alert role="alert" type="warning" showIcon title={notice} />}
@@ -53,6 +48,6 @@ export default function Login() {
         </Form>
         <p className="login-account-note">还没有账号？请联系管理员创建。</p>
       </PixelPanel>
-    </div><footer className="login-footer">探索 · 实践 · 发现<span>每一步，都有新的可能。</span></footer>
+    </div><footer className="login-footer">{PLATFORM_NAME}<span>账号由管理员提供</span></footer>
   </main></StudentTheme>;
 }

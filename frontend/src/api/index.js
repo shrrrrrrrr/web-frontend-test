@@ -1,6 +1,8 @@
-import client from './client';
+import defaultClient from './client';
 
-export const authAPI = {
+export function createAPIs(client) {
+
+const authAPI = {
   login: (username, password) => client.post('/auth/login', { username, password }, { silent: true }),
   me: () => client.get('/auth/me', { silent: true }),
   refresh: (refresh_token) => client.post('/auth/refresh', { refresh_token }),
@@ -11,7 +13,7 @@ export const authAPI = {
   getClasses: (schoolId) => client.get(`/auth/classes?school_id=${schoolId}`),
 };
 
-export const dashboardAPI = {
+const dashboardAPI = {
   getIndex: () => client.get('/dashboard'),
   getSchools: () => client.get('/dashboard/schools'),
   addSchool: (data) => client.post('/dashboard/schools', data),
@@ -21,7 +23,7 @@ export const dashboardAPI = {
   deleteClass: (schoolId, classId) => client.post(`/dashboard/schools/${schoolId}/classes/${classId}/delete`),
 };
 
-export const courseAPI = {
+const courseAPI = {
   list: (params) => client.get('/courses', { params }),
   create: (data) => client.post('/courses', data),
   detail: (id) => client.get(`/courses/${id}`),
@@ -48,12 +50,12 @@ export const courseAPI = {
   updateProgress: (courseId, data) => client.post(`/courses/${courseId}/progress`, data),
 };
 
-export const taskAPI = {
+const taskAPI = {
   list: (params) => client.get('/tasks', { params }),
   detail: (id) => client.get(`/tasks/${id}`),
 };
 
-export const studentAPI = {
+const studentAPI = {
   list: (params) => client.get('/students', { params }),
   create: (data) => client.post('/students', data),
   detail: (id) => client.get(`/students/${id}`),
@@ -77,7 +79,7 @@ export const studentAPI = {
   changeStatus: (id, data) => client.post(`/students/${id}/status`, data),
 };
 
-export const workAPI = {
+const workAPI = {
   list: (params, options = {}) => client.get('/works', { ...options, params }),
   uploadOptions: () => client.get('/works/upload-options'),
   // 不能手动指定 multipart Content-Type：浏览器需要自行补充 boundary，
@@ -93,7 +95,7 @@ export const workAPI = {
   review: (id, data) => client.post(`/works/${id}/review`, data),
 };
 
-export const archiveAPI = {
+const archiveAPI = {
   getTree: (params) => client.get('/archives/tree', { params }),
   generate: (studentId) => client.get('/archives/generate', { params: { student_id: studentId } }),
   generateBatch: (params) => client.get('/archives/generate-batch', { params }),
@@ -103,7 +105,7 @@ export const archiveAPI = {
   addGrowthRecord: (data) => client.post('/archives/growth-records', data),
 };
 
-export const aiAPI = {
+const aiAPI = {
   getCourses: () => client.get('/dashboard/ai/courses'),
   ask: (question, course_id) => client.post('/dashboard/ai/ask', { question, course_id }, { timeout: 45000 }),
   getSettings: () => client.get('/dashboard/ai/settings'),
@@ -113,7 +115,7 @@ export const aiAPI = {
   setDocumentEnabled: (documentId, enabled) => client.patch(`/dashboard/ai/documents/${documentId}`, { enabled }),
 };
 
-export const feedbackAPI = {
+const feedbackAPI = {
   options: () => client.get('/feedback/options'),
   create: (formData) => client.post('/feedback', formData, {
     silent: true, headers: { 'Content-Type': 'multipart/form-data' },
@@ -132,7 +134,7 @@ export const feedbackAPI = {
   downloadAttachment: (id) => client.get(`/feedback/attachments/${id}`, { responseType: 'blob', silent: true }),
 };
 
-export const notificationAPI = {
+const notificationAPI = {
   list: (params) => client.get('/notifications', { params, silent: true }),
   recent: (limit = 10) => client.get('/notifications/recent', { params: { limit }, silent: true }),
   unreadCount: () => client.get('/notifications/unread-count', { silent: true }),
@@ -144,7 +146,7 @@ export const notificationAPI = {
   hideRead: () => client.post('/notifications/hide-read', undefined, { silent: true }),
 };
 
-export const learningAPI = {
+const learningAPI = {
   lesson: (lessonId) => client.get(`/learning/lessons/${lessonId}`),
   completeReview: (lessonId) => client.post(`/learning/lessons/${lessonId}/review-complete`),
   submitExercise: (exerciseId, answer) => client.post(`/learning/exercises/${exerciseId}/submit`, { answer }),
@@ -152,7 +154,7 @@ export const learningAPI = {
   submitReport: (lessonId, data) => client.post(`/learning/lessons/${lessonId}/report`, data),
 };
 
-export const learningManageAPI = {
+const learningManageAPI = {
   lessons: () => client.get('/learning/manage/lessons'),
   cards: (lessonId) => client.get(`/learning/manage/lessons/${lessonId}/cards`),
   createCard: (lessonId, data) => client.post(`/learning/manage/lessons/${lessonId}/cards`, data),
@@ -164,16 +166,19 @@ export const learningManageAPI = {
   deleteExercise: (exerciseId) => client.delete(`/learning/manage/exercises/${exerciseId}`),
 };
 
-export const mentorReviewAPI = {
+const mentorReviewAPI = {
   list: (params) => client.get('/mentor-reviews', { params }),
   detail: (reportId) => client.get(`/mentor-reviews/${reportId}`),
   review: (reportId, data) => client.post(`/mentor-reviews/${reportId}/review`, data),
 };
 
-export const observerAPI = {
+const observerAPI = {
   dashboard: () => client.get('/observer'),
   students: (params) => client.get('/observer/students', { params }),
   student: (studentId) => client.get(`/observer/students/${studentId}`),
 };
 
+return {authAPI,dashboardAPI,courseAPI,taskAPI,studentAPI,workAPI,archiveAPI,aiAPI,feedbackAPI,notificationAPI,learningAPI,learningManageAPI,mentorReviewAPI,observerAPI};
+}
+export const {authAPI,dashboardAPI,courseAPI,taskAPI,studentAPI,workAPI,archiveAPI,aiAPI,feedbackAPI,notificationAPI,learningAPI,learningManageAPI,mentorReviewAPI,observerAPI} = createAPIs(defaultClient);
 export { gliderAPI } from './glider';

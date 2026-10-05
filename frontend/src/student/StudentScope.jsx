@@ -96,9 +96,9 @@ export default function StudentScope({ children }) {
   const blocked = state.blocked?.key === target.key ? state.blocked : null;
   const retry = <Button onClick={() => checkRef.current?.(true)}>重新检查</Button>;
   if (missingCourse || blocked) return <StudentPageStatus title="当前内容已不可访问"
-    description={<>{missingCourse ? '课程已撤回或报名关系已变化，相关学习内容已清除。请返回探索地图选择可进入的课程。' : blocked.reason}
+    description={<>{missingCourse ? '课程已撤回或报名关系已变化，相关学习内容已清除。请返回课程选择选择可进入的课程。' : blocked.reason}
       {state.warning && <><br /><span role="status">{state.warning}</span></>}</>}>
-    <Link to="/explore" className="student-status-return">返回探索地图</Link>
+    <Link to="/explore" className="student-status-return">返回课程选择</Link>
     {retry}
   </StudentPageStatus>;
   if (!state.ready) return state.warning
@@ -106,6 +106,6 @@ export default function StudentScope({ children }) {
     : <PageLoading>正在确认可进入的课程，请稍候。</PageLoading>;
   return <>
     {state.warning && <Alert type="warning" showIcon title="权限检查暂未完成" description={state.warning} action={retry} style={{ margin: 16 }} />}
-    <div key={`${user.id}:${location.pathname}:${location.pathname === '/archives' ? state.archiveRevision : 0}`}>{children}</div>
+    <div key={`${user.id}:${location.pathname}:${/\/archives$/.test(location.pathname) ? state.archiveRevision : 0}`}>{children}</div>
   </>;
 }

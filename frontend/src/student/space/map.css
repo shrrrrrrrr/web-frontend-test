@@ -1,0 +1,50 @@
+.student-pixel .space-map{color:#183457}
+.student-pixel [data-space-theme='voyage'] .space-map{color:#edf4ff}
+.student-pixel [data-space-theme='voyage'] .space-map .pixel-map-header h2,.student-pixel [data-space-theme='voyage'] .space-map .pixel-map-overview h3{color:#fff4dc}
+.student-pixel [data-space-theme='voyage'] .space-map .pixel-map-header p,.student-pixel [data-space-theme='voyage'] .space-map .pixel-map-overview>div>span,.student-pixel [data-space-theme='voyage'] .space-map .pixel-map-course-progress span{color:#bad0ef}
+.student-pixel .space-map .pixel-map-header{align-items:flex-start;margin-bottom:20px}
+.student-pixel .space-map .pixel-map-header h2{font-size:34px;font-weight:400;margin-top:0}
+.student-pixel .space-map .pixel-map-back{display:none}
+.student-pixel .space-map .pixel-map-layout{grid-template-columns:minmax(0,1fr) 286px;gap:20px}
+.student-pixel .space-map .pixel-map-stage{min-height:560px;padding:0 20px 14px;background:#071b42;border:2px solid #698ab5;box-shadow:5px 5px 0 #030e24;overflow:hidden}
+.space-map-art.space-scene{position:absolute;z-index:-2;inset:0;width:100%;height:100%}
+.space-map-art img{object-position:center;opacity:1}
+.student-pixel .space-map .pixel-map-stage:after{content:'';position:absolute;inset:0;z-index:-1;background:#081a4325;pointer-events:none}
+.student-pixel .space-map .pixel-map-region.route-group{padding:24px 0 18px;border:0;background:transparent}
+.student-pixel .space-map .pixel-map-region-title{color:#fff3d7;background:#0c214cd9;border:1px solid #9bb9dc;box-shadow:3px 3px 0 #07152e;font-size:16px;font-weight:400}
+.student-pixel .space-map .pixel-map-region-index{background:#f0ce80;color:#173459;font-family:var(--space-font)}
+.student-pixel .space-map .pixel-map-platform{padding-top:34px}
+.student-pixel .space-map .pixel-map-route-canvas{position:relative}
+.student-pixel .space-map .pixel-map-route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 16px;padding:0;margin:0;list-style:none}
+.student-pixel .space-map .pixel-map-route-stop{position:relative;grid-row:var(--stop-row);grid-column:var(--stop-column);padding:var(--stop-lift) 0 4px;min-width:0}
+.student-pixel .space-map .route-node{min-height:156px;gap:12px;align-items:center;justify-content:flex-start;padding:0;color:#163553}
+.student-pixel .space-map .pixel-map-node-marker:before{display:none}
+.student-pixel .space-map .pixel-map-node-number{width:48px;height:48px;border-radius:2px;border:3px solid #172f51;box-shadow:4px 4px 0 #06132c;outline:2px solid #e2e8f4;outline-offset:0;background:#f7eac2;font-family:var(--space-font);font-size:25px}
+.student-pixel .space-map .route-node[aria-pressed='true'] .pixel-map-node-number{background:#ffc963;color:#102b52;outline:3px solid #fff2c3;outline-offset:4px;box-shadow:6px 6px 0 #354d77}
+.student-pixel .space-map .pixel-map-node-label{max-width:170px;padding:8px 10px;background:#edf2f8f5;border:1px solid #486991;box-shadow:3px 3px 0 #0b1d3d}
+.student-pixel .space-map .route-node[aria-pressed='true'] .pixel-map-node-label{background:#fff0c7;box-shadow:3px 3px 0 #9a6c23}
+.student-pixel .space-map .pixel-map-node-label strong{font-weight:400;font-size:16px}
+.student-pixel .space-map .pixel-map-selection-hint{font-size:11px;color:#3f5a79}
+.student-pixel .space-map .pixel-map-current-flag{top:-25px;background:#f7d57f;font-size:12px;border:1px solid #4c3a19;padding:3px 6px}
+.student-pixel .space-map .pixel-map-route-track{position:absolute;inset:0;overflow:visible;width:100%;height:100%;pointer-events:none}
+.student-pixel .space-map .pixel-map-track-outline{fill:none;stroke:#0b2854;stroke-width:8}
+.student-pixel .space-map .pixel-map-track-dashes{fill:none;stroke:#ffe8a5;stroke-width:3;stroke-dasharray:8 7}
+.student-pixel .space-map .pixel-map-region-bridge{color:#f7db8f;border-color:#f7db8f}
+.student-pixel .space-map .pixel-map-route-note{background:#0a1e43eb;color:#e0ecfc;border:1px solid #6584ac;font-size:13px}
+.student-pixel .space-map .pixel-map-aside{top:96px;max-height:calc(100dvh - 110px);overflow:auto;padding:0 4px 6px 0}
+.student-pixel .space-map .pixel-map-details{border-color:#8ca8c9;box-shadow:4px 4px 0 #020f2a;background:#fdf6e5;color:#173350;padding:20px}
+.student-pixel .space-map .pixel-map-details h3{font-size:24px;font-weight:400}
+.student-pixel .space-map .pixel-map-details .ant-descriptions{font-size:14px}
+.student-pixel .space-map .pixel-map-course-info{color:#193654}
+.student-pixel .space-course-todos{background:#edf2f8;color:#193654;margin-bottom:20px;border:1px solid #718db1}
+.space-course-todos .home-todo{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #bcc9da;padding:16px 0;color:#193654}
+.space-course-todos .home-todo h3{font-size:20px;margin:0 0 6px;color:#193654}
+.space-course-todos .home-todo p{margin:6px 0}
+.space-course-todos .home-todo-action{align-self:center;flex-shrink:0}
+.space-map-extra{display:flex;flex-wrap:wrap;gap:24px;padding:24px 0}
+.space-map-extra a{color:#174983;border-bottom:1px solid currentColor}
+[data-space-theme='voyage'] .space-map-extra a{color:#deebff}
+.student-pixel .space-lesson-drawer .pixel-map-details{box-shadow:none;border:0;padding:0}
+@media(max-width:1199px){.student-pixel .space-map .pixel-map-layout{grid-template-columns:minmax(0,1fr) 260px;gap:16px}.student-pixel .space-map .pixel-map-stage{padding-inline:12px}.student-pixel .space-map .pixel-map-route{column-gap:10px}}
+@media(max-width:991px){.student-pixel .space-map .pixel-map-layout{display:block}.student-pixel .space-map .pixel-map-route{grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 18px}.student-pixel .space-map .pixel-map-route-stop{padding:var(--stop-lift) 0 4px}.student-pixel .space-map .route-node{flex-direction:column;text-align:center;min-height:165px}.student-pixel .space-map .pixel-map-node-label{align-items:center;max-width:180px}.student-pixel .space-map .pixel-map-stage{padding-inline:20px}.student-pixel .space-map .pixel-map-region-bridge{left:50%}}
+@media(max-width:767px){.student-pixel .space-map .pixel-map-header h2{font-size:29px}.student-pixel .space-map .pixel-map-header{display:block}.student-pixel .space-map .pixel-map-route{display:block;margin-left:6px}.student-pixel .space-map .pixel-map-route-stop{padding:18px 0 32px}.student-pixel .space-map .route-node{flex-direction:row;align-items:center;justify-content:flex-start;gap:18px;min-height:104px;text-align:left}.student-pixel .space-map .pixel-map-node-label{align-items:flex-start;max-width:calc(100% - 70px);margin:0;font-size:16px}.student-pixel .space-map .pixel-map-node-marker{margin-left:0}.student-pixel .space-map .pixel-map-node-number{width:44px;height:44px}.student-pixel .space-map .pixel-map-stage{padding-inline:16px}.student-pixel .space-map .pixel-map-region-title{font-size:15px}.student-pixel .space-map .pixel-map-region-bridge{left:24px}.student-pixel .space-map .pixel-map-platform{padding-top:26px}.student-pixel .space-map .pixel-map-region.route-group{padding-top:22px}.space-map-art img{object-fit:cover;object-position:70% center}.space-course-todos .home-todo{flex-direction:column}.space-course-todos .home-todo-action{align-self:stretch}.space-course-todos .home-todo-action button{width:100%}}

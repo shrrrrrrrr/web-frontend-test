@@ -1,13 +1,14 @@
+import { useCourseApis, useCourseId } from './useCourseApis';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+import Link from './space/SpaceLink';
+
 import { Alert, Input, Select, Spin } from 'antd';
-import { aiAPI } from '../api';
 import { useAuth } from '../store/AuthContext';
 import { requestError } from '../utils/requestError';
 import { ServicePage } from '../components/ServiceUI';
 import { STUDENT_COURSES_CHANGED } from './accessPolicy';
-import { PixelButton, PixelPanel, PixelTag, PixelImage } from './visual/PixelUI';
-import { pixelImageProps } from './visual/pixelAssets';
+import { PixelButton, PixelPanel, PixelTag } from './visual/PixelUI';
 import { scopeLabels, sourceAction, sourceTypes } from './compatibilityModel';
 import CourseResourceDownload from './CourseResourceDownload';
 import './visual/pixel-compatibility.css';
@@ -15,10 +16,11 @@ import './visual/pixel-compatibility.css';
 export default function StudentAssistant() {
   const { user } = useAuth();
   const [params] = useSearchParams();
-  const requested = params.get('course_id') || '';
+  const requested = useCourseId() || params.get('course_id') || '';
   return <AssistantSession key={`${user.id}:${user.role}:${requested}`} requested={requested} />;
 }
 function AssistantSession({ requested }) {
+  const { aiAPI } = useCourseApis();
   const [catalog, setCatalog] = useState({ loading: true, error: null, enabled: null, courses: [] });
   const [courseId, setCourseId] = useState(null), [question, setQuestion] = useState('');
   const [chat, setChat] = useState([]), [waiting, setWaiting] = useState(false), [notice, setNotice] = useState('');
@@ -48,7 +50,7 @@ function AssistantSession({ requested }) {
         else if (requested) setNotice('链接中的课程不可用于提问。请选择一门可进入的课程。');
       }
     } catch (error) { if (live.current && ticket === readSequence.current) setCatalog(s => ({ ...s, loading: false, error })); }
-  }, [requested, clearContext]);
+  }, [requested, clearContext,aiAPI]);
   const invalidate = useCallback(() => { live.current = false; readSequence.current++; askSequence.current++; }, []);
   useEffect(() => {
     live.current = true;
@@ -105,7 +107,7 @@ function AssistantSession({ requested }) {
   return <ServicePage title="灵境小智" eyebrow="学习伙伴 / 课程提问" description="把遇到的问题说完整，一起找到下一步的思路。" actions={<Link to="/explore">返回探索地图</Link>}>
     <div className="assistant-layout">
       <PixelPanel className="assistant-context">
-        <div className="assistant-guide"><PixelImage {...pixelImageProps('companion-cat', '72px')} alt="" /><div><PixelTag tone="current">学习伙伴</PixelTag><h3>课程提问</h3></div></div>
+        <div className="assistant-guide"><div><PixelTag tone="current">学习伙伴</PixelTag><h3>课程提问</h3></div></div>
         <label htmlFor="assistant-course">当前课程</label>
         <Select id="assistant-course" aria-label="当前课程" placeholder="选择一门课程" value={courseId} onChange={id => clearContext(id)} disabled={catalog.loading || !!catalog.error || !catalog.enabled}
           options={catalog.courses.map(c => ({ value: c.id, label: c.title }))} optionRender={option => <span>{option.label} <small>· 课程 {option.value}</small></span>} />

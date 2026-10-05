@@ -1,7 +1,8 @@
+import { useCourseApis } from '../../student/useCourseApis';
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useCourseNavigate as useNavigate} from '../../student/useCourseApis';
+
 import { Alert, Form, Input, Select, Result } from 'antd';
-import { archiveAPI, courseAPI } from '../../api';
 import { STUDENT_COURSES_CHANGED } from '../../student/accessPolicy';
 import { loadArchiveScope } from '../../student/archiveModel';
 import PageContainer from '../../components/common/PageContainer';
@@ -10,9 +11,9 @@ import { PixelButton } from '../../student/visual/PixelUI';
 import PixelIcon from '../../student/visual/PixelIcon';
 import '../../student/visual/pixel-archive.css';
 
-const api = { courses: courseAPI.list, enrollments: archiveAPI.getReflections };
 const errorText = (error) => error.response?.data?.error || '网络连接失败，请重试；本页文字仍然保留。';
 export default function Reflection() {
+  const { archiveAPI, courseAPI } = useCourseApis();
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const [submitting, setSubmitting] = useState(false);
@@ -36,12 +37,16 @@ export default function Reflection() {
     const request = ++scopeSequence.current;
     setScope((current) => ({ ...current, loading: true, error: '' }));
     try {
-      const next = await loadArchiveScope(api);
+      const next = await loadArchiveScope({ courses: courseAPI.list, enrollments: archiveAPI.getReflections });
       if (!alive.current || request !== scopeSequence.current) return null;
       const selected = form.getFieldValue('enrollment_id');
       if (selected && !next.enrollments.some((row) => String(row.enrollment_id) === String(selected))) invalidate();
       scopeRef.current = next.enrollments;
       setScope({ loading: false, enrollments: next.enrollments, error: '' });
+      if (!form.getFieldValue('enrollment_id') && next.enrollments.length===1) {
+        form.setFieldValue('enrollment_id',next.enrollments[0].enrollment_id);
+        void selectCourse(next.enrollments[0].enrollment_id);
+      }
       return next;
     } catch (error) {
       if (alive.current && request === scopeSequence.current) setScope((current) => ({ ...current, loading: false, error: errorText(error) }));

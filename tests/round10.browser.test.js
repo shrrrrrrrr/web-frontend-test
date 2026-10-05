@@ -20,7 +20,7 @@ async function rotate(p){return p.evaluate(async()=>{const {default:client}=awai
 async function choose(p,label,text){await p.getByRole('combobox',{name:label,exact:true}).click();await p.locator('.ant-select-item-option').filter({hasText:text}).last().click();}
 const shots=path.join(root,process.env.ROUND10_CAPTURE_DELIVERY==='1'?'docs/round-10/screenshots':'test-results/round10');
 async function shot(p,name){await p.evaluate(()=>document.fonts.ready);await p.screenshot({path:path.join(shots,name+'.png'),animations:'disabled'});}
-async function logout(p){await p.getByRole('button',{name:'个人中心',exact:true}).click();await p.getByRole('menuitem',{name:'退出登录'}).click();await p.waitForURL('**/login');}
+async function logout(p){await p.goto(base+'/me');await p.getByRole('button',{name:'退出登录',exact:true}).click();await p.waitForURL('**/login');}
 async function go(p,url){await p.evaluate(url=>{history.pushState({},'',url);dispatchEvent(new PopStateEvent('popstate'));},url);}
 const gate=()=>{let release;return{promise:new Promise(r=>release=r),release:()=>release()};};
 test('第十轮：跨标签会话与通知批量回归（真实隔离 API）',{timeout:240000},async t=>{
@@ -70,7 +70,7 @@ test('第十轮：跨标签会话与通知批量回归（真实隔离 API）',{t
     const c=await browser.newContext(),a=await c.newPage(),b=await c.newPage();a.setDefaultTimeout(5000);b.setDefaultTimeout(5000);
     try{await login(a,role==='student'?'student_wang':'mentor_zhang',role==='student'?'student123':'mentor123');
      if(role==='student'){
-      await b.goto(base+'/archives/reflection');await b.getByLabel('遇到的困难',{exact:true}).fill('【测试】主动轮换时，反思仍在原来的页面。');await b.getByLabel('解决方式',{exact:true}).fill('【测试】保留解决思路');
+      await b.goto(base+'/courses/1/reflection');await b.getByLabel('遇到的困难',{exact:true}).fill('【测试】主动轮换时，反思仍在原来的页面。');await b.getByLabel('解决方式',{exact:true}).fill('【测试】保留解决思路');
       await b.getByLabel('遇到的困难',{exact:true}).evaluate(el=>window.originalField=el);
       const verified=b.waitForResponse(r=>r.url().endsWith('/api/auth/me'));assert.equal(await rotate(a),4);await verified;
       assert.equal(await b.getByLabel('遇到的困难',{exact:true}).evaluate(el=>el===window.originalField),true);assert.match(await b.getByLabel('解决方式',{exact:true}).inputValue(),/保留解决思路/);

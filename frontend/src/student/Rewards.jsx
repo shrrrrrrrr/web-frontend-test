@@ -93,7 +93,7 @@ export default function Rewards() {
   else footer = <PixelButton onClick={close}>关闭</PixelButton>;
 
   return <PageContainer><div className="study-workspace reward-workspace">
-    <StudyHeader eyebrow={<Link to="/archives">成长档案 / 本地演示</Link>} title="积分与徽章" description="浏览礼品，查看演示记录。">
+    <StudyHeader eyebrow={<Link to="/me">我的 / 本地演示</Link>} title="积分与徽章" description="浏览礼品，查看演示记录。">
       <PixelButton onClick={(event) => open({ kind: 'reset' }, event)}>重置演示数据</PixelButton>
     </StudyHeader>
     <PixelPanel className="reward-overview" aria-label="演示积分概况">

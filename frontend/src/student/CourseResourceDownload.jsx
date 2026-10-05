@@ -1,12 +1,13 @@
+import {useCourseApis} from './useCourseApis';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Alert } from 'antd';
-import { courseAPI } from '../api';
 import { requestError } from '../utils/requestError';
 import { STUDENT_COURSES_CHANGED } from './accessPolicy';
 import { PixelButton } from './visual/PixelUI';
 
 // 每项下载独立；附件错误不清除已核验的页面。下载后再次核验课程再触发浏览器保存。
 export default function CourseResourceDownload({ resource, courseId }) {
+ const { courseAPI }=useCourseApis();
   const live = useRef(false), busy = useRef(false), generation = useRef(0), urls = useRef(new Set());
   const [state, setState] = useState({ loading: false, error: null });
   const invalidate = useCallback(() => { generation.current++; live.current = false; }, []);

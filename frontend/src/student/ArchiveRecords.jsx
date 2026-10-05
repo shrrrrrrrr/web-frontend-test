@@ -1,5 +1,6 @@
 import { Empty, Pagination } from 'antd';
-import { Link } from 'react-router-dom';
+import Link from './space/SpaceLink';
+
 import { useState } from 'react';
 import { formatBeijingTime } from '../utils/date';
 import { workStatus } from './archiveModel';

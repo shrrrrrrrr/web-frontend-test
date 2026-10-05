@@ -1,0 +1,1 @@
+课程范围回归首次有效运行：3 项场景，1 通过、2 失败。/api/course-spaces/1/courses 缺失；课程变为 draft 后 GET /works/1 仍返回 200。此前首次夹具运行因 grade_level 必填字段遗漏失败，修正夹具后才记录上述业务缺口。

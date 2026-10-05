@@ -1,7 +1,8 @@
-import client from './client';
+import defaultClient from './client';
+export function createGliderAPI(client) {
 
 // 此页就近呈现错误和重试，避免轮询/文件错误重复弹出全局提示；鉴权仍走 client。
-export const gliderAPI = {
+return {
   // 提交滑翔机参数并启动模拟（学生）
   simulate: (params) => client.post('/glider/simulate', params, { silent: true }),
   // 我的模拟记录
@@ -20,3 +21,6 @@ export const gliderAPI = {
   // 引擎能力探测（提交前检查）
   capabilities: () => client.get('/glider/capabilities', { silent: true }),
 };
+
+}
+export const gliderAPI = createGliderAPI(defaultClient);

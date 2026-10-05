@@ -1,96 +1,53 @@
-import { useState } from 'react';
-import { Drawer, Dropdown, Grid } from 'antd';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../store/AuthContext';
+import {useCallback,useState} from 'react';
+import {Drawer,Grid} from 'antd';
+import {Link,useLocation} from 'react-router-dom';
+import {useAuth} from '../../store/AuthContext';
+import {courseAPI} from '../../api';
 import NotificationBell from '../../components/notifications/NotificationBell';
 import RewardProvider from '../RewardProvider';
-import { useRewards } from '../useRewards';
+import {useRewards} from '../useRewards';
+import {useCourseId} from '../useCourseApis';
+import useRemote from '../useRemote';
 import StudentTheme from './StudentTheme';
 import PixelIcon from './PixelIcon';
+import {PLATFORM_NAME,coursePresentation,asset} from '../space/identity';
 
-const navigation = [
-  { to: '/explore', icon: 'map', label: '探索地图', subtitle: '选择课程 · 继续学习' },
-  { to: '/lab', icon: 'lab', label: '实验室', subtitle: '提出假设 · 动手验证' },
-  { to: '/archives', icon: 'archive', label: '成长档案', subtitle: '记录发现 · 看见成长' },
-];
-
-function StudentNavigation({ onNavigate }) {
-  const { pathname } = useLocation();
-  const selected = pathname.startsWith('/archives') ? '/archives' : /^\/(lab|glider)/.test(pathname) ? '/lab' : '/explore';
-  return <>
-    <Link to="/explore" className="student-brand" onClick={onNavigate} aria-label="星海远航探索首页">
-      <PixelIcon name="map" size={48} />
-      <span><strong>星海远航</strong><small>STAR VOYAGE · 2057</small></span>
-    </Link>
-    <nav className="student-navigation" aria-label="学生主导航">
-      {navigation.map((item) => <Link key={item.to} to={item.to} onClick={onNavigate} aria-current={selected === item.to ? 'page' : undefined}>
-        <PixelIcon name={item.icon} size={24} />
-        <span><strong>{item.label}</strong><small>{item.subtitle}</small></span>
-        <span className="student-nav-mark" aria-hidden="true" />
-      </Link>)}
-    </nav>
-    <div className="student-side-note"><span aria-hidden="true">✦</span><p>每一个好问题，<br />都是探索的起点。</p><small>KEEP EXPLORING</small></div>
-    <div className="student-sidebar-footer">PBL 科创学习平台</div>
-  </>;
+function Points({to}){const {data,status}=useRewards();return <Link to={to} className="student-points" data-testid="header-demo-points" aria-label={'演示积分 '+(status==='ready'?data.balance:'读取中')}><PixelIcon name="coin"/><strong>{status==='ready'?data.balance:'—'}</strong><span className="student-demo-tag">演示</span></Link>;}
+function CourseNavigation({id,course,close}){
+ const {pathname}=useLocation();const theme=coursePresentation(id).theme;
+ const entries=[['','map','关卡地图'],['/lab','lab','实验室'],['/archives','archive','成长档案']];
+ return <div className="space-course-navigation" data-course-theme={theme}>
+   <Link to="/explore" className="space-exit" onClick={close}><PixelIcon name="back"/>返回课程选择</Link>
+   <Link to={'/courses/'+id} className="space-course-brand" onClick={close}>{theme==='voyage'?<img src={asset('ship',192)} alt=""/>:<PixelIcon name="book" size={48}/>}<strong>{course?.title||'课程空间'}</strong><span>课程 #{id}</span></Link>
+   <nav aria-label="课程导航">{entries.map(([suffix,icon,label])=>{const to='/courses/'+id+suffix;const selected=suffix==='/lab'?/\/(lab|glider)$/.test(pathname):suffix==='/archives'?/\/(archives|works|reflection)(?:\/|$)/.test(pathname):! /\/(lab|glider|archives|works|reflection)(?:\/|$)/.test(pathname);return <Link key={to} to={to} aria-current={selected?'page':undefined} onClick={close}><PixelIcon name={icon}/><span>{label}</span><span aria-hidden="true">›</span></Link>;})}</nav>
+   <Link className="space-assistant-link" to={'/courses/'+id+'/assistant'} onClick={close}><PixelIcon name="help"/>灵境小智 · 提问</Link>
+   <div className="space-sidebar-art" aria-hidden="true"/>
+ </div>;
 }
-
-function DemoPoints() {
-  const { data, status } = useRewards();
-  const balance = status === 'ready' ? data.balance : null;
-  return <Link to="/archives/rewards" className="student-points" data-testid="header-demo-points" aria-label={`演示积分${balance === null ? '，查看余额' : ` ${balance}`}，查看积分与徽章`}>
-    <PixelIcon name="coin" /><span className="student-points-label">演示积分</span><strong>{balance ?? '—'}</strong><span className="student-demo-tag">演示</span>
-  </Link>;
+function Shell({children}){
+ const id=useCourseId(),{user}=useAuth(),location=useLocation(),screens=Grid.useBreakpoint();
+ const [open,setOpen]=useState(false);
+ const fetcher=useCallback(()=>id?courseAPI.detail(id):Promise.resolve(null),[id]);
+ const {data}=useRemote(fetcher,{courseSensitive:true,courseId:id});
+ const me='/me'+(id?'?returnTo='+encodeURIComponent(location.pathname+location.search):'');
+ const deep=id&&location.pathname!=='/courses/'+id;
+ return <div className={'space-shell student-shell '+(id?'space-shell--course':'space-shell--platform')}>
+   {id&&screens.lg&&<aside className="space-sidebar"><CourseNavigation id={id} course={data?.course}/></aside>}
+   <div className="space-shell-main">
+    <header className="space-header">
+      {id?<div className="space-header-context">{!screens.lg&&<button className="space-menu-button" onClick={()=>setOpen(true)} aria-label="打开课程导航" aria-expanded={open}><PixelIcon name="menu"/></button>}<span>{data?.course.title||'课程空间'}</span></div>:<Link className="space-platform-brand" to="/explore"><PixelIcon name="book" size={28}/>{PLATFORM_NAME}</Link>}
+      {!id&&<nav className="space-platform-nav" aria-label="平台导航"><Link to="/explore" aria-current={location.pathname==='/explore'?'page':undefined}>课程</Link><Link to="/me" aria-current={location.pathname==='/me'?'page':undefined}>我的</Link></nav>}
+      <div className="space-header-actions"><Points to={me}/><NotificationBell icon={<PixelIcon name="notification"/>} buttonClassName="student-notification-button"/><Link to={me} className="space-account" aria-label="我的"><PixelIcon name="user"/><span>{user.real_name||user.username}</span></Link></div>
+    </header>
+    {deep&&<nav className="space-sticky-return" aria-label="课程返回导航"><Link to={'/courses/'+id}><PixelIcon name="back"/>返回课程地图</Link><Link to="/explore">全部课程</Link></nav>}
+    <main id="student-main" className="student-content space-content">{children}</main>
+   </div>
+   {id&&<Drawer open={!screens.lg&&open} onClose={()=>setOpen(false)} placement="left" width={272} title="课程导航" rootClassName="student-pixel space-navigation-drawer" styles={{body:{padding:0}}}><CourseNavigation id={id} course={data?.course} close={()=>setOpen(false)}/></Drawer>}
+ </div>;
 }
-
-function StudentHeader({ compact, navigationOpen, onOpenNavigation }) {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const feedback = () => navigate('/feedback/new', { state: { from: `${location.pathname}${location.search}` } });
-  const items = [
-    { key: 'identity', disabled: true, label: `${user.real_name || user.username} · 学生` },
-    { type: 'divider' },
-    { key: 'feedback-new', icon: <PixelIcon name="help" />, label: '帮助与反馈', onClick: feedback },
-    { key: 'feedback', label: '我的反馈', onClick: () => navigate('/feedback') },
-    { key: 'change-password', label: '修改密码', onClick: () => navigate('/change-password') },
-    { key: 'logout', label: '退出登录', onClick: () => { logout(); navigate('/login'); } },
-  ];
-  return <header className="student-header">
-    <div className="student-header-location">{compact
-      ? <button type="button" className="student-header-button student-menu-trigger" aria-label="打开导航" aria-expanded={navigationOpen} onClick={onOpenNavigation}><PixelIcon name="menu" /><span>导航</span></button>
-      : <span className="student-header-caption">探索 · 实践 · 发现</span>}</div>
-    <div className="student-header-actions">
-      <DemoPoints />
-      <NotificationBell icon={<PixelIcon name="notification" />} buttonClassName="student-notification-button" />
-      <button type="button" className="student-header-button student-help" aria-label="帮助与反馈" onClick={feedback}><PixelIcon name="help" /><span>帮助与反馈</span></button>
-      <Dropdown trigger={['click']} menu={{ items }} placement="bottomRight" rootClassName="student-pixel service-menu">
-        <button type="button" className="student-header-button student-profile" aria-label="个人中心"><PixelIcon name="user" /><span>{user.real_name || user.username}</span><PixelIcon name="chevron-down" size={16} /></button>
-      </Dropdown>
-    </div>
-  </header>;
-}
-
-function Shell({ children }) {
-  const screens = Grid.useBreakpoint();
-  const compact = !screens.lg;
-  const [navigationOpen, setNavigationOpen] = useState(false);
-  const { pathname } = useLocation();
-  return <div className={`student-shell${pathname !== '/change-password' ? ' student-shell--partner' : ''}${pathname === '/glider' ? ' student-shell--experiment' : ''}`}>
-    {!compact && <aside className="student-sidebar"><StudentNavigation /></aside>}
-    <div className="student-shell-main">
-      <StudentHeader compact={compact} navigationOpen={navigationOpen} onOpenNavigation={() => setNavigationOpen(true)} />
-      <main className="student-content" id="student-main">{children}</main>
-    </div>
-    <Drawer open={compact && navigationOpen} onClose={() => setNavigationOpen(false)} placement="left" width={264}
-      title="探索导航" closable={{ 'aria-label': '关闭导航' }} closeIcon={<PixelIcon name="close" />}
-      rootClassName="student-pixel student-navigation-drawer" styles={{ body: { padding: 0, background: '#102D40', color: '#FFF9E9' }, header: { background: '#FFF9E9' } }}>
-      <StudentNavigation onNavigate={() => setNavigationOpen(false)} />
-    </Drawer>
-  </div>;
-}
-
-export default function StudentShell({ children }) {
-  const { user, logout } = useAuth();
-  if (user.force_reset_password) return <StudentTheme><div className="forced-shell"><header className="forced-header"><strong>星海远航 · 账号设置</strong><button type="button" onClick={logout}>退出登录</button></header><main id="student-main">{children}</main></div></StudentTheme>;
-  return <StudentTheme><RewardProvider key={user.id} accountId={user.id}><a href="#student-main" className="student-skip-link">跳到学习内容</a><Shell>{children}</Shell></RewardProvider></StudentTheme>;
+export default function StudentShell({children}){
+ const {user,logout}=useAuth(),id=useCourseId();
+ return <StudentTheme variant={id?coursePresentation(id).theme:'campus'}>
+  {user.force_reset_password?<div className="forced-shell"><header className="forced-header"><strong>{PLATFORM_NAME} · 账号设置</strong><button onClick={logout}>退出登录</button></header><main id="student-main">{children}</main></div>:<RewardProvider key={user.id} accountId={user.id}><a href="#student-main" className="student-skip-link">跳到页面内容</a><Shell>{children}</Shell></RewardProvider>}
+ </StudentTheme>;
 }

@@ -1,3 +1,4 @@
+import { PLATFORM_NAME } from '../student/space/identity';
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
@@ -100,7 +101,7 @@ export default function Sidebar() {
         height: 64, display: 'flex', alignItems: 'center', justifyContent: 'center',
         color: '#fff', fontSize: 18, fontWeight: 700, borderBottom: '1px solid rgba(255,255,255,0.1)'
       }}>
-        {collapsed ? 'PBL' : user?.role === 'student' ? '星海远航' : 'PBL 科创平台'}
+        {collapsed ? 'PBL' : PLATFORM_NAME}
       </div>
       <Menu
         theme="dark"

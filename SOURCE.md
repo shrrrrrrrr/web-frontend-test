@@ -6,7 +6,7 @@
 - 获取日期：2026-10-03（北京时间）
 - 获取方式：GitHub codeload 固定 SHA ZIP，不复制 .git。
 - frontend：作为功能基线，保留原页面和接口，重组学生入口。
-- backend：原样复制，用于本地测试；不修改接口、授权、评分。
+- backend：最初原样导入用于本地测试。新版第 1 步依据新版总指令，在本仓库添加课程范围适配与对象有效性检查；未改评分、原仓库或仿真算法，详见 docs/redesign-v2/step-01/README.md。
 - simulation：原样复制引擎代码，用于本地测试；不修改参数和算法。
 - 原目录中的设计交付、素材及源码快照保持不变。
 - 本仓库唯一 origin：https://github.com/shrrrrrrrr/web-frontend-test.git

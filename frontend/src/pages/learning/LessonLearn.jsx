@@ -1,3 +1,4 @@
+import {useCourseApis} from '../../student/useCourseApis';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import {
@@ -7,7 +8,6 @@ import {
   CheckCircleOutlined, DownloadOutlined,
   LeftOutlined, PlayCircleOutlined, RightOutlined,
 } from '@ant-design/icons';
-import { courseAPI, learningAPI } from '../../api';
 import PageContainer from '../../components/common/PageContainer';
 import AsyncPageState from '../../components/common/AsyncPageState';
 import { LEARNING_STEPS, REPORT_STATUS } from '../../constants/status';
@@ -31,6 +31,7 @@ function answerText(value) {
 }
 
 function Exercise({ exercise, index, onDone }) {
+ const { learningAPI }=useCourseApis();
   const [answer, setAnswer] = useState(exercise.question_type === 'multiple_choice' ? [] : '');
   const [result, setResult] = useState(null);
   const [submitting, setSubmitting] = useState(false);
@@ -64,6 +65,7 @@ function Exercise({ exercise, index, onDone }) {
 }
 
 export default function LessonLearn() {
+ const { courseAPI,learningAPI }=useCourseApis();
   const { message, modal } = App.useApp();
   const { courseId, lessonId } = useParams();
   const { user } = useAuth();
@@ -132,9 +134,9 @@ export default function LessonLearn() {
     } catch (err) {
       setData(null);
       if (restorePosition && searchParams.has('cardId') && [403, 404].includes(err?.response?.status)) {
-        let target = '/lab';
+        let target = '/explore';
         try { await courseAPI.detail(courseId); target = `/courses/${courseId}`; } catch { /* no accessible course to return to */ }
-        const notice = target === '/lab' ? '来源课程已不可访问，已返回实验室。' : '来源课时已不可访问，已返回课程地图。';
+        const notice = target === '/explore' ? '来源课程已不可访问，已返回课程选择。' : '来源课时已不可访问，已返回课程地图。';
         message.warning(notice);
         navigate(target, { replace: true, state: { experimentNotice: notice } });
         return;

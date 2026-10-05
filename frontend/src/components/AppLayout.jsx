@@ -4,7 +4,7 @@ import { useAuth } from '../store/AuthContext';
 import Sidebar from './Sidebar';
 import HeaderBar from './Header';
 import StudentScope from '../student/StudentScope';
-import StudyPartner from '../student/StudyPartner';
+import StudentTheme from '../student/visual/StudentTheme';
 import { PageLoading } from './PageStatus';
 import StudentShell from '../student/visual/StudentShell';
 
@@ -27,12 +27,12 @@ export default function AppLayout() {
 
   if (user.role === 'student') {
     return <StudentShell>{location.pathname !== '/change-password'
-      ? <StudentScope><div className="student-content-body"><Outlet /><StudyPartner /></div></StudentScope>
+      ? <StudentScope><div className="student-content-body"><Outlet /></div></StudentScope>
       : <Outlet />}</StudentShell>;
   }
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <StudentTheme><Layout className="space-staff-shell" style={{ minHeight: '100vh' }}>
       <Sidebar />
       <Layout style={{ minWidth: 0 }}>
         <HeaderBar />
@@ -40,6 +40,6 @@ export default function AppLayout() {
           <Outlet />
         </Content>
       </Layout>
-    </Layout>
+    </Layout></StudentTheme>
   );
 }

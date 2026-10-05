@@ -1,8 +1,10 @@
+import { useCourseApis } from '../../student/useCourseApis';
 import { useCallback, useEffect, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+import {useCourseNavigate as useNavigate} from '../../student/useCourseApis';
+
 import { Alert, App, Form, Input, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import { workAPI, taskAPI } from '../../api';
 import { useAuth } from '../../store/AuthContext';
 import useRemote from '../../student/useRemote';
 import AsyncPageState from '../../components/common/AsyncPageState';
@@ -13,6 +15,7 @@ import PixelIcon from '../../student/visual/PixelIcon';
 import { formatBeijingTime } from '../../utils/date';
 
 function SubmissionForm({ data, parentId }) {
+  const { workAPI } = useCourseApis();
   const { message } = App.useApp();
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -73,11 +76,12 @@ function SubmissionForm({ data, parentId }) {
 }
 
 export default function WorkUpload() {
+  const { taskAPI } = useCourseApis();
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const taskId = params.get('task_id');
   const parentId = params.get('parent_work_id');
-  const fetcher = useCallback(() => taskId ? taskAPI.detail(taskId) : Promise.reject(new Error('请从课时中的任务入口提交作品。')), [taskId]);
+  const fetcher = useCallback(() => taskId ? taskAPI.detail(taskId) : Promise.reject(new Error('请从课时中的任务入口提交作品。')), [taskId,taskAPI]);
   const { data, loading, error, retry } = useRemote(fetcher);
   return <PageContainer><div className="study-workspace">
     <StudyHeader eyebrow={<><PixelIcon name="archive" />作品提交</>} title="提交作品" description={parentId ? '根据导师意见改进，保留每一次探索的版本。' : '把你的观察、方案和验证过程整理成作品。'}><Button icon={<PixelIcon name="back" />} onClick={() => navigate(data ? `/courses/${data.task.course_id}/lessons/${data.task.lesson_id}/learn` : '/tasks')}>返回课时或任务</Button></StudyHeader>

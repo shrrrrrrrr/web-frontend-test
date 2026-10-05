@@ -32,7 +32,7 @@ test('课程、课时、作品和卡片错误按真实请求对象分类，状�
 test('实验来源失效不会变成实验页失效；阶段与卡片查询不会重设页面身份', () => {
   assert.equal(currentAccessTarget('/glider', '?course_id=1&lesson_id=2').endpoint, null);
   assert.deepEqual(currentAccessTarget('/courses/1/lessons/2/learn', '?stage=1&card=12'), {
-    key: '/courses/1/lessons/2/learn', courseId: '1', endpoint: '/learning/lessons/2',
+    key: '/courses/1/lessons/2/learn', courseId: '1', endpoint: '/course-spaces/1/learning/lessons/2',
   });
   assert.equal(currentAccessTarget('/courses/1/lessons/2/learn', '?stage=2').key,
     currentAccessTarget('/courses/1/lessons/2/learn', '?stage=1&card=12').key);

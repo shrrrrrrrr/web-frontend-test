@@ -1,3 +1,4 @@
+import { useCourseApis, useCourseId } from '../../student/useCourseApis';
 import { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
@@ -5,8 +6,6 @@ import {
   Statistic, Alert, List, Typography, Empty, Result,
 } from 'antd';
 import { ArrowLeftOutlined, RocketOutlined } from '@ant-design/icons';
-import { gliderAPI } from '../../api/glider';
-import { courseAPI, learningAPI } from '../../api';
 import { formatBeijingTime } from '../../utils/date';
 import { useAuth } from '../../store/AuthContext';
 import { resolveExperimentReturn } from '../../student/experimentContext';
@@ -18,11 +17,13 @@ import { STUDENT_COURSES_CHANGED } from '../../student/accessPolicy';
 const { Title, Text } = Typography;
 
 export default function GliderSimulator() {
+  const { courseAPI, learningAPI, gliderAPI } = useCourseApis();
   const navigate = useNavigate();
   const [params] = useSearchParams();
-  const sourceCourse = params.get('course_id');
+  const scopedCourse = useCourseId();
+  const sourceCourse = scopedCourse || params.get('course_id');
   const sourceLesson = params.get('lesson_id');
-  const requestedReturn = params.get('returnTo');
+  const requestedReturn = params.get('returnTo') || (scopedCourse ? '/courses/'+scopedCourse+'/lab' : null);
   const sourceKey = JSON.stringify([sourceCourse, sourceLesson, requestedReturn]);
   const { user } = useAuth();
   const [form] = Form.useForm();
@@ -71,7 +72,7 @@ export default function GliderSimulator() {
         setEngineError(err?.response?.data?.error || err?.message || '无法获取实验环境状态');
       });
     return () => { alive = false; };
-  }, [engineAttempt]);
+  }, [engineAttempt,gliderAPI]);
 
   // 不自动选中课程；独立进入不产生课程关联。
   useEffect(() => {
@@ -106,7 +107,7 @@ export default function GliderSimulator() {
         setContextLoading(false); setCheckedSource(sourceKey);
       });
     return () => { alive = false; };
-  }, [user?.role, form, sourceCourse, sourceLesson, requestedReturn, sourceKey]);
+  }, [user?.role, form, sourceCourse, sourceLesson, requestedReturn, sourceKey,courseAPI,learningAPI]);
 
   useEffect(() => {
     const updateCourses = (event) => {
@@ -182,7 +183,7 @@ export default function GliderSimulator() {
       alive = false;
       urls.forEach((u) => URL.revokeObjectURL(u));
     };
-  }, [viewing, user?.role, revision]);
+  }, [viewing, user?.role, revision,gliderAPI]);
 
   const startSim = async (values) => {
     setSubmitting(true); setSubmitError('');
@@ -244,7 +245,7 @@ export default function GliderSimulator() {
     courseId={courseId} lessonId={lessonId} handleCourseChange={handleCourseChange} setLessonId={setLessonId}
     returning={returning} contextPending={contextPending} contextError={contextError}
     returnLabel={sourceCourse && (!contextError || returnTo !== '/lab') ? '返回来源课程' : '返回实验室'}
-    returnToSource={returnToSource} returnToLab={() => navigate('/lab')}
+    returnToSource={returnToSource} returnToLab={() => navigate(scopedCourse ? '/courses/'+scopedCourse+'/lab' : '/explore')}
   />;
 
   return (

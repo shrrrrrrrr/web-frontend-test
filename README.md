@@ -1,62 +1,59 @@
-# 星海远航 · 学生端前端
+# PBL 科创平台 · 当前前端
 
-当前约定的学生端改版与第十二轮交接已交付，权限恢复补修等待最终复核。沿用 React / Vite / Ant Design / React Router / Axios，后端及参考仿真来自固定源码基线。课程由后台分配；学生不自行选课或退课。其他角色保留原工作台和管理页面。
+新版第 1/3 步已完成，等待课程选择页与关卡地图视觉验收。基于 `7bf3115` 继续开发，保留原 React / Vite / Ant Design / React Router / Axios 及业务。**当前验收以新版文档为准，旧轮次结论保留为历史。**
 
-**[打开总验收图集](docs/acceptance/index.html)** · [当前交接说明](docs/HANDOFF.md) · [第十二轮历史结果](docs/round-12.md) · [当前补修与复验](docs/round-12/patch/README.md) · [待办与能力边界](docs/BOUNDARIES.md)
+**[新版页面与素材图集](docs/redesign-v2/step-01/index.html)** · [交付与启动](docs/redesign-v2/step-01/README.md) · [验证结果](docs/redesign-v2/step-01/verification.md) · [路由与数据范围](docs/redesign-v2/step-01/routes-and-scope.md)
 
 ## 当前入口
 
-| 学生路径 | 内容 |
+| 路径 | 学生内容 |
 | --- | --- |
-| `/explore` | 首页待办与已分配课程；`/courses/:id` 真实课时地图 |
-| `/courses/:courseId/lessons/:lessonId/learn` | 回顾、卡片练习、报告反思、导师评审、独立作品任务 |
-| `/lab`、`/glider` | 自由实验、七参数试飞、结果/图表和历史；已配置课程来源精确返回 |
-| `/archives`、`/works` | 本人档案、课程记录、作品版本与导师反馈 |
-| `/archives/reflection` | 独立反思；沿用原日配额 |
-| `/archives/rewards` | 积分、礼品、兑换记录、徽章的**本地演示** |
-| `/dashboard/ai` | 灵境小智单次提问与真实来源，取决于后台配置 |
-| `/notifications`、`/feedback`、`/change-password` | 通知、帮助反馈、改密；顶栏及个人菜单可达 |
+| `/explore` | 已分配课程选择；只有一门也保留选择。旧 `/dashboard`、`/courses` 兼容 |
+| `/me` | 账号身份、演示积分徽章、礼品兑换/记录、改密、通知、反馈、退出 |
+| `/courses/:courseId` | 直接进入真实课时地图，含本课待办、资源、安排、任务/作品入口 |
+| `/courses/:courseId/lessons/:lessonId/learn` | 原学习闭环、报告反思、独立作品及评审状态 |
+| `/courses/:courseId/lab`、`/glider` 后缀 | 当前课程自由实验、试飞历史；可携课时与卡片来源返回 |
+| `/courses/:courseId/archives`、`/works`、`/reflection` 后缀 | 当前课程本人档案、作品版本和反思 |
+| `/courses/:courseId/assistant` | 过渡期现有整页提问；能力依实际后台配置 |
+| `/notifications`、`/feedback`、`/change-password` | 平台服务页；强制改密优先 |
 
-旧 `/dashboard`、`/courses`、`/tasks`、`/tasks/:id`、`/courses/:id/learn` 与通知链接保留。强制改密先于任何学习。未知地址与无权页面有恢复入口，隐藏菜单不替代服务器授权。
+旧对象链接读取真实归属后定位课程；没有来源的全局入口先选课程。后台角色原工作台和同名业务路由保留。学生不能自行报名、退课或改变主题绑定，后端才是权限边界。
 
-## 启动
+## 新版隔离预览
 
-有已配置的本地环境时，在仓库根目录分别开两个终端：
+在仓库根目录运行：
 
 ```powershell
-npm run server
-npm run dev
+npm run build
+npm run preview:v2
 ```
 
-打开 `http://127.0.0.1:5173`。API 默认 `127.0.0.1:3000`。已有数据库只启动，**不要执行 reset**。未配置或首次克隆请按 [最小启动、空库与构建预览](docs/HANDOFF.md#启动与环境) 设置自己的本地变量、安装锁定依赖和初始化空库。
+打开 **http://127.0.0.1:4174**，测试账号 `student_wang / student123`。创建全新临时库和随机子进程密钥，使用合成课程 9001/9002；不覆盖已有库、`.env` 或用户配置。API 使用 3144。**4173 是其他应用，不停止它。** Node 依赖和参考 Python 环境需已安装，详见新版交付说明。当前 `.venv/Scripts/python.exe` 用于 reference；未验证 Linux novaPhy 或全新机器联网安装。
 
-本轮实测 Windows Node 26.2.0、npm 11.13.0、Python 3.12.10 / NumPy 2.5.3 / Matplotlib 3.11.2 / Pillow 12.3.0。验证复用了已有依赖，在全新临时目录初始化隔离库；**没有验证全新机器联网安装**。自动化使用 Windows Edge，仿真使用 reference，未验证 Linux novaPhy。
+已有本地业务环境仍分别用 `npm run server`、`npm run dev`，默认 API 3000、前端 5173。已有库只启动，不执行 reset 或为预览覆盖变量。
 
-## 复验
+## 本步复验
 
 ```powershell
 npm run lint
 npm test
 npm run build
-npm run test:acceptance
+npm run test:backend
+npm run test:e2e:v2
+node --test tests/round10.browser.test.js
+node --test tests/round10-rewards.browser.test.js
 ```
 
-`test:acceptance` 顺序运行选定的权限、第三/五至十二轮套件，包含完整奖励业务、120 组原生事务、真实凭证刷新、本地 HTTPS provider 和两次不同用途的参考试飞。它启动自己的临时数据库与端口，不使用现有业务库。需要已安装 Edge、参考 Python 环境；回放测试另需系统 ffmpeg，第十一轮本地 HTTPS 需要 Git 附带的 OpenSSL（可通过 `ROUND11_OPENSSL` 指定）。具体脚本、端口、场景统计、限制见 [本轮验收](docs/round-12.md)。
+实际结果及日志在新版验证记录。新增课程范围 API 不改变学习、评分和仿真算法；无数据库迁移或依赖升级。奖励仍为账号本地演示，未实现真实发放、发货或跨设备同步。
 
-单模块脚本为 `test:e2e:access`、`test:e2e:round2` 至 `test:e2e:round12`，另保留最早 `test:e2e`。历史套件不是每轮都全跑；历史完整验收与当前补修的指定四套件结果分别记录，见第十二轮文档及补修日志。
+正式课程 ID、教材、章节和实验绑定待确认，9001/9002 明确标注测试。未绑定课程的旧试飞和作品保留旧本人 API，不自动分配到第一门课；本步没有新增未归属历史浏览页。角色头像、机器人浮窗、内部页面精修、完整文案交接、维护端内容表单均未进入实施。
 
-## 数据与交接边界
+[当前设计规范](DESIGN.md) · [源码来源](SOURCE.md) · [新版边界说明](docs/redesign-v2/step-01/README.md)
 
-- 登录/学习/作品/报告/档案/反思/通知/反馈/助手/试飞复用真实接口，报告和作品不合并，原完成与评分规则不变。
-- 正式教学内容、章节和实验绑定未提供。`courseGroups={}`、`EXPERIMENT_ASSOCIATIONS=[]`；只有 DEV 且 `VITE_STUDENT_TEST_CONFIG=1` 才启用明确的合成配置。生产产物不开测试预览页。
-- 奖励仍为账号隔离的 IndexedDB 演示，初始 120；没有真实积分、库存、跨设备同步或发货。旧数据一次迁移，重置不重新导入，旧标签需刷新，代码回退不等于数据回退。
-- 小智本轮只验收本地测试 provider 链路，未验收外部付费服务或答案质量；没有后台聊天历史、流式输出或取消执行。
-- 历史 MP4 可播放；新试飞是数据与科学图表，trace 三维渲染器未实现。原后端本人历史作品的课程有效性缺口仍待修，前端过滤不是后端授权修复。
+## 历史交付
 
-[设计规范与素材出处](DESIGN.md) · [原源码来源](SOURCE.md) · [完整边界](docs/BOUNDARIES.md)。素材母版、原创 SVG 和派生清单保留；不把原项目代码统称原创。
+[旧版总验收](docs/acceptance/index.html) · [十二轮交接](docs/HANDOFF.md) · [权限恢复补修](docs/round-12/patch/README.md)
 
-## 历史轮次
+[第一轮](docs/round-01.md) · [第二轮](docs/round-02.md) · [第三轮](docs/round-03.md) · [第四轮](docs/round-04.md) · [第五轮](docs/round-05.md) · [第六轮](docs/round-06.md) · [第七轮](docs/round-07.md) · [第八轮](docs/round-08.md) · [第九轮](docs/round-09.md) · [第十轮](docs/round-10.md) · [第十一轮](docs/round-11.md) · [第十二轮](docs/round-12.md)
 
-[第一轮](docs/round-01.md) · [第二轮](docs/round-02.md) · [第三轮](docs/round-03.md) · [第四轮](docs/round-04.md) · [第五轮](docs/round-05.md) · [第六轮](docs/round-06.md) · [第七轮](docs/round-07.md) · [第八轮](docs/round-08.md) · [第九轮](docs/round-09.md) · [第十轮](docs/round-10.md) · [第十一轮](docs/round-11.md)
-
-历史文档记载当时状态，不覆盖当前交接结论。唯一提交/推送目标为 `shrrrrrrrr/web-frontend-test`；原仓库只读。当前范围交付后停止，等待用户最终验收，不自动增加新阶段。
+历史测试脚本保留；旧导航断言以其历史轮次为背景，不代表本步全部重新运行。第十轮跨标签脚本仅适配反思路径及退出入口，业务断言保留并实际复验。

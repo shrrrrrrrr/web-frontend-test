@@ -1,4 +1,4 @@
-// 本地启动包装；原后端源码保持不变，仅绑定回环地址。
+// 本地启动包装；沿用原后端业务并包含新版课程空间适配，仅绑定回环地址。
 const path = require('node:path');
 const fs = require('node:fs');
 const root = path.resolve(__dirname, '..');

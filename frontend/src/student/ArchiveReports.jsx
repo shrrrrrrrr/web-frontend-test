@@ -1,7 +1,8 @@
+import { useCourseApis } from './useCourseApis';
 import { useCallback, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from './space/SpaceLink';
+
 import { Alert, Empty, Select } from 'antd';
-import { courseAPI, learningAPI } from '../api';
 import { formatBeijingTime } from '../utils/date';
 import useRemote from './useRemote';
 import AsyncPageState from '../components/common/AsyncPageState';
@@ -9,12 +10,13 @@ import { reportSummary, scoreText } from './archiveModel';
 import { PixelTag } from './visual/PixelUI';
 
 function LessonReport({ courseId, lessonId }) {
+  const { courseAPI, learningAPI } = useCourseApis();
   const fetcher = useCallback(async () => {
     const result = await learningAPI.lesson(lessonId);
     if (String(result.course?.id) !== String(courseId)) throw new Error('课时归属发生变化，请重新选择。');
     await courseAPI.detail(courseId);
     return result;
-  }, [courseId, lessonId]);
+  }, [courseId, lessonId,courseAPI,learningAPI]);
   const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true });
   const summary = data ? reportSummary(data) : null;
   const report = summary?.report;
@@ -30,8 +32,9 @@ function LessonReport({ courseId, lessonId }) {
 }
 
 export default function ArchiveReports({ courseId }) {
+  const { courseAPI } = useCourseApis();
   const [lessonId, setLessonId] = useState();
-  const fetcher = useCallback(() => courseAPI.detail(courseId), [courseId]);
+  const fetcher = useCallback(() => courseAPI.detail(courseId), [courseId,courseAPI]);
   const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true });
   return <AsyncPageState loading={loading} error={error} onRetry={retry}>{data && <>
     <label className="archive-select-label" htmlFor="archive-lesson">选择课时</label>

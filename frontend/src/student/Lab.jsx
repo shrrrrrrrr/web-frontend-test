@@ -1,4 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import Link from './space/SpaceLink';
 import { Alert } from 'antd';
 import PageContainer from '../components/common/PageContainer';
 import { experiments } from './config';
@@ -11,7 +12,7 @@ const steps = [['调整参数', '先选一个想验证的条件'], ['开始试�
 export default function Lab() {
   const location = useLocation();
   return <PageContainer><div className="study-workspace lab-workspace">
-    <StudyHeader eyebrow={<><PixelIcon name="lab" size={20} />OBSERVATORY / LAB</>} title="实验室" description="先提出想法，再用实验验证。这里可以自由尝试，无需先选择课程。" />
+    <StudyHeader eyebrow={<><PixelIcon name="lab" size={20} />OBSERVATORY / LAB</>} title="实验室" description="先提出想法，再用实验验证。在当前课程的实验室自由尝试，不要求先进入课时。" />
     {location.state?.experimentNotice && <Alert type="warning" showIcon title={location.state.experimentNotice} />}
     <ol className="lab-cycle">{steps.map(([title, description], index) => <li key={title}><span className="lab-cycle-number">0{index + 1}</span><div><strong>{title}</strong><p>{description}</p></div>{index < 3 && <PixelIcon name="continue" size={20} />}</li>)}</ol>
     <div className="lab-catalog-heading"><h3>选择一个实验</h3><span>{experiments.length} 项可用实验</span></div>

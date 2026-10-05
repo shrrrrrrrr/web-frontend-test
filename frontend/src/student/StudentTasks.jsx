@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from './space/SpaceLink';
 import { Select } from 'antd';
-import { taskAPI, courseAPI } from '../api';
+import {useCourseApis} from './useCourseApis';
 import { useAuth } from '../store/AuthContext';
 import { ServicePage, ReadState } from '../components/ServiceUI';
 import { PixelPanel, PixelTag, PixelProgress } from './visual/PixelUI';
@@ -22,12 +22,13 @@ export default function StudentTasks() {
   </ServicePage>;
 }
 function TaskResults({ status }) {
+ const {taskAPI,courseAPI}=useCourseApis();
   const read = useCallback(async () => {
     const payload = await taskAPI.list(status ? { status } : {});
     const current = await courseAPI.list();
     const allowed = new Set((current.courses || []).map(c => String(c.id)));
     return (payload.tasks || []).filter(t => allowed.has(String(t.course_id)));
-  }, [status]);
+  }, [status,taskAPI,courseAPI]);
   const state = useCourseResource(read);
   const groups = taskGroups(state.data || []);
   return <ReadState {...state} empty={!groups.length} object="课后任务" emptyText={status ? '这个学习状态下暂无任务，可切换筛选或返回探索地图。' : '暂无课后任务。没有作品任务的课时，也可以从课程地图继续学习。'}>
