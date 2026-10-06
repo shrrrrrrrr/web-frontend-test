@@ -1,0 +1,330 @@
+{
+  "processing": "copy + nearest-neighbor resize + lossless WebP only; alpha preserved",
+  "assets": [
+    {
+      "name": "avatar-navigator",
+      "master": "frontend/public/assets/redesign-v2/masters/avatar-navigator.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "8a0d53f51ac2b6bfadf0a2f65e718937fa798da00f0534a6c2edd85cb0c58f25",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-navigator-96.webp",
+          "width": 96,
+          "bytes": 17098,
+          "sha256": "30f89fe52aeed114ede0a0d1a5aaf395eb054b9b6486c06a62c570c9d5a2fd5d"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-navigator-192.webp",
+          "width": 192,
+          "bytes": 54514,
+          "sha256": "cef5e8d58c1a5b989827da7d987a0aada783aa7454422d36b461d816f3846efd"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-navigator-384.webp",
+          "width": 384,
+          "bytes": 165168,
+          "sha256": "65a342666aa23304a0f6872cc0f6c35b1fdce49a33e47d86913a267ed14cf525"
+        }
+      ]
+    },
+    {
+      "name": "avatar-pathfinder",
+      "master": "frontend/public/assets/redesign-v2/masters/avatar-pathfinder.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "bbae6c939e1c2f19e479d42ec0e8306dcdae1dce736034cef1867c7b56924ff2",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-pathfinder-96.webp",
+          "width": 96,
+          "bytes": 14452,
+          "sha256": "cd0ca2d901876407a8c9bc16d3550f35f7560f31300602a49f659cefed22c40e"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-pathfinder-192.webp",
+          "width": 192,
+          "bytes": 43290,
+          "sha256": "72c4f8f1f2f2ffbd5dc60a901ea30f65783a610c240c387046b13c4b370da59d"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-pathfinder-384.webp",
+          "width": 384,
+          "bytes": 129034,
+          "sha256": "443b3ba3983cccd0177cbdeebf9281e6408b05957b38699588f385be55f132d3"
+        }
+      ]
+    },
+    {
+      "name": "avatar-maker",
+      "master": "frontend/public/assets/redesign-v2/masters/avatar-maker.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "b9878cef05d9b4e55619c8f262f18b9a43cfb437a308b0ba6feff3a968de9476",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-maker-96.webp",
+          "width": 96,
+          "bytes": 14580,
+          "sha256": "16976039939e95b24d869754fae6bc7c612fc0bf8123858efa480abc65ee36c8"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-maker-192.webp",
+          "width": 192,
+          "bytes": 44460,
+          "sha256": "9f0e56c44309269c4116a73317af3ed715b73551669208f13dad616748022770"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-maker-384.webp",
+          "width": 384,
+          "bytes": 135158,
+          "sha256": "86bfb781beb759e61ad11dec974ceb27bfaf68bb7c5bf33364d2af268f222a14"
+        }
+      ]
+    },
+    {
+      "name": "avatar-decoder",
+      "master": "frontend/public/assets/redesign-v2/masters/avatar-decoder.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "3b0ae31140819a49997a31eeb7a87a813207a76c4105dc49fcc6d9a7d0a07465",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-decoder-96.webp",
+          "width": 96,
+          "bytes": 13644,
+          "sha256": "57575505ecfd257f542a84ce017ce6ba49a6c4833dda4429f3406f9946a86e5b"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-decoder-192.webp",
+          "width": 192,
+          "bytes": 43064,
+          "sha256": "bf15cf13d7cec3d6cf2136c45a77111e079dce0b577b7210fe25ab87cf34deb2"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-decoder-384.webp",
+          "width": 384,
+          "bytes": 129010,
+          "sha256": "855a2e3fb24d7d3926bc66e65e71f906b4a3ecbe69a3bc6364394703adaa2c2a"
+        }
+      ]
+    },
+    {
+      "name": "avatar-collaborator",
+      "master": "frontend/public/assets/redesign-v2/masters/avatar-collaborator.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "9765832d2fc34bd80c2fc6aae044ab76f3bf72bc69d8fd253d84c2863f853e07",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-collaborator-96.webp",
+          "width": 96,
+          "bytes": 14284,
+          "sha256": "fb3aa7c35763b2dbc5a5a556eee00e8a6b83489d3252a478e2c36b52a5cb573f"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-collaborator-192.webp",
+          "width": 192,
+          "bytes": 47378,
+          "sha256": "0a925793d0c9b42d8d9337898748e276700df6b2f31e59a10993871c31c1298d"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-collaborator-384.webp",
+          "width": 384,
+          "bytes": 139654,
+          "sha256": "4780ae32b2b617e52095fc0b01f4134107ff615cf5512766cdfc0197325c65bc"
+        }
+      ]
+    },
+    {
+      "name": "avatar-guardian",
+      "master": "frontend/public/assets/redesign-v2/masters/avatar-guardian.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "983b8508b8c72cf886612d6f3c006982c25cb512520f9fbe295bf46f6266f3b7",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-guardian-96.webp",
+          "width": 96,
+          "bytes": 13668,
+          "sha256": "27ee0e5c5aa333798b1cf04309c8dea65b34784792d4cd354eab3ff82af21e1f"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-guardian-192.webp",
+          "width": 192,
+          "bytes": 42328,
+          "sha256": "98c4b20abca73d361a1c32407472b72b9ce5adbadca0eb61bfb16df35cca6cb1"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/avatar-guardian-384.webp",
+          "width": 384,
+          "bytes": 126286,
+          "sha256": "426161df593b922100240e3dffa7acb262bb7cffaac568848f61e82b4eb95341"
+        }
+      ]
+    },
+    {
+      "name": "robot",
+      "master": "frontend/public/assets/redesign-v2/masters/robot.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "a78dce7785fbfbb42516a2125ca6b537010f64568b319fae659c34c8fa33ccdf",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/robot-96.webp",
+          "width": 96,
+          "bytes": 6320,
+          "sha256": "bfbafd1dfdf42da2f7a5209d03736c82278034960c6271d4ee1de5c66ba107bb"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/robot-192.webp",
+          "width": 192,
+          "bytes": 18788,
+          "sha256": "0003aba17d78123839781f03bb49a7e256d2eb64820f4afdbc7862bf094d2918"
+        }
+      ]
+    },
+    {
+      "name": "bridge",
+      "master": "frontend/public/assets/redesign-v2/masters/bridge.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "sha256": "ec11884db90d78564e5cad069aa9ed093c0de59484ebf56980e8a02b947ce344",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/bridge-480.webp",
+          "width": 480,
+          "bytes": 142944,
+          "sha256": "777e3b62a060e827aeda4f92376a6de75a0f6d4f8f4c09d1175807ee3468d6f5"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/bridge-960.webp",
+          "width": 960,
+          "bytes": 444700,
+          "sha256": "bdd1e584a1868a39a99dbd1c3374b5399dbd0bcdb24571efbe608d3ef7301c44"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/bridge-1536.webp",
+          "width": 1536,
+          "bytes": 976460,
+          "sha256": "12a623e16bff93cc0d3ea530089b944eb109e3d8f1669b53701d0a37d6939e4d"
+        }
+      ]
+    },
+    {
+      "name": "observatory",
+      "master": "frontend/public/assets/redesign-v2/masters/observatory.png",
+      "size": [
+        1619,
+        971
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "sha256": "044e748cfa5275ce58b13acc1d2e643d465c1772c4d1ac4298df241e16efa9d7",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/observatory-480.webp",
+          "width": 480,
+          "bytes": 157764,
+          "sha256": "84d258648e21675df66cd046d01833b1d25cb97a96d2d622635f7636c0d2a543"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/observatory-960.webp",
+          "width": 960,
+          "bytes": 494564,
+          "sha256": "975caf7f7a6ddb1d7c17e94819a3d2c0212ea5fcdef0c23c41f2040ca78e3d7d"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/observatory-1536.webp",
+          "width": 1536,
+          "bytes": 1074032,
+          "sha256": "25fb24ff1636c837c31e7455dd1c985a18a0785b1e7ec5a18f2273a0947765ce"
+        }
+      ]
+    },
+    {
+      "name": "planet-base",
+      "master": "frontend/public/assets/redesign-v2/masters/planet-base.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "sha256": "aeaba45a02b495c136004bf6130805439f221e89009a50c5df4d2ea566499638",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/web/planet-base-480.webp",
+          "width": 480,
+          "bytes": 161980,
+          "sha256": "80e5879194546abc95ba4a61b45d96d6f2684c8a59b1e91c2bd8539f8e8f29fb"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/planet-base-960.webp",
+          "width": 960,
+          "bytes": 494318,
+          "sha256": "26c289c3a8dcc9ac5b630606e662e2194a5945afbc90f7846432460caf320e9d"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/web/planet-base-1536.webp",
+          "width": 1536,
+          "bytes": 1074382,
+          "sha256": "7f114b1840b1c9ad3dc37104e997708af672ff7b87e1ade5eafe805de2cc92df"
+        }
+      ]
+    }
+  ]
+}

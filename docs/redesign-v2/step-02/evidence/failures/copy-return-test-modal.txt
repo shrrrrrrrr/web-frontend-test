@@ -1,0 +1,92 @@
+▶ 第二步：人工 HTML 导出、特殊字符、双来源冲突与真实删除显示
+  ✔ 本地审阅页保存 HTML 与 JSON 保留 ID、显隐和特殊字符 (2420.5742ms)
+  ✔ 修改 JSX 后提取 HTML 报告冲突，不自动覆盖 (311.6716ms)
+  ✖ 真实课程页面可选文案真正删除，返回标签改稿不改变实验入口与跳转 (35630.7804ms)
+✖ 第二步：人工 HTML 导出、特殊字符、双来源冲突与真实删除显示 (43890.8916ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 44698.0818
+
+✖ failing tests:
+
+test at tests\redesign-v2.step02-copy.browser.test.js:29:11
+✖ 真实课程页面可选文案真正删除，返回标签改稿不改变实验入口与跳转 (35630.7804ms)
+  locator.click: Timeout 30000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '返回实验室', exact: true })[22m
+  [2m    - locator resolved to <button type="button" aria-label="返回实验室" class="ant-btn css-dev-only-do-not-override-viwxw0 css-var-_r_s_ ant-btn-default ant-btn-color-default ant-btn-variant-outlined pixel-button ">…</button>[22m
+  [2m  - attempting click action[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  2 × retrying click action[22m
+  [2m      - waiting 100ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-container">…</div> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  13 × retrying click action[22m
+  [2m       - waiting 500ms[22m
+  [2m       - waiting for element to be visible, enabled and stable[22m
+  [2m       - element is visible, enabled and stable[22m
+  [2m       - scrolling into view if needed[22m
+  [2m       - done scrolling[22m
+  [2m       - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m     - retrying click action[22m
+  [2m       - waiting 500ms[22m
+  [2m       - waiting for element to be visible, enabled and stable[22m
+  [2m       - element is visible, enabled and stable[22m
+  [2m       - scrolling into view if needed[22m
+  [2m       - done scrolling[22m
+  [2m       - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m     - retrying click action[22m
+  [2m       - waiting 500ms[22m
+  [2m       - waiting for element to be visible, enabled and stable[22m
+  [2m       - element is visible, enabled and stable[22m
+  [2m       - scrolling into view if needed[22m
+  [2m       - done scrolling[22m
+  [2m       - <div class="ant-modal-container">…</div> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m     - retrying click action[22m
+  [2m       - waiting 500ms[22m
+  [2m       - waiting for element to be visible, enabled and stable[22m
+  [2m       - element is visible, enabled and stable[22m
+  [2m       - scrolling into view if needed[22m
+  [2m       - done scrolling[22m
+  [2m       - <div class="ant-modal-container">…</div> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  2 × retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <div class="ant-modal-container">…</div> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02-copy.browser.test.js:35:157)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02-copy.browser.test.js:29:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '返回实验室', exact: true })", '    - locator resolved to <button type="button" aria-label="返回实验室" class="ant-btn css-dev-only-do-not-override-viwxw0 css-var-_r_s_ ant-btn-default ant-btn-color-default ant-btn-variant-outlined pixel-button ">…</button>', '  - attempting click action', '    2 × waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '    - waiting 20ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  2 × retrying click action', '      - waiting 100ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-container">…</div> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  13 × retrying click action', '       - waiting 500ms', '       - waiting for element to be visible, enabled and stable', '       - element is visible, enabled and stable', '       - scrolling into view if needed', '       - done scrolling', '       - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events', '     - retrying click action', '       - waiting 500ms', '       - waiting for element to be visible, enabled and stable', '       - element is visible, enabled and stable', '       - scrolling into view if needed', '       - done scrolling', '       - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events', '     - retrying click action', '       - waiting 500ms', '       - waiting for element to be visible, enabled and stable', '       - element is visible, enabled and stable', '       - scrolling into view if needed', '       - done scrolling', '       - <div class="ant-modal-container">…</div> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events', '     - retrying click action', '       - waiting 500ms', '       - waiting for element to be visible, enabled and stable', '       - element is visible, enabled and stable', '       - scrolling into view if needed', '       - done scrolling', '       - <div class="ant-modal-container">…</div> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  2 × retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <img alt="" class="" width="96" height="96" src="/assets/redesign-v2/web/avatar-pathfinder-192.webp"/> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <div class="ant-modal-container">…</div> from <div class="ant-modal-root css-dev-only-do-not-override-viwxw0 student-pixel course-avatar-modal css-var-_r_s_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms' ]
+  }

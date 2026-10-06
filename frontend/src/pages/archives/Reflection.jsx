@@ -1,3 +1,5 @@
+import {copyText} from '../../content/copy';
+import CopyBlock from '../../content/CopyBlock';
 import { useCourseApis } from '../../student/useCourseApis';
 import { useEffect, useRef, useState } from 'react';
 import {useCourseNavigate as useNavigate} from '../../student/useCourseApis';
@@ -11,7 +13,7 @@ import { PixelButton } from '../../student/visual/PixelUI';
 import PixelIcon from '../../student/visual/PixelIcon';
 import '../../student/visual/pixel-archive.css';
 
-const errorText = (error) => error.response?.data?.error || '网络连接失败，请重试；本页文字仍然保留。';
+const errorText = (error) => error.response?.data?.error || copyText('system.reflection.001');
 export default function Reflection() {
   const { archiveAPI, courseAPI } = useCourseApis();
   const navigate = useNavigate();
@@ -31,7 +33,7 @@ export default function Reflection() {
     sequence.current += 1;
     form.setFieldsValue({ enrollment_id: undefined, lesson_id: undefined });
     setLessons({ loading: false, rows: [], error: '' });
-    setNotice('所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程。');
+    setNotice(copyText('system.reflection.002'));
   };
   const refreshScope = async () => {
     const request = ++scopeSequence.current;
@@ -64,7 +66,7 @@ export default function Reflection() {
         sequence.current += 1;
         form.setFieldsValue({ enrollment_id: undefined, lesson_id: undefined });
         setLessons({ loading: false, rows: [], error: '' });
-        setNotice('所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程。');
+        setNotice(copyText('system.reflection.003'));
       }
       scopeRef.current = scopeRef.current.filter((row) => allowed.has(String(row.course_id)));
       setScope((current) => ({ ...current, enrollments: scopeRef.current }));
@@ -95,10 +97,10 @@ export default function Reflection() {
     try {
       // 原反思提交只校验有效报名，展示端先核验发布状态，失败不发送提交。
       const confirmed = await refreshScope();
-      if (!confirmed) throw new Error('暂时无法核验课程，请重试。反思尚未提交，文字仍保留。');
+      if (!confirmed) throw new Error(copyText('system.reflection.004'));
       const enrollment = confirmed.enrollments.find((row) => String(row.enrollment_id) === String(values.enrollment_id));
-      if (!enrollment) throw new Error('课程关联已失效，请重新选择后提交。');
-      if (String(form.getFieldValue('enrollment_id')) !== String(values.enrollment_id)) throw new Error('课程选择发生变化，请核对后再次提交。');
+      if (!enrollment) throw new Error(copyText('system.reflection.005'));
+      if (String(form.getFieldValue('enrollment_id')) !== String(values.enrollment_id)) throw new Error(copyText('system.reflection.006'));
       await archiveAPI.submitReflection(values);
       if (alive.current) setDone(true);
     } catch (error) {
@@ -107,22 +109,22 @@ export default function Reflection() {
     } finally { if (alive.current) setSubmitting(false); }
   };
   return <PageContainer><div className="study-workspace archive-workspace">
-    <StudyHeader eyebrow={<><PixelIcon name="book" /> REFLECTION / 反思日志</>} title="把这次学习，留给下一次自己" description="记下困难、尝试与发现，为下一步留下线索。"><PixelButton icon={<PixelIcon name="back" />} onClick={() => navigate('/archives')}>返回成长档案</PixelButton></StudyHeader>
-    {done ? <StudySection number="✓" title="反思已提交"><Result status="success" title="反思日志提交成功" subTitle="已保存到你的服务端成长记录，可以返回档案查看。" extra={<PixelButton type="primary" onClick={() => navigate('/archives')}>查看成长档案</PixelButton>} /></StudySection> : <div className="archive-reflection-layout">
-      <StudySection number="R" title="今天的反思" description="课程必选，课时可选；请用自己的话记录。">
+    <StudyHeader eyebrow={<><PixelIcon name="book" />{copyText('system.reflection.008')}</>} title={copyText('system.reflection.009')} description={copyText('system.reflection.010')}><PixelButton icon={<PixelIcon name="back" />} onClick={() => navigate('/archives')}>{copyText('system.reflection.011')}</PixelButton></StudyHeader>
+    {done ? <StudySection number="✓" title={copyText('system.reflection.012')}><Result status="success" title={copyText('system.reflection.013')} subTitle="已保存到你的服务端成长记录，可以返回档案查看。" extra={<PixelButton type="primary" onClick={() => navigate('/archives')}>{copyText('system.reflection.014')}</PixelButton>} /></StudySection> : <div className="archive-reflection-layout">
+      <StudySection number="R" title={copyText('system.reflection.015')} description={copyText('system.reflection.016')}>
         {notice && <Alert type="warning" showIcon title={notice} />}
-        {scope.error && <Alert type="warning" showIcon title="课程范围暂未确认" description={scope.error} action={<PixelButton onClick={refreshScope}>重试课程</PixelButton>} />}
-        {!scope.loading && !scope.error && !scope.enrollments.length && <Alert type="info" title="暂无可进入的课程" description="请联系老师确认课程安排。已填写文字保留在当前页面。" />}
+        {scope.error && <Alert type="warning" showIcon title={copyText('system.reflection.017')} description={scope.error} action={<PixelButton onClick={refreshScope}>{copyText('system.reflection.018')}</PixelButton>} />}
+        {!scope.loading && !scope.error && !scope.enrollments.length && <Alert type="info" title={copyText('system.reflection.019')} description={copyText('system.reflection.020')} />}
         <Form form={form} layout="vertical" onFinish={submit} disabled={submitting} onFinishFailed={({ errorFields }) => { if (errorFields[0]) form.scrollToField(errorFields[0].name, { focus: true, block: 'center' }); }}>
-          <Form.Item name="enrollment_id" label="本次课程" rules={[{ required: true, message: '请选择课程' }]}><Select placeholder="选择课程" loading={scope.loading} disabled={submitting || scope.loading || Boolean(scope.error)} onChange={selectCourse} options={scope.enrollments.map((row) => ({ value: row.enrollment_id, label: `${row.course_title} · #${row.course_id}` }))} /></Form.Item>
-          <Form.Item name="lesson_id" label="本次课时（可选）"><Select allowClear placeholder="选择课时（可选）" loading={lessons.loading} disabled={submitting || lessons.loading || Boolean(lessons.error)} options={lessons.rows.map((lesson) => ({ value: lesson.id, label: lesson.title }))} /></Form.Item>
-          {lessons.error && <Alert type="warning" showIcon title="课时读取失败" description={lessons.error} action={<PixelButton onClick={() => selectCourse(form.getFieldValue('enrollment_id'))}>重试课时</PixelButton>} />}
-          {[['difficulty', '遇到的困难', '今天学习中最难理解或完成的部分'], ['solution', '解决方式', '你尝试了什么，哪些方法有用'], ['improvement', '改进收获', '这次有什么收获，下次准备怎样调整'], ['new_question', '新问题', '还想继续探究的问题']].map(([name, label, placeholder]) => <Form.Item key={name} name={name} label={label} rules={name === 'difficulty' ? [{ required: true, whitespace: true, message: '请填写遇到的困难' }] : []}><Input.TextArea rows={3} placeholder={placeholder} /></Form.Item>)}
-          <div className="study-submit-result" aria-live="polite">{submitError && <Alert type="error" showIcon title="反思未能提交" description={submitError} />}</div>
-          <div className="study-actions"><PixelButton aria-label="提交反思日志" type="primary" htmlType="submit" loading={submitting} disabled={scope.loading || Boolean(scope.error) || !scope.enrollments.length}>提交反思日志</PixelButton><p>当前文字仅在本页保留，离开或刷新页面会丢失。提交成功后才保存到服务端。</p></div>
+          <Form.Item name="enrollment_id" label={copyText('system.reflection.021')} rules={[{ required: true, message: copyText('system.reflection.022') }]}><Select placeholder={copyText('system.reflection.023')} loading={scope.loading} disabled={submitting || scope.loading || Boolean(scope.error)} onChange={selectCourse} options={scope.enrollments.map((row) => ({ value: row.enrollment_id, label: `${row.course_title} · #${row.course_id}` }))} /></Form.Item>
+          <Form.Item name="lesson_id" label={copyText('system.reflection.024')}><Select allowClear placeholder={copyText('system.reflection.025')} loading={lessons.loading} disabled={submitting || lessons.loading || Boolean(lessons.error)} options={lessons.rows.map((lesson) => ({ value: lesson.id, label: lesson.title }))} /></Form.Item>
+          {lessons.error && <Alert type="warning" showIcon title={copyText('system.reflection.026')} description={lessons.error} action={<PixelButton onClick={() => selectCourse(form.getFieldValue('enrollment_id'))}>{copyText('system.reflection.027')}</PixelButton>} />}
+          {[['difficulty', copyText('system.reflection.028'), copyText('system.reflection.029')], ['solution', copyText('system.reflection.030'), copyText('system.reflection.031')], ['improvement', copyText('system.reflection.032'), copyText('system.reflection.033')], ['new_question', copyText('system.reflection.034'), copyText('system.reflection.035')]].map(([name, label, placeholder]) => <Form.Item key={name} name={name} label={label} rules={name === 'difficulty' ? [{ required: true, whitespace: true, message: copyText('system.reflection.036') }] : []}><Input.TextArea rows={3} placeholder={placeholder} /></Form.Item>)}
+          <div className="study-submit-result" aria-live="polite">{submitError && <Alert type="error" showIcon title={copyText('system.reflection.037')} description={submitError} />}</div>
+          <div className="study-actions"><PixelButton aria-label={copyText('system.reflection.038')} type="primary" htmlType="submit" loading={submitting} disabled={scope.loading || Boolean(scope.error) || !scope.enrollments.length}>{copyText('system.reflection.039')}</PixelButton><CopyBlock id="system.reflection.040" as="p" /></div>
         </Form>
       </StudySection>
-      <aside className="study-context"><h3>给自己一点思考时间</h3><p>困难可以很具体：哪个现象和预期不同？哪一步还没有找到证据？</p><p>反思不需要标准答案，记录你的实际尝试和下一步计划。</p><h3>提交说明</h3><p>独立反思日志每天可提交一次，以北京时间为准。当天学习报告中提交的反思也可能占用这次额度；是否可提交由服务器判断。</p><p>课程报告仍从课时学习页面提交。这里不会代替或完成报告任务。</p></aside>
+      <aside className="study-context"><h3>{copyText('system.reflection.041')}</h3><CopyBlock id="system.reflection.042" as="p" /><CopyBlock id="system.reflection.043" as="p" /><h3>{copyText('system.reflection.044')}</h3><CopyBlock id="system.reflection.045" as="p" /><CopyBlock id="system.reflection.046" as="p" /></aside>
     </div>}
   </div></PageContainer>;
 }

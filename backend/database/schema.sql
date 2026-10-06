@@ -714,3 +714,12 @@ CREATE TABLE IF NOT EXISTS ai_usage (
   FOREIGN KEY(course_id) REFERENCES courses(id) ON DELETE SET NULL
 );
 CREATE INDEX IF NOT EXISTS idx_ai_usage_day_user ON ai_usage(request_day, user_id);
+
+-- 016: 头像为本人当前课程偏好，不参与学习判定。
+CREATE TABLE IF NOT EXISTS course_avatar_preferences (
+  student_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  course_id INTEGER NOT NULL REFERENCES courses(id) ON DELETE CASCADE,
+  avatar_id TEXT NOT NULL CHECK (avatar_id IN ('navigator','pathfinder','maker','decoder','collaborator','guardian')),
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (student_id, course_id)
+);

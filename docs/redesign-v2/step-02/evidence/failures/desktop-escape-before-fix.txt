@@ -1,0 +1,134 @@
+▶ 第二步：头像、课程浮窗、真实接口与响应式页面
+  ✔ 头像未选中、六人真实保存、重新登录、账号与课程隔离 (3195.77ms)
+  ✔ 头像写失败与写成功回读失败分开，不自动重复写入 (1359.4106ms)
+  ✔ 同课程切页保留草稿、关窗继续请求、单次问答与不重复发送 (1239.5772ms)
+  ✔ 服务错误保留原问题和新草稿，资料变更清旧引用 (1268.8089ms)
+  ✔ 中文输入法 Enter 不发送，Shift Enter 换行；真实 JWT 轮换保输入 (160.7643ms)
+  ✔ 旧消息滚动不抢位置，最新回复可定位 (518.2038ms)
+  ✔ 课程引用只生成当前课程站内动作，不执行回答 HTML (419.8722ms)
+  ✔ 两课切换清会话，迟到旧响应不进入新课；平台不出现机器人 (667.6645ms)
+  ✔ 真实课程撤回清会话，恢复重新检查不恢复旧回答 (727.7984ms)
+  ✔ 未启用和目录错误展示真实状态，恢复后可提问 (62623.3712ms)
+  ✔ 旧助手链接 replace 打开一次，不回到中转页；后台入口保留 (2222.9091ms)
+FAIL 五尺寸课程页面、窗口遮罩、焦点、互斥和键盘高度 Expected values to be strictly equal:
+
+true !== false
+ PAGE http://127.0.0.1:5199/courses/9001/reflection 跳到页面内容
+返回课程选择
+星海远航 · 视觉测试课程
+课程 #9001
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航 · 视觉测试课程
+南容
+120
+演示
+王小明
+返回课程地图
+全部课程
+REFLECTION / 反思日志
+把这次学习，留给下一次自己
+
+记下困难、尝试与发现，为下一步留下线索。
+
+返回成长档案
+R
+今天的反思
+
+课程必选，课时可选；请用自己的话记录。
+
+本次课程
+星海远航 · 视觉测试课程 · #9001
+本次课时（可选）
+选择课时（可选）
+遇到的困难
+解决方式
+改进收获
+新问题
+提交反思日志
+
+当前文字仅在本页保留，离开或刷新页面会丢失。提交成功后才保存到服务端。
+
+给自己一点思考时间
+
+困难可以很具体：哪个现象和预期不同？哪一步还没有找到证据？
+
+反思不需要标准答案，记录你的实际尝试和下一步计划。
+
+提交说明
+
+独立反思日志每天可提交一次，以北京时间为准。当天学习报告中提交的反思也可能占用这次额度；是否可提交由服务器判断。
+
+课程报告仍从课时学习页面提交。这里不会代替或完成报告任务。
+
+灵境小智
+当前课程 · 临时问答
+×
+星海远航 · 视觉测试课程
+从一个具体问题开始
+
+说说你正在做什么、遇到了什么困难，以及已经尝试的方法。
+
+我想问
+0/ 1000 字 · Shift + Enter 换行
+发送问题
+
+每次只发送本次问题。记录仅保留在本次课程访问中；离开课程后清除。
+  ✖ 五尺寸课程页面、窗口遮罩、焦点、互斥和键盘高度 (4967.1702ms)
+✖ 第二步：头像、课程浮窗、真实接口与响应式页面 (82806.2275ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 11
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 83145.3189
+
+✖ failing tests:
+
+test at tests\redesign-v2.step02.browser.test.js:20:54
+✖ 五尺寸课程页面、窗口遮罩、焦点、互斥和键盘高度 (4967.1702ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02.browser.test.js:86:45
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02.browser.test.js:20:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02.browser.test.js:20:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02.browser.test.js:81:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\redesign-v2.step02.browser.test.js:17:1
+✖ 第二步：头像、课程浮窗、真实接口与响应式页面 (82806.2275ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02.browser.test.js:86:45
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02.browser.test.js:20:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02.browser.test.js:20:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02.browser.test.js:81:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

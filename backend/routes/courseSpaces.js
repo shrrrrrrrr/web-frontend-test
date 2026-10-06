@@ -6,7 +6,7 @@ router.use(requireAuth, requirePasswordChanged, requireRole('student'));
 router.use((req,res,next)=>{
   const id=req.params.courseId;
   const allowed = /^\/(?:courses(?:\/\d+(?:\/replays)?|\/(?:resources\/\d+\/download|replays\/\d+\/stream-url))?|tasks(?:\/\d+)?|works(?:\/(?:upload-options|pending-tasks|\d+(?:\/download)?))?|archives\/(?:generate|reflection)|learning\/(?:lessons\/\d+(?:\/(?:review-complete|report))?|cards\/\d+\/complete|exercises\/\d+\/submit)|glider\/(?:simulate|capabilities|simulations(?:\/\d+(?:\/(?:files\/[^/]+|stream-url|trace))?)?)|dashboard\/ai\/(?:courses|ask))\/?$/.test(req.path);
-  if(!allowed)return res.status(404).json({error:'课程空间不提供此入口'});
+  if(!allowed && req.path!=='/preferences/avatar')return res.status(404).json({error:'课程空间不提供此入口'});
   const denied=()=>res.status(404).json({error:'当前课程或对象已不可访问',code:'COURSE_SCOPE_DENIED'});
   if(!/^\d+$/.test(id)||!activeCourse(req.user.id,id))return denied();
   req.courseSpace=Number(id);
@@ -27,5 +27,6 @@ router.use((req,res,next)=>{
   };
   next();
 });
+router.use('/preferences',require('./coursePreferences'));
 for(const [url,module] of [['courses','courses'],['tasks','tasks'],['works','works'],['archives','archives'],['learning','learning'],['glider','gliders'],['dashboard','dashboard']])router.use('/'+url,require('./'+module));
 module.exports=router;

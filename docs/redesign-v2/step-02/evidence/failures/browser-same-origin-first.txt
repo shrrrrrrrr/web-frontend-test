@@ -1,0 +1,133 @@
+FAIL 头像未选中、六人真实保存、重新登录、账号与课程隔离 page.evaluate: TypeError: Failed to fetch
+    at eval (eval at evaluate (:311:30), <anonymous>:1:46)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44) PAGE http://127.0.0.1:5199/courses/9001 跳到页面内容
+返回课程选择
+星海远航 · 视觉测试课程
+课程 #9001
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航 · 视觉测试课程
+选择角色头像
+—
+演示
+王小明
+星海远航 · 视觉测试课程
+课程信息
+课程资源
+
+测试布局 · 章节与实验安排仅供验收
+
+下一步 · 修改作品（7）
+关卡地图
+6个课时
+课时学习进度
+23%
+01
+测试章节 A · 观察与记录
+01
+观察与提问
+尚未开始
+02
+当前学习
+详情
+记录实验条件
+学习进行中
+03
+✓
+比较设计方案
+学习已完成
+02
+测试章节 B · 实践与复盘
+04
+实践与验证
+尚未开始
+05
+整理过程证据
+尚未开始
+06
+分享与复盘
+尚未开始
+
+路线表示学习顺序，可用课时都能进入。
+
+第2关
+当前课时
+记录实验条件
+学习进行中
+课时学习进度
+35%
+本课时仅用于验收学习流程，不是正式教材。
+进入课时
+课时安排
+上课时间
+2026-10-12 14:00
+
+
+下课时间
+2026-10-12 14:45
+
+
+地点
+科创教室（测试地点）
+
+
+授课人
+张导师
+
+
+时长
+45 分钟
+课后任务
+本课时暂无作品任务，可进入课时学习。
+
+作品提交与评审状态，在课时内单独查看。
+
+课后任务
+我的作品
+反思日志
+▶ 第二步：头像、课程浮窗、真实接口与响应式页面
+  ✖ 头像未选中、六人真实保存、重新登录、账号与课程隔离 (221.8354ms)
+✖ 第二步：头像、课程浮窗、真实接口与响应式页面 (3166.8276ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3514.3554
+
+✖ failing tests:
+
+test at tests\redesign-v2.step02.browser.test.js:20:54
+✖ 头像未选中、六人真实保存、重新登录、账号与课程隔离 (221.8354ms)
+  page.evaluate: TypeError: Failed to fetch
+      at eval (eval at evaluate (:311:30), <anonymous>:1:46)
+      at UtilityScript.evaluate (<anonymous>:313:16)
+      at UtilityScript.<anonymous> (<anonymous>:1:44)
+      at request (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:14:58)
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:24:24
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:20:84)
+      at scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:20:54)
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:23:9) {
+    log: []
+  }
+
+test at tests\redesign-v2.step02.browser.test.js:17:1
+✖ 第二步：头像、课程浮窗、真实接口与响应式页面 (3166.8276ms)
+  page.evaluate: TypeError: Failed to fetch
+      at eval (eval at evaluate (:311:30), <anonymous>:1:46)
+      at UtilityScript.evaluate (<anonymous>:313:16)
+      at UtilityScript.<anonymous> (<anonymous>:1:44)
+      at request (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:14:58)
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:24:24
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:20:84)
+      at scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:20:54)
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02.browser.test.js:23:9) {
+    log: []
+  }

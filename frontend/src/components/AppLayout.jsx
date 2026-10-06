@@ -26,9 +26,9 @@ export default function AppLayout() {
   }
 
   if (user.role === 'student') {
-    return <StudentShell>{location.pathname !== '/change-password'
-      ? <StudentScope><div className="student-content-body"><Outlet /></div></StudentScope>
-      : <Outlet />}</StudentShell>;
+    return location.pathname !== '/change-password'
+      ? <StudentScope><StudentShell><div className="student-content-body"><Outlet /></div></StudentShell></StudentScope>
+      : <StudentShell><Outlet /></StudentShell>;
   }
 
   return (

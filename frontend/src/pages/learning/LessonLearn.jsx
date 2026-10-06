@@ -1,3 +1,5 @@
+import {copyText} from '../../content/copy';
+import CopyBlock from '../../content/CopyBlock';
 import {useCourseApis} from '../../student/useCourseApis';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -25,8 +27,8 @@ const { Text } = Typography;
 
 function answerText(value) {
   if (Array.isArray(value)) return value.join('、');
-  if (value === true) return '正确';
-  if (value === false) return '错误';
+  if (value === true) return copyText('system.learning.001');
+  if (value === false) return copyText('system.learning.002');
   return String(value ?? '-');
 }
 
@@ -43,24 +45,24 @@ function Exercise({ exercise, index, onDone }) {
       const next = await learningAPI.submitExercise(exercise.id, answer);
       setResult(next);
       await onDone();
-    } catch (err) { setError(err.response?.data?.error || '答案未能提交，请检查网络后再试。'); }
+    } catch (err) { setError(err.response?.data?.error || copyText('system.learning.003')); }
     finally { setSubmitting(false); }
   };
   const options = (exercise.options || []).map((item, index) => typeof item === 'object'
     ? { label: item.label ?? item.text, value: item.value ?? item.key ?? String(index) }
     : { label: item, value: item });
-  let input = <Input.TextArea value={answer} onChange={(event) => setAnswer(event.target.value)} rows={2} placeholder="填写答案" />;
+  let input = <Input.TextArea value={answer} onChange={(event) => setAnswer(event.target.value)} rows={2} placeholder={copyText('system.learning.004')} />;
   if (exercise.question_type === 'single_choice') input = <Radio.Group options={options} value={answer} onChange={(event) => setAnswer(event.target.value)} />;
   if (exercise.question_type === 'multiple_choice') input = <Checkbox.Group options={options} value={answer} onChange={setAnswer} />;
-  if (exercise.question_type === 'true_false') input = <Radio.Group options={[{ label: '正确', value: true }, { label: '错误', value: false }]} value={answer} onChange={(event) => setAnswer(event.target.value)} />;
+  if (exercise.question_type === 'true_false') input = <Radio.Group options={[{ label: copyText('system.learning.005'), value: true }, { label: copyText('system.learning.006'), value: false }]} value={answer} onChange={(event) => setAnswer(event.target.value)} />;
   return <section className="study-exercise" aria-labelledby={`exercise-${exercise.id}`}>
-      <PixelTag>练习 {index + 1} · {{ single_choice: '单选', multiple_choice: '多选', true_false: '判断', short_answer: '简答', fill_blank: '填空' }[exercise.question_type] || '作答'}</PixelTag>
+      <PixelTag>{copyText('system.learning.007')}{index + 1} · {{ single_choice: copyText('system.learning.008'), multiple_choice: copyText('system.learning.009'), true_false: copyText('system.learning.010'), short_answer: copyText('system.learning.011'), fill_blank: copyText('system.learning.012') }[exercise.question_type] || copyText('system.learning.013')}</PixelTag>
       <h5 id={`exercise-${exercise.id}`}>{exercise.prompt}</h5><fieldset disabled={exercise.attempted || submitting || Boolean(result)} aria-label={exercise.prompt}>{input}</fieldset>
-      {!exercise.attempted && <Alert type="info" showIcon title="本题只有一次作答机会，提交后不能修改" />}
-      <Button type="primary" onClick={submit} loading={submitting} disabled={exercise.attempted || Boolean(result) || !hasAnswer}>提交答案</Button>
-      {error && <Alert type="error" showIcon title="答案未能提交" description={error} />}
-      {exercise.attempted && <Alert type={exercise.passed ? 'success' : 'warning'} showIcon title={exercise.passed ? '回答正确' : '已作答，本题回答不正确'} description={<Space orientation="vertical" size={2}><Text>标准答案：{answerText(exercise.correct_answer)}</Text><Text>答案详解：{exercise.explanation || '导师暂未设置答案详解。'}</Text></Space>} />}
-      {result && !exercise.attempted && <Alert type={result.correct ? 'success' : 'warning'} showIcon title={result.correct ? '回答正确' : '回答不正确'} description={<Space orientation="vertical" size={2}><Text>标准答案：{answerText(result.correct_answer)}</Text><Text>答案详解：{result.explanation || '导师暂未设置答案详解。'}</Text></Space>} />}
+      {!exercise.attempted && <Alert type="info" showIcon title={copyText('system.learning.014')} />}
+      <Button type="primary" onClick={submit} loading={submitting} disabled={exercise.attempted || Boolean(result) || !hasAnswer}>{copyText('system.learning.015')}</Button>
+      {error && <Alert type="error" showIcon title={copyText('system.learning.016')} description={error} />}
+      {exercise.attempted && <Alert type={exercise.passed ? 'success' : 'warning'} showIcon title={exercise.passed ? copyText('system.learning.017') : copyText('system.learning.018')} description={<Space orientation="vertical" size={2}><Text>{copyText('system.learning.019')}{answerText(exercise.correct_answer)}</Text><Text>{copyText('system.learning.020')}{exercise.explanation || copyText('system.learning.021')}</Text></Space>} />}
+      {result && !exercise.attempted && <Alert type={result.correct ? 'success' : 'warning'} showIcon title={result.correct ? copyText('system.learning.022') : copyText('system.learning.023')} description={<Space orientation="vertical" size={2}><Text>{copyText('system.learning.024')}{answerText(result.correct_answer)}</Text><Text>{copyText('system.learning.025')}{result.explanation || copyText('system.learning.026')}</Text></Space>} />}
   </section>;
 }
 
@@ -70,7 +72,8 @@ export default function LessonLearn() {
   const { courseId, lessonId } = useParams();
   const { user } = useAuth();
   const [searchParams] = useSearchParams();
-  const [draftState, setDraftState] = useState('填写后自动保存到本浏览器，按当前账号隔离。');
+  const [draftState, setDraftState] = useState(copyText('system.learning.027'));
+  const [draftFailed, setDraftFailed] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -91,21 +94,22 @@ export default function LessonLearn() {
   const saveDraft = (_, values) => {
     try {
       localStorage.setItem(reportDraftKey, JSON.stringify(values));
-      setDraftState('已保存到当前浏览器，仅当前账号可恢复。附件不会保存在草稿中。');
-    } catch { setDraftState('草稿保存失败，请保留页面并复制填写内容；检查浏览器存储空间后重试。'); }
+      setDraftState(copyText('system.learning.028'));
+      setDraftFailed(false);
+    } catch { setDraftFailed(true); setDraftState(copyText('system.learning.029')); }
   };
 
   const playReplay = async (replayId) => {
     setActiveReplayId(replayId); setReplayError('');
     try { setReplayUrl((await courseAPI.streamUrl(replayId)).url); setReplayAttempt((attempt) => attempt + 1); }
-    catch { setReplayUrl(''); setReplayError('课堂回放暂时无法播放，可能已移除或网络中断。请重试或联系导师，其他学习内容仍可继续。'); }
+    catch { setReplayUrl(''); setReplayError(copyText('system.learning.030')); }
   };
 
   const load = async ({ restorePosition = false } = {}) => {
     setLoading(true); setError('');
     try {
       const payload = await learningAPI.lesson(lessonId);
-      if (String(payload.course.id) !== String(courseId)) throw new Error('课时与课程不匹配');
+      if (String(payload.course.id) !== String(courseId)) throw new Error(copyText('system.learning.031'));
       setData(payload);
       const requestedStage = Number(searchParams.get('stage'));
       // 已有报告可从原评审页回看；资料调整后的学习阶段不能吞掉档案的只读跳转。
@@ -116,7 +120,7 @@ export default function LessonLearn() {
       if (requestedCard) {
         const index = availableCardIndex(payload.cards || [], requestedCard, payload.progress);
         if (index < 0 || stage !== 1) {
-          navigate(`/courses/${courseId}`, { replace: true, state: { experimentNotice: '原知识卡片已不可访问或尚未解锁，已返回课程地图。' } });
+          navigate(`/courses/${courseId}`, { replace: true, state: { experimentNotice: copyText('system.learning.032') } });
           return;
         }
         setCardIndex(index);
@@ -127,8 +131,8 @@ export default function LessonLearn() {
         let savedDraft = null;
         try {
           savedDraft = JSON.parse(localStorage.getItem(reportDraftKey));
-          if (savedDraft) setDraftState('已恢复当前浏览器中此账号的报告草稿。继续填写会自动保存在本浏览器。');
-        } catch { savedDraft = null; setDraftState('草稿恢复失败，未能读取本浏览器中的记录；请核对并保留填写内容。'); }
+          if (savedDraft) setDraftState(copyText('system.learning.033'));
+        } catch { savedDraft = null; setDraftFailed(true); setDraftState(copyText('system.learning.034')); }
         form.setFieldsValue(savedDraft || (payload.report?.status === 'rejected' ? { ...payload.report, reflection: payload.reflection || {} } : {}));
       }
     } catch (err) {
@@ -136,12 +140,12 @@ export default function LessonLearn() {
       if (restorePosition && searchParams.has('cardId') && [403, 404].includes(err?.response?.status)) {
         let target = '/explore';
         try { await courseAPI.detail(courseId); target = `/courses/${courseId}`; } catch { /* no accessible course to return to */ }
-        const notice = target === '/explore' ? '来源课程已不可访问，已返回课程选择。' : '来源课时已不可访问，已返回课程地图。';
+        const notice = target === '/explore' ? copyText('system.learning.035') : copyText('system.learning.036');
         message.warning(notice);
         navigate(target, { replace: true, state: { experimentNotice: notice } });
         return;
       }
-      setError(err?.response?.data?.error || '无法加载本课时，请检查报名和发布状态。');
+      setError(err?.response?.data?.error || copyText('system.learning.037'));
     } finally { setLoading(false); }
   };
 
@@ -152,9 +156,9 @@ export default function LessonLearn() {
     setSubmitting(true); setActionError('');
     try {
       await learningAPI.completeReview(lessonId);
-      message.success('课堂回顾已完成，继续学习知识卡片');
+      message.success(copyText('system.learning.038'));
       await load();
-    } catch (err) { setActionError(err.response?.data?.error || '未能确认课堂回顾，请重试。'); }
+    } catch (err) { setActionError(err.response?.data?.error || copyText('system.learning.039')); }
     finally { setSubmitting(false); }
   };
 
@@ -164,9 +168,9 @@ export default function LessonLearn() {
       await learningAPI.completeCard(card.id);
       const isLast = cardIndex === data.cards.length - 1;
       if (!isLast) setCardIndex(cardIndex + 1);
-      message.success(isLast ? '全部知识卡片已完成' : '本卡片已完成，继续下一张');
+      message.success(isLast ? copyText('system.learning.040') : copyText('system.learning.041'));
       await load();
-    } catch (err) { setActionError(err.response?.data?.error || '未能完成本卡片，请重试。'); }
+    } catch (err) { setActionError(err.response?.data?.error || copyText('system.learning.042')); }
     finally { setSubmitting(false); }
   };
 
@@ -176,38 +180,38 @@ export default function LessonLearn() {
       const blob = await courseAPI.downloadResource(resource.id);
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement('a');
-      anchor.href = url; anchor.download = resource.title || '课堂资料'; anchor.click();
+      anchor.href = url; anchor.download = resource.title || copyText('system.learning.043'); anchor.click();
       URL.revokeObjectURL(url);
-    } catch { setResourceError(`“${resource.title || '课堂资料'}”下载失败，文件可能已移除或网络中断。请重试或联系导师，当前学习和草稿不受影响。`); }
+    } catch { setResourceError(`“${resource.title || copyText('system.learning.044')}”下载失败，文件可能已移除或网络中断。请重试或联系导师，当前学习和草稿不受影响。`); }
   };
 
   const submitReport = (values) => {
     modal.confirm({
-      title: '确认提交学习报告？',
-      content: '提交后进入导师评审；若导师退回，可根据意见提交新版本。',
+      title: copyText('system.learning.045'),
+      content: copyText('system.learning.046'),
       onOk: async () => {
         setSubmitting(true); setReportError('');
         try {
           await learningAPI.submitReport(lessonId, { report: values, reflection: values.reflection });
-          message.success('学习报告已提交，等待执行导师评审');
-          try { localStorage.removeItem(reportDraftKey); } catch { message.warning('报告已提交，但本地草稿未能清理。'); }
+          message.success(copyText('system.learning.047'));
+          try { localStorage.removeItem(reportDraftKey); } catch { message.warning(copyText('system.learning.048')); }
           form.resetFields(); await load();
-        } catch (err) { setReportError(err.response?.data?.error || '报告未能提交，填写内容仍保留，请检查网络后重试。'); }
+        } catch (err) { setReportError(err.response?.data?.error || copyText('system.learning.049')); }
         finally { setSubmitting(false); }
       },
     });
   };
 
-  if (!data) return <PageContainer title="课后学习" extra={<Button onClick={() => navigate('/tasks')}>返回课后任务</Button>}><AsyncPageState loading={loading} error={error} onRetry={load}><Empty /></AsyncPageState></PageContainer>;
+  if (!data) return <PageContainer title={copyText('system.learning.050')} extra={<Button onClick={() => navigate('/tasks')}>{copyText('system.learning.051')}</Button>}><AsyncPageState loading={loading} error={error} onRetry={load}><Empty /></AsyncPageState></PageContainer>;
 
   const { lesson, cards = [], progress = {}, report } = data;
   const currentStep = learningStage(data);
   const activeCard = cards[cardIndex];
   const cardExercisesDone = activeCard?.exercises?.every((exercise) => exercise.attempted) ?? false;
   const stageDone = [progress.review_completed, progress.cards_done, report && report.status !== 'rejected', report?.status === 'approved'];
-  const stageReasons = ['', '完成课堂回顾后开启', '完成全部知识卡片后开启', '提交报告后查看'];
-  const reportFields = [['summary', '学习总结'], ['key_points', '关键收获'], ['application', '应用设想'], ['difficulties', '困难与疑问'], ['next_plan', '下一步计划']];
-  const reflectionFields = [['difficulty', '遇到的困难'], ['solution', '解决方式'], ['improvement', '可以改进之处'], ['new_question', '新的问题']];
+  const stageReasons = ['', copyText('system.learning.052'), copyText('system.learning.053'), copyText('system.learning.054')];
+  const reportFields = [['summary', copyText('system.learning.055')], ['key_points', copyText('system.learning.056')], ['application', copyText('system.learning.057')], ['difficulties', copyText('system.learning.058')], ['next_plan', copyText('system.learning.059')]];
+  const reflectionFields = [['difficulty', copyText('system.learning.060')], ['solution', copyText('system.learning.061')], ['improvement', copyText('system.learning.062')], ['new_question', copyText('system.learning.063')]];
   const validationFailed = ({ errorFields }) => {
     if (errorFields.some(({ name }) => name[0] === 'reflection')) setReflectionOpen(['reflection']);
     const name = errorFields[0]?.name;
@@ -217,75 +221,75 @@ export default function LessonLearn() {
 
   return <PageContainer><div className="study-workspace">
     <StudyHeader eyebrow={<><PixelIcon name="book" />{data.course.title}</>} title={lesson.title} description={`正在查看：${LEARNING_STEPS[activeStage]}`}>
-      <Button onClick={() => navigate(`/courses/${courseId}?lesson=${lessonId}`)} icon={<PixelIcon name="back" />}>返回课程地图</Button>
-      <Button onClick={() => navigate('/tasks')}>返回课后任务</Button>
+      <Button onClick={() => navigate(`/courses/${courseId}?lesson=${lessonId}`)} icon={<PixelIcon name="back" />}>{copyText('system.learning.064')}</Button>
+      <Button onClick={() => navigate('/tasks')}>{copyText('system.learning.065')}</Button>
     </StudyHeader>
     <div className="study-layout">
-      <aside className="study-stages" aria-label="本课时学习流程">
-        <h3>本课时进度</h3><PixelProgress value={progress.percent || 0} label="本课时学习进度" />
-        <p className="study-progress-note">回顾 25% · 卡片 35%<br />报告反思 25% · 导师评审 15%</p>
-        <nav aria-label="学习阶段"><ol>{LEARNING_STEPS.map((title, index) => {
+      <aside className="study-stages" aria-label={copyText('system.learning.066')}>
+        <h3>{copyText('system.learning.067')}</h3><PixelProgress value={progress.percent || 0} label={copyText('system.learning.068')} />
+        <p className="study-progress-note">{copyText('system.learning.069')}<br />{copyText('system.learning.070')}</p>
+        <nav aria-label={copyText('system.learning.071')}><ol>{LEARNING_STEPS.map((title, index) => {
           const locked = index > currentStep && !(index === 3 && report);
-          const status = locked ? '未解锁' : index === 3 && report ? REPORT_STATUS[report.status]?.label : stageDone[index] ? '已完成' : '待完成';
+          const status = locked ? copyText('system.learning.072') : index === 3 && report ? REPORT_STATUS[report.status]?.label : stageDone[index] ? copyText('system.learning.073') : copyText('system.learning.074');
           return <li key={title}><button type="button" className="study-stage" aria-current={activeStage === index ? 'step' : undefined} disabled={locked} onClick={() => setActiveStage(index)}>
-            <span className="study-stage-number">{String(index + 1).padStart(2, '0')}</span><span><strong>{title}</strong><small>{activeStage === index ? '正在查看 · ' : ''}{status}</small>{locked && <small>{stageReasons[index]}</small>}</span>
+            <span className="study-stage-number">{String(index + 1).padStart(2, '0')}</span><span><strong>{title}</strong><small>{activeStage === index ? copyText('system.learning.075') : ''}{status}</small>{locked && <small>{stageReasons[index]}</small>}</span>
           </button></li>;
         })}</ol></nav>
-        <a className="study-stages-footer" href="#lesson-works">查看本课时任务与作品 ↓</a>
+        <a className="study-stages-footer" href="#lesson-works">{copyText('system.learning.076')}</a>
       </aside>
       <div className="study-main">
         {actionError && <Alert type="error" showIcon title={actionError} />}
-        {activeStage === 0 && <StudySection number="01" title="第一阶段：课堂回顾" description="回看课堂，整理观察。完成后由你确认，无需等待观看时长。">
-          <section aria-label="课堂回放"><h4>课堂回放</h4>
-            {replayError && <Alert type="warning" showIcon title="回放暂不可用" description={replayError} action={activeReplayId && <Button onClick={() => playReplay(activeReplayId)}>重试播放</Button>} />}
-            {replayUrl ? <video key={`${replayUrl}:${replayAttempt}`} controls src={replayUrl} className="study-video" onError={() => setReplayError('回放文件未能播放，请重试或联系导师。其他学习内容仍可继续。')} /> : !replayError && <Empty description="本课时暂无课堂回放" />}
+        {activeStage === 0 && <StudySection number="01" title={copyText('system.learning.077')} description={copyText('system.learning.078')}>
+          <section aria-label={copyText('system.learning.079')}><h4>{copyText('system.learning.080')}</h4>
+            {replayError && <Alert type="warning" showIcon title={copyText('system.learning.081')} description={replayError} action={activeReplayId && <Button onClick={() => playReplay(activeReplayId)}>{copyText('system.learning.082')}</Button>} />}
+            {replayUrl ? <video key={`${replayUrl}:${replayAttempt}`} controls src={replayUrl} className="study-video" onError={() => setReplayError(copyText('system.learning.083'))} /> : !replayError && <Empty description={copyText('system.learning.084')} />}
             <Space wrap>{data.replays.map((replay) => <Button key={replay.id} type={activeReplayId === replay.id ? 'primary' : 'default'} icon={<PlayCircleOutlined />} onClick={() => playReplay(replay.id)}>{replay.title}</Button>)}</Space>
           </section>
-          <section className="study-subsection" aria-label="配套资料"><h4>配套资料</h4>
+          <section className="study-subsection" aria-label={copyText('system.learning.085')}><h4>{copyText('system.learning.086')}</h4>
             {resourceError && <Alert type="warning" showIcon title={resourceError} />}
-            {data.resources.length === 0 ? <Empty description="本课时暂无配套资料" /> : data.resources.map((resource) => <div className="study-resource" key={resource.id}><div><Text strong>{resource.title}</Text>{resource.description && <p>{resource.description}</p>}</div>{resource.has_file ? <Button icon={<DownloadOutlined />} onClick={() => downloadResource(resource)}>下载资料</Button> : <Text type="secondary">暂无附件</Text>}</div>)}
+            {data.resources.length === 0 ? <Empty description={copyText('system.learning.087')} /> : data.resources.map((resource) => <div className="study-resource" key={resource.id}><div><Text strong>{resource.title}</Text>{resource.description && <p>{resource.description}</p>}</div>{resource.has_file ? <Button icon={<DownloadOutlined />} onClick={() => downloadResource(resource)}>{copyText('system.learning.088')}</Button> : <Text type="secondary">{copyText('system.learning.089')}</Text>}</div>)}
           </section>
           <AssociatedExperiments variant="study" courseId={courseId} lessonId={lessonId} stage={0} />
-          <div className="study-actions">{progress.review_completed ? <><PixelTag tone="success">课堂回顾已完成</PixelTag><Button type="primary" onClick={() => setActiveStage(1)}>继续知识卡片</Button></> : <Button type="primary" loading={submitting} onClick={finishReview}>我已完成课堂回顾</Button>}</div>
+          <div className="study-actions">{progress.review_completed ? <><PixelTag tone="success">{copyText('system.learning.090')}</PixelTag><Button type="primary" onClick={() => setActiveStage(1)}>{copyText('system.learning.091')}</Button></> : <Button type="primary" loading={submitting} onClick={finishReview}>{copyText('system.learning.092')}</Button>}</div>
         </StudySection>}
 
-        {activeStage === 1 && <StudySection number="02" title="第二阶段：知识卡片与配套练习" description="依次阅读、作答并确认完成。答错后可以查看解析，再继续学习。">
-          {!progress.review_completed && <Alert type="warning" showIcon title="请先完成课堂回顾" />}
-          {cards.length === 0 ? <Alert type="warning" showIcon title="导师尚未发布知识卡片" description="本阶段不会自动完成。请联系执行导师发布本课时的知识卡片后再继续。" /> : <>
-            <nav className="study-card-nav" aria-label="知识卡片">{cards.map((card, index) => <Button key={card.id} type={index === cardIndex ? 'primary' : 'default'} aria-pressed={index === cardIndex} icon={card.completed ? <CheckCircleOutlined /> : null} onClick={() => setCardIndex(index)} disabled={index > 0 && !cards[index - 1].completed}>{index + 1}. {card.title}</Button>)}</nav>
-            <div className="study-card-title"><h4>{activeCard.title}</h4><PixelTag tone="current">{cardIndex + 1}/{cards.length}</PixelTag>{activeCard.completed && <PixelTag tone="success">已完成</PixelTag>}</div>
+        {activeStage === 1 && <StudySection number="02" title={copyText('system.learning.093')} description={copyText('system.learning.094')}>
+          {!progress.review_completed && <Alert type="warning" showIcon title={copyText('system.learning.095')} />}
+          {cards.length === 0 ? <Alert type="warning" showIcon title={copyText('system.learning.096')} description={copyText('system.learning.097')} /> : <>
+            <nav className="study-card-nav" aria-label={copyText('system.learning.098')}>{cards.map((card, index) => <Button key={card.id} type={index === cardIndex ? 'primary' : 'default'} aria-pressed={index === cardIndex} icon={card.completed ? <CheckCircleOutlined /> : null} onClick={() => setCardIndex(index)} disabled={index > 0 && !cards[index - 1].completed}>{index + 1}. {card.title}</Button>)}</nav>
+            <div className="study-card-title"><h4>{activeCard.title}</h4><PixelTag tone="current">{cardIndex + 1}/{cards.length}</PixelTag>{activeCard.completed && <PixelTag tone="success">{copyText('system.learning.099')}</PixelTag>}</div>
             {activeCard.summary && <p className="study-card-summary">{activeCard.summary}</p>}
             <p className="study-prose">{activeCard.content}</p>
-            {activeCard.key_points && <Alert type="info" title="关键要点" description={activeCard.key_points} />}
-            {activeCard.common_mistakes && <Alert type="warning" title="常见误区" description={activeCard.common_mistakes} />}
+            {activeCard.key_points && <Alert type="info" title={copyText('system.learning.100')} description={activeCard.key_points} />}
+            {activeCard.common_mistakes && <Alert type="warning" title={copyText('system.learning.101')} description={activeCard.common_mistakes} />}
             <AssociatedExperiments variant="study" courseId={courseId} lessonId={lessonId} stage={1} cardId={activeCard.id} />
             {(activeCard.exercises || []).map((exercise, index) => <Exercise key={exercise.id} index={index} exercise={exercise} onDone={load} />)}
-            {!activeCard.exercises?.length && <p className="study-help">本卡片没有配套练习，阅读后即可确认完成。</p>}
-            {!cardExercisesDone && <Alert type="info" showIcon title="作答全部配套练习后可结束本卡片；每题只有一次机会" style={{ marginTop: 16 }} />}
-            <div className="study-actions study-actions--between"><Button icon={<LeftOutlined />} disabled={cardIndex === 0} onClick={() => setCardIndex(cardIndex - 1)}>上一张</Button>{activeCard.completed ? <Button type="primary" icon={<RightOutlined />} disabled={cardIndex === cards.length - 1} onClick={() => setCardIndex(cardIndex + 1)}>下一张</Button> : <Button type="primary" loading={submitting} disabled={!cardExercisesDone} onClick={() => finishCard(activeCard)}>我已学完本卡片</Button>}</div>
-            {progress.cards_done && <Button type="primary" block style={{ marginTop: 20 }} onClick={() => setActiveStage(2)}>下一步：学习报告与反思</Button>}
+            {!activeCard.exercises?.length && <CopyBlock id="system.learning.102" as="p" className="study-help"/>}
+            {!cardExercisesDone && <Alert type="info" showIcon title={copyText('system.learning.103')} style={{ marginTop: 16 }} />}
+            <div className="study-actions study-actions--between"><Button icon={<LeftOutlined />} disabled={cardIndex === 0} onClick={() => setCardIndex(cardIndex - 1)}>{copyText('system.learning.104')}</Button>{activeCard.completed ? <Button type="primary" icon={<RightOutlined />} disabled={cardIndex === cards.length - 1} onClick={() => setCardIndex(cardIndex + 1)}>{copyText('system.learning.105')}</Button> : <Button type="primary" loading={submitting} disabled={!cardExercisesDone} onClick={() => finishCard(activeCard)}>{copyText('system.learning.106')}</Button>}</div>
+            {progress.cards_done && <Button type="primary" block style={{ marginTop: 20 }} onClick={() => setActiveStage(2)}>{copyText('system.learning.107')}</Button>}
           </>}
         </StudySection>}
 
-        {activeStage === 2 && <StudySection number="03" title="第三阶段：学习报告与反思" description="记录学到了什么，以及你准备怎样改进。报告与作品分别提交、分别评审。">
+        {activeStage === 2 && <StudySection number="03" title={copyText('system.learning.108')} description={copyText('system.learning.109')}>
           {report && <Alert type={reportTone} showIcon title={`第 ${report.version} 版：${REPORT_STATUS[report.status]?.label || report.status}${Number.isInteger(report.score) ? ` · ${report.score} 分` : ''}`} description={report.review_comment} />}
           {(!report || report.status === 'rejected') && <Form form={form} layout="vertical" onFinish={submitReport} onFinishFailed={validationFailed} disabled={!progress.report_unlocked || submitting} onValuesChange={saveDraft}>
-            <Alert type={draftState.includes('失败') ? 'error' : 'info'} showIcon title={draftState} description="草稿不会上传服务器；换设备无法恢复。提交成功后清除本地草稿。" />
-            <h4>学习记录</h4>
-            {reportFields.map(([name, label]) => <Form.Item key={name} name={name} label={label} rules={name === 'summary' ? [{ required: true, whitespace: true, message: '请填写学习总结' }] : []}><Input.TextArea rows={name === 'summary' ? 4 : 2} /></Form.Item>)}
-            <Collapse activeKey={reflectionOpen} onChange={setReflectionOpen} items={[{ key: 'reflection', forceRender: true, label: '结构化反思（必填）', children: <>{reflectionFields.map(([name, label]) => <Form.Item key={name} name={['reflection', name]} label={label} rules={name === 'difficulty' ? [{ required: true, whitespace: true, message: '请填写遇到的困难' }] : []}><Input.TextArea rows={2} /></Form.Item>)}</> }]} />
-            {!progress.report_unlocked && <Alert type="warning" title="完成课堂回顾、全部知识卡片与配套练习后才能提交报告" />}
-            <div className="study-submit-result" aria-live="polite">{reportError && <Alert type="error" showIcon title="报告未能提交" description={reportError} />}</div>
-            <div className="study-actions"><Button type="primary" htmlType="submit" loading={submitting}>提交学习报告与反思</Button><p>提交后等待导师评审；退回后可按意见修改。</p></div>
+            <Alert type={draftFailed ? 'error' : 'info'} showIcon title={draftState} description={copyText('system.learning.111')} />
+            <h4>{copyText('system.learning.112')}</h4>
+            {reportFields.map(([name, label]) => <Form.Item key={name} name={name} label={label} rules={name === 'summary' ? [{ required: true, whitespace: true, message: copyText('system.learning.113') }] : []}><Input.TextArea rows={name === 'summary' ? 4 : 2} /></Form.Item>)}
+            <Collapse activeKey={reflectionOpen} onChange={setReflectionOpen} items={[{ key: 'reflection', forceRender: true, label: copyText('system.learning.114'), children: <>{reflectionFields.map(([name, label]) => <Form.Item key={name} name={['reflection', name]} label={label} rules={name === 'difficulty' ? [{ required: true, whitespace: true, message: copyText('system.learning.115') }] : []}><Input.TextArea rows={2} /></Form.Item>)}</> }]} />
+            {!progress.report_unlocked && <Alert type="warning" title={copyText('system.learning.116')} />}
+            <div className="study-submit-result" aria-live="polite">{reportError && <Alert type="error" showIcon title={copyText('system.learning.117')} description={reportError} />}</div>
+            <div className="study-actions"><Button type="primary" htmlType="submit" loading={submitting}>{copyText('system.learning.118')}</Button><CopyBlock id="system.learning.119" as="p" /></div>
           </Form>}
-          {report && report.status !== 'rejected' && <><dl className="study-reading-fields">{reportFields.map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{report[key] || '未填写'}</dd></div>)}{reflectionFields.map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{data.reflection?.[key] || '未填写'}</dd></div>)}</dl><Button type="primary" onClick={() => setActiveStage(3)}>查看导师评审状态</Button></>}
+          {report && report.status !== 'rejected' && <><dl className="study-reading-fields">{reportFields.map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{report[key] || copyText('system.learning.120')}</dd></div>)}{reflectionFields.map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{data.reflection?.[key] || copyText('system.learning.121')}</dd></div>)}</dl><Button type="primary" onClick={() => setActiveStage(3)}>{copyText('system.learning.122')}</Button></>}
           <AssociatedExperiments variant="study" courseId={courseId} lessonId={lessonId} stage={2} />
         </StudySection>}
 
-        {activeStage === 3 && <StudySection number="04" title="导师评审" description="查看学习报告的反馈，再决定下一步。">
-          <Alert type={reportTone} showIcon title={report ? `${REPORT_STATUS[report.status]?.label}${Number.isInteger(report.score) ? ` · ${report.score} 分` : ''}` : '尚未提交学习报告'} description={report?.status === 'submitted' ? '报告正在等待执行导师评审。你可以回看知识卡片、查看已提交的报告，或处理下方的作品任务。' : report?.status === 'rejected' ? '请根据导师意见修改报告，再提交新版本。' : report?.status === 'approved' ? '本版学习报告已通过。作品的提交与评审状态请在下方单独查看。' : '完成前三个阶段后进入导师评审。'} />
-          {report && <><div className="study-detail-meta"><span>学习报告 · 第 {report.version} 版</span>{report.submitted_at && <span>提交于 {formatBeijingTime(report.submitted_at)}</span>}</div><div className={`study-feedback${report.status === 'rejected' ? ' study-feedback--rejected' : ''}`}><h4>导师评语</h4><p className="study-prose">{report.review_comment || '导师暂未留下评语。'}</p>{Number.isInteger(report.score) && <p>本版报告评分：<strong>{report.score} 分</strong></p>}</div></>}
-          <div className="study-actions"><Button type="primary" onClick={() => setActiveStage(2)}>{report?.status === 'rejected' ? '返回第三阶段修改' : '查看学习报告'}</Button><Button onClick={() => setActiveStage(1)}>回看知识卡片</Button></div>
+        {activeStage === 3 && <StudySection number="04" title={copyText('system.learning.123')} description={copyText('system.learning.124')}>
+          <Alert type={reportTone} showIcon title={report ? `${REPORT_STATUS[report.status]?.label}${Number.isInteger(report.score) ? ` · ${report.score} 分` : ''}` : copyText('system.learning.125')} description={report?.status === 'submitted' ? copyText('system.learning.126') : report?.status === 'rejected' ? copyText('system.learning.127') : report?.status === 'approved' ? copyText('system.learning.128') : copyText('system.learning.129')} />
+          {report && <><div className="study-detail-meta"><span>{copyText('system.learning.130')}{report.version}{copyText('system.learning.131')}</span>{report.submitted_at && <span>{copyText('system.learning.132')}{formatBeijingTime(report.submitted_at)}</span>}</div><div className={`study-feedback${report.status === 'rejected' ? ' study-feedback--rejected' : ''}`}><h4>{copyText('system.learning.133')}</h4><p className="study-prose">{report.review_comment || copyText('system.learning.134')}</p>{Number.isInteger(report.score) && <p>{copyText('system.learning.135')}<strong>{report.score}{copyText('system.learning.136')}</strong></p>}</div></>}
+          <div className="study-actions"><Button type="primary" onClick={() => setActiveStage(2)}>{report?.status === 'rejected' ? copyText('system.learning.137') : copyText('system.learning.138')}</Button><Button onClick={() => setActiveStage(1)}>{copyText('system.learning.139')}</Button></div>
           <AssociatedExperiments variant="study" courseId={courseId} lessonId={lessonId} stage={3} />
         </StudySection>}
       </div>

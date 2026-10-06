@@ -1,0 +1,36 @@
+▶ 第二步：人工 HTML 导出、特殊字符、双来源冲突与真实删除显示
+  ✔ 本地审阅页保存 HTML 与 JSON 保留 ID、显隐和特殊字符 (2272.0123ms)
+  ✔ 修改 JSX 后提取 HTML 报告冲突，不自动覆盖 (279.3958ms)
+  ✖ 真实课程页面可选空串与 disabled 不渲染、不回补、不留空说明容器 (4891.9594ms)
+✖ 第二步：人工 HTML 导出、特殊字符、双来源冲突与真实删除显示 (12487.1453ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13304.03
+
+✖ failing tests:
+
+test at tests\redesign-v2.step02-copy.browser.test.js:29:11
+✖ 真实课程页面可选空串与 disabled 不渲染、不回补、不留空说明容器 (4891.9594ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '“我的引导” <img src=x onerror=alert(1)> ${answer} 保留第二行'
+  - '“我的引导” <img src=x onerror=alert(1)> ${answer}\n保留第二行'
+
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02-copy.browser.test.js:33:308)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step02-copy.browser.test.js:29:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '“我的引导” <img src=x onerror=alert(1)> ${answer} 保留第二行',
+    expected: '“我的引导” <img src=x onerror=alert(1)> ${answer}\n保留第二行',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

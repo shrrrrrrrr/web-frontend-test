@@ -244,7 +244,7 @@ export default function GliderSimulator() {
     sourceCourse={sourceCourse} sourceLesson={sourceLesson} courses={courses} lessons={lessons}
     courseId={courseId} lessonId={lessonId} handleCourseChange={handleCourseChange} setLessonId={setLessonId}
     returning={returning} contextPending={contextPending} contextError={contextError}
-    returnLabel={sourceCourse && (!contextError || returnTo !== '/lab') ? '返回来源课程' : '返回实验室'}
+    returnsToCourse={!!(sourceCourse && (!contextError || returnTo !== '/lab'))}
     returnToSource={returnToSource} returnToLab={() => navigate(scopedCourse ? '/courses/'+scopedCourse+'/lab' : '/explore')}
   />;
 

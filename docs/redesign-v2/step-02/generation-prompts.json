@@ -1,0 +1,67 @@
+{
+  "tool": "built-in image_gen",
+  "created": "2026-10-05",
+  "characterPdf": "D:/WeChatData/xwechat_files/wxid_znmjw5fhinrl22_390d/msg/attach/6e1e2054f8868a9b173478a042c6d511/2026-09/Rec/6997c7052a5ad0f2/F/0_0/正面标准版.pdf",
+  "assets": [
+    {
+      "name": "avatar-navigator",
+      "prompt": "Use case: stylized-concept. Create ONE original game avatar, not a page, no writing. Supporting image is the identity reference only. Chest-up front-facing portrait, centered, head takes 48% of square, shoulders to lower edge, same framing for a six-person library. Draw as authentic coarse 1990s 16-bit pixel sprite: visible large square blocks, hard stair-step outlines, flat 3-tone clusters, approximate 64x64 logical pixel grid enlarged crisply, absolutely no smooth anime painting, no airbrush, no antialiasing, no grain or gradients. Light warm skin, navy outline, white explorer jacket, modest friendly school-age character. Fully transparent outside silhouette. No circle/frame/background/text. Identity: 程以宁: long straight dark hair, side fringe, blue eyes, calm determined expression; white astronaut jacket with royal blue high collar, black backpack straps, blue and gold compass sleeve patch.",
+      "reference": "C:/Users/shr/Desktop/nmg前端/app/test-results/redesign-v2/step02-pdf/character-1.png",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-f7e4da91-3510-48ea-9ced-bc5ca69d6c2e.png"
+    },
+    {
+      "name": "avatar-pathfinder",
+      "prompt": "Use case: stylized-concept. Create ONE original game avatar, not a page, no writing. Supporting image is the identity reference only. Chest-up front-facing portrait, centered, head takes 48% of square, shoulders to lower edge, same framing for a six-person library. Draw as authentic coarse 1990s 16-bit pixel sprite: visible large square blocks, hard stair-step outlines, flat 3-tone clusters, approximate 64x64 logical pixel grid enlarged crisply, absolutely no smooth anime painting, no airbrush, no antialiasing, no grain or gradients. Light warm skin, navy outline, white explorer jacket, modest friendly school-age character. Fully transparent outside silhouette. No circle/frame/background/text. Identity: 许行舟: tousled short dark hair, green eyes, open cheerful smile; white astronaut jacket with forest green high collar and cuff accents, black backpack straps, green compass patch.",
+      "reference": "C:/Users/shr/Desktop/nmg前端/app/test-results/redesign-v2/step02-pdf/character-2.png",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-f9d2efd6-4cc3-4861-b131-c9be69451636.png"
+    },
+    {
+      "name": "avatar-maker",
+      "prompt": "Use case: stylized-concept. Create ONE original game avatar, not a page, no writing. Supporting image is the identity reference only. Chest-up front-facing portrait, centered, head takes 48% of square, shoulders to lower edge, same framing for a six-person library. Draw as authentic coarse 1990s 16-bit pixel sprite: visible large square blocks, hard stair-step outlines, flat 3-tone clusters, approximate 64x64 logical pixel grid enlarged crisply, absolutely no smooth anime painting, no airbrush, no antialiasing, no grain or gradients. Light warm skin, navy outline, white explorer jacket, modest friendly school-age character. Fully transparent outside silhouette. No circle/frame/background/text. Identity: 江予川: tousled short brown hair, brown eyes, orange-lens aviation goggles perched on top of head, confident smile; white astronaut jacket with orange collar and cuff accents, dark harness straps.",
+      "reference": "C:/Users/shr/Desktop/nmg前端/app/test-results/redesign-v2/step02-pdf/character-3.png",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-7d324459-7c3a-4f6b-b7c8-e84282cd5a2f.png"
+    },
+    {
+      "name": "avatar-decoder",
+      "prompt": "Use case: stylized-concept. Create ONE original game avatar, not a page, no writing. Supporting image is the identity reference only. Chest-up front-facing portrait, centered, head takes 48% of square, shoulders to lower edge, same framing for a six-person library. Draw as authentic coarse 1990s 16-bit pixel sprite: visible large square blocks, hard stair-step outlines, flat 3-tone clusters, approximate 64x64 logical pixel grid enlarged crisply, absolutely no smooth anime painting, no airbrush, no antialiasing, no grain or gradients. Light warm skin, navy outline, white explorer jacket, modest friendly school-age character. Fully transparent outside silhouette. No circle/frame/background/text. Identity: 夏长庚: short messy blue-black hair, cool grey-blue eyes, thoughtful neutral expression; white astronaut jacket with dark navy collar, dark harness, blue compass patch.",
+      "reference": "C:/Users/shr/Desktop/nmg前端/app/test-results/redesign-v2/step02-pdf/character-4.png",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-af2777b9-66b0-44e3-bf93-b88e64b3737b.png"
+    },
+    {
+      "name": "avatar-collaborator",
+      "prompt": "Use case: stylized-concept. Create ONE original game avatar, not a page, no writing. Supporting image is the identity reference only. Chest-up front-facing portrait, centered, head takes 48% of square, shoulders to lower edge, same framing for a six-person library. Draw as authentic coarse 1990s 16-bit pixel sprite: visible large square blocks, hard stair-step outlines, flat 3-tone clusters, approximate 64x64 logical pixel grid enlarged crisply, absolutely no smooth anime painting, no airbrush, no antialiasing, no grain or gradients. Light warm skin, navy outline, white explorer jacket, modest friendly school-age character. Fully transparent outside silhouette. No circle/frame/background/text. Identity: 晏子仪: dark high ponytail, loose fringe, small triangular hair clip, blue eyes, gentle smile; white astronaut jacket with turquoise collar and sleeve accents, dark backpack straps.",
+      "reference": "C:/Users/shr/Desktop/nmg前端/app/test-results/redesign-v2/step02-pdf/character-5.png",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-939eea62-d7f8-46d3-9ef6-ec4c49042883.png"
+    },
+    {
+      "name": "avatar-guardian",
+      "prompt": "Use case: stylized-concept. Create ONE original game avatar, not a page, no writing. Supporting image is the identity reference only. Chest-up front-facing portrait, centered, head takes 48% of square, shoulders to lower edge, same framing for a six-person library. Draw as authentic coarse 1990s 16-bit pixel sprite: visible large square blocks, hard stair-step outlines, flat 3-tone clusters, approximate 64x64 logical pixel grid enlarged crisply, absolutely no smooth anime painting, no airbrush, no antialiasing, no grain or gradients. Light warm skin, navy outline, white explorer jacket, modest friendly school-age character. Fully transparent outside silhouette. No circle/frame/background/text. Identity: 南容: short chin-length black bob, side fringe, grey eyes, calm steady expression; white astronaut jacket with muted gold collar and sleeve accents, dark backpack straps, gold compass patch.",
+      "reference": "C:/Users/shr/Desktop/nmg前端/app/test-results/redesign-v2/step02-pdf/character-6.png",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-69f5d8cd-8e53-4946-9bc9-3ca1c0fc97fe.png"
+    },
+    {
+      "name": "robot",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. ONE original static small learning robot sprite for a student course UI. Transparent cutout, centered full body square composition. Authentic coarse 16-bit pixel art with conspicuous square blocks, hard stair-step contours, 48x48 logical grid enlarged, flat limited-color clusters. Friendly white rounded-square device head with dark navy screen, two cyan rectangular eyes, small gold antenna, compact white and navy body, cyan chest light, short mechanical arms and feet. Device silhouette, not animal, not cat, no hair, no facial realism. No text, no symbols, no shadow background, no gradients, no smooth illustration. Clear readable at 64px.",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-ecdf1ac7-2f45-43d7-a466-80810fc61ed9.png"
+    },
+    {
+      "name": "bridge",
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Original wide pixel game background, spaceship orbital classroom interior. Navy structural window frame along upper/right edge, huge segmented observation window showing blue Earth crescent and sparse square stars; right foreground compact ivory and cobalt consoles with cyan screen blocks and a gold navigation control. Quiet left portion has navy flat interior wall for later DOM content. No people, no robot, no text, no UI panels or fake buttons. Authentic chunky 16-bit 1990s adventure game scene, conspicuous square blocks and hard stairs, approximately 160x90 logical pixel grid, minimal flat 3-tone shadow clusters, navy cobalt cyan ivory small gold palette. Not painted sci-fi, no smooth gradients, no antialiasing. Wide 3:2 art, environment only. Reference is palette and coarse pixel size only.",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-474f6147-da74-433d-8d6a-29e55cc68da2.png"
+    },
+    {
+      "name": "observatory",
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Original wide chunky pixel game scene for an experimental flight observatory. Orbital station hangar with large navy frame, open right observation bay, gold-blue distant planet, an unoccupied cream workbench and a small white glider model on a maintenance stand on right. Blue steel floor and storage drawers, sparse cyan indicator lights, quiet left wall. No people, no robot, no text, no UI or chart, no simulated path. True coarse 16-bit pixel clusters, visible square blocks, sharp staircase edges, 160x90 logical pixel scene enlarged. Navy cobalt ivory lavender cyan gold palette, flat simple shading, no smooth painted surfaces, no gradients. Wide 3:2 composition. Supporting reference palette/coarse clusters only.",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-e7ab103a-2468-46ed-95a4-5485b0b1cc79.png"
+    },
+    {
+      "name": "planet-base",
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Original wide pixel game background for personal course archive, lunar research base interior facing a planetary outpost. Right side has ivory shelves, physical log binders without writing and a small worktable, beyond wide window a white-and-blue domed base on lavender moon surface with blue planet above horizon. Left side quiet navy interior wall. No people, robot, text, badges, score, UI, chart or fake statistics. Authentic chunky 16-bit game environment, unmistakable large square pixel blocks, hard staircase outlines, flat 3-tone clusters, logical grid 160x90 enlarged. Navy cobalt lavender cyan cream small gold palette; no airbrushing, gradients or antialiasing. Wide 3:2. Supporting image palette and chunky art only.",
+      "source": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-82ee6b87-524a-4ca9-b5cd-50b3e8876a1e.png"
+    }
+  ]
+}

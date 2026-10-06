@@ -1,3 +1,5 @@
+import {copyText} from '../content/copy';
+import CopyBlock from '../content/CopyBlock';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Link from './space/SpaceLink';
@@ -26,16 +28,16 @@ function Review({ id, studentId }) {
  const {courseAPI}=useCourseApis();
   const read = useCallback(() => courseAPI.detail(id), [id,courseAPI]);
   const { data, loading, error, reload } = useCourseResource(read, id);
-  return <ServicePage title="回看课程资料" eyebrow="探索地图 / 课程资料" description={data?.course.title || '课后回看课堂内容，查找资料与提交记录。'} actions={<Link to={`/courses/${id}`}>返回课程地图</Link>}>
-    {error ? <PixelPanel className="compat-main-error"><Alert role="alert" type="warning" title={courseReadError(error)} description={requestError(error)} /><div className="compat-row-actions"><PixelButton onClick={reload}>重新读取课程</PixelButton><Link to="/explore">返回探索地图</Link></div></PixelPanel>
+  return <ServicePage title={copyText('system.review.001')} eyebrow="探索地图 / 课程资料" description={data?.course.title || copyText('system.review.002')} actions={<Link to={`/courses/${id}`}>{copyText('system.review.003')}</Link>}>
+    {error ? <PixelPanel className="compat-main-error"><Alert role="alert" type="warning" title={courseReadError(error)} description={requestError(error)} /><div className="compat-row-actions"><PixelButton onClick={reload}>{copyText('system.review.004')}</PixelButton><Link to="/explore">{copyText('system.review.005')}</Link></div></PixelPanel>
       : <ReadState loading={loading} object="课程资料">{data && <>
-        <PixelPanel className="review-summary"><div><span className="compat-kicker">01 / 课程摘要</span><h3>{data.course.driving_question || data.course.title}</h3></div><p>{data.course.description || '暂无课程简介，请结合课堂内容与资料学习。'}</p></PixelPanel>
-        <div className="review-media-layout"><ReplayRegion courseId={id} /><StudySection number="03" title="课堂资料" description="按需下载老师提供的资料。" className="review-resources">
-          {data.resources?.length ? <ul className="compat-records">{data.resources.map(resource => <li key={resource.id}><PixelTag>{({ courseware: '课件', video: '视频', lesson_plan: '课程教案', guide_card: '操作指南', template: '记录模板', other: '其他资料' })[resource.resource_type] || '课程资料'}</PixelTag><h4>{resource.title || '未命名资料'}</h4>
-            {resource.has_file ? <CourseResourceDownload resource={resource} courseId={id} /> : <p className="compat-muted">这份资料暂未提供文件。</p>}</li>)}</ul> : <p className="compat-empty">暂无课堂资料。</p>}
+        <PixelPanel className="review-summary"><div><span className="compat-kicker">{copyText('system.review.006')}</span><h3>{data.course.driving_question || data.course.title}</h3></div><p>{data.course.description || copyText('system.review.007')}</p></PixelPanel>
+        <div className="review-media-layout"><ReplayRegion courseId={id} /><StudySection number="03" title={copyText('system.review.008')} description={copyText('system.review.009')} className="review-resources">
+          {data.resources?.length ? <ul className="compat-records">{data.resources.map(resource => <li key={resource.id}><PixelTag>{({ courseware: copyText('system.review.010'), video: copyText('system.review.011'), lesson_plan: copyText('system.review.012'), guide_card: copyText('system.review.013'), template: copyText('system.review.014'), other: copyText('system.review.015') })[resource.resource_type] || copyText('system.review.016')}</PixelTag><h4>{resource.title || copyText('system.review.017')}</h4>
+            {resource.has_file ? <CourseResourceDownload resource={resource} courseId={id} /> : <CopyBlock id="system.review.018" as="p" className="compat-muted"/>}</li>)}</ul> : <CopyBlock id="system.review.019" as="p" className="compat-empty"/>}
         </StudySection></div>
-        <div className="review-record-layout"><StudySection number="04" title="课后任务" description="从原课时入口继续学习。">
-          {data.tasks?.length ? <ul className="compat-records">{data.tasks.map(task => <li key={task.id}><h4>{task.title}</h4><p className="compat-muted">{task.lesson_title || '课时名称未提供'} · 截止：{task.deadline ? formatBeijingTime(task.deadline) : '未设置'}</p><Link to={`/courses/${id}/lessons/${task.lesson_id}/learn`}>进入课时学习 →</Link></li>)}</ul> : <p className="compat-empty">暂无课后任务。其他学习内容可从课程地图进入。</p>}
+        <div className="review-record-layout"><StudySection number="04" title={copyText('system.review.020')} description={copyText('system.review.021')}>
+          {data.tasks?.length ? <ul className="compat-records">{data.tasks.map(task => <li key={task.id}><h4>{task.title}</h4><p className="compat-muted">{task.lesson_title || copyText('system.review.022')}{copyText('system.review.023')}{task.deadline ? formatBeijingTime(task.deadline) : copyText('system.review.024')}</p><Link to={`/courses/${id}/lessons/${task.lesson_id}/learn`}>{copyText('system.review.025')}</Link></li>)}</ul> : <CopyBlock id="system.review.026" as="p" className="compat-empty"/>}
         </StudySection><WorksRegion courseId={id} studentId={studentId} onCourseInvalid={reload} /></div>
       </>}</ReadState>}
   </ServicePage>;
@@ -53,9 +55,9 @@ function WorksRegion({ courseId, studentId, onCourseInvalid }) {
     return (payload.works || []).filter(work => String(work.student_id) === String(studentId));
   }, [courseId, studentId, onCourseInvalid,courseAPI,workAPI]);
   const state = useRemoteResource(read);
-  return <StudySection number="05" title="我的提交" description="作品及其版本记录，报告仍在课时学习页。" className="review-works">
+  return <StudySection number="05" title={copyText('system.review.028')} description={copyText('system.review.029')} className="review-works">
     <ReadState {...state} object="提交记录" empty={!state.data?.length} emptyText="本课程还没有作品提交记录。">
-      <ul className="compat-records">{state.data?.map(work => { const status = workStatus(work); return <li key={work.id}><div className="compat-tags"><PixelTag tone={status.tone}>{status.label}</PixelTag><span>第 {work.version || 1} 版</span></div><h4>{work.title}</h4><Link to={`/works/${work.id}`}>{status.revisable ? '查看意见并修改' : '查看作品版本'} →</Link></li>; })}</ul>
+      <ul className="compat-records">{state.data?.map(work => { const status = workStatus(work); return <li key={work.id}><div className="compat-tags"><PixelTag tone={status.tone}>{status.label}</PixelTag><span>{copyText('system.review.030')}{work.version || 1}{copyText('system.review.031')}</span></div><h4>{work.title}</h4><Link to={`/works/${work.id}`}>{status.revisable ? copyText('system.review.032') : copyText('system.review.033')} →</Link></li>; })}</ul>
     </ReadState>
   </StudySection>;
 }
@@ -85,24 +87,24 @@ function ReplayRegion({ courseId }) {
       const result = await courseAPI.streamUrl(replay.id);
       if (!live.current || ticket !== sequence.current) return;
       const target = new URL(result.url, window.location.origin);
-      if (target.origin !== window.location.origin || target.pathname !== `/api/courses/replays/${replay.id}/stream`) throw new Error('播放地址不可用，请重新读取。');
+      if (target.origin !== window.location.origin || target.pathname !== `/api/courses/replays/${replay.id}/stream`) throw new Error(copyText('system.review.034'));
       setPlayer({ loading: false, error: null, url: target.href });
     } catch (error) { if (live.current && ticket === sequence.current) setPlayer({ loading: false, error, url: '' }); }
   };
   const reload = () => { sequence.current++; stop(); setSelection(null); setPlayer({ loading: false, error: null, url: '' }); void state.reload(); };
   const mediaFailed = () => {
-    sequence.current++; stop(); setPlayer({ loading: false, error: new Error('视频暂时无法播放，地址可能已过期，或文件、网络暂不可用。请重新获取播放地址。'), url: '' });
+    sequence.current++; stop(); setPlayer({ loading: false, error: new Error(copyText('system.review.035')), url: '' });
     window.dispatchEvent(new CustomEvent(STUDENT_ACCESS_CHECK));
   };
-  return <StudySection number="02" title="课程回放" description="按需打开回放，播放不会自动完成课时。" className="review-replays">
+  return <StudySection number="02" title={copyText('system.review.036')} description={copyText('system.review.037')} className="review-replays">
     <ReadState {...state} reload={reload} object="课程回放" empty={!state.data?.replays?.length} emptyText="暂无课程回放。">
       <div className="review-player-area">
         {player.url ? <video ref={attachVideo} controls preload="metadata" src={player.url} onError={mediaFailed} aria-label={`课程回放：${selection?.title}`} />
-          : player.error ? <div className="review-player-feedback"><Alert role="alert" type="warning" title="本段回放暂不可用" description={player.error.message && !player.error.response ? player.error.message : requestError(player.error)} /><PixelButton onClick={() => choose(selection)}>重新获取播放地址</PixelButton></div>
-            : <div className="review-player-placeholder" role="status"><span aria-hidden="true">▷</span><p>{player.loading ? '正在获取本段播放地址…' : '选择下方回放，回到课堂现场'}</p></div>}
+          : player.error ? <div className="review-player-feedback"><Alert role="alert" type="warning" title={copyText('system.review.038')} description={player.error.message && !player.error.response ? player.error.message : requestError(player.error)} /><PixelButton onClick={() => choose(selection)}>{copyText('system.review.039')}</PixelButton></div>
+            : <div className="review-player-placeholder" role="status"><span aria-hidden="true">▷</span><p>{player.loading ? copyText('system.review.040') : copyText('system.review.041')}</p></div>}
       </div>
-      {selection && <div className="review-playing"><strong>{selection.title}</strong>{player.url && <PixelButton size="small" onClick={() => choose(selection)}>重新获取播放地址</PixelButton>}</div>}
-      <ul className="review-replay-list">{state.data?.replays.map(replay => <li key={replay.id}><button type="button" aria-pressed={selection?.id === replay.id} onClick={() => choose(replay)}><span aria-hidden="true">▷</span><div><strong>{replay.title}</strong><p>{replay.recording_date || '录制日期未提供'}{replayDuration(replay.duration_seconds) && ` · ${replayDuration(replay.duration_seconds)}`}</p></div><span>{selection?.id === replay.id ? '当前选择' : '打开'}</span></button></li>)}</ul>
+      {selection && <div className="review-playing"><strong>{selection.title}</strong>{player.url && <PixelButton size="small" onClick={() => choose(selection)}>{copyText('system.review.042')}</PixelButton>}</div>}
+      <ul className="review-replay-list">{state.data?.replays.map(replay => <li key={replay.id}><button type="button" aria-pressed={selection?.id === replay.id} onClick={() => choose(replay)}><span aria-hidden="true">▷</span><div><strong>{replay.title}</strong><p>{replay.recording_date || copyText('system.review.043')}{replayDuration(replay.duration_seconds) && ` · ${replayDuration(replay.duration_seconds)}`}</p></div><span>{selection?.id === replay.id ? copyText('system.review.044') : copyText('system.review.045')}</span></button></li>)}</ul>
     </ReadState>
   </StudySection>;
 }

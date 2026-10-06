@@ -1,11 +1,20 @@
 import { Typography } from 'antd';
 import { PixelPanel } from './PixelUI';
 import './pixel-study.css';
+import {useLocation} from 'react-router-dom';
+import {useCourseId} from '../useCourseApis';
+import {coursePresentation} from '../space/identity';
+import SceneArt from '../space/SceneArt';
 
 export function StudyHeader({ eyebrow, title, description, children }) {
-  return <header className="study-header">
+  const id=useCourseId(),{pathname}=useLocation(),voyage=id&&coursePresentation(id).theme==='voyage';
+  const scene=/\/(lab|glider)$/.test(pathname)?'observatory':/\/(archives|reflection)(?:\/|$)/.test(pathname)?'planet-base':'bridge';
+  return <header className={'study-header'+(id?' course-page-header':'')}>
+    {id&&<SceneArt name={voyage?scene:'campus'} className="course-page-scene" priority/>}
+    <div className={id?'course-page-heading':undefined}>
     <div className="study-header-context">{eyebrow}</div>
     <div className="study-header-main"><div><Typography.Title level={2}>{title}</Typography.Title>{description && <p>{description}</p>}</div><div className="study-header-actions">{children}</div></div>
+    </div>
   </header>;
 }
 
