@@ -1,13 +1,15 @@
-import {copyText} from '../content/copy';
+import Alert from '../student/visual/StudentAlert';
+import Sentence from '../content/Sentence';
+import {copyText,copyFragment} from '../content/copy';
 import CopyBlock from '../content/CopyBlock';
 import { useCourseApis } from './useCourseApis';
 import { useCallback, useState } from 'react';
 import Link from './space/SpaceLink';
 
-import { Alert, Empty, Select } from 'antd';
+import { Empty, Select } from 'antd';
 import { formatBeijingTime } from '../utils/date';
 import useRemote from './useRemote';
-import AsyncPageState from '../components/common/AsyncPageState';
+import AsyncPageState from '../student/visual/StudentPageState';
 import { reportSummary, scoreText } from './archiveModel';
 import { PixelTag } from './visual/PixelUI';
 
@@ -24,9 +26,9 @@ function LessonReport({ courseId, lessonId }) {
   const report = summary?.report;
   return <div className="archive-report-result" aria-live="polite"><AsyncPageState loading={loading} error={error} onRetry={retry}>{data && <>
     <div className="archive-record-heading"><h4>{data.lesson.title}</h4><PixelTag tone={summary.tone}>{summary.label}</PixelTag></div>
-    <p>{copyText('system.reports.002')}{data.progress?.percent == null ? copyText('system.reports.003') : `${data.progress.percent}%`}</p>
-    {report ? <><p>{copyText('system.reports.004')}{report.version}{copyText('system.reports.005')}{formatBeijingTime(report.submitted_at)}</p>
-      <div className="study-feedback"><h4>{copyText('system.reports.006')}</h4><p>{report.review_comment || copyText('system.reports.007')}</p><p>{copyText('system.reports.008')}{scoreText(report.score)}{report.score != null && copyText('system.reports.009')}</p>{report.reviewed_at && <><p>{copyText('system.reports.010')}{formatBeijingTime(report.reviewed_at)}</p><CopyBlock id="system.reports.011" as="p" className="study-help"/></>}</div>
+    <Sentence>{copyFragment('system.reports.002')}{data.progress?.percent == null ? copyFragment('system.reports.003') : `${data.progress.percent}%`}</Sentence>
+    {report ? <><Sentence>{copyFragment('system.reports.004')}{report.version}{copyFragment('system.reports.005')}{formatBeijingTime(report.submitted_at)}</Sentence>
+      <div className="study-feedback"><h4>{copyText('system.reports.006')}</h4><Sentence>{report.review_comment || copyText('system.reports.007')}</Sentence><Sentence>{copyFragment('system.reports.008')}{scoreText(report.score)}{report.score != null && copyFragment('system.reports.009')}</Sentence>{report.reviewed_at && <><Sentence>{copyFragment('system.reports.010')}{formatBeijingTime(report.reviewed_at)}</Sentence><CopyBlock id="system.reports.011" as="p" className="study-help"/></>}</div>
       <div className="archive-inline-actions"><Link to={`/courses/${courseId}/lessons/${lessonId}/learn?stage=2`}>{report.status === 'rejected' ? copyText('system.reports.012') : copyText('system.reports.013')}</Link><Link to={`/courses/${courseId}/lessons/${lessonId}/learn?stage=3`}>{copyText('system.reports.014')}</Link></div>
       <CopyBlock id="system.reports.015" as="p" className="study-help"/>
     </> : <><Alert type="info" showIcon title={summary.label} description={data.progress?.report_unlocked ? copyText('system.reports.016') : copyText('system.reports.017')} /><Link to={`/courses/${courseId}/lessons/${lessonId}/learn`}>{copyText('system.reports.018')}</Link></>}

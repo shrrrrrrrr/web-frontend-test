@@ -1,0 +1,60 @@
+{
+  "frozenFiles": [
+    {
+      "file": "docs/redesign-v2/step-02/copy-review.html",
+      "sha256": "026997b3d1f57a4a794fb55aa584ecf60c6c519545bd5d920574688b8112eb39",
+      "unchangedFrom": "72009e5"
+    },
+    {
+      "file": "docs/redesign-v2/step-02/copy-baseline.json",
+      "sha256": "4a941b4e15e3199793bd633ec1a2f0808839eea9fbe7bf2dde6580f72215310a",
+      "unchangedFrom": "72009e5"
+    },
+    {
+      "file": "docs/redesign-v2/step-02/teaching-snapshots.json",
+      "sha256": "c8ab06b53ae8d7da575f838b8a581bcdbbcfd45656fc17c9ee4f2413c1cb0dd5",
+      "unchangedFrom": "72009e5"
+    }
+  ],
+  "originalIds": 769,
+  "unchangedOriginalIds": true,
+  "addedIds": [
+    "fortune.title",
+    "fortune.date",
+    "fortune.loading",
+    "fortune.failed",
+    "fortune.retry",
+    "fortune.good",
+    "fortune.avoid",
+    "fortune.boundary",
+    "fortune.level.great",
+    "fortune.level.lucky",
+    "fortune.level.small",
+    "fortune.level.steady",
+    "fortune.good.record",
+    "fortune.good.ask",
+    "fortune.good.test",
+    "fortune.good.organize",
+    "fortune.good.listen",
+    "fortune.good.rest",
+    "fortune.avoid.rush",
+    "fortune.avoid.ignore",
+    "fortune.avoid.compare",
+    "fortune.avoid.guess",
+    "patch.map.title",
+    "patch.scene.failed",
+    "patch.login.account",
+    "patch.login.welcome",
+    "patch.login.title",
+    "patch.login.hint",
+    "patch.login.note",
+    "patch.login.footer",
+    "patch.login.username",
+    "patch.login.password",
+    "patch.login.needUsername",
+    "patch.login.needPassword",
+    "patch.login.submit",
+    "patch.login.reload"
+  ],
+  "userReply": "先继续使用原稿，之后手动修改；本轮未收到改稿文件，未应用浏览器未保存修改"
+}

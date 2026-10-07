@@ -39,7 +39,8 @@ def compare(rows,current):
     return {'version':1,'changes':changes,'conflicts':conflicts,'rejectedIds':rejected,'applied':False}
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('input');parser.add_argument('--jsx',default=str(root/'frontend/src/content/uiCopy.jsx'));parser.add_argument('--out',required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('input');parser.add_argument('--jsx',default=str(root/'frontend/src/content/uiCopy.jsx'));parser.add_argument('--baseline',default=str(root/'docs/redesign-v2/step-02/copy-baseline.json'));parser.add_argument('--out',required=True);args=parser.parse_args()
+    base=json.loads(Path(args.baseline).read_text(encoding='utf-8'))
     raw=Path(args.input).read_text(encoding='utf-8-sig')
     if args.input.lower().endswith('.json'):
         data=json.loads(raw);rows={e['id']:e for e in data['edits']}

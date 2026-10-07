@@ -1,3 +1,4 @@
+import Sentence from '../content/Sentence';
 import { coursePresentation } from './space/identity';
 import { Button, Space, Typography } from 'antd';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +15,7 @@ export default function AssociatedExperiments({ courseId, lessonId, stage, cardI
   if (variant === 'study') return <aside className="study-experiment" aria-label="关联实验">
     <div className="study-experiment-heading"><PixelIcon name="lab" />动手验证一下</div>
     <Space wrap>{items.map((item) => <PixelButton key={item.id} onClick={() => navigate(associatedExperimentLink(context, item.experiment))}>{item.label}</PixelButton>)}</Space>
-    <p className="study-help">返回时恢复当前学习位置；试飞不会自动提交作品或完成课时。</p>
+    <Sentence className="study-help">返回时恢复当前学习位置；试飞不会自动提交作品或完成课时。</Sentence>
   </aside>;
   return <Space wrap style={{ marginBottom: 16 }}>
     {items.map((item) => <Button key={item.id} onClick={() => navigate(associatedExperimentLink(context, item.experiment))}>{item.label}</Button>)}

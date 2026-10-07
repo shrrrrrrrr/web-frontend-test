@@ -1,5 +1,6 @@
+import Alert from '../student/visual/StudentAlert';
 import { useEffect, useRef, useState } from 'react';
-import { Alert, Button } from 'antd';
+import { Button } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 import { PageLoading, StudentPageStatus } from '../components/PageStatus';
 import { authAPI, courseAPI } from '../api';

@@ -7,11 +7,13 @@ import { asset } from './identity';
 import { PixelImage } from '../visual/PixelUI';
 import PixelIcon from '../visual/PixelIcon';
 import useRobotAvoidance from './useRobotAvoidance';
+import {patchAsset} from './visualAssets';
 
 export default function FloatingAssistant() {
   const s=useCourseExperience(),location=useLocation(),navigate=useNavigate();
   const button=useRef(null),dialog=useRef(null),lastOpen=useRef(false),consumedOpen=useRef(null);
   const avoidOffset=useRobotAvoidance(button,location.pathname);
+  const [imageFailed,setImageFailed]=useState(false);
   const [viewport,setViewport]=useState(()=>({width:innerWidth,height:window.visualViewport?.height||innerHeight,top:window.visualViewport?.offsetTop||0}));
   const open=s?.overlay==='chat',mobile=viewport.width<768||(viewport.width<992&&viewport.height<450);
   useEffect(()=>{
@@ -28,16 +30,18 @@ export default function FloatingAssistant() {
   },[location,navigate,s]);
   useEffect(()=>{
     if(open){const timer=setTimeout(()=>dialog.current?.querySelector('#assistant-question')?.focus(),0);lastOpen.current=true;return()=>clearTimeout(timer);}
-    if(lastOpen.current){lastOpen.current=false;button.current?.focus();}
-  },[open]);
+    if(lastOpen.current){lastOpen.current=false;if(!s?.overlay)button.current?.focus();}
+  },[open,s?.overlay]);
   useEffect(()=>{
     if(!open||!mobile)return;const previous=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=previous;};
   },[open,mobile]);
   useEffect(()=>{
     if(!open)return;
     const escape=event=>{if(event.key==='Escape'){event.preventDefault();event.stopPropagation();s.openOverlay(null);}};
+    const outside=event=>{if(!dialog.current?.contains(event.target)&&!button.current?.contains(event.target))s.openOverlay(null);};
     window.addEventListener('keydown',escape,true);
-    return()=>window.removeEventListener('keydown',escape,true);
+    document.addEventListener('pointerdown',outside);
+    return()=>{window.removeEventListener('keydown',escape,true);document.removeEventListener('pointerdown',outside);};
   },[open,s]);
   if(!s)return null;
   const close=()=>s.openOverlay(null);
@@ -49,8 +53,8 @@ export default function FloatingAssistant() {
     if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
   };
   return <div className="course-assistant">
-    <button ref={button} type="button" className="course-robot" style={{bottom:`calc(max(${mobile?16:20}px, env(safe-area-inset-bottom)) + ${avoidOffset}px)`}} aria-label={copyText('assistant.open')} aria-expanded={open} aria-controls="course-chat" onClick={()=>s.openOverlay(open?null:'chat')}>
-      <PixelImage src={asset('robot',96)} alt="" width={64} height={64} fallback={<PixelIcon name="help"/>}/>
+    <button ref={button} type="button" className="course-robot" disabled={!!s.overlay&&s.overlay!=='chat'} style={{bottom:`calc(max(${mobile?16:20}px, env(safe-area-inset-bottom)) + ${avoidOffset}px)`}} aria-label={copyText('assistant.open')} aria-expanded={open} aria-controls="course-chat" onClick={()=>s.openOverlay(open?null:'chat')}>
+      {imageFailed?<PixelIcon name="help" size={44}/>:<img src={patchAsset('robot-wink',96)} srcSet={`${patchAsset('robot-wink',96)} 96w, ${patchAsset('robot-wink',192)} 192w`} sizes="80px" width={80} height={80} alt="" onError={()=>setImageFailed(true)}/>}
       {s.unseen&&<span className="course-chat-unread" aria-label={copyText('system.robot.001')}/>}
     </button>
     {open&&mobile&&<button type="button" className="course-chat-mask" tabIndex={-1} aria-label={copyText('system.robot.002')} onClick={close}/>}

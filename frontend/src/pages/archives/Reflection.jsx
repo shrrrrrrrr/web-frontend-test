@@ -1,10 +1,11 @@
+import Alert from '../../student/visual/StudentAlert';
 import {copyText} from '../../content/copy';
 import CopyBlock from '../../content/CopyBlock';
 import { useCourseApis } from '../../student/useCourseApis';
 import { useEffect, useRef, useState } from 'react';
 import {useCourseNavigate as useNavigate} from '../../student/useCourseApis';
 
-import { Alert, Form, Input, Select, Result } from 'antd';
+import { Form, Input, Select, Result } from 'antd';
 import { STUDENT_COURSES_CHANGED } from '../../student/accessPolicy';
 import { loadArchiveScope } from '../../student/archiveModel';
 import PageContainer from '../../components/common/PageContainer';

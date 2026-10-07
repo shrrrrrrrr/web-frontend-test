@@ -1,12 +1,14 @@
+import Alert from '../student/visual/StudentAlert';
+import Sentence from '../content/Sentence';
 import {useCourseApis} from './useCourseApis';
 import { useCallback, useEffect, useRef } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import Link from './space/SpaceLink';
 
-import { Alert, Empty } from 'antd';
-import AsyncPageState from '../components/common/AsyncPageState';
+import { Empty } from 'antd';
+import AsyncPageState from '../student/visual/StudentPageState';
 import useRemote from './useRemote';
-import { PixelButton, PixelTag } from './visual/PixelUI';
+import { PixelTag } from './visual/PixelUI';
 import { StudySection } from './visual/StudyUI';
 import { formatBeijingTime } from '../utils/date';
 
@@ -22,13 +24,13 @@ function WorkTask({ task, enrollmentId }) {
   const latest = data?.works?.[0];
   const params = new URLSearchParams({ task_id: task.id, enrollment_id: enrollmentId });
   if (latest) params.set('parent_work_id', latest.id);
-  return <article ref={targetRef} id={`task-${task.id}`} className="study-task" aria-labelledby={`task-title-${task.id}`}><h4 id={`task-title-${task.id}`}>{task.title}</h4><p className="study-prose">{task.description || '老师尚未填写任务说明。'}</p><p className="study-help">截止：{task.deadline ? formatBeijingTime(task.deadline) : '未设置'}</p>
+  return <article ref={targetRef} id={`task-${task.id}`} className="study-task" aria-labelledby={`task-title-${task.id}`}><h4 id={`task-title-${task.id}`}>{task.title}</h4><Sentence className="study-prose">{task.description || '老师尚未填写任务说明。'}</Sentence><Sentence className="study-help">截止：{task.deadline ? formatBeijingTime(task.deadline) : '未设置'}</Sentence>
     <AsyncPageState loading={loading} error={error} onRetry={retry}>
       <ul className="study-work-versions">{data?.works.map((work) => <li key={work.id}><Link to={`/works/${work.id}`}><span>第 {work.version} 版 · {work.title}</span><PixelTag tone={work.review_status === 'approved' ? 'success' : work.review_status === 'rejected' && work.id === latest.id ? 'warning' : 'neutral'}>{work.review_status === 'rejected' ? work.id === latest.id ? '需修改' : '已修改' : work.review_status === 'approved' ? '已通过' : '待评审'}</PixelTag></Link></li>)}</ul>
       {latest?.reject_reason && <Alert type="warning" title="导师退回修改" description={latest.reject_reason} />}
       <div style={{ marginTop: 12 }}>{!latest || latest.review_status === 'rejected'
-        ? <Link to={`/works/upload?${params}`}><PixelButton type="primary">{latest ? '提交修改后的作品' : '提交作品'}</PixelButton></Link>
-        : <p>{latest.review_status === 'approved' ? '作品已通过评审。' : '作品已提交，等待导师评审后再按意见处理。'}</p>}</div>
+        ? <Link to={`/works/upload?${params}`} className="pixel-link-button">{latest ? '提交修改后的作品' : '提交作品'}</Link>
+        : <Sentence>{latest.review_status === 'approved' ? '作品已通过评审。' : '作品已提交，等待导师评审后再按意见处理。'}</Sentence>}</div>
     </AsyncPageState>
   </article>;
 }

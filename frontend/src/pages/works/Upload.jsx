@@ -1,3 +1,4 @@
+import Alert from '../../student/visual/StudentAlert';
 import {copyText} from '../../content/copy';
 import CopyBlock from '../../content/CopyBlock';
 import { useCourseApis } from '../../student/useCourseApis';
@@ -5,11 +6,11 @@ import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {useCourseNavigate as useNavigate} from '../../student/useCourseApis';
 
-import { Alert, App, Form, Input, Upload } from 'antd';
+import { App, Form, Input, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { useAuth } from '../../store/AuthContext';
 import useRemote from '../../student/useRemote';
-import AsyncPageState from '../../components/common/AsyncPageState';
+import AsyncPageState from '../../student/visual/StudentPageState';
 import PageContainer from '../../components/common/PageContainer';
 import { PixelButton as Button, PixelTag } from '../../student/visual/PixelUI';
 import { StudyHeader, StudySection } from '../../student/visual/StudyUI';

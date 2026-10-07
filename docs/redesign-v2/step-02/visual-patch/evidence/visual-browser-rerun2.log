@@ -1,0 +1,62 @@
+▶ 新版第2步补修：真实素材、运势、居中地图与输入交互
+  ✔ 独立桌面/手机登录构图、六尺寸整屏不滚动，短屏表单内部可达 (9126.4477ms)
+  ✔ 登录图片故障不挡表单，真实错误与防重复提交 (2374.1779ms)
+  ✔ 六尺寸平台/课程主题，真实运势、地图默认和弹窗、标题透明、封面和聊天 (31327.4084ms)
+  ✖ 居中详情焦点/Tab/Escape/遮罩/滚动锁、节点 Enter Space、取消课时与互斥 (2359.7525ms)
+✖ 新版第2步补修：真实素材、运势、居中地图与输入交互 (50682.0734ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 3
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 51576.5461
+
+✖ failing tests:
+
+test at tests\redesign-v2.visual-patch.browser.test.js:16:54
+✖ 居中详情焦点/Tab/Escape/遮罩/滚动锁、节点 Enter Space、取消课时与互斥 (2359.7525ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'visible'
+  - 'hidden'
+
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:45:98
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:41:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'visible',
+    expected: 'hidden',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\redesign-v2.visual-patch.browser.test.js:13:1
+✖ 新版第2步补修：真实素材、运势、居中地图与输入交互 (50682.0734ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'visible'
+  - 'hidden'
+
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:45:98
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:41:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'visible',
+    expected: 'hidden',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

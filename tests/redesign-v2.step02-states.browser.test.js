@@ -5,7 +5,7 @@ import {mkdirSync} from 'node:fs';
 import path from 'node:path';
 import {chromium} from 'playwright';
 import {fixture,root,Database} from './v2-fixture.mjs';
-const base='http://127.0.0.1:5201',out=path.join(root,'docs/redesign-v2/step-02/screenshots');
+const base='http://127.0.0.1:5201',out=path.join(root,'docs/redesign-v2/step-02/visual-patch/regression-screenshots');
 const gate=()=>{let release;return{promise:new Promise(r=>release=r),release};};
 async function ready(url){for(let i=0;i<100;i++){try{if((await fetch(url)).ok)return;}catch{}await new Promise(r=>setTimeout(r,100));}throw Error(url);}
 async function shot(p,name){await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(150);assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await p.screenshot({path:path.join(out,name+'.png'),animations:'disabled'});}

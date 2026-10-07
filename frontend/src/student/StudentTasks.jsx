@@ -1,3 +1,4 @@
+import Sentence from '../content/Sentence';
 import {copyText} from '../content/copy';
 import CopyBlock from '../content/CopyBlock';
 import { useCallback, useState } from 'react';
@@ -41,7 +42,7 @@ function TaskResults({ status }) {
         const action = task.report_status === 'rejected' ? copyText('system.tasks.014') : task.status === 'completed' ? copyText('system.tasks.015') : task.status === 'submitted' ? copyText('system.tasks.016') : copyText('system.tasks.017');
         const target = `/courses/${task.course_id}/lessons/${task.lesson_id}/learn${task.report_status === 'rejected' ? '?stage=2' : ''}`;
         return <li className="compat-task-row" key={task.id}><div className="compat-task-heading"><h4>{task.title}</h4><PixelTag tone={task.status === 'completed' ? 'success' : 'current'}>{taskLabels[task.status] || copyText('system.tasks.018')}</PixelTag></div>
-          <p className="compat-muted">{copyText('system.tasks.019')}{task.lesson_title || copyText('system.tasks.020')}<span className="compat-meta-divider"> / </span>{copyText('system.tasks.021')}{task.deadline ? formatBeijingTime(task.deadline) : copyText('system.tasks.022')}</p>
+          <Sentence className="compat-muted">{copyText('system.tasks.019')}{task.lesson_title || copyText('system.tasks.020')}<span className="compat-meta-divider"> / </span>{copyText('system.tasks.021')}{task.deadline ? formatBeijingTime(task.deadline) : copyText('system.tasks.022')}</Sentence>
           <div className="compat-task-bottom"><div className="compat-task-status"><div className="compat-task-progress"><span>{copyText('system.tasks.023')}</span>{progress == null ? <span className="compat-muted">{copyText('system.tasks.024')}</span> : <PixelProgress value={progress} label={`${task.title}课时学习进度`} />}</div>
             <div className="compat-tags"><span>{copyText('system.tasks.025')}{reportLabels[task.report_status] || copyText('system.tasks.026')}</span>{task.work_id && <PixelTag tone={work.tone}>{copyText('system.tasks.027')}{work.label}</PixelTag>}</div></div>
             <div className="compat-row-actions"><Link className="compat-primary-link" to={target}>{action}</Link>{task.work_id && <Link to={`/works/${task.work_id}`}>{task.review_status === 'rejected' ? copyText('system.tasks.028') : copyText('system.tasks.029')}</Link>}</div>

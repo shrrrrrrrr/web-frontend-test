@@ -1,6 +1,8 @@
+import Alert from '../../content/RoleAlert';
+import RoleSentence from '../../content/RoleSentence';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Alert, Button, Form, Input, Select, Switch } from 'antd';
+import { Button, Form, Input, Select, Switch } from 'antd';
 import { feedbackAPI } from '../../api';
 import { feedbackModuleOptions, feedbackTypeOptions } from '../../constants/feedback';
 import { useAuth } from '../../store/AuthContext';
@@ -39,7 +41,7 @@ function CreateForm({ user }) {
   const moduleOptions = user.role === 'student' ? Object.entries(studentFeedbackModules).map(([value, label]) => ({ value, label })) : feedbackModuleOptions;
   return <ServicePage title="提交反馈" eyebrow="帮助 / NEW FEEDBACK" description="遇到问题或有新建议，都可以告诉管理员。" actions={<Button onClick={() => navigate('/feedback')}>返回我的反馈</Button>}>
     <ServicePanel className="feedback-form-panel">
-      <p className="service-note">说清楚你的操作、实际情况和期望结果，能帮助管理员更快理解问题。提交后可在“我的反馈”查看进展。</p>
+      <RoleSentence className="service-note">说清楚你的操作、实际情况和期望结果，能帮助管理员更快理解问题。提交后可在“我的反馈”查看进展。</RoleSentence>
       <Form layout="vertical" initialValues={{ allow_contact: true, contact: user.email || user.phone || '' }} onFinish={submit}>
         <div className="service-form-pair">
           <Form.Item name="type" label="反馈类型" rules={[{ required: true, message: '请选择反馈类型' }]}><Select aria-label="反馈类型" options={feedbackTypeOptions} placeholder="请选择反馈类型" /></Form.Item>
@@ -50,7 +52,7 @@ function CreateForm({ user }) {
           <Input.TextArea rows={6} maxLength={5000} showCount placeholder={'1. 进行了什么操作\n2. 实际出现什么情况\n3. 希望得到怎样的帮助'} />
         </Form.Item>
         <div className="feedback-file-picker">
-          <label htmlFor="feedback-files">附件（选填）</label><p id="feedback-files-help">最多 3 个，每个不超过 10 MiB。支持 PNG、JPG/JPEG、WEBP、PDF。</p>
+          <label htmlFor="feedback-files">附件（选填）</label><RoleSentence id="feedback-files-help">最多 3 个，每个不超过 10 MiB。支持 PNG、JPG/JPEG、WEBP、PDF。</RoleSentence>
           <input id="feedback-files" aria-describedby="feedback-files-help" type="file" multiple accept=".png,.jpg,.jpeg,.webp,.pdf" onChange={selectFiles} disabled={busy} />
           {fileError && <Alert type="error" role="alert" title={fileError} />}
           {files.length > 0 && <ul>{files.map((file, index) => <li key={`${file.name}:${index}`}><span><strong>{file.name}</strong><small>{(file.size / 1024).toFixed(1)} KiB · 待随反馈提交</small></span><Button disabled={busy} aria-label={`移除 ${file.name}`} onClick={() => setFiles((value) => value.filter((_, i) => i !== index))}>移除</Button></li>)}</ul>}

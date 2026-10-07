@@ -115,7 +115,7 @@ test('第一步补修：真实字体字形、平台落点与动态地图',{timeo
         await p.locator('.route-node').first().focus();await p.keyboard.press('Enter');
         await p.getByTestId('lesson-details').getByText('观察与提问',{exact:true}).waitFor();
         await shot(p,'detail-'+width);
-        if(width<992)await p.locator('.space-lesson-drawer .ant-drawer-close').click();
+        await p.locator('.space-lesson-modal .ant-modal-close').click();
         await p.evaluate(()=>dispatchEvent(new Event('focus')));await p.waitForTimeout(350);
         assert.equal(await p.locator('[data-lesson-id="90011"] .route-node').getAttribute('aria-pressed'),'true');
         assert.equal(await p.locator('[data-lesson-id="90012"] .route-node').getAttribute('aria-current'),'step');
@@ -138,10 +138,10 @@ test('第一步补修：真实字体字形、平台落点与动态地图',{timeo
         for(let i=count===20?2:1;i<=count;i++)db.prepare("INSERT INTO lessons(id,course_id,title,sort_order,status) VALUES(?,9003,?,?,?)").run(90300+i,i===2?'长标题测试：从观察条件到提出假设，再通过反复试验收集证据比较设计方案并整理小组的发现与反思（合成测试）':'边界测试课时 '+i,i,i===20?'cancelled':'scheduled');
         for(const[width,height]of [[1440,900],[390,844]]){
           await p.setViewportSize({width,height});await p.goto(base+'/courses/9003');
-          if(!count)await p.getByText('这门课程还没有课时，请等待老师发布。',{exact:true}).waitFor();else await p.locator('.route-node').first().waitFor();
+          if(!count)await p.getByText('这门课程还没有课时，请等待老师发布',{exact:true}).waitFor();else await p.locator('.route-node').first().waitFor();
           assert.equal(await p.locator('.route-node').count(),count);await shot(p,`nodes-${count}-${width}`,count===20);
           if(count){assert.equal(await p.locator('.route-group').count(),1);assert.match(await p.locator('.pixel-map-region-title').innerText(),/课程课时/);assert.deepEqual(await p.locator('[data-lesson-id]').evaluateAll(es=>es.map(e=>Number(e.dataset.lessonId))),Array.from({length:count},(_,i)=>90301+i));}
-          if(count===20){await p.locator('[data-lesson-id="90320"] .route-node').click();await p.getByText('本课时已取消',{exact:true}).waitFor();assert.equal(await p.getByRole('button',{name:'进入课时',exact:true}).count(),0);if(width<992)await p.locator('.space-lesson-drawer .ant-drawer-close').click();}
+          if(count===20){await p.locator('[data-lesson-id="90320"] .route-node').click();await p.getByText('本课时已取消',{exact:true}).waitFor();assert.equal(await p.getByRole('button',{name:'进入课时',exact:true}).count(),0);await p.locator('.space-lesson-modal .ant-modal-close').click();}
         }
       }
       await p.goto(base+'/courses/9002');await p.locator('[data-lesson-id="90021"]').waitFor();assert.equal(await p.locator('.space-map').getAttribute('data-map-theme'),'campus');assert.equal(await p.locator('.space-place-art').count(),0);assert.equal(await p.locator('[data-lesson-id="90011"]').count(),0);await shot(p,'default-map-390');
@@ -154,7 +154,7 @@ test('第一步补修：真实字体字形、平台落点与动态地图',{timeo
       await p.route('**/assets/redesign-v2/web/moon-base-*.webp',r=>r.abort());
       await p.goto(base+'/courses/9001');await p.locator('[data-place-failed]').first().waitFor();
       assert.equal(await p.locator('.route-node').count(),6);await p.locator('.route-node').first().focus();await p.keyboard.press('Space');await p.getByTestId('lesson-details').getByText('观察与提问',{exact:true}).waitFor();
-      await p.locator('.space-lesson-drawer .ant-drawer-close').click();await shot(p,'place-fallback-390');await p.unroute('**/assets/redesign-v2/web/moon-base-*.webp');
+      await p.locator('.space-lesson-modal .ant-modal-close').click();await shot(p,'place-fallback-390');await p.unroute('**/assets/redesign-v2/web/moon-base-*.webp');
     });
 
     await scenario('执行导师、管理员、只读教师实际渲染字体与原角色入口',async()=>{

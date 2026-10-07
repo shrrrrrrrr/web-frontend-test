@@ -30,7 +30,7 @@ test('新版平台边界、迟到响应与三尺寸状态验收',{timeout:180000
    await p.getByLabel('原密码',{exact:true}).fill('student123');await p.getByLabel('新密码',{exact:true}).fill('V2student#123');await p.getByLabel('确认新密码',{exact:true}).fill('V2student#123');await p.getByRole('button',{name:'确认修改',exact:true}).click();await p.waitForURL('**/explore');await p.getByTestId('home-course-card').first().waitFor();assert.equal(db.prepare('SELECT force_reset_password v FROM users WHERE id=4').get().v,0);
   });
   await scenario('无分配课程真实空状态、恢复分配、键盘进入与手机点击',async()=>{
-   db.prepare("UPDATE enrollments SET status='removed' WHERE id IN (9001,9002)").run();await p.reload();await p.getByText('老师还没有为你分配已发布的课程，请联系老师。',{exact:true}).waitFor();await three(p,'empty');
+   db.prepare("UPDATE enrollments SET status='removed' WHERE id IN (9001,9002)").run();await p.reload();await p.getByText('老师还没有为你分配已发布的课程，请联系老师',{exact:true}).waitFor();await three(p,'empty');
    db.prepare("UPDATE enrollments SET status='active' WHERE id IN (9001,9002)").run();await p.evaluate(()=>dispatchEvent(new Event('focus')));await p.getByTestId('home-course-card').first().waitFor();assert.equal(await p.getByTestId('home-course-card').count(),2);
    await p.getByTestId('home-course-card').first().focus();await p.keyboard.press('Enter');await p.waitForURL('**/courses/9001');await p.locator('.route-node').first().waitFor();await p.goto(base+'/explore');await p.getByTestId('home-course-card').nth(1).click();await p.waitForURL('**/courses/9002');await p.locator('.route-node').first().waitFor();await three(p,'default-map');
   });

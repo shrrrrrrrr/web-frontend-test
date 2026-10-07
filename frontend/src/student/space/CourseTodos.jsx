@@ -1,3 +1,4 @@
+import Sentence from '../../content/Sentence';
 import {useCallback} from 'react';
 import {Collapse,Empty,Space} from 'antd';
 import {useCourseApis,useCourseNavigate} from '../useCourseApis';
@@ -12,13 +13,13 @@ function Todo({ item, primary = false }) {
   return <div className={`home-todo ${primary ? 'home-todo--primary' : ''}`} data-testid={primary ? 'home-primary-todo' : undefined}>
     <div className="home-todo-copy">
       <h3>{item.title}</h3>
-      <p className="home-todo-source">{item.courseTitle} · {item.lessonTitle}</p>
+      <Sentence className="home-todo-source">{item.courseTitle} · {item.lessonTitle}</Sentence>
       <Space wrap size={[8, 8]}><PixelTag>课时学习进度 {item.learningProgress}%</PixelTag>
         {reportLabels[item.reportStatus] && <PixelTag tone={item.reportStatus === 'rejected' ? 'warning' : 'neutral'}>{reportLabels[item.reportStatus]}</PixelTag>}
         {workLabels[item.workStatus] && <PixelTag tone={item.workStatus === 'rejected' ? 'warning' : 'neutral'}>{workLabels[item.workStatus]}</PixelTag>}
       </Space>
-      <p className="home-todo-description">{item.description}</p>
-      {item.taskId && <p className="home-todo-deadline">作品截止：{item.deadline || '未设置'}</p>}
+      <Sentence className="home-todo-description">{item.description}</Sentence>
+      {item.taskId && <Sentence className="home-todo-deadline">作品截止：{item.deadline || '未设置'}</Sentence>}
     </div>
     <div className="home-todo-action"><PixelButton type={primary ? 'primary' : 'default'} onClick={() => navigate(item.href)} icon={<PixelIcon name="continue" />}>{item.action}</PixelButton></div>
   </div>;
@@ -28,5 +29,5 @@ function Todo({ item, primary = false }) {
 export default function CourseTodos({detail}){
  const {taskAPI}=useCourseApis();const fetcher=useCallback(()=>taskAPI.list(),[taskAPI]);const {data,error,retry}=useRemote(fetcher,{courseSensitive:true,courseId:detail.course.id});
  const todos=buildHomeTodos({courses:[detail.course],courseDetails:[detail],tasks:data?.tasks||[]});
- return <Collapse className="space-course-todos" items={[{key:'todo',label:'下一步 · '+(todos[0]?.action||'查看学习与任务')+(todos.length?'（'+todos.length+'）':''),children:<>{error&&<p role="alert">任务状态读取失败。<button onClick={retry}>重新读取</button></p>}{todos.length?todos.map((item,i)=><Todo key={item.id} item={item} primary={!i}/>):<Empty description="暂无需要处理的待办，可查看课时内容与评审状态。"/>}</>}]} />;
+ return <Collapse className="space-course-todos" items={[{key:'todo',label:'下一步 · '+(todos[0]?.action||'查看学习与任务')+(todos.length?'（'+todos.length+'）':''),children:<>{error&&<Sentence role="alert">任务状态读取失败。<button onClick={retry}>重新读取</button></Sentence>}{todos.length?todos.map((item,i)=><Todo key={item.id} item={item} primary={!i}/>):<Empty description="暂无需要处理的待办，可查看课时内容与评审状态。"/>}</>}]} />;
 }

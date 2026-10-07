@@ -1,3 +1,5 @@
+import Alert from '../student/visual/StudentAlert';
+import Sentence from '../content/Sentence';
 import {copyText} from '../content/copy';
 import CopyBlock from '../content/CopyBlock';
 import {useCourseApis} from './useCourseApis';
@@ -5,11 +7,11 @@ import { useCallback, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {useCourseNavigate as useNavigate} from './useCourseApis';
 
-import { Alert, Select } from 'antd';
+import { Select } from 'antd';
 import { useAuth } from '../store/AuthContext';
 import { formatBeijingTime } from '../utils/date';
 import PageContainer from '../components/common/PageContainer';
-import AsyncPageState from '../components/common/AsyncPageState';
+import AsyncPageState from '../student/visual/StudentPageState';
 import useRemote from './useRemote';
 import { PixelButton, PixelTag } from './visual/PixelUI';
 import { StudyHeader, StudySection } from './visual/StudyUI';
@@ -65,9 +67,9 @@ export default function StudentWorkDetail() {
           <PixelTag tone={work.review_status === 'approved' ? 'success' : work.review_status === 'rejected' && !revised ? 'warning' : 'current'}>{status}</PixelTag>
           <div className="study-detail-meta"><span>{copyText('system.workDetail.025')}{work.version || 1}{copyText('system.workDetail.026')}</span><span>{copyText('system.workDetail.027')}{formatBeijingTime(work.created_at)}</span><span>{work.student_name}</span></div>
           {revised && <Alert type="info" showIcon title={copyText('system.workDetail.028')} description={copyText('system.workDetail.029')} />}
-          <p className="study-prose">{work.description || copyText('system.workDetail.030')}</p>
+          <Sentence className="study-prose">{work.description || copyText('system.workDetail.030')}</Sentence>
           <section className="study-subsection" aria-label={copyText('system.workDetail.031')}><h4>{copyText('system.workDetail.032')}</h4>
-            {work.has_file ? <><p className="study-prose">{work.file_name || copyText('system.workDetail.033')}</p><div className="study-attachment-info"><span>{copyText('system.workDetail.034')}{work.file_name?.includes('.') ? work.file_name.split('.').pop().toUpperCase() : work.file_type || copyText('system.workDetail.035')}</span><span>{copyText('system.workDetail.036')}{fileSize(work.file_size)}</span></div>
+            {work.has_file ? <><Sentence className="study-prose">{work.file_name || copyText('system.workDetail.033')}</Sentence><div className="study-attachment-info"><span>{copyText('system.workDetail.034')}{work.file_name?.includes('.') ? work.file_name.split('.').pop().toUpperCase() : work.file_type || copyText('system.workDetail.035')}</span><span>{copyText('system.workDetail.036')}{fileSize(work.file_size)}</span></div>
               {downloadError && <Alert type="warning" showIcon title={copyText('system.workDetail.037')} description={downloadError} style={{ marginTop: 12 }} />}
               <PixelButton type="primary" loading={downloading} onClick={download} style={{ marginTop: 16 }}>{copyText('system.workDetail.038')}</PixelButton>
             </> : <CopyBlock id="system.workDetail.039" as="p" className="study-help"/>}
@@ -75,10 +77,10 @@ export default function StudentWorkDetail() {
         </StudySection>
         <StudySection number="F" title={copyText('system.workDetail.040')} description={`以下反馈对应第 ${work.version || 1} 版。`}>
           {review || work.reject_reason ? <div className={`study-feedback${work.review_status === 'rejected' ? ' study-feedback--rejected' : ''}`}>
-            {review?.reviewer_name && <p className="study-help">{copyText('system.workDetail.041')}{review.reviewer_name}</p>}
-            {(review?.updated_at || review?.created_at) && <p className="study-help">{copyText('system.workDetail.042')}{formatBeijingTime(review.updated_at || review.created_at)}</p>}
-            <h4>{copyText('system.workDetail.043')}</h4><p className="study-prose">{review?.comment || copyText('system.workDetail.044')}</p>
-            <h4>{copyText('system.workDetail.045')}</h4><p className="study-prose">{review?.suggestion || work.reject_reason || copyText('system.workDetail.046')}</p>
+            {review?.reviewer_name && <Sentence className="study-help">{copyText('system.workDetail.041')}{review.reviewer_name}</Sentence>}
+            {(review?.updated_at || review?.created_at) && <Sentence className="study-help">{copyText('system.workDetail.042')}{formatBeijingTime(review.updated_at || review.created_at)}</Sentence>}
+            <h4>{copyText('system.workDetail.043')}</h4><Sentence className="study-prose">{review?.comment || copyText('system.workDetail.044')}</Sentence>
+            <h4>{copyText('system.workDetail.045')}</h4><Sentence className="study-prose">{review?.suggestion || work.reject_reason || copyText('system.workDetail.046')}</Sentence>
             {review && work.review_status === 'approved' && <ul className="study-scores">{dimensions.map(([key, label]) => <li key={key}><span>{label}</span><strong>{review[key] == null ? copyText('system.workDetail.047') : `${review[key]} 分`}</strong></li>)}</ul>}
           </div> : <Alert showIcon type="info" title={work.review_status === 'pending' ? copyText('system.workDetail.048') : copyText('system.workDetail.049')} description={copyText('system.workDetail.050')} />}
           {canRevise && <div className="study-actions"><PixelButton type="primary" onClick={() => navigate(`/works/upload?parent_work_id=${work.id}&task_id=${work.task_id || ''}&enrollment_id=${work.enrollment_id || ''}`)}>{copyText('system.workDetail.051')}</PixelButton></div>}

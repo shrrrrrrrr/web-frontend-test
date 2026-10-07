@@ -1,6 +1,8 @@
+import Alert from '../../content/RoleAlert';
+import RoleSentence from '../../content/RoleSentence';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { Alert, Button, Descriptions, Form, Input, Select, Space } from 'antd';
+import { Button, Descriptions, Form, Input, Select, Space } from 'antd';
 import { feedbackAPI } from '../../api';
 import FeedbackMessageForm from '../../components/feedback/FeedbackMessageForm';
 import FeedbackPriorityTag from '../../components/feedback/FeedbackPriorityTag';
@@ -77,13 +79,13 @@ function Detail({ id }) {
             { key: 'time', label: '提交时间', children: formatBeijingTime(feedback.created_at) },
             ...(admin ? [{ key: 'priority', label: '优先级', children: <FeedbackPriorityTag priority={feedback.priority} /> }] : []),
           ]} />
-          <h2>问题描述</h2><div className="service-prose">{feedback.description}</div>
-          {feedback.resolution && <div className="feedback-resolution"><h2>处理结果</h2><div className="service-prose">{feedback.resolution}</div></div>}
+          <h2>问题描述</h2><RoleSentence as="div" className="service-prose">{feedback.description}</RoleSentence>
+          {feedback.resolution && <div className="feedback-resolution"><h2>处理结果</h2><RoleSentence as="div" className="service-prose">{feedback.resolution}</RoleSentence></div>}
         </article></ServicePanel>
         {resource.data.attachments.length > 0 && <ServicePanel><h2>提交的附件</h2><ul className="feedback-attachments">{resource.data.attachments.map((file) => <Attachment key={file.id} file={file} />)}</ul></ServicePanel>}
         <ServicePanel><h2>处理记录</h2><div className="feedback-timeline"><FeedbackTimeline messages={resource.data.messages} /></div></ServicePanel>
         <ServicePanel><h2>继续沟通</h2><OperationNotice value={notice?.type === 'error' && !reopen && !resolve ? notice : null} />
-          {canReply ? <FeedbackMessageForm loading={busy} onSubmit={(content, ack) => run(() => feedbackAPI.reply(id, content), '回复已发送', ack)} /> : <p>该反馈已结束。如仍有问题，可以申请重新处理。</p>}
+          {canReply ? <FeedbackMessageForm loading={busy} onSubmit={(content, ack) => run(() => feedbackAPI.reply(id, content), '回复已发送', ack)} /> : <RoleSentence>该反馈已结束。如仍有问题，可以申请重新处理。</RoleSentence>}
           <Space wrap className="service-actions">
             {owner && feedback.status === 'resolved' && <Button type="primary" disabled={busy} onClick={() => run(() => feedbackAPI.confirm(id), '已确认解决')}>确认已解决</Button>}
             {canReopen && <Button disabled={busy} onClick={() => setReopen(true)}>申请重新处理</Button>}
@@ -100,7 +102,7 @@ function Detail({ id }) {
       </>}
     </ReadState>
     <ServiceModal title="申请重新处理" open={reopen} onCancel={() => !busy && setReopen(false)} okText="提交原因" cancelText="取消" confirmLoading={busy} onOk={() => reopenForm.submit()}>
-      <p>说明问题为什么还未解决，管理员会看到你的补充。</p><OperationNotice value={notice} />
+      <RoleSentence>说明问题为什么还未解决，管理员会看到你的补充。</RoleSentence><OperationNotice value={notice} />
       <Form form={reopenForm} layout="vertical" onFinish={({ reason }) => run(() => feedbackAPI.reopen(id, reason.trim()), '反馈已重新打开', () => { setReopen(false); reopenForm.resetFields(); })}>
         <Form.Item name="reason" label="重新处理的原因" rules={[{ required: true, whitespace: true, message: '请说明原因' }, { max: 2000, message: '原因不能超过 2000 字' }]}><Input.TextArea rows={5} maxLength={2000} showCount /></Form.Item>
       </Form>

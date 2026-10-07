@@ -1,3 +1,4 @@
+import RoleSentence from '../../content/RoleSentence';
 import { useCallback, useRef, useState } from 'react';
 import { Button, Space, Tag } from 'antd';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -55,7 +56,7 @@ function Detail({ id }) {
     <ServicePanel><OperationNotice value={notice} onRetry={refreshCount} /><ReadState {...resource} object="通知">
       {item && <article className="service-article">
         <div className="service-metadata"><Tag>{notificationCategories[item.category]?.label || item.category}</Tag><NotificationLevelTag level={item.level} /><span>{item.is_read ? '已读' : '未读'}</span><time>{formatBeijingTime(item.published_at || item.received_at)}</time></div>
-        <h1>{item.title}</h1><div className="service-prose">{item.content}</div>
+        <h1>{item.title}</h1><RoleSentence as="div" className="service-prose">{item.content}</RoleSentence>
         <Space wrap className="service-actions">
           {canRoleAccessPath(user.role, item.action_url) && <Button type="primary" onClick={() => navigate(item.action_url)}>查看相关内容</Button>}
           <Button disabled={busy} onClick={() => run()}>标记为{item.is_read ? '未读' : '已读'}</Button>

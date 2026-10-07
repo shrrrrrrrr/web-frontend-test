@@ -1,17 +1,19 @@
+import Alert from '../../student/visual/StudentAlert';
+import Sentence from '../../content/Sentence';
 import {copyText} from '../../content/copy';
 import CopyBlock from '../../content/CopyBlock';
 import {useCourseApis} from '../../student/useCourseApis';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import {
-  Alert, App, Checkbox, Collapse, Empty, Form, Input, Radio, Space, Typography,
+  App, Checkbox, Collapse, Empty, Form, Input, Radio, Space, Typography,
 } from 'antd';
 import {
   CheckCircleOutlined, DownloadOutlined,
   LeftOutlined, PlayCircleOutlined, RightOutlined,
 } from '@ant-design/icons';
 import PageContainer from '../../components/common/PageContainer';
-import AsyncPageState from '../../components/common/AsyncPageState';
+import AsyncPageState from '../../student/visual/StudentPageState';
 import { LEARNING_STEPS, REPORT_STATUS } from '../../constants/status';
 import { useAuth } from '../../store/AuthContext';
 import { draftKey } from '../../student/model';
@@ -61,8 +63,8 @@ function Exercise({ exercise, index, onDone }) {
       {!exercise.attempted && <Alert type="info" showIcon title={copyText('system.learning.014')} />}
       <Button type="primary" onClick={submit} loading={submitting} disabled={exercise.attempted || Boolean(result) || !hasAnswer}>{copyText('system.learning.015')}</Button>
       {error && <Alert type="error" showIcon title={copyText('system.learning.016')} description={error} />}
-      {exercise.attempted && <Alert type={exercise.passed ? 'success' : 'warning'} showIcon title={exercise.passed ? copyText('system.learning.017') : copyText('system.learning.018')} description={<Space orientation="vertical" size={2}><Text>{copyText('system.learning.019')}{answerText(exercise.correct_answer)}</Text><Text>{copyText('system.learning.020')}{exercise.explanation || copyText('system.learning.021')}</Text></Space>} />}
-      {result && !exercise.attempted && <Alert type={result.correct ? 'success' : 'warning'} showIcon title={result.correct ? copyText('system.learning.022') : copyText('system.learning.023')} description={<Space orientation="vertical" size={2}><Text>{copyText('system.learning.024')}{answerText(result.correct_answer)}</Text><Text>{copyText('system.learning.025')}{result.explanation || copyText('system.learning.026')}</Text></Space>} />}
+      {exercise.attempted && <Alert type={exercise.passed ? 'success' : 'warning'} showIcon title={exercise.passed ? copyText('system.learning.017') : copyText('system.learning.018')} description={<Space orientation="vertical" size={2}><Text>{copyText('system.learning.019')}{answerText(exercise.correct_answer)}</Text><Sentence as={Text}>{copyText('system.learning.020')}{exercise.explanation || copyText('system.learning.021')}</Sentence></Space>} />}
+      {result && !exercise.attempted && <Alert type={result.correct ? 'success' : 'warning'} showIcon title={result.correct ? copyText('system.learning.022') : copyText('system.learning.023')} description={<Space orientation="vertical" size={2}><Text>{copyText('system.learning.024')}{answerText(result.correct_answer)}</Text><Sentence as={Text}>{copyText('system.learning.025')}{result.explanation || copyText('system.learning.026')}</Sentence></Space>} />}
   </section>;
 }
 
@@ -227,7 +229,7 @@ export default function LessonLearn() {
     <div className="study-layout">
       <aside className="study-stages" aria-label={copyText('system.learning.066')}>
         <h3>{copyText('system.learning.067')}</h3><PixelProgress value={progress.percent || 0} label={copyText('system.learning.068')} />
-        <p className="study-progress-note">{copyText('system.learning.069')}<br />{copyText('system.learning.070')}</p>
+        <Sentence className="study-progress-note">{copyText('system.learning.069')}<br />{copyText('system.learning.070')}</Sentence>
         <nav aria-label={copyText('system.learning.071')}><ol>{LEARNING_STEPS.map((title, index) => {
           const locked = index > currentStep && !(index === 3 && report);
           const status = locked ? copyText('system.learning.072') : index === 3 && report ? REPORT_STATUS[report.status]?.label : stageDone[index] ? copyText('system.learning.073') : copyText('system.learning.074');
@@ -247,7 +249,7 @@ export default function LessonLearn() {
           </section>
           <section className="study-subsection" aria-label={copyText('system.learning.085')}><h4>{copyText('system.learning.086')}</h4>
             {resourceError && <Alert type="warning" showIcon title={resourceError} />}
-            {data.resources.length === 0 ? <Empty description={copyText('system.learning.087')} /> : data.resources.map((resource) => <div className="study-resource" key={resource.id}><div><Text strong>{resource.title}</Text>{resource.description && <p>{resource.description}</p>}</div>{resource.has_file ? <Button icon={<DownloadOutlined />} onClick={() => downloadResource(resource)}>{copyText('system.learning.088')}</Button> : <Text type="secondary">{copyText('system.learning.089')}</Text>}</div>)}
+            {data.resources.length === 0 ? <Empty description={copyText('system.learning.087')} /> : data.resources.map((resource) => <div className="study-resource" key={resource.id}><div><Text strong>{resource.title}</Text>{resource.description && <Sentence>{resource.description}</Sentence>}</div>{resource.has_file ? <Button icon={<DownloadOutlined />} onClick={() => downloadResource(resource)}>{copyText('system.learning.088')}</Button> : <Text type="secondary">{copyText('system.learning.089')}</Text>}</div>)}
           </section>
           <AssociatedExperiments variant="study" courseId={courseId} lessonId={lessonId} stage={0} />
           <div className="study-actions">{progress.review_completed ? <><PixelTag tone="success">{copyText('system.learning.090')}</PixelTag><Button type="primary" onClick={() => setActiveStage(1)}>{copyText('system.learning.091')}</Button></> : <Button type="primary" loading={submitting} onClick={finishReview}>{copyText('system.learning.092')}</Button>}</div>
@@ -258,8 +260,8 @@ export default function LessonLearn() {
           {cards.length === 0 ? <Alert type="warning" showIcon title={copyText('system.learning.096')} description={copyText('system.learning.097')} /> : <>
             <nav className="study-card-nav" aria-label={copyText('system.learning.098')}>{cards.map((card, index) => <Button key={card.id} type={index === cardIndex ? 'primary' : 'default'} aria-pressed={index === cardIndex} icon={card.completed ? <CheckCircleOutlined /> : null} onClick={() => setCardIndex(index)} disabled={index > 0 && !cards[index - 1].completed}>{index + 1}. {card.title}</Button>)}</nav>
             <div className="study-card-title"><h4>{activeCard.title}</h4><PixelTag tone="current">{cardIndex + 1}/{cards.length}</PixelTag>{activeCard.completed && <PixelTag tone="success">{copyText('system.learning.099')}</PixelTag>}</div>
-            {activeCard.summary && <p className="study-card-summary">{activeCard.summary}</p>}
-            <p className="study-prose">{activeCard.content}</p>
+            {activeCard.summary && <Sentence className="study-card-summary">{activeCard.summary}</Sentence>}
+            <Sentence className="study-prose">{activeCard.content}</Sentence>
             {activeCard.key_points && <Alert type="info" title={copyText('system.learning.100')} description={activeCard.key_points} />}
             {activeCard.common_mistakes && <Alert type="warning" title={copyText('system.learning.101')} description={activeCard.common_mistakes} />}
             <AssociatedExperiments variant="study" courseId={courseId} lessonId={lessonId} stage={1} cardId={activeCard.id} />
@@ -282,13 +284,13 @@ export default function LessonLearn() {
             <div className="study-submit-result" aria-live="polite">{reportError && <Alert type="error" showIcon title={copyText('system.learning.117')} description={reportError} />}</div>
             <div className="study-actions"><Button type="primary" htmlType="submit" loading={submitting}>{copyText('system.learning.118')}</Button><CopyBlock id="system.learning.119" as="p" /></div>
           </Form>}
-          {report && report.status !== 'rejected' && <><dl className="study-reading-fields">{reportFields.map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{report[key] || copyText('system.learning.120')}</dd></div>)}{reflectionFields.map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{data.reflection?.[key] || copyText('system.learning.121')}</dd></div>)}</dl><Button type="primary" onClick={() => setActiveStage(3)}>{copyText('system.learning.122')}</Button></>}
+          {report && report.status !== 'rejected' && <><dl className="study-reading-fields">{reportFields.map(([key, label]) => <div key={key}><dt>{label}</dt><Sentence as="dd">{report[key] || copyText('system.learning.120')}</Sentence></div>)}{reflectionFields.map(([key, label]) => <div key={key}><dt>{label}</dt><Sentence as="dd">{data.reflection?.[key] || copyText('system.learning.121')}</Sentence></div>)}</dl><Button type="primary" onClick={() => setActiveStage(3)}>{copyText('system.learning.122')}</Button></>}
           <AssociatedExperiments variant="study" courseId={courseId} lessonId={lessonId} stage={2} />
         </StudySection>}
 
         {activeStage === 3 && <StudySection number="04" title={copyText('system.learning.123')} description={copyText('system.learning.124')}>
           <Alert type={reportTone} showIcon title={report ? `${REPORT_STATUS[report.status]?.label}${Number.isInteger(report.score) ? ` · ${report.score} 分` : ''}` : copyText('system.learning.125')} description={report?.status === 'submitted' ? copyText('system.learning.126') : report?.status === 'rejected' ? copyText('system.learning.127') : report?.status === 'approved' ? copyText('system.learning.128') : copyText('system.learning.129')} />
-          {report && <><div className="study-detail-meta"><span>{copyText('system.learning.130')}{report.version}{copyText('system.learning.131')}</span>{report.submitted_at && <span>{copyText('system.learning.132')}{formatBeijingTime(report.submitted_at)}</span>}</div><div className={`study-feedback${report.status === 'rejected' ? ' study-feedback--rejected' : ''}`}><h4>{copyText('system.learning.133')}</h4><p className="study-prose">{report.review_comment || copyText('system.learning.134')}</p>{Number.isInteger(report.score) && <p>{copyText('system.learning.135')}<strong>{report.score}{copyText('system.learning.136')}</strong></p>}</div></>}
+          {report && <><div className="study-detail-meta"><span>{copyText('system.learning.130')}{report.version}{copyText('system.learning.131')}</span>{report.submitted_at && <span>{copyText('system.learning.132')}{formatBeijingTime(report.submitted_at)}</span>}</div><div className={`study-feedback${report.status === 'rejected' ? ' study-feedback--rejected' : ''}`}><h4>{copyText('system.learning.133')}</h4><Sentence className="study-prose">{report.review_comment || copyText('system.learning.134')}</Sentence>{Number.isInteger(report.score) && <Sentence>{copyText('system.learning.135')}<strong>{report.score}{copyText('system.learning.136')}</strong></Sentence>}</div></>}
           <div className="study-actions"><Button type="primary" onClick={() => setActiveStage(2)}>{report?.status === 'rejected' ? copyText('system.learning.137') : copyText('system.learning.138')}</Button><Button onClick={() => setActiveStage(1)}>{copyText('system.learning.139')}</Button></div>
           <AssociatedExperiments variant="study" courseId={courseId} lessonId={lessonId} stage={3} />
         </StudySection>}

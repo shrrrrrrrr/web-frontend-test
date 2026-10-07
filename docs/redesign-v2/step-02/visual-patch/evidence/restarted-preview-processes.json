@@ -1,0 +1,12 @@
+[
+  {
+    "ProcessId": 46904,
+    "ParentProcessId": 38836,
+    "CommandLine": "D:\\NodeJS\\node-v26.2.0-win-x64\\node.exe scripts/local-server.cjs"
+  },
+  {
+    "ProcessId": 34308,
+    "ParentProcessId": 38836,
+    "CommandLine": "D:\\NodeJS\\node-v26.2.0-win-x64\\node.exe C:\\Users\\shr\\Desktop\\nmg前端\\app\\frontend\\node_modules\\vite\\bin\\vite.js preview --host 127.0.0.1 --port 4174 --strictPort"
+  }
+]

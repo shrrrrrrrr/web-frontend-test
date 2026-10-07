@@ -1,4 +1,6 @@
-import { Alert, Button, Card, Empty, Spin, Modal } from 'antd';
+import { Button, Card, Empty, Spin, Modal } from 'antd';
+import Alert from '../content/RoleAlert';
+import {displayText} from '../content/displayText';
 import { useAuth } from '../store/AuthContext';
 import { StudyHeader } from '../student/visual/StudyUI';
 import { PixelPanel } from '../student/visual/PixelUI';
@@ -19,9 +21,10 @@ export function ServicePanel({ children, className = '' }) {
   return user?.role === 'student' ? <PixelPanel className={`service-panel ${className}`}>{children}</PixelPanel> : <Card>{children}</Card>;
 }
 export function ReadState({ loading, error, reload, empty, emptyText, object = '内容', children }) {
+  const {user}=useAuth();
   if (loading) return <div className="service-loading" role="status"><Spin /><p>正在读取{object}…</p></div>;
   if (error) return <Alert type="error" showIcon role="alert" title={objectErrorTitle(error, object)} description={requestError(error)} action={<Button onClick={reload}>重新读取</Button>} />;
-  if (empty) return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={emptyText || '暂时没有内容'} />;
+  if (empty) return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={user?.role==='student'?displayText(emptyText || '暂时没有内容'):emptyText || '暂时没有内容'} />;
   return children;
 }
 export function OperationNotice({ value, onRetry }) {
@@ -39,6 +42,6 @@ function containFocus(event) {
 }
 export function ServiceModal(props) {
   const { user } = useAuth();
-  return <Modal {...props} okButtonProps={{ ...props.okButtonProps, 'aria-label': props.okText || '确定' }} rootClassName={user?.role === 'student' ? 'student-pixel service-modal' : undefined}
+  return <Modal {...props} okButtonProps={{ ...props.okButtonProps, 'aria-label': props.okText || '确定' }} rootClassName={user?.role === 'student' ? 'student-pixel student-interactions service-modal' : undefined}
     modalRender={(node) => <div onKeyDownCapture={containFocus}>{node}</div>} />;
 }

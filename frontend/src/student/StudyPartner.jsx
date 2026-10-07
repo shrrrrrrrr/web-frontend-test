@@ -1,3 +1,4 @@
+import Sentence from '../content/Sentence';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { PixelButton, PixelImage } from './visual/PixelUI';
@@ -44,7 +45,7 @@ export default function StudyPartner() {
       {!collapsed && <div className="student-partner-expanded" id="student-partner-actions">
         <div className="student-partner-intro">
           <PixelImage className="student-partner-image" {...pixelImageProps('companion-cat', '48px')} alt="" fallback={<PixelIcon name="cat" size={48} />} />
-          <div><strong>学习伙伴 · 灵境小智</strong><p>需要一点思路？一起理清下一步。</p></div>
+          <div><strong>学习伙伴 · 灵境小智</strong><Sentence>需要一点思路？一起理清下一步。</Sentence></div>
         </div>
         <PixelButton aria-label="向灵境小智提问" onClick={() => navigate(`/dashboard/ai${courseId ? `?course_id=${courseId}` : ''}`)}>向小智提问</PixelButton>
       </div>}

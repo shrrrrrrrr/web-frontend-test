@@ -1,10 +1,11 @@
+import Alert from '../student/visual/StudentAlert';
 import {copyText} from '../content/copy';
 import CopyBlock from '../content/CopyBlock';
 import { useCourseApis } from './useCourseApis';
-import { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { Alert, Collapse, Descriptions, Empty, Grid, Drawer, Space, Typography } from 'antd';
-import AsyncPageState from '../components/common/AsyncPageState';
+import { Collapse, Descriptions, Empty, Modal, Space, Typography } from 'antd';
+import AsyncPageState from '../student/visual/StudentPageState';
 import PageContainer from '../components/common/PageContainer';
 import useRemote from './useRemote';
 import { buildCourseRoute, currentLesson, scheduleTime } from './routeModel';
@@ -17,6 +18,8 @@ import CourseTodos from './space/CourseTodos';
 import LessonPlace from './space/LessonPlace';
 import {coursePresentation} from './space/identity';
 import {useCourseExperience} from './space/useCourseExperience';
+import Sentence from '../content/Sentence';
+import {trapFocus} from './visual/trapFocus';
 import './visual/pixel-map.css';
 import './space/map.css';
 
@@ -57,7 +60,7 @@ function CourseResources({ resources, courseId }) {
       <Space wrap><Typography.Text strong>{resource.title}</Typography.Text>{resource.has_file
         ? <PixelButton loading={pending[resource.id]} onClick={() => download(resource)}>{copyText('system.map.017')}{resource.title}</PixelButton>
         : <Typography.Text type="secondary">{copyText('system.map.018')}</Typography.Text>}</Space>
-      {resource.description && <Typography.Paragraph>{resource.description}</Typography.Paragraph>}
+      {resource.description && <Sentence as={Typography.Paragraph}>{resource.description}</Sentence>}
       {errors[resource.id] && <Alert type="warning" showIcon title={errors[resource.id]} />}
     </div>)}
   </div>;
@@ -72,10 +75,10 @@ function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
     <Typography.Title level={3} id="selected-lesson-title">{lesson.title}</Typography.Title>
     <div className="pixel-map-details-state"><PixelTag tone={state.tone}>{state.label}</PixelTag><span>{copyText('system.map.022')}</span></div>
     <PixelProgress value={lesson.progress ?? 0} label={lesson.title + copyText('system.map.023')} />
-    <Typography.Paragraph className="pixel-map-lesson-description">{lesson.description || copyText('system.map.024')}</Typography.Paragraph>
     {lesson.status === 'cancelled'
       ? <Alert type="warning" showIcon title={copyText('system.map.025')} description={lesson.cancel_reason || copyText('system.map.026')} />
       : <div className="pixel-map-enter"><PixelButton type="primary" onClick={() => navigate(href)} icon={<PixelIcon name="continue" />}>{copyText('system.map.027')}</PixelButton></div>}
+    <Sentence as={Typography.Paragraph} className="pixel-map-lesson-description">{lesson.description || copyText('system.map.024')}</Sentence>
     <div className="pixel-map-schedule">
       <Typography.Title level={4}><PixelIcon name="clock" />{copyText('system.map.028')}</Typography.Title>
       <Descriptions size="small" column={1} colon={false} items={[
@@ -89,7 +92,7 @@ function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
     {lesson.status !== 'cancelled' && <div className="pixel-map-lesson-tasks">
       <Typography.Title level={4}>{copyText('system.map.038')}</Typography.Title>
       {tasks.length ? <ul>{tasks.map((task) => <li key={task.id}><Link to={href + '?task_id=' + task.id + '#task-' + task.id}>{task.title}</Link>{task.deadline && <span>{copyText('system.map.039')}{scheduleTime(task.deadline)}</span>}</li>)}</ul>
-        : <Typography.Paragraph type="secondary">{copyText('system.map.040')}</Typography.Paragraph>}
+        : <Sentence as={Typography.Paragraph} type="secondary">{copyText('system.map.040')}</Sentence>}
       <AssociatedExperiments courseId={courseId} lessonId={lesson.id} />
     </div>}
     <CopyBlock id="system.map.041" as="p" className="pixel-map-detail-note"/>
@@ -142,7 +145,7 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
           return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.id} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 3 === 1 ? '58px' : '0px', '--stop-row': row + 1, '--stop-column': column }}>
             <button type="button" className="route-node" aria-current={isCurrent ? 'step' : undefined} aria-pressed={isSelected} aria-controls="selected-lesson-details"
               aria-label={copyText('system.map.042') + lesson.routeNumber + copyText('system.map.043') + lesson.title + '，' + state.label + (isCurrent ? copyText('system.map.044') : '')}
-              onClick={() => onSelect({ key: selectionKey, lessonId: lesson.id })}>
+              onClick={(event) => onSelect({ key: selectionKey, lessonId: lesson.id },event.currentTarget)}>
               <LessonPlace number={lesson.routeNumber} current={isCurrent} selected={isSelected} completed={state.tone==='success'} priority={groupIndex===0&&index<3} theme={theme}/>
               <span className="pixel-map-node-label"><strong>{lesson.title}</strong><PixelTag tone={state.tone}>{state.label}</PixelTag></span>
             </button>
@@ -162,7 +165,7 @@ export function CourseMap() {
   const session=useCourseExperience();
   const [params] = useSearchParams();
   const location = useLocation();
-  const screens = Grid.useBreakpoint();
+  const trigger=useRef(null);
   const [selection, setSelection] = useState(null);
   const [openSection, setOpenSection] = useState(null);
   const fetcher = useCallback(() => courseAPI.detail(id), [id,courseAPI]);
@@ -172,10 +175,20 @@ export function CourseMap() {
   const lessons = groups.flatMap((group) => group.lessons);
   const selectionKey = id + ':' + (params.get('lesson') || '');
   const selectedId = selection?.key === selectionKey ? selection.lessonId : (params.get('lesson') || current?.id);
-  const selected = lessons.find((lesson) => String(lesson.id) === String(selectedId)) || lessons.find((lesson) => lesson.id === current?.id) || lessons[0];
+  const match=lessons.find((lesson) => String(lesson.id) === String(selectedId));
+  const selected = selection?.key===selectionKey?match:(match || lessons.find((lesson) => lesson.id === current?.id) || lessons[0]);
   const course = data?.course;
   const selectedTasks = (data?.tasks || []).filter((task) => String(task.lesson_id) === String(selected?.id));
   const details = selected && <LessonDetails lesson={selected} tasks={selectedTasks} courseId={id} isCurrent={current?.id === selected.id} />;
+  const openDetails=session?.overlay==='details'&&!!data&&!!selected&&!error;
+  useEffect(()=>{
+    if(!openDetails)return;
+    const previous=document.body.style.overflow;document.body.style.overflow='hidden';
+    return()=>{document.body.style.overflow=previous;};
+  },[openDetails]);
+  useEffect(()=>{
+    if(session?.overlay==='details'&&(!data||error||!selected))session.openOverlay(null);
+  },[session,data,error,selected]);
   const toggleSection = (section) => setOpenSection((previous) => previous === section ? null : section);
 
   return <PageContainer>
@@ -196,7 +209,7 @@ export function CourseMap() {
           {(studentTestConfigEnabled || look.sample) && <CopyBlock id="system.map.049" as="p" className="space-map-test-note"/>}
           <PixelPanel className="pixel-map-course-info" id="course-information" hidden={openSection !== 'info'}>
             <Typography.Title level={3}>{copyText('system.map.050')}</Typography.Title>
-            <Typography.Paragraph>{course.description || copyText('system.map.051')}</Typography.Paragraph>
+            <Sentence as={Typography.Paragraph}>{course.description || copyText('system.map.051')}</Sentence>
             <Descriptions size="small" column={{ xs: 1, sm: 2, lg: 3 }} items={[
               { key: 'theme', label: copyText('system.map.052'), children: course.theme || copyText('system.map.053') },
               { key: 'grade', label: copyText('system.map.054'), children: grades[course.grade_level] || course.grade_level || copyText('system.map.055') },
@@ -226,12 +239,11 @@ export function CourseMap() {
             <div className="pixel-map-stage" aria-label={copyText('system.map.076')}>
               <SceneArt name={look.theme==='voyage'?'cosmos':'campus'} vertical={look.theme==='voyage'} className="space-map-art" priority/>
               <div className="pixel-map-route-content">
-                {groups.map((group, groupIndex) => <CourseRouteRegion key={group.key} group={group} groupIndex={groupIndex} current={current} selected={selected} selectionKey={selectionKey} onSelect={next=>{setSelection(next);if(!screens.lg)session?.openOverlay('details');}} hasNext={groupIndex < groups.length - 1} theme={look.theme} />)}
+                {groups.map((group, groupIndex) => <CourseRouteRegion key={group.key} group={group} groupIndex={groupIndex} current={current} selected={selected} selectionKey={selectionKey} onSelect={(next,button)=>{trigger.current=button;button.focus();setSelection(next);session?.openOverlay('details');}} hasNext={groupIndex < groups.length - 1} theme={look.theme} />)}
               </div>
               <CopyBlock id="system.map.077" as="p" className="pixel-map-route-note"/>
             </div>
-            <Drawer open={!screens.lg&&session?.overlay==='details'} onClose={()=>session.openOverlay(null)} title={copyText('system.map.078')} placement="bottom" height="85dvh" rootClassName="student-pixel space-lesson-drawer">{details}</Drawer>
-            {screens.lg && <aside className="pixel-map-aside" aria-label={copyText('system.map.079')}>{details}</aside>}
+            <Modal open={openDetails} centered destroyOnHidden width={640} zIndex={1250} title={copyText('patch.map.title')} footer={null} rootClassName="student-pixel student-interactions space-lesson-modal" onCancel={()=>session.openOverlay(null)} focusable={{trap:true,focusTriggerAfterClose:false}} modalRender={node=><div onKeyDownCapture={trapFocus}>{node}</div>} afterClose={()=>{if(!session?.overlay&&trigger.current?.isConnected)trigger.current.focus({preventScroll:true});}}>{openDetails&&details}</Modal>
           </div>}
           <nav className="space-map-extra" aria-label={copyText('system.map.080')}><Link to={'/courses/'+id+'/tasks'}>{copyText('system.map.081')}</Link><Link to={'/courses/'+id+'/works'}>{copyText('system.map.082')}</Link><Link to={'/courses/'+id+'/reflection'}>{copyText('system.map.083')}</Link></nav>
         </>}

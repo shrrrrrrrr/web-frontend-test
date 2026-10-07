@@ -73,6 +73,7 @@ app.use((req, res, next) => {
 // API 路由
 // ============================================
 app.use(`${API_PREFIX}/auth`, require('./routes/auth'));
+app.use(`${API_PREFIX}/account`, require('./routes/account'));
 app.use(`${API_PREFIX}/course-spaces/:courseId`, require('./routes/courseSpaces'));
 app.use(`${API_PREFIX}/dashboard`, require('./routes/dashboard'));
 app.use(`${API_PREFIX}/glider`, require('./routes/gliders'));

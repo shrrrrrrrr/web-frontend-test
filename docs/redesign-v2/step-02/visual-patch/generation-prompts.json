@@ -1,0 +1,106 @@
+{
+  "references": [
+    "docs/redesign-v2/step-01/references/buaa-contact.jpg",
+    "frontend/public/assets/redesign-v2/masters/campus.png",
+    "frontend/public/assets/redesign-v2/masters/moon-base.png",
+    "frontend/public/assets/redesign-v2/masters/robot.png"
+  ],
+  "jobs": [
+    {
+      "name": "login-desktop",
+      "prompt": "Original finished coarse pixel game environment, deliberately 320x180 logical square pixels upscaled with nearest-neighbor crisp edges, limited navy/cobalt/ivory/cyan/ginkgo gold palette, stepped silhouettes, chunky 4-8 pixel clusters, no smooth gradient, no painterly brushwork, no photorealism, no vector geometry, no blur. NO text, letters, logos, emblems, signs, UI panels, humans, watermarks. Architectural reference is the observed Beihang campus: pale ivory symmetrical six-storey rectangular teaching building, rows of blue windows, central low portico with warm brick-red canopy; modern glass buildings with white vertical fins near a reflecting pond; golden ginkgo trees, broad stone walkways and small pale stone bridge. Do not invent names or emblems. NEW wide 16:9 landscape background for a fullscreen login. Buildings, recognizable main facade, trees and bridge concentrated in LEFT 60%; right 40% is calm pale blue afternoon sky and open pond reflected water, with sparse peripheral ginkgo and clear negative space for an HTML form. Warm gentle afternoon sun. Rich layered scene, entire frame continuous, no panels. Buildings not hidden behind future form.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-9b77dffd-e74d-4c1d-8353-457729f801f8.png",
+      "selected": false,
+      "tool": "built-in imagegen",
+      "use": "login"
+    },
+    {
+      "name": "login-mobile",
+      "prompt": "Original finished coarse pixel game environment, deliberately 320x180 logical square pixels upscaled with nearest-neighbor crisp edges, limited navy/cobalt/ivory/cyan/ginkgo gold palette, stepped silhouettes, chunky 4-8 pixel clusters, no smooth gradient, no painterly brushwork, no photorealism, no vector geometry, no blur. NO text, letters, logos, emblems, signs, UI panels, humans, watermarks. Architectural reference is the observed Beihang campus: pale ivory symmetrical six-storey rectangular teaching building, rows of blue windows, central low portico with warm brick-red canopy; modern glass buildings with white vertical fins near a reflecting pond; golden ginkgo trees, broad stone walkways and small pale stone bridge. Do not invent names or emblems. NEW independent 9:16 portrait composition for phone fullscreen login, draw at approximately180x320 logical pixels. The upper quarter shows a low frontal campus building among ginkgo treetops; bottom stone walkway and pond, trees and a lamp at left/right edges frame an uncluttered light-blue/ivory CENTRAL middle 55% for a real login form. One continuous campus scene, not a cropped landscape. Building and trees fully readable at top, no giant central object.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-c854b27c-51a4-4b25-b03c-a08eca4f652a.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "login"
+    },
+    {
+      "name": "campus-select",
+      "prompt": "Original finished coarse pixel game environment, deliberately 320x180 logical square pixels upscaled with nearest-neighbor crisp edges, limited navy/cobalt/ivory/cyan/ginkgo gold palette, stepped silhouettes, chunky 4-8 pixel clusters, no smooth gradient, no painterly brushwork, no photorealism, no vector geometry, no blur. NO text, letters, logos, emblems, signs, UI panels, humans, watermarks. Architectural reference is the observed Beihang campus: pale ivory symmetrical six-storey rectangular teaching building, rows of blue windows, central low portico with warm brick-red canopy; modern glass buildings with white vertical fins near a reflecting pond; golden ginkgo trees, broad stone walkways and small pale stone bridge. Do not invent names or emblems. NEW wide 16:9 campus panorama for a real course selection page. View across reflecting pond toward modern white-finned glass science buildings; a pale bridge, gold ginkgo lane and small outdoor static aircraft display at far left foreground subtly express aviation. Main detailed scene around frame edges, calmer blue reflections middle. Bright overcast afternoon, clearly different composition from login.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-45ad8f59-d9cf-4d96-a833-362c8e05f4e0.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "campus-select"
+    },
+    {
+      "name": "campus-personal",
+      "prompt": "Original finished coarse pixel game environment, deliberately 320x180 logical square pixels upscaled with nearest-neighbor crisp edges, limited navy/cobalt/ivory/cyan/ginkgo gold palette, stepped silhouettes, chunky 4-8 pixel clusters, no smooth gradient, no painterly brushwork, no photorealism, no vector geometry, no blur. NO text, letters, logos, emblems, signs, UI panels, humans, watermarks. Architectural reference is the observed Beihang campus: pale ivory symmetrical six-storey rectangular teaching building, rows of blue windows, central low portico with warm brick-red canopy; modern glass buildings with white vertical fins near a reflecting pond; golden ginkgo trees, broad stone walkways and small pale stone bridge. Do not invent names or emblems. NEW wide 16:9 campus garden background for student's account page. Golden ginkgo-lined path seen from an oblique angle, pale stone arched bridge over a blue reflective pond in foreground at right; familiar ivory blue-window teaching facade softly receding at upper left, garden plants at lower edges. Calm open central path, warm light. Different scene from login and panorama, no aircraft, no people.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-1c18d5ba-10ac-4518-a82d-788b0f9bc92a.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "campus-personal"
+    },
+    {
+      "name": "login-desktop-v2",
+      "prompt": "Redraw the referenced campus login scene completely into much coarser pixel art, preserving wide16:9 composition, ivory six-storey blue-window teaching building and ginkgo/bridge mostly on LEFT, calm sky and pond on RIGHT40% for a real form. Reference2 is the required chunky stepped pixel scale, use that art language, not its space subject. Simplify windows, tree canopies, paving and reflections. Very COARSE low-resolution 16-bit pixel game art. Approximately 160 logical pixels across the whole wide scene, large square clusters visibly 8-12 output pixels wide, bold stepped navy outlines. Simplify objects into readable large clusters, only 3 flat tones per material. Absolutely no smooth gradients, antialiasing, dense subpixel detail, painted textures or realistic reflections. No text, letters, UI, watermarks or people.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-aac5c19d-106a-4ae4-92b1-be668262f30b.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "login"
+    },
+    {
+      "name": "voyage-reading",
+      "prompt": "Original wide16:9 environment artwork for a school space course reading-page underlay. Very COARSE low-resolution 16-bit pixel game art. Approximately 160 logical pixels across the whole wide scene, large square clusters visibly 8-12 output pixels wide, bold stepped navy outlines. Simplify objects into readable large clusters, only 3 flat tones per material. Absolutely no smooth gradients, antialiasing, dense subpixel detail, painted textures or realistic reflections. No text, letters, UI, watermarks or people. Quiet ivory and pale icy-blue science spacecraft corridor with layered navy window frames at far left and right, distant cobalt Earth and a gold crescent planet visible through windows. Broad softly lit light-blue central deck with sparse square panel seams, periphery detailed consoles, calm large negative space for HTML panels. Distinct large clustered light/shadow shapes, no words or UI.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-311efc8a-f9ca-436d-9e47-45deae0b7aa2.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "voyage-reading"
+    },
+    {
+      "name": "voyage-lab",
+      "prompt": "Original wide16:9 environment artwork for a space course experiments/results-page underlay, DIFFERENT layout from a corridor. Very COARSE low-resolution 16-bit pixel game art. Approximately 160 logical pixels across the whole wide scene, large square clusters visibly 8-12 output pixels wide, bold stepped navy outlines. Simplify objects into readable large clusters, only 3 flat tones per material. Absolutely no smooth gradients, antialiasing, dense subpixel detail, painted textures or realistic reflections. No text, letters, UI, watermarks or people. Lunar research hangar, open arched hangar doors at upper right show grey-blue moon ground and cobalt planet; large pale steel floor occupies foreground, left a small telescope and equipment rack, far-right gold solar battery cells, deep navy beams framing top/edges. Pastel iceblue and ivory surfaces against saturated navy space, clearly visible environmental art, no plotted trajectories or fake data.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-65be8645-c2ea-4cc6-b302-473aef627d05.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "voyage-lab"
+    },
+    {
+      "name": "glider-cover",
+      "prompt": "Original portrait2:3 PIXEL GAME environment illustration, a VERTICAL cover for a school real glider flight experiment. Very COARSE low-resolution 16-bit pixel game art. Approximately 160 logical pixels across the whole wide scene, large square clusters visibly 8-12 output pixels wide, bold stepped navy outlines. Simplify objects into readable large clusters, only 3 flat tones per material. Absolutely no smooth gradients, antialiasing, dense subpixel detail, painted textures or realistic reflections. No text, letters, UI, watermarks or people. Recognizable sleek white scientific glider with very long straight wings and slim fuselage, displayed diagonally from lower-left to upper-right in a navy/cyan aerospace workshop; warm gold lit gantry behind, small blue workbench at bottom, open sky and cloud sliver at top. Glider fully visible with generous margins and clear wings silhouette. No propellers, no spaceship, no flask, no figures, no fake gauges/data/words.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-6d31eae3-40d8-4212-92ec-5811ef0359b5.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "glider-cover"
+    },
+    {
+      "name": "robot-wink",
+      "prompt": "Edit reference to a HEAD ONLY static wink robot sprite. Keep recognizable white rounded rectangular shell, navy face screen, cyan eye and gold antenna. One eye is a cyan little horizontal closed-eye tick, the other open cyan eye, gentle small cyan smile. Remove entire neck, torso, arms and legs. Head with necessary antenna and ear modules only, fits44-70px clickable UI. Original coarse pixel sprite, unmistakable chunky square clusters, bold stepped navy outline, only 3 flat tones per material, approximately48x48 logical pixels nearest-neighbor look. Palette white/navy/cyan/gold, actual transparent background, centered generous clear padding. No outer frame, badge, rectangle, shadow, checkerboard, text, watermark, blur, antialiasing or gradients.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-c17ae477-5dae-4e27-9405-d854f787d06d.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "robot-wink"
+    },
+    {
+      "name": "fortune-plane",
+      "prompt": "One ORIGINAL small cheerful campus aviation fortune decorative sprite: ivory and navy little scientific airplane, gold cockpit, cyan tips, three-quarter topdown view clearly airplane. Original coarse pixel sprite, unmistakable chunky square clusters, bold stepped navy outline, only 3 flat tones per material, approximately48x48 logical pixels nearest-neighbor look. Palette white/navy/cyan/gold, actual transparent background, centered generous clear padding. No outer frame, badge, rectangle, shadow, checkerboard, text, watermark, blur, antialiasing or gradients.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-a8b96b05-d724-49f3-9d85-dae8ec017798.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "fortune-plane"
+    },
+    {
+      "name": "fortune-star",
+      "prompt": "One ORIGINAL small cheerful fortune decorative sprite: luminous gold four-point pixel star with cyan tiny satellite spark next to it, two objects remain a single centered group. Original coarse pixel sprite, unmistakable chunky square clusters, bold stepped navy outline, only 3 flat tones per material, approximately48x48 logical pixels nearest-neighbor look. Palette white/navy/cyan/gold, actual transparent background, centered generous clear padding. No outer frame, badge, rectangle, shadow, checkerboard, text, watermark, blur, antialiasing or gradients.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-f5356bb5-38cc-4fbf-ae8d-c9303219f7e1.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "fortune-star"
+    },
+    {
+      "name": "fortune-device",
+      "prompt": "One ORIGINAL small cheerful campus science fortune decorative sprite: ivory/navy tabletop miniature observatory telescope with cyan lens and two gold knobs, friendly readable science instrument. Original coarse pixel sprite, unmistakable chunky square clusters, bold stepped navy outline, only 3 flat tones per material, approximately48x48 logical pixels nearest-neighbor look. Palette white/navy/cyan/gold, actual transparent background, centered generous clear padding. No outer frame, badge, rectangle, shadow, checkerboard, text, watermark, blur, antialiasing or gradients.",
+      "generated": "C:\\Users\\shr\\.codex\\generated_images\\01a10097-10df-70e1-828e-d8cb6c637bdd\\exec-39e5a363-69a2-4237-9906-76cf1b565644.png",
+      "selected": true,
+      "tool": "built-in imagegen",
+      "use": "fortune-device"
+    }
+  ]
+}

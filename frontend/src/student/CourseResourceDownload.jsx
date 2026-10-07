@@ -1,6 +1,7 @@
+import Alert from '../student/visual/StudentAlert';
 import {useCourseApis} from './useCourseApis';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Alert } from 'antd';
+
 import { requestError } from '../utils/requestError';
 import { STUDENT_COURSES_CHANGED } from './accessPolicy';
 import { PixelButton } from './visual/PixelUI';

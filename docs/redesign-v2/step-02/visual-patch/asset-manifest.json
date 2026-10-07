@@ -1,0 +1,327 @@
+{
+  "processing": "copy + nearest resize + lossless WebP; alpha preserved",
+  "assets": [
+    {
+      "name": "login-mobile",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/login-mobile.png",
+      "size": [
+        941,
+        1672
+      ],
+      "mode": "RGB",
+      "sha256": "76ff38a90e9c1706938d25bc3d6d8d183f11cafc12df151d856669a8977318b2",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/login-mobile-480.webp",
+          "width": 480,
+          "bytes": 489538,
+          "sha256": "6e6a105efc33cbaff16ad636503b45960d4156d402022d0860e1ea1da0e2aff7"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/login-mobile-960.webp",
+          "width": 960,
+          "bytes": 1532282,
+          "sha256": "706899dbb870258a20c0968ce4d68108fb068573ff194e56bfafaa59c6333d96"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/login-mobile-1536.webp",
+          "width": 1536,
+          "bytes": 1739604,
+          "sha256": "822d565a749e3a36789a7f475cbb0d8d4c8b2092c9b378e348c59fe21e783627"
+        }
+      ]
+    },
+    {
+      "name": "campus-select",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/campus-select.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "2fdcf46eaa4668f607f0d853c814c4c7b225f59c79a94fb41b66b53e814480d5",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/campus-select-480.webp",
+          "width": 480,
+          "bytes": 222820,
+          "sha256": "37ac63cda84ba4ee807603a1bea4485ec32c35728bcf75633d2110988bd4df8b"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/campus-select-960.webp",
+          "width": 960,
+          "bytes": 738798,
+          "sha256": "773a70f7da54fdfe0fe10addbb10289b0c311de11efd6f9979768daa47b12c56"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/campus-select-1536.webp",
+          "width": 1536,
+          "bytes": 1647088,
+          "sha256": "aeed6674930c1134917f57947e18c43e5a24b3a8b9cdc7670125cb3322271bac"
+        }
+      ]
+    },
+    {
+      "name": "campus-personal",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/campus-personal.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "f964f7ea1a2701bfc1bfca0ce09222cae561d6b8bad1c04aed7c073a25af51b2",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/campus-personal-480.webp",
+          "width": 480,
+          "bytes": 239756,
+          "sha256": "7670bbaaeaed88379914611dfd0ac78817d78b07d220ee3be84e13007893ad8d"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/campus-personal-960.webp",
+          "width": 960,
+          "bytes": 787376,
+          "sha256": "58cb376b9af68dc376d4c5876b7b2803c8315931f115f74a4e419517493bbfe3"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/campus-personal-1536.webp",
+          "width": 1536,
+          "bytes": 1747116,
+          "sha256": "ab219268f897fb92f0ee73dc62f52f6a177d9ff18bfdfc90b73a055c96ce3229"
+        }
+      ]
+    },
+    {
+      "name": "login-desktop",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/login-desktop.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "242772bd21e07b10e43e8dc3af7da9daccbf87b52cafe3d89cdb91e979483835",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/login-desktop-480.webp",
+          "width": 480,
+          "bytes": 167272,
+          "sha256": "f9fa98930b1d3b01ac6eba864f6e087c26d3c30b1c504f33dfcf862293dabeb0"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/login-desktop-960.webp",
+          "width": 960,
+          "bytes": 523262,
+          "sha256": "bcb4f6ead02be223103b103e2c04c5dc07f1b5c92cc3587390b06249deab885c"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/login-desktop-1536.webp",
+          "width": 1536,
+          "bytes": 1129964,
+          "sha256": "1e2fe25f40a33212bd37d9a00454e53cd56412c9eeb8ced3bb3ba67291e5ea33"
+        }
+      ]
+    },
+    {
+      "name": "voyage-reading",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/voyage-reading.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "0ea1012af90b94c39ae13623034771ea1024c8833e588829679cf1c2e567b5a3",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/voyage-reading-480.webp",
+          "width": 480,
+          "bytes": 121240,
+          "sha256": "ae3beb1ba0745b85839163305e58a0460e4dd8eb119efc0ce8aabad5bc754120"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/voyage-reading-960.webp",
+          "width": 960,
+          "bytes": 388422,
+          "sha256": "54a570a9d97f0d05c0042336cdb39db9d83e872f23f7e38c0bbcc94e2adb0d12"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/voyage-reading-1536.webp",
+          "width": 1536,
+          "bytes": 845118,
+          "sha256": "c474284845119fb4f69dfff536aa64b05bba62a996cd7aaa8278fcbc7689da48"
+        }
+      ]
+    },
+    {
+      "name": "voyage-lab",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/voyage-lab.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "f89849a0c3bc410940b97480d6c5515e156feeb2abe79cd8f22eb6b385193cd0",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/voyage-lab-480.webp",
+          "width": 480,
+          "bytes": 128330,
+          "sha256": "9666ba1758e5d71fe21336d53e72f8f9813d2dac0af61fbc2dd07abc0f2729f6"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/voyage-lab-960.webp",
+          "width": 960,
+          "bytes": 409858,
+          "sha256": "0c2b7c76791331ca102f17a917ec8a27839726be1014e24445de72561940e3d8"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/voyage-lab-1536.webp",
+          "width": 1536,
+          "bytes": 898388,
+          "sha256": "421dc521e7cb34085098760f900e6933fb8505232f2eda8bcf5ecb0abed1103e"
+        }
+      ]
+    },
+    {
+      "name": "glider-cover",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/glider-cover.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGB",
+      "sha256": "fa3e1b1ec64caf8c6d9e411944199017186e537e33391a7c88196238b9550f4f",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/glider-cover-480.webp",
+          "width": 480,
+          "bytes": 318644,
+          "sha256": "c28228d98cd0f9b4e6a092aa6ef6f01ca5079d3d9ba2ec1043602e8579b9396d"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/glider-cover-960.webp",
+          "width": 960,
+          "bytes": 988606,
+          "sha256": "910d5e08e76437b9e07fbfe360162c65648722db3511c64c468d14f531a96dba"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/glider-cover-1536.webp",
+          "width": 1536,
+          "bytes": 1270826,
+          "sha256": "f2c3c5aaf473265f0a50dcff0260f2b727fb8ea399f44bb9c4788703a93628ee"
+        }
+      ]
+    },
+    {
+      "name": "robot-wink",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/robot-wink.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "e703ed512faa2f341d376073912a87a03a7b3afb63d1d87c801338396e475bca",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/robot-wink-96.webp",
+          "width": 96,
+          "bytes": 4722,
+          "sha256": "96524fc3c94e151592f21f2491a8428a4e9e76b1071c3e5896674e6ea609110b"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/robot-wink-192.webp",
+          "width": 192,
+          "bytes": 14970,
+          "sha256": "1d51b167b71b01f490e3994b2cd4c05c9214f2bf3ac468b3f6e35002b86ea9b9"
+        }
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "fortune-plane",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/fortune-plane.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "e154560430bf28c7a360262ce681c28b472b6c8b373daf0c1266c79fe418d0ac",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/fortune-plane-96.webp",
+          "width": 96,
+          "bytes": 5052,
+          "sha256": "1235179acc6a57a6b7c1925768b44e6d0dea3ef4146e84181964d9cd6c8944eb"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/fortune-plane-192.webp",
+          "width": 192,
+          "bytes": 17576,
+          "sha256": "887c75b8c1b2747a75035b6bc0db988ed6805306b0e46748c38ea65c64f0104e"
+        }
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "fortune-star",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/fortune-star.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "81d907c134ca3781ef519a506a631c501b3413ed5e49c9d209695f078b26930c",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/fortune-star-96.webp",
+          "width": 96,
+          "bytes": 1074,
+          "sha256": "fc70b83a563193328822111bfdcff3e84fb85a8d67219cab051e5639e2172fc5"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/fortune-star-192.webp",
+          "width": 192,
+          "bytes": 3540,
+          "sha256": "ba88643a1e8c30b5ff53f15671ba642bc2a0e708b5d1b556d3fd6573cd2cbc58"
+        }
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "fortune-device",
+      "master": "frontend/public/assets/redesign-v2/visual-patch/masters/fortune-device.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "9fde011fbaaf7698646593f779b71795290e119ad012f9e4e7c2728dde77198a",
+      "variants": [
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/fortune-device-96.webp",
+          "width": 96,
+          "bytes": 4666,
+          "sha256": "c8fdbd6e74aaf6b54f8d923b77fe48cf645cde9ca7554e4187acc7732a87440f"
+        },
+        {
+          "file": "frontend/public/assets/redesign-v2/visual-patch/web/fortune-device-192.webp",
+          "width": 192,
+          "bytes": 13720,
+          "sha256": "faf4d559423810e6f9d5f7da83f8407d0879b1c15221ade217e3fe87c252f37d"
+        }
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    }
+  ]
+}

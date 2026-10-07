@@ -32,7 +32,7 @@ export default function AppLayout() {
   }
 
   return (
-    <StudentTheme><Layout className="space-staff-shell" style={{ minHeight: '100vh' }}>
+    <StudentTheme interactions={false}><Layout className="space-staff-shell" style={{ minHeight: '100vh' }}>
       <Sidebar />
       <Layout style={{ minWidth: 0 }}>
         <HeaderBar />

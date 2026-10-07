@@ -16,5 +16,5 @@ export function groupsForCourse(courseId) {
 }
 
 export const experiments = [
-  { id: 'glider', title: '滑翔机模拟实验室', path: '/glider', description: '调整参数、提交试飞，观察自己的飞行结果。' },
+  { id: 'glider', title: '滑翔机模拟实验室', path: '/glider', description: '调整参数、提交试飞，观察自己的飞行结果。', cover:{name:'glider-cover',alt:'滑翔机飞行实验装置',position:'50% 48%',width:480,height:720} },
 ];

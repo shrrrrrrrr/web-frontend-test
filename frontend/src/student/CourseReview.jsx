@@ -1,10 +1,12 @@
+import Alert from '../student/visual/StudentAlert';
+import Sentence from '../content/Sentence';
 import {copyText} from '../content/copy';
 import CopyBlock from '../content/CopyBlock';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Link from './space/SpaceLink';
 
-import { Alert } from 'antd';
+
 import {useCourseApis} from './useCourseApis';
 import { useAuth } from '../store/AuthContext';
 import useRemoteResource from '../hooks/useRemoteResource';
@@ -31,13 +33,13 @@ function Review({ id, studentId }) {
   return <ServicePage title={copyText('system.review.001')} eyebrow="探索地图 / 课程资料" description={data?.course.title || copyText('system.review.002')} actions={<Link to={`/courses/${id}`}>{copyText('system.review.003')}</Link>}>
     {error ? <PixelPanel className="compat-main-error"><Alert role="alert" type="warning" title={courseReadError(error)} description={requestError(error)} /><div className="compat-row-actions"><PixelButton onClick={reload}>{copyText('system.review.004')}</PixelButton><Link to="/explore">{copyText('system.review.005')}</Link></div></PixelPanel>
       : <ReadState loading={loading} object="课程资料">{data && <>
-        <PixelPanel className="review-summary"><div><span className="compat-kicker">{copyText('system.review.006')}</span><h3>{data.course.driving_question || data.course.title}</h3></div><p>{data.course.description || copyText('system.review.007')}</p></PixelPanel>
+        <PixelPanel className="review-summary"><div><span className="compat-kicker">{copyText('system.review.006')}</span><h3>{data.course.driving_question || data.course.title}</h3></div><Sentence>{data.course.description || copyText('system.review.007')}</Sentence></PixelPanel>
         <div className="review-media-layout"><ReplayRegion courseId={id} /><StudySection number="03" title={copyText('system.review.008')} description={copyText('system.review.009')} className="review-resources">
           {data.resources?.length ? <ul className="compat-records">{data.resources.map(resource => <li key={resource.id}><PixelTag>{({ courseware: copyText('system.review.010'), video: copyText('system.review.011'), lesson_plan: copyText('system.review.012'), guide_card: copyText('system.review.013'), template: copyText('system.review.014'), other: copyText('system.review.015') })[resource.resource_type] || copyText('system.review.016')}</PixelTag><h4>{resource.title || copyText('system.review.017')}</h4>
             {resource.has_file ? <CourseResourceDownload resource={resource} courseId={id} /> : <CopyBlock id="system.review.018" as="p" className="compat-muted"/>}</li>)}</ul> : <CopyBlock id="system.review.019" as="p" className="compat-empty"/>}
         </StudySection></div>
         <div className="review-record-layout"><StudySection number="04" title={copyText('system.review.020')} description={copyText('system.review.021')}>
-          {data.tasks?.length ? <ul className="compat-records">{data.tasks.map(task => <li key={task.id}><h4>{task.title}</h4><p className="compat-muted">{task.lesson_title || copyText('system.review.022')}{copyText('system.review.023')}{task.deadline ? formatBeijingTime(task.deadline) : copyText('system.review.024')}</p><Link to={`/courses/${id}/lessons/${task.lesson_id}/learn`}>{copyText('system.review.025')}</Link></li>)}</ul> : <CopyBlock id="system.review.026" as="p" className="compat-empty"/>}
+          {data.tasks?.length ? <ul className="compat-records">{data.tasks.map(task => <li key={task.id}><h4>{task.title}</h4><Sentence className="compat-muted">{task.lesson_title || copyText('system.review.022')}{copyText('system.review.023')}{task.deadline ? formatBeijingTime(task.deadline) : copyText('system.review.024')}</Sentence><Link to={`/courses/${id}/lessons/${task.lesson_id}/learn`}>{copyText('system.review.025')}</Link></li>)}</ul> : <CopyBlock id="system.review.026" as="p" className="compat-empty"/>}
         </StudySection><WorksRegion courseId={id} studentId={studentId} onCourseInvalid={reload} /></div>
       </>}</ReadState>}
   </ServicePage>;
@@ -101,10 +103,10 @@ function ReplayRegion({ courseId }) {
       <div className="review-player-area">
         {player.url ? <video ref={attachVideo} controls preload="metadata" src={player.url} onError={mediaFailed} aria-label={`课程回放：${selection?.title}`} />
           : player.error ? <div className="review-player-feedback"><Alert role="alert" type="warning" title={copyText('system.review.038')} description={player.error.message && !player.error.response ? player.error.message : requestError(player.error)} /><PixelButton onClick={() => choose(selection)}>{copyText('system.review.039')}</PixelButton></div>
-            : <div className="review-player-placeholder" role="status"><span aria-hidden="true">▷</span><p>{player.loading ? copyText('system.review.040') : copyText('system.review.041')}</p></div>}
+            : <div className="review-player-placeholder" role="status"><span aria-hidden="true">▷</span><Sentence>{player.loading ? copyText('system.review.040') : copyText('system.review.041')}</Sentence></div>}
       </div>
       {selection && <div className="review-playing"><strong>{selection.title}</strong>{player.url && <PixelButton size="small" onClick={() => choose(selection)}>{copyText('system.review.042')}</PixelButton>}</div>}
-      <ul className="review-replay-list">{state.data?.replays.map(replay => <li key={replay.id}><button type="button" aria-pressed={selection?.id === replay.id} onClick={() => choose(replay)}><span aria-hidden="true">▷</span><div><strong>{replay.title}</strong><p>{replay.recording_date || copyText('system.review.043')}{replayDuration(replay.duration_seconds) && ` · ${replayDuration(replay.duration_seconds)}`}</p></div><span>{selection?.id === replay.id ? copyText('system.review.044') : copyText('system.review.045')}</span></button></li>)}</ul>
+      <ul className="review-replay-list">{state.data?.replays.map(replay => <li key={replay.id}><button type="button" aria-pressed={selection?.id === replay.id} onClick={() => choose(replay)}><span aria-hidden="true">▷</span><div><strong>{replay.title}</strong><Sentence>{replay.recording_date || copyText('system.review.043')}{replayDuration(replay.duration_seconds) && ` · ${replayDuration(replay.duration_seconds)}`}</Sentence></div><span>{selection?.id === replay.id ? copyText('system.review.044') : copyText('system.review.045')}</span></button></li>)}</ul>
     </ReadState>
   </StudySection>;
 }

@@ -2,7 +2,7 @@ import {useCallback} from 'react';
 import {Navigate,useLocation} from 'react-router-dom';
 import {courseAPI,workAPI,taskAPI} from '../../api';
 import useRemote from '../useRemote';
-import AsyncPageState from '../../components/common/AsyncPageState';
+import AsyncPageState from '../../student/visual/StudentPageState';
 export default function LegacyEntry(){
  const location=useLocation();const pathname=location.pathname,search=location.search;
  const fetcher=useCallback(async()=>{

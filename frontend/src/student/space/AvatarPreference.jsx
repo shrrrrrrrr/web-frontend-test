@@ -1,6 +1,8 @@
+import Alert from '../../student/visual/StudentAlert';
+import Sentence from '../../content/Sentence';
 import {copyText} from '../../content/copy';
 import CopyBlock from '../../content/CopyBlock';
-import { Modal, Alert, Spin } from 'antd';
+import { Modal, Spin } from 'antd';
 import { useCourseExperience } from './useCourseExperience';
 import { avatars } from './avatars';
 import { asset, coursePresentation } from './identity';
@@ -15,9 +17,9 @@ export default function AvatarPreference(){
       {selected?<PixelImage src={asset('avatar-'+selected.id,96)} alt={selected.role+' '+selected.name} width={40} height={40}/>:<PixelIcon name="user" size={28}/>}
       <span className="course-avatar-label">{selected?selected.name:copyText('avatar.open')}</span>
     </button>
-    <Modal open={s.overlay==='avatar'} onCancel={()=>s.openOverlay(null)} footer={null} title={copyText('avatar.open')} width={680} zIndex={1250} rootClassName="student-pixel course-avatar-modal" destroyOnHidden={false}>
+    <Modal open={s.overlay==='avatar'} onCancel={()=>s.openOverlay(null)} footer={null} title={copyText('avatar.open')} width={680} zIndex={1250} rootClassName="student-pixel student-interactions course-avatar-modal" destroyOnHidden={false}>
       <CopyBlock id="avatar.hint" as="p"/>
-      {busy&&<p role="status"><Spin size="small"/> {s.avatar.state==='loading'?copyText('system.avatar.001'):s.avatar.state==='saving'?copyText('system.avatar.002'):copyText('system.avatar.003')}</p>}
+      {busy&&<Sentence role="status"><Spin size="small"/> {s.avatar.state==='loading'?copyText('system.avatar.001'):s.avatar.state==='saving'?copyText('system.avatar.002'):copyText('system.avatar.003')}</Sentence>}
       {s.avatar.notice&&<Alert role="status" type={s.avatar.state==='ready'?'success':'warning'} title={s.avatar.notice}/>}
       {['error','uncertain'].includes(s.avatar.state)&&<PixelButton onClick={s.readAvatar}>{copyText('avatar.reload')}</PixelButton>}
       <div className="course-avatar-grid">{avatars.map(a=><button key={a.id} type="button" aria-pressed={s.avatar.id===a.id} disabled={busy} onClick={()=>s.saveAvatar(a.id)}>

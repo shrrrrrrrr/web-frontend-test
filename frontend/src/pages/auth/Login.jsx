@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Alert, Form, Input, Button } from 'antd';
 import { useAuth } from '../../store/AuthContext';
@@ -12,11 +12,20 @@ import { PixelPanel, PixelButton } from '../../student/visual/PixelUI';
 import SceneArt from '../../student/space/SceneArt';
 import {PLATFORM_NAME} from '../../student/space/identity';
 import '../../student/visual/pixel-service.css';
+import {copyText} from '../../content/copy';
+import CopyBlock from '../../content/CopyBlock';
+import {displayText} from '../../content/displayText';
 
 export default function Login() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const pending = useRef(false);
+  const [viewport,setViewport]=useState(()=>({height:window.visualViewport?.height||innerHeight,top:window.visualViewport?.offsetTop||0}));
+  useEffect(()=>{
+    const update=()=>setViewport({height:window.visualViewport?.height||innerHeight,top:window.visualViewport?.offsetTop||0});
+    window.visualViewport?.addEventListener('resize',update);window.visualViewport?.addEventListener('scroll',update);window.addEventListener('resize',update);
+    return()=>{window.visualViewport?.removeEventListener('resize',update);window.visualViewport?.removeEventListener('scroll',update);window.removeEventListener('resize',update);};
+  },[]);
   const { login, authError, retryRestore, loading } = useAuth();
   const navigate = useNavigate();
   const notice = error || authError || getSessionNotice();
@@ -29,25 +38,25 @@ export default function Login() {
     } catch (err) { setError(requestError(err, { action: '登录' })); }
     finally { pending.current = false; setBusy(false); }
   };
-  return <StudentTheme><main className="voyage-login space-login">
-    <header className="login-brand"><PixelIcon name="map" size={40} /><div><strong>{PLATFORM_NAME}</strong><span>账号登录</span></div></header>
+  return <StudentTheme><main className="voyage-login space-login patch-login" style={{'--login-height':viewport.height+'px','--login-top':viewport.top+'px'}}>
+    <SceneArt key="patch-login" name="login-desktop" mobileName="login-mobile" patch priority className="patch-login-scene"/>
+    <header className="login-brand"><PixelIcon name="map" size={40} /><div><strong>{PLATFORM_NAME}</strong><span>{copyText('patch.login.account')}</span></div></header>
     <div className="login-layout">
-      <section className="login-scene" aria-label="北航校园像素场景"><SceneArt name="campus" priority/><div className="space-login-caption"><h1>{PLATFORM_NAME}</h1></div></section>
       <PixelPanel className="login-panel">
-        <span className="service-eyebrow">欢迎回来</span><h2>登录你的账号</h2><p className="service-muted">继续课程探索，记录新的发现。</p>
-        {notice && <Alert role="alert" type="warning" showIcon title={notice} />}
-        {authError && <Button onClick={retryRestore} loading={loading}>重新读取登录信息</Button>}
+        <span className="service-eyebrow">{copyText('patch.login.welcome')}</span><h1>{copyText('patch.login.title')}</h1><CopyBlock id="patch.login.hint" as="p" className="service-muted"/>
+        {notice && <Alert role="alert" type="warning" showIcon title={displayText(notice)} />}
+        {authError && <Button onClick={retryRestore} loading={loading}>{copyText('patch.login.reload')}</Button>}
         <Form layout="vertical" onFinish={onFinish} size="large" requiredMark="optional">
-          <Form.Item name="username" label="账号" rules={[{ required: true, whitespace: true, message: '请输入账号' }]}>
-            <Input autoComplete="username" placeholder="账号" />
+          <Form.Item name="username" label={copyText('patch.login.username')} rules={[{ required: true, whitespace: true, message: copyText('patch.login.needUsername') }]}>
+            <Input autoComplete="username" placeholder={copyText('patch.login.username')} />
           </Form.Item>
-          <Form.Item name="password" label="密码" rules={[{ required: true, message: '请输入密码' }]}>
-            <PasswordInput autoComplete="current-password" placeholder="密码" />
+          <Form.Item name="password" label={copyText('patch.login.password')} rules={[{ required: true, message: copyText('patch.login.needPassword') }]}>
+            <PasswordInput autoComplete="current-password" placeholder={copyText('patch.login.password')} />
           </Form.Item>
-          <PixelButton type="primary" htmlType="submit" loading={busy} block>登录</PixelButton>
+          <PixelButton type="primary" htmlType="submit" loading={busy} block>{copyText('patch.login.submit')}</PixelButton>
         </Form>
-        <p className="login-account-note">还没有账号？请联系管理员创建。</p>
+        <CopyBlock id="patch.login.note" as="p" className="login-account-note"/>
       </PixelPanel>
-    </div><footer className="login-footer">{PLATFORM_NAME}<span>账号由管理员提供</span></footer>
+    </div><footer className="login-footer">{PLATFORM_NAME}<CopyBlock id="patch.login.footer" as="span"/></footer>
   </main></StudentTheme>;
 }

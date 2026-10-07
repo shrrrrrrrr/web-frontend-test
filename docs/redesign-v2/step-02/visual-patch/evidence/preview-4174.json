@@ -1,0 +1,375 @@
+{
+  "url": "http://127.0.0.1:4174",
+  "assets": [
+    {
+      "url": "/assets/index-DpbOXl1s.js",
+      "status": 200,
+      "sha256": "a3bfe16c6bbdaf5799d868cfed8c653c581379962f661e8096eb1908d2219e79"
+    },
+    {
+      "url": "/assets/dayjs.min-CLFftfrj.js",
+      "status": 200,
+      "sha256": "b2f201760f200c7866e81e9b736e80d271174a98b5b04909c0d57c80cb92bd3e"
+    },
+    {
+      "url": "/assets/jsx-runtime-C-GVBRSp.js",
+      "status": 200,
+      "sha256": "015ce475d587daffd26da921506b85e2adc91879800ab08be9f1c07ded564558"
+    },
+    {
+      "url": "/assets/typography-B6qESNXC.js",
+      "status": 200,
+      "sha256": "a4e44db8c35c5fb0d4b57c027e09334196ed8a1c150944778fb2a284f4a4a211"
+    },
+    {
+      "url": "/assets/useClosable-BfU_l_I5.js",
+      "status": 200,
+      "sha256": "9293382a7458c5dffe28440d6827377a10907de0d1e3f4f83dce6aa119052b37"
+    },
+    {
+      "url": "/assets/alert-T5GX8Z65.js",
+      "status": 200,
+      "sha256": "cf0eaa275c7e4bdc724724c44992790e265c5d1937e520bb7aa3a8fa6d2e27d0"
+    },
+    {
+      "url": "/assets/useForm-Ds9B0Q8f.js",
+      "status": 200,
+      "sha256": "81132cfcaab84f74cf57d360b43d6c7a4c7b8241702dd8dbb84f324e9be6649e"
+    },
+    {
+      "url": "/assets/useBreakpoint-BRJuzdm_.js",
+      "status": 200,
+      "sha256": "ce34996a75cb34c7a9fdcf8ae098116b99760dbb8fe6e425256e7f9bc1d2e023"
+    },
+    {
+      "url": "/assets/useMergedMask-CJcwnG5L.js",
+      "status": 200,
+      "sha256": "24d89faf21e322e6395a71992f3488ec275fb6159ad95078b903b53052cdc791"
+    },
+    {
+      "url": "/assets/ActionButton-CxCBcEJI.js",
+      "status": 200,
+      "sha256": "c8d12681b7599288ae0c760a94d3070483232d41bdfcd016c8bbbaad1e6a473c"
+    },
+    {
+      "url": "/assets/skeleton-DCMw9giS.js",
+      "status": 200,
+      "sha256": "8c39f2e168db36bff94a20224228d71e429d7c2621a3d54a3e6f1faaf30b4d70"
+    },
+    {
+      "url": "/assets/style-Q5WVimYn.js",
+      "status": 200,
+      "sha256": "e28f8cc6564cb899fe0f0b08bfd775f7fe71037b9c01ef3b359c50ff55fcfd36"
+    },
+    {
+      "url": "/assets/useModal-DvNk1ORq.js",
+      "status": 200,
+      "sha256": "a1dd0e53ab0d4d787bd1ec46aea43da0104ee3416717ee8b598f780ea7e6f120"
+    },
+    {
+      "url": "/assets/collapse-DNXyBCq_.js",
+      "status": 200,
+      "sha256": "5cd76f995ec26b35ad0545269898b57c4c340f8090931eef790994c24d589a31"
+    },
+    {
+      "url": "/assets/move-c7fOLM7E.js",
+      "status": 200,
+      "sha256": "5d1b5260ac1ca225def6a1f7a8fd63c4c80d99aa20b80c22f85029805149e2cf"
+    },
+    {
+      "url": "/assets/extends-CvVTau-c.js",
+      "status": 200,
+      "sha256": "e50b0d8e7e74580bb4eab859a2db258e83bcc5a77551aca2eb99120badee5888"
+    },
+    {
+      "url": "/assets/es-D7uByyYY.js",
+      "status": 200,
+      "sha256": "98c7de9e537f4527e118ac7f2edee806e03e0be2846476f5584d2aa4abec774d"
+    },
+    {
+      "url": "/assets/RightOutlined-w8fDO-we.js",
+      "status": 200,
+      "sha256": "82eb8cee2b8b9538a0acd97dc50152dc854439e5d91bd028c2968c92650636cd"
+    },
+    {
+      "url": "/assets/PurePanel-DopAyFY8.js",
+      "status": 200,
+      "sha256": "b554ba39e33e5f9f36c8b5cc2498f0a46a97566416f7b0e2c0e2cbffce7d1f1c"
+    },
+    {
+      "url": "/assets/empty-CUp4gxcF.js",
+      "status": 200,
+      "sha256": "e4faa899f4740aecb8940658651a0db86dea47ecc268dc1a8f4ecd12bce94725"
+    },
+    {
+      "url": "/assets/LeftOutlined-COv6D-TI.js",
+      "status": 200,
+      "sha256": "e7955dff371107c754dec8a87d9b2ded2d5f861532fbcfc0c056e5012419c059"
+    },
+    {
+      "url": "/assets/tabs-DQSegjZs.js",
+      "status": 200,
+      "sha256": "fe458c8d39e8f3878e4087013c8eecc97d24cdd4f253432ebede038c1e6c9954"
+    },
+    {
+      "url": "/assets/card-DaI2MDks.js",
+      "status": 200,
+      "sha256": "ca7d5d1c3458534608efd036fba62bd8e6a8fd38d7efa2e3c9b011c91ae680bf"
+    },
+    {
+      "url": "/assets/spin-4yNjfwCq.js",
+      "status": 200,
+      "sha256": "e4698a62a89f39d666d481437d03d93224de617661acfd13a9f8d5365d300a42"
+    },
+    {
+      "url": "/assets/row-umaGN_eg.js",
+      "status": 200,
+      "sha256": "00a37217f5c15c194197c5ee9a5c1fed00b5a741ec383fd611d6c25dff2cfe7a"
+    },
+    {
+      "url": "/assets/space-DNQ9pqEX.js",
+      "status": 200,
+      "sha256": "089828819358d93f4fa79c1ee243eddd92e34c431321ba564e80aa6970d56166"
+    },
+    {
+      "url": "/assets/SearchOutlined-vNEE4xIN.js",
+      "status": 200,
+      "sha256": "8f62f3b51f136dc5903c7c31e3e2b1399002d1c5e6386c6725fe4da941c06698"
+    },
+    {
+      "url": "/assets/Input-33xrtTie.js",
+      "status": 200,
+      "sha256": "b9fd35eea69307424ab6ae782f3da242a3fa538b506ff8ce1dc7e792786ebc08"
+    },
+    {
+      "url": "/assets/EyeOutlined-BsjHvxlr.js",
+      "status": 200,
+      "sha256": "2df4e4fd6ed8efe35fa071512c955d31d61b37fc0c7e4ecb73cc4bed4647caef"
+    },
+    {
+      "url": "/assets/input-rBn3lLE9.js",
+      "status": 200,
+      "sha256": "6415a457ea016e2c610dc4fc8723f4e052b5250fc0f1223bb85df75862245ade"
+    },
+    {
+      "url": "/assets/modal-CV0Qu94M.js",
+      "status": 200,
+      "sha256": "dbeadf7b956a605d21b64b15c458a739c15fd98ac48b36ec8f437a7d47614d53"
+    },
+    {
+      "url": "/assets/result-C6dAgnrC.js",
+      "status": 200,
+      "sha256": "f732410cef6fe9116ccb09273ab60644705bd2d412ea973d3c9938fcc5187a74"
+    },
+    {
+      "url": "/assets/tag-ClOc-BCs.js",
+      "status": 200,
+      "sha256": "3dd98f3b0de4fd8a56f5e137996698a12cbb15302b951ffebc903947a7fe5e2b"
+    },
+    {
+      "url": "/assets/AuthContext-B9_BWCkT.js",
+      "status": 200,
+      "sha256": "e38cdddba3207ef90b380f87973048de534f994c95f342c967ed50d335c09412"
+    },
+    {
+      "url": "/assets/displayText-EJSbmHOx.js",
+      "status": 200,
+      "sha256": "75fd3c15ac011142883a47c18c0805e392b060255dc8417d796db434f0d05a68"
+    },
+    {
+      "url": "/assets/Sentence-DE_WG3KI.js",
+      "status": 200,
+      "sha256": "32254f680342d9bdded82991592f55dc4a5b999c4594157221ed0fb678511b4b"
+    },
+    {
+      "url": "/assets/StudyUI-mA7dg-ZR.js",
+      "status": 200,
+      "sha256": "d6495e6af5b7714fe3ded7f69488a09d57637da26324ebab0d4dc17f33c05435"
+    },
+    {
+      "url": "/assets/NotificationLevelTag-DTZXO1go.js",
+      "status": 200,
+      "sha256": "835cd4dcc6b66c5588f263243ffaf8204fb67c8fbe505de85b46f68328465d43"
+    },
+    {
+      "url": "/assets/pixel-service-BBg1NQ0w.js",
+      "status": 200,
+      "sha256": "9e999b0e5d9ffba3a30312036c01032198054262e5025bbbe209890db4221b45"
+    },
+    {
+      "url": "/assets/date-D3egdRiN.js",
+      "status": 200,
+      "sha256": "8b9a904aa65d5e4be30db15db0c3a325ab6861cd13e682199ebe877f95dfb416"
+    },
+    {
+      "url": "/assets/copy-Dw5cY_og.js",
+      "status": 200,
+      "sha256": "f2815e7be054493692a745db7d83462aa71b8c6e9955f4775b2d2e1a5460c622"
+    },
+    {
+      "url": "/assets/AsyncPageState-Cz3qsHVc.js",
+      "status": 200,
+      "sha256": "68e5668c166e2c46a0eb960fbbf5c47adf6b687a2ff7af352fb5e9866e6dd7a9"
+    },
+    {
+      "url": "/assets/model-B9fEgwjD.js",
+      "status": 200,
+      "sha256": "66670070b21f9d34e1bdf43883b5de6ce24e10655d9c6e32c750f7c1a289bf44"
+    },
+    {
+      "url": "/assets/StudyUI-DSOOYV36.css",
+      "status": 200,
+      "sha256": "dcb9d8056bc0e2519b1f6dbf74581be48746828dfc60802e6823c9776b26aef9"
+    },
+    {
+      "url": "/assets/pixel-service-m6kMJ5eZ.css",
+      "status": 200,
+      "sha256": "a8bab7684b564706f955774af700e2f95372ccea8cc644af8ba7724c41a174eb"
+    },
+    {
+      "url": "/assets/index-CT2sJbnR.css",
+      "status": 200,
+      "sha256": "a94b462ff6920037a992645ab164306164f998cffd08b733ed0489906088cc5e"
+    }
+  ],
+  "screenshots": [
+    "login",
+    "selector-1440",
+    "personal-1440",
+    "map-1440",
+    "detail-1440",
+    "learning-1440",
+    "lab-1440",
+    "archive-1440",
+    "chat-disabled-1440",
+    "selector-1920",
+    "personal-1920",
+    "map-1920",
+    "detail-1920",
+    "learning-1920",
+    "lab-1920",
+    "archive-1920",
+    "chat-disabled-1920",
+    "selector-768",
+    "personal-768",
+    "map-768",
+    "detail-768",
+    "learning-768",
+    "lab-768",
+    "archive-768",
+    "chat-disabled-768",
+    "selector-390",
+    "personal-390",
+    "map-390",
+    "detail-390",
+    "learning-390",
+    "lab-390",
+    "archive-390",
+    "chat-disabled-390",
+    "selector-360",
+    "personal-360",
+    "map-360",
+    "detail-360",
+    "learning-360",
+    "lab-360",
+    "archive-360",
+    "chat-disabled-360",
+    "selector-844",
+    "personal-844",
+    "map-844",
+    "detail-844",
+    "learning-844",
+    "lab-844",
+    "archive-844",
+    "chat-disabled-844"
+  ],
+  "errors": [],
+  "sizes": [
+    [
+      1440,
+      900
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      360,
+      640
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "indexSha256": "ba165513faafc570558c73f9579134ee6cc9b7dd55f9ab961da4e5d900fa5f1b",
+  "browser": "154.0.4258.53",
+  "contrast": [
+    {
+      "name": "登录说明",
+      "foreground": "rgb(25, 53, 85)",
+      "background": "rgba(255, 249, 233, 0.8)",
+      "method": "actual computed colors; translucent panel composited over worst black scene, not image sampling",
+      "ratio": 7.41
+    },
+    {
+      "name": "学习标题正文",
+      "foreground": "rgb(25, 53, 85)",
+      "background": "rgba(251, 246, 232, 0.72)",
+      "method": "actual computed colors; translucent panel composited over worst black scene, not image sampling",
+      "ratio": 5.84
+    },
+    {
+      "name": "运势边界说明",
+      "foreground": "rgb(81, 104, 117)",
+      "background": "rgba(255, 249, 233, 0.95)",
+      "method": "actual computed colors; translucent panel composited over worst black scene, not image sampling",
+      "ratio": 4.99
+    },
+    {
+      "name": "我的账号说明",
+      "foreground": "rgb(19, 42, 73)",
+      "background": "rgba(251, 246, 232, 0.9)",
+      "method": "actual computed colors; translucent panel composited over worst black scene, not image sampling",
+      "ratio": 10.68
+    }
+  ],
+  "font": [
+    {
+      "familyName": "寒蝉团圆体 Round",
+      "postScriptName": "ChillReunion_Round",
+      "isCustomFont": true,
+      "glyphCount": 5
+    }
+  ],
+  "fortune": {
+    "status": 200,
+    "data": {
+      "version": "campus-fortune-v1",
+      "date": "2026-10-07",
+      "nextUpdateAt": "2026-10-07T16:00:00.000Z",
+      "level": "great",
+      "art": "fortune-device",
+      "good": [
+        "listen",
+        "organize"
+      ],
+      "avoid": [
+        "ignore"
+      ]
+    },
+    "cache": "no-store"
+  },
+  "assetPreviewDecodedImages": 11,
+  "copyEntries": 839,
+  "galleryLinks": 63,
+  "galleryOpened": true
+}

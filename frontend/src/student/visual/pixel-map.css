@@ -16,7 +16,7 @@
 .student-pixel .pixel-map-overview h3 { font-size: 24px; margin: 0 0 2px; }
 .student-pixel .pixel-map-overview > div > span { font-size: 14px; color: #526974; }
 .student-pixel .pixel-map-course-progress { width: 224px; flex-shrink: 0; }
-.student-pixel .pixel-map-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; align-items: start; gap: 20px; }
+.student-pixel .pixel-map-layout { display:block; }
 .student-pixel .pixel-map-stage { position: relative; isolation: isolate; overflow: hidden; min-width: 0; padding: 0 20px 16px; background: #bbdded; border: 3px solid #102d40; box-shadow: 0 4px 0 #102d40; }
 .student-pixel .pixel-map-sky { position: absolute; z-index: -1; top: 0; left: 0; width: 100%; height: 480px; opacity: .32; pointer-events: none; }
 .student-pixel .pixel-map-route-content { position: relative; }
@@ -60,7 +60,6 @@
 .student-pixel .pixel-map-region-bridge { position: absolute; z-index: 2; bottom: -14px; left: 50%; transform: translateX(-50%); display: grid; place-items: center; width: 32px; height: 36px; color: #28515b; border-top: 4px dotted #fff9e9; }
 .student-pixel .pixel-map-region-bridge .pixel-icon { transform: rotate(90deg); }
 .student-pixel .pixel-map-route-note { position: relative; z-index: 1; padding: 8px 10px; margin: 12px 0 0; background: #fff9e9; color: #526974; font-size: 13px; border: 1px solid #8cafbc; }
-.student-pixel .pixel-map-aside { position: sticky; top: 84px; min-width: 0; }
 .student-pixel .pixel-map-details { padding: 20px; min-width: 0; }
 .student-pixel .pixel-map-details h3 { margin: 12px 0 10px; font-size: 23px; line-height: 1.4; overflow-wrap: anywhere; }
 .student-pixel .pixel-map-details-kicker { display: flex; justify-content: space-between; gap: 8px; align-items: center; font-size: 14px; font-weight: 700; color: #526974; }
@@ -82,7 +81,6 @@
 .student-pixel .pixel-map-detail-note { margin: 12px 0 0; font-size: 13px; color: #526974; }
 .student-pixel .pixel-map-empty { padding: 32px; }
 @media (max-width: 1199px) and (min-width: 992px) {
-  .student-pixel .pixel-map-layout { grid-template-columns: minmax(0, 1fr) 290px; gap: 16px; }
   .student-pixel .pixel-map-details { padding: 16px; }
   .student-pixel .pixel-map-stage { padding-right: 12px; padding-left: 12px; }
   .student-pixel .pixel-map-route { column-gap: 16px; padding-right: 0; padding-left: 0; }

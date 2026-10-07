@@ -1,7 +1,9 @@
+import Alert from '../student/visual/StudentAlert';
+import Sentence from '../content/Sentence';
 import {copyText} from '../content/copy';
 import CopyBlock from '../content/CopyBlock';
 import { useRef, useState } from 'react';
-import { Alert, Collapse, Empty, Form, InputNumber, Select, Spin, Tag, Image, message } from 'antd';
+import { Collapse, Empty, Form, InputNumber, Select, Spin, Tag, Image, message } from 'antd';
 import { flightParameters, initialFlightParameters, flightMetrics, stateMeta, STATE_TIPS } from '../pages/glider/gliderModel';
 import { useGliderFile } from '../pages/glider/useGliderRecords';
 import { formatBeijingTime } from '../utils/date';
@@ -33,14 +35,14 @@ function RecordResults({ records }) {
       {viewingId && <PixelButton size="small" onClick={() => openRecord(viewingId)}>{copyText('system.flight.007')}</PixelButton>}
     </div>
     {viewing && <Collapse className="flight-snapshot" items={[{ key: 'snapshot', label: `试飞 #${viewing.id} 使用的参数`, children: <><CopyBlock id="system.flight.008" as="p" className="flight-note"/><dl className="flight-snapshot-grid">{flightParameters.map((parameter) => <div key={parameter.field}><dt>{parameter.title}</dt><dd>{viewing[parameter.field] ?? '—'} {parameter.unit}</dd></div>)}</dl></> }]} />}
-    {!viewingId ? <div className="flight-ready"><PixelIcon name="lab" size={56} /><h4>{copyText('system.flight.009')}</h4><p>{copyText('system.flight.010')}<br />{copyText('system.flight.011')}</p><span>{copyText('system.flight.012')}</span></div>
+    {!viewingId ? <div className="flight-ready"><PixelIcon name="lab" size={56} /><h4>{copyText('system.flight.009')}</h4><Sentence>{copyText('system.flight.010')}<br />{copyText('system.flight.011')}</Sentence><span>{copyText('system.flight.012')}</span></div>
       : pollTimedOut ? <Alert type="warning" showIcon title={copyText('system.flight.013')} description={copyText('system.flight.014')} action={<PixelButton onClick={() => openRecord(viewingId)}>{copyText('system.flight.015')}</PixelButton>} />
         : pollFailed ? <Alert type="warning" showIcon title={copyText('system.flight.016')} description={copyText('system.flight.017')} action={<PixelButton onClick={() => openRecord(viewingId)}>{copyText('system.flight.018')}</PixelButton>} />
-          : !viewing ? <div className="flight-running" role="status"><Spin /><h4>{copyText('system.flight.019')}</h4><p>{copyText('system.flight.020')}{viewingId}</p></div>
-            : viewing.status === 'running' ? <div className="flight-running" role="status"><Spin /><PixelTag>{copyText('system.flight.021')}</PixelTag><h4>{copyText('system.flight.022')}</h4><p>{copyText('system.flight.023')}{waitSec}{copyText('system.flight.024')}</p><CopyBlock id="system.flight.025" as="p" /></div>
+          : !viewing ? <div className="flight-running" role="status"><Spin /><h4>{copyText('system.flight.019')}</h4><Sentence>{copyText('system.flight.020')}{viewingId}</Sentence></div>
+            : viewing.status === 'running' ? <div className="flight-running" role="status"><Spin /><PixelTag>{copyText('system.flight.021')}</PixelTag><h4>{copyText('system.flight.022')}</h4><Sentence>{copyText('system.flight.023')}{waitSec}{copyText('system.flight.024')}</Sentence><CopyBlock id="system.flight.025" as="p" /></div>
               : viewing.status === 'error' ? <Alert type="error" showIcon title={copyText('system.flight.026')} description={viewing.error || copyText('system.flight.027')} />
                 : <>
-                  <div className="flight-outcome"><span className="flight-computed"><PixelIcon name="check" size={20} />{copyText('system.flight.028')}</span><h4>{copyText('system.flight.029')}{meta.label}</h4><p>{STATE_TIPS[viewing.state] || copyText('system.flight.030')}</p></div>
+                  <div className="flight-outcome"><span className="flight-computed"><PixelIcon name="check" size={20} />{copyText('system.flight.028')}</span><h4>{copyText('system.flight.029')}{meta.label}</h4><Sentence>{STATE_TIPS[viewing.state] || copyText('system.flight.030')}</Sentence></div>
                   <dl className="flight-metrics">{flightMetrics(viewing).map(({ label, value, unit }) => <div key={label}><dt>{label}</dt><dd>{value}<small>{unit}</small></dd></div>)}</dl>
                   <CopyBlock id="system.flight.031" as="p" className="flight-note"/>
                   <ResultFile key={`trajectory-${viewing.id}`} record={viewing} revision={revision} name="trajectory3d.png" title={copyText('system.flight.032')} />

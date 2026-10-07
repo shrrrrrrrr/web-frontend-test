@@ -1,4 +1,5 @@
-import {copyText} from '../content/copy';
+import Sentence from '../content/Sentence';
+import {copyText,copyFragment} from '../content/copy';
 import { Empty, Pagination } from 'antd';
 import Link from './space/SpaceLink';
 
@@ -17,7 +18,7 @@ export function WorkRecords({ works, compact = false }) {
     const status = workStatus(work);
     return <li key={work.id} className="archive-work-row">
       <span className="archive-file-icon" aria-hidden="true"><PixelIcon name="book" /></span>
-      <div className="archive-work-main"><Link className="archive-record-title" to={`/works/${work.id}`}>{work.title}</Link><p>{work.course_title || copyText('system.records.003')}{work.task_title ? ` · ${work.task_title}` : ''}</p><p>{copyText('system.records.004')}{work.version || 1}{copyText('system.records.005')}{formatBeijingTime(work.created_at)}</p></div>
+      <div className="archive-work-main"><Link className="archive-record-title" to={`/works/${work.id}`}>{work.title}</Link><Sentence>{work.course_title || copyText('system.records.003')}{work.task_title ? ` · ${work.task_title}` : ''}</Sentence><Sentence>{copyFragment('system.records.004')}{work.version || 1}{copyFragment('system.records.005')}{formatBeijingTime(work.created_at)}</Sentence></div>
       <PixelTag tone={status.tone}>{status.label}</PixelTag>
       <Link className="archive-record-action" to={`/works/${work.id}`}>{status.revisable ? copyText('system.records.006') : copyText('system.records.007')}</Link>
     </li>;

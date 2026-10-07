@@ -13,4 +13,6 @@
 
 固定导入基线的当前 AI 后端支持可配置 provider；前端读取真实 enabled、origin。第十一/十二轮通过隔离本地 HTTPS provider 验证链路，未使用真实外部 Key，也不保证外部回答质量。不存在已核实的“模型失败必有规则回退”承诺；未新增模型、聊天历史或流式能力。
 
+新版第二步视觉补修依该轮明确授权，仅在本仓库新增 `/api/account/daily-fortune` 只读娱乐展示：已认证学生账号与服务器北京时间稳定派生，无数据库迁移或写入，不影响原 dashboard 提示、评分、奖励或学习权限。原仓库与 reference 保持只读。新增素材、参考与版本见 [补修素材预览](docs/redesign-v2/step-02/visual-patch/assets.html)。
+
 像素素材的生成母版、原创 SVG、派生关系与历史参考出处见 [DESIGN.md](DESIGN.md) 和 [素材清单](frontend/public/assets/pixel-v1/manifest.json)。代码与素材各自注明来源，不把原项目复制代码或外部参考统称原创。

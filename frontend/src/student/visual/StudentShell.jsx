@@ -16,6 +16,7 @@ import {useCourseExperience} from '../space/useCourseExperience';
 import FloatingAssistant from '../space/FloatingAssistant';
 import AvatarPreference from '../space/AvatarPreference';
 import '../space/course-pages.css';
+import SceneArt from '../space/SceneArt';
 
 function Points({to}){const {data,status}=useRewards();return <Link to={to} className="student-points" data-testid="header-demo-points" aria-label={copyText('system.shell.001')+(status==='ready'?data.balance:copyText('system.shell.002'))}><PixelIcon name="coin"/><strong>{status==='ready'?data.balance:'—'}</strong><span className="student-demo-tag">{copyText('system.shell.003')}</span></Link>;}
 function CourseNavigation({id,course,close}){
@@ -36,7 +37,10 @@ function Shell({children}){
  const {data}=useRemote(fetcher,{courseSensitive:true,courseId:id});
  const me='/me'+(id?'?returnTo='+encodeURIComponent(location.pathname+location.search):'');
  const deep=id&&location.pathname!=='/courses/'+id;
+ const voyage=id&&coursePresentation(id).theme==='voyage';
+ const scene=id?(voyage?(/\/(lab|glider|archives|works|reflection)(?:\/|$)/.test(location.pathname)?'voyage-lab':'voyage-reading'):'campus-select'):(location.pathname==='/me'?'campus-personal':'campus-select');
  return <div className={'space-shell student-shell '+(id?'space-shell--course':'space-shell--platform')} data-course-space={id||undefined} data-course-pathname={location.pathname}>
+   <div className="space-underlay" aria-hidden="true"><SceneArt key={scene} name={scene} patch priority/></div>
    {id&&screens.lg&&<aside className="space-sidebar"><CourseNavigation id={id} course={data?.course}/></aside>}
    <div className="space-shell-main">
     <header className="space-header">
@@ -47,7 +51,7 @@ function Shell({children}){
     {deep&&<nav className="space-sticky-return" aria-label={copyText('system.shell.014')}><Link to={'/courses/'+id}><PixelIcon name="back"/>{copyText('course.nav.return')}</Link><Link to="/explore">{copyText('system.shell.016')}</Link></nav>}
     <main id="student-main" className="student-content space-content">{children}</main>
    </div>
-   {id&&<Drawer open={!screens.lg&&open} onClose={()=>setOpen(false)} placement="left" width={272} title={copyText('system.shell.017')} rootClassName="student-pixel space-navigation-drawer" styles={{body:{padding:0}}}><CourseNavigation id={id} course={data?.course} close={()=>setOpen(false)}/></Drawer>}
+   {id&&<Drawer zIndex={1250} open={!screens.lg&&open} onClose={()=>setOpen(false)} placement="left" width={272} title={copyText('system.shell.017')} rootClassName="student-pixel student-interactions space-navigation-drawer" styles={{body:{padding:0}}}><CourseNavigation id={id} course={data?.course} close={()=>setOpen(false)}/></Drawer>}
    {id&&<FloatingAssistant/>}
  </div>;
 }

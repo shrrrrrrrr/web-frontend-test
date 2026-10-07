@@ -1,0 +1,232 @@
+Edge: 154.0.4258.53
+▶ 新版第 1 步：真实课程空间、样板与学习回归
+  ✔ 平台课程选择：真实分配、无全局待办、单课程不自动跳转、三尺寸字体 (3702.531ms)
+  ✔ 地图真课时、多章节、键盘节点、课时安排与未分组默认主题 (4902.8947ms)
+  ✔ 报告通过但作品退回仍有修改入口；无作品任务仍可继续学习 (1944.3953ms)
+  ✔ 旧对象链接定位真实课程，旧全局实验不伪造课程；篡改课时被拒绝 (3473.7935ms)
+  ✔ 附件 404 不隐藏地图；课程撤回清除内容，恢复后重新检查可访问 (967.1509ms)
+  ✔ 课程试飞真闭环：指定卡片→参考引擎→原卡片，记录归属与不自动提交 (33974.3779ms)
+  ✔ 课程内自由实验固定课程、不造课时；切课不显示其他课程或未关联旧记录 (3335.2887ms)
+  ✔ 报告草稿按原位置恢复；课时取消清除，再恢复不越权 (2681.9509ms)
+FAILED URL: http://127.0.0.1:5196/courses/9001/lessons/90011/learn?stage=2 跳到页面内容
+返回课程选择
+星海远航 · 视觉测试课程
+课程 #9001
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航 · 视觉测试课程
+选择角色头像
+120
+演示
+1
+王小明
+返回课程地图
+全部课程
+星海远航 · 视觉测试课程
+观察与提问
+
+正在查看：导师评审
+
+返回课程地图
+返回课后任务
+本课时进度
+85%
+
+回顾 25% · 卡片 35%
+报告反思 25% · 导师评审 15%
+
+01
+课堂回顾
+已完成
+02
+知识卡片与练习
+已完成
+03
+学习报告与反思
+已完成
+04
+导师评审
+正在查看 · 待评审
+查看本课时任务与作品 ↓
+04
+导师评审
+
+查看学习报告的反馈，再决定下一步
+
+待评审
+报告正在等待执行导师评审。你可以回看知识卡片、查看已提交的报告，或处理下方的作品任务
+学习报告 · 第1版
+提交于2026-10-07 23:05
+导师评语
+
+导师暂未留下评语
+
+查看学习报告
+回看知识卡片
+W
+本课时任务与作品
+
+查看作品要求、提交版本和导师意见
+
+作品与学习报告分别保存和评审。这里的作品提交不会替代上方的学习报告
+试飞观察作品（测试任务）
+
+整理自己的观察记录，文字或附件至少一项
+
+截止：未设置
+
+提交作品
+  ✖ 报告与作品各自提交；导师原角色评审，成长档案只显示当前课程 (12721.7068ms)
+✖ 新版第 1 步：真实课程空间、样板与学习回归 (71497.6014ms)
+▶ 第一步补修：真实字体字形、平台落点与动态地图
+  ✖ 登录、课程选择、我的、输入与礼品浮层实际使用官方字体字形 (13452.1396ms)
+✖ 第一步补修：真实字体字形、平台落点与动态地图 (17186.9109ms)
+Edge: 154.0.4258.53
+▶ 新版平台边界、迟到响应与三尺寸状态验收
+  ✔ 登录三尺寸及真实强制改密完成后进入选择页 (5876.3848ms)
+  ✔ 无分配课程真实空状态、恢复分配、键盘进入与手机点击 (8426.2118ms)
+  ✔ 地图与我的全页三尺寸、手机菜单关闭、刷新与新标签、返回滚动可见 (12548.033ms)
+  ✔ A 课程迟到响应不能覆盖已切换到 B 的主题与课时 (1521.9462ms)
+  ✔ 课程读取失败可重试、卡片失效返回地图、图片失败不影响可操作节点 (5217.9861ms)
+  ✔ 账号停用清除已有课程内容并回到登录 (390.3066ms)
+✔ 新版平台边界、迟到响应与三尺寸状态验收 (37626.9199ms)
+▶ 第二步：人工 HTML 导出、特殊字符、双来源冲突与真实删除显示
+  ✔ 本地审阅页保存 HTML 与 JSON 保留 ID、显隐和特殊字符 (2965.5962ms)
+  ✔ 修改 JSX 后提取 HTML 报告冲突，不自动覆盖 (335.1714ms)
+  ✔ 真实课程页面可选文案真正删除，返回标签改稿不改变实验入口与跳转 (6488.0295ms)
+✔ 第二步：人工 HTML 导出、特殊字符、双来源冲突与真实删除显示 (16291.7843ms)
+▶ 第二步：真实页面加载、局部错误、空数据与关键动作
+  ✔ 各主要页面保留真实加载与局部接口错误，重试可恢复 (31347.8862ms)
+  ✔ 下载附件 404 保留学习；机器人不会挡住下载及主要操作 (3220.0088ms)
+  ✔ 长成果文字、真实上传失败保输入，恢复可提交新版本 (5429.4249ms)
+  ✔ 档案空作品与缺失反馈真实降级；反思每日一次限制 (4851.7181ms)
+  ✔ 实验注册页共享真实权限加载、网络错误及课程撤回清理 (2324.6307ms)
+✔ 第二步：真实页面加载、局部错误、空数据与关键动作 (52088.3136ms)
+▶ 第二步：头像、课程浮窗、真实接口与响应式页面
+  ✔ 头像未选中、六人真实保存、重新登录、账号与课程隔离 (6744.1479ms)
+  ✔ 头像写失败与写成功回读失败分开，不自动重复写入 (1729.4432ms)
+  ✔ 同课程切页保留草稿、关窗继续请求、单次问答与不重复发送 (1981.179ms)
+  ✔ 服务错误保留原问题和新草稿，资料变更清旧引用 (2165.7314ms)
+  ✔ 中文输入法 Enter 不发送，Shift Enter 换行；真实 JWT 轮换保输入 (307.886ms)
+  ✔ 旧消息滚动不抢位置，最新回复可定位 (1051.2411ms)
+  ✔ 课程引用只生成当前课程站内动作，不执行回答 HTML (796.5953ms)
+  ✔ 两课切换清会话，迟到旧响应不进入新课；平台不出现机器人 (1874.7757ms)
+  ✔ 真实课程撤回清会话，恢复重新检查不恢复旧回答 (1248.8059ms)
+  ✔ 未启用和目录错误展示真实状态，恢复后可提问 (64577.1853ms)
+  ✔ 旧助手链接 replace 打开一次，不回到中转页；后台入口保留 (3838.5659ms)
+  ✔ 五尺寸课程页面、窗口遮罩、焦点、互斥和键盘高度 (28725.0036ms)
+  ✔ 停用、强制改密、退出和换账号清机器人上下文 (6204.5198ms)
+✔ 第二步：头像、课程浮窗、真实接口与响应式页面 (130947.5869ms)
+▶ 新版第2步补修：真实素材、运势、居中地图与输入交互
+  ✔ 独立桌面/手机登录构图、六尺寸整屏不滚动，短屏表单内部可达 (9001.372ms)
+  ✔ 登录图片故障不挡表单，真实错误与防重复提交 (2401.671ms)
+  ✖ 六尺寸平台/课程主题，真实运势、地图默认和弹窗、标题透明、封面和聊天 (27158.1833ms)
+✖ 新版第2步补修：真实素材、运势、居中地图与输入交互 (43938.9288ms)
+ℹ tests 47
+ℹ suites 0
+ℹ pass 41
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 375395.8018
+
+✖ failing tests:
+
+test at tests\redesign-v2.browser.test.js:24:55
+✖ 报告与作品各自提交；导师原角色评审，成长档案只显示当前课程 (12721.7068ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '提交作品', exact: true })[22m
+
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.browser.test.js:65:277
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.browser.test.js:24:79)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.browser.test.js:24:47)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.browser.test.js:64:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '提交作品', exact: true })" ]
+  }
+
+test at tests\redesign-v2.browser.test.js:16:1
+✖ 新版第 1 步：真实课程空间、样板与学习回归 (71497.6014ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '提交作品', exact: true })[22m
+
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.browser.test.js:65:277
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.browser.test.js:24:79)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.browser.test.js:24:47)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.browser.test.js:64:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '提交作品', exact: true })" ]
+  }
+
+test at tests\redesign-v2.patch.browser.test.js:85:57
+✖ 登录、课程选择、我的、输入与礼品浮层实际使用官方字体字形 (13452.1396ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('h1').first() to be visible[22m
+
+      at fonts (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.patch.browser.test.js:41:41)
+      at async file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.patch.browser.test.js:89:24
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.patch.browser.test.js:85:81)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.patch.browser.test.js:85:49)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.patch.browser.test.js:87:5) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('h1').first() to be visible" ]
+  }
+
+test at tests\redesign-v2.patch.browser.test.js:74:1
+✖ 第一步补修：真实字体字形、平台落点与动态地图 (17186.9109ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('h1').first() to be visible[22m
+
+      at fonts (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.patch.browser.test.js:41:41)
+      at async file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.patch.browser.test.js:89:24
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.patch.browser.test.js:85:81)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.patch.browser.test.js:85:49)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.patch.browser.test.js:87:5) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('h1').first() to be visible" ]
+  }
+
+test at tests\redesign-v2.visual-patch.browser.test.js:16:54
+✖ 六尺寸平台/课程主题，真实运势、地图默认和弹窗、标题透明、封面和聊天 (27158.1833ms)
+  AssertionError [ERR_ASSERTION]: 实验首屏按钮可达 360
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:36:330
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:29:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\redesign-v2.visual-patch.browser.test.js:13:1
+✖ 新版第2步补修：真实素材、运势、居中地图与输入交互 (43938.9288ms)
+  AssertionError [ERR_ASSERTION]: 实验首屏按钮可达 360
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:36:330
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:29:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

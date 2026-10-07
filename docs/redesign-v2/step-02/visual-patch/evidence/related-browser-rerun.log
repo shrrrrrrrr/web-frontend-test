@@ -1,0 +1,84 @@
+Edge: 154.0.4258.53
+▶ 新版第 1 步：真实课程空间、样板与学习回归
+  ✔ 平台课程选择：真实分配、无全局待办、单课程不自动跳转、三尺寸字体 (3647.339ms)
+  ✔ 地图真课时、多章节、键盘节点、课时安排与未分组默认主题 (4851.8638ms)
+  ✔ 报告通过但作品退回仍有修改入口；无作品任务仍可继续学习 (2002.6803ms)
+  ✔ 旧对象链接定位真实课程，旧全局实验不伪造课程；篡改课时被拒绝 (3579.1063ms)
+  ✔ 附件 404 不隐藏地图；课程撤回清除内容，恢复后重新检查可访问 (1068.0008ms)
+  ✔ 课程试飞真闭环：指定卡片→参考引擎→原卡片，记录归属与不自动提交 (28913.1259ms)
+  ✔ 课程内自由实验固定课程、不造课时；切课不显示其他课程或未关联旧记录 (3425.7769ms)
+  ✔ 报告草稿按原位置恢复；课时取消清除，再恢复不越权 (2673.8975ms)
+  ✔ 报告与作品各自提交；导师原角色评审，成长档案只显示当前课程 (3392.5401ms)
+  ✔ 我的保留同账号奖励、跨标签兑换同步、切课无重置、安全返回 (16821.2938ms)
+  ✔ 平台服务页、普通教师与导师原业务入口及字体保持可用 (10719.9234ms)
+新版业务场景全部通过。
+✔ 新版第 1 步：真实课程空间、样板与学习回归 (84765.163ms)
+▶ 第一步补修：真实字体字形、平台落点与动态地图
+  ✔ 登录、课程选择、我的、输入与礼品浮层实际使用官方字体字形 (13096.7025ms)
+  ✔ 6 个真实课时与两章节：三尺寸、360、横屏、首屏、键盘与选择不回跳 (15849.896ms)
+  ✔ 真实 API 动态 0/1/20 个课时，未分组、长名称、取消课时与原排序 (12792.2208ms)
+  ✔ 模块图片失败仍保留路线、课时名称、键盘选择及详情 (1134.7192ms)
+  ✔ 执行导师、管理员、只读教师实际渲染字体与原角色入口 (7297.7537ms)
+✔ 第一步补修：真实字体字形、平台落点与动态地图 (53870.9224ms)
+▶ 新版第2步补修：真实素材、运势、居中地图与输入交互
+  ✔ 独立桌面/手机登录构图、六尺寸整屏不滚动，短屏表单内部可达 (8914.0574ms)
+  ✔ 登录图片故障不挡表单，真实错误与防重复提交 (2316.5122ms)
+  ✔ 六尺寸平台/课程主题，真实运势、地图默认和弹窗、标题透明、封面和聊天 (31269.1627ms)
+  ✔ 居中详情焦点/Tab/Escape/遮罩/滚动锁、节点 Enter Space、取消课时与互斥 (5076.8874ms)
+  ✔ 悬浮/鼠标按下/键盘按下/减少运动，路线锚点固定、输入原值不变 (5106.4889ms)
+  ✔ 同账号跨浏览器当天一致，失败重试、不读写奖励存储，切账号迟到响应被丢弃 (10224.4222ms)
+  ✔ API 原文保留、教学显示只去尾句号；输入和机器人失败降级保持可用 (3328.7406ms)
+  ✖ 定时和重新可见重读运势；触摸按下、长详情、停用和强制改密真实分流 (5794.1764ms)
+✖ 新版第2步补修：真实素材、运势、居中地图与输入交互 (77097.3476ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 25
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 218177.6268
+
+✖ failing tests:
+
+test at tests\redesign-v2.visual-patch.browser.test.js:16:54
+✖ 定时和重新可见重读运势；触摸按下、长详情、停用和强制改密真实分流 (5794.1764ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'none' !== '0.98'
+
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:68:564
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:66:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'none',
+    expected: '0.98',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\redesign-v2.visual-patch.browser.test.js:13:1
+✖ 新版第2步补修：真实素材、运势、居中地图与输入交互 (77097.3476ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'none' !== '0.98'
+
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:68:564
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:16:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.visual-patch.browser.test.js:66:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'none',
+    expected: '0.98',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

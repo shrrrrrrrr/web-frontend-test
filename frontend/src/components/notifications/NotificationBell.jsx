@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Alert, Badge, Button, Popover } from 'antd';
+import { Badge, Button, Popover } from 'antd';
+import Alert from '../../content/RoleAlert';
 import { BellOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { notificationAPI } from '../../api';
@@ -53,7 +54,7 @@ export default function NotificationBell({ icon, buttonClassName }) {
   }, [open, close]);
   if (!user || user.force_reset_password) return null;
   return <Popover fresh destroyOnHidden trigger="click" placement="bottomRight" open={open} onOpenChange={setOpen}
-    rootClassName={user.role === 'student' ? 'student-pixel service-popover' : undefined}
+    rootClassName={user.role === 'student' ? 'student-pixel student-interactions service-popover' : undefined}
     content={<div>{open && <Recent key={user.id} close={close} />}</div>} styles={{ body: { padding: 0 } }}>
     <Badge count={countError ? '!' : unreadCount ?? '—'} overflowCount={99} size="small">
       <Button ref={trigger} type="text" shape="circle" className={buttonClassName} aria-label="通知" aria-expanded={open}
