@@ -85,7 +85,16 @@ node --test tests/redesign-v2.step03-preview.browser.test.js
 
 4174 是本轮真实 Vite 生产构建，API 3144 使用新临时库；最终重新启动后再执行三尺寸浏览器检查。停启前核验自有进程树，不删除旧临时库；4173 原应用 PID 14072 保留。[停启前记录](evidence/preview-before-final.json)、[最终预览记录](evidence/preview-browser.json)。启动/账号见 [README](README.md)，维护入口 `/courses/9001?tab=maintenance`
 
-Git 基线、唯一 origin 与最终提交信息在交付提交后补充到此处；不会修改或推送原仓库。旧素材、冻结文案及锁文件由上面的保护校验核对。仅提交源码、文档、真实隔离截图、schema 测试快照和无声测试图样视频；不提交密钥、实际数据库、真实学生数据或私人附件
+实现与验收提交 **`9653f5226859af05197069857412b165b50ebff1`**，由 `5777e98` 正常前进。已推送唯一 origin **`https://github.com/shrrrrrrrr/web-frontend-test.git`** 的 `main`；独立 `git ls-remote origin refs/heads/main` 与本地 SHA 相同，补写本记录前 `git status --porcelain` 为空：[实际 Git 回执](evidence/git-implementation.json)。随后提交本段与回执，业务源码不再变化；总交付 HEAD 在最终回复列明，也可用以下命令复核
+
+```powershell
+git log -2 --oneline
+git rev-parse HEAD
+git ls-remote origin refs/heads/main
+git status --short
+```
+
+没有修改或推送原仓库。旧素材、冻结文案及锁文件由上面的保护校验核对。仅提交源码、文档、真实隔离截图、schema 测试快照和无声测试图样视频；不提交密钥、实际数据库、真实学生数据或私人附件
 
 未验证：正式教材内容、用户未来保存的文案改稿、外部模型质量、实际业务库升级演练、真机/软键盘、多浏览器、生产部署。资料结构检查不等同杀毒或完整媒体解码；没有 Office/PDF 在线阅读器、扫描 PDF OCR、音视频转写、三维预览/执行、长期聊天记忆或正式奖励后台。原奖励为账号级本地演示，运势为只读娱乐。本轮只管理 campus/voyage 和已注册 glider，下一版主题/机器人动画另行确认
 
