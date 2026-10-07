@@ -1,0 +1,61 @@
+Edge: 154.0.4258.53
+▶ 新版第 1 步：真实课程空间、样板与学习回归
+  ✔ 平台课程选择：真实分配、无全局待办、单课程不自动跳转、三尺寸字体 (3619.6188ms)
+  ✔ 地图真课时、多章节、键盘节点、课时安排与未分组默认主题 (4502.7613ms)
+  ✔ 报告通过但作品退回仍有修改入口；无作品任务仍可继续学习 (1915.6052ms)
+  ✔ 旧对象链接定位真实课程，旧全局实验不伪造课程；篡改课时被拒绝 (4691.0417ms)
+  ✔ 附件 404 不隐藏地图；课程撤回清除内容，恢复后重新检查可访问 (1124.5393ms)
+  ✔ 课程试飞真闭环：指定卡片→参考引擎→原卡片，记录归属与不自动提交 (28501.0544ms)
+  ✔ 课程内自由实验固定课程、不造课时；切课不显示其他课程或未关联旧记录 (3284.8431ms)
+  ✔ 报告草稿按原位置恢复；课时取消清除，再恢复不越权 (2688.4753ms)
+  ✔ 报告与作品各自提交；导师原角色评审，成长档案只显示当前课程 (3080.1676ms)
+  ✔ 我的保留同账号奖励、跨标签兑换同步、切课无重置、安全返回 (17631.2058ms)
+  ✔ 平台服务页、普通教师与导师原业务入口及字体保持可用 (10247.6516ms)
+新版业务场景全部通过。
+✔ 新版第 1 步：真实课程空间、样板与学习回归 (84750.121ms)
+Edge: 154.0.4258.53
+▶ 新版平台边界、迟到响应与三尺寸状态验收
+  ✔ 登录三尺寸及真实强制改密完成后进入选择页 (5352.5993ms)
+  ✔ 无分配课程真实空状态、恢复分配、键盘进入与手机点击 (7527.3011ms)
+  ✔ 地图与我的全页三尺寸、手机菜单关闭、刷新与新标签、返回滚动可见 (11803.5849ms)
+失败页面 http://127.0.0.1:5197/courses/9001 正在读取课程显示
+  ✖ A 课程迟到响应不能覆盖已切换到 B 的主题与课时 (12623.9634ms)
+✖ 新版平台边界、迟到响应与三尺寸状态验收 (40839.9248ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 15
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 127138.1387
+
+✖ failing tests:
+
+test at tests\redesign-v2.states.browser.test.js:26:55
+✖ A 课程迟到响应不能覆盖已切换到 B 的主题与课时 (12623.9634ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('link', { name: '返回课程选择', exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.states.browser.test.js:47:118
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.states.browser.test.js:26:79)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.states.browser.test.js:26:47)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.states.browser.test.js:44:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('link', { name: '返回课程选择', exact: true })" ]
+  }
+
+test at tests\redesign-v2.states.browser.test.js:17:1
+✖ 新版平台边界、迟到响应与三尺寸状态验收 (40839.9248ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('link', { name: '返回课程选择', exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.states.browser.test.js:47:118
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.states.browser.test.js:26:79)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.states.browser.test.js:26:47)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.states.browser.test.js:44:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('link', { name: '返回课程选择', exact: true })" ]
+  }

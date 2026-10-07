@@ -1,0 +1,11 @@
+file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/scripts/audit-step03-copy.mjs:33
+if(record.missing.length||unused.length||changedOld.length||frozenDiff.length||hashes.some(h=>h.current!==h.baseline))throw Error('文案/冻结保护未通过 '+JSON.stringify({missing:record.missing,unused,changedOld,frozenDiff}));
+                                                                                                                            ^
+
+Error: 文案/冻结保护未通过 {"missing":[],"unused":["fortune.good.record","fortune.good.ask","fortune.good.test","fortune.good.organize","fortune.good.listen","fortune.good.rest","fortune.avoid.rush","fortune.avoid.ignore","fortune.avoid.compare","fortune.avoid.guess","maintenance.unauthorized","maintenance.back","maintenance.cover.upload","maintenance.empty","maintenance.stage.none","maintenance.card.none","maintenance.upload.filename","maintenance.upload.size","maintenance.upload.status","maintenance.teachingTip","maintenance.selectedLesson","maintenance.selectTask","maintenance.finish","maintenance.close"],"changedOld":[],"frozenDiff":[]}
+    at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/scripts/audit-step03-copy.mjs:33:125
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:666:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v26.2.0

@@ -1,0 +1,135 @@
+✅ SQLite 数据库连接成功: D:\Temp\pbl-maintenance-EMPa9b\content.db
+✖ 维护角色与上传前授权：只读教师、学生、新媒体、他课导师均拒绝，管理员可维护 (120.7831ms)
+[API PUT /api/courses/1/maintenance/chapters/order] → 400: {"error":"排序必须包含当前课程全部章节且不能重复"}
+[API PUT /api/courses/1/maintenance/chapters/order] → 400: {"error":"排序必须包含当前课程全部章节且不能重复"}
+[API PUT /api/courses/1/maintenance/chapters/order] → 400: {"error":"排序必须包含当前课程全部章节且不能重复"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"章节不属于当前课程"}
+[API PUT /api/courses/1/maintenance/lessons/2] → 404: {"error":"对象不属于当前课程"}
+[API DELETE /api/courses/1/maintenance/chapters/1] → 409: {"error":"请先将本章课时移到其他章节或未分组，再删除空章节"}
+[API PUT /api/courses/1/maintenance/tasks/1] → 400: {"error":"包含不可修改字段"}
+[API PUT /api/courses/1/maintenance/tasks/2] → 404: {"error":"对象不属于当前课程"}
+[API PUT /api/courses/1/maintenance/tasks/1] → 400: {"error":"title不能为空，且最多 120 字"}
+✔ 真实章节排序、课时归属与文字清空：不改原学习、报告、作品记录 (98.1497ms)
+[API PUT /api/courses/1] → 400: {"error":"presentation_theme选项无效"}
+[API PUT /api/courses/1] → 400: {"error":"请选择已有封面或通过专用入口上传图片"}
+[API PUT /api/courses/1] → 400: {"error":"请选择已有封面或通过专用入口上传图片"}
+[API PUT /api/courses/1] → 400: {"error":"description最多 10000 字"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"课时不属于当前课程"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"卡片必须属于所选课时，且阶段为知识卡片"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"卡片必须属于所选课时，且阶段为知识卡片"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"仅支持已有滑翔机模块"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"包含不可修改字段"}
+[API POST /api/courses/1/maintenance/experiments] → 409: {"error":"该来源已有关联，请修改已有记录"}
+[API PUT /api/courses/2/maintenance/experiments/1] → 404: {"error":"对象不属于当前课程"}
+✔ 受控真实主题与实验关联：跨课和卡片拼接拒绝，启停/解除不改变历史 (55.7495ms)
+[API POST /api/courses/1/resources] → 409: {"error":"同一上传标识的文件或说明已变化，请先核对已上传记录"}
+[API GET /api/courses/resources/1/download] → 404: {"error":"附件不存在"}
+✖ 新增四种真实资料、中文文件名、字段、课时过滤、幂等失败重试与原下载鉴权 (173.3095ms)
+[API POST /api/courses/1/resources] → 400: {"error":"资料格式或 MIME 不支持：.js","message":"资料格式或 MIME 不支持：.js"}
+[API POST /api/courses/1/resources] → 400: {"error":"文件不是 XLSX 工作簿，不能仅将 ZIP 改名","message":"文件不是 XLSX 工作簿，不能仅将 ZIP 改名"}
+[API POST /api/courses/1/resources] → 400: {"error":"XLS 必须是旧版二进制工作簿","message":"XLS 必须是旧版二进制工作簿"}
+[API POST /api/courses/1/resources] → 400: {"error":"文本资料必须使用有效 UTF-8 编码","message":"文本资料必须使用有效 UTF-8 编码"}
+[API POST /api/courses/1/resources] → 400: {"error":"资料格式或 MIME 不支持：.csv","message":"资料格式或 MIME 不支持：.csv"}
+[API POST /api/courses/1/resources] → 400: {"error":"CSV 引号未闭合","message":"CSV 引号未闭合"}
+[API POST /api/courses/1/resources] → 400: {"error":"文件不是有效的文本资料","message":"文件不是有效的文本资料"}
+[API POST /api/courses/1/resources] → 400: {"error":"File too large","message":"File too large"}
+✖ 伪装/MIME/超限和落库失败均拒绝并清理本次孤立文件；不扩大作品/回放 (319.9114ms)
+[API GET /api/courses/1/cover] → 404: {"error":"封面不可访问"}
+[API GET /api/courses/1/cover] → 404: {"error":"封面不可访问"}
+[API GET /api/courses/1/cover] → 404: {"error":"封面不可访问"}
+[API GET /api/courses/1/cover] → 401: {"error":"未登录","message":"请先登录"}
+[API POST /api/courses/1/cover] → 400: {"error":"封面图片结构无效（最大 1600 万像素）"}
+[API GET /api/courses/1/cover] → 404: {"error":"封面不可访问"}
+[API GET /api/course-spaces/1/courses/1] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API POST /api/courses/1/maintenance/chapters] → 409: {"error":"课程已归档，不能修改内容"}
+✅ 数据库迁移 017_course_content_maintenance.sql 已应用
+✔ 私有封面真实保存/替换、下载范围、失效清除与安全公共封面切换 (54.0522ms)
+✔ 016真实旧库、全新库及重复启动迁移保护现有账号和业务记录 (628.9919ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-avatar-VkIuKa\avatar.db
+✔ 头像真实保存，两个账号与两门课隔离，无默认角色 (161.0985ms)
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API GET /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/course-spaces/999/preferences/avatar] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+✔ 未知枚举、图片地址、指定他人账号均拒绝；维护角色不能读写学生偏好 (33.9073ms)
+[API GET /api/course-spaces/1/preferences/avatar] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/preferences/avatar] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/preferences/avatar] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/course-spaces/1/preferences/avatar] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+✅ 数据库迁移 016_course_avatar_preferences.sql 已应用
+✅ 数据库迁移 017_course_content_maintenance.sql 已应用
+✔ 报名移除、课程撤回、账号停用及强制改密不能读取或更改 (13.5575ms)
+✔ 既有库兼容升级两次，不改报名、报告、作品，也不分配角色 (19.3868ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 8
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2532.8935
+
+✖ failing tests:
+
+test at backend\test\contentMaintenance.test.js:24:1
+✖ 维护角色与上传前授权：只读教师、学生、新媒体、他课导师均拒绝，管理员可维护 (120.7831ms)
+  Error: ENOENT: no such file or directory, scandir 'D:\Temp\pbl-maintenance-EMPa9b\uploads'
+      at read (node:fs:1459:35)
+      at readdirSyncRecursive (node:fs:1477:5)
+      at Object.readdirSync (node:fs:1551:12)
+      at files (C:\Users\shr\Desktop\nmg前端\app\backend\test\contentMaintenance.test.js:9:20)
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\contentMaintenance.test.js:25:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1366:25)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'scandir',
+    path: 'D:\\Temp\\pbl-maintenance-EMPa9b\\uploads'
+  }
+
+test at backend\test\contentMaintenance.test.js:59:1
+✖ 新增四种真实资料、中文文件名、字段、课时过滤、幂等失败重试与原下载鉴权 (173.3095ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  404 !== 403
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\contentMaintenance.test.js:69:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:946:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 404,
+    expected: 403,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at backend\test\contentMaintenance.test.js:75:1
+✖ 伪装/MIME/超限和落库失败均拒绝并清理本次孤立文件；不扩大作品/回放 (319.9114ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  400 !== 413
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\contentMaintenance.test.js:78:9)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:946:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 400,
+    expected: 413,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

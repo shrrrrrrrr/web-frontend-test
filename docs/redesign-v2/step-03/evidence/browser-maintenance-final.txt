@@ -1,0 +1,83 @@
+▶ 文案交接：人工 HTML 导出、特殊字符、双来源冲突与真实删除显示
+  ✔ 本地审阅页保存 HTML 与 JSON 保留 ID、显隐和特殊字符 (2461.5771ms)
+  ✔ 修改 JSX 后提取 HTML 报告冲突，不自动覆盖 (303.9144ms)
+  ✖ 真实课程页面可选文案真正删除，返回标签改稿不改变实验入口与跳转 (34227.5356ms)
+✖ 文案交接：人工 HTML 导出、特殊字符、双来源冲突与真实删除显示 (42189.6559ms)
+▶ 第二步：真实页面加载、局部错误、空数据与关键动作
+  ✔ 各主要页面保留真实加载与局部接口错误，重试可恢复 (30495.2664ms)
+  ✔ 下载附件 404 保留学习；机器人不会挡住下载及主要操作 (3000.7968ms)
+  ✔ 长成果文字、真实上传失败保输入，恢复可提交新版本 (4904.3823ms)
+  ✔ 档案空作品与缺失反馈真实降级；反思每日一次限制 (4679.4343ms)
+  ✔ 实验注册页共享真实权限加载、网络错误及课程撤回清理 (2198.1209ms)
+✔ 第二步：真实页面加载、局部错误、空数据与关键动作 (49747.2923ms)
+▶ 第二步：头像、课程浮窗、真实接口与响应式页面
+  ✔ 头像未选中、六人真实保存、重新登录、账号与课程隔离 (6376.2496ms)
+  ✔ 头像写失败与写成功回读失败分开，不自动重复写入 (1754.1521ms)
+  ✔ 同课程切页保留草稿、关窗继续请求、单次问答与不重复发送 (1746.9439ms)
+  ✔ 服务错误保留原问题和新草稿，资料变更清旧引用 (1958.4363ms)
+  ✔ 中文输入法 Enter 不发送，Shift Enter 换行；真实 JWT 轮换保输入 (253.1204ms)
+  ✔ 旧消息滚动不抢位置，最新回复可定位 (1040.0694ms)
+  ✔ 课程引用只生成当前课程站内动作，不执行回答 HTML (667.13ms)
+  ✔ 两课切换清会话，迟到旧响应不进入新课；平台不出现机器人 (1396.9065ms)
+  ✔ 真实课程撤回清会话，恢复重新检查不恢复旧回答 (1161.322ms)
+  ✔ 未启用和目录错误展示真实状态，恢复后可提问 (64157.8232ms)
+  ✔ 旧助手链接 replace 打开一次，不回到中转页；后台入口保留 (3288.5036ms)
+  ✔ 五尺寸课程页面、窗口遮罩、焦点、互斥和键盘高度 (23769.7896ms)
+  ✔ 停用、强制改密、退出和换账号清机器人上下文 (5345.8668ms)
+✔ 第二步：头像、课程浮窗、真实接口与响应式页面 (121937.4301ms)
+▶ 第三步真实内容维护→学生读取与上传恢复完整旅程
+  ✔ 导师通过页面创建明确主题课程，原入口排课和任务保留 (6249.7717ms)
+  ✔ 页面填写介绍、章节/排序、课时提示与任务要求，清空说明和读失败保输入 (8941.8785ms)
+  ✔ 原卡片/练习编辑发布和真实持久化滑翔机关联 (5126.8275ms)
+  ✔ 公共/课时资料与四种新增格式、混合失败队列、重试不重复成功 (2274.7669ms)
+  ✔ 页面上传真实可播放回放和私有封面，三尺寸维护/队列/格式矩阵可用 (7051.2169ms)
+  ✔ 原导入学生与发布入口授权；学生真实主题、章节、详情、资料/回放范围 (10063.7373ms)
+  ✔ 课堂回顾→一次练习→指定卡片真实试飞→原卡片返回，解除关联不删试飞 (25703.2644ms)
+  ✔ 主题与章节刷新保报告/助手草稿，报告作品分开提交、原评审/版本/档案 (6139.1601ms)
+  ✔ 只读教师/无关导师与失去负责范围：旧表单被拒绝，课程撤回/恢复及时清理 (4166.1658ms)
+  ✔ 队列取消/防双击/成功回读失败，切课不带文件；解析失败只重试索引 (3749.52ms)
+✔ 第三步真实内容维护→学生读取与上传恢复完整旅程 (84597.6234ms)
+▶ 新版第2步补修：真实素材、运势、居中地图与输入交互
+  ✔ 独立桌面/手机登录构图、六尺寸整屏不滚动，短屏表单内部可达 (8179.8049ms)
+  ✔ 登录图片故障不挡表单，真实错误与防重复提交 (2065.0764ms)
+  ✔ 六尺寸平台/课程主题，真实运势、地图默认和弹窗、标题透明、封面和聊天 (28339.4719ms)
+  ✔ 居中详情焦点/Tab/Escape/遮罩/滚动锁、节点 Enter Space、取消课时与互斥 (4183.1718ms)
+  ✔ 悬浮/鼠标按下/键盘按下/减少运动，路线锚点固定、输入原值不变 (4769.3998ms)
+  ✔ 同账号跨浏览器当天一致，失败重试、不读写奖励存储，切账号迟到响应被丢弃 (8774.577ms)
+  ✔ API 原文保留、教学显示只去尾句号；输入和机器人失败降级保持可用 (2791.245ms)
+  ✔ 定时和重新可见重读运势；触摸按下、长详情、停用和强制改密真实分流 (7745.5345ms)
+✔ 新版第2步补修：真实素材、运势、居中地图与输入交互 (71485.3134ms)
+ℹ tests 44
+ℹ suites 0
+ℹ pass 42
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 373867.6486
+
+✖ failing tests:
+
+test at tests\redesign-v2.step02-copy.browser.test.js:36:11
+✖ 真实课程页面可选文案真正删除，返回标签改稿不改变实验入口与跳转 (34227.5356ms)
+  locator.click: Timeout 30000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal-close')[22m
+  [2m    - locator resolved to <button type="button" aria-label="关闭" class="ant-modal-close">…</button>[22m
+  [2m  - attempting click action[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is not stable[22m
+  [2m    - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is not stable[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 100ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m  - element was detached from the DOM, retrying[22m
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02-copy.browser.test.js:42:40)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step02-copy.browser.test.js:36:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal-close')", '    - locator resolved to <button type="button" aria-label="关闭" class="ant-modal-close">…</button>', '  - attempting click action', '    2 × waiting for element to be visible, enabled and stable', '      - element is not stable', '    - retrying click action', '    - waiting 20ms', '    - waiting for element to be visible, enabled and stable', '    - element is not stable', '  - retrying click action', '    - waiting 100ms', '    - waiting for element to be visible, enabled and stable', '  - element was detached from the DOM, retrying' ]
+  }

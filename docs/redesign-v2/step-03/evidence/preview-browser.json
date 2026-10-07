@@ -1,0 +1,11 @@
+{
+  "url": "http://127.0.0.1:4174",
+  "browser": "154.0.4258.53",
+  "checkedAt": "2026-10-07T17:50:15.121Z",
+  "records": [
+    "student-preview-pass",
+    "mentor-preview-pass",
+    "handoff-preview-pass"
+  ],
+  "data": "fresh isolated preview only; no business DB"
+}

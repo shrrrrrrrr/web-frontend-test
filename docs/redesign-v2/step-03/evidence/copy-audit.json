@@ -1,0 +1,68 @@
+{
+  "systemIds": 912,
+  "oldSystemIds": 805,
+  "newSystemIds": 107,
+  "usedIds": 900,
+  "retained": {
+    "system.map.078": "旧 Drawer 标题，冻结交接保留",
+    "system.map.079": "旧右侧说明，冻结交接保留",
+    "system.map.024": "原测试地图分组说明，生产改为真实章节",
+    "system.platform.011": "原首页演示封面辅助说明，冻结交接保留",
+    "system.platform.012": "原首页演示封面辅助说明，冻结交接保留",
+    "system.map.051": "可选教学字段清空后隐藏容器，旧未填说明 ID 仅为冻结交接保留",
+    "system.map.053": "可选教学字段清空后隐藏容器，旧未填说明 ID 仅为冻结交接保留",
+    "system.map.064": "可选教学字段清空后隐藏容器，旧未填说明 ID 仅为冻结交接保留",
+    "system.map.066": "可选教学字段清空后隐藏容器，旧未填说明 ID 仅为冻结交接保留",
+    "system.map.068": "可选教学字段清空后隐藏容器，旧未填说明 ID 仅为冻结交接保留",
+    "system.review.007": "可选教学字段清空后隐藏容器，旧未填说明 ID 仅为冻结交接保留",
+    "system.works.014": "可选教学字段清空后隐藏容器，旧未填说明 ID 仅为冻结交接保留",
+    "system.workUpload.034": "可选教学字段清空后隐藏容器，旧未填说明 ID 仅为冻结交接保留"
+  },
+  "inactiveRetained": [
+    "system.map.078",
+    "system.map.079",
+    "system.map.024",
+    "system.platform.012",
+    "system.map.051",
+    "system.map.053",
+    "system.map.064",
+    "system.map.066",
+    "system.map.068",
+    "system.review.007",
+    "system.works.014",
+    "system.workUpload.034"
+  ],
+  "missing": [],
+  "unused": [],
+  "changedOld": [],
+  "frozenDiff": [],
+  "frozenHashes": [
+    {
+      "path": "docs/redesign-v2/step-02/copy-review.html",
+      "current": "026997b3d1f57a4a794fb55aa584ecf60c6c519545bd5d920574688b8112eb39",
+      "baseline": "026997b3d1f57a4a794fb55aa584ecf60c6c519545bd5d920574688b8112eb39"
+    },
+    {
+      "path": "docs/redesign-v2/step-02/copy-baseline.json",
+      "current": "4a941b4e15e3199793bd633ec1a2f0808839eea9fbe7bf2dde6580f72215310a",
+      "baseline": "4a941b4e15e3199793bd633ec1a2f0808839eea9fbe7bf2dde6580f72215310a"
+    },
+    {
+      "path": "docs/redesign-v2/step-02/visual-patch/copy-review.html",
+      "current": "38890f90708676d33c517f220c408d4ef633fa0afd8ad28167e7a5906e47af86",
+      "baseline": "38890f90708676d33c517f220c408d4ef633fa0afd8ad28167e7a5906e47af86"
+    },
+    {
+      "path": "docs/redesign-v2/step-02/visual-patch/copy-baseline.json",
+      "current": "c784dba48ebf1b4250c1435dcb9a7f4f6941b6e76cbe9f90609e2199c3f56ab3",
+      "baseline": "c784dba48ebf1b4250c1435dcb9a7f4f6941b6e76cbe9f90609e2199c3f56ab3"
+    },
+    {
+      "path": "docs/redesign-v2/step-02/teaching-snapshots.json",
+      "current": "c8ab06b53ae8d7da575f838b8a581bcdbbcfd45656fc17c9ee4f2413c1cb0dd5",
+      "baseline": "c8ab06b53ae8d7da575f838b8a581bcdbbcfd45656fc17c9ee4f2413c1cb0dd5"
+    }
+  ],
+  "teachingSnapshots": 34,
+  "userReturnedEdits": false
+}

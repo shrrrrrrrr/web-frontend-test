@@ -3,12 +3,12 @@ import { PixelPanel } from './PixelUI';
 import './pixel-study.css';
 import {useLocation} from 'react-router-dom';
 import {useCourseId} from '../useCourseApis';
-import {coursePresentation} from '../space/identity';
+import {useCoursePresentation} from '../space/CoursePresentation';
 import SceneArt from '../space/SceneArt';
 import Sentence from '../../content/Sentence';
 
 export function StudyHeader({ eyebrow, title, description, children }) {
-  const id=useCourseId(),{pathname}=useLocation(),voyage=id&&coursePresentation(id).theme==='voyage';
+  const look=useCoursePresentation(),id=useCourseId(),{pathname}=useLocation(),voyage=id&&look.theme==='voyage';
   const scene=/\/(lab|glider)$/.test(pathname)?'observatory':/\/(archives|reflection)(?:\/|$)/.test(pathname)?'planet-base':'bridge';
   return <header className={'study-header'+(id?' course-page-header':'')}>
     {id&&<SceneArt name={voyage?scene:'campus'} className="course-page-scene" priority/>}

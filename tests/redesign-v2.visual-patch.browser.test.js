@@ -4,7 +4,7 @@ import {mkdirSync,writeFileSync} from 'node:fs';
 import path from 'node:path';
 import {setup,login,go,gate,base} from './helpers/step02.fixture.mjs';
 import {root} from './v2-fixture.mjs';
-const dir=path.join(root,'docs/redesign-v2/step-02/visual-patch'),shots=path.join(dir,'screenshots');
+const dir=path.resolve(process.env.PBL_EVIDENCE_DIR||path.join(root,'docs/redesign-v2/step-02/visual-patch'),'visual-patch'),shots=path.join(dir,'screenshots');
 const sizes=[[1440,900],[1920,1080],[768,1024],[390,844],[360,640],[844,390]];
 const robot=p=>p.locator('.course-robot'),modal=p=>p.locator('.space-lesson-modal .ant-modal');
 async function shot(p,name){await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(180);assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'横向溢出 '+name);await p.screenshot({path:path.join(shots,name+'.png'),animations:'disabled'});}

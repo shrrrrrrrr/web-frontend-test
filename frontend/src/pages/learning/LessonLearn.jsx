@@ -182,7 +182,7 @@ export default function LessonLearn() {
       const blob = await courseAPI.downloadResource(resource.id);
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement('a');
-      anchor.href = url; anchor.download = resource.title || copyText('system.learning.043'); anchor.click();
+      anchor.href = url; anchor.download = resource.file_name || resource.title || copyText('system.learning.043'); anchor.click();
       URL.revokeObjectURL(url);
     } catch { setResourceError(`“${resource.title || copyText('system.learning.044')}”下载失败，文件可能已移除或网络中断。请重试或联系导师，当前学习和草稿不受影响。`); }
   };
@@ -240,6 +240,7 @@ export default function LessonLearn() {
         <a className="study-stages-footer" href="#lesson-works">{copyText('system.learning.076')}</a>
       </aside>
       <div className="study-main">
+        {lesson.teaching_tip&&<Alert type="info" title={<Sentence>{lesson.teaching_tip}</Sentence>}/>}
         {actionError && <Alert type="error" showIcon title={actionError} />}
         {activeStage === 0 && <StudySection number="01" title={copyText('system.learning.077')} description={copyText('system.learning.078')}>
           <section aria-label={copyText('system.learning.079')}><h4>{copyText('system.learning.080')}</h4>

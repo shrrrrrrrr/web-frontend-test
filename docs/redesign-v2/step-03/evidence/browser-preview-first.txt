@@ -1,0 +1,34 @@
+▶ 第三步最终 4174 产物与交接入口
+  ✖ 新生产构建：学生从真实 API 读取主题和章节，三尺寸节点可用 (1715.2041ms)
+  ✔ 导师维护入口为当前产物，章节/资料队列和字体真实读取，三尺寸可达 (3122.7768ms)
+  ✔ 真实截图图集、946 项新版编辑页和基线文件可人工打开 (1104.9812ms)
+✖ 第三步最终 4174 产物与交接入口 (7359.2993ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8034.8765
+
+✖ failing tests:
+
+test at tests\redesign-v2.step03-preview.browser.test.js:12:11
+✖ 新生产构建：学生从真实 API 读取主题和章节，三尺寸节点可用 (1715.2041ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 2
+  
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03-preview.browser.test.js:13:348)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03-preview.browser.test.js:12:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

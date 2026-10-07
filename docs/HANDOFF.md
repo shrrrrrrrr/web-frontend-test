@@ -1,5 +1,19 @@
 # 当前交接说明
 
+## 新版第 3/3 步（当前）
+
+以 [第三步 README](redesign-v2/step-03/README.md)、[真实图集](redesign-v2/step-03/index.html)、[实际验证](redesign-v2/step-03/verification.md) 和 [边界](BOUNDARIES.md) 为当前交接。第一步独立课程空间/地图、第二步课程页面/头像/机器人/文案已保留，第三步接入真实维护填写与上传
+
+负责导师/管理员从原课程详情“课程内容维护”或内容工作台进入；普通教师仍只读观察。课程主题、章节、教学提示和实验关联持久化，正式课程不再手改测试 ID 配置。资料/回放归属原对象，学生读取公共＋本课时，封面私有认证读取。原排课、卡片/练习、分配学生、发布、作品版本及报告评审继续原入口；可选说明清空后隐藏，不由快照回填
+
+本机 `npm run build` 后 `npm run preview:v2` 使用 4174/3144 和全新 OS 临时库，4173 不动。测试账号、确切入口与填写步骤见 README；正式环境继续 server/dev，备份后由现有机制追加 017，不初始化/重置已有库。[字段填写地图](redesign-v2/step-03/content-field-map.md)、[上传矩阵](redesign-v2/step-03/upload-formats.md)、[升级与恢复](redesign-v2/step-03/interfaces-and-migrations.md) 教维护者如何操作
+
+系统改字用 [新版 HTML](redesign-v2/step-03/copy-review.html) 与对应 baseline 安全提取；912 个系统 ID（旧 805 不变＋新增 107）及 34 个独立合成快照。前两版文案、素材和图集冻结。未收到用户已保存改稿或正式教材，未宣称应用。草稿 key、账号演示奖励/运势、provider 与参考物理规则保持，完成后停止等待最终复核
+
+## 原第十二轮历史交接（追溯用）
+
+以下保留当时记录；静态配置、无迁移和旧视觉结论不能作为新版当前能力判断
+
 本文件描述第十二轮交付的当前实现。权限恢复补修及当前版本复验见 [补修说明](round-12/patch/README.md)。总入口：[图集](acceptance/index.html) · [验收矩阵](round-12/matrix.md) · [执行结果](round-12.md) · [待办边界](BOUNDARIES.md)。教学内容及真实奖励不在本次前端完成声明内。
 
 ## 模块与实现位置

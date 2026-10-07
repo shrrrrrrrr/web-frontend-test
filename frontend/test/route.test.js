@@ -34,3 +34,8 @@ test('排课时间不擅自转换时区，缺失值显示待安排', () => {
   assert.equal(scheduleTime('2026-10-10T14:00'), '2026-10-10 14:00');
   assert.equal(scheduleTime(null), '待安排');
 });
+test('持久化章节顺序先于区域内课时顺序，未分组不丢失，ID/状态不改变',()=>{
+ const rows=[{id:1,sort_order:1,chapter_id:10,progress:35},{id:2,sort_order:2,chapter_id:20,progress:100},{id:3,sort_order:3,chapter_id:10,progress:0},{id:4,sort_order:4,chapter_id:null,progress:0}];
+ const result=buildCourseRoute(rows,[{title:'后章排前',lessonIds:[2]},{title:'前章排后',lessonIds:[1,3]}],true);
+ assert.deepEqual(result.flatMap(g=>g.lessons.map(l=>l.id)),[2,1,3,4]);assert.deepEqual(result.flatMap(g=>g.lessons.map(l=>l.routeNumber)),[1,2,3,4]);assert.equal(result[1].lessons[0].progress,35);
+});

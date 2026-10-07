@@ -10,8 +10,9 @@ test('课程上下文只来自 URL，平台入口保持平台范围',()=>{
  assert.equal(coursePath('9001','/explore'),'/explore');
  assert.equal(coursePath('9001','/archives/rewards'),'/me');
 });
-test('只有显式 ID 使用测试宇宙主题，其他课程保持通用主题',()=>{
- assert.equal(coursePresentation(9001).sample,true);
+test('主题只来自持久化枚举，不根据测试 ID 或标题推断',()=>{
+ assert.equal(coursePresentation({id:9001,presentation_theme:'voyage'}).theme,'voyage');
+ assert.equal(coursePresentation(9001).theme,'campus');
  assert.equal(coursePresentation(9002).theme,'campus');
  assert.equal(coursePresentation('星海远航').theme,'campus');
 });

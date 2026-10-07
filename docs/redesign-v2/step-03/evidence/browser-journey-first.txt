@@ -1,0 +1,87 @@
+失败页面 http://127.0.0.1:5199/courses/9003?tab=lessons PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+帮助与反馈
+张导师
+学术导师
+返回
+内容维护闭环 · 隔离验收课程
+发布课程
+主题
+—
+	
+适用学段
+初中
+
+
+难度
+基础
+	
+状态
+草稿
+
+
+创建者
+张导师
+	
+总课时
+—
+
+仅用于隔离端到端验收，不是正式教学内容。
+
+课程内容维护
+课时安排
+课程回放
+课程资源
+选课学生 (0)
+添加课时 about:blank 
+▶ 第三步真实内容维护→学生读取与上传恢复完整旅程
+  ✖ 导师通过页面创建明确主题课程，原入口排课和任务保留 (15795.3628ms)
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (20586.2899ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21352.7964
+
+✖ failing tests:
+
+test at tests\redesign-v2.step03.browser.test.js:17:54
+✖ 导师通过页面创建明确主题课程，原入口排课和任务保留 (15795.3628ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '添加课时', exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:25:69
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:78)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:46)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:22:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '添加课时', exact: true })" ]
+  }
+
+test at tests\redesign-v2.step03.browser.test.js:12:1
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (20586.2899ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '添加课时', exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:25:69
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:78)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:46)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:22:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '添加课时', exact: true })" ]
+  }

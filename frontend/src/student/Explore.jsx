@@ -9,14 +9,14 @@ import AsyncPageState from '../student/visual/StudentPageState';
 import PageContainer from '../components/common/PageContainer';
 import useRemote from './useRemote';
 import { buildCourseRoute, currentLesson, scheduleTime } from './routeModel';
-import { groupsForCourse, studentTestConfigEnabled } from './config';
+import { studentTestConfigEnabled } from './config';
 import AssociatedExperiments from './AssociatedExperiments';
 import PixelIcon from './visual/PixelIcon';
 import { PixelButton, PixelPanel, PixelProgress, PixelTag } from './visual/PixelUI';
 import SceneArt from './space/SceneArt';
 import CourseTodos from './space/CourseTodos';
 import LessonPlace from './space/LessonPlace';
-import {coursePresentation} from './space/identity';
+import {useCoursePresentation} from './space/CoursePresentation';
 import {useCourseExperience} from './space/useCourseExperience';
 import Sentence from '../content/Sentence';
 import {trapFocus} from './visual/trapFocus';
@@ -47,7 +47,7 @@ function CourseResources({ resources, courseId }) {
       const blob = await courseAPI.downloadResource(resource.id);
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement('a');
-      anchor.href = url; anchor.download = resource.title || copyText('system.map.011'); anchor.click();
+      anchor.href = url; anchor.download = resource.file_name || resource.title || copyText('system.map.011'); anchor.click();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     } catch (error) {
       setErrors((previous) => ({ ...previous, [resource.id]: error.response?.status === 404 ? copyText('system.map.012') : copyText('system.map.013') }));
@@ -61,6 +61,7 @@ function CourseResources({ resources, courseId }) {
         ? <PixelButton loading={pending[resource.id]} onClick={() => download(resource)}>{copyText('system.map.017')}{resource.title}</PixelButton>
         : <Typography.Text type="secondary">{copyText('system.map.018')}</Typography.Text>}</Space>
       {resource.description && <Sentence as={Typography.Paragraph}>{resource.description}</Sentence>}
+      <Typography.Text type="secondary">{resource.lesson_id?copyText('maintenance.field.lesson_id')+' #'+resource.lesson_id:copyText('maintenance.public')} · {copyText('maintenance.type.'+resource.resource_type)}</Typography.Text>
       {errors[resource.id] && <Alert type="warning" showIcon title={errors[resource.id]} />}
     </div>)}
   </div>;
@@ -78,7 +79,8 @@ function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
     {lesson.status === 'cancelled'
       ? <Alert type="warning" showIcon title={copyText('system.map.025')} description={lesson.cancel_reason || copyText('system.map.026')} />
       : <div className="pixel-map-enter"><PixelButton type="primary" onClick={() => navigate(href)} icon={<PixelIcon name="continue" />}>{copyText('system.map.027')}</PixelButton></div>}
-    <Sentence as={Typography.Paragraph} className="pixel-map-lesson-description">{lesson.description || copyText('system.map.024')}</Sentence>
+    {lesson.description&&<Sentence as={Typography.Paragraph} className="pixel-map-lesson-description">{lesson.description}</Sentence>}
+    {lesson.teaching_tip&&<Sentence className="pixel-map-lesson-description">{lesson.teaching_tip}</Sentence>}
     <div className="pixel-map-schedule">
       <Typography.Title level={4}><PixelIcon name="clock" />{copyText('system.map.028')}</Typography.Title>
       <Descriptions size="small" column={1} colon={false} items={[
@@ -161,7 +163,7 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
 export function CourseMap() {
   const { courseAPI } = useCourseApis();
   const { id } = useParams();
-  const look=coursePresentation(id);
+  const look=useCoursePresentation();
   const session=useCourseExperience();
   const [params] = useSearchParams();
   const location = useLocation();
@@ -171,7 +173,7 @@ export function CourseMap() {
   const fetcher = useCallback(() => courseAPI.detail(id), [id,courseAPI]);
   const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true, courseId: id });
   const current = currentLesson(data?.lessons || [], params.get('lesson'));
-  const groups = buildCourseRoute(data?.lessons || [], look.groups.length?look.groups:groupsForCourse(id));
+  const groups = buildCourseRoute(data?.lessons || [], (data?.chapters||[]).map(c=>({title:c.title,lessonIds:(data?.lessons||[]).filter(l=>l.chapter_id===c.id).map(l=>l.id)})),true);
   const lessons = groups.flatMap((group) => group.lessons);
   const selectionKey = id + ':' + (params.get('lesson') || '');
   const selectedId = selection?.key === selectionKey ? selection.lessonId : (params.get('lesson') || current?.id);
@@ -209,19 +211,19 @@ export function CourseMap() {
           {(studentTestConfigEnabled || look.sample) && <CopyBlock id="system.map.049" as="p" className="space-map-test-note"/>}
           <PixelPanel className="pixel-map-course-info" id="course-information" hidden={openSection !== 'info'}>
             <Typography.Title level={3}>{copyText('system.map.050')}</Typography.Title>
-            <Sentence as={Typography.Paragraph}>{course.description || copyText('system.map.051')}</Sentence>
+            {course.description&&<Sentence as={Typography.Paragraph}>{course.description}</Sentence>}
             <Descriptions size="small" column={{ xs: 1, sm: 2, lg: 3 }} items={[
-              { key: 'theme', label: copyText('system.map.052'), children: course.theme || copyText('system.map.053') },
+              ...(course.theme?[{ key: 'theme', label: copyText('system.map.052'), children: course.theme }]:[]),
               { key: 'grade', label: copyText('system.map.054'), children: grades[course.grade_level] || course.grade_level || copyText('system.map.055') },
               { key: 'difficulty', label: copyText('system.map.056'), children: difficulties[course.difficulty] || course.difficulty || copyText('system.map.057') },
               { key: 'lessons', label: copyText('system.map.058'), children: data.lessons.length + copyText('system.map.059') },
               { key: 'tasks', label: copyText('system.map.060'), children: data.tasks.length + copyText('system.map.061') },
             ]} />
-            <Collapse size="small" items={[{ key: 'intro', label: copyText('system.map.062'), children: <Descriptions column={1} items={[
-              { key: 'question', label: copyText('system.map.063'), children: course.driving_question || copyText('system.map.064') },
-              { key: 'story', label: copyText('system.map.065'), children: course.story_line || copyText('system.map.066') },
-              { key: 'materials', label: copyText('system.map.067'), children: course.materials_needed || copyText('system.map.068') },
-            ]} /> }]} />
+            {(course.driving_question||course.story_line||course.materials_needed)&&<Collapse size="small" items={[{ key: 'intro', label: copyText('system.map.062'), children: <Descriptions column={1} items={[
+              { key: 'question', label: copyText('system.map.063'), children: course.driving_question },
+              { key: 'story', label: copyText('system.map.065'), children: course.story_line },
+              { key: 'materials', label: copyText('system.map.067'), children: course.materials_needed },
+            ].filter(item=>item.children)} /> }]} />}
             <div className="pixel-map-info-links"><Link to={'/courses/' + id + '/learn'}>{copyText('system.map.069')}</Link>
               {current && <Link to={'/courses/' + id + '/lessons/' + current.id + '/learn'}>{copyText('system.map.070')}{current.title}</Link>}
             </div>

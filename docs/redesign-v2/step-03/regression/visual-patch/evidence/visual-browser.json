@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-07T17:24:09.453Z",
+  "browser": "154.0.4258.53",
+  "sizes": [
+    [
+      1440,
+      900
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      360,
+      640
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "records": [
+    {
+      "name": "独立桌面/手机登录构图、六尺寸整屏不滚动，短屏表单内部可达",
+      "result": "pass"
+    },
+    {
+      "name": "登录图片故障不挡表单，真实错误与防重复提交",
+      "result": "pass"
+    },
+    {
+      "name": "六尺寸平台/课程主题，真实运势、地图默认和弹窗、标题透明、封面和聊天",
+      "result": "pass"
+    },
+    {
+      "name": "居中详情焦点/Tab/Escape/遮罩/滚动锁、节点 Enter Space、取消课时与互斥",
+      "result": "pass"
+    },
+    {
+      "name": "悬浮/鼠标按下/键盘按下/减少运动，路线锚点固定、输入原值不变",
+      "result": "pass"
+    },
+    {
+      "name": "同账号跨浏览器当天一致，失败重试、不读写奖励存储，切账号迟到响应被丢弃",
+      "result": "pass"
+    },
+    {
+      "name": "API 原文保留、教学显示只去尾句号；输入和机器人失败降级保持可用",
+      "result": "pass"
+    },
+    {
+      "name": "定时和重新可见重读运势；触摸按下、长详情、停用和强制改密真实分流",
+      "result": "pass"
+    }
+  ],
+  "pageErrors": [],
+  "fixture": "isolated synthetic courses 9001/9002; loopback HTTPS assistant provider; not physical-device testing"
+}

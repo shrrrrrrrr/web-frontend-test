@@ -1,0 +1,49 @@
+{
+  "ports": [
+    {
+      "LocalPort": 4174,
+      "OwningProcess": 10020
+    },
+    {
+      "LocalPort": 4173,
+      "OwningProcess": 14072
+    },
+    {
+      "LocalPort": 3144,
+      "OwningProcess": 30360
+    }
+  ],
+  "root": {
+    "pid": 40016,
+    "db": "D:\\Temp\\pbl-redesign-v2-r9LFpp\\v2.db",
+    "scratch": "D:\\Temp\\pbl-redesign-v2-r9LFpp",
+    "url": "http://127.0.0.1:4174",
+    "api": "http://127.0.0.1:3144"
+  },
+  "processes": [
+    {
+      "ProcessId": 40016,
+      "ParentProcessId": 42052,
+      "CreationDate": "2026-10-08T01:24:21.082702+08:00",
+      "CommandLine": "\"D:\\NodeJS\\node-v26.2.0-win-x64\\node.exe\" scripts/preview-v2.mjs"
+    },
+    {
+      "ProcessId": 40352,
+      "ParentProcessId": 40016,
+      "CreationDate": "2026-10-08T01:24:21.129638+08:00",
+      "CommandLine": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4"
+    },
+    {
+      "ProcessId": 30360,
+      "ParentProcessId": 40016,
+      "CreationDate": "2026-10-08T01:24:22.146835+08:00",
+      "CommandLine": "D:\\NodeJS\\node-v26.2.0-win-x64\\node.exe scripts/local-server.cjs"
+    },
+    {
+      "ProcessId": 10020,
+      "ParentProcessId": 40016,
+      "CreationDate": "2026-10-08T01:24:22.196196+08:00",
+      "CommandLine": "D:\\NodeJS\\node-v26.2.0-win-x64\\node.exe C:\\Users\\shr\\Desktop\\nmg前端\\app\\frontend\\node_modules\\vite\\bin\\vite.js preview --host 127.0.0.1 --port 4174 --strictPort"
+    }
+  ]
+}

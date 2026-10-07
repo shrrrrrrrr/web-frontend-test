@@ -1,0 +1,140 @@
+▶ 第三步真实内容维护→学生读取与上传恢复完整旅程
+  ✔ 导师通过页面创建明确主题课程，原入口排课和任务保留 (6493.1178ms)
+失败页面 http://127.0.0.1:5199/courses/9003?tab=maintenance PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+帮助与反馈
+张导师
+学术导师
+返回
+内容维护闭环 · 隔离验收课程
+发布课程
+主题
+—
+	
+适用学段
+初中
+
+
+难度
+基础
+	
+状态
+草稿
+
+
+创建者
+张导师
+	
+总课时
+—
+
+仅用于隔离端到端验收，不是正式教学内容。
+
+课程内容维护
+课时安排
+课程回放
+课程资源
+选课学生 (0)
+课程内容维护
+
+填写真实教学内容；学生在课程地图和对应课时读取。不会改变学习门槛、评分或作品历史
+
+重新读取
+课程介绍与显示
+章节与课时
+任务要求与教学提示
+教学资料与回放
+实验关联
+新增章节
+观察准备（验收章节）
+编 辑
+上 移
+下 移
+删 除
+实践整理（验收章节）
+编 辑
+上 移
+下 移
+删 除
+观察与比较（验收课时）
+未分组
+
+初始说明（合成材料）
+
+编辑课时说明与归属
+设置知识卡片与习题
+整理证据（验收课时）
+未分组
+
+初始说明（合成材料）
+
+编辑课时说明与归属
+设置知识卡片与习题
+编辑课时说明与归属
+名称
+11 / 120
+说明
+20 / 10000
+可选；清空后学生不再显示此说明
+教学提示
+20 / 2000
+可选；清空后学生不再显示此说明
+所属章节
+未分组
+保 存
+90013
+未分组
+观察准备（验收章节）
+实践整理（验收章节） about:blank 
+  ✖ 页面填写介绍、章节/排序、课时提示与任务要求，清空说明和读失败保输入 (15527.3553ms)
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (27142.4916ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 1
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27956.8031
+
+✖ failing tests:
+
+test at tests\redesign-v2.step03.browser.test.js:17:54
+✖ 页面填写介绍、章节/排序、课时提示与任务要求，清空说明和读失败保输入 (15527.3553ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().locator('.ant-select-dropdown').visible().getByText('观察准备（验收章节）', { exact: true })[22m
+  
+      at select (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:9:178)
+      at async file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:33:196
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:78)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:46)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:29:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().locator('.ant-select-dropdown').visible().getByText('观察准备（验收章节）', { exact: true })" ]
+  }
+
+test at tests\redesign-v2.step03.browser.test.js:12:1
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (27142.4916ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().locator('.ant-select-dropdown').visible().getByText('观察准备（验收章节）', { exact: true })[22m
+  
+      at select (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:9:178)
+      at async file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:33:196
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:78)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:46)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:29:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().locator('.ant-select-dropdown').visible().getByText('观察准备（验收章节）', { exact: true })" ]
+  }

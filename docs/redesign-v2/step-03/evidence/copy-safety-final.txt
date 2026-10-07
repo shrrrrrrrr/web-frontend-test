@@ -1,0 +1,11 @@
+test_jsx_read_is_json_only (__main__.CopyExtraction.test_jsx_read_is_json_only) ... ok
+test_optional_empty_and_disabled_preserved (__main__.CopyExtraction.test_optional_empty_and_disabled_preserved) ... ok
+test_required_and_unknown_rejected (__main__.CopyExtraction.test_required_and_unknown_rejected) ... ok
+test_special_characters_and_unknown_html_never_execute (__main__.CopyExtraction.test_special_characters_and_unknown_html_never_execute) ... ok
+test_teaching_fields_keep_course_and_object_mapping (__main__.CopyExtraction.test_teaching_fields_keep_course_and_object_mapping) ... ok
+test_two_sources_conflict_not_auto_applied (__main__.CopyExtraction.test_two_sources_conflict_not_auto_applied) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.020s
+
+OK

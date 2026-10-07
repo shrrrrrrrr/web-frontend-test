@@ -1,0 +1,27 @@
+
+> star-voyage-student@0.1.0 lint
+> npm --prefix frontend run lint
+
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\pages\courses\ContentMaintenance.jsx
+  39:103  warning  The ref value 'revision.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'revision.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\pages\courses\UploadQueue.jsx
+  11:2  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+   9 |  const [rows,setRows]=useState([]),[lessonId,setLesson]=useState(null),[type,setType]=useState('courseware'),[busy,setBusy]=useState(false),[selectionError,setSelectionError]=useState('');
+  10 |  const live=useRef(true),running=useRef(false),controller=useRef(null),rowsRef=useRef([]),dirtyRef=useRef(dirty);
+> 11 |  dirtyRef.current=dirty;
+     |  ^^^^^^^^^^^^^^^^ Cannot update ref during render
+  12 |  const change=fn=>{rowsRef.current=fn(rowsRef.current);if(live.current)setRows(rowsRef.current);};
+  13 |  const patch=(key,value)=>change(list=>list.map(row=>row.key===key?{...row,...value}:row));
+  14 |  useEffect(()=>{live.current=true;return()=>{live.current=false;controller.current?.abort();};},[]);  react-hooks/refs
+
+✖ 2 problems (1 error, 1 warning)
+

@@ -1,0 +1,489 @@
+{
+  "checkedAt": "2026-10-07T17:54:53.897Z",
+  "businessScenes": 76,
+  "businessPass": 76,
+  "parentTests": 10,
+  "parentsPass": 10,
+  "method": "Latest result per named child/parent; dedicated copy recheck replaces the failed copy child and its parent in the combined run. Raw failed logs retained, not presented as a green combined run.",
+  "scenarios": [
+    {
+      "name": "本地审阅页保存 HTML 与 JSON 保留 ID、显隐和特殊字符",
+      "result": "pass",
+      "log": "evidence/browser-copy-final.txt"
+    },
+    {
+      "name": "修改 JSX 后提取 HTML 报告冲突，不自动覆盖",
+      "result": "pass",
+      "log": "evidence/browser-copy-final.txt"
+    },
+    {
+      "name": "真实课程页面可选文案真正删除，返回标签改稿不改变实验入口与跳转",
+      "result": "pass",
+      "log": "evidence/browser-copy-final.txt"
+    },
+    {
+      "name": "各主要页面保留真实加载与局部接口错误，重试可恢复",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "下载附件 404 保留学习；机器人不会挡住下载及主要操作",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "长成果文字、真实上传失败保输入，恢复可提交新版本",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "档案空作品与缺失反馈真实降级；反思每日一次限制",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "实验注册页共享真实权限加载、网络错误及课程撤回清理",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "头像未选中、六人真实保存、重新登录、账号与课程隔离",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "头像写失败与写成功回读失败分开，不自动重复写入",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "同课程切页保留草稿、关窗继续请求、单次问答与不重复发送",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "服务错误保留原问题和新草稿，资料变更清旧引用",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "中文输入法 Enter 不发送，Shift Enter 换行；真实 JWT 轮换保输入",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "旧消息滚动不抢位置，最新回复可定位",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "课程引用只生成当前课程站内动作，不执行回答 HTML",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "两课切换清会话，迟到旧响应不进入新课；平台不出现机器人",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "真实课程撤回清会话，恢复重新检查不恢复旧回答",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "未启用和目录错误展示真实状态，恢复后可提问",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "旧助手链接 replace 打开一次，不回到中转页；后台入口保留",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "五尺寸课程页面、窗口遮罩、焦点、互斥和键盘高度",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "停用、强制改密、退出和换账号清机器人上下文",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "导师通过页面创建明确主题课程，原入口排课和任务保留",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "页面填写介绍、章节/排序、课时提示与任务要求，清空说明和读失败保输入",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "原卡片/练习编辑发布和真实持久化滑翔机关联",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "公共/课时资料与四种新增格式、混合失败队列、重试不重复成功",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "页面上传真实可播放回放和私有封面，三尺寸维护/队列/格式矩阵可用",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "原导入学生与发布入口授权；学生真实主题、章节、详情、资料/回放范围",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "课堂回顾→一次练习→指定卡片真实试飞→原卡片返回，解除关联不删试飞",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "主题与章节刷新保报告/助手草稿，报告作品分开提交、原评审/版本/档案",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "只读教师/无关导师与失去负责范围：旧表单被拒绝，课程撤回/恢复及时清理",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "队列取消/防双击/成功回读失败，切课不带文件；解析失败只重试索引",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "独立桌面/手机登录构图、六尺寸整屏不滚动，短屏表单内部可达",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "登录图片故障不挡表单，真实错误与防重复提交",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "六尺寸平台/课程主题，真实运势、地图默认和弹窗、标题透明、封面和聊天",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "居中详情焦点/Tab/Escape/遮罩/滚动锁、节点 Enter Space、取消课时与互斥",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "悬浮/鼠标按下/键盘按下/减少运动，路线锚点固定、输入原值不变",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "同账号跨浏览器当天一致，失败重试、不读写奖励存储，切账号迟到响应被丢弃",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "API 原文保留、教学显示只去尾句号；输入和机器人失败降级保持可用",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "定时和重新可见重读运势；触摸按下、长详情、停用和强制改密真实分流",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "平台课程选择：真实分配、无全局待办、单课程不自动跳转、三尺寸字体",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "地图真课时、多章节、键盘节点、课时安排与未分组默认主题",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "报告通过但作品退回仍有修改入口；无作品任务仍可继续学习",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "旧对象链接定位真实课程，旧全局实验不伪造课程；篡改课时被拒绝",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "附件 404 不隐藏地图；课程撤回清除内容，恢复后重新检查可访问",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "课程试飞真闭环：指定卡片→参考引擎→原卡片，记录归属与不自动提交",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "课程内自由实验固定课程、不造课时；切课不显示其他课程或未关联旧记录",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "报告草稿按原位置恢复；课时取消清除，再恢复不越权",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "报告与作品各自提交；导师原角色评审，成长档案只显示当前课程",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "我的保留同账号奖励、跨标签兑换同步、切课无重置、安全返回",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "平台服务页、普通教师与导师原业务入口及字体保持可用",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "登录三尺寸及真实强制改密完成后进入选择页",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "无分配课程真实空状态、恢复分配、键盘进入与手机点击",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "地图与我的全页三尺寸、手机菜单关闭、刷新与新标签、返回滚动可见",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "A 课程迟到响应不能覆盖已切换到 B 的主题与课时",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "课程读取失败可重试、卡片失效返回地图、图片失败不影响可操作节点",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "账号停用清除已有课程内容并回到登录",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "原样迁移并保留 v1 备份；重置/重开不重导入；已迁移账号不再读取 v1",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "并发首次迁移与兑换不覆盖已提交状态；并发同编号仅一笔；不同账号隔离",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "损坏/不可读迁移源不被覆盖；迁移 put 后中止无初始化标记；直接重置恢复",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "数据库不可用、open 失败及真实升级 blocked 均可重试，不虚构持久成功",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "提交后取消与回读/广播失败不撤销事实；广播只触发数据库重读",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "120 组混合事务顺序，逐组读取两页持久状态，12 次新第三标签抽检",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "同账号真实过期凭据刷新，另一标签反馈输入和 DOM 不应丢失",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "真实全部已读延迟期间切换筛选，写成功必须重读当前列表",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "主动刷新保留独立反思、回复及其他角色表单；同账号迟到成功响应仍有效",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "真实 401 单次刷新保留另一标签输入，后台复核暂时失败也不卸载",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "配对边界：真实退出和换账号清除另一标签表单，旧响应不得覆盖新账号",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "配对边界：真实停用和 FORCE_RESET 使另一标签清理旧内容",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "批量延迟期间切分页：成功/失败/回读失败提示保留，重读不重复写入",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "批量写已提交但响应迟到，退出换账号后不显示旧结果",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "两个标签同时主动刷新只进行一次真实凭据轮换",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "旧账号刷新响应迟到，不能覆盖另一标签新登录的凭据或表单",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "实际奖励页：v1 迁移、双标签最终一致、轮换保留弹窗、窄屏数据库错误",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "新生产构建：学生从真实 API 读取主题和章节，三尺寸节点可用",
+      "result": "pass",
+      "log": "evidence/browser-preview-refreshed.txt"
+    },
+    {
+      "name": "导师维护入口为当前产物，章节/资料队列和字体真实读取，三尺寸可达",
+      "result": "pass",
+      "log": "evidence/browser-preview-refreshed.txt"
+    },
+    {
+      "name": "真实截图图集、946 项新版编辑页和基线文件可人工打开",
+      "result": "pass",
+      "log": "evidence/browser-preview-refreshed.txt"
+    }
+  ],
+  "parents": [
+    {
+      "name": "文案交接：人工 HTML 导出、特殊字符、双来源冲突与真实删除显示",
+      "result": "pass",
+      "log": "evidence/browser-copy-final.txt"
+    },
+    {
+      "name": "第二步：真实页面加载、局部错误、空数据与关键动作",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "第二步：头像、课程浮窗、真实接口与响应式页面",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "第三步真实内容维护→学生读取与上传恢复完整旅程",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "新版第2步补修：真实素材、运势、居中地图与输入交互",
+      "result": "pass",
+      "log": "evidence/browser-maintenance-final.txt"
+    },
+    {
+      "name": "新版第 1 步：真实课程空间、样板与学习回归",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "新版平台边界、迟到响应与三尺寸状态验收",
+      "result": "pass",
+      "log": "evidence/browser-core-final.txt"
+    },
+    {
+      "name": "第十轮：原生 IndexedDB 迁移、提交与 120 组双标签压力验证",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "第十轮：跨标签会话与通知批量回归（真实隔离 API）",
+      "result": "pass",
+      "log": "evidence/browser-account-final.txt"
+    },
+    {
+      "name": "第三步最终 4174 产物与交接入口",
+      "result": "pass",
+      "log": "evidence/browser-preview-refreshed.txt"
+    }
+  ],
+  "logs": [
+    "evidence/backend-final.txt",
+    "evidence/backend-first.txt",
+    "evidence/backend-full-first.txt",
+    "evidence/backend-full.txt",
+    "evidence/backend-id-ceiling-first.txt",
+    "evidence/backend-targeted-expanded.txt",
+    "evidence/backend-targeted.txt",
+    "evidence/browser-account-final.txt",
+    "evidence/browser-copy-final.txt",
+    "evidence/browser-core-final.txt",
+    "evidence/browser-core-first.txt",
+    "evidence/browser-journey-final-first.txt",
+    "evidence/browser-journey-first.txt",
+    "evidence/browser-journey-recheck1.txt",
+    "evidence/browser-journey-recheck10.txt",
+    "evidence/browser-journey-recheck11.txt",
+    "evidence/browser-journey-recheck12.txt",
+    "evidence/browser-journey-recheck13.txt",
+    "evidence/browser-journey-recheck2.txt",
+    "evidence/browser-journey-recheck3.txt",
+    "evidence/browser-journey-recheck4.txt",
+    "evidence/browser-journey-recheck5.txt",
+    "evidence/browser-journey-recheck6.txt",
+    "evidence/browser-journey-recheck7.txt",
+    "evidence/browser-journey-recheck8.txt",
+    "evidence/browser-journey-recheck9.txt",
+    "evidence/browser-maintenance-final.txt",
+    "evidence/browser-preview-final.txt",
+    "evidence/browser-preview-first.txt",
+    "evidence/browser-preview-refreshed.txt",
+    "evidence/browser-regression-first.txt",
+    "evidence/browser-regression-recheck.txt",
+    "evidence/build-final.txt",
+    "evidence/build-first.txt",
+    "evidence/build.txt",
+    "evidence/copy-audit-final.txt",
+    "evidence/copy-audit-first.txt",
+    "evidence/copy-audit-handoff.txt",
+    "evidence/copy-safety-final.txt",
+    "evidence/frontend-final.txt",
+    "evidence/frontend-first.txt",
+    "evidence/lint-final-first.txt",
+    "evidence/lint-final.txt",
+    "evidence/lint-first.txt",
+    "evidence/lint.txt"
+  ]
+}

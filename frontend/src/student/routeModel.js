@@ -1,7 +1,9 @@
 import { groupLessons } from './model.js';
 
-export function buildCourseRoute(lessons, groups = []) {
-  const ordered = [...lessons].sort((a, b) => Number(a.sort_order ?? 0) - Number(b.sort_order ?? 0) || Number(a.id) - Number(b.id));
+export function buildCourseRoute(lessons, groups = [], persistedChapterOrder = false) {
+  let ordered = [...lessons].sort((a, b) => Number(a.sort_order ?? 0) - Number(b.sort_order ?? 0) || Number(a.id) - Number(b.id));
+  // Real chapter order organizes the map; IDs/progress and backend gates stay intact.
+  if(persistedChapterOrder){const taken=new Set(),rows=[];for(const group of groups)for(const lesson of ordered)if(group.lessonIds.includes(lesson.id)&&!taken.has(lesson.id)){rows.push(lesson);taken.add(lesson.id);}ordered=[...rows,...ordered.filter(l=>!taken.has(l.id))];}
   const membership = new Map();
   groupLessons(ordered, groups).forEach((group, index) => {
     group.lessons.forEach((lesson) => membership.set(String(lesson.id), { title: group.title, groupIndex: index }));

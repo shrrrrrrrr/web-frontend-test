@@ -103,6 +103,7 @@ CREATE TABLE IF NOT EXISTS courses (
   total_hours INTEGER,
   materials_needed TEXT,
   cover_image TEXT,
+  presentation_theme TEXT NOT NULL DEFAULT 'campus' CHECK(presentation_theme IN ('campus','voyage')),
   status TEXT DEFAULT 'draft' CHECK(status IN ('draft','published','archived')),
   created_by INTEGER NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -118,6 +119,8 @@ CREATE TABLE IF NOT EXISTS lessons (
   description TEXT,
   sort_order INTEGER DEFAULT 0,
   duration INTEGER,
+  chapter_id INTEGER REFERENCES course_chapters(id) ON DELETE SET NULL,
+  teaching_tip TEXT,
   start_at TEXT,
   end_at TEXT,
   location TEXT,
@@ -170,6 +173,10 @@ CREATE TABLE IF NOT EXISTS resources (
   file_path TEXT,
   file_size INTEGER,
   upload_by INTEGER NOT NULL,
+  file_name TEXT,
+  file_type TEXT,
+  upload_token TEXT,
+  upload_digest TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE,
   FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE SET NULL,
@@ -723,3 +730,29 @@ CREATE TABLE IF NOT EXISTS course_avatar_preferences (
   updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (student_id, course_id)
 );
+-- 017: 真实课程内容维护，不改变学习历史。
+CREATE TABLE IF NOT EXISTS course_chapters (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  course_id INTEGER NOT NULL REFERENCES courses(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  sort_order INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE IF NOT EXISTS course_experiments (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  course_id INTEGER NOT NULL REFERENCES courses(id) ON DELETE CASCADE,
+  experiment_id TEXT NOT NULL CHECK(experiment_id='glider'),
+  lesson_id INTEGER REFERENCES lessons(id) ON DELETE CASCADE,
+  stage INTEGER CHECK(stage BETWEEN 0 AND 3),
+  card_id INTEGER REFERENCES knowledge_cards(id) ON DELETE CASCADE,
+  label TEXT NOT NULL,
+  enabled INTEGER NOT NULL DEFAULT 1 CHECK(enabled IN (0,1))
+);
+CREATE UNIQUE INDEX IF NOT EXISTS course_experiments_source ON course_experiments(course_id,experiment_id,COALESCE(lesson_id,0),COALESCE(stage,-1),COALESCE(card_id,0));
+CREATE TABLE IF NOT EXISTS course_covers (
+  course_id INTEGER PRIMARY KEY REFERENCES courses(id) ON DELETE CASCADE,
+  file_path TEXT NOT NULL,
+  file_name TEXT NOT NULL,
+  mime_type TEXT NOT NULL,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE UNIQUE INDEX IF NOT EXISTS resources_upload_token ON resources(course_id,upload_by,upload_token) WHERE upload_token IS NOT NULL;

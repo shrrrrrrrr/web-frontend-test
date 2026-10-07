@@ -5,7 +5,7 @@ import path from 'node:path';
 import {setup,login,go,gate,base,api} from './helpers/step02.fixture.mjs';
 import {root} from './v2-fixture.mjs';
 
-const out=path.join(root,'docs/redesign-v2/step-02/visual-patch/regression-screenshots');
+const out=path.resolve(process.env.PBL_EVIDENCE_DIR||path.join(root,'docs/redesign-v2/step-02/visual-patch/regression-screenshots'),'step02-screenshots');
 const sizes=[[1440,900],[768,1024],[390,844],[360,800],[844,390]];
 const robot=p=>p.locator('.course-robot'),input=p=>p.locator('#assistant-question');
 async function open(p){if(!await p.locator('#course-chat').isVisible())await robot(p).click();await input(p).waitFor();}
@@ -24,7 +24,7 @@ test('第二步：头像、课程浮窗、真实接口与响应式页面',{timeo
    const initial=await request(p,'/course-spaces/9001/preferences/avatar');assert.equal(initial.status,200,JSON.stringify(initial));assert.equal(initial.data.avatarId,null);
    await p.getByRole('button',{name:'选择角色头像',exact:true}).click();await p.locator('.course-avatar-grid>button').first().waitFor();assert.equal(await p.locator('.course-avatar-grid>button').count(),6);await shot(p,'avatars-1440');
    await p.locator('.course-avatar-grid>button').filter({hasText:'江予川'}).click();await p.getByRole('status').filter({hasText:'已保存'}).waitFor();assert.equal((await request(p,'/course-spaces/9001/preferences/avatar')).data.avatarId,'maker');await p.locator('.ant-modal-close').click();
-   await course(p,9002);assert.equal(await p.locator('.course-avatar-button').count(),0);assert.equal((await request(p,'/course-spaces/9002/preferences/avatar')).data.avatarId,null);
+   await course(p,9002);assert.equal(await p.locator('.course-avatar-button').count(),0);assert.equal((await request(p,'/course-spaces/9002/preferences/avatar')).status,403);
    assert.equal((await request(p,'/course-spaces/9001/preferences/avatar','PUT',{avatarId:'unknown'})).status,400);
    const another=await f.browser.newContext(),a=await another.newPage();await login(a,'step02_other');await course(a);assert.equal((await request(a,'/course-spaces/9001/preferences/avatar')).data.avatarId,null);await another.close();
    const relog=await f.browser.newContext(),b=await relog.newPage();await login(b);await course(b);await b.locator('.course-avatar-button').getByText('江予川').waitFor();await relog.close();await course(p);
@@ -91,6 +91,6 @@ test('第二步：头像、课程浮窗、真实接口与响应式页面',{timeo
    await p.setViewportSize({width:1440,height:900});await open(p);await input(p).fill('强制改密前草稿');f.db.prepare('UPDATE users SET force_reset_password=1 WHERE id=4').run();await p.evaluate(()=>dispatchEvent(new Event('focus')));await p.waitForURL(/change-password/);assert.equal(await robot(p).count(),0);f.db.prepare('UPDATE users SET force_reset_password=0 WHERE id=4').run();await login(p);await course(p);await open(p);assert.equal(await input(p).inputValue(),'');
    f.db.prepare('UPDATE users SET is_active=0 WHERE id=4').run();await p.evaluate(()=>dispatchEvent(new Event('focus')));await p.waitForURL(/login/);assert.equal(await robot(p).count(),0);f.db.prepare('UPDATE users SET is_active=1 WHERE id=4').run();await login(p);await course(p);await open(p);await input(p).fill('退出前草稿');await p.keyboard.press('Escape');await go(p,'/me');await p.getByRole('button',{name:'退出登录',exact:true}).click();await p.waitForURL(/login/);await login(p,'step02_other');await course(p);await open(p);assert.equal(await input(p).inputValue(),'');assert.equal(await p.locator('.assistant-turn').count(),0);
   });
-  assert.deepEqual(errors,[]);writeFileSync(path.join(root,'docs/redesign-v2/step-02/visual-patch/regression-evidence/step02-browser-details.json'),JSON.stringify({browser:await f.browser.version(),viewports:records,provider:'真实 AI 接口＋隔离 HTTPS 本地测试 provider；未验证外部模型质量',providerRequests:f.provider.requests.length,pageErrors:errors},null,2));
+  assert.deepEqual(errors,[]);writeFileSync(path.join(process.env.PBL_EVIDENCE_DIR||path.join(root,'docs/redesign-v2/step-02/visual-patch/regression-evidence'),'step02-browser-details.json'),JSON.stringify({browser:await f.browser.version(),viewports:records,provider:'真实 AI 接口＋隔离 HTTPS 本地测试 provider；未验证外部模型质量',providerRequests:f.provider.requests.length,pageErrors:errors},null,2));
  }finally{await f.close();}
 });

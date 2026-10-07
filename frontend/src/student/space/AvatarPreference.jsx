@@ -5,12 +5,13 @@ import CopyBlock from '../../content/CopyBlock';
 import { Modal, Spin } from 'antd';
 import { useCourseExperience } from './useCourseExperience';
 import { avatars } from './avatars';
-import { asset, coursePresentation } from './identity';
+import { asset } from './identity';
+import {useCoursePresentation} from './CoursePresentation';
 import { PixelButton, PixelImage } from '../visual/PixelUI';
 import PixelIcon from '../visual/PixelIcon';
 
 export default function AvatarPreference(){
-  const s=useCourseExperience();if(!s||coursePresentation(s.id).theme!=='voyage')return null;
+  const s=useCourseExperience(),look=useCoursePresentation();if(!s||look.theme!=='voyage')return null;
   const selected=avatars.find(a=>a.id===s.avatar.id),busy=['loading','saving','reading'].includes(s.avatar.state);
   return <>
     <button className="course-avatar-button" aria-label={copyText('avatar.open')} onClick={()=>s.openOverlay('avatar')}>

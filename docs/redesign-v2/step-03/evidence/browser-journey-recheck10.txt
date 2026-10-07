@@ -1,0 +1,188 @@
+▶ 第三步真实内容维护→学生读取与上传恢复完整旅程
+  ✔ 导师通过页面创建明确主题课程，原入口排课和任务保留 (6257.2436ms)
+  ✔ 页面填写介绍、章节/排序、课时提示与任务要求，清空说明和读失败保输入 (9345.54ms)
+  ✔ 原卡片/练习编辑发布和真实持久化滑翔机关联 (4843.8662ms)
+失败页面 http://127.0.0.1:5199/courses/9003?tab=maintenance sv
+上传成功0.00 MB课程公共资料课件
+
+已保存对象 ID #9003
+
+记录.xls
+上传成功0.00 MB课程公共资料课件
+
+已保存对象 ID #9004
+
+记录.xlsx
+上传成功0.02 MB课程公共资料课件
+
+已保存对象 ID #9005
+
+本课时资料.txt
+上传成功0.00 MB课程公共资料课件
+
+已保存对象 ID #9006
+
+课堂回放
+
+队列已绑定当前课程及选择时的课时和类型，之后改变选择不会修改已有队列
+
+课程公共资料
+选择文件
+上传待处理文件
+只重试失败项
+取消待上传文件
+本课时资料.txt
+课程公共资料课件
+
+本课时资料.txt · TXT · 42 B
+
+可检索
+下 载
+修改资料说明与归属
+删 除
+记录.xlsx
+课程公共资料课件
+
+记录.xlsx · XLSX · 15861 B
+
+格式不支持
+
+该文件可作为课程资源，但不会进入 AI 文字检索
+
+下 载
+修改资料说明与归属
+删 除
+记录.xls
+课程公共资料课件
+
+记录.xls · XLS · 3584 B
+
+格式不支持
+
+该文件可作为课程资源，但不会进入 AI 文字检索
+
+下 载
+修改资料说明与归属
+删 除
+观察记录.csv
+课程公共资料课件
+
+观察记录.csv · CSV · 23 B
+
+格式不支持
+
+该文件可作为课程资源，但不会进入 AI 文字检索
+
+下 载
+修改资料说明与归属
+删 除
+公共说明.md
+课程公共资料课件
+
+公共说明.md · MD · 33 B
+
+格式不支持
+
+该文件可作为课程资源，但不会进入 AI 文字检索
+
+下 载
+修改资料说明与归属
+删 除
+查看索引与重试
+
+上传和索引是不同状态；解析失败只重试索引，不重复上传。扫描 PDF 没有 OCR
+
+可上传、预览与 AI 解析说明
+类型	上限	显示位置	学生预览	AI 文字索引
+
+类型
+	
+上限
+	
+显示位置
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.jpeg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.png	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gif	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webp	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pdf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+90022
+90023
+课程公共资料
+观察与比较（验收课时）
+整理证据（验收课时） about:blank 
+  ✖ 公共/课时资料与四种新增格式、混合失败队列、重试不重复成功 (3738.4836ms)
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (29251.3202ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 3
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 30075.2421
+
+✖ failing tests:
+
+test at tests\redesign-v2.step03.browser.test.js:18:54
+✖ 公共/课时资料与四种新增格式、混合失败队列、重试不重复成功 (3738.4836ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 90022
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:50:219
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:18:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:18:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:45:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 90022,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\redesign-v2.step03.browser.test.js:13:1
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (29251.3202ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 90022
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:50:219
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:18:78)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scenario (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:18:46)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03.browser.test.js:45:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 90022,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

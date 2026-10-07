@@ -11,16 +11,17 @@ import {useCourseId} from '../useCourseApis';
 import useRemote from '../useRemote';
 import StudentTheme from './StudentTheme';
 import PixelIcon from './PixelIcon';
-import {PLATFORM_NAME,coursePresentation,asset} from '../space/identity';
+import {PLATFORM_NAME,asset} from '../space/identity';
 import {useCourseExperience} from '../space/useCourseExperience';
 import FloatingAssistant from '../space/FloatingAssistant';
 import AvatarPreference from '../space/AvatarPreference';
 import '../space/course-pages.css';
 import SceneArt from '../space/SceneArt';
+import {useCoursePresentation} from '../space/CoursePresentation';
 
 function Points({to}){const {data,status}=useRewards();return <Link to={to} className="student-points" data-testid="header-demo-points" aria-label={copyText('system.shell.001')+(status==='ready'?data.balance:copyText('system.shell.002'))}><PixelIcon name="coin"/><strong>{status==='ready'?data.balance:'—'}</strong><span className="student-demo-tag">{copyText('system.shell.003')}</span></Link>;}
 function CourseNavigation({id,course,close}){
- const {pathname}=useLocation();const theme=coursePresentation(id).theme;
+ const {pathname}=useLocation();const theme=useCoursePresentation().theme;
  const entries=[['','map',copyText('course.nav.map')],['/lab','lab',copyText('course.nav.lab')],['/archives','archive',copyText('course.nav.archive')]];
  return <div className="space-course-navigation" data-course-theme={theme}>
    <Link to="/explore" className="space-exit" onClick={close}><PixelIcon name="back"/>{copyText('course.nav.exit')}</Link>
@@ -30,6 +31,7 @@ function CourseNavigation({id,course,close}){
  </div>;
 }
 function Shell({children}){
+ const look=useCoursePresentation();
  const id=useCourseId(),{user}=useAuth(),location=useLocation(),screens=Grid.useBreakpoint();
  const session=useCourseExperience(),open=session?.overlay==='nav';
  const setOpen=next=>session?.openOverlay(next?'nav':null);
@@ -37,7 +39,7 @@ function Shell({children}){
  const {data}=useRemote(fetcher,{courseSensitive:true,courseId:id});
  const me='/me'+(id?'?returnTo='+encodeURIComponent(location.pathname+location.search):'');
  const deep=id&&location.pathname!=='/courses/'+id;
- const voyage=id&&coursePresentation(id).theme==='voyage';
+ const voyage=id&&look.theme==='voyage';
  const scene=id?(voyage?(/\/(lab|glider|archives|works|reflection)(?:\/|$)/.test(location.pathname)?'voyage-lab':'voyage-reading'):'campus-select'):(location.pathname==='/me'?'campus-personal':'campus-select');
  return <div className={'space-shell student-shell '+(id?'space-shell--course':'space-shell--platform')} data-course-space={id||undefined} data-course-pathname={location.pathname}>
    <div className="space-underlay" aria-hidden="true"><SceneArt key={scene} name={scene} patch priority/></div>
@@ -56,8 +58,12 @@ function Shell({children}){
  </div>;
 }
 export default function StudentShell({children}){
+ return <ThemedShell>{children}</ThemedShell>;
+}
+function ThemedShell({children}){
  const {user,logout}=useAuth(),id=useCourseId();
- return <StudentTheme variant={id?coursePresentation(id).theme:'campus'}>
+ const look=useCoursePresentation();
+ return <StudentTheme variant={id?look.theme:'campus'}>
   {user.force_reset_password?<div className="forced-shell"><header className="forced-header"><strong>{PLATFORM_NAME}{copyText('system.shell.018')}</strong><button onClick={logout}>{copyText('system.shell.019')}</button></header><main id="student-main">{children}</main></div>:<RewardProvider key={user.id} accountId={user.id}><a href="#student-main" className="student-skip-link">{copyText('system.shell.020')}</a><Shell>{children}</Shell></RewardProvider>}
  </StudentTheme>;
 }

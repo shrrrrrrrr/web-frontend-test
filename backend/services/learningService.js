@@ -170,7 +170,7 @@ function lessonPackage(studentId, lessonId) {
     ORDER BY CASE WHEN lesson_id = ? THEN 0 ELSE 1 END, sort_order, id
   `).all(lesson.course_id, lessonId, lessonId);
   const resources = db.prepare(`
-    SELECT id, course_id, lesson_id, resource_type, title, description, file_size, created_at,
+    SELECT id, course_id, lesson_id, resource_type, title, description, file_size, file_name,file_type,created_at,
            CASE WHEN file_path IS NOT NULL THEN 1 ELSE 0 END AS has_file
     FROM resources WHERE course_id = ? AND (lesson_id = ? OR lesson_id IS NULL)
     ORDER BY CASE WHEN lesson_id = ? THEN 0 ELSE 1 END, created_at DESC
@@ -179,7 +179,7 @@ function lessonPackage(studentId, lessonId) {
   return {
     course: { id: lesson.course_id, title: lesson.course_title },
     lesson: {
-      id: lesson.id, title: lesson.title, description: lesson.description,
+      id: lesson.id, title: lesson.title, description: lesson.description,teaching_tip:lesson.teaching_tip,
       duration: lesson.duration, start_at: lesson.start_at, end_at: lesson.end_at,
     },
     enrollment_id: enrollment.enrollment_id,

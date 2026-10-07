@@ -1,0 +1,169 @@
+▶ 第三步真实内容维护→学生读取与上传恢复完整旅程
+  ✔ 导师通过页面创建明确主题课程，原入口排课和任务保留 (6484.8118ms)
+  ✔ 页面填写介绍、章节/排序、课时提示与任务要求，清空说明和读失败保输入 (7374.0246ms)
+  ✔ 原卡片/练习编辑发布和真实持久化滑翔机关联 (5314.7645ms)
+  ✔ 公共/课时资料与四种新增格式、混合失败队列、重试不重复成功 (2593.5654ms)
+  ✔ 页面上传真实可播放回放和私有封面，三尺寸维护/队列/格式矩阵可用 (7809.7106ms)
+失败页面 http://127.0.0.1:5199/courses/9003?tab=students PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+帮助与反馈
+张导师
+学术导师
+返回
+内容维护闭环 · 隔离验收课程
+撤回为草稿
+主题
+—
+	
+适用学段
+初中
+
+
+难度
+基础
+	
+状态
+已发布
+
+
+创建者
+张导师
+	
+总课时
+—
+
+仅用于隔离端到端验收，不是正式教学内容。
+
+课程内容维护
+课时安排
+课程回放
+课程资源
+选课学生 (1)
+导入学生
+姓名	学校	班级	导入人
+王小明	北航附属实验学校	四年级1班	张导师 http://127.0.0.1:5199/courses/9003/lessons/90022/learn 跳到页面内容
+返回课程选择
+内容维护闭环 · 隔离验收课程
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+内容维护闭环 · 隔离验收课程
+选择角色头像
+120
+演示
+王小明
+返回课程地图
+全部课程
+内容维护闭环 · 隔离验收课程
+观察与比较（验收课时）
+
+正在查看：课堂回顾
+
+返回课程地图
+返回课后任务
+本课时进度
+0%
+
+回顾 25% · 卡片 35%
+报告反思 25% · 导师评审 15%
+
+01
+课堂回顾
+正在查看 · 待完成
+02
+知识卡片与练习
+未解锁
+完成课堂回顾后开启
+03
+学习报告与反思
+未解锁
+完成全部知识卡片后开启
+04
+导师评审
+未解锁
+提交报告后查看
+查看本课时任务与作品 ↓
+
+先固定条件，再解释你的证据（验收提示）
+
+01
+第一阶段：课堂回顾
+
+回看课堂，整理观察。完成后由你确认，无需等待观看时长
+
+课堂回放
+回放暂不可用
+回放文件未能播放，请重试或联系导师。其他学习内容仍可继续
+重试播放
+课堂回顾.webm
+配套资料
+本课时资料.txt
+下载资料
+观察记录.csv
+下载资料
+记录.xls
+下载资料
+记录.xlsx
+下载资料
+公共说明.md
+下载资料
+我已完成课堂回顾
+W
+本课时任务与作品
+
+查看作品要求、提交版本和导师意见
+
+作品与学习报告分别保存和评审。这里的作品提交不会替代上方的学习报告
+自己的试飞证据（验收任务）
+
+提交自己的记录与改进理由（验收要求）
+
+截止：未设置
+
+提交作品
+  ✖ 原导入学生与发布入口授权；学生真实主题、章节、详情、资料/回放范围 (9234.811ms)
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (44002.2334ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 5
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 44795.8439
+
+✖ failing tests:
+
+test at tests\redesign-v2.step03.browser.test.js:17:54
+✖ 原导入学生与发布入口授权；学生真实主题、章节、详情、资料/回放范围 (9234.811ms)
+  locator.evaluate: NotSupportedError: The element has no supported sources.
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:61:398
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:78)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:46)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:57:3) {
+    log: []
+  }
+
+test at tests\redesign-v2.step03.browser.test.js:12:1
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (44002.2334ms)
+  locator.evaluate: NotSupportedError: The element has no supported sources.
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:61:398
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:78)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:46)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:57:3) {
+    log: []
+  }

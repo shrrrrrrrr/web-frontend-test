@@ -13,7 +13,7 @@ before(async()=>{
   const hash = require('bcryptjs').hashSync('test123', 4);
   for (const [id, role] of [[1,'academic_mentor'],[2,'student'],[3,'student'],[4,'teacher'],[5,'academic_mentor']]) db.prepare('INSERT INTO users(id,username,password_hash,real_name,role) VALUES(?,?,?,?,?)').run(id,'u'+id,hash,'合成账号'+id,role);
   for (const id of [1,2]) {
-    db.prepare("INSERT INTO courses(id,title,grade_level,difficulty,status,created_by) VALUES(?,?,'junior','basic','published',1)").run(id,'测试课'+id);
+    db.prepare("INSERT INTO courses(id,title,grade_level,difficulty,status,created_by,presentation_theme) VALUES(?,?,'junior','basic','published',1,'voyage')").run(id,'测试课'+id);
     for(const student of [2,3]) db.prepare("INSERT INTO enrollments(student_id,course_id,status) VALUES(?,?,'active')").run(student,id);
   }
   await new Promise(r=>server=app.listen(0,r)); url='http://127.0.0.1:'+server.address().port;
@@ -47,13 +47,15 @@ test('报名移除、课程撤回、账号停用及强制改密不能读取或�
 });
 test('既有库兼容升级两次，不改报名、报告、作品，也不分配角色',()=>{
   const Database=require('better-sqlite3'); const legacy=new Database(':memory:');
-  const schema=fs.readFileSync(path.join(__dirname,'../database/schema.sql'),'utf8').split('-- 016:')[0];legacy.exec(schema);
+  const schema=fs.readFileSync(path.join(__dirname,'../testFixtures/schema-v16.sql'),'utf8').split('-- 016:')[0];
+  legacy.exec(schema);
   legacy.exec("CREATE TABLE schema_migrations(version INTEGER PRIMARY KEY,name TEXT,applied_at DATETIME DEFAULT CURRENT_TIMESTAMP)");
   for(const file of fs.readdirSync(path.join(__dirname,'../database/migrations')).filter(f=>/^\d+_/.test(f)&&parseInt(f)<16)) legacy.prepare('INSERT INTO schema_migrations(version,name) VALUES(?,?)').run(parseInt(file),file);
   const oldSchema=legacy.prepare("SELECT name,sql FROM sqlite_master WHERE type='table' ORDER BY name").all();
   const migrate=require('../database/migrate').runMigrations;migrate(legacy);migrate(legacy);
   assert.equal(legacy.prepare('SELECT count(*) n FROM course_avatar_preferences').get().n,0);
   assert.equal(legacy.prepare('SELECT count(*) n FROM schema_migrations WHERE version=16').get().n,1);
-  for(const row of oldSchema) assert.equal(legacy.prepare('SELECT sql FROM sqlite_master WHERE name=?').get(row.name).sql,row.sql);
+  for(const row of oldSchema.filter(r=>!['courses','lessons','resources'].includes(r.name))) assert.equal(legacy.prepare('SELECT sql FROM sqlite_master WHERE name=?').get(row.name).sql,row.sql);
+  assert.equal(legacy.prepare('SELECT count(*) n FROM schema_migrations WHERE version=17').get().n,1);
   legacy.close();
 });

@@ -48,7 +48,7 @@ test('新版平台边界、迟到响应与三尺寸状态验收',{timeout:180000
    finally{hold.release();await p.unroute('**/api/course-spaces/9001/courses/9001');}
   });
   await scenario('课程读取失败可重试、卡片失效返回地图、图片失败不影响可操作节点',async()=>{
-   await p.route('**/api/course-spaces/9001/courses/9001',r=>r.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'隔离验收：课程接口暂时不可用'})}));await p.goto(base+'/courses/9001');await p.getByText('内容加载失败',{exact:true}).waitFor();await three(p,'network-error');await p.unroute('**/api/course-spaces/9001/courses/9001');await p.getByRole('button',{name:'重新加载',exact:true}).click();await p.locator('.route-node').first().waitFor();
+   await p.route('**/api/course-spaces/9001/courses/9001',r=>r.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'隔离验收：课程接口暂时不可用'})}));await p.goto(base+'/courses/9001');await p.getByRole('heading',{name:'暂时无法读取课程显示',exact:true}).waitFor();await three(p,'network-error');await p.unroute('**/api/course-spaces/9001/courses/9001');await p.getByRole('button',{name:'重新读取',exact:true}).click();await p.locator('.route-node').first().waitFor();
    await p.goto(base+'/courses/9001/lessons/90011/learn?stage=1&cardId=999999');await p.waitForURL('**/courses/9001');await p.getByText(/原知识卡片已不可访问/).waitFor();
    await p.route('**/assets/redesign-v2/web/**',r=>r.abort());await p.reload();await p.locator('.route-node').first().waitFor();await p.locator('.space-map [data-art-failed]').waitFor();assert.equal(await p.locator('.route-node').count(),6);await shot(p,'image-fallback');await p.unroute('**/assets/redesign-v2/web/**');
   });

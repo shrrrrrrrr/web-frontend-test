@@ -24,7 +24,7 @@ function WorkTask({ task, enrollmentId }) {
   const latest = data?.works?.[0];
   const params = new URLSearchParams({ task_id: task.id, enrollment_id: enrollmentId });
   if (latest) params.set('parent_work_id', latest.id);
-  return <article ref={targetRef} id={`task-${task.id}`} className="study-task" aria-labelledby={`task-title-${task.id}`}><h4 id={`task-title-${task.id}`}>{task.title}</h4><Sentence className="study-prose">{task.description || '老师尚未填写任务说明。'}</Sentence><Sentence className="study-help">截止：{task.deadline ? formatBeijingTime(task.deadline) : '未设置'}</Sentence>
+  return <article ref={targetRef} id={`task-${task.id}`} className="study-task" aria-labelledby={`task-title-${task.id}`}><h4 id={`task-title-${task.id}`}>{task.title}</h4>{task.description&&<Sentence className="study-prose">{task.description}</Sentence>}<Sentence className="study-help">截止：{task.deadline ? formatBeijingTime(task.deadline) : '未设置'}</Sentence>
     <AsyncPageState loading={loading} error={error} onRetry={retry}>
       <ul className="study-work-versions">{data?.works.map((work) => <li key={work.id}><Link to={`/works/${work.id}`}><span>第 {work.version} 版 · {work.title}</span><PixelTag tone={work.review_status === 'approved' ? 'success' : work.review_status === 'rejected' && work.id === latest.id ? 'warning' : 'neutral'}>{work.review_status === 'rejected' ? work.id === latest.id ? '需修改' : '已修改' : work.review_status === 'approved' ? '已通过' : '待评审'}</PixelTag></Link></li>)}</ul>
       {latest?.reject_reason && <Alert type="warning" title="导师退回修改" description={latest.reject_reason} />}

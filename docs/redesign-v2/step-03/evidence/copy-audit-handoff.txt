@@ -1,0 +1,1 @@
+PASS: 912 system IDs (107 new), 805 old entries exact, 900 used, 12 inactive historical IDs retained; frozen files unchanged; 34 synthetic teaching snapshots kept outside DB.

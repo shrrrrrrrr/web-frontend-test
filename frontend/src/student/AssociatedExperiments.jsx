@@ -1,8 +1,8 @@
 import Sentence from '../content/Sentence';
-import { coursePresentation } from './space/identity';
+import {useCoursePresentation} from './space/CoursePresentation';
 import { Button, Space, Typography } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { associatedExperiments, configuredExperiments } from './experimentConfig';
+import { associatedExperiments } from './experimentConfig';
 import { associatedExperimentLink } from './experimentContext';
 import { PixelButton } from './visual/PixelUI';
 import PixelIcon from './visual/PixelIcon';
@@ -10,7 +10,7 @@ import PixelIcon from './visual/PixelIcon';
 export default function AssociatedExperiments({ courseId, lessonId, stage, cardId, variant = 'inline' }) {
   const navigate = useNavigate();
   const context = { courseId, lessonId, stage, cardId };
-  const items = associatedExperiments(context, configuredExperiments(import.meta.env.DEV && import.meta.env.VITE_STUDENT_TEST_CONFIG === '1', coursePresentation(courseId).sample));
+  const items = associatedExperiments(context, useCoursePresentation().experiments);
   if (!items.length) return null;
   if (variant === 'study') return <aside className="study-experiment" aria-label="关联实验">
     <div className="study-experiment-heading"><PixelIcon name="lab" />动手验证一下</div>

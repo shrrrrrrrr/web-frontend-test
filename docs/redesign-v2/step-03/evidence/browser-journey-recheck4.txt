@@ -1,0 +1,289 @@
+▶ 第三步真实内容维护→学生读取与上传恢复完整旅程
+  ✔ 导师通过页面创建明确主题课程，原入口排课和任务保留 (6290.8502ms)
+  ✔ 页面填写介绍、章节/排序、课时提示与任务要求，清空说明和读失败保输入 (7567.5362ms)
+  ✔ 原卡片/练习编辑发布和真实持久化滑翔机关联 (4998.4833ms)
+  ✔ 公共/课时资料与四种新增格式、混合失败队列、重试不重复成功 (2349.1685ms)
+失败页面 http://127.0.0.1:5199/courses/9003?tab=maintenance PBL
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+帮助与反馈
+张导师
+学术导师
+返回
+内容维护闭环 · 隔离验收课程
+发布课程
+主题
+—
+	
+适用学段
+初中
+
+
+难度
+基础
+	
+状态
+草稿
+
+
+创建者
+张导师
+	
+总课时
+—
+
+仅用于隔离端到端验收，不是正式教学内容。
+
+课程内容维护
+课时安排
+课程回放
+课程资源
+选课学生 (0)
+课程内容维护
+
+填写真实教学内容；学生在课程地图和对应课时读取。不会改变学习门槛、评分或作品历史
+
+重新读取
+课程介绍与显示
+章节与课时
+任务要求与教学提示
+教学资料与回放
+实验关联
+课程资料
+
+每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载
+
+队列已绑定当前课程及选择时的课时和类型，之后改变选择不会修改已有队列
+
+观察与比较（验收课时）
+课件
+选择文件
+上传待处理文件
+只重试失败项
+取消待上传文件
+公共说明.md
+上传成功0.00 MB课程公共资料课件
+
+已保存对象 ID #9002
+
+观察记录.csv
+上传成功0.00 MB课程公共资料课件
+
+已保存对象 ID #9003
+
+记录.xls
+上传成功0.00 MB课程公共资料课件
+
+已保存对象 ID #9004
+
+记录.xlsx
+上传成功0.02 MB课程公共资料课件
+
+已保存对象 ID #9005
+
+本课时资料.txt
+上传成功0.00 MB观察与比较（验收课时）课件
+
+已保存对象 ID #9006
+
+课堂回放
+
+队列已绑定当前课程及选择时的课时和类型，之后改变选择不会修改已有队列
+
+观察与比较（验收课时）
+选择文件
+上传待处理文件
+只重试失败项
+取消待上传文件
+课堂回顾.webm
+上传成功0.00 MB观察与比较（验收课时）
+
+已保存对象 ID #1
+
+本课时资料.txt
+观察与比较（验收课时）
+
+本课时资料.txt · TXT · 42 B
+
+可检索
+下 载
+修改资料说明与归属
+删 除
+记录.xlsx
+课程公共资料
+
+记录.xlsx · XLSX · 15861 B
+
+格式不支持
+下 载
+修改资料说明与归属
+删 除
+记录.xls
+课程公共资料
+
+记录.xls · XLS · 3584 B
+
+格式不支持
+下 载
+修改资料说明与归属
+删 除
+观察记录.csv
+课程公共资料
+
+观察记录.csv · CSV · 23 B
+
+格式不支持
+下 载
+修改资料说明与归属
+删 除
+公共说明.md
+课程公共资料
+
+公共说明.md · MD · 33 B
+
+格式不支持
+下 载
+修改资料说明与归属
+删 除
+课堂回顾.webm
+课堂回放 · 观察与比较（验收课时）
+修改资料说明与归属
+查看索引与重试
+
+上传和索引是不同状态；解析失败只重试索引，不重复上传。扫描 PDF 没有 OCR
+
+类型	上限	学生预览	AI 文字索引
+
+类型
+	
+上限
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.jpeg	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.png	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.gif	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.webp	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.pdf	50 MB	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	仅下载（视频回放使用专用入口）	不支持文字索引 about:blank 
+  ✖ 页面上传真实可播放回放和私有封面，三尺寸维护/队列/格式矩阵可用 (16584.3187ms)
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (42802.9148ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 4
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 43540.3164
+
+✖ failing tests:
+
+test at tests\redesign-v2.step03.browser.test.js:17:54
+✖ 页面上传真实可播放回放和私有封面，三尺寸维护/队列/格式矩阵可用 (16584.3187ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('tab', { name: '课程介绍与显示', exact: true })[22m
+  [2m    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-test-tab-intro" aria-controls="rc-tabs-test-panel-intro">课程介绍与显示</div>[22m
+  [2m  - attempting click action[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is not stable[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - element is outside of the viewport[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - element is outside of the viewport[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 100ms[22m
+  [2m    23 × waiting for element to be visible, enabled and stable[22m
+  [2m       - element is visible, enabled and stable[22m
+  [2m       - scrolling into view if needed[22m
+  [2m       - done scrolling[22m
+  [2m       - element is outside of the viewport[22m
+  [2m     - retrying click action[22m
+  [2m       - waiting 500ms[22m
+  
+      at tab (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:18:59)
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:54:83
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:78)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:46)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:50:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('tab', { name: '课程介绍与显示', exact: true })", '    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-test-tab-intro" aria-controls="rc-tabs-test-panel-intro">课程介绍与显示</div>', '  - attempting click action', '    - waiting for element to be visible, enabled and stable', '    - element is not stable', '  - retrying click action', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - element is outside of the viewport', '  - retrying click action', '    - waiting 20ms', '    2 × waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - element is outside of the viewport', '    - retrying click action', '      - waiting 100ms', '    23 × waiting for element to be visible, enabled and stable', '       - element is visible, enabled and stable', '       - scrolling into view if needed', '       - done scrolling', '       - element is outside of the viewport', '     - retrying click action', '       - waiting 500ms' ]
+  }
+
+test at tests\redesign-v2.step03.browser.test.js:12:1
+✖ 第三步真实内容维护→学生读取与上传恢复完整旅程 (42802.9148ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('tab', { name: '课程介绍与显示', exact: true })[22m
+  [2m    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-test-tab-intro" aria-controls="rc-tabs-test-panel-intro">课程介绍与显示</div>[22m
+  [2m  - attempting click action[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is not stable[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - element is outside of the viewport[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - element is outside of the viewport[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 100ms[22m
+  [2m    23 × waiting for element to be visible, enabled and stable[22m
+  [2m       - element is visible, enabled and stable[22m
+  [2m       - scrolling into view if needed[22m
+  [2m       - done scrolling[22m
+  [2m       - element is outside of the viewport[22m
+  [2m     - retrying click action[22m
+  [2m       - waiting 500ms[22m
+  
+      at tab (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:18:59)
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:54:83
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:78)
+      at async scenario (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:17:46)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03.browser.test.js:50:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('tab', { name: '课程介绍与显示', exact: true })", '    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-test-tab-intro" aria-controls="rc-tabs-test-panel-intro">课程介绍与显示</div>', '  - attempting click action', '    - waiting for element to be visible, enabled and stable', '    - element is not stable', '  - retrying click action', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - element is outside of the viewport', '  - retrying click action', '    - waiting 20ms', '    2 × waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - element is outside of the viewport', '    - retrying click action', '      - waiting 100ms', '    23 × waiting for element to be visible, enabled and stable', '       - element is visible, enabled and stable', '       - scrolling into view if needed', '       - done scrolling', '       - element is outside of the viewport', '     - retrying click action', '       - waiting 500ms' ]
+  }

@@ -5,7 +5,7 @@ import client from '../../api/client';
 import { requestError } from '../../utils/requestError';
 import { STUDENT_COURSES_CHANGED } from '../accessPolicy';
 import { CourseExperienceContext } from './useCourseExperience';
-import { coursePresentation } from './identity';
+import { useCoursePresentation } from './CoursePresentation';
 import { copyText } from '../../content/copy';
 
 export default function CourseExperience({ children }) {
@@ -13,6 +13,7 @@ export default function CourseExperience({ children }) {
   return id ? <Session key={`${user.id}:${id}`} id={id}>{children}</Session> : children;
 }
 function Session({ id, children }) {
+  const look=useCoursePresentation();
   const { aiAPI }=useCourseApis();
   const [catalog,setCatalog]=useState({loading:true,error:null,enabled:null,course:null});
   const [draft,setDraft]=useState(''),[messages,setMessages]=useState([]),[waiting,setWaiting]=useState(false);
@@ -53,11 +54,12 @@ function Session({ id, children }) {
     finally {if(live.current&&ticket===avatarSeq.current)avatarBusy.current=false;}
   };
   useEffect(()=>{
-    live.current=true;const timer=setTimeout(()=>{void load();if(coursePresentation(id).theme==='voyage')void readAvatar();},0);
+    live.current=true;const timer=setTimeout(()=>{void load();},0);
     const changed=({detail})=>{if(!detail.courses.some(c=>String(c.id)===id))clear();else void load();};
     window.addEventListener(STUDENT_COURSES_CHANGED,changed);
     return()=>{invalidate();clearTimeout(timer);window.removeEventListener(STUDENT_COURSES_CHANGED,changed);};
   },[id,load,readAvatar,clear,invalidate]);
+  useEffect(()=>{if(look.theme==='voyage'){const timer=setTimeout(()=>void readAvatar(),0);return()=>clearTimeout(timer);}},[look.theme,readAvatar]);
   const ask=async()=>{
     const question=draft.trim();if(!question||question.length>1000||busy.current||!catalog.enabled||catalog.loading||catalog.error||!catalog.course)return;
     busy.current=true;const ticket=++sequence.current,messageId=++counter.current;

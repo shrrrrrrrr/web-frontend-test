@@ -19,7 +19,7 @@ export async function setup({frontendDir=path.join(root,'frontend')}={}){
  execFileSync(openssl,['req','-x509','-newkey','rsa:2048','-nodes','-keyout',key,'-out',cert,'-days','1','-subj','/CN=localhost','-addext','subjectAltName=IP:127.0.0.1,DNS:localhost'],{stdio:'pipe',windowsHide:true});env.NODE_EXTRA_CA_CERTS=cert;
  execFileSync(process.execPath,['-e',"require('./app');require('./services/aiSettingsService').saveSettings({enabled:1,base_url:'https://127.0.0.1:3150',api_key:'isolated-test-provider',model:'local-test-only',retrieval_enabled:1,show_sources:1})"],{cwd:path.join(root,'backend'),env,stdio:'pipe',windowsHide:true});
  const db=new Database(env.DB_PATH);
- mkdirSync(path.join(root,'docs/redesign-v2/step-02/visual-patch/regression-evidence'),{recursive:true});
+ mkdirSync(process.env.PBL_EVIDENCE_DIR||path.join(root,'docs/redesign-v2/step-02/visual-patch/regression-evidence'),{recursive:true});
  db.prepare("INSERT INTO users(username,password_hash,real_name,role) SELECT 'step02_other',password_hash,'另一测试同学','student' FROM users WHERE id=4").run();
  const other=db.prepare("SELECT id FROM users WHERE username='step02_other'").get().id;
  for(const id of [9001,9002])db.prepare("INSERT INTO enrollments(student_id,course_id,status) VALUES(?,?,'active')").run(other,id);

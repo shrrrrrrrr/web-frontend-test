@@ -1,4 +1,3 @@
-// 人工修改来源：纯文本、稳定 ID、显式可见性。可选条目空字符串不会补默认。
 export const uiCopy = {
   "platform.nav.courses": {
     "text": "课程",
@@ -11150,5 +11149,1075 @@ export const uiCopy = {
     "type": "system",
     "futureTeacher": false,
     "sourceFile": "frontend/src/pages/auth/Login.jsx"
+  },
+  "maintenance.title": {
+    "text": "课程内容维护",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "title",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.intro": {
+    "text": "课程介绍与显示",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "intro",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.chapters": {
+    "text": "章节与课时",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "chapters",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.tasks": {
+    "text": "任务要求与教学提示",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "tasks",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.resources": {
+    "text": "教学资料与回放",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "resources",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.experiments": {
+    "text": "实验关联",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "experiments",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.purpose": {
+    "text": "填写真实教学内容；学生在课程地图和对应课时读取。不会改变学习门槛、评分或作品历史",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "purpose",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.save": {
+    "text": "保存",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "save",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.saved": {
+    "text": "已保存",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "saved",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.saving": {
+    "text": "正在保存",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "saving",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.retryRead": {
+    "text": "重新读取",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "retryRead",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.readFailed": {
+    "text": "已保存，列表读取失败；请重新读取，不要重复提交",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "readFailed",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.uploadReadFailed": {
+    "text": "已上传，列表读取失败；请重新读取，不要重新上传",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "uploadReadFailed",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.loadFailed": {
+    "text": "维护内容读取失败",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "loadFailed",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.archived": {
+    "text": "课程已归档，当前只能查看",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "archived",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.discard": {
+    "text": "有未保存文字或待上传文件，确定离开并放弃吗？",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "discard",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.title": {
+    "text": "名称",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.title",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.description": {
+    "text": "说明",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.description",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.theme": {
+    "text": "教学主题（原含义）",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.theme",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.presentation_theme": {
+    "text": "界面主题",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.presentation_theme",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.driving_question": {
+    "text": "驱动问题",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.driving_question",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.story_line": {
+    "text": "故事线",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.story_line",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.materials_needed": {
+    "text": "所需材料",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.materials_needed",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.cover_image": {
+    "text": "课程封面",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.cover_image",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.chapter_id": {
+    "text": "所属章节",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.chapter_id",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.teaching_tip": {
+    "text": "教学提示",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.teaching_tip",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.label": {
+    "text": "关联入口名称",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.label",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.lesson_id": {
+    "text": "所属课时",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.lesson_id",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.stage": {
+    "text": "学习阶段",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.stage",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.cardId": {
+    "text": "知识卡片",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.cardId",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.field.enabled": {
+    "text": "启用关联",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "field.enabled",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.theme.campus": {
+    "text": "北航校园",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "theme.campus",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.theme.voyage": {
+    "text": "星海远航",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "theme.voyage",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.cover.none": {
+    "text": "不指定封面",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "cover.none",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.cover.campus": {
+    "text": "现有校园场景",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "cover.campus",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.cover.voyage": {
+    "text": "现有宇宙场景",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "cover.voyage",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.cover.uploaded": {
+    "text": "保留已上传封面",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "cover.uploaded",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.cover.note": {
+    "text": "JPG/PNG/WebP，最多 5 MB、1600 万像素；仅授权账号可读取",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "cover.note",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.required": {
+    "text": "请填写名称（最多 120 字）",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "required",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.optional": {
+    "text": "可选；清空后学生不再显示此说明",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "optional",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.unassigned": {
+    "text": "未分组",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "unassigned",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.public": {
+    "text": "课程公共资料",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "public",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.free": {
+    "text": "课程自由入口",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "free",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.newChapter": {
+    "text": "新增章节",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "newChapter",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.edit": {
+    "text": "编辑",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "edit",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.remove": {
+    "text": "删除",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "remove",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.moveUp": {
+    "text": "上移",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "moveUp",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.moveDown": {
+    "text": "下移",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "moveDown",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.chapterDelete": {
+    "text": "仅空章节可删除，课时和学习记录不会删除",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "chapterDelete",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.lessonEdit": {
+    "text": "编辑课时说明与归属",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "lessonEdit",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.cardsEdit": {
+    "text": "设置知识卡片与习题",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "cardsEdit",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.tasksEdit": {
+    "text": "编辑任务文字",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "tasksEdit",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.noTasks": {
+    "text": "本课时没有作品任务；可继续原学习流程",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "noTasks",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.originalTasks": {
+    "text": "添加任务与排课沿用课程详情原入口",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "originalTasks",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.addExperiment": {
+    "text": "新增滑翔机关联",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "addExperiment",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.experimentNote": {
+    "text": "仅关联已有滑翔机；自由入口不指定课时，指定卡片时选择知识卡片阶段。不会自动提交成果",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "experimentNote",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.stage.0": {
+    "text": "课堂回顾",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "stage.0",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.stage.1": {
+    "text": "知识卡片",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "stage.1",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.stage.2": {
+    "text": "学习报告",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "stage.2",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.stage.3": {
+    "text": "反馈与反思",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "stage.3",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.confirmRemove": {
+    "text": "确认解除该关联？不会删除试飞与学习历史",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "confirmRemove",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.resource": {
+    "text": "课程资料",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.resource",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.replay": {
+    "text": "课堂回放",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.replay",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.cover": {
+    "text": "封面图片",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.cover",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.choose": {
+    "text": "选择文件",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.choose",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.start": {
+    "text": "上传待处理文件",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.start",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.retry": {
+    "text": "只重试失败项",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.retry",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.cancel": {
+    "text": "取消待上传文件",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.cancel",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.confirmCancel": {
+    "text": "取消待上传项；正在上传的请求停止后结果需核对列表，已成功记录不会删除",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.confirmCancel",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.pending": {
+    "text": "待上传",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.pending",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.uploading": {
+    "text": "上传中",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.uploading",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.success": {
+    "text": "上传成功",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.success",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.failed": {
+    "text": "上传失败，可重试",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.failed",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.invalid": {
+    "text": "文件类型或大小不符合本入口规则",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.invalid",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.cancelled": {
+    "text": "已取消",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.cancelled",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.uncertain": {
+    "text": "请求结果未确认，请先核对列表",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.uncertain",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.id": {
+    "text": "已保存对象 ID",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.id",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.bound": {
+    "text": "队列已绑定当前课程及选择时的课时和类型，之后改变选择不会修改已有队列",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.bound",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.limit": {
+    "text": "每次最多选择 20 份资料",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.limit",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.formatTitle": {
+    "text": "可上传、预览与 AI 解析说明",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.formatTitle",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.type": {
+    "text": "资料用途",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.type",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.description": {
+    "text": "资料说明",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.description",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.download": {
+    "text": "下载",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.download",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.edit": {
+    "text": "修改资料说明与归属",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.edit",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.ai": {
+    "text": "AI 文字索引",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.ai",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.videoNote": {
+    "text": "MP4/WebM，最多 500 MB；学生在公共或对应课时课堂回顾中播放",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.videoNote",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.resourceNote": {
+    "text": "每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.resourceNote",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.parseNote": {
+    "text": "上传和索引是不同状态；解析失败只重试索引，不重复上传。扫描 PDF 没有 OCR",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.parseNote",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.index": {
+    "text": "查看索引与重试",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.index",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.mime": {
+    "text": "类型",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.mime",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.preview": {
+    "text": "学生预览",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.preview",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.max": {
+    "text": "上限",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.max",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.upload.scope": {
+    "text": "显示位置",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "upload.scope",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.type.courseware": {
+    "text": "课件",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "type.courseware",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.type.lesson_plan": {
+    "text": "教案",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "type.lesson_plan",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.type.guide_card": {
+    "text": "指导卡",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "type.guide_card",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.type.template": {
+    "text": "模板",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "type.template",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.type.video": {
+    "text": "视频资料",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "type.video",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.type.other": {
+    "text": "其他",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "type.other",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.index.not_added": {
+    "text": "未加入",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "index.not_added",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.index.pending": {
+    "text": "等待解析",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "index.pending",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.index.processing": {
+    "text": "解析中",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "index.processing",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.index.ready": {
+    "text": "可检索",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "index.ready",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.index.failed": {
+    "text": "解析失败",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "index.failed",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.index.unsupported": {
+    "text": "格式不支持",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "index.unsupported",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.metadata.error": {
+    "text": "暂时无法读取课程显示",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "metadata.error",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "maintenance.metadata.loading": {
+    "text": "正在读取课程显示",
+    "enabled": true,
+    "page": "课程内容维护",
+    "position": "metadata.loading",
+    "purpose": "第三步维护入口与状态",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
   }
 };

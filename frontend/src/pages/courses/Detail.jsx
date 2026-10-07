@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useParams, useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { Card, Descriptions, Table, Button, Tag, Tabs, Form, Input, Modal, Result, Space, Typography, message, Checkbox, Select, Upload, Popconfirm } from 'antd';
 import { ArrowLeftOutlined, DownloadOutlined, PlusOutlined, UploadOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { courseAPI, studentAPI, authAPI } from '../../api';
 import { useAuth } from '../../store/AuthContext';
+import ContentMaintenance from './ContentMaintenance';
+import {maintenanceText as c} from './maintenanceCopy';
 
 const { Title, Text } = Typography;
 
@@ -20,6 +22,8 @@ export default function CourseDetail() {
   const { id } = useParams();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const [search,setSearch]=useSearchParams();
+  const requestRevision=useRef(0);
   const [course, setCourse] = useState(null);
   const [pageLoading, setPageLoading] = useState(true);
   const [loadError, setLoadError] = useState('');
@@ -60,28 +64,31 @@ export default function CourseDetail() {
   const [removeLoading, setRemoveLoading] = useState(false);
 
   const loadData = async () => {
+    const revision=++requestRevision.current;
     setPageLoading(true);
     setLoadError('');
     try {
       const res = await courseAPI.detail(id);
+      if(revision!==requestRevision.current)return;
       setCourse(res.course);
       setLessons(res.lessons || []);
       setResources(res.resources || []);
-      courseAPI.listReplays(id).then((replayRes) => setReplays(replayRes.replays || [])).catch(() => {});
+      courseAPI.listReplays(id).then((replayRes) => {if(revision===requestRevision.current)setReplays(replayRes.replays || []);}).catch(() => {});
       setEnrollments(res.enrollments || []);
       setTasks(res.tasks || []);
       setTeachers(res.teachers || []);
     } catch (err) {
+      if(revision!==requestRevision.current)return;
       setCourse(null);
       setLoadError(err?.response?.data?.error || '课程不存在，或当前身份无权查看。');
     } finally {
-      setPageLoading(false);
+      if(revision===requestRevision.current)setPageLoading(false);
     }
   };
 
   // 页面首次进入时加载完整详情；loadData 会在异步回调中更新多个状态。
   // eslint-disable-next-line react-hooks/set-state-in-effect, react-hooks/exhaustive-deps
-  useEffect(() => { loadData(); }, [id]);
+  useEffect(() => { loadData(); return()=>{requestRevision.current++;}; }, [id]);
 
   const handleAddLesson = async (values) => {
     try {
@@ -310,7 +317,7 @@ export default function CourseDetail() {
     }
   };
 
-  if (!course) return pageLoading
+  if (!course||String(course.id)!==String(id)) return pageLoading
     ? <div style={{ padding: 24 }}><Card loading /></div>
     : <Result status={loadError.includes('无权') ? '403' : '404'} title="无法打开课程" subTitle={loadError} extra={<Space><Button onClick={() => navigate('/courses')}>返回课程列表</Button><Button type="primary" onClick={loadData}>重新加载</Button></Space>} />;
 
@@ -319,6 +326,7 @@ export default function CourseDetail() {
   const firstLearningLesson = lessons.find((lesson) => lesson.status !== 'cancelled');
 
   const tabItems = [
+    ...(course.can_manage?[{key:'maintenance',label:c('title'),children:<ContentMaintenance key={id} id={id}/>}]:[]),
     {
       key: 'lessons', label: '课时安排',
       children: (
@@ -439,9 +447,9 @@ export default function CourseDetail() {
   }
 
   return (
-    <div>
-      <Space style={{ marginBottom: 16 }}>
-        <Button icon={<ArrowLeftOutlined />} onClick={() => navigate('/courses')}>返回</Button>
+    <div className={course.can_manage?'course-maintenance-page':undefined}>
+      <Space className="course-detail-header" style={{ marginBottom: 16 }}>
+        <Link className="ant-btn ant-btn-default" to="/courses"><ArrowLeftOutlined/>返回</Link>
         <Title level={4} style={{ margin: 0 }}>{course.title}</Title>
         {course.can_manage && course.status !== 'published' && (
           <Button type="primary" size="small" onClick={() => handleChangeStatus('published')}>发布课程</Button>
@@ -507,11 +515,11 @@ export default function CourseDetail() {
         </Card>
       )}
 
-      <Tabs items={tabItems} />
+      <Tabs activeKey={tabItems.some(item=>item.key===search.get('tab'))?search.get('tab'):tabItems[0].key} onChange={key=>setSearch({tab:key},{replace:true})} items={tabItems} destroyOnHidden={false}/>
 
       {/* 添加课时 Modal */}
       <Modal title="添加课时" open={lessonModal} onCancel={() => setLessonModal(false)} onOk={() => lessonForm.submit()}>
-        <Form form={lessonForm} layout="vertical" onFinish={handleAddLesson}>
+        <Form name="course-add-lesson" form={lessonForm} layout="vertical" onFinish={handleAddLesson}>
           <Form.Item name="title" label="课时名称" rules={[{ required: true }]}><Input /></Form.Item>
           <Form.Item name="description" label="描述"><Input.TextArea rows={2} /></Form.Item>
           <Form.Item name="duration" label="时长（分钟）"><Input type="number" /></Form.Item>
@@ -527,7 +535,7 @@ export default function CourseDetail() {
 
       {/* 添加任务 Modal */}
       <Modal title="添加任务" open={taskModal} onCancel={() => setTaskModal(false)} onOk={() => taskForm.submit()}>
-        <Form form={taskForm} layout="vertical" onFinish={handleAddTask}>
+        <Form name="course-add-task" form={taskForm} layout="vertical" onFinish={handleAddTask}>
           <Form.Item name="title" label="任务名称" rules={[{ required: true }]}><Input /></Form.Item>
           <Form.Item name="description" label="描述"><Input.TextArea rows={2} /></Form.Item>
           <Form.Item name="task_type" label="任务类型" initialValue="inquiry">
@@ -547,7 +555,7 @@ export default function CourseDetail() {
         onOk={() => replayForm.submit()}
         confirmLoading={replayUploading}
       >
-        <Form form={replayForm} layout="vertical" onFinish={handleReplaySubmit}>
+        <Form name="course-replay" form={replayForm} layout="vertical" onFinish={handleReplaySubmit}>
           <Form.Item name="title" label="回放标题" rules={[{ required: true, message: '请输入回放标题' }]}>
             <Input placeholder="如：第 3 讲 机翼上反角实验" />
           </Form.Item>

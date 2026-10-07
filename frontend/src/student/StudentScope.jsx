@@ -8,6 +8,7 @@ import client from '../api/client';
 import { useAuth } from '../store/AuthContext';
 import { currentAccessTarget, removedCourseIds, STUDENT_ACCESS_CHECK, STUDENT_COURSES_CHANGED } from './accessPolicy';
 import CourseExperience from './space/CourseExperience';
+import CoursePresentationProvider from './space/CoursePresentation';
 
 // 后端负责最终授权。这里只清除已确认失效的页面，并保留与错误无关的输入。
 export default function StudentScope({ children }) {
@@ -106,8 +107,8 @@ export default function StudentScope({ children }) {
   if (!state.ready) return state.warning
     ? <StudentPageStatus title="暂时无法确认账号与课程" description="暂时无法连接服务来确认你的账号与课程。这不代表课程已撤回，请检查网络后重新检查。">{retry}</StudentPageStatus>
     : <PageLoading>正在确认可进入的课程，请稍候。</PageLoading>;
-  return <CourseExperience>
+  return <CoursePresentationProvider><CourseExperience>
     {state.warning && <Alert type="warning" showIcon title="权限检查暂未完成" description={state.warning} action={retry} style={{ margin: 16 }} />}
     <div key={`${user.id}:${location.pathname}:${/\/archives$/.test(location.pathname) ? state.archiveRevision : 0}`}>{children}</div>
-  </CourseExperience>;
+  </CourseExperience></CoursePresentationProvider>;
 }

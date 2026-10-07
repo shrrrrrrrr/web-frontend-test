@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Card, Form, Input, Select, Button, Typography, message, Space } from 'antd';
+import { Alert,Card, Form, Input, Select, Button, Typography, message, Space } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { courseAPI } from '../../api';
 import { useAuth } from '../../store/AuthContext';
+import {maintenanceText as c} from './maintenanceCopy';
 
 const { Title } = Typography;
 
@@ -16,6 +17,9 @@ export default function CourseForm() {
   const { user } = useAuth();
   const [editableId, setEditableId] = useState(null);
   const [loadedCourse, setLoadedCourse] = useState(null);
+  const [readError,setReadError]=useState(''),[attempt,setAttempt]=useState(0);
+  const dirty=useRef(false),busy=useRef(false);
+  useEffect(()=>{const warn=e=>{if(dirty.current){e.preventDefault();e.returnValue='';}};window.addEventListener('beforeunload',warn);return()=>window.removeEventListener('beforeunload',warn);},[]);
 
   useEffect(() => {
     let cancelled = false;
@@ -29,17 +33,18 @@ export default function CourseForm() {
         }
         setLoadedCourse(res.course);
         setEditableId(id);
-      }).catch(() => message.error('加载失败'));
+      }).catch(error => {if(!cancelled)setReadError(error.response?.data?.error||c('loadFailed'));});
     }
     return () => { cancelled = true; };
-  }, [id, form, isEdit, navigate]);
+  }, [id, form, isEdit, navigate,attempt]);
 
   useEffect(() => {
     if (isEdit && editableId === id && loadedCourse) form.setFieldsValue(loadedCourse);
   }, [editableId, id, isEdit, loadedCourse, form]);
 
   const onFinish = async (values) => {
-    if (isEdit && editableId !== id) return;
+    if (busy.current||isEdit && editableId !== id) return;
+    busy.current=true;
     setLoading(true);
     try {
       if (isEdit) {
@@ -49,29 +54,30 @@ export default function CourseForm() {
         await courseAPI.create(values);
         message.success('课程创建成功');
       }
-      navigate('/courses');
+      dirty.current=false;navigate('/courses');
     } catch { /* handled */ }
-    finally { setLoading(false); }
+    finally { busy.current=false;setLoading(false); }
   };
 
   if (!['admin', 'academic_mentor'].includes(user?.role)) return <p>无权管理课程</p>;
-  if (isEdit && editableId !== id) return <p>正在检查课程编辑权限…</p>;
+  if (isEdit && editableId !== id) return readError?<Alert type="error" title={readError} action={<Button onClick={()=>setAttempt(n=>n+1)}>{c('retryRead')}</Button>}/>:<p>正在检查课程编辑权限…</p>;
 
   return (
     <div style={{ maxWidth: 700 }}>
       <Space style={{ marginBottom: 16 }}>
-        <Button icon={<ArrowLeftOutlined />} onClick={() => navigate('/courses')}>返回</Button>
+        <Button icon={<ArrowLeftOutlined />} onClick={() => {if(!dirty.current||window.confirm(c('discard')))navigate('/courses');}}>返回</Button>
         <Title level={4} style={{ margin: 0 }}>{isEdit ? '编辑课程' : '创建课程'}</Title>
       </Space>
       <Card>
-        <Form form={form} layout="vertical" onFinish={onFinish}>
+        <Form form={form} layout="vertical" onFinish={onFinish} onValuesChange={()=>{dirty.current=true;}} disabled={loading} initialValues={{presentation_theme:'campus'}}>
           <Form.Item name="title" label="课程名称" rules={[{ required: true, message: '请输入课程名称' }]}>
-            <Input />
+            <Input maxLength={120}/>
           </Form.Item>
-          <Form.Item name="theme" label="主题"><Input placeholder="如：航空航天、人工智能" /></Form.Item>
-          <Form.Item name="description" label="课程描述"><Input.TextArea rows={3} /></Form.Item>
-          <Form.Item name="driving_question" label="驱动问题"><Input placeholder="如：如何在月球建立人类基地？" /></Form.Item>
-          <Form.Item name="story_line" label="故事线"><Input.TextArea rows={2} /></Form.Item>
+          <Form.Item name="theme" label="主题"><Input maxLength={120} placeholder="如：航空航天、人工智能" /></Form.Item>
+          <Form.Item name="presentation_theme" label={c('field.presentation_theme')} extra={c('purpose')}><Select options={['campus','voyage'].map(value=>({value,label:c('theme.'+value)}))}/></Form.Item>
+          <Form.Item name="description" label="课程描述"><Input.TextArea maxLength={10000} showCount rows={3} /></Form.Item>
+          <Form.Item name="driving_question" label="驱动问题"><Input maxLength={1000} showCount placeholder="如：如何在月球建立人类基地？" /></Form.Item>
+          <Form.Item name="story_line" label="故事线"><Input.TextArea maxLength={10000} showCount rows={2} /></Form.Item>
           <Form.Item name="grade_level" label="适用学段" rules={[{ required: true }]}>
             <Select options={[
               { label: '小学', value: 'primary' }, { label: '初中', value: 'junior' }, { label: '高中', value: 'senior' },
@@ -82,8 +88,8 @@ export default function CourseForm() {
               { label: '基础', value: 'basic' }, { label: '进阶', value: 'advanced' }, { label: '挑战', value: 'challenge' },
             ]} />
           </Form.Item>
-          <Form.Item name="total_hours" label="总课时"><Input type="number" placeholder="小时" /></Form.Item>
-          <Form.Item name="materials_needed" label="所需材料"><Input.TextArea rows={2} /></Form.Item>
+          <Form.Item name="total_hours" label="总课时"><Input type="number" min={0} max={10000} step={1} placeholder="小时" /></Form.Item>
+          <Form.Item name="materials_needed" label="所需材料"><Input.TextArea maxLength={10000} showCount rows={2} /></Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={loading}>{isEdit ? '保存修改' : '创建课程'}</Button>
           </Form.Item>

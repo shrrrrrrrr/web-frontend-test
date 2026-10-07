@@ -72,6 +72,9 @@ export async function resolveExperimentReturn(context, api) {
     return fallback(mapPath, '原学习阶段当前尚未解锁，已返回课程地图，请按现有学习流程继续。', detail);
   }
   const cardId = url.searchParams.get('cardId');
+  if(Array.isArray(detail.experiments)&&!detail.experiments.some(item=>item.experiment==='glider'&&String(item.lessonId)===String(lessonId)&&(item.stage==null||item.stage===stage)&&(item.cardId==null||String(item.cardId)===String(cardId)))){
+    return fallback(mapPath,'原实验关联已解除或来源已变化，已返回课程地图。',detail);
+  }
   if (cardId && (stage !== 1 || availableCardIndex(payload.cards || [], cardId, payload.progress) < 0)) {
     return fallback(mapPath, '原知识卡片已不可访问或尚未解锁，已返回课程地图。', detail);
   }
