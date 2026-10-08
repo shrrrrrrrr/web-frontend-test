@@ -1,4 +1,5 @@
 import Sentence from '../content/Sentence';
+import {reflectionFields} from './reflectionModel';
 import {copyText,copyFragment} from '../content/copy';
 import { Empty, Pagination } from 'antd';
 import Link from './space/SpaceLink';
@@ -26,5 +27,5 @@ export function WorkRecords({ works, compact = false }) {
 }
 
 export function ReflectionFields({ reflection }) {
-  return <dl className="archive-reflection-fields">{[['difficulty', copyText('system.records.008')], ['solution', copyText('system.records.009')], ['improvement', copyText('system.records.010')], ['new_question', copyText('system.records.011')]].map(([field, label]) => <div key={field}><dt>{label}</dt><dd>{reflection[field] || copyText('system.records.012')}</dd></div>)}</dl>;
+  return <dl className="archive-reflection-fields">{reflectionFields(reflection).map(([field, id]) => <div key={field}><dt>{copyText(id)}</dt><Sentence as="dd">{reflection[field] || copyText('system.records.012')}</Sentence></div>)}</dl>;
 }

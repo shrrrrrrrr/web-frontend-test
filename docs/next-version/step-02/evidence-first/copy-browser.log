@@ -1,0 +1,22 @@
+✖ 第二步独立文案 HTML 真实编辑、JSON 导出、保存重开，旧稿不变 (33065.452ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 33817.3552
+
+✖ failing tests:
+
+test at tests\next-step02-copy.browser.test.js:10:1
+✖ 第二步独立文案 HTML 真实编辑、JSON 导出、保存重开，旧稿不变 (33065.452ms)
+  locator.inputValue: Timeout 30000ms exceeded.
+  Call log:
+  [2m  - waiting for getByLabel('next2.reflection.entry', { exact: true })[22m
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02-copy.browser.test.js:23:104) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByLabel('next2.reflection.entry', { exact: true })" ]
+  }

@@ -1,0 +1,205 @@
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"隔离验收：请比较条件并保留证据。","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":null,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"82a5b6337c0364327e1f906fa7c18ce71f46f1273b6ac394175fe7b1bc5c1f44"}
+FAILURE 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 Expected values to be strictly equal:
+
+null !== 2
+
+PAGE http://127.0.0.1:4194/courses/9003?tab=maintenance PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+← 返回上一页
+帮助与反馈
+张导师
+学术导师
+返回
+星海远航
+撤回为草稿
+主题
+—
+	
+适用学段
+初中
+
+
+难度
+基础
+	
+状态
+已发布
+
+
+创建者
+张导师
+	
+总课时
+—
+课程内容维护
+课时安排
+课程回放
+课程资源
+选课学生 (1)
+课程内容维护
+
+填写真实教学内容；学生在课程地图和对应课时读取。不会改变学习门槛、评分或作品历史
+
+重新读取
+可视化填写 / 学生效果预览
+课程介绍与显示
+地图计划与课时
+任务要求与教学提示
+教学资料与回放
+实验关联
+点击虚线教学区域编辑，预览不提交学习记录、不显示答案解析
+星海远航
+编辑课程封面
+课程介绍、目标、故事与材料 · 编辑
+选择要填写的课时
+滑翔机试飞理论课
+学生展示位置 / 教学资料
+滑翔机试飞理论课
+
+理论课
+
+课时标题、介绍与安排 · 编辑
+
+隔离验收：请比较条件并保留证据。
+
+2026-10-20T09:00 · 2026-10-20T09:45 · 隔离科创教室 · 授课人待安排 · 45 分钟
+课堂回顾与知识学习
+课堂回顾正文 · 编辑
+
+隔离验收：请比较条件并保留证据。
+
+填写知识卡片与练习
+任务与学习报告
+
+本课内容待老师填写
+
+编辑课时说明 / 报告指导
+实验指导
+实验指导 · 编辑
+
+隔离指导：先记录条件，再自由试飞。
+
+编辑实验关联与返回位置
+课时说明
+
+隔离验收：请比较条件并保留证据
+
+课程资源与回放
+
+本课资料待提供
+
+上传到此课程或课时
+教学准备状态
+内容待准备
+编辑课时说明与归属
+名称
+8 / 120
+说明
+16 / 10000
+可选；清空后学生不再显示此说明
+教学提示
+17 / 2000
+可选；清空后学生不再显示此说明
+课时排序
+上课日期与开始时间
+结束时间
+上课地点
+时长（分钟）
+授课人
+课时展示类型
+理论课
+内容准备状态
+内容待准备
+精彩瞬间说明（照片使用本课资料上传）
+文章标题（可留空）
+文章 HTTPS 链接（可留空，不自动内嵌）
+所属章节
+未分组
+已保存 #90023
+保 存
+PAGE http://127.0.0.1:4194/explore 跳到页面内容
+PBL 科创平台
+课程
+我的
+120
+演示
+王小明
+我的学习空间
+选择一门课程
+
+课程由老师分配。选择课程，进入它的学习空间
+
+课程空间
+工程观察 · 测试课程
+
+用于验证第二门课程的独立记录与默认校园主题，不是正式教学内容
+
+进入课程
+课程空间
+星海远航
+进入课程
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✖ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (6655.5205ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (10923.9066ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11712.0335
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (6655.5205ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 2
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:15:1360
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:12:74)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:15:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (10923.9066ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 2
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:15:1360
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:12:74)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:15:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

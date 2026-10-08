@@ -8,6 +8,7 @@ const { mentorStudentScope, mentorStudentParams, canViewStudent } = require('../
 const { canViewArchive, canAddObservation } = require('../helpers/archivePolicy');
 const { canViewWork } = require('../helpers/workPolicy');
 const { courseBelongsToMentor } = require('../helpers/courseScope');
+const {validateReflection,columns:reflectionColumns}=require('../helpers/reflectionContent');
 
 function loadStudentArchive(studentId, user, courseSpace = null) {
   const student = db.prepare(
@@ -263,14 +264,15 @@ exports.showReflection = (req, res) => {
 // 提交反思日志（仅学生本人；每人每日限量1篇，日期边界按北京时间）
 exports.submitReflection = (req, res) => {
   try {
-    const { enrollment_id, lesson_id, difficulty, solution, improvement, new_question } = req.body;
+    const { enrollment_id, lesson_id } = req.body;
+    const reflection=validateReflection(req.body);
     const actualStudentId = req.user.id;
-    if (req.courseSpace && !enrollment_id) return res.status(400).json({error:'请选择当前课程报名记录'});
+    if (!enrollment_id) return res.status(400).json({error:'请选择有效课程报名记录'});
 
     let enrollmentCourseId = null;
     if (enrollment_id) {
       const enrollment = db.prepare(
-        'SELECT id, course_id FROM enrollments WHERE id = ? AND student_id = ? AND status = ?'
+        "SELECT e.id,e.course_id FROM enrollments e JOIN courses c ON c.id=e.course_id WHERE e.id = ? AND e.student_id = ? AND e.status = ? AND c.status='published'"
       ).get(enrollment_id, actualStudentId, 'active');
       if (!enrollment) {
         return res.status(400).json({ error: '所选课程报名记录不属于该学生' });
@@ -279,7 +281,7 @@ exports.submitReflection = (req, res) => {
     }
 
     if (lesson_id) {
-      const lesson = db.prepare('SELECT id, course_id FROM lessons WHERE id = ?').get(lesson_id);
+      const lesson = db.prepare("SELECT id, course_id FROM lessons WHERE id = ? AND status!='cancelled'").get(lesson_id);
       if (!lesson || (enrollmentCourseId && lesson.course_id !== enrollmentCourseId)) {
         return res.status(400).json({ error: '所选课时不属于当前课程' });
       }
@@ -297,10 +299,10 @@ exports.submitReflection = (req, res) => {
       }
 
       db.prepare(
-        `INSERT INTO reflections (student_id, enrollment_id, lesson_id, difficulty, solution, improvement, new_question)
-         VALUES (?, ?, ?, ?, ?, ?, ?)`
+        `INSERT INTO reflections (student_id, enrollment_id, lesson_id, ${reflectionColumns.join(',')})
+         VALUES (${Array(3+reflectionColumns.length).fill('?').join(',')})`
       ).run(studentId, enrollment_id || null, lesson_id || null,
-            difficulty || null, solution || null, improvement || null, new_question || null);
+            ...reflectionColumns.map(k=>reflection[k]));
       return true;
     });
 
@@ -311,6 +313,7 @@ exports.submitReflection = (req, res) => {
     res.json({ message: '反思日志提交成功！' });
   } catch (err) {
     console.error('提交反思错误:', err);
+    if(err.status)return res.status(err.status).json({error:err.message});
     res.status(500).json({ error: '操作失败，请稍后重试' });
   }
 };

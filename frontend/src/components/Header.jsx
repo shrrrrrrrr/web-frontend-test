@@ -2,6 +2,7 @@ import { Layout, Dropdown, Space, Avatar, Button, Tag } from 'antd';
 import { UserOutlined, LogoutOutlined, MessageOutlined, KeyOutlined } from '@ant-design/icons';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/AuthContext';
+import {copyText} from '../content/copy';
 import NotificationBell from './notifications/NotificationBell';
 
 const { Header } = Layout;
@@ -27,11 +28,7 @@ export default function HeaderBar() {
   const roleInfo = roleMap[user?.role] || { label: user?.role, color: 'default' };
 
   return (
-    <Header style={{
-      background: '#fff', padding: '0 24px', display: 'flex',
-      alignItems: 'center', justifyContent: 'flex-end',
-      borderBottom: '1px solid #f0f0f0', height: 56
-    }}>
+    <Header className="staff-header"><Button className="staff-back" aria-label={copyText('next2.staff.back')} onClick={()=>window.history.state?.idx? navigate(-1):navigate(user.role==='teacher'?'/observer':'/dashboard')}>← {copyText('next2.staff.back')}</Button>
       <Space size="middle">
         {!user?.force_reset_password && <NotificationBell />}
         <Button
@@ -48,11 +45,11 @@ export default function HeaderBar() {
             { key: 'logout', icon: <LogoutOutlined />, label: '退出登录', onClick: handleLogout }
           ]
         }}>
-          <Space style={{ cursor: 'pointer' }}>
+          <Button type="text" className="staff-account"><Space>
             <Avatar size="small" icon={<UserOutlined />} />
             <span style={{ fontWeight: 500 }}>{user?.real_name}</span>
             <Tag color={roleInfo.color}>{roleInfo.label}</Tag>
-          </Space>
+          </Space></Button>
         </Dropdown>
       </Space>
     </Header>

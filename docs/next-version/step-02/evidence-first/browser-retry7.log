@@ -1,0 +1,128 @@
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✔ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (7013.6301ms)
+  ✔ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (4208.125ms)
+FAILURE 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 locator.click: Timeout 12000ms exceeded.
+Call log:
+[2m  - waiting for getByTestId('upload-resource').getByRole('button', { name: /(?:^|\s)取\s*消\s*队\s*列$/ })[22m
+
+PAGE http://127.0.0.1:4194/courses/9003?tab=maintenance 上限	显示位置	学生预览	AI 文字索引
+
+类型
+	
+上限
+	
+显示位置
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.jpeg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.png	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gif	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webp	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pdf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+PAGE http://127.0.0.1:4194/courses/9003/lessons/90023/learn 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+王小明
+返回课程地图
+全部课程
+滑翔机试飞理论课
+
+教学内容正在准备，暂不记录完成
+
+返回课程地图
+课堂回顾
+
+本课内容待老师填写
+
+知识卡片与练习
+
+本课内容待老师填写
+
+任务与学习报告
+
+本课内容待老师填写
+
+实验指导
+
+隔离指导：先记录条件，再自由试飞
+
+课时说明
+
+隔离验收：请比较条件并保留证据
+
+课程资源与回放
+
+本课资料待提供
+
+重置机器人位置（机器人聚焦后也可按 Home）
+  ✖ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (14759.6642ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (30216.7339ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 31087.8279
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (14759.6642ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByTestId('upload-resource').getByRole('button', { name: /(?:^|\s)取\s*消\s*队\s*列$/ })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:17:1352
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:17:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByTestId('upload-resource').getByRole('button', { name: /(?:^|\\s)取\\s*消\\s*队\\s*列$/ })" ]
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (30216.7339ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByTestId('upload-resource').getByRole('button', { name: /(?:^|\s)取\s*消\s*队\s*列$/ })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:17:1352
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:17:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByTestId('upload-resource').getByRole('button', { name: /(?:^|\\s)取\\s*消\\s*队\\s*列$/ })" ]
+  }

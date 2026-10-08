@@ -1,0 +1,22 @@
+{
+  "records": [
+    {
+      "name": "可视化填写真实课时安排、指导与学生布局；预览无学习副作用",
+      "status": "passed"
+    },
+    {
+      "name": "新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览",
+      "status": "failed",
+      "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ant-modal').visible().last().getByRole('button', { name: /^新\\s*增\\s*知\\s*识\\s*卡\\s*片$/ })\u001b[22m\n"
+    }
+  ],
+  "pageErrors": [],
+  "routeSmoke": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "scope": "all writes and fault injection use isolated synthetic persistent database; actual teaching data unchanged"
+}

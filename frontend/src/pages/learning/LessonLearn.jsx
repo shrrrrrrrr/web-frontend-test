@@ -3,7 +3,7 @@ import Sentence from '../../content/Sentence';
 import {copyText} from '../../content/copy';
 import CopyBlock from '../../content/CopyBlock';
 import {useCourseApis} from '../../student/useCourseApis';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import {
   App, Checkbox, Collapse, Empty, Form, Input, Radio, Space, Typography,
@@ -16,6 +16,9 @@ import PageContainer from '../../components/common/PageContainer';
 import AsyncPageState from '../../student/visual/StudentPageState';
 import { LEARNING_STEPS, REPORT_STATUS } from '../../constants/status';
 import { useAuth } from '../../store/AuthContext';
+import OpenReflectionForm from '../../student/OpenReflectionForm';
+import {ReflectionFields} from '../../student/ArchiveRecords';
+import {openReflectionDraft} from '../../student/reflectionModel';
 import { draftKey } from '../../student/model';
 import LessonWorks from '../../student/LessonWorks';
 import AssociatedExperiments from '../../student/AssociatedExperiments';
@@ -69,7 +72,8 @@ function Exercise({ exercise, index, onDone }) {
   </section>;
 }
 
-export default function LessonLearn() {
+export default function LessonLearn(){const{user}=useAuth();const{courseId,lessonId}=useParams();return <LessonLearnEditor key={user.id+':'+courseId+':'+lessonId}/>;}
+function LessonLearnEditor() {
  const { courseAPI,learningAPI }=useCourseApis();
   const { message, modal } = App.useApp();
   const { courseId, lessonId } = useParams();
@@ -93,9 +97,11 @@ export default function LessonLearn() {
   const [reportError, setReportError] = useState('');
   const [reflectionOpen, setReflectionOpen] = useState([]);
   const [form] = Form.useForm();
+  const legacyBackupBlocked=useRef(false);
   const reportDraftKey = draftKey(user.id, courseId, lessonId);
   const saveDraft = (_, values) => {
     try {
+      if(legacyBackupBlocked.current)throw new Error('Legacy backup unavailable');
       localStorage.setItem(reportDraftKey, JSON.stringify(values));
       setDraftState(copyText('system.learning.028'));
       setDraftFailed(false);
@@ -136,7 +142,9 @@ export default function LessonLearn() {
           savedDraft = JSON.parse(localStorage.getItem(reportDraftKey));
           if (savedDraft) setDraftState(copyText('system.learning.033'));
         } catch { savedDraft = null; setDraftFailed(true); setDraftState(copyText('system.learning.034')); }
-        form.setFieldsValue(savedDraft || (payload.report?.status === 'rejected' ? { ...payload.report, reflection: payload.reflection || {} } : {}));
+        const restored=savedDraft || (payload.report?.status === 'rejected' ? {...payload.report,reflection:payload.reflection||{}} : {});
+        try { if(savedDraft?.reflection && savedDraft.reflection.reflection_version!==2 && !localStorage.getItem(reportDraftKey+':legacy-v1')) localStorage.setItem(reportDraftKey+':legacy-v1',JSON.stringify(savedDraft)); } catch {legacyBackupBlocked.current=true;setDraftFailed(true);setDraftState(copyText('next2.reflection.draftFailed')); }
+        form.setFieldsValue({...restored,reflection:openReflectionDraft(restored.reflection,copyText)});
       }
     } catch (err) {
       setData(null);
@@ -215,7 +223,6 @@ export default function LessonLearn() {
   const stageDone = [progress.review_completed, progress.cards_done, report && report.status !== 'rejected', report?.status === 'approved'];
   const stageReasons = ['', copyText('system.learning.052'), copyText('system.learning.053'), copyText('system.learning.054')];
   const reportFields = [['summary', copyText('system.learning.055')], ['key_points', copyText('system.learning.056')], ['application', copyText('system.learning.057')], ['difficulties', copyText('system.learning.058')], ['next_plan', copyText('system.learning.059')]];
-  const reflectionFields = [['difficulty', copyText('system.learning.060')], ['solution', copyText('system.learning.061')], ['improvement', copyText('system.learning.062')], ['new_question', copyText('system.learning.063')]];
   const validationFailed = ({ errorFields }) => {
     if (errorFields.some(({ name }) => name[0] === 'reflection')) setReflectionOpen(['reflection']);
     const name = errorFields[0]?.name;
@@ -282,12 +289,12 @@ export default function LessonLearn() {
             <Alert type={draftFailed ? 'error' : 'info'} showIcon title={draftState} description={copyText('system.learning.111')} />
             <h4>{copyText('system.learning.112')}</h4>
             {reportFields.map(([name, label]) => <Form.Item key={name} name={name} label={label} rules={name === 'summary' ? [{ required: true, whitespace: true, message: copyText('system.learning.113') }] : []}><Input.TextArea rows={name === 'summary' ? 4 : 2} /></Form.Item>)}
-            <Collapse activeKey={reflectionOpen} onChange={setReflectionOpen} items={[{ key: 'reflection', forceRender: true, label: copyText('system.learning.114'), children: <>{reflectionFields.map(([name, label]) => <Form.Item key={name} name={['reflection', name]} label={label} rules={name === 'difficulty' ? [{ required: true, whitespace: true, message: copyText('system.learning.115') }] : []}><Input.TextArea rows={2} /></Form.Item>)}</> }]} />
+            <Collapse activeKey={reflectionOpen} onChange={setReflectionOpen} items={[{ key: 'reflection', forceRender: true, label: copyText('next2.reflection.reportLabel'), children: <OpenReflectionForm prefix={["reflection"]}/> }]} />
             {!progress.report_unlocked && <Alert type="warning" title={copyText('system.learning.116')} />}
             <div className="study-submit-result" aria-live="polite">{reportError && <Alert type="error" showIcon title={copyText('system.learning.117')} description={reportError} />}</div>
             <div className="study-actions"><Button type="primary" htmlType="submit" loading={submitting}>{copyText('system.learning.118')}</Button><CopyBlock id="system.learning.119" as="p" /></div>
           </Form>}
-          {report && report.status !== 'rejected' && <><dl className="study-reading-fields">{reportFields.map(([key, label]) => <div key={key}><dt>{label}</dt><Sentence as="dd">{report[key] || copyText('system.learning.120')}</Sentence></div>)}{reflectionFields.map(([key, label]) => <div key={key}><dt>{label}</dt><Sentence as="dd">{data.reflection?.[key] || copyText('system.learning.121')}</Sentence></div>)}</dl><Button type="primary" onClick={() => setActiveStage(3)}>{copyText('system.learning.122')}</Button></>}
+          {report && report.status !== 'rejected' && <><dl className="study-reading-fields">{reportFields.map(([key, label]) => <div key={key}><dt>{label}</dt><Sentence as="dd">{report[key] || copyText('system.learning.120')}</Sentence></div>)}</dl><ReflectionFields reflection={data.reflection || {}} /><Button type="primary" onClick={() => setActiveStage(3)}>{copyText('system.learning.122')}</Button></>}
           <AssociatedExperiments variant="study" courseId={courseId} lessonId={lessonId} stage={2} />
         </StudySection>}
 

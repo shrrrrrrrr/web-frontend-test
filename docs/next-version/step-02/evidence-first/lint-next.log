@@ -1,0 +1,18 @@
+
+> star-voyage-student@0.1.0 lint
+> npm --prefix frontend run lint
+
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\pages\archives\Index.jsx
+  29:3  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\pages\learning\LessonLearn.jsx
+  100:29  error  'useRef' is not defined  no-undef
+
+✖ 2 problems (1 error, 1 warning)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

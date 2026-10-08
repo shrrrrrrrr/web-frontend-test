@@ -1,0 +1,229 @@
+TEACHER_SELECTION []
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"隔离验收：请比较条件并保留证据。","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"43a300fcc296ba6abe82bafc273aa29cc2b71d28b201d75daa2b4507add35e79"}
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✔ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (6360.583ms)
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/learning/manage/cards/900113 {"title":"隔离知识卡片","content":"隔离正文二次更新。","estimated_minutes":10,"is_required":true,"status":"published","expected_revision":"053e775495178d3f51945a194213021d61b034865595007fd6bc53fe921b924a"}
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"旧预览不应覆盖","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"243b665b49eb817e02c4ea6ff2299d2f310d087ca80e8f5948c4114b84264aa9"}
+  ✔ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (4677.207ms)
+  ✔ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (5742.9627ms)
+  ✔ 管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘 (6218.3207ms)
+  ✔ 开放日志任意一框提交、空框客户端拒绝、失败草稿与每日限次保输入 (4749.2477ms)
+  ✔ 旧四项草稿保留独立备份与第四项原义，报告三框真实提交与导师直接评审 (5130.7256ms)
+  ✔ 学生导师反馈直接选报告，不跳课程结构，退回状态和只读教师新旧反思 (4881.7956ms)
+  ✔ 退回后开放报告新版本重审通过，学生直选最终反馈，迟到队列不覆盖新筛选 (7312.3442ms)
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90022 {"title":"参观 VR 实验室","description":null,"teaching_tip":null,"sort_order":1,"start_at":null,"end_at":null,"location":null,"duration":null,"instructor_id":null,"presentation_type":"visit","content_state":"preparing","moments_note":"合成验收精彩瞬间说明。","article_title":"合成验收文章","article_url":"https://example.invalid/isolated-article","chapter_id":null,"expected_revision":"75c4f7ddf7b29483be91eda412c2b9d93557079a69af20e46dbef018a29e82dc"}
+  ✔ 可视化参观填写、图片安全预览与五视口维护弹窗 (8705.5352ms)
+  ✔ 四种维护角色五视口实际控件、侧栏、键盘与减少运动 (19919.2993ms)
+  ✔ 非学生全角色实际可访问路由 smoke 与对象详情，菜单无遗漏 (101327.7874ms)
+FAILURE 权限撤回清除旧内容、附件404局部错误、第三课实验往返和十关保留 locator.waitFor: Timeout 12000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: '下载：隔离资料.txt', exact: true }) to be visible[22m
+
+PAGE http://127.0.0.1:4194/feedback/2 PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+← 返回上一页
+2
+帮助与反馈
+张导师
+学术导师
+反馈详情
+返回反馈列表
+待处理
+使用咨询
+合成入口验收
+关联模块
+未指定
+	
+提交时间
+2026-10-08 22:09
+问题描述
+隔离反馈详情
+处理记录
+暂无沟通记录
+继续沟通
+回复内容
+0 / 2000
+发送回复
+PAGE http://127.0.0.1:4194/courses/9003/lessons/90023/learn?stage=0 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+3
+王小明
+返回课程地图
+全部课程
+星海远航
+滑翔机试飞理论课
+
+正在查看：课堂回顾
+
+返回课程地图
+返回课后任务
+本课时进度
+100%
+
+回顾 25% · 卡片 35%
+报告反思 25% · 导师评审 15%
+
+01
+课堂回顾
+正在查看 · 已完成
+02
+知识卡片与练习
+已完成
+03
+学习报告与反思
+已完成
+04
+导师评审
+已通过
+查看本课时任务与作品 ↓
+
+隔离指导：先记录条件，再自由试飞
+
+01
+第一阶段：课堂回顾
+
+回看课堂，整理观察。完成后由你确认，无需等待观看时长
+
+课堂回放
+teaching-replay.webm
+配套资料
+隔离资料.txt
+下载资料
+课堂回顾已完成
+继续知识卡片
+W
+本课时任务与作品
+
+查看作品要求、提交版本和导师意见
+
+作品与学习报告分别保存和评审。这里的作品提交不会替代上方的学习报告
+本课时暂无作品任务
+重置机器人位置（机器人聚焦后也可按 Home）
+PAGE http://127.0.0.1:4194/notifications/6 PBL 科创平台
+工作台
+课程管理
+学习内容编排
+用户管理
+作品管理
+学习报告评审
+成长档案
+滑翔机模拟实验室
+灵境小智
+AI 配置
+反馈管理
+通知中心
+← 返回上一页
+帮助与反馈
+管理员
+管理员
+通知详情
+返回通知列表
+系统
+普通
+已读
+2026-10-08 22:09
+隔离通知
+只用于验收
+标记为未读
+隐藏通知
+PAGE http://127.0.0.1:4194/notifications/6 PBL 科创平台
+观察工作台
+我的学生
+成长档案
+帮助与反馈
+通知中心
+← 返回上一页
+帮助与反馈
+李老师
+教师
+通知详情
+返回通知列表
+系统
+普通
+已读
+2026-10-08 22:09
+隔离通知
+只用于验收
+标记为未读
+隐藏通知
+PAGE http://127.0.0.1:4194/notifications/6 PBL 科创平台
+工作台
+课程浏览
+帮助与反馈
+通知中心
+← 返回上一页
+帮助与反馈
+隔离新媒体
+新媒体
+通知详情
+返回通知列表
+系统
+普通
+已读
+2026-10-08 22:09
+隔离通知
+只用于验收
+标记为未读
+隐藏通知
+  ✖ 权限撤回清除旧内容、附件404局部错误、第三课实验往返和十关保留 (15119.8261ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (194620.4777ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 11
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 195472.2644
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 权限撤回清除旧内容、附件404局部错误、第三课实验往返和十关保留 (15119.8261ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '下载：隔离资料.txt', exact: true }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:28:180
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:28:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '下载：隔离资料.txt', exact: true }) to be visible" ]
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (194620.4777ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '下载：隔离资料.txt', exact: true }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:28:180
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:28:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '下载：隔离资料.txt', exact: true }) to be visible" ]
+  }

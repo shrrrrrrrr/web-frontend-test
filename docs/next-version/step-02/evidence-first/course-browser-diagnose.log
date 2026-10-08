@@ -1,0 +1,35 @@
+SYNTHETIC_COURSE_WRITE http://127.0.0.1:4204/api/courses/9003/maintenance/course {"title":"星海远航","theme":null,"presentation_theme":"voyage","cover_image":"","description":"合成验收课程介绍。","driving_question":"合成验收驱动问题？","story_line":null,"materials_needed":null,"expected_revision":"1feca0aabbcd54df23dffb579d59a26b0292823cba17d471ce4a7dbef33dd805"}
+SYNTHETIC_COURSE_WRITE http://127.0.0.1:4204/api/courses/9003/maintenance/course {"title":"星海远航","theme":null,"presentation_theme":"voyage","cover_image":"","description":"合成验收第二次更新。","driving_question":"合成验收驱动问题？","story_line":null,"materials_needed":null,"expected_revision":"60a6697304862a3251ba1548e4c52281039c0bd3c46c8f95f99bce703a8a07f9"}
+SYNTHETIC_COURSE_WRITE http://127.0.0.1:4204/api/courses/9003/maintenance/course {"title":"星海远航","theme":null,"presentation_theme":"voyage","cover_image":"/assets/redesign-v2/web/campus-960.webp","description":"合成验收第二次更新。","driving_question":"合成验收驱动问题？","story_line":null,"materials_needed":null,"expected_revision":"7008fa6b6acca7da4dede0569a750592c4970600bf920bd868ce3ac27668a72b"}
+SYNTHETIC_COURSE_WRITE http://127.0.0.1:4204/api/courses/9003/maintenance/course {"title":"星海远航","theme":null,"presentation_theme":"voyage","description":"合成验收第二次更新。","driving_question":"合成验收驱动问题？","story_line":null,"materials_needed":null,"expected_revision":"d06b91a1722fba7198c89b620e78f162788822f89720abff1639795006b48b39"}
+COVER_AFTER_SAVE {
+  cover_image: '/api/courses/9003/cover?v=7f722d42-42fb-453f-ab4d-2b57c0d5ff16'
+}
+✖ 可视化课程介绍真实保存、读失败保持草稿和封面替换原生命周期 (8713.1429ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9495.271
+
+✖ failing tests:
+
+test at tests\next-step02-course.browser.test.js:9:1
+✖ 可视化课程介绍真实保存、读失败保持草稿和封面替换原生命周期 (8713.1429ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02-course.browser.test.js:33:106)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

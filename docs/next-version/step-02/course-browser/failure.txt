@@ -1,0 +1,7 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02-course.browser.test.js:33:106)
+    at async Test.run (node:internal/test_runner/test:1373:7)
+    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

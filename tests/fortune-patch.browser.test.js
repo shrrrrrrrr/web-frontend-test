@@ -9,7 +9,7 @@ import {fixture,root,Database} from './v2-fixture.mjs';
 import {prepareSkeleton} from '../scripts/teaching.mjs';
 import {applyFortuneEdits,readCopy} from '../scripts/fortune-copy.mjs';
 import fortuneService from '../backend/services/dailyFortune.js';
-const dir=path.join(root,'docs/next-version/step-01/fortune-patch'),run=process.env.PBL_FORTUNE_RUN||'first',shots=path.join(dir,'screenshots-'+run);
+const dir=path.resolve(process.env.PBL_EVIDENCE_DIR||path.join(root,'docs/next-version/step-01/fortune-patch')),run=process.env.PBL_FORTUNE_RUN||'first',shots=path.join(dir,'screenshots-'+run);
 const base='http://127.0.0.1:4196',api='http://127.0.0.1:3166';
 const signature=({level,art,good,avoid})=>({level,art,good,avoid});
 const gate=()=>{let release;return{promise:new Promise(r=>release=r),release};};

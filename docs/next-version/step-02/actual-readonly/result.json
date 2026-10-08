@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "courseId": 9003,
+  "base": "http://127.0.0.1:4184",
+  "apiHealth": 200,
+  "businessWrites": [],
+  "pageErrors": [],
+  "scope": "Authenticated read-only maintenance page; no teaching material uploaded or edited"
+}

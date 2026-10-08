@@ -1,14 +1,15 @@
 import { Outlet, Navigate, useLocation } from 'react-router-dom';
-import { Layout } from 'antd';
+
 import { useAuth } from '../store/AuthContext';
-import Sidebar from './Sidebar';
-import HeaderBar from './Header';
+
+
 import StudentScope from '../student/StudentScope';
-import StudentTheme from '../student/visual/StudentTheme';
+
 import { PageLoading } from './PageStatus';
 import StudentShell from '../student/visual/StudentShell';
+import StaffShell from './StaffShell';
 
-const { Content } = Layout;
+
 
 export default function AppLayout() {
   const { user, loading } = useAuth();
@@ -31,15 +32,5 @@ export default function AppLayout() {
       : <StudentShell><Outlet /></StudentShell>;
   }
 
-  return (
-    <StudentTheme interactions={false}><Layout className="space-staff-shell" style={{ minHeight: '100vh' }}>
-      <Sidebar />
-      <Layout style={{ minWidth: 0 }}>
-        <HeaderBar />
-        <Content style={{ background: '#f5f7fa', minHeight: 360 }}>
-          <Outlet />
-        </Content>
-      </Layout>
-    </Layout></StudentTheme>
-  );
+  return <StaffShell><Outlet/></StaffShell>;
 }

@@ -72,6 +72,7 @@ export default function Sidebar() {
   const { user } = useAuth();
   // 移动端基础适配：小屏自动折叠为图标栏
   const [collapsed, setCollapsed] = useState(false);
+  const [broken,setBroken]=useState(false);
 
   const items = menuItems[user?.role] || menuItems.student;
 
@@ -91,11 +92,12 @@ export default function Sidebar() {
       width={200}
       collapsible
       collapsed={collapsed}
-      collapsedWidth={64}
-      breakpoint="lg"
-      onBreakpoint={(broken) => setCollapsed(broken)}
+      collapsedWidth={broken?0:64}
+      breakpoint="md"
+      onBreakpoint={(value) => {setBroken(value);setCollapsed(value);}}
       onCollapse={setCollapsed}
-      style={{ background: '#001529' }}
+      className={'staff-sidebar'+(broken?' staff-sidebar-mobile':'')}
+      zeroWidthTriggerStyle={{position:'fixed',top:10,left:8,zIndex:90}}
     >
       <div style={{
         height: 64, display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -108,7 +110,7 @@ export default function Sidebar() {
         mode="inline"
         selectedKeys={[selectedKey]}
         items={items}
-        onClick={({ key }) => navigate(key)}
+        onClick={({ key }) => {navigate(key);if(broken)setCollapsed(true);}}
       />
     </Sider>
   );

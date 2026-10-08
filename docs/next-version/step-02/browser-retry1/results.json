@@ -1,0 +1,23 @@
+{
+  "records": [
+    {
+      "name": "可视化填写真实课时安排、指导与学生布局；预览无学习副作用",
+      "status": "failed",
+      "error": "locator.fill: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ant-modal').visible().last().getByLabel('课时提示', { exact: true })\u001b[22m\n"
+    }
+  ],
+  "pageErrors": [
+    {
+      "role": "mentor",
+      "message": "Cannot read properties of null (reading 'theme')"
+    }
+  ],
+  "routeSmoke": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "scope": "all writes and fault injection use isolated synthetic persistent database; actual teaching data unchanged"
+}

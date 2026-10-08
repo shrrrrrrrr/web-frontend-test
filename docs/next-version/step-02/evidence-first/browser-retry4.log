@@ -1,0 +1,32 @@
+file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:28
+)}),modal=p=>p.locator('.ant-modal').filter({visible:true}).last(),go=async(p,url)=>{await p.goto(base+url);await p.locator('.staff-content,.student-content').first().waitFor();},shot=async(p,name)=>{await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(200);await p.screenshot({path:path.join(shots,name+'.png'),animations:'disabled'});};
+^
+
+SyntaxError: Unexpected token ')'
+    at compileSourceTextModule (node:internal/modules/esm/utils:354:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:90:18)
+    at #translate (node:internal/modules/esm/loader:456:20)
+    at afterLoad (node:internal/modules/esm/loader:524:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:529:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:582:36)
+    at afterResolve (node:internal/modules/esm/loader:630:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:636:12)
+    at node:internal/modules/esm/loader:655:32
+    at TracingChannel.tracePromise (node:diagnostics_channel:539:22)
+
+Node.js v26.2.0
+✖ tests\next-step02.browser.test.js (151.039ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 166.2312
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:1:1
+✖ tests\next-step02.browser.test.js (151.039ms)
+  'test failed'

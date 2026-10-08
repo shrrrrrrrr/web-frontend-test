@@ -1,0 +1,1002 @@
+
+> star-voyage-student@0.1.0 test:backend
+> npm --prefix backend test
+
+
+> pbl-platform@1.0.0 test
+> node --test
+
+✅ SQLite 数据库连接成功: D:\Temp\pbl-accounts-4yB66U\accounts.db
+[API GET /api/courses] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/courses] → 401: {"error":"账号状态已变更，请重新登录","message":"请重新登录"}
+[API POST /api/auth/refresh] → 401: {"error":"登录已过期，请重新登录"}
+✔ 两个学校的同名学生可创建并使用各自账号登录；首次改密守卫保留 (1602.4196ms)
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 400: {"error":"请输入账号和密码"}
+[API POST /api/auth/login] → 400: {"error":"请输入账号和密码"}
+[API POST /api/auth/login] → 400: {"error":"请输入账号和密码"}
+✔ 登录仅接受账号，忽略首尾空格，旧账号保留且区分大小写 (41.2245ms)
+添加用户错误: Error: 登录账号已存在
+    at resolveUsername (C:\Users\shr\Desktop\nmg前端\app\backend\helpers\username.js:14:27)
+    at exports.createUser (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\studentController.js:454:27)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:284:15 {
+  status: 400
+}
+[API POST /api/students/users] → 400: {"error":"登录账号已存在"}
+添加用户错误: Error: 登录账号需为 4–64 位字母、数字、下划线或连字符，并以字母或数字开头
+    at resolveUsername (C:\Users\shr\Desktop\nmg前端\app\backend\helpers\username.js:10:25)
+    at exports.createUser (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\studentController.js:454:27)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:284:15 {
+  status: 400
+}
+[API POST /api/students/users] → 400: {"error":"登录账号需为 4–64 位字母、数字、下划线或连字符，并以字母或数字开头"}
+添加用户错误: Error: 登录账号需为 4–64 位字母、数字、下划线或连字符，并以字母或数字开头
+    at resolveUsername (C:\Users\shr\Desktop\nmg前端\app\backend\helpers\username.js:10:25)
+    at exports.createUser (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\studentController.js:454:27)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:284:15 {
+  status: 400
+}
+[API POST /api/students/users] → 400: {"error":"登录账号需为 4–64 位字母、数字、下划线或连字符，并以字母或数字开头"}
+添加用户错误: Error: 登录账号需为 4–64 位字母、数字、下划线或连字符，并以字母或数字开头
+    at resolveUsername (C:\Users\shr\Desktop\nmg前端\app\backend\helpers\username.js:10:25)
+    at exports.createUser (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\studentController.js:454:27)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:284:15 {
+  status: 400
+}
+[API POST /api/students/users] → 400: {"error":"登录账号需为 4–64 位字母、数字、下划线或连字符，并以字母或数字开头"}
+添加用户错误: Error: 登录账号需为 4–64 位字母、数字、下划线或连字符，并以字母或数字开头
+    at resolveUsername (C:\Users\shr\Desktop\nmg前端\app\backend\helpers\username.js:10:25)
+    at exports.createUser (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\studentController.js:454:27)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:284:15 {
+  status: 400
+}
+[API POST /api/students/users] → 400: {"error":"登录账号需为 4–64 位字母、数字、下划线或连字符，并以字母或数字开头"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+添加用户错误: Error: 登录账号已存在
+    at resolveUsername (C:\Users\shr\Desktop\nmg前端\app\backend\helpers\username.js:14:27)
+    at exports.createUser (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\studentController.js:454:27)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:284:15 {
+  status: 400
+}
+[API POST /api/students/users] → 400: {"error":"登录账号已存在"}
+✔ 重复账号包括禁用账号均被拒绝；姓名可以重复，错误账号格式返回 400 (332.7352ms)
+✔ 两个创建入口均支持自动唯一账号及同名用户，角色编号可自定义 (1489.5348ms)
+✔ 修改姓名为重名不会改动原账号和密码 (317.9331ms)
+✔ JSON 导入支持同名、逐行账号冲突检查、旧模板和账号结果返回 (875.4081ms)
+✔ CSV 和 Excel 文件导入均识别登录账号列 (516.2778ms)
+✔ 管理员列表可按账号检索，列表和导出所需字段不含密码 (10.1285ms)
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 429: {"error":"登录失败次数过多，请 1 分钟后再试"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"连续登录失败次数过多，该账号已锁定 15 分钟"}
+[API POST /api/auth/login] → 429: {"error":"该账号已锁定，请 15 分钟后再试"}
+✔ 登录失败限流和锁定按账号隔离，同名用户不受另一账号失败影响 (1364.9489ms)
+✔ 账号 CSV 支持中文、引号和换行，并防止公式注入且不导出密码 (5.9433ms)
+[API POST /api/auth/register] → 403: {"error":"注册已关闭，请联系管理员创建账号","code":"REGISTER_CLOSED"}
+✔ 公开注册继续关闭 (4.989ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-ai-assistant-k8rmHt\assistant.db
+[API GET /api/dashboard/ai/settings] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权向该课程提问"}
+[API POST /api/dashboard/ai/ask] → 400: {"error":"请先选择一门课程"}
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 管理员配置加密保存，非管理员无法读取，学生只能向已报名课程提问 (281.2012ms)
+✔ 课程 TXT 资料被切分检索，停用和删除后立即退出检索 (224.7749ms)
+✔ 可提取文字的 PDF、DOCX、PPTX 能解析并记录页码或幻灯片 (1294.2862ms)
+✔ 后端调用 deepseek-flash，拒绝无关问题且不泄露 Key (26.8753ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-archivepolicy-35700-1791468774926.db
+[API GET /api/students/5] → 403: {"error":"只能查看自己课程相关学生"}
+✔ 导师学生列表与档案树、详情三入口一致 (764.6733ms)
+✔ 导师档案仅含自己课程的作品/评价/反思，遗留NULL数据不可见 (238.2781ms)
+[API GET /api/students/8] → 403: {"error":"学生不存在或无权访问"}
+[API GET /api/archives/generate?student_id=8] → 403: {"error":"学生不存在或无权访问"}
+[API GET /api/archives/generate?student_id=4] → 403: {"error":"学生不存在或无权访问"}
+✔ 教师档案仅含明确分配学生的公开作品 (427.7532ms)
+[API POST /api/archives/growth-records] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/archives/growth-records] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/archives/growth-records] → 403: {"error":"只能为自己课程相关学生添加成长记录"}
+✔ 成长记录：教师只读，导师限相关学生，管理员可写 (51.762ms)
+[API POST /api/archives/evaluation] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/archives/evaluation] → 400: {"error":"请选择评价课程"}
+[API POST /api/archives/evaluation] → 403: {"error":"无权评价该课程的学生"}
+[API POST /api/archives/evaluation] → 400: {"error":"请选择过程性评价或成果评价"}
+✔ 课程评价：教师403、必须课程、导师限自己课程、类型收敛 (49.7133ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-authorization-0ao0XG\test.db
+[API GET /api/students/6] → 403: {"error":"学生不存在或无权访问"}
+[API GET /api/students/6] → 403: {"error":"学生不存在或无权访问"}
+[API GET /api/students/6] → 403: {"error":"学生不存在或无权访问"}
+[API GET /api/students/6] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/students/7] → 403: {"error":"只能查看自己课程相关学生"}
+[API GET /api/students/7] → 403: {"error":"学生不存在或无权访问"}
+[API GET /api/students/7] → 403: {"error":"学生不存在或无权访问"}
+[API GET /api/students/7] → 403: {"error":"学生不存在或无权访问"}
+[API GET /api/students/7] → 401: {"error":"未登录","message":"请先登录"}
+✔ 五角色学生直接访问：同校同班仍必须有明确分配或课程关系，响应脱敏 (542.4965ms)
+[API GET /api/courses/1] → 403: {"error":"无权查看该课程"}
+[API GET /api/courses/1] → 404: {"error":"课程不存在"}
+[API GET /api/courses/1] → 404: {"error":"课程不存在"}
+[API GET /api/courses/1] → 404: {"error":"课程不存在"}
+[API GET /api/courses/1] → 404: {"error":"课程不存在"}
+[API GET /api/courses/1] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/courses/resources/1/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/1/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/1/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/1/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/1/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/1/download] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/courses/replays/1/stream] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream] → 401: {"error":"播放链接无效"}
+[API GET /api/courses/replays/1/stream-url] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream-url] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream-url] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream-url] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream-url] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream-url] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/dashboard/ai/courses/1/documents] → 403: {"error":"无权管理该课程资料"}
+[API GET /api/dashboard/ai/courses/1/documents] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/dashboard/ai/courses/1/documents] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/dashboard/ai/courses/1/documents] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/dashboard/ai/courses/1/documents] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/dashboard/ai/courses/1/documents] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/dashboard/ai/courses/1/documents] → 401: {"error":"未登录","message":"请先登录"}
+✔ 课程、资源附件、回放与知识库的五角色直接访问遵循课程归属 (425.0023ms)
+[API GET /api/works/1] → 403: {"error":"无权查看该作品"}
+[API GET /api/works/1] → 403: {"error":"无权查看该作品"}
+[API GET /api/works/1] → 403: {"error":"无权查看该作品"}
+[API GET /api/works/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/works/1] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/works/1/download] → 403: {"error":"无权下载该附件"}
+[API GET /api/works/1/download] → 403: {"error":"无权下载该附件"}
+[API GET /api/works/1/download] → 403: {"error":"无权下载该附件"}
+[API GET /api/works/1/download] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/works/1/download] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/works/3] → 403: {"error":"无权查看该作品"}
+[API GET /api/works/3/download] → 403: {"error":"无权下载该附件"}
+✔ 作品详情和附件的权限一致，导师不能凭共同学生关系读取其他课程作品 (223.1121ms)
+[API GET /api/mentor-reviews/1] → 403: {"error":"无权访问该学习报告","code":"REPORT_FORBIDDEN"}
+[API GET /api/mentor-reviews/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/mentor-reviews/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/mentor-reviews/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/mentor-reviews/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/mentor-reviews/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/mentor-reviews/1] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/learning/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/learning/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/learning/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/learning/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/learning/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/learning/lessons/1] → 404: {"error":"课时不存在或尚未报名","code":"LESSON_NOT_AVAILABLE"}
+[API GET /api/learning/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/learning/lessons/1] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/observer/students/6] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/observer/students/6] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/observer/students/6] → 404: {"error":"学生不存在或未分配给当前教师","code":"OBSERVER_STUDENT_NOT_FOUND"}
+[API GET /api/observer/students/6] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/observer/students/6] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/observer/students/6] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/observer/students/6] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/mentor-reviews/3] → 403: {"error":"无权访问该学习报告","code":"REPORT_FORBIDDEN"}
+[API GET /api/observer/students/7] → 404: {"error":"学生不存在或未分配给当前教师","code":"OBSERVER_STUDENT_NOT_FOUND"}
+✔ 报告、学生学习包和教师观察入口按用途及对象关系限制访问 (185.7926ms)
+[API POST /api/works/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/mentor-reviews/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/works/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/mentor-reviews/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/works/1/review] → 403: {"error":"无权评审该作品"}
+[API POST /api/mentor-reviews/1/review] → 403: {"error":"无权访问该学习报告","code":"REPORT_FORBIDDEN"}
+[API PUT /api/courses/1] → 403: {"error":"无权管理该课程"}
+[API POST /api/works/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/mentor-reviews/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/works/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/mentor-reviews/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/works/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/mentor-reviews/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 教师只读、其他导师及非管理身份的直接写入被拒绝，原记录完全保留 (129.5364ms)
+[API GET /api/courses/replays/1/stream?exp=1791469377&uid=6&v=0&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 401: {"error":"无效的认证信息","message":"请重新登录"}
+[API GET /api/courses/replays/1/stream?exp=1791469377&uid=7&v=0&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 401: {"error":"播放链接无效"}
+[API GET /api/courses/replays/1/stream?exp=1791469377&uid=6&v=10&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 401: {"error":"播放链接无效"}
+[API GET /api/courses/replays/1/stream?exp=1791469377&uid=6&v=0&sig=ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff] → 401: {"error":"播放链接无效"}
+[API GET /api/courses/replays/1/stream?exp=1&uid=6&v=0&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 401: {"error":"播放链接已过期，请重新进入课程详情"}
+[API GET /api/courses/replays/1/stream?exp=1791469377&uid=6&v=-1&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 401: {"error":"播放链接无效"}
+[API GET /api/courses/replays/2/stream?exp=1791469377&uid=6&v=0&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 401: {"error":"播放链接无效"}
+[API GET /api/courses/replays/1/stream?exp=1791468776&uid=6&v=0&sig=2f169412e139835105e2179dfddb05a55a477a25c0149f015a81f27791901137] → 401: {"error":"播放链接已过期，请重新进入课程详情"}
+[API GET /api/courses/replays/1/stream?exp=1791469377&uid=6&v=0&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 404: {"error":"课程回放不存在"}
+[API GET /api/courses/replays/1/stream?exp=1791469377&uid=6&v=0&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 404: {"error":"课程回放不存在"}
+✔ 签名回放可供 video 访问，但篡改、过期、移除报名或无效 Bearer 不得放行 (93.7217ms)
+[API GET /api/courses/replays/1/stream?exp=1791469377&uid=6&v=0&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 401: {"error":"账号状态已变化，请重新登录后获取播放链接"}
+[API GET /api/courses/replays/1/stream?exp=1791469377&uid=6&v=0&sig=9d8e8e3308a658b2ea3e3815c058f480ccde67cafb30af0890cc1fbb873976e1] → 401: {"error":"账号状态已变化，请重新登录后获取播放链接"}
+[API GET /api/courses/replays/1/stream?exp=1791469378&uid=6&v=2&sig=c5a2505db9f96301ceec40430f80d7862ad8f067a0dd9d88829527940f788f70] → 401: {"error":"账号状态已变化，请重新登录后获取播放链接"}
+[API GET /api/courses/replays/1/stream?exp=1791469378&uid=6&v=2&sig=c5a2505db9f96301ceec40430f80d7862ad8f067a0dd9d88829527940f788f70] → 401: {"error":"账号状态已变化，请重新登录后获取播放链接"}
+[API GET /api/courses/replays/1/stream?exp=1791469378&uid=6&v=4&sig=77fcca3fba4d6e8ed74b01c1377d44cfecee4be046944a77097431abec605c5a] → 401: {"error":"账号状态已变化，请重新登录后获取播放链接"}
+[API GET /api/courses/replays/1/stream] → 401: {"error":"账号状态已变更，请重新登录","message":"请重新登录"}
+[API GET /api/courses/replays/1/stream] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/courses/replays/1/stream?exp=1791469378&uid=6&v=4&sig=77fcca3fba4d6e8ed74b01c1377d44cfecee4be046944a77097431abec605c5a] → 401: {"error":"账号状态已变化，请重新登录后获取播放链接"}
+✔ 禁用/恢复、归档/恢复、重置及修改密码后旧签名播放链接不会复活 (975.68ms)
+[API PUT /api/students/users/4] → 409: {"error":"账号已有业务历史或职责关联，请保留原身份；需要新身份时另建账号","blockers":[{"label":"负责学生的教师关系","count":1}]}
+[API DELETE /api/students/users/4] → 400: {"error":"该用户仍有关联数据，无法删除：负责学生的教师关系 1 条（请先移交负责学生）"}
+[API PUT /api/students/users/9] → 409: {"error":"账号已有业务历史或职责关联，请保留原身份；需要新身份时另建账号","blockers":[{"label":"负责学生的导师关系","count":1}]}
+[API DELETE /api/students/users/9] → 400: {"error":"该用户仍有关联数据，无法删除：负责学生的导师关系 1 条（请先移交负责学生）"}
+[API PUT /api/students/users/10] → 409: {"error":"账号已有业务历史或职责关联，请保留原身份；需要新身份时另建账号","blockers":[{"label":"学习报告评审记录","count":1}]}
+[API DELETE /api/students/users/10] → 400: {"error":"该用户仍有关联数据，无法删除：学习报告评审记录 1 条（请保留评审人身份）"}
+✔ 负责学生的教师/导师以及只有报告评审历史的账号拒绝改角色或删除 (43.6634ms)
+修改密码错误: SqliteError: session issuance failure
+    at issueRefreshToken (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\authController.js:46:6)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\controllers\authController.js:366:29
+    at sqliteTransaction (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\better-sqlite3\lib\methods\transaction.js:65:24)
+    at exports.changePassword (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\authController.js:369:7)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at requireAuth (C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:65:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3) {
+  code: 'SQLITE_CONSTRAINT_TRIGGER'
+}
+[API POST /api/auth/change-password] → 500: {"error":"操作失败，请稍后重试"}
+✔ 改密签发新会话失败时完整回滚，密码、旧会话和刷新凭证保持一致 (170.6857ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-maintenance-YZjDqu\content.db
+[API GET /api/courses/1/maintenance] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/maintenance/chapters] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/resources] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/cover] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/courses/1/maintenance] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/maintenance/chapters] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/resources] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/cover] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/courses/1/maintenance] → 404: {"error":"课程不存在或已不在负责范围"}
+[API POST /api/courses/1/maintenance/chapters] → 404: {"error":"课程不存在或已不在负责范围"}
+[API POST /api/courses/1/resources] → 403: {"error":"无权管理该课程"}
+[API POST /api/courses/1/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/cover] → 404: {"error":"无权管理当前课程"}
+[API GET /api/courses/1/maintenance] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/maintenance/chapters] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/resources] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/cover] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 维护角色与上传前授权：只读教师、学生、新媒体、他课导师均拒绝，管理员可维护 (429.5191ms)
+[API PUT /api/courses/1/maintenance/chapters/order] → 400: {"error":"排序必须包含当前课程全部章节且不能重复"}
+[API PUT /api/courses/1/maintenance/chapters/order] → 400: {"error":"排序必须包含当前课程全部章节且不能重复"}
+[API PUT /api/courses/1/maintenance/chapters/order] → 400: {"error":"排序必须包含当前课程全部章节且不能重复"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"章节不属于当前课程"}
+[API PUT /api/courses/1/maintenance/lessons/2] → 404: {"error":"对象不属于当前课程"}
+[API DELETE /api/courses/1/maintenance/chapters/1] → 409: {"error":"请先将本章课时移到其他章节或未分组，再删除空章节"}
+[API PUT /api/courses/1/maintenance/tasks/1] → 400: {"error":"包含不可修改字段"}
+[API PUT /api/courses/1/maintenance/tasks/2] → 404: {"error":"对象不属于当前课程"}
+[API PUT /api/courses/1/maintenance/tasks/1] → 400: {"error":"title不能为空，且最多 120 字"}
+✔ 真实章节排序、课时归属与文字清空：不改原学习、报告、作品记录 (202.4538ms)
+[API PUT /api/courses/1] → 400: {"error":"presentation_theme选项无效"}
+[API PUT /api/courses/1] → 400: {"error":"请选择已有封面或通过专用入口上传图片"}
+[API PUT /api/courses/1] → 400: {"error":"请选择已有封面或通过专用入口上传图片"}
+[API PUT /api/courses/1] → 400: {"error":"description最多 10000 字"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"课时不属于当前课程"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"卡片必须属于所选课时，且阶段为知识卡片"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"卡片必须属于所选课时，且阶段为知识卡片"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"仅支持已有滑翔机模块"}
+[API POST /api/courses/1/maintenance/experiments] → 400: {"error":"包含不可修改字段"}
+[API POST /api/courses/1/maintenance/experiments] → 409: {"error":"该来源已有关联，请修改已有记录"}
+[API PUT /api/courses/2/maintenance/experiments/1] → 404: {"error":"对象不属于当前课程"}
+[API GET /api/courses/1/maintenance] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/courses/1/maintenance] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API POST /api/courses/1/resources] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/courses/2/maintenance] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+[API POST /api/courses/2/resources] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+✔ 受控真实主题与实验关联：跨课和卡片拼接拒绝，启停/解除不改变历史 (140.4367ms)
+[API PUT /api/courses/2/maintenance/replays/1] → 404: {"error":"对象不属于当前课程"}
+[API PUT /api/courses/1/maintenance/replays/1] → 400: {"error":"课时不属于当前课程"}
+[API DELETE /api/courses/2/maintenance/replays/1] → 404: {"error":"对象不属于当前课程"}
+✔ 受邀课时导师、停用/强制改密/匿名与回放对象链均遵循真实权限 (128.1411ms)
+[API POST /api/courses/1/resources] → 409: {"error":"同一上传标识的文件或说明已变化，请先核对已上传记录"}
+[API GET /api/courses/resources/1/download] → 404: {"error":"附件不存在"}
+[API POST /api/courses/1/resources] → 400: {"error":"课时不属于当前课程"}
+[API DELETE /api/courses/2/maintenance/resources/1] → 404: {"error":"对象不属于当前课程"}
+[API PUT /api/courses/1/maintenance/resources/1] → 400: {"error":"课时不属于当前课程"}
+[API GET /api/courses/2/maintenance/resources/1/download] → 404: {"error":"对象不属于当前课程"}
+✔ 新增四种真实资料、中文文件名、字段、课时过滤、幂等失败重试与原下载鉴权 (493.17ms)
+[API GET /api/courses/resources/8/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/9/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/10/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/11/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/12/download] → 404: {"error":"附件不存在"}
+[API GET /api/courses/resources/13/download] → 404: {"error":"附件不存在"}
+✔ 旧资源白名单样本及删除清理兼容，附件仅下载，不扩大为可执行预览 (872.555ms)
+[API POST /api/courses/1/resources] → 400: {"error":"资料格式或 MIME 不支持：.js","message":"资料格式或 MIME 不支持：.js"}
+[API POST /api/courses/1/resources] → 400: {"error":"文件不是 XLSX 工作簿，不能仅将 ZIP 改名","message":"文件不是 XLSX 工作簿，不能仅将 ZIP 改名"}
+[API POST /api/courses/1/resources] → 400: {"error":"XLS 必须是旧版二进制工作簿","message":"XLS 必须是旧版二进制工作簿"}
+[API POST /api/courses/1/resources] → 400: {"error":"文本资料必须使用有效 UTF-8 编码","message":"文本资料必须使用有效 UTF-8 编码"}
+[API POST /api/courses/1/resources] → 400: {"error":"资料格式或 MIME 不支持：.csv","message":"资料格式或 MIME 不支持：.csv"}
+[API POST /api/courses/1/resources] → 400: {"error":"CSV 引号未闭合","message":"CSV 引号未闭合"}
+[API POST /api/courses/1/resources] → 400: {"error":"文件不是有效的文本资料","message":"文件不是有效的文本资料"}
+[API POST /api/courses/1/resources] → 400: {"error":"File too large","message":"File too large"}
+[API POST /api/courses/1/replays] → 400: {"error":"回放仅支持 MP4/WebM，最多 500 MB","message":"回放仅支持 MP4/WebM，最多 500 MB"}
+[API POST /api/courses/1/cover] → 400: {"error":"封面仅支持 JPG/PNG/WebP，最多 5 MB","message":"封面仅支持 JPG/PNG/WebP，最多 5 MB"}
+上传资源错误: SqliteError: synthetic persistent failure
+    at exports.uploadResource (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\courseController.js:432:7)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at validateResource (C:\Users\shr\Desktop\nmg前端\app\backend\services\courseUploadPolicy.js:43:88)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  code: 'SQLITE_CONSTRAINT_TRIGGER'
+}
+[API POST /api/courses/1/resources] → 500: {"error":"操作失败，请稍后重试"}
+✔ 伪装/MIME/超限和落库失败均拒绝并清理本次孤立文件；不扩大作品/回放 (554.4453ms)
+[API GET /api/courses/1/cover] → 404: {"error":"封面不可访问"}
+[API GET /api/courses/1/cover] → 404: {"error":"封面不可访问"}
+[API GET /api/courses/1/cover] → 404: {"error":"封面不可访问"}
+[API GET /api/courses/1/cover] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /uploads/course-covers/cover-1791468779103-2c96d929e09aaaa0.png] → 404: {"error":"Not Found","message":"请求的资源不存在"}
+[API POST /api/courses/1/cover] → 400: {"error":"封面图片结构无效（最大 1600 万像素）"}
+[API POST /api/courses/1/cover] → 400: {"error":"File too large","message":"File too large"}
+[API GET /api/courses/1/cover] → 404: {"error":"封面不可访问"}
+[API GET /api/course-spaces/1/courses/1] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API POST /api/courses/1/maintenance/chapters] → 409: {"error":"课程已归档，不能修改内容"}
+✅ 数据库迁移 017_course_content_maintenance.sql 已应用
+✅ 数据库迁移 018_course_plan_templates_account_avatar.sql 已应用
+✅ 数据库迁移 019_course_plan_detach_lesson.sql 已应用
+✅ 数据库迁移 020_open_reflections.sql 已应用
+✔ 私有封面真实保存/替换、下载范围、失效清除与安全公共封面切换 (173.2549ms)
+✔ 016真实旧库、全新库及重复启动迁移保护现有账号和业务记录 (1224.5288ms)
+[API POST /api/courses/1/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/maintenance/replays] → 404: {"error":"Not Found","message":"请求的资源不存在"}
+[API POST /api/courses/1/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/maintenance/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/maintenance/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/maintenance/replays] → 404: {"error":"课程不存在或已不在负责范围"}
+[API POST /api/courses/1/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/courses/1/maintenance/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 管理员回放上传边界在文件解析前生效，旧及嵌套入口不落盘 (60.8535ms)
+[API PUT /api/courses/1/maintenance/lessons/1] → 409: {"error":"内容已由其他维护者修改，请重新读取并核对后保存"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"授课人不存在或不可用"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"日期时间格式无效"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"duration无效"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"结束时间不能早于开始时间"}
+[API PUT /api/courses/1/maintenance/course] → 409: {"error":"内容已由其他维护者修改，请重新读取并核对后保存"}
+✔ 维护课时安排与版本冲突保护，跨课授课人及日期无效不写入 (67.7683ms)
+[API PUT /api/learning/manage/cards/1] → 409: {"error":"内容已由其他维护者修改，请重新读取并核对后保存","code":"LEARNING_INVALID"}
+✔ 卡片管理版本使用同一原始对象，首次更新成功且过期版本拒绝 (19.4954ms)
+[API PUT /api/courses/1/maintenance/experiments/3] → 409: {"error":"内容已由其他维护者修改，请重新读取并核对后保存"}
+✔ 新增实验关联真实 ID 与版本返回，同一已知版本只能更新一次 (18.8408ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-avatar-31DIEe\avatar.db
+✔ 头像真实保存，两个账号与两门课隔离，无默认角色 (429.1482ms)
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 400: {"error":"请选择有效的角色头像；不能指定账号或图片地址。","code":"INVALID_AVATAR"}
+[API GET /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/course-spaces/999/preferences/avatar] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+✔ 未知枚举、图片地址、指定他人账号均拒绝；维护角色不能读写学生偏好 (121.6635ms)
+[API GET /api/course-spaces/1/preferences/avatar] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API PUT /api/course-spaces/1/preferences/avatar] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/preferences/avatar] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/preferences/avatar] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/course-spaces/1/preferences/avatar] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+✅ 数据库迁移 016_course_avatar_preferences.sql 已应用
+✅ 数据库迁移 017_course_content_maintenance.sql 已应用
+✅ 数据库迁移 018_course_plan_templates_account_avatar.sql 已应用
+✅ 数据库迁移 019_course_plan_detach_lesson.sql 已应用
+✅ 数据库迁移 020_open_reflections.sql 已应用
+✔ 报名移除、课程撤回、账号停用及强制改密不能读取或更改 (38.6457ms)
+✔ 既有库兼容升级两次，不改报名、报告、作品，也不分配角色 (87.6799ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-course-owner-J01OHg\test.db
+✔ 课程管理策略拒绝非导师创建者、空课程；管理员和课程创建导师允许 (187.1762ms)
+[API PUT /api/courses/2] → 403: {"error":"无权管理该课程"}
+[API DELETE /api/courses/2] → 403: {"error":"无权管理该课程"}
+[API POST /api/courses/2/lessons] → 403: {"error":"无权管理该课程"}
+[API POST /api/courses/lessons/2/tasks] → 403: {"error":"无权管理该课程"}
+[API PUT /api/courses/replays/2] → 404: {"error":"课程回放不存在"}
+[API DELETE /api/courses/replays/2] → 404: {"error":"课程回放不存在"}
+[API POST /api/courses/2/enroll] → 403: {"error":"仅执行导师或管理员可导入学生"}
+[API GET /api/courses/2/enroll/candidates] → 403: {"error":"仅执行导师或管理员可导入学生"}
+[API POST /api/courses/2/resources] → 403: {"error":"无权管理该课程"}
+[API POST /api/courses/2/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/3] → 403: {"error":"无权管理该课程"}
+[API DELETE /api/courses/3] → 403: {"error":"无权管理该课程"}
+[API POST /api/courses/3/lessons] → 403: {"error":"无权管理该课程"}
+[API POST /api/courses/lessons/3/tasks] → 403: {"error":"无权管理该课程"}
+[API PUT /api/courses/replays/3] → 404: {"error":"课程回放不存在"}
+[API DELETE /api/courses/replays/3] → 404: {"error":"课程回放不存在"}
+[API POST /api/courses/3/enroll] → 403: {"error":"仅执行导师或管理员可导入学生"}
+[API GET /api/courses/3/enroll/candidates] → 403: {"error":"仅执行导师或管理员可导入学生"}
+[API POST /api/courses/3/resources] → 403: {"error":"无权管理该课程"}
+[API POST /api/courses/3/replays] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 导师无法跨课程修改、删除、排课、加任务、管理回放或导入学生，数据库及文件不变 (225.6396ms)
+[API GET /api/courses/2] → 403: {"error":"无权查看该课程"}
+✔ 课程列表与详情返回逐课程管理标志，其他导师草稿详情不可访问 (38.6479ms)
+✔ 本人课程及管理员跨课程管理仍可用，候选学生保留全平台查询能力 (143.647ms)
+[API PUT /api/courses/3] → 403: {"error":"无权管理该课程"}
+✔ 受邀授课导师可管理该课程，其他课程仍无权限 (62.9811ms)
+[API GET /api/dashboard/ai/courses] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/dashboard/ai/courses] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/works] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/dashboard/ai/ask] → 503: {"error":"灵境小智暂未启用","code":"AI_ERROR"}
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权向该课程提问"}
+[API POST /api/dashboard/ai/ask] → 503: {"error":"灵境小智暂未启用","code":"AI_ERROR"}
+[API POST /api/dashboard/ai/ask] → 400: {"error":"请先选择一门课程"}
+✔ 灵境小智按课程范围授权，未配置时不伪装为规则式回答 (93.8675ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-plan-account-8M71yo\test.db
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar?userId=5] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/courses/1/maintenance/plan] → 400: {"error":"课时不属于当前课程"}
+[API PUT /api/courses/1/maintenance/plan] → 400: {"error":"关卡编号和课时不能重复"}
+[API PUT /api/courses/1/maintenance/plan] → 400: {"error":"关卡编号和课时不能重复"}
+✔ 本人受控头像保存、旧头像与课程偏好隔离，切账号重新读取 (431.6915ms)
+[API PUT /api/courses/1/maintenance/plan] → 400: {"error":"地图节点无效"}
+✔ 真实节点配置与排序，仅同课对象；空未来节点不造课时或进度 (102.6255ms)
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"文章地址须为 HTTPS"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"文章地址须为 HTTPS"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"文章地址须为 HTTPS"}
+✔ 模板字段按维护范围保存、空值不补素材；HTTPS 文章无脚本注入 (59.5528ms)
+[API PUT /api/courses/1/maintenance/plan] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/plan] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/lessons/3] → 404: {"error":"对象不属于当前课程"}
+[API GET /api/courses/1] → 404: {"error":"课程不存在"}
+[API GET /api/learning/lessons/1] → 404: {"error":"课时不存在或尚未报名","code":"LESSON_NOT_AVAILABLE"}
+[API POST /api/learning/lessons/1/report] → 404: {"error":"课时不存在或尚未报名","code":"LESSON_NOT_AVAILABLE"}
+[API GET /api/courses/1] → 404: {"error":"课程不存在"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 409: {"error":"课程已归档，不能修改内容"}
+✔ 教师学生不可维护，撤回/报名移除不返回新字段和计划，归档不可写 (88.6146ms)
+[API POST /api/learning/lessons/1/review-complete] → 409: {"error":"教学内容尚未准备，不能标记完成","code":"CONTENT_PREPARING"}
+[API POST /api/learning/lessons/1/report] → 409: {"error":"教学内容尚未准备，不能提交报告","code":"CONTENT_PREPARING"}
+[API PUT /api/account/avatar] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/account/avatar] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+✔ 未准备模板拒绝完成和报告；停用与强制改密仍走原全局鉴权 (53.0948ms)
+✔ 课时删除后计划保留原编号并成为未知状态，课程级联删除兼容 (28.9735ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-space-DfXoKm\test.db
+✔ 课程列表、作品、任务、档案与试飞范围由服务端限定 (220.9699ms)
+[API GET /api/course-spaces/1/works/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/tasks/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/learning/lessons/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/glider/simulations/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/glider/simulations/3] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/course-spaces/1/courses/2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API POST /api/course-spaces/1/glider/simulate] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API POST /api/course-spaces/1/archives/reflection] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API POST /api/course-spaces/1/works] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+✔ 两个课程均获授权也不能在 A 地址读写 B 对象 (69.7969ms)
+[API GET /api/course-spaces/1/works] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+[API GET /api/works/1] → 403: {"error":"无权查看该作品"}
+[API GET /api/glider/simulations/1] → 404: {"error":"模拟记录不存在"}
+✔ 旧 API 保留；课程撤回同时禁止旧对象读取，重新发布恢复 (33.2353ms)
+[API POST /api/course-spaces/1/works] → 404: {"error":"作品对象不属于当前课程"}
+[API GET /api/course-spaces/1/works?course_id=2] → 404: {"error":"当前课程或对象已不可访问","code":"COURSE_SCOPE_DENIED"}
+✔ multipart 上传不能绕过课程范围，拒绝后无记录与孤立附件 (97.5448ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-fortune-foHjXV\test.db
+✔ 已知 12 月 6/7 日碰撞：比较展示组合，不用日期差异冒充刷新 (151.8043ms)
+✔ 64 个账号连续 800 日：相邻完整组合不同，宜项和枚举受控 (9665.8077ms)
+✔ 跨年、闰日、北京时间午夜、跳过多天均按服务端日期重新派生 (2.2073ms)
+✔ 独立 Node 进程重启结果一致，不依赖缓存 (729.4495ms)
+✔ 北京时间午夜切日，账号和日期稳定派生，受控枚举无重复宜 (2.5395ms)
+✔ 同账号新 token/跨客户端固定结果，认证账号隔离，读取不写业务表 (162.9144ms)
+[API GET /api/account/daily-fortune?userId=2] → 400: {"error":"运势由当前账号和服务器日期决定","code":"FORTUNE_QUERY_NOT_ALLOWED"}
+[API GET /api/account/daily-fortune?courseId=1] → 400: {"error":"运势由当前账号和服务器日期决定","code":"FORTUNE_QUERY_NOT_ALLOWED"}
+[API GET /api/account/daily-fortune?date=2026-01-01] → 400: {"error":"运势由当前账号和服务器日期决定","code":"FORTUNE_QUERY_NOT_ALLOWED"}
+[API GET /api/account/daily-fortune?student_id=2] → 400: {"error":"运势由当前账号和服务器日期决定","code":"FORTUNE_QUERY_NOT_ALLOWED"}
+[API GET /api/account/daily-fortune] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/account/daily-fortune] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 指定他人/课程/日期被拒绝，未登录和维护角色不能读取 (35.1373ms)
+[API GET /api/account/daily-fortune] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/account/daily-fortune] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+[API GET /api/account/daily-fortune] → 401: {"error":"无效的认证信息","message":"请重新登录"}
+✔ 强制改密、停用和失效 token 沿用全局认证边界 (17.5205ms)
+✔ db:init 后可重复启动并使用 README 账号和密码登录 (4174.3391ms)
+✔ 已有库拒绝初始化，显式重置后仍可启动 (2033.5456ms)
+✔ 旧版 003 学生状态迁移记录升级后不重复添加列并保留账号 (1171.17ms)
+✔ 生产环境禁止测试初始化，包括强制重置 (192.007ms)
+✔ 正式初始化新库并重复运行，保留单一管理员且不写入测试账号 (925.1621ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-delivery-dewZOA\test.db
+[API GET /api/tasks/1] → 404: {"error":"任务不存在"}
+[API POST /api/works] → 409: {"error":"该任务当前不可提交"}
+[API GET /api/learning/lessons/1] → 404: {"error":"课时不存在或尚未报名","code":"LESSON_NOT_AVAILABLE"}
+[API POST /api/courses/lessons/1/tasks] → 409: {"error":"不能向已取消课时添加任务"}
+✔ 取消课时同时停止待办、任务、提交和 AI 上下文，保留历史并对齐进度 (432.301ms)
+[API POST /api/works] → 409: {"error":"该任务当前不可提交"}
+[API GET /api/tasks/2] → 404: {"error":"任务不存在"}
+[API POST /api/works] → 403: {"error":"请先选课后再提交该任务"}
+[API GET /api/tasks/2] → 404: {"error":"任务不存在"}
+[API POST /api/works] → 403: {"error":"请先选课后再提交该任务"}
+[API GET /api/tasks/2] → 404: {"error":"任务不存在"}
+✔ 单独取消任务、撤回课程或移除报名后不能继续提交或出现在待办中 (106.4547ms)
+[API PUT /api/students/users/3] → 409: {"error":"账号已有业务历史或职责关联，请保留原身份；需要新身份时另建账号","blockers":[{"label":"课程参与记录（含已移除记录）","count":1},{"label":"课时进度","count":1},{"label":"学生作品","count":1}]}
+[API GET /api/auth/me] → 401: {"error":"账号状态已变更，请重新登录","message":"请重新登录"}
+[API POST /api/auth/refresh] → 401: {"error":"登录已过期，请重新登录"}
+✔ 已有学习历史账号拒绝变更角色；空账号变更后旧 token 不会在改回身份时复活 (62.5829ms)
+更新用户错误: SqliteError: test revoke failure
+    at C:\Users\shr\Desktop\nmg前端\app\backend\controllers\studentController.js:546:68
+    at sqliteTransaction (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\better-sqlite3\lib\methods\transaction.js:65:24)
+    at exports.updateUser (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\studentController.js:548:7)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5) {
+  code: 'SQLITE_CONSTRAINT_TRIGGER'
+}
+[API PUT /api/students/users/9] → 500: {"error":"操作失败，请稍后重试"}
+✔ 角色变更与会话撤销原子执行，失败时不留下半改的账号 (20.3622ms)
+[API GET /api/auth/schools] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/auth/classes?school_id=1] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/students/classes/1] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/students/classes/2] → 403: {"error":"无权访问该学校班级"}
+[API POST /api/auth/register] → 403: {"error":"注册已关闭，请联系管理员创建账号","code":"REGISTER_CLOSED"}
+✔ 学校及班级目录拒绝匿名访问，教师目录限制生效，课程管理角色仍可读取 (51.1261ms)
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权向该课程提问"}
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权向该课程提问"}
+[API POST /api/dashboard/ai/ask] → 400: {"error":"问题长度须为 1—1000 字"}
+[API POST /api/dashboard/ai/ask] → 400: {"error":"问题长度须为 1—1000 字"}
+[API POST /api/dashboard/ai/ask] → 400: {"error":"请先选择一门课程"}
+[API POST /api/dashboard/ai/ask] → 400: {"error":"问题长度须为 1—1000 字"}
+[API POST /api/dashboard/ai/ask] → 403: {"error":"无权向该课程提问"}
+✔ 五角色、跨课程、输入校验在调用供应商前完成 (55.2215ms)
+✔ 成功调用记录真实服务来源、token 用量，且不记录密钥、问题及回答 (14.8952ms)
+✔ 鉴权、额度、繁忙、异常响应、断网与截断均返回失败并记录，不能伪装成功 (27.3928ms)
+✔ 超时涵盖连接与响应体读取，并能检查密钥无法解密 (60.9219ms)
+[API POST /api/dashboard/ai/ask] → 403: {"error":"账号或课程权限已变化，请刷新后重试","code":"AI_ACCESS_CHANGED","request_id":"30d2ed54-691b-45da-809f-e11ffc09064f"}
+✔ 权限在供应商响应期间被撤销时不向客户端交付回答 (17.1608ms)
+✔ 每日额度在数据库中原子预留，失败调用也计入，非法配置不会放行 (3.9055ms)
+✔ 旧库 AI 用量迁移可重复运行且不改变已有账号和学习数据 (32.9983ms)
+✔ 两字中文术语能检索当前课程，停用、跨课程和归属不一致资料不进入上下文 (8.721ms)
+✔ 上下文预算耗尽后未送给模型的资料不会获得可引用编号 (0.7267ms)
+✔ 同一文档多个检索片段可正常回答，等待期间停用资料会拒绝交付并记失败 (10.7582ms)
+✔ 供应商返回前取消任务或停用 AI 时不返回旧上下文答案 (9.7891ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-enrollment-16264-1791468775531.db
+✔ 新库迁移标记到最新版本 (3.777ms)
+[API POST /api/courses/1/enroll] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 教师不可导入选课 (438.3661ms)
+[API GET /api/courses/1/enroll/candidates] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 教师不能查询导入候选学生 (17.5033ms)
+[API POST /api/courses/1/enroll] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 教师不能导入外校学生 (9.808ms)
+✔ 执行导师可导入任意学校学生 (212.2878ms)
+[API POST /api/courses/3/enroll] → 400: {"error":"已归档课程不能导入学生"}
+✔ 归档课程不能导入学生 (202.4203ms)
+✔ 重复导入幂等且不产生重复行 (7.6217ms)
+[API DELETE /api/courses/1/enrollments/2] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API DELETE /api/courses/1/enrollments/2] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API DELETE /api/courses/1/enrollments/2] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 日常不可退课：学生/教师/导师调用移除均被拒绝 (225.2712ms)
+✔ 管理员可移除无业务数据的报名（软删除+审计+通知） (17.4738ms)
+[API DELETE /api/courses/1/enrollments/2] → 400: {"error":"该报名已产生作品 1 条，不可移除"}
+✔ 已产生作品的报名不可移除 (12.6914ms)
+✔ 移除后学生不可见该课程，再次导入可复活 (179.6913ms)
+[API POST /api/courses/1/lessons] → 400: {"error":"授课人不存在或不可用（仅启用中的执行导师可授课）"}
+✔ 课时授课人必须是启用的执行导师 (11.4146ms)
+[API GET /api/tasks] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/tasks] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 教师不可进入课程任务接口 (164.7913ms)
+✔ 教师 Dashboard 不进入课程执行链路，学生列表仅含已报名课程 (192.5222ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-feedback-33820-1791468775626.db
+✔ 用户可以创建、列出并查看自己的反馈 (38.0259ms)
+✔ 其他用户无法查看或回复不属于自己的反馈 (11.0572ms)
+✔ 内部备注仅管理员可见 (13.0701ms)
+✔ 管理员可以设置优先级、处理反馈，用户可以确认并重新打开 (21.473ms)
+✔ 管理列表支持筛选并返回统计数据 (15.034ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-glider-25120-1791468775710.db
+✔ 试飞记录列表按角色授权 (1107.1042ms)
+[API GET /api/glider/simulations/2] → 404: {"error":"模拟记录不存在"}
+[API GET /api/glider/simulations/3] → 404: {"error":"模拟记录不存在"}
+✔ 试飞记录详情按课程授权 (17.2011ms)
+[API GET /api/glider/simulations/3/trace] → 404: {"error":"模拟记录不存在"}
+[API GET /api/glider/simulations/2/trace] → 404: {"error":"该记录暂无轨迹数据"}
+✔ 轨迹数据接口：读库返回最小向量（JSON / 二进制） (29.7452ms)
+✔ 轨迹数据接口：扩展列（CL/CD）随 JSON 与二进制一起返回 (178.3829ms)
+[API POST /api/glider/simulate] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/glider/simulate] → 400: {"error":"请选择已报名且已发布的课程"}
+[API POST /api/glider/simulate] → 400: {"error":"课时不属于所选课程"}
+✔ 模拟提交校验：角色、课程报名与课时归属 (20.7646ms)
+✔ 引擎能力探测返回结构化结果 (495.4294ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-learning-flow-lOakTg\test.db
+[API POST /api/courses/1/progress] → 403: {"error":"请先选课后再学习"}
+[API POST /api/courses/2/progress] → 403: {"error":"请先选课后再学习"}
+✔ 旧进度接口只保存播放位置，不能由客户端伪造课时完成 (205.0825ms)
+[API GET /api/learning/lessons/1] → 404: {"error":"课时不存在或尚未报名","code":"LESSON_NOT_AVAILABLE"}
+[API GET /api/learning/lessons/2] → 404: {"error":"课时不存在或尚未报名","code":"LESSON_NOT_AVAILABLE"}
+[API POST /api/learning/lessons/4/report] → 409: {"error":"请先完成课堂回顾、全部知识卡片和配套练习","code":"REPORT_LOCKED"}
+✔ 学生学习包校验报名和发布状态，且不泄漏答案 (49.5455ms)
+[API POST /api/learning/exercises/1/submit] → 409: {"error":"请先完成课堂回顾","code":"LESSON_REVIEW_REQUIRED"}
+[API POST /api/learning/cards/1/complete] → 409: {"error":"请先完成课堂回顾","code":"LESSON_REVIEW_REQUIRED"}
+[API POST /api/learning/exercises/1/submit] → 409: {"error":"每道题只有一次作答机会","code":"MAX_ATTEMPTS_REACHED"}
+✔ 课堂回顾和知识卡片必须按顺序显式完成，加载页面不会自动完成 (88.7838ms)
+学习流程错误: SqliteError: reflection failed
+    at C:\Users\shr\Desktop\nmg前端\app\backend\services\learningService.js:384:8
+    at sqliteTransaction (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\better-sqlite3\lib\methods\transaction.js:65:24)
+    at Object.submitReport (C:\Users\shr\Desktop\nmg前端\app\backend\services\learningService.js:392:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\controllers\learningController.js:25:67
+    at C:\Users\shr\Desktop\nmg前端\app\backend\controllers\learningController.js:14:45
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13) {
+  code: 'SQLITE_CONSTRAINT_TRIGGER'
+}
+[API POST /api/learning/lessons/1/report] → 500: {"error":"学习服务暂时不可用","code":"LEARNING_INTERNAL_ERROR"}
+✔ 报告与反思保持原子提交，且不再依赖单独的综合成果阶段 (28.8503ms)
+[API POST /api/learning/lessons/1/report] → 409: {"error":"当前报告已提交或通过，不能覆盖","code":"REPORT_IMMUTABLE"}
+✔ 退回报告可创建新版本，已提交版本不可原地覆盖 (37.7816ms)
+[API GET /api/mentor-reviews/2] → 403: {"error":"无权访问该学习报告","code":"REPORT_FORBIDDEN"}
+[API GET /api/learning/manage/lessons/1/cards] → 403: {"error":"无权管理该课时","code":"LESSON_FORBIDDEN"}
+[API GET /api/learning/manage/lessons/1/cards] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 导师评审和内容管理严格按课程归属授权 (33.9658ms)
+[API GET /api/learning/manage/lessons] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 内容编排中心列出导师创建或受邀授课课程的课时 (30.717ms)
+[API GET /api/observer/students/4] → 404: {"error":"学生不存在或未分配给当前教师","code":"OBSERVER_STUDENT_NOT_FOUND"}
+[API GET /api/learning/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/mentor-reviews] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 教师观察端仅返回明确分配学生且所有学习写接口均拒绝教师 (32.4671ms)
+✔ 报告通过并评分后完成课时并只写一条成长记录 (18.0703ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-management-46512-1791468775910.db
+[API PUT /api/students/3/assign] → 400: {"error":"所选班级不属于所选学校"}
+✔ 分配学生只传班级时保留原学校，跨校班级被拒绝 (413.3968ms)
+✔ updateUser 布尔 is_active 正确解析 (15.572ms)
+[API DELETE /api/courses/1] → 403: {"error":"已发布/已归档课程不能删除，请先撤回为草稿"}
+[API DELETE /api/courses/4] → 403: {"error":"已发布/已归档课程不能删除，请先撤回为草稿"}
+✔ 已发布与归档课程禁止删除 (24.947ms)
+[API DELETE /api/courses/2] → 400: {"error":"该课程已有 1 条报名记录（含已移除），不可删除，请归档保留"}
+✔ 有报名记录的草稿不可删除，干净草稿可删除 (12.4843ms)
+✔ 纯文字任务进入学生待办 (211.1845ms)
+[API GET /api/archives/reflection] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/archives/reflection] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/archives/reflection] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/archives/reflection] → 400: {"error":"今日已提交过反思日志，每人每日限提交1篇。明天再来吧！"}
+✔ 反思日志仅限学生本人 (340.2683ms)
+[API DELETE /api/students/users/2] → 400: {"error":"该用户仍有关联数据，无法删除：授课课时 3 条（请先调整授课教师）"}
+✔ 删除教师被授课课时阻塞并给出明细 (13.5248ms)
+✔ 下一节课过滤两小时前已开始的场次 (11.395ms)
+[API POST /api/students] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/students/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API DELETE /api/students/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/students/3/assign] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/users] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/students/users/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API DELETE /api/students/users/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/users/batch-delete] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/import] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/students/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API DELETE /api/students/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/students/3/assign] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/users] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/students/users/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API DELETE /api/students/users/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/users/batch-delete] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/import] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/students/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API DELETE /api/students/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/students/3/assign] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/users] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/students/users/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API DELETE /api/students/users/3] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/users/batch-delete] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/import] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 教师、执行导师和学生不能通过学生或通用用户入口写账号 (158.5603ms)
+[API DELETE /api/students/3] → 400: {"error":"该学生仍有关联数据，无法删除：课程参与记录（含已移除记录） 2 条（请保留账号及历史档案）；反思日志 1 条（请保留账号及历史档案）"}
+[API DELETE /api/students/users/3] → 400: {"error":"该用户仍有关联数据，无法删除：课程参与记录（含已移除记录） 2 条（请保留账号及历史档案）；反思日志 1 条（请保留账号及历史档案）"}
+✔ 三个删除入口均保留学生及历史学习记录，批量删除只删除空账号 (28.5838ms)
+[API DELETE /api/students/users/7] → 400: {"error":"该用户仍有关联数据，无法删除：课程参与记录（含已移除记录） 1 条（请保留账号及历史档案）"}
+[API DELETE /api/students/users/8] → 400: {"error":"该用户仍有关联数据，无法删除：课时进度 1 条（请保留账号及历史档案）"}
+[API DELETE /api/students/users/9] → 400: {"error":"该用户仍有关联数据，无法删除：学生作品 1 条（请保留账号及历史档案）"}
+[API DELETE /api/students/users/10] → 400: {"error":"该用户仍有关联数据，无法删除：反思日志 1 条（请保留账号及历史档案）"}
+[API DELETE /api/students/users/11] → 400: {"error":"该用户仍有关联数据，无法删除：学生评价 1 条（请保留账号及历史档案）"}
+[API DELETE /api/students/users/12] → 400: {"error":"该用户仍有关联数据，无法删除：学生成长记录 1 条（请保留账号及历史档案）"}
+[API DELETE /api/students/users/13] → 400: {"error":"该用户仍有关联数据，无法删除：实验模拟记录 1 条（请保留账号及历史档案）"}
+✔ 独立学习记录和已移除选课也阻止删除，变更角色不能绕过保护 (53.6514ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-mentor-students-s5Zu62\test.db
+[API GET /api/courses] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/courses/1] → 404: {"error":"课程不存在"}
+✔ 导师工作台统计限于负责课程；新媒体只能读取已发布课程列表 (339.1429ms)
+✔ 导师列表仅有课程相关学生，历史/归档关系保留，多课程不重复，搜索无法扩大权限 (42.8785ms)
+[API GET /api/students/6] → 403: {"error":"只能查看自己课程相关学生"}
+[API GET /api/archives/generate?student_id=6] → 403: {"error":"只能查看自己课程相关学生档案"}
+[API GET /api/students/7] → 403: {"error":"只能查看自己课程相关学生"}
+[API GET /api/archives/generate?student_id=7] → 403: {"error":"只能查看自己课程相关学生档案"}
+[API GET /api/students/5] → 403: {"error":"只能查看自己课程相关学生"}
+[API GET /api/students/3] → 403: {"error":"无权查看该用户"}
+✔ 直接访问无关学生详情及档案返回403，相关学生允许 (77.0613ms)
+✔ 档案树、学校/班级批量导出和搜索均应用相同关系限制 (57.6315ms)
+[API POST /api/archives/growth-records] → 403: {"error":"只能为自己课程相关学生添加成长记录"}
+[API GET /api/courses/2/enroll/candidates] → 403: {"error":"仅执行导师或管理员可导入学生"}
+✔ 无关学生不能添加成长记录；导师仍可向自己的课程搜索全平台候选 (27.1535ms)
+[API GET /api/archives/generate?student_id=6] → 403: {"error":"学生不存在或无权访问"}
+✔ 管理员全量、教师明确分配范围、学生本人档案 (48.1383ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-notification-15436-1791468776075.db
+✔ 通知按收件人隔离并支持筛选和分页 (29.8478ms)
+✔ 相同幂等键只创建一条通知并补齐收件人 (4.0059ms)
+✔ 支持单条与批量更新已读状态 (6.1008ms)
+✔ 详情会自动已读，隐藏后不再出现在列表 (11.316ms)
+✔ 非收件人无法读取或修改通知 (9.0525ms)
+✔ 已撤回通知不计入未读数量 (17.3108ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-open-reflections-xfgQFb\test.db
+✔ 反思模型：三个框任选一项，全部空、类型、混合版本与长度拒绝 (197.6527ms)
+[API POST /api/archives/reflection] → 400: {"error":"今日已提交过反思日志，每人每日限提交1篇。明天再来吧！"}
+[API POST /api/archives/reflection] → 400: {"error":"今日已提交过反思日志，每人每日限提交1篇。明天再来吧！"}
+[API POST /api/archives/reflection] → 400: {"error":"今日已提交过反思日志，每人每日限提交1篇。明天再来吧！"}
+✔ 独立反思三个框分别真实保存，日限失败不新增；原文及旧四项保持 (73.4816ms)
+[API GET /api/archives/generate?student_id=3] → 403: {"error":"只能查看自己课程相关学生档案"}
+[API GET /api/archives/generate?student_id=3] → 400: {"error":"无权查看成长档案"}
+[API GET /api/archives/generate?student_id=3] → 403: {"error":"学生不存在或无权访问"}
+[API POST /api/archives/reflection] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/archives/reflection] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/archives/reflection] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/archives/reflection] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/archives/reflection] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/archives/reflection] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+提交反思错误: Error: 请在任意一个反思框写下想记录的内容
+    at validateReflection (C:\Users\shr\Desktop\nmg前端\app\backend\helpers\reflectionContent.js:10:53)
+    at exports.submitReflection (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\archiveController.js:268:22)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:284:15 {
+  status: 400
+}
+[API POST /api/archives/reflection] → 400: {"error":"请在任意一个反思框写下想记录的内容"}
+✔ 日志与报告的授权老师正确读取新旧结构，无关角色及同学拒绝 (88.3543ms)
+提交反思错误: Error: 请在任意一个反思框写下想记录的内容
+    at validateReflection (C:\Users\shr\Desktop\nmg前端\app\backend\helpers\reflectionContent.js:10:53)
+    at exports.submitReflection (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\archiveController.js:268:22)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:284:15 {
+  status: 400
+}
+[API POST /api/archives/reflection] → 400: {"error":"请在任意一个反思框写下想记录的内容"}
+[API POST /api/archives/reflection] → 400: {"error":"所选课程报名记录不属于该学生"}
+[API POST /api/archives/reflection] → 400: {"error":"所选课时不属于当前课程"}
+[API POST /api/archives/reflection] → 400: {"error":"所选课时不属于当前课程"}
+[API POST /api/archives/reflection] → 400: {"error":"所选课程报名记录不属于该学生"}
+[API POST /api/archives/reflection] → 400: {"error":"所选课程报名记录不属于该学生"}
+[API POST /api/archives/reflection] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API POST /api/archives/reflection] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+✔ 旧端点实际核验发布、有效报名、归属、取消与账号，拒绝不新增 (55.681ms)
+[API POST /api/learning/lessons/1/report] → 409: {"error":"请先完成课堂回顾、全部知识卡片和配套练习","code":"REPORT_LOCKED"}
+[API POST /api/learning/lessons/1/report] → 400: {"error":"请填写所有必填内容","code":"LEARNING_INVALID"}
+[API POST /api/learning/lessons/1/report] → 400: {"error":"请在任意一个反思框写下想记录的内容","code":"LEARNING_INVALID"}
+[API POST /api/archives/reflection] → 400: {"error":"今日已提交过反思日志，每人每日限提交1篇。明天再来吧！"}
+[API POST /api/mentor-reviews/1/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 报告附带反思任选一项，报告总结门槛、版本、评审与日志包含次数不变 (90.7763ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-security-43340-1791468776864.db
+✔ 健康检查正常 (109.6064ms)
+✔ 默认账号可以登录并拿到 token (517.1195ms)
+[API GET /uploads/missing.txt] → 404: {"error":"Not Found","message":"请求的资源不存在"}
+✔ 移除公开 uploads 后未登录访问返回 404 (6.7296ms)
+[API GET /api/works/1/download] → 401: {"error":"未登录","message":"请先登录"}
+✔ 作品下载接口未登录返回 401 (7.7114ms)
+✔ 教师只能看到负责学生的作品 (151.8515ms)
+[API GET /api/works/2] → 403: {"error":"无权查看该作品"}
+[API GET /api/works/2/download] → 403: {"error":"无权下载该附件"}
+✔ 教师不能查看或下载未公开发布作品 (154.0532ms)
+✔ 学生课程详情只返回自己的报名记录 (160.9906ms)
+✔ 管理员课程详情返回全部报名记录 (154.6879ms)
+✔ 档案树只包含学生 (158.508ms)
+✔ 中文文件名解码正确 (0.9798ms)
+✔ schema.sql 与运行时结构同步 (1.7141ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-lifecycle-kpqNzP\test.db
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 401: {"error":"未登录","message":"请先登录"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 401: {"error":"未登录","message":"请先登录"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/students/4/status] → 401: {"error":"未登录","message":"请先登录"}
+[API POST /api/students/1/status] → 404: {"error":"学生不存在"}
+[API POST /api/students/999/status] → 404: {"error":"学生不存在"}
+[API POST /api/students/4/status] → 400: {"error":"请填写 1–500 字的操作原因"}
+[API POST /api/students/4/status] → 400: {"error":"请填写 1–500 字的操作原因"}
+[API POST /api/students/4/status] → 400: {"error":"请填写 1–500 字的操作原因"}
+[API POST /api/students/4/status] → 400: {"error":"请填写 1–500 字的操作原因"}
+[API POST /api/students/4/status] → 400: {"error":"无效的账号操作"}
+✔ 所有状态操作仅管理员可执行，校验目标、操作及原因 (277.5749ms)
+[API POST /api/students/4/status] → 400: {"error":"仅正常学生账号可以停用"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API GET /api/auth/me] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+[API POST /api/auth/refresh] → 401: {"error":"登录已过期，请重新登录"}
+[API GET /api/auth/me] → 401: {"error":"账号状态已变更，请重新登录","message":"请重新登录"}
+[API POST /api/auth/refresh] → 401: {"error":"登录已过期，请重新登录"}
+✔ 停用立即阻止登录及旧会话；恢复保留密码但不复活旧凭证 (73.7369ms)
+[API POST /api/students/4/status] → 400: {"error":"该学生已经归档"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API PUT /api/students/users/4] → 400: {"error":"请先通过学生状态管理功能恢复或停用账号"}
+[API PUT /api/students/users/4] → 400: {"error":"请先通过学生状态管理功能恢复或停用账号"}
+[API DELETE /api/students/4] → 400: {"error":"该学生仍有关联数据，无法删除：账号状态操作记录 3 条（请保留账号及状态历史）；课程参与记录（含已移除记录） 1 条（请保留账号及历史档案）；学生作品 1 条（请保留账号及历史档案）"}
+[API DELETE /api/students/users/4] → 400: {"error":"该用户仍有关联数据，无法删除：账号状态操作记录 3 条（请保留账号及状态历史）；课程参与记录（含已移除记录） 1 条（请保留账号及历史档案）；学生作品 1 条（请保留账号及历史档案）"}
+✔ 归档保留学习记录和授权查阅，不能选入新课、编辑启用或删除 (77.1525ms)
+[API POST /api/students/4/status] → 500: {"error":"操作失败，请稍后重试"}
+✅ 数据库迁移 003_archive_timeline.sql 已应用
+✅ 数据库迁移 004_works_root_unique.sql 已应用
+✅ 数据库迁移 005_glider_course_scope.sql 已应用
+✅ 数据库迁移 006_lesson_lifecycle.sql 已应用
+✅ 数据库迁移 007_task_lifecycle.sql 已应用
+✅ 数据库迁移 008_student_lifecycle.sql 已应用
+✅ 数据库迁移 009_lesson_learning_flow.sql 已应用
+✅ 数据库迁移 010_lesson_learning_stages.sql 已应用
+✅ 数据库迁移 011_report_score_dimensions.sql 已应用
+✅ 数据库迁移 012_ai_assistant.sql 已应用
+✅ 数据库迁移 013_ai_usage.sql 已应用
+✅ 数据库迁移 014_glider_design_params.sql 已应用
+✅ 数据库迁移 015_glider_trajectories.sql 已应用
+✅ 数据库迁移 016_course_avatar_preferences.sql 已应用
+✅ 数据库迁移 017_course_content_maintenance.sql 已应用
+✅ 数据库迁移 018_course_plan_templates_account_avatar.sql 已应用
+✅ 数据库迁移 019_course_plan_detach_lesson.sql 已应用
+✅ 数据库迁移 020_open_reflections.sql 已应用
+✔ 状态及会话撤销、操作记录在同一事务，记录失败则全部回滚 (29.094ms)
+✔ 旧库增量迁移幂等且保留账号与密码，新库结构一致 (51.4347ms)
+[API GET /api/courses] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+✔ 恢复不绕过首次改密要求，会话版本不作为用户资料返回 (51.6053ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-temp-passwords-EdpS6S\test.db
+✔ 随机服务生成的密码均为 12 位四类字符，无样本重复 (103.6434ms)
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+✔ 学生创建与管理员创建各角色统一随机密码，仅当次响应返回且仅 hash 入库 (2954.3677ms)
+[API POST /api/students] → 400: {"error":"初始密码由系统随机生成，请勿传入 password"}
+[API POST /api/students/users] → 400: {"error":"初始密码由系统随机生成，请勿传入 password"}
+[API PUT /api/students/users/3] → 400: {"error":"请使用重置密码功能，系统将生成随机临时密码"}
+✔ 手填初始密码和编辑资料改密被明确拒绝，现有密码不受影响 (17.5557ms)
+✔ 导入随机密码只对应成功行，普通账号 CSV 无密码，临时 CSV 可原样登录 (587.2893ms)
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/refresh] → 401: {"error":"登录已过期，请重新登录"}
+[API GET /api/courses] → 401: {"error":"账号状态已变更，请重新登录","message":"请重新登录"}
+[API GET /api/courses] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/courses] → 401: {"error":"账号状态已变更，请重新登录","message":"请重新登录"}
+[API GET /api/courses] → 401: {"error":"账号状态已变更，请重新登录","message":"请重新登录"}
+[API POST /api/auth/login] → 401: {"error":"账号或密码错误"}
+[API POST /api/auth/refresh] → 401: {"error":"登录已过期，请重新登录"}
+✔ 重置撤销旧 refresh token、阻止旧业务会话；临时密码改密后失效 (1341.1752ms)
+[API POST /api/auth/admin/reset-password] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/auth/admin/reset-password] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/auth/admin/reset-password] → 400: {"error":"不能重置管理员自己的密码"}
+✔ 重置密码仅管理员可操作，教师导师均可作为重置目标 (608.8905ms)
+管理员重置密码错误: SqliteError: test revocation failure
+    at revokeAllRefreshTokens (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\authController.js:34:62)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\controllers\authController.js:314:7
+    at sqliteTransaction (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\better-sqlite3\lib\methods\transaction.js:65:24)
+    at exports.adminResetPassword (C:\Users\shr\Desktop\nmg前端\app\backend\controllers\authController.js:315:7)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:77:5
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at requireAuth (C:\Users\shr\Desktop\nmg前端\app\backend\middleware\auth.js:65:3) {
+  code: 'SQLITE_CONSTRAINT_TRIGGER'
+}
+[API POST /api/auth/admin/reset-password] → 500: {"error":"操作失败，请稍后重试"}
+✔ 撤销 refresh token 失败时重置事务回滚 (434.0873ms)
+✔ 创建和重置不会将临时密码写入服务器日志 (288.6052ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-workpolicy-33728-1791468777647.db
+✔ 教师作品列表仅包含负责学生的全部有效报名作品 (471.6691ms)
+[API GET /api/works/4] → 403: {"error":"无权查看该作品"}
+[API GET /api/works/6] → 403: {"error":"无权查看该作品"}
+[API GET /api/works/4/download] → 403: {"error":"无权下载该附件"}
+✔ 教师详情/下载限负责学生，且可查看全部历史版本 (29.7618ms)
+✔ 教师Dashboard只读展示负责学生的已通过成果 (22.6729ms)
+[API GET /api/works/12] → 403: {"error":"无权查看该作品"}
+[API POST /api/works/12/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 教师不可查看或批改同校未分配学生作品 (10.0089ms)
+✔ 学生Dashboard作品DTO不含file_path (140.3523ms)
+✔ 导师作品列表按课程归属（创建者或授课人） (284.3423ms)
+[API GET /api/works/6] → 403: {"error":"无权查看该作品"}
+✔ 遗留无课程关联作品：管理员/本人可见，导师不可见 (144.6138ms)
+[API POST /api/works/5/review] → 403: {"error":"无权评审该作品"}
+[API POST /api/works/2/review] → 403: {"error":"无权评审该作品"}
+✔ 导师仅可批改自己课程作品 (19.6847ms)
+[API POST /api/works/5/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/works/4/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 教师对任何作品均不可评审 (7.3547ms)
+[API DELETE /api/works/8] → 403: {"error":"已通过评审的作品不能删除"}
+[API DELETE /api/works/9] → 403: {"error":"已有后续版本的作品不能删除"}
+[API DELETE /api/works/11] → 403: {"error":"无权删除该作品"}
+[API DELETE /api/works/8] → 403: {"error":"已通过评审的作品不能删除"}
+✔ 作品删除矩阵 (25.5174ms)
+✔ 作品计数按版本根去重 (7.1894ms)
+✔ 根记录唯一约束与并发兜底 (1.3637ms)
+[API POST /api/works] → 400: {"error":"该任务已有作品，请通过重新提交创建新版本"}
+✔ 文字任务提交写入work_id成长事件并拒绝重复根 (17.9595ms)
+[API POST /api/works] → 400: {"error":"请填写成果内容或选择文件"}
+[API POST /api/works] → 400: {"error":"文件内容与扩展名不符（.pdf）","message":"文件内容与扩展名不符（.pdf）"}
+✔ 学生提交作品支持仅附件或仅文字，并保留空内容和文件签名校验 (66.4722ms)
+ℹ tests 192
+ℹ suites 0
+ℹ pass 192
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13176.3257

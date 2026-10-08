@@ -12,7 +12,7 @@ const mime={
  '.obj':['model/obj','text/plain'],'.glb':['model/gltf-binary'],'.gltf':['model/gltf+json','application/json'],'.stl':['model/stl','application/sla','text/plain']
 };
 const ai=new Set(['.pdf','.docx','.pptx','.txt']);
-const formats=Object.entries(mime).map(([ext,mimes])=>({ext,mimes,limitMB:50,upload:true,download:true,preview:'仅下载（视频回放使用专用入口）',ai:ai.has(ext)?'可提取文字；扫描 PDF 无 OCR':'不支持文字索引'}));
+const formats=Object.entries(mime).map(([ext,mimes])=>({ext,mimes,limitMB:50,upload:true,download:true,preview:['.jpg','.jpeg','.png','.gif','.webp'].includes(ext)?'维护端授权图片预览；学生按原课时展示':ext==='.pdf'?'维护端隔离 PDF 预览（浏览器支持时），可下载': '仅下载（视频回放使用专用入口）',ai:ai.has(ext)?'可提取文字；扫描 PDF 无 OCR':'不支持文字索引'}));
 function fail(message){throw Object.assign(new Error(message),{status:400});}
 function filter(req,file,cb){
  const ext=path.extname(file.originalname).toLowerCase(),allowed=mime[ext];

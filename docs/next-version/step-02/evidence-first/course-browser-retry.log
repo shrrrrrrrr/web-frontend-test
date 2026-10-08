@@ -1,0 +1,22 @@
+✖ 可视化课程介绍真实保存、读失败保持草稿和封面替换原生命周期 (67214.2479ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 68009.431
+
+✖ failing tests:
+
+test at tests\next-step02-course.browser.test.js:9:1
+✖ 可视化课程介绍真实保存、读失败保持草稿和封面替换原生命周期 (67214.2479ms)
+  locator.click: Timeout 30000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('form').filter({ has: locator('textarea[id$="_driving_question"]') }).getByLabel('封面', { exact: true })[22m
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02-course.browser.test.js:29:43) {
+    name: 'TimeoutError',
+    log: [ `  - waiting for locator('form').filter({ has: locator('textarea[id$="_driving_question"]') }).getByLabel('封面', { exact: true })` ]
+  }

@@ -1,0 +1,22 @@
+✖ 可视化课程介绍真实保存、读失败保持草稿和封面替换原生命周期 (37302.2137ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38072.2994
+
+✖ failing tests:
+
+test at tests\next-step02-course.browser.test.js:9:1
+✖ 可视化课程介绍真实保存、读失败保持草稿和封面替换原生命周期 (37302.2137ms)
+  locator.click: Timeout 30000ms exceeded.
+  Call log:
+  [2m  - waiting for getByTestId('content-maintenance').getByRole('button', { name: '重新读取', exact: true }).first()[22m
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02-course.browser.test.js:31:178) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByTestId('content-maintenance').getByRole('button', { name: '重新读取', exact: true }).first()" ]
+  }

@@ -1,0 +1,182 @@
+FAILURE 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 locator.fill: Timeout 12000ms exceeded.
+Call log:
+[2m  - waiting for locator('.ant-modal').visible().last().getByLabel('课时提示', { exact: true })[22m
+
+PAGE http://127.0.0.1:4194/courses/9003?tab=maintenance PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+← 返回上一页
+帮助与反馈
+张导师
+学术导师
+返回
+星海远航
+撤回为草稿
+主题
+—
+	
+适用学段
+初中
+
+
+难度
+基础
+	
+状态
+已发布
+
+
+创建者
+张导师
+	
+总课时
+—
+课程内容维护
+课时安排
+课程回放
+课程资源
+选课学生 (1)
+课程内容维护
+
+填写真实教学内容；学生在课程地图和对应课时读取。不会改变学习门槛、评分或作品历史
+
+重新读取
+可视化填写 / 学生效果预览
+课程介绍与显示
+地图计划与课时
+任务要求与教学提示
+教学资料与回放
+实验关联
+点击虚线教学区域编辑，预览不提交学习记录、不显示答案解析
+星海远航
+课程介绍、目标、故事与材料 · 编辑
+选择要填写的课时
+滑翔机试飞理论课
+学生展示位置 / 教学资料
+滑翔机试飞理论课
+
+理论课
+
+课时标题、介绍与安排 · 编辑
+
+此教学区域尚未填写
+
+日期待安排 · 结束时间待安排 · 地点待安排 · 授课人待安排 · 时长待安排
+课堂回顾与知识学习
+课堂回顾正文 · 编辑
+此教学区域尚未填写
+填写知识卡片与练习
+任务与学习报告
+
+本课内容待老师填写
+
+编辑课时说明 / 报告指导
+实验指导
+实验指导 · 编辑
+此教学区域尚未填写
+编辑实验关联与返回位置
+课程资源与回放
+
+本课资料待提供
+
+上传到此课程或课时
+教学准备状态
+内容待准备
+编辑课时说明与归属
+名称
+8 / 120
+说明
+16 / 10000
+可选；清空后学生不再显示此说明
+教学提示
+0 / 2000
+可选；清空后学生不再显示此说明
+课时排序
+上课日期与开始时间
+结束时间
+上课地点
+时长（分钟）
+授课人
+课时展示类型
+理论课
+内容准备状态
+内容待准备
+精彩瞬间说明（照片使用本课资料上传）
+文章标题（可留空）
+文章 HTTPS 链接（可留空，不自动内嵌）
+所属章节
+未分组
+保 存
+2
+张导师
+PAGE http://127.0.0.1:4194/explore 跳到页面内容
+PBL 科创平台
+课程
+我的
+120
+演示
+王小明
+我的学习空间
+选择一门课程
+
+课程由老师分配。选择课程，进入它的学习空间
+
+课程空间
+工程观察 · 测试课程
+
+用于验证第二门课程的独立记录与默认校园主题，不是正式教学内容
+
+进入课程
+课程空间
+星海远航
+进入课程
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✖ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (17969.6486ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (22279.002ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 23051.5279
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (17969.6486ms)
+  locator.fill: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().last().getByLabel('课时提示', { exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:15:965
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:15:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().last().getByLabel('课时提示', { exact: true })" ]
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (22279.002ms)
+  locator.fill: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().last().getByLabel('课时提示', { exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:15:965
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:15:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().last().getByLabel('课时提示', { exact: true })" ]
+  }

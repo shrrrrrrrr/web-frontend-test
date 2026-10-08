@@ -1,0 +1,437 @@
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✔ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (7130.0047ms)
+  ✔ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (4724.3524ms)
+FAILURE 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 locator.click: Timeout 12000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('tab', { name: '教学资料与回放', exact: true })[22m
+[2m    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-1-tab-resources" aria-controls="rc-tabs-1-panel-resources">教学资料与回放</div>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  2 × retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  5 × retrying click action[22m
+[2m      - waiting 500ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 500ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 500ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 500ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 500ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 500ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 500ms[22m
+
+PAGE http://127.0.0.1:4194/courses/9003?tab=maintenance PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+← 返回上一页
+帮助与反馈
+张导师
+学术导师
+返回
+星海远航
+撤回为草稿
+主题
+—
+	
+适用学段
+初中
+
+
+难度
+基础
+	
+状态
+已发布
+
+
+创建者
+张导师
+	
+总课时
+—
+课程内容维护
+课时安排
+课程回放
+课程资源
+选课学生 (1)
+课程内容维护
+
+填写真实教学内容；学生在课程地图和对应课时读取。不会改变学习门槛、评分或作品历史
+
+重新读取
+内容已由其他维护者修改，请重新读取并核对后保存
+可视化填写 / 学生效果预览
+课程介绍与显示
+地图计划与课时
+任务要求与教学提示
+教学资料与回放
+实验关联
+点击虚线教学区域编辑，预览不提交学习记录、不显示答案解析
+星海远航
+课程介绍、目标、故事与材料 · 编辑
+选择要填写的课时
+滑翔机试飞理论课
+学生展示位置 / 教学资料
+滑翔机试飞理论课
+
+理论课
+
+课时标题、介绍与安排 · 编辑
+
+隔离验收：请比较条件并保留证据。
+
+2026-10-20T09:00 · 2026-10-20T09:45 · 隔离科创教室 · 张导师 · 45 分钟
+课堂回顾与知识学习
+课堂回顾正文 · 编辑
+
+隔离验收：请比较条件并保留证据。
+
+填写知识卡片与练习
+隔离知识卡片
+
+隔离正文二次更新
+
+隔离题：要记录条件吗
+任务与学习报告
+
+本课内容待老师填写
+
+编辑课时说明 / 报告指导
+实验指导
+实验指导 · 编辑
+
+隔离指导：先记录条件，再自由试飞。
+
+编辑实验关联与返回位置
+课时说明
+
+隔离验收：请比较条件并保留证据
+
+课程资源与回放
+
+本课资料待提供
+
+上传到此课程或课时
+教学准备状态
+内容待准备
+编辑课时说明与归属
+名称
+8 / 120
+说明
+7 / 10000
+可选；清空后学生不再显示此说明
+教学提示
+17 / 2000
+可选；清空后学生不再显示此说明
+课时排序
+上课日期与开始时间
+结束时间
+上课地点
+时长（分钟）
+授课人
+张导师
+课时展示类型
+理论课
+内容准备状态
+内容待准备
+精彩瞬间说明（照片使用本课资料上传）
+文章标题（可留空）
+文章 HTTPS 链接（可留空，不自动内嵌）
+所属章节
+未分组
+内容已由其他维护者修改，请重新读取并核对后保存
+保 存
+PAGE http://127.0.0.1:4194/courses/9003/lessons/90023/learn 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+王小明
+返回课程地图
+全部课程
+滑翔机试飞理论课
+
+教学内容正在准备，暂不记录完成
+
+返回课程地图
+课堂回顾
+
+本课内容待老师填写
+
+知识卡片与练习
+
+本课内容待老师填写
+
+任务与学习报告
+
+本课内容待老师填写
+
+实验指导
+
+隔离指导：先记录条件，再自由试飞
+
+课时说明
+
+隔离验收：请比较条件并保留证据
+
+课程资源与回放
+
+本课资料待提供
+
+重置机器人位置（机器人聚焦后也可按 Home）
+  ✖ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (12912.7617ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (29004.0763ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 29809.4616
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (12912.7617ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('tab', { name: '教学资料与回放', exact: true })[22m
+  [2m    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-1-tab-resources" aria-controls="rc-tabs-1-panel-resources">教学资料与回放</div>[22m
+  [2m  - attempting click action[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  2 × retrying click action[22m
+  [2m      - waiting 100ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  5 × retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:17:113
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:80)
+      at scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:50)
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:17:8) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('tab', { name: '教学资料与回放', exact: true })", '    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-1-tab-resources" aria-controls="rc-tabs-1-panel-resources">教学资料与回放</div>', '  - attempting click action', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 20ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  2 × retrying click action', '      - waiting 100ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  5 × retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms' ]
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (29004.0763ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('tab', { name: '教学资料与回放', exact: true })[22m
+  [2m    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-1-tab-resources" aria-controls="rc-tabs-1-panel-resources">教学资料与回放</div>[22m
+  [2m  - attempting click action[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  2 × retrying click action[22m
+  [2m      - waiting 100ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  5 × retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:17:113
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:80)
+      at scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:50)
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:17:8) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('tab', { name: '教学资料与回放', exact: true })", '    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-1-tab-resources" aria-controls="rc-tabs-1-panel-resources">教学资料与回放</div>', '  - attempting click action', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 20ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  2 × retrying click action', '      - waiting 100ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  5 × retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-wrap">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <div class="ant-col ant-form-item-label css-viwxw0 css-var-_r_3c_">…</div> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <textarea rows="3" maxlength="10000" id="maint-lesson-90023_moments_note" class="ant-input css-viwxw0 ant-input-outlined css-var-_r_3c_ ant-input-css-var"></textarea> from <div class="ant-modal-root css-viwxw0 css-var-_r_3c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms' ]
+  }

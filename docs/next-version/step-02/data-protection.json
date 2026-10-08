@@ -1,0 +1,240 @@
+{
+  "tables": [
+    {
+      "table": "ai_chunks",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "ai_documents",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "ai_settings",
+      "rows": 1,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "ai_usage",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "card_exercise_attempts",
+      "rows": 1,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "card_exercises",
+      "rows": 1,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "classes",
+      "rows": 3,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "course_avatar_preferences",
+      "rows": 1,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "course_chapters",
+      "rows": 2,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "course_covers",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "course_experiments",
+      "rows": 2,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "course_plan_nodes",
+      "rows": 10,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "course_replays",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "courses",
+      "rows": 6,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "enrollments",
+      "rows": 6,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "evaluations",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "feedback_attachments",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "feedback_messages",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "feedbacks",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "glider_simulations",
+      "rows": 3,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "glider_trajectories",
+      "rows": 1,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "growth_records",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "knowledge_cards",
+      "rows": 2,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "lesson_learning_reports",
+      "rows": 2,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "lesson_progress",
+      "rows": 6,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "lesson_review_completions",
+      "rows": 2,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "lessons",
+      "rows": 13,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "media_assets",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "micro_projects",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "notifications",
+      "rows": 1,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "project_milestones",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "project_team_members",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "project_teams",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "reflections",
+      "rows": 2,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "resources",
+      "rows": 4,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "schools",
+      "rows": 2,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "student_card_progress",
+      "rows": 2,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "student_status_events",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "tasks",
+      "rows": 6,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "team_members",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "teams",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "user_notifications",
+      "rows": 1,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "users",
+      "rows": 6,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "work_reviews",
+      "rows": 0,
+      "oldColumnsPreserved": true
+    },
+    {
+      "table": "works",
+      "rows": 2,
+      "oldColumnsPreserved": true
+    }
+  ],
+  "existingFileBytesPreserved": true,
+  "integrity": "ok",
+  "foreignKeyViolations": 0,
+  "migration20": 1,
+  "reflectionNewColumns": [
+    "reflection_version",
+    "entry_note",
+    "together_note",
+    "extra_note"
+  ],
+  "scope": "Read-only original-column comparison; relocated paths normalized, auth refresh tokens and derived FTS excluded"
+}

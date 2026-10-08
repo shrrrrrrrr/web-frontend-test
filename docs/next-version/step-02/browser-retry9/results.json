@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "name": "可视化填写真实课时安排、指导与学生布局；预览无学习副作用",
+      "status": "passed"
+    },
+    {
+      "name": "新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览",
+      "status": "passed"
+    },
+    {
+      "name": "真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节",
+      "status": "passed"
+    },
+    {
+      "name": "管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('video') to be visible\u001b[22m\n"
+    }
+  ],
+  "pageErrors": [],
+  "routeSmoke": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "scope": "all writes and fault injection use isolated synthetic persistent database; actual teaching data unchanged"
+}

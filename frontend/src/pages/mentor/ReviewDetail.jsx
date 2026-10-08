@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import {
   Alert, Button, Card, Collapse, Descriptions, Form, Input, InputNumber,
   Modal, Progress, Space, Table, Tag, Typography, message,
@@ -8,6 +8,8 @@ import { ArrowLeftOutlined } from '@ant-design/icons';
 import { mentorReviewAPI } from '../../api';
 import PageContainer from '../../components/common/PageContainer';
 import AsyncPageState from '../../components/common/AsyncPageState';
+
+import {ReflectionFields} from '../../student/ArchiveRecords';
 
 const dimensions = [
   ['knowledge_understanding', '知识理解'],
@@ -18,20 +20,21 @@ const dimensions = [
 
 export default function ReviewDetail() {
   const { reportId } = useParams();
-  const navigate = useNavigate();
+  const navigate=useNavigate(),location=useLocation(),sequence=useRef(0);
+  const queueReturn=/^\/mentor\/reviews(?:\?|$)/.test(location.state?.queueReturn||'')?location.state.queueReturn:'/mentor/reviews';
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [form] = Form.useForm();
   const load = async () => {
-    setLoading(true); setError('');
-    try { setData(await mentorReviewAPI.detail(reportId)); }
-    catch (err) { setError(err?.response?.data?.error || '无法加载评审详情'); }
-    finally { setLoading(false); }
+    const ticket=++sequence.current;setLoading(true);setError('');setData(null);
+    try {const result=await mentorReviewAPI.detail(reportId);if(ticket===sequence.current)setData(result);}
+    catch(err){if(ticket===sequence.current)setError(err?.response?.data?.error||'无法加载评审详情');}
+    finally{if(ticket===sequence.current)setLoading(false);}
   };
   // eslint-disable-next-line react-hooks/set-state-in-effect, react-hooks/exhaustive-deps
-  useEffect(() => { load(); }, [reportId]);
+  useEffect(() => { load();return()=>{sequence.current++;}; }, [reportId]);
 
   const review = async (status) => {
     const values = await form.validateFields(['score', 'comment', 'dimensions']);
@@ -56,7 +59,7 @@ export default function ReviewDetail() {
   return <PageContainer
     title={`${data.student.real_name} · ${data.lesson.title}`}
     description={`${data.course.title} · 学习报告第 ${report.version} 版 · ${report.status === 'submitted' ? '待评审' : report.status === 'approved' ? '已通过' : '需修改'}`}
-    extra={<Button icon={<ArrowLeftOutlined />} onClick={() => navigate('/mentor/reviews')}>返回评审队列</Button>}
+    extra={<Button icon={<ArrowLeftOutlined />} onClick={() => navigate(queueReturn)}>返回评审队列</Button>}
   >
     <div className="mentor-review-layout">
       <div>
@@ -67,12 +70,7 @@ export default function ReviewDetail() {
           <Descriptions.Item label="困难与疑问">{report.difficulties || '-'}</Descriptions.Item>
           <Descriptions.Item label="下一步计划">{report.next_plan || '-'}</Descriptions.Item>
         </Descriptions></Card>
-        <Card className="content-card" title="结构化反思" style={{ marginBottom: 16 }}><Descriptions column={1} size="small">
-          <Descriptions.Item label="遇到的困难">{reflection?.difficulty || '-'}</Descriptions.Item>
-          <Descriptions.Item label="解决方式">{reflection?.solution || '-'}</Descriptions.Item>
-          <Descriptions.Item label="可以改进之处">{reflection?.improvement || '-'}</Descriptions.Item>
-          <Descriptions.Item label="新的问题">{reflection?.new_question || '-'}</Descriptions.Item>
-        </Descriptions></Card>
+        <Card className="content-card" title="反思记录" style={{marginBottom:16}}><ReflectionFields reflection={reflection || {}}/></Card>
         <Card className="content-card" title="知识学习证据"><Table size="small" pagination={false} rowKey="id" dataSource={cards} columns={[
           { title: '知识卡片', dataIndex: 'title' },
           { title: '状态', render: (_, row) => <Tag color={row.completed_at ? 'green' : 'default'}>{row.completed_at ? '已完成' : '未完成'}</Tag> },

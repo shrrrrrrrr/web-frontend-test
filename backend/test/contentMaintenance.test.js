@@ -64,7 +64,7 @@ test('受邀课时导师、停用/强制改密/匿名与回放对象链均遵循
  assert.equal((await fetch(url+'/api/courses/1/maintenance')).status,401);
  db.prepare('UPDATE users SET force_reset_password=1 WHERE id=1').run();assert.equal((await request(1,route(''))).status,403);assert.equal((await file(1,1,'拒绝.txt','x','text/plain')).status,403);db.prepare('UPDATE users SET force_reset_password=0 WHERE id=1').run();
  db.prepare('UPDATE users SET is_active=0 WHERE id=5').run();assert.equal((await request(5,route('',2))).status,401);assert.equal((await file(5,2,'拒绝.txt','x','text/plain')).status,401);db.prepare('UPDATE users SET is_active=1 WHERE id=5').run();assert.equal(files().length,before);
- const replay=await file(1,1,'回放.webm',fs.readFileSync(path.join(__dirname,'../testFixtures/teaching-replay.webm')),'video/webm',{title:'专用回放',lesson_id:1,description:'说明'},'replays');assert.equal(replay.status,200);const rid=replay.body.id;
+ const replay=await file(4,1,'回放.webm',fs.readFileSync(path.join(__dirname,'../testFixtures/teaching-replay.webm')),'video/webm',{title:'专用回放',lesson_id:1,description:'说明'},'replays');assert.equal(replay.status,200);const rid=replay.body.id;
  assert.equal((await request(1,route('/replays/'+rid,2),'PUT',{title:'跨课'})).status,404);assert.equal((await request(1,route('/replays/'+rid),'PUT',{lesson_id:2})).status,400);assert.equal((await request(1,route('/replays/'+rid),'PUT',{description:'',lesson_id:null})).status,200);
  assert.equal((await request(1,route('/replays/'+rid),'PUT',{title:'新标题'})).status,200);assert.equal(db.prepare('SELECT description FROM course_replays WHERE id=?').get(rid).description,null);assert.equal((await request(1,route('/replays/'+rid,2),'DELETE')).status,404);
 });
@@ -95,7 +95,7 @@ test('伪装/MIME/超限和落库失败均拒绝并清理本次孤立文件；�
  const badZip=await new JSZip().file('a.txt','hello').generateAsync({type:'nodebuffer'}),before=files().length;
  for(const[name,bytes,mime]of[['脚本.js','alert(1)','text/javascript'],['伪表.xlsx',badZip,'application/octet-stream'],['伪表.xls','not a workbook','application/octet-stream'],['文本.md',Buffer.from([0,255]),'application/octet-stream'],['错类.csv','a,b','image/png'],['引号.csv','"a,b','text/csv'],['注入.md','<script>alert(1)</script>','text/plain']])assert.equal((await file(1,1,name,bytes,mime)).status,400,name);
  assert.equal((await file(1,1,'超限.txt',Buffer.alloc(50*1024*1024+1,65),'text/plain')).status,400);assert.equal(files().length,before);
- assert.equal((await file(1,1,'回放.txt','test','text/plain',{},'replays')).status,400);assert.equal((await file(1,1,'封面.md','# x','text/markdown',{},'cover')).status,400);
+ assert.equal((await file(4,1,'回放.txt','test','text/plain',{},'replays')).status,400);assert.equal((await file(1,1,'封面.md','# x','text/markdown',{},'cover')).status,400);
  db.exec("CREATE TRIGGER synthetic_disk_failure BEFORE INSERT ON resources BEGIN SELECT RAISE(ABORT,'synthetic persistent failure'); END");assert.equal((await file(1,1,'失败.md','# x','text/markdown')).status,500);db.exec('DROP TRIGGER synthetic_disk_failure');assert.equal(files().length,before);
 });
 test('私有封面真实保存/替换、下载范围、失效清除与安全公共封面切换',async()=>{
@@ -106,7 +106,7 @@ test('私有封面真实保存/替换、下载范围、失效清除与安全公�
  assert.equal((await file(1,1,'坏图.png',Buffer.from('89504e47','hex'),'image/png',{},'cover')).status,400);assert.ok(fs.existsSync(replacement));
  assert.equal((await file(1,1,'超限.png',Buffer.alloc(5*1024*1024+1),'image/png',{},'cover')).status,400);assert.ok(fs.existsSync(replacement));
  db.prepare("UPDATE courses SET status='draft' WHERE id=1").run();assert.equal((await request(2,'/courses/1/cover')).status,404);assert.equal((await request(2,'/course-spaces/1/courses/1')).status,404);db.prepare("UPDATE courses SET status='published' WHERE id=1").run();
- await request(1,'/courses/1','PUT',{cover_image:'/assets/redesign-v2/web/campus-960.webp'});assert.ok(!fs.existsSync(replacement));assert.equal(db.prepare('SELECT count(*) n FROM course_covers').get().n,0);
+ await request(1,route('/course'),'PUT',{cover_image:'/assets/redesign-v2/web/campus-960.webp',expected_revision:(await request(1,route(''))).body.course.content_revision});assert.ok(!fs.existsSync(replacement));assert.equal(db.prepare('SELECT count(*) n FROM course_covers').get().n,0);
  db.prepare("UPDATE courses SET status='archived' WHERE id=1").run();assert.equal((await request(1,route('/chapters'),'POST',{title:'归档拒绝'})).status,409);assert.equal((await request(1,route(''))).status,200);db.prepare("UPDATE courses SET status='published' WHERE id=1").run();
 });
 test('016真实旧库、全新库及重复启动迁移保护现有账号和业务记录',()=>{
@@ -132,3 +132,26 @@ test('016真实旧库、全新库及重复启动迁移保护现有账号和业�
  assert.equal(legacy.prepare('SELECT presentation_theme FROM courses WHERE id=1').get().presentation_theme,'campus');assert.equal(legacy.prepare('SELECT count(*) n FROM course_chapters').get().n,0);assert.equal(legacy.prepare('SELECT count(*) n FROM schema_migrations WHERE version=17').get().n,1);
  const fresh=new Database(':memory:');migrate(fresh);migrate(fresh);assert.equal(fresh.prepare('SELECT count(*) n FROM schema_migrations WHERE version=17').get().n,1);legacy.close();fresh.close();
 });
+
+test('管理员回放上传边界在文件解析前生效，旧及嵌套入口不落盘',async()=>{
+ const old=files(),count=db.prepare('SELECT count(*) n FROM course_replays').get().n;
+ for(const role of[1,2,3,5,6])for(const p of['/courses/1/replays','/courses/1/maintenance/replays']){const body=new FormData();body.append('file',new Blob(['invalid video'],{type:'video/webm'}),'forbidden.webm');const r=await request(role,p,'POST',body);assert.ok([403,404].includes(r.status),role+' '+p);}
+ assert.deepEqual(files(),old);assert.equal(db.prepare('SELECT count(*) n FROM course_replays').get().n,count);
+});
+test('维护课时安排与版本冲突保护，跨课授课人及日期无效不写入',async()=>{
+ const first=(await request(1,route(''))).body,lesson=first.lessons.find(l=>l.id===1);
+ const values={location:'隔离验收教室',duration:45,start_at:'2026-10-20T09:00',end_at:'2026-10-20T09:45',instructor_id:1,sort_order:2};
+ assert.equal((await request(1,route('/lessons/1'),'PUT',{...values,expected_revision:lesson.content_revision})).status,200);
+ assert.equal((await request(1,route('/lessons/1'),'PUT',{description:'不得覆盖',expected_revision:lesson.content_revision})).status,409);
+ const fresh=(await request(1,route(''))).body.lessons.find(l=>l.id===1);assert.equal(fresh.location,values.location);
+ for(const values of[{instructor_id:3},{start_at:'not-a-date'},{duration:-1},{start_at:'2026-10-20T10:00',end_at:'2026-10-20T09:00'}])assert.equal((await request(1,route('/lessons/1'),'PUT',values)).status,400);
+ const course=(await request(1,route(''))).body.course;
+ assert.equal((await request(1,route('/course'),'PUT',{description:'课程真实填写',expected_revision:course.content_revision})).status,200);
+ assert.equal((await request(1,route('/course'),'PUT',{description:'旧版本不得覆盖',expected_revision:course.content_revision})).status,409);
+});
+
+test('卡片管理版本使用同一原始对象，首次更新成功且过期版本拒绝',async()=>{const card=(await request(1,'/learning/manage/lessons/1/cards')).body.cards[0];assert.equal((await request(1,'/learning/manage/cards/'+card.id,'PUT',{content:'隔离新正文',expected_revision:card.content_revision})).status,200);assert.equal((await request(1,'/learning/manage/cards/'+card.id,'PUT',{content:'旧版本不得覆盖',expected_revision:card.content_revision})).status,409);});
+
+test('新增实验关联真实 ID 与版本返回，同一已知版本只能更新一次',async()=>{const first=await request(1,route('/experiments'),'POST',{experiment:'glider',lessonId:1,stage:0,label:'隔离版本关联',enabled:true});assert.equal(first.status,200);assert.equal(typeof first.body.content_revision,'string');const values={experiment:'glider',lessonId:1,stage:0,label:'隔离更新关联',enabled:true,expected_revision:first.body.content_revision};assert.equal((await request(1,route('/experiments/'+first.body.id),'PUT',values)).status,200);assert.equal((await request(1,route('/experiments/'+first.body.id),'PUT',values)).status,409);});
+
+test('新增练习保存真实版本，后续更新拒绝旧版本且不改作答次数',async()=>{const first=await request(1,'/learning/manage/cards/1/exercises','POST',{question_type:'true_false',prompt:'隔离版本题',answer:true,explanation:'隔离解释'});assert.equal(first.status,201);assert.equal(typeof first.body.content_revision,'string');const value={prompt:'隔离二次更新',expected_revision:first.body.content_revision};assert.equal((await request(1,'/learning/manage/exercises/'+first.body.id,'PUT',value)).status,200);assert.equal((await request(1,'/learning/manage/exercises/'+first.body.id,'PUT',value)).status,409);assert.equal(db.prepare('SELECT max_attempts FROM card_exercises WHERE id=?').get(first.body.id).max_attempts,1);});

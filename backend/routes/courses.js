@@ -38,7 +38,7 @@ router.post('/:id/resources', requireRole('admin', 'academic_mentor'), controlle
 
 // 课程回放
 router.get('/:id/replays', controller.listReplays);
-router.post('/:id/replays', requireRole('admin', 'academic_mentor'), controller.requireCourseManagement, uploadReplay.single('file'), validateUploadedFiles, controller.uploadReplay);
+router.post('/:id/replays', requireRole('admin'), controller.requireCourseManagement, uploadReplay.single('file'), validateUploadedFiles, controller.uploadReplay);
 
 // 任务
 router.post('/lessons/:lesson_id/tasks', requireRole('admin', 'academic_mentor'), controller.addTask);

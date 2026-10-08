@@ -1,0 +1,506 @@
+{
+  "records": [
+    {
+      "name": "可视化填写真实课时安排、指导与学生布局；预览无学习副作用",
+      "status": "passed"
+    },
+    {
+      "name": "新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览",
+      "status": "passed"
+    },
+    {
+      "name": "真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节",
+      "status": "passed"
+    },
+    {
+      "name": "管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘",
+      "status": "passed"
+    },
+    {
+      "name": "开放日志任意一框提交、空框客户端拒绝、失败草稿与每日限次保输入",
+      "status": "passed"
+    },
+    {
+      "name": "旧四项草稿保留独立备份与第四项原义，报告三框真实提交与导师直接评审",
+      "status": "passed"
+    },
+    {
+      "name": "学生导师反馈直接选报告，不跳课程结构，退回状态和只读教师新旧反思",
+      "status": "passed"
+    },
+    {
+      "name": "退回后开放报告新版本重审通过，学生直选最终反馈，迟到队列不覆盖新筛选",
+      "status": "passed"
+    },
+    {
+      "name": "可视化参观填写、图片安全预览与五视口维护弹窗",
+      "status": "passed"
+    },
+    {
+      "name": "四种维护角色五视口实际控件、侧栏、键盘与减少运动",
+      "status": "passed"
+    },
+    {
+      "name": "非学生全角色实际可访问路由 smoke 与对象详情，菜单无遗漏",
+      "status": "passed"
+    },
+    {
+      "name": "权限撤回清除旧内容、附件404局部错误、第三课实验往返和十关保留",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "routeSmoke": [
+    {
+      "role": "admin",
+      "url": "/dashboard",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/dashboard/schools/1",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/dashboard/ai",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/dashboard/ai/settings",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/courses",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/courses/create",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/courses/9003",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/courses/9003/edit",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/courses/9003/ai-knowledge",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/courses/9003/lessons/90023/content",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/students",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/students/4",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/works",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/works/9001",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/tasks",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/tasks/9001",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/archives",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/glider",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/mentor/content",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/mentor/reviews",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/mentor/reviews/3",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/observer",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/observer/students",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/observer/students/4",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/feedback",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/feedback/new",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/feedback/manage",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/notifications",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/change-password",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/feedback/1",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "admin",
+      "url": "/notifications/6",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/dashboard",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/dashboard/ai",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/courses",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/courses/create",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/courses/9003",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/courses/9003/edit",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/courses/9003/ai-knowledge",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/courses/9003/lessons/90023/content",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/students",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/students/4",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/works",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/works/9001",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/tasks",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/tasks/9001",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/archives",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/glider",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/mentor/content",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/mentor/reviews",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/mentor/reviews/3",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/feedback",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/feedback/new",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/notifications",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/notifications/6",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/change-password",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "mentor",
+      "url": "/feedback/2",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/observer",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/observer/students",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/observer/students/4",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/archives",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/feedback",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/feedback/new",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/notifications",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/change-password",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/feedback/3",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "teacher",
+      "url": "/notifications/6",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "media",
+      "url": "/dashboard",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "media",
+      "url": "/courses",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "media",
+      "url": "/feedback",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "media",
+      "url": "/feedback/new",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "media",
+      "url": "/notifications",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "media",
+      "url": "/change-password",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "media",
+      "url": "/feedback/4",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    },
+    {
+      "role": "media",
+      "url": "/notifications/6",
+      "status": "passed",
+      "scope": "authorized route rendered; no destructive write"
+    }
+  ],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "scope": "all writes and fault injection use isolated synthetic persistent database; actual teaching data unchanged"
+}

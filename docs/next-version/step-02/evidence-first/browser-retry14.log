@@ -1,0 +1,362 @@
+TEACHER_SELECTION []
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"隔离验收：请比较条件并保留证据。","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"b6c1beb2d81790019e55f9facd194fba315b37bb0d1bd3c47891c7be19fbb367"}
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✔ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (6669.5815ms)
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/learning/manage/cards/900113 {"title":"隔离知识卡片","content":"隔离正文二次更新。","estimated_minutes":10,"is_required":true,"status":"published","expected_revision":"9f061c63ff578e6e513e36bcae6ac42f0356be33d3c52fe2cee1945e0cc5698d"}
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"旧预览不应覆盖","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"5f4044855d767d91aa0a02ca333c222eef1779546ff7f8c68b2f92d33641137d"}
+  ✔ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (4560.1514ms)
+  ✔ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (5187.8426ms)
+  ✔ 管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘 (6403.0452ms)
+  ✔ 开放日志任意一框提交、空框客户端拒绝、失败草稿与每日限次保输入 (4595.975ms)
+  ✔ 旧四项草稿保留独立备份与第四项原义，报告三框真实提交与导师直接评审 (4302.092ms)
+  ✔ 学生导师反馈直接选报告，不跳课程结构，退回状态和只读教师新旧反思 (4568.5495ms)
+FAILURE 四种维护角色五视口实际控件、侧栏、键盘与减少运动 The expression evaluated to a falsy value:
+
+  assert.ok(await p.locator('.staff-sidebar').evaluate(e=>e.getBoundingClientRect().width===0))
+
+PAGE http://127.0.0.1:4194/mentor/reviews/2 PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+← 返回上一页
+1
+帮助与反馈
+张导师
+学术导师
+王小明 · 滑翔机试飞理论课
+星海远航 · 学习报告第 1 版 · 需修改
+返回评审队列
+学习报告
+学习总结	隔离总结
+关键收获	-
+应用设想	-
+困难与疑问	-
+下一步计划	-
+反思记录
+今天想记下什么
+未填写
+和别人一起时的感受
+未填写
+还想说些什么
+报告附带开放反思
+知识学习证据
+知识卡片	状态	答题得分	作答次数
+隔离知识卡片	已完成	100 分	1
+学习闭环
+60%
+课堂回顾、知识卡片、报告与反思共同作为评审依据。
+评审结果
+报告已退回修改 · 78 分
+隔离反馈：请补充证据
+PAGE http://127.0.0.1:4194/courses/9003/archives 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+1
+王小明
+返回课程地图
+全部课程
+GROWTH LOG / 成长记录
+我的成长档案
+
+回看参与、作品与反馈，找到下一次改进的方向
+
+刷新档案
+写反思日志
+我的作品
+积分与徽章（本地演示）
+王小明
+
+北航附属实验学校 · 四年级1班
+
+参与课程
+1
+项目作品
+0
+作品迭代
+0
+反思记录
+2
+课程评价
+0
+
+课程相关记录仅展示当前可进入的课程；仅展示本课程有明确关联的记录；未关联的历史记录不会自动归入本课程资料读取于 2026/10/8 21:53:53
+
+课程记录
+作品与迭代
+导师反馈
+成长足迹
+03
+导师给我的反馈
+
+课程评价、报告评审与作品评审分别记录，不合成为总分
+
+课程过程与成果评价
+暂无课程评价
+学习报告评审
+
+按课时查看最新报告的评语与实际评分
+
+选择课程
+星海远航
+选择课时
+滑翔机试飞理论课
+滑翔机试飞理论课
+滑翔机试飞理论课
+需修改
+
+课时学习进度：60%
+
+最新报告 · 第1版 · 提交于2026-10-08 21:53
+
+报告评审
+
+隔离反馈：请补充证据
+
+报告评分：78 分
+
+评审时间：2026-10-08 21:53
+
+导师姓名暂未提供
+
+隔离总结
+
+今天想记下什么
+未填写
+和别人一起时的感受
+未填写
+还想说些什么
+报告附带开放反思
+修改学习报告
+查看报告评审
+
+这里显示最新报告，不是完整版本历史。作品状态请在「作品与迭代」中查看
+
+作品评审
+
+打开具体版本，查看导师评语、修改建议和五项评分
+
+选择作品查看反馈
+05
+作品评审维度汇总
+
+仅汇总作品评审，不代表固定能力标签，也不用于同学排名
+
+问题发现
+暂无评价
+方案设计
+暂无评价
+动手操作
+暂无评价
+数据分析
+暂无评价
+表达展示
+暂无评价
+查看当前可访问作品的反馈
+重置机器人位置（机器人聚焦后也可按 Home）
+PAGE http://127.0.0.1:4194/dashboard PBL
+工作台
+课程管理
+学习内容编排
+用户管理
+作品管理
+学习报告评审
+成长档案
+滑翔机模拟实验室
+灵境小智
+AI 配置
+反馈管理
+通知中心
+← 返回上一页
+帮助与反馈
+管理员
+👋 欢迎回来，管理员
+2026年10月8日星期四
+加盟学校
+2
+平台用户
+7
+在线课程
+6
+学生作品
+2
+🗂️
+今日项目提示
+今天适合梳理课程与作品数据，关注待处理反馈与评审进度。
+用户反馈
+进入反馈管理
+待处理
+0
+处理中
+0
+紧急未结
+0
+加盟学校
+添加学校
+学校名称	班级数	用户数	地区
+北航附属实验学校	2	4	北京市海淀区
+华水小学	1	0	河南省郑州市
+最近作品
+比较记录待修改（测试作品）
+王小明 · 星海远航 · 视觉测试课程 · 需修改
+另一课程作品（测试作品）
+王小明 · 工程观察 · 测试课程 · 待评审
+PAGE http://127.0.0.1:4194/observer/students/4 PBL 科创平台
+观察工作台
+我的学生
+成长档案
+帮助与反馈
+通知中心
+← 返回上一页
+帮助与反馈
+李老师
+教师
+王小明
+北航附属实验学校 · 四年级1班 · 只读学情档案
+返回学生列表
+登录账号
+student_wang
+	
+年级
+四年级
+	
+班级
+四年级1班
+课程进展
+星海远航 · 视觉测试课程
+0/6 个课时已完成
+0%
+工程观察 · 测试课程
+0/1 个课时已完成
+0%
+星海远航
+0/3 个课时已完成
+0%
+课时与学习报告
+星海远航 · 滑翔机试飞理论课
+60%
+隔离总结
+查看报告第 1 版
+导师意见：隔离反馈：请补充证据
+rejected
+星海远航 · 视觉测试课程 · 记录实验条件
+35%
+尚未提交学习报告
+未提交
+星海远航 · 视觉测试课程 · 比较设计方案
+测试报告已通过
+查看报告第 1 版
+approved
+近期成长轨迹
+反思记录
+滑翔机试飞理论课
+今天想记下什么
+未填写
+和别人一起时的感受
+未填写
+还想说些什么
+报告附带开放反思
+课程反思
+今天想记下什么
+未填写
+和别人一起时的感受
+未填写
+还想说些什么
+隔离生活感受
+基础观察（测试课时）
+遇到的困难
+另一课程反思（测试记录）
+解决方式
+未填写
+改进收获
+未填写
+新问题
+未填写
+已通过成果
+暂无已通过成果
+PAGE http://127.0.0.1:4194/dashboard PBL 科创平台
+工作台
+课程浏览
+帮助与反馈
+通知中心
+← 返回上一页
+帮助与反馈
+隔离新媒体
+新媒体
+👋 欢迎回来，隔离新媒体
+2026年10月8日星期四
+🎬
+今日项目提示
+整理素材时注意学生肖像与隐私，发布前先征得同意。
+  ✖ 四种维护角色五视口实际控件、侧栏、键盘与减少运动 (7405.5261ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (48218.267ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 7
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 49067.0881
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 四种维护角色五视口实际控件、侧栏、键盘与减少运动 (7405.5261ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(await p.locator('.staff-sidebar').evaluate(e=>e.getBoundingClientRect().width===0))
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:22:1314
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:12:74)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:22:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (48218.267ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(await p.locator('.staff-sidebar').evaluate(e=>e.getBoundingClientRect().width===0))
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:22:1314
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:12:74)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step02.browser.test.js:22:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

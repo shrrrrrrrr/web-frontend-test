@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Card, Tree, Button, Typography, Spin, Descriptions, Tag, List, Space, Progress, Modal, Input, message, Row, Col, Statistic, Timeline } from 'antd';
 import { UserOutlined, FileTextOutlined } from '@ant-design/icons';
 import { archiveAPI } from '../../api';
@@ -6,11 +6,13 @@ import { useAuth } from '../../store/AuthContext';
 import { formatBeijingTime } from '../../utils/date';
 import StudentArchive from '../../student/StudentArchive';
 
+import {ReflectionFields} from '../../student/ArchiveRecords';
+
 const { Title, Text } = Typography;
 
 export default function ArchiveIndex() {
   const { user } = useAuth();
-  return user?.role === 'student' ? <StudentArchive /> : <StaffArchive />;
+  return user?.role === 'student' ? <StudentArchive /> : <StaffArchive key={user?.id} />;
 }
 
 function StaffArchive() {
@@ -21,7 +23,10 @@ function StaffArchive() {
   const [detailLoading, setDetailLoading] = useState(false);
   const [selectedStudentId, setSelectedStudentId] = useState(null);
   const [recordOpen, setRecordOpen] = useState(false);
-  const [record, setRecord] = useState('');
+  const [record,setRecord]=useState(''),[detailError,setDetailError]=useState('');
+  const requestSequence=useRef(0);
+  // A request counter, invalidated on unmount.
+  useEffect(()=>()=>{requestSequence.current++;},[]);
 
   useEffect(() => {
     if (user?.role === 'student') {
@@ -53,21 +58,21 @@ function StaffArchive() {
     const key = keys[0];
     if (!key.startsWith('user-')) return;
     const studentId = key.replace('user-', '');
-    setSelectedStudentId(studentId);
+    const ticket=++requestSequence.current;setDetailError('');setSelectedStudentId(studentId);
     setArchive(null);
     setDetailLoading(true);
     try {
       const res = await archiveAPI.generate(studentId);
-      setArchive(res);
-    } catch { /* handled */ }
-    finally { setDetailLoading(false); }
+      if(ticket===requestSequence.current)setArchive(res);
+    } catch(e) {if(ticket===requestSequence.current)setDetailError(e.response?.data?.error||'无法读取该学生档案');}
+    finally {if(ticket===requestSequence.current)setDetailLoading(false);}
   };
 
   if (loading) return <Spin size="large" style={{ display: 'block', margin: '100px auto' }} />;
 
   return (
     <div>
-      <Title level={4}>📂 成长档案</Title>
+      <Title level={4}>📂 成长档案</Title>{detailError&&<p role="alert">{detailError}<Button onClick={()=>handleSelect(['user-'+selectedStudentId])}>重新读取</Button></p>}
       {user?.role === 'academic_mentor' && <Text type="secondary" style={{ display: 'block', marginBottom: 12 }}>仅展示您创建或受邀授课的课程相关学生，包含历史报名关系；停用或归档不会删除历史档案。</Text>}
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
         <Card title="学生列表" style={{ width: 320, flex: '0 0 320px', maxWidth: '100%', maxHeight: '70vh', overflow: 'auto' }}>
@@ -157,12 +162,7 @@ function ArchiveDetail({ archive }) {
           <List.Item.Meta
             title={r.lesson_title || '—'}
             description={
-              <Space direction="vertical" size={0}>
-                {r.difficulty && <Text>困难：{r.difficulty}</Text>}
-                {r.solution && <Text>解决方式：{r.solution}</Text>}
-                {r.improvement && <Text>改进收获：{r.improvement}</Text>}
-                {r.new_question && <Text>新问题：{r.new_question}</Text>}
-              </Space>
+              <ReflectionFields reflection={r}/>
             }
           />
         </List.Item>

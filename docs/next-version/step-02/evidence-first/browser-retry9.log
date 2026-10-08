@@ -1,0 +1,166 @@
+TEACHER_SELECTION []
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"隔离验收：请比较条件并保留证据。","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"15dbc7e455cba93f8e915dfb072d9ff746f59100a9e24dd0494ea22826408ec3"}
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✔ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (7072.5456ms)
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/learning/manage/cards/900113 {"title":"隔离知识卡片","content":"隔离正文二次更新。","estimated_minutes":10,"is_required":true,"status":"published","expected_revision":"97fcb5a5e87604acef8a631d17d7817d35a670f7742b3c5896d9c9ca32494004"}
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"旧预览不应覆盖","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"8ff9b88bb9866136b837586ccdb98a5c3fc4b43584e1cd60a358da5951c86551"}
+  ✔ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (4769.6367ms)
+  ✔ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (5634.0065ms)
+FAILURE 管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘 locator.waitFor: Timeout 12000ms exceeded.
+Call log:
+[2m  - waiting for locator('video') to be visible[22m
+
+PAGE http://127.0.0.1:4194/courses/9003?tab=maintenance 上限	显示位置	学生预览	AI 文字索引
+
+类型
+	
+上限
+	
+显示位置
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.jpeg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.png	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gif	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webp	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pdf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+PAGE http://127.0.0.1:4194/courses/9003/lessons/90023/learn 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+王小明
+返回课程地图
+全部课程
+滑翔机试飞理论课
+
+教学内容正在准备，暂不记录完成
+
+返回课程地图
+课堂回顾
+
+本课内容待老师填写
+
+知识卡片与练习
+
+本课内容待老师填写
+
+任务与学习报告
+
+本课内容待老师填写
+
+实验指导
+
+隔离指导：先记录条件，再自由试飞
+
+课时说明
+
+隔离外部修改
+
+课程资源与回放
+隔离资料.txt
+下载资料
+重置机器人位置（机器人聚焦后也可按 Home）
+PAGE http://127.0.0.1:4194/courses/9003?tab=maintenance 上限	显示位置	学生预览	AI 文字索引
+
+类型
+	
+上限
+	
+显示位置
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.jpeg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.png	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gif	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webp	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pdf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+  ✖ 管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘 (17695.6379ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (39815.8408ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 3
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 40561.1145
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘 (17695.6379ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('video') to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:18:1483
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:18:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('video') to be visible" ]
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (39815.8408ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('video') to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:18:1483
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:18:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('video') to be visible" ]
+  }

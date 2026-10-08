@@ -1,0 +1,28 @@
+
+> star-voyage-student@0.1.0 lint
+> npm --prefix frontend run lint
+
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\pages\mentor\LessonContentEditor.jsx
+   26:70   warning  The ref value 'seq.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'seq.current' to a variable inside the effect, and use that variable in the cleanup function                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/exhaustive-deps
+  110:310  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+  108 |
+  109 |     <Modal open={Boolean(exerciseCard)} title={`添加练习 · ${exerciseCard?.title || ''}`} onCancel={() => setExerciseCard(null)} onOk={() => exerciseForm.submit()} confirmLoading={saving} okButtonProps={{disabled:saved}} destroyOnHidden>
+> 110 |       <Form form={exerciseForm} layout="vertical" initialValues={{ question_type: 'single_choice', points: 1, is_required: true }} onValuesChange={()=>setSaved(false)} disabled={saving} onFinish={saveExercise}>{saveError&&<Alert type="warning" title={saveError}/>}{saved&&<Alert type="success" title={'已保存 #'+exerciseIdentity.current}/>}
+      |                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  111 |         <Alert type="info" showIcon message="每位学生每道题只有一次作答机会；提交后将立即看到标准答案详解。" style={{ marginBottom: 16 }} />
+  112 |         <Form.Item name="question_type" label="题型" rules={[{ required: true }]}><Select options={Object.entries(typeLabel).map(([value, label]) => ({ value, label }))} /></Form.Item>
+  113 |         <Form.Item name="prompt" label="题目" rules={[{ required: true, message: '请填写题目' }]}><Input.TextArea /></Form.Item>  react-hooks/refs
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\pages\mentor\ReviewList.jsx
+  17:49  warning  The ref value 'sequence.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'sequence.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+✖ 3 problems (1 error, 2 warnings)
+

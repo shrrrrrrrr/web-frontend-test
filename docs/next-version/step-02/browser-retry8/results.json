@@ -1,0 +1,18 @@
+{
+  "records": [
+    {
+      "name": "可视化填写真实课时安排、指导与学生布局；预览无学习副作用",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\nnull !== 2\n"
+    }
+  ],
+  "pageErrors": [],
+  "routeSmoke": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "scope": "all writes and fault injection use isolated synthetic persistent database; actual teaching data unchanged"
+}

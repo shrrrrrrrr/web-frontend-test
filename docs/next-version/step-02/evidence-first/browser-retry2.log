@@ -1,0 +1,195 @@
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✔ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (7118.159ms)
+FAILURE 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 locator.click: Timeout 12000ms exceeded.
+Call log:
+[2m  - waiting for locator('.ant-modal').visible().last().getByRole('button', { name: /^新\s*增\s*知\s*识\s*卡\s*片$/ })[22m
+
+PAGE http://127.0.0.1:4194/courses/9003?tab=maintenance PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+← 返回上一页
+帮助与反馈
+张导师
+学术导师
+返回
+星海远航
+撤回为草稿
+主题
+—
+	
+适用学段
+初中
+
+
+难度
+基础
+	
+状态
+已发布
+
+
+创建者
+张导师
+	
+总课时
+—
+课程内容维护
+课时安排
+课程回放
+课程资源
+选课学生 (1)
+课程内容维护
+
+填写真实教学内容；学生在课程地图和对应课时读取。不会改变学习门槛、评分或作品历史
+
+重新读取
+可视化填写 / 学生效果预览
+课程介绍与显示
+地图计划与课时
+任务要求与教学提示
+教学资料与回放
+实验关联
+点击虚线教学区域编辑，预览不提交学习记录、不显示答案解析
+星海远航
+课程介绍、目标、故事与材料 · 编辑
+选择要填写的课时
+滑翔机试飞理论课
+学生展示位置 / 教学资料
+滑翔机试飞理论课
+
+理论课
+
+课时标题、介绍与安排 · 编辑
+
+隔离验收：请比较条件并保留证据。
+
+2026-10-20T09:00 · 2026-10-20T09:45 · 隔离科创教室 · 张导师 · 45 分钟
+课堂回顾与知识学习
+课堂回顾正文 · 编辑
+
+隔离验收：请比较条件并保留证据。
+
+填写知识卡片与练习
+任务与学习报告
+
+本课内容待老师填写
+
+编辑课时说明 / 报告指导
+实验指导
+实验指导 · 编辑
+
+隔离指导：先记录条件，再自由试飞。
+
+编辑实验关联与返回位置
+课时说明
+
+隔离验收：请比较条件并保留证据
+
+课程资源与回放
+
+本课资料待提供
+
+上传到此课程或课时
+教学准备状态
+内容待准备
+知识卡片与练习填写
+课时内容编辑
+知识卡片默认保存为学生不可见的草稿；内容与答案详解确认后再发布。
+新增知识卡片
+尚未创建知识卡片
+PAGE http://127.0.0.1:4194/courses/9003/lessons/90023/learn 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+王小明
+返回课程地图
+全部课程
+滑翔机试飞理论课
+
+教学内容正在准备，暂不记录完成
+
+返回课程地图
+课堂回顾
+
+本课内容待老师填写
+
+知识卡片与练习
+
+本课内容待老师填写
+
+任务与学习报告
+
+本课内容待老师填写
+
+实验指导
+
+隔离指导：先记录条件，再自由试飞
+
+课时说明
+
+隔离验收：请比较条件并保留证据
+
+课程资源与回放
+
+本课资料待提供
+
+重置机器人位置（机器人聚焦后也可按 Home）
+  ✖ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (12954.6301ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (24174.6704ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 1
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 24974.7773
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (12954.6301ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().last().getByRole('button', { name: /^新\s*增\s*知\s*识\s*卡\s*片$/ })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:16:122
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:16:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().last().getByRole('button', { name: /^新\\s*增\\s*知\\s*识\\s*卡\\s*片$/ })" ]
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (24174.6704ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().last().getByRole('button', { name: /^新\s*增\s*知\s*识\s*卡\s*片$/ })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:16:122
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:16:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().last().getByRole('button', { name: /^新\\s*增\\s*知\\s*识\\s*卡\\s*片$/ })" ]
+  }

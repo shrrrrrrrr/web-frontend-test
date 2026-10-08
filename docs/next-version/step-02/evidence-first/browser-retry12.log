@@ -1,0 +1,204 @@
+TEACHER_SELECTION []
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"隔离验收：请比较条件并保留证据。","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"192149fa1ff7224fa306861cf2191783d213c0be1f82c36b614050a639334579"}
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✔ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (6603.0622ms)
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/learning/manage/cards/900113 {"title":"隔离知识卡片","content":"隔离正文二次更新。","estimated_minutes":10,"is_required":true,"status":"published","expected_revision":"7e8da84db063e8920ff0a6a753a461dad964d8c60cf3025a73edd553476265ab"}
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"旧预览不应覆盖","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"36adeac321bfdc30f75230a40a2e5dba140b6ec6a4430b10e1e939d1b82a6cd5"}
+  ✔ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (3687.0013ms)
+  ✔ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (4982.4284ms)
+  ✔ 管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘 (6072.1681ms)
+  ✔ 开放日志任意一框提交、空框客户端拒绝、失败草稿与每日限次保输入 (4413.8394ms)
+FAILURE 旧四项草稿保留独立备份与第四项原义，报告三框真实提交与导师直接评审 locator.waitFor: Timeout 12000ms exceeded.
+Call log:
+[2m  - waiting for getByText('报告附带开放反思', { exact: true }) to be visible[22m
+
+PAGE http://127.0.0.1:4194/mentor/reviews/2 PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+← 返回上一页
+1
+帮助与反馈
+张导师
+学术导师
+王小明 · 滑翔机试飞理论课
+星海远航 · 学习报告第 1 版 · 待评审
+返回评审队列
+学习报告
+学习总结	隔离总结
+关键收获	-
+应用设想	-
+困难与疑问	-
+下一步计划	-
+反思记录
+今天想记下什么
+未填写
+和别人一起时的感受
+未填写
+还想说些什么
+报告附带开放反思。
+知识学习证据
+知识卡片	状态	答题得分	作答次数
+隔离知识卡片	已完成	100 分	1
+学习闭环
+85%
+课堂回顾、知识卡片、报告与反思共同作为评审依据。
+评审结论
+总分
+分
+可选维度评分
+评审意见
+0 / 5000
+通过报告
+退回第三阶段修改
+PAGE http://127.0.0.1:4194/courses/9003/lessons/90023/learn?stage=2 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+王小明
+返回课程地图
+全部课程
+星海远航
+滑翔机试飞理论课
+
+正在查看：导师评审
+
+返回课程地图
+返回课后任务
+本课时进度
+85%
+
+回顾 25% · 卡片 35%
+报告反思 25% · 导师评审 15%
+
+01
+课堂回顾
+已完成
+02
+知识卡片与练习
+已完成
+03
+学习报告与反思
+已完成
+04
+导师评审
+正在查看 · 待评审
+查看本课时任务与作品 ↓
+
+隔离指导：先记录条件，再自由试飞
+
+04
+导师评审
+
+查看学习报告的反馈，再决定下一步
+
+待评审
+报告正在等待执行导师评审。你可以回看知识卡片、查看已提交的报告，或处理下方的作品任务
+学习报告 · 第1版
+提交于2026-10-08 21:47
+导师评语
+
+导师暂未留下评语
+
+查看学习报告
+回看知识卡片
+W
+本课时任务与作品
+
+查看作品要求、提交版本和导师意见
+
+作品与学习报告分别保存和评审。这里的作品提交不会替代上方的学习报告
+本课时暂无作品任务
+重置机器人位置（机器人聚焦后也可按 Home）
+PAGE http://127.0.0.1:4194/courses/9003?tab=maintenance 上限	显示位置	学生预览	AI 文字索引
+
+类型
+	
+上限
+	
+显示位置
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.jpeg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.png	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gif	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webp	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pdf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+  ✖ 旧四项草稿保留独立备份与第四项原义，报告三框真实提交与导师直接评审 (15948.4289ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (46278.1551ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 5
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 47005.7347
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 旧四项草稿保留独立备份与第四项原义，报告三框真实提交与导师直接评审 (15948.4289ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText('报告附带开放反思', { exact: true }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:20:1700
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:20:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByText('报告附带开放反思', { exact: true }) to be visible" ]
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (46278.1551ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText('报告附带开放反思', { exact: true }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:20:1700
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:20:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByText('报告附带开放反思', { exact: true }) to be visible" ]
+  }

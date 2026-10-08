@@ -359,7 +359,7 @@ export default function CourseDetail() {
       key: 'replays', label: '课程回放',
       children: (
         <div>
-          {course.can_manage && (
+          {course.can_manage && user.role==='admin' && (
             <Button type="dashed" icon={<UploadOutlined />} onClick={() => openReplayModal()} style={{ marginBottom: 16 }}>
               上传回放
             </Button>
