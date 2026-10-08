@@ -11,7 +11,7 @@
 | `PBL_FORTUNE_RUN=release node --test tests/fortune-patch.browser.test.js` | **7 个业务场景通过 + 1 父测试**，合计 8 项，0 失败/取消/跳过 | [最终浏览器](logs/browser-release.txt) · [具名结果](browser-release.json) |
 | 实际 4184 三尺寸截图与原路径核验 | 1440×900、768×1024、390×844；无页面横向溢出/脚本异常，运势 v2 / no-store | [截图元数据](teaching-capture.json) · [实际 smoke](logs/teaching-smoke-first.txt) |
 | 数据/文案保护 | 46 表业务字段、上传/反馈、配置、旧构建、冻结文件保留；967 原文案 0 改动 | [保护记录](data-protection.json) |
-| `git diff --check` | 通过 | 交付前实际运行；Git 仅提示正常 LF/CRLF 转换 |
+| `git diff b7f4f84 HEAD --check -- . ':(exclude)docs/next-version/step-01/fortune-patch/logs/**'` | 源码及交付文件通过 | 原始日志原样保留；整体缓存检查另提示 TAP 输出的尾空白/末尾空行，不声称原始日志也通过空白检查 |
 
 ## 关键验证场景
 
