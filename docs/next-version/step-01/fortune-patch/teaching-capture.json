@@ -1,0 +1,44 @@
+{
+  "capturedAt": "2026-10-08T12:10:44.443Z",
+  "base": "http://127.0.0.1:4184",
+  "browser": "154.0.4258.53",
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "fortuneVisible": true,
+      "boundaryAbsent": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "fortuneVisible": true,
+      "boundaryAbsent": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fortuneVisible": true,
+      "boundaryAbsent": true,
+      "noHorizontalOverflow": true
+    }
+  ],
+  "data": {
+    "fortuneDate": "2026-10-08",
+    "fortuneVersion": "campus-fortune-v2",
+    "noStore": "no-store",
+    "lessonCount": 3,
+    "planCount": 10,
+    "futureNullCount": 7
+  },
+  "pageErrors": [],
+  "readOnly": "No explicit teaching/avatar mutation, no init/seed; original lesson GET refreshed one existing updated_at only (progress remains 0)"
+}

@@ -1,0 +1,13 @@
+{
+  "records": [
+    {
+      "name": "持续打开页面跨北京午夜，比较实际组合；同日刷新、独立浏览器及后端重启一致",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('daily-fortune').getByText('2026-12-06', { exact: true }) to be visible\u001b[22m\n"
+    }
+  ],
+  "browser": "154.0.4258.53",
+  "pageErrors": [],
+  "clock": "isolated child IPC + Playwright browser clock; host/production clock unchanged",
+  "fixture": "fresh synthetic DB; existing .local/teaching untouched"
+}

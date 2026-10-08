@@ -1,0 +1,43 @@
+▶ 每日运势补修：真实 API、隔离时钟与原路径回归
+  ✖ 持续打开页面跨北京午夜，比较实际组合；同日刷新、独立浏览器及后端重启一致 (13123.4616ms)
+✖ 每日运势补修：真实 API、隔离时钟与原路径回归 (19076.5027ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19885.6516
+
+✖ failing tests:
+
+test at tests\fortune-patch.browser.test.js:30:51
+✖ 持续打开页面跨北京午夜，比较实际组合；同日刷新、独立浏览器及后端重启一致 (13123.4616ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByTestId('daily-fortune').getByText('2026-12-06', { exact: true }) to be visible[22m
+  
+      at date (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:28:86)
+      at C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:34:89
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:30:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:30:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:33:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByTestId('daily-fortune').getByText('2026-12-06', { exact: true }) to be visible" ]
+  }
+
+test at tests\fortune-patch.browser.test.js:16:1
+✖ 每日运势补修：真实 API、隔离时钟与原路径回归 (19076.5027ms)
+  locator.waitFor: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByTestId('daily-fortune').getByText('2026-12-06', { exact: true }) to be visible[22m
+  
+      at date (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:28:86)
+      at C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:34:89
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:30:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:30:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:33:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByTestId('daily-fortune').getByText('2026-12-06', { exact: true }) to be visible" ]
+  }

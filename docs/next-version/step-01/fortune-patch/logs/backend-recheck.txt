@@ -1,0 +1,60 @@
+✅ SQLite 数据库连接成功: D:\Temp\pbl-plan-account-kASCTf\test.db
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar] → 400: {"error":"请选择允许的账号头像"}
+[API PUT /api/account/avatar?userId=5] → 400: {"error":"请选择允许的账号头像"}
+✔ 本人受控头像保存、旧头像与课程偏好隔离，切账号重新读取 (205.0976ms)
+[API PUT /api/courses/1/maintenance/plan] → 400: {"error":"课时不属于当前课程"}
+[API PUT /api/courses/1/maintenance/plan] → 400: {"error":"关卡编号和课时不能重复"}
+[API PUT /api/courses/1/maintenance/plan] → 400: {"error":"关卡编号和课时不能重复"}
+[API PUT /api/courses/1/maintenance/plan] → 400: {"error":"地图节点无效"}
+✔ 真实节点配置与排序，仅同课对象；空未来节点不造课时或进度 (33.1792ms)
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"文章地址须为 HTTPS"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"文章地址须为 HTTPS"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 400: {"error":"文章地址须为 HTTPS"}
+✔ 模板字段按维护范围保存、空值不补素材；HTTPS 文章无脚本注入 (31.4423ms)
+[API PUT /api/courses/1/maintenance/plan] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/plan] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/lessons/3] → 404: {"error":"对象不属于当前课程"}
+[API GET /api/courses/1] → 404: {"error":"课程不存在"}
+[API GET /api/learning/lessons/1] → 404: {"error":"课时不存在或尚未报名","code":"LESSON_NOT_AVAILABLE"}
+[API POST /api/learning/lessons/1/report] → 404: {"error":"课时不存在或尚未报名","code":"LESSON_NOT_AVAILABLE"}
+[API GET /api/courses/1] → 404: {"error":"课程不存在"}
+[API PUT /api/courses/1/maintenance/lessons/1] → 409: {"error":"课程已归档，不能修改内容"}
+✔ 教师学生不可维护，撤回/报名移除不返回新字段和计划，归档不可写 (30.0522ms)
+[API POST /api/learning/lessons/1/review-complete] → 409: {"error":"教学内容尚未准备，不能标记完成","code":"CONTENT_PREPARING"}
+[API POST /api/learning/lessons/1/report] → 409: {"error":"教学内容尚未准备，不能提交报告","code":"CONTENT_PREPARING"}
+[API PUT /api/account/avatar] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/account/avatar] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+✔ 未准备模板拒绝完成和报告；停用与强制改密仍走原全局鉴权 (16.4614ms)
+✔ 课时删除后计划保留原编号并成为未知状态，课程级联删除兼容 (6.2451ms)
+✅ SQLite 数据库连接成功: D:\Temp\pbl-fortune-lbI6Ep\test.db
+✔ 已知 12 月 6/7 日碰撞：比较展示组合，不用日期差异冒充刷新 (109.5122ms)
+✔ 64 个账号连续 800 日：相邻完整组合不同，宜项和枚举受控 (6767.8002ms)
+✔ 跨年、闰日、北京时间午夜、跳过多天均按服务端日期重新派生 (1.6743ms)
+✔ 独立 Node 进程重启结果一致，不依赖缓存 (692.9509ms)
+✔ 北京时间午夜切日，账号和日期稳定派生，受控枚举无重复宜 (2.089ms)
+✔ 同账号新 token/跨客户端固定结果，认证账号隔离，读取不写业务表 (166.2308ms)
+[API GET /api/account/daily-fortune?userId=2] → 400: {"error":"运势由当前账号和服务器日期决定","code":"FORTUNE_QUERY_NOT_ALLOWED"}
+[API GET /api/account/daily-fortune?courseId=1] → 400: {"error":"运势由当前账号和服务器日期决定","code":"FORTUNE_QUERY_NOT_ALLOWED"}
+[API GET /api/account/daily-fortune?date=2026-01-01] → 400: {"error":"运势由当前账号和服务器日期决定","code":"FORTUNE_QUERY_NOT_ALLOWED"}
+[API GET /api/account/daily-fortune?student_id=2] → 400: {"error":"运势由当前账号和服务器日期决定","code":"FORTUNE_QUERY_NOT_ALLOWED"}
+[API GET /api/account/daily-fortune] → 401: {"error":"未登录","message":"请先登录"}
+[API GET /api/account/daily-fortune] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 指定他人/课程/日期被拒绝，未登录和维护角色不能读取 (28.1968ms)
+[API GET /api/account/daily-fortune] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/account/daily-fortune] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+[API GET /api/account/daily-fortune] → 401: {"error":"无效的认证信息","message":"请重新登录"}
+✔ 强制改密、停用和失效 token 沿用全局认证边界 (11.6837ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8966.9044

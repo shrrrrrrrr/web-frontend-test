@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-08T12:11:18.728Z",
+  "teachingDataDirectory": "C:/Users/shr/Desktop/nmg前端/app/.local/teaching",
+  "tablesCompared": 46,
+  "changedTables": [
+    "lesson_progress"
+  ],
+  "uploadsUnchanged": true,
+  "feedbackUnchanged": true,
+  "stableConfigUnchanged": true,
+  "oldDistUnchanged": true,
+  "frozenFilesUnchanged": true,
+  "oldCopyCount": 967,
+  "oldCopyChanges": [],
+  "newCopyIds": [
+    "fortune.lastDate"
+  ],
+  "excluded": "auth refresh_tokens and derivative FTS tables; no teaching content excluded",
+  "progressReadTimestampOnly": [
+    {
+      "id": 23,
+      "changedField": "updated_at",
+      "progress": 0
+    }
+  ],
+  "businessFieldsPreserved": true,
+  "note": "原 GET /learning/lessons 的 learningGate.recalculateLessonProgress 更新已存在行的 updated_at；6 行数量、progress/last_position/completed_at/归属完全不变，未更改业务完成状态。",
+  "runtime": {
+    "old": {
+      "frontend4174": 43408,
+      "api3144": 47032,
+      "cloudflared": [
+        23332,
+        43188
+      ],
+      "untouched": true
+    },
+    "updated": {
+      "frontend4184": 40016,
+      "api3154": 41508,
+      "data": ".local/teaching"
+    },
+    "privateBackup": ".local/teaching-before-fortune-20261008",
+    "seedRerun": false
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "format": "fortune-review-v1",
+  "source": "frontend/src/content/uiCopy.jsx",
+  "entries": [
+    {
+      "id": "fortune.title",
+      "text": "今日运势",
+      "enabled": true,
+      "optional": false,
+      "position": "标题、日期或读取状态/动作"
+    },
+    {
+      "id": "fortune.date",
+      "text": "北京时间",
+      "enabled": true,
+      "optional": false,
+      "position": "标题、日期或读取状态/动作"
+    },
+    {
+      "id": "fortune.loading",
+      "text": "正在读取今日运势",
+      "enabled": true,
+      "optional": false,
+      "position": "标题、日期或读取状态/动作"
+    },
+    {
+      "id": "fortune.failed",
+      "text": "今日运势暂时无法读取",
+      "enabled": true,
+      "optional": false,
+      "position": "标题、日期或读取状态/动作"
+    },
+    {
+      "id": "fortune.retry",
+      "text": "重新读取",
+      "enabled": true,
+      "optional": false,
+      "position": "标题、日期或读取状态/动作"
+    },
+    {
+      "id": "fortune.good",
+      "text": "宜",
+      "enabled": true,
+      "optional": false,
+      "position": "宜栏目：标签"
+    },
+    {
+      "id": "fortune.avoid",
+      "text": "忌",
+      "enabled": true,
+      "optional": false,
+      "position": "忌栏目：标签"
+    },
+    {
+      "id": "fortune.boundary",
+      "text": "轻松看看就好，运势不决定学习结果，也不发放积分或奖励",
+      "enabled": true,
+      "optional": true,
+      "position": "已从学生页面移除，仅保留核对记录"
+    },
+    {
+      "id": "fortune.level.great",
+      "text": "大吉",
+      "enabled": true,
+      "optional": false,
+      "position": "图案旁：运势等级"
+    },
+    {
+      "id": "fortune.level.lucky",
+      "text": "吉",
+      "enabled": true,
+      "optional": false,
+      "position": "图案旁：运势等级"
+    },
+    {
+      "id": "fortune.level.small",
+      "text": "小吉",
+      "enabled": true,
+      "optional": false,
+      "position": "图案旁：运势等级"
+    },
+    {
+      "id": "fortune.level.steady",
+      "text": "平",
+      "enabled": true,
+      "optional": false,
+      "position": "图案旁：运势等级"
+    },
+    {
+      "id": "fortune.good.record",
+      "text": "记录发现",
+      "enabled": true,
+      "optional": false,
+      "position": "宜栏目：候选建议"
+    },
+    {
+      "id": "fortune.good.ask",
+      "text": "主动提问",
+      "enabled": true,
+      "optional": false,
+      "position": "宜栏目：候选建议"
+    },
+    {
+      "id": "fortune.good.test",
+      "text": "先试后改",
+      "enabled": true,
+      "optional": false,
+      "position": "宜栏目：候选建议"
+    },
+    {
+      "id": "fortune.good.organize",
+      "text": "整理资料",
+      "enabled": true,
+      "optional": false,
+      "position": "宜栏目：候选建议"
+    },
+    {
+      "id": "fortune.good.listen",
+      "text": "认真倾听",
+      "enabled": true,
+      "optional": false,
+      "position": "宜栏目：候选建议"
+    },
+    {
+      "id": "fortune.good.rest",
+      "text": "适当休息",
+      "enabled": true,
+      "optional": false,
+      "position": "宜栏目：候选建议"
+    },
+    {
+      "id": "fortune.avoid.rush",
+      "text": "匆忙下结论",
+      "enabled": true,
+      "optional": false,
+      "position": "忌栏目：候选行为"
+    },
+    {
+      "id": "fortune.avoid.ignore",
+      "text": "忽略实验记录",
+      "enabled": true,
+      "optional": false,
+      "position": "忌栏目：候选行为"
+    },
+    {
+      "id": "fortune.avoid.compare",
+      "text": "只和别人比分数",
+      "enabled": true,
+      "optional": false,
+      "position": "忌栏目：候选行为"
+    },
+    {
+      "id": "fortune.avoid.guess",
+      "text": "凭感觉猜结果",
+      "enabled": true,
+      "optional": false,
+      "position": "忌栏目：候选行为"
+    },
+    {
+      "id": "fortune.lastDate",
+      "text": "上次读取日期",
+      "enabled": true,
+      "optional": false,
+      "position": "读取失败：上次日期标签"
+    }
+  ]
+}

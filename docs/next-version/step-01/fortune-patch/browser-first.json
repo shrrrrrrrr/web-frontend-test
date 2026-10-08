@@ -1,0 +1,25 @@
+{
+  "records": [
+    {
+      "name": "持续打开页面跨北京午夜，比较实际组合；同日刷新、独立浏览器及后端重启一致",
+      "status": "passed"
+    },
+    {
+      "name": "后台休眠后 focus/visibility 重读，跳过多天、跨年与闰日恢复正确日期",
+      "status": "passed"
+    },
+    {
+      "name": "跨日网络失败隐藏旧结果、标出上次日期，手动重试读取当天且不写奖励",
+      "status": "passed"
+    },
+    {
+      "name": "旧请求迟到不覆盖新请求，切换账号后旧运势不能落入新账号",
+      "status": "failed",
+      "error": "page.waitForURL: Timeout 12000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================"
+    }
+  ],
+  "browser": "154.0.4258.53",
+  "pageErrors": [],
+  "clock": "isolated child IPC + Playwright browser clock; host/production clock unchanged",
+  "fixture": "fresh synthetic DB; existing .local/teaching untouched"
+}

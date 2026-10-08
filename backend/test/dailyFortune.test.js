@@ -7,10 +7,41 @@ let server,url;const tokens={};
 before(async()=>{
  const hash=require('bcryptjs').hashSync('test123',4);for(const[id,role]of[[1,'student'],[2,'student'],[3,'teacher']])db.prepare('INSERT INTO users(id,username,password_hash,real_name,role) VALUES(?,?,?,?,?)').run(id,'u'+id,hash,'合成账号'+id,role);
  await new Promise(resolve=>server=app.listen(0,resolve));url='http://127.0.0.1:'+server.address().port;
+ server.keepAliveTimeout=60000; // The 51,200-case synchronous sweep exceeds Node's default idle timeout.
  for(const id of[1,2,3])tokens[id]=(await fetch(url+'/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:'u'+id,password:'test123'})}).then(r=>r.json())).token;
 });
 after(async()=>{await new Promise(resolve=>server.close(resolve));db.close();});
 const get=(id,suffix='')=>fetch(url+'/api/account/daily-fortune'+suffix,{headers:id?{Authorization:'Bearer '+tokens[id]}:{}});
+const combination = ({level,art,good,avoid}) => ({level,art,good,avoid});
+test('已知 12 月 6/7 日碰撞：比较展示组合，不用日期差异冒充刷新',()=>{
+ assert.notDeepEqual(combination(dailyFortune(4,new Date('2026-12-06T00:00:00Z'))),combination(dailyFortune(4,new Date('2026-12-07T00:00:00Z'))));
+});
+test('64 个账号连续 800 日：相邻完整组合不同，宜项和枚举受控',()=>{
+ for(let id=1;id<=64;id++){
+  let previous;const cycle=new Set();
+  for(let day=0;day<800;day++){
+   const result=dailyFortune(id,new Date(Date.UTC(2025,0,1)+day*86400000));
+   if(previous)assert.notDeepEqual(combination(result),combination(previous),`account ${id}, ${result.date}`);
+   if(day<720)cycle.add(JSON.stringify(combination(result)));
+   assert.ok(['great','lucky','small','steady'].includes(result.level));assert.ok(['fortune-plane','fortune-star','fortune-device'].includes(result.art));
+   assert.equal(new Set(result.good).size,2);assert.ok(result.good.every(v=>['record','ask','test','organize','listen','rest'].includes(v)));assert.ok(result.avoid.every(v=>['rush','ignore','compare','guess'].includes(v)));previous=result;
+  }
+  assert.equal(cycle.size,720,`account ${id}: complete cycle is a permutation`);
+ }
+});
+test('跨年、闰日、北京时间午夜、跳过多天均按服务端日期重新派生',()=>{
+ for(const [a,b] of [['2026-12-31','2027-01-01'],['2028-02-28','2028-02-29'],['2028-02-29','2028-03-01']]){
+  const first=dailyFortune(4,new Date(a+'T15:59:59Z')),next=dailyFortune(4,new Date(a+'T16:00:00Z'));
+  assert.equal(first.date,a);assert.equal(next.date,b);assert.notDeepEqual(combination(first),combination(next));
+ }
+ const jumped=dailyFortune(4,new Date('2027-01-09T00:00:00Z'));assert.equal(jumped.date,'2027-01-09');assert.deepEqual(jumped,dailyFortune(4,new Date('2027-01-08T16:00:00Z')));
+});
+test('独立 Node 进程重启结果一致，不依赖缓存',()=>{
+ const {execFileSync}=require('node:child_process');
+ const code="console.log(JSON.stringify(require('./services/dailyFortune').dailyFortune(4,new Date('2026-12-07T00:00:00Z'))))";
+ const run=()=>JSON.parse(execFileSync(process.execPath,['-e',code],{cwd:path.join(__dirname,'..'),encoding:'utf8',windowsHide:true}));
+ assert.deepEqual(run(),run());assert.deepEqual(run(),dailyFortune(4,new Date('2026-12-07T00:00:00Z')));
+});
 test('北京时间午夜切日，账号和日期稳定派生，受控枚举无重复宜',()=>{
  const beforeMidnight=dailyFortune(1,new Date('2026-10-07T15:59:59Z')),afterMidnight=dailyFortune(1,new Date('2026-10-07T16:00:00Z'));
  assert.equal(beforeMidnight.date,'2026-10-07');assert.equal(afterMidnight.date,'2026-10-08');assert.equal(beforeMidnight.nextUpdateAt,'2026-10-07T16:00:00.000Z');

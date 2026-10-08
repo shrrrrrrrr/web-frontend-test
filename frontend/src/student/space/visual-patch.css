@@ -39,7 +39,7 @@
 .daily-fortune{padding:20px 26px;background:#fff9e9f2;border:2px solid #8b9fae;color:#173552;margin-bottom:20px;min-height:172px}
 .fortune-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.fortune-heading h2{font-size:23px;margin:0}.fortune-heading>span{font-size:14px;color:#516875}
 .fortune-result{display:flex;align-items:center;gap:24px}.fortune-result .pixel-image{background:transparent;width:96px;height:96px;flex-shrink:0}
-.fortune-level{font-size:32px;color:#655016;white-space:nowrap}.fortune-hints p{margin:4px 0}.fortune-hints span{display:inline-block;margin-right:12px;padding:2px 8px;border:1px solid #81928b;background:#e9f0df}.fortune-boundary{font-size:13px;color:#516875;margin:6px 0 0}
+.fortune-level{font-size:32px;color:#655016;white-space:nowrap}.fortune-hints p{margin:4px 0}.fortune-hints span{display:inline-block;margin-right:12px;padding:2px 8px;border:1px solid #81928b;background:#e9f0df}
 .student-pixel .patch-login.voyage-login{position:fixed;inset:var(--login-top) 0 auto;isolation:isolate;width:100%;height:var(--login-height,100dvh);min-height:0;padding:0;background:#b3cbdc;display:flex;flex-direction:column;overflow:hidden}
 .patch-login>.patch-login-scene{position:absolute;inset:0;z-index:-2;width:100%;height:100%;background:#b3cbdc}
 .patch-login-scene img{object-position:center}

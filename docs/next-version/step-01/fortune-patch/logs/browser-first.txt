@@ -1,0 +1,46 @@
+▶ 每日运势补修：真实 API、隔离时钟与原路径回归
+  ✔ 持续打开页面跨北京午夜，比较实际组合；同日刷新、独立浏览器及后端重启一致 (6971.9003ms)
+  ✔ 后台休眠后 focus/visibility 重读，跳过多天、跨年与闰日恢复正确日期 (432.1555ms)
+  ✔ 跨日网络失败隐藏旧结果、标出上次日期，手动重试读取当天且不写奖励 (875.2091ms)
+  ✖ 旧请求迟到不覆盖新请求，切换账号后旧运势不能落入新账号 (17419.1734ms)
+✖ 每日运势补修：真实 API、隔离时钟与原路径回归 (32187.7032ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 3
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32969.3194
+
+✖ failing tests:
+
+test at tests\fortune-patch.browser.test.js:30:51
+✖ 旧请求迟到不覆盖新请求，切换账号后旧运势不能落入新账号 (17419.1734ms)
+  page.waitForURL: Timeout 12000ms exceeded.
+  =========================== logs ===========================
+  waiting for navigation until "load"
+  ============================================================
+      at login (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:24:246)
+      at async file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/fortune-patch.browser.test.js:55:425
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:30:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:30:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:50:3) {
+    name: 'TimeoutError',
+    log: []
+  }
+
+test at tests\fortune-patch.browser.test.js:16:1
+✖ 每日运势补修：真实 API、隔离时钟与原路径回归 (32187.7032ms)
+  page.waitForURL: Timeout 12000ms exceeded.
+  =========================== logs ===========================
+  waiting for navigation until "load"
+  ============================================================
+      at login (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:24:246)
+      at async file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/fortune-patch.browser.test.js:55:425
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:30:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:30:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\fortune-patch.browser.test.js:50:3) {
+    name: 'TimeoutError',
+    log: []
+  }

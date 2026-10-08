@@ -12769,5 +12769,17 @@ export const uiCopy = {
     "optional": false,
     "enabled": true,
     "futureTeacher": false
+  },
+  "fortune.lastDate": {
+    "text": "上次读取日期",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "读取失败时的日期标签",
+    "purpose": "不将旧结果显示为今天",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
   }
 };
