@@ -1,0 +1,17 @@
+
+> star-voyage-student@0.1.0 test:teaching
+> node --test tests/teaching.test.mjs
+
+✔ 精确样例归档不删除原任务、作品、报告、试飞和反思；十关仅三课 (870.1513ms)
+✔ 样例内新增徽章配置仍阻止样例归档，不把非空奖励数据视为历史空表 (834.8974ms)
+✔ 样例内报告/题目/安排/角色有任何已保存改变时，保留课程可见及原记录 (3429.9021ms)
+✔ 已有开放反思填写仍阻止对应样例归档 (832.4644ms)
+✔ 首次导入保留 WAL 提交、用户填写及真实文件；备份源与同名目标不覆盖 (1204.3327ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7456.3851

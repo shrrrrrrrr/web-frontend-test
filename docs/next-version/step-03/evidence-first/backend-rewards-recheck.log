@@ -1,0 +1,53 @@
+✅ SQLite 数据库连接成功: D:\Temp\pbl-next-rewards-xwma5G\test.db
+[API GET /api/rewards/day?date=2026-01-01] → 400: {"error":"奖励仅操作当前账号"}
+[API GET /api/rewards/day] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 服务器北京日期只读，无客户日期、他人账号或 coin ledger (64.2517ms)
+[API GET /api/rewards/lessons/14] → 404: {"error":"课时不存在或尚未报名"}
+[API POST /api/rewards/badges/reconcile] → 400: {"error":"包含无效字段"}
+✔ 无配置、空模板、参观缺记录、他课和其他学生不能凭空获得 (9.9076ms)
+✔ 回顾、知识卡片、原必做练习和最新报告分别约束资格；不要求练习正确率 (13.6964ms)
+✔ 所有活跃文字/附件任务都检查，旧 approved 不能掩盖新 pending/rejected 版本 (9.5484ms)
+[API GET /api/rewards/lessons/12] → 404: {"error":"课时不存在或尚未报名"}
+✔ 事务颁发唯一稳定记录、快照、重复/并发请求、展示去重及跨学生隔离 (31.225ms)
+[API PUT /api/courses/1/maintenance/badges/12] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/badges/12] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/badges/12] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API PUT /api/courses/1/maintenance/badges/14] → 404: {"error":"对象不属于当前课程"}
+[API PUT /api/courses/1/maintenance/badges/12] → 400: {"error":"请选择受控徽章素材"}
+[API PUT /api/courses/1/maintenance/badges/12] → 400: {"error":"包含不可修改字段"}
+✔ 维护权限与受控素材，不允许老师/学生/新媒体伪造颁发或外部图像 (7.5856ms)
+[API POST /api/rewards/exchanges] → 409: {"error":"同一兑换编号不能更换礼品"}
+[API POST /api/rewards/exchanges] → 409: {"error":"同一兑换编号不能更换礼品"}
+[API POST /api/rewards/exchanges] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/exchanges] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/exchanges] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/exchanges] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/exchanges] → 400: {"error":"包含无效字段"}
+[API GET /api/rewards/exchanges] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+✔ 数字/实物演示事件与管理员通知原子幂等，同编号换商品409，不信任身份或文案 (38.0655ms)
+服务器错误: SqliteError: synthetic fault
+    at C:\Users\shr\Desktop\nmg前端\app\backend\services\notificationService.js:86:8
+    at sqliteTransaction (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\better-sqlite3\lib\methods\transaction.js:65:24)
+    at Object.createForUsers (C:\Users\shr\Desktop\nmg前端\app\backend\services\notificationService.js:119:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\services\studentRewards.js:68:28
+    at sqliteTransaction (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\better-sqlite3\lib\methods\transaction.js:65:24)
+    at Object.exchange (C:\Users\shr\Desktop\nmg前端\app\backend\services\studentRewards.js:72:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\routes\rewards.js:11:40
+    at C:\Users\shr\Desktop\nmg前端\app\backend\routes\rewards.js:4:48
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13) {
+  code: 'SQLITE_CONSTRAINT_TRIGGER'
+}
+[API POST /api/rewards/exchanges] → 500: {"error":"服务器内部错误","message":"请稍后重试"}
+[API GET /api/rewards/badges] → 403: {"error":"请先修改初始密码","code":"FORCE_RESET"}
+[API GET /api/rewards/badges] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+[API POST /api/rewards/exchanges] → 401: {"error":"账号已被禁用或删除","message":"请重新登录"}
+✔ 通知写入失败事务回滚无孤儿；停用/强制改密沿用原拦截 (7.7666ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 557.0328

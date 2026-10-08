@@ -1,0 +1,11 @@
+{
+  "records": [
+    {
+      "name": "颁发已提交但主页回读失败，不称已佩戴；重读后两个徽章依次可关闭且不重复",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\nnull !== 'page'\n"
+    }
+  ],
+  "pageErrors": [],
+  "scope": "All qualification data, storage faults and account switching use isolated synthetic database/browser. Animation frames are real CSS animation paused at 120/420ms in this test only."
+}

@@ -1,0 +1,39 @@
+▶ 下一版第三步：真实教学预览奖励端到端验收
+  ✖ 本人签到双标签去重、余额和明细共享；报告已通过但作品退回不发徽章 (1982.2214ms)
+✖ 下一版第三步：真实教学预览奖励端到端验收 (8186.5266ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8970.2799
+
+✖ failing tests:
+
+test at tests\next-step03.browser.test.js:20:51
+✖ 本人签到双标签去重、余额和明细共享；报告已通过但作品退回不发徽章 (1982.2214ms)
+  SyntaxError: Invalid regular expression: /(?:^|\s)签\s*到\s* \s*+\s*5$/: Nothing to repeat
+      at new RegExp (<anonymous>)
+      at b (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:16:47)
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:25:55
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:20:75)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:20:43)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:24:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests\next-step03.browser.test.js:4:1
+✖ 下一版第三步：真实教学预览奖励端到端验收 (8186.5266ms)
+  SyntaxError: Invalid regular expression: /(?:^|\s)签\s*到\s* \s*+\s*5$/: Nothing to repeat
+      at new RegExp (<anonymous>)
+      at b (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:16:47)
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:25:55
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:20:75)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:20:43)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03.browser.test.js:24:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

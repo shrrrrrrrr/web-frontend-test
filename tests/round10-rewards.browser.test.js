@@ -59,6 +59,22 @@ test('第十轮：原生 IndexedDB 迁移、提交与 120 组双标签压力验�
     await a.evaluate(()=>{const channel=new window.realChannel('star-voyage-reward-changes-v2');channel.postMessage({accountId:'8',balance:999999});channel.close();});await b.waitForFunction(n=>window.reads>n,reads);assert.equal(await b.evaluate(()=>window.store.getSnapshot().data.balance),80);await b.evaluate(()=>window.off());
    }finally{await c.close();}
   });
+  await t.test('下一版签到：同账号双标签同一天只加5，重置保留日期和待同步意图',async()=>{
+   const c=await browser.newContext(),a=await page(c),b=await page(c);
+   try{await Promise.all([adapter(a,81),adapter(b,81)]);const sign=(p,date)=>p.evaluate(date=>window.adapters[81].checkin({day:{date,expires:performance.now()+60000}}),date);
+    const outcomes=await Promise.all([sign(a,'2026-10-08'),sign(b,'2026-10-08')]);assert.equal(outcomes.filter(r=>r.changed).length,1);stateIs(await readRewardAccount(a,81),125,0,2);
+    await operation(a,81,'redeem','pending-stable');await operation(b,81,'reset');assert.deepEqual((await readRewardAccount(a,81)).meta.checkins,['2026-10-08']);assert.equal((await readRewardAccount(a,81)).meta.outbox[0].id,'pending-stable');assert.equal((await sign(a,'2026-10-08')).changed,false);
+    assert.equal((await operation(a,81,'redeem','pending-stable')).ok,true);stateIs(await readRewardAccount(a,81),120,0,1);
+    assert.equal((await sign(b,'2026-10-09')).changed,true);stateIs(await readRewardAccount(a,81),125,0,2);await a.reload();await adapter(a,81);assert.equal((await sign(a,'2026-10-09')).changed,false);
+   }finally{await c.close();}
+  });
+  await t.test('下一版签到：排队跨午夜日期过期、事务中止、损坏意图均不虚报成功',async()=>{
+   const c=await browser.newContext(),a=await page(c),b=await page(c);
+   try{await adapter(a,82);await watchRewardTransactions(a);await holdRewardDatabase(b);const late=a.evaluate(async()=>{try{await window.adapters[82].checkin({day:{date:'2026-10-09',expires:performance.now()+30}});return 'wrong';}catch(e){return e.code;}});await waitRewardWrite(a);await a.waitForTimeout(70);await releaseRewardDatabase(b);assert.equal(await late,'DATE_EXPIRED');stateIs(await readRewardAccount(a,82),120,0,1);
+    await failRewardPut(a);const failure=await a.evaluate(async()=>{try{await window.adapters[82].checkin({day:{date:'2026-10-09',expires:performance.now()+60000}});}catch(e){return e.code;}});assert.equal(failure,'WRITE_FAILED');await restoreRewardPut(a);stateIs(await readRewardAccount(a,82),120,0,1);assert.deepEqual((await readRewardAccount(a,82)).meta,undefined);
+    await writeRewardAccount(a,82,{meta:{checkins:['2026-10-09'],outbox:[null]}});assert.equal((await operation(a,82,'reset')).code,'CORRUPT_DATA');assert.deepEqual((await readRewardAccount(a,82)).meta.outbox,[null]);
+   }finally{await c.close();}
+  });
   await t.test('120 组混合事务顺序，逐组读取两页持久状态，12 次新第三标签抽检',async()=>{
    const c=await browser.newContext(),a=await page(c),b=await page(c),failures=[],samples=[];
    const started=new Date().toISOString();

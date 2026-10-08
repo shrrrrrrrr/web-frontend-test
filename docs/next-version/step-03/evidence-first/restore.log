@@ -1,0 +1,5 @@
+
+> star-voyage-student@0.1.0 teaching
+> node scripts/teaching.mjs restore --from .local/teaching-before-step03-20261008 --data .local/step03-restorecheck-20261009
+
+恢复到新目录完成，原目录未修改；启动前检查端口

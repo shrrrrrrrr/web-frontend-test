@@ -1,0 +1,169 @@
+✅ SQLite 数据库连接成功: D:\Temp\pbl-next-rewards-NYPKJJ\test.db
+服务器错误: SqliteError: no such table: lesson_badge_definitions
+    at Database.prepare (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\routes\courseMaintenance.js:52:5
+    at C:\Users\shr\Desktop\nmg前端\app\backend\routes\courseMaintenance.js:12:69
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\express\lib\router\index.js:376:14) {
+  code: 'SQLITE_ERROR'
+}
+[API PUT /api/courses/1/maintenance/badges/11] → 500: {"error":"服务器内部错误","message":"请稍后重试"}
+✖ 服务器北京日期只读，无客户日期、他人账号或 coin ledger (46.1598ms)
+✖ 无配置、空模板、参观缺记录、他课和其他学生不能凭空获得 (0.3704ms)
+✖ 回顾、知识卡片、原必做练习和最新报告分别约束资格；不要求练习正确率 (0.0467ms)
+✖ 所有活跃文字/附件任务都检查，旧 approved 不能掩盖新 pending/rejected 版本 (0.0268ms)
+✖ 事务颁发唯一稳定记录、快照、重复/并发请求、展示去重及跨学生隔离 (0.0318ms)
+✖ 维护权限与受控素材，不允许老师/学生/新媒体伪造颁发或外部图像 (0.0235ms)
+✖ 数字/实物演示事件与管理员通知原子幂等，同编号换商品409，不信任身份或文案 (0.0233ms)
+✖ 通知写入失败事务回滚无孤儿；停用/强制改密沿用原拦截 (0.0295ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 0
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 424.3476
+
+✖ failing tests:
+
+test at backend\test\studentRewards.test.js:27:1
+✖ 服务器北京日期只读，无客户日期、他人账号或 coin ledger (46.1598ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 200
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\studentRewards.test.js:24:35)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestHook.run (node:internal/test_runner/test:1373:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at backend\test\studentRewards.test.js:28:1
+✖ 无配置、空模板、参观缺记录、他课和其他学生不能凭空获得 (0.3704ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 200
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\studentRewards.test.js:24:35)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestHook.run (node:internal/test_runner/test:1373:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at backend\test\studentRewards.test.js:29:1
+✖ 回顾、知识卡片、原必做练习和最新报告分别约束资格；不要求练习正确率 (0.0467ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 200
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\studentRewards.test.js:24:35)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestHook.run (node:internal/test_runner/test:1373:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at backend\test\studentRewards.test.js:34:1
+✖ 所有活跃文字/附件任务都检查，旧 approved 不能掩盖新 pending/rejected 版本 (0.0268ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 200
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\studentRewards.test.js:24:35)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestHook.run (node:internal/test_runner/test:1373:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at backend\test\studentRewards.test.js:41:1
+✖ 事务颁发唯一稳定记录、快照、重复/并发请求、展示去重及跨学生隔离 (0.0318ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 200
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\studentRewards.test.js:24:35)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestHook.run (node:internal/test_runner/test:1373:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at backend\test\studentRewards.test.js:48:1
+✖ 维护权限与受控素材，不允许老师/学生/新媒体伪造颁发或外部图像 (0.0235ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 200
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\studentRewards.test.js:24:35)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestHook.run (node:internal/test_runner/test:1373:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at backend\test\studentRewards.test.js:49:1
+✖ 数字/实物演示事件与管理员通知原子幂等，同编号换商品409，不信任身份或文案 (0.0233ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 200
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\studentRewards.test.js:24:35)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestHook.run (node:internal/test_runner/test:1373:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at backend\test\studentRewards.test.js:56:1
+✖ 通知写入失败事务回滚无孤儿；停用/强制改密沿用原拦截 (0.0295ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 200
+  
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\studentRewards.test.js:24:35)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestHook.run (node:internal/test_runner/test:1373:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

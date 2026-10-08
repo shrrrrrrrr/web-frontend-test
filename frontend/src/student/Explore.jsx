@@ -22,6 +22,7 @@ import Sentence from '../content/Sentence';
 import {trapFocus} from './visual/trapFocus';
 import './visual/pixel-map.css';
 import './space/map.css';
+import {LessonBadge} from './ServerRewards';
 
 export { default as ExploreHome } from './ExploreHome';
 
@@ -71,7 +72,7 @@ function CourseResources({ resources, courseId }) {
 
 function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
   const navigate = useNavigate();
-  if(lesson.future)return <PixelPanel className="pixel-map-details" id="selected-lesson-details"><h3>{copyText('next.map.node')} {lesson.routeNumber}</h3><p>{copyText('next.map.notOpen')}</p></PixelPanel>;
+  if(lesson.future)return <PixelPanel className="pixel-map-details" id="selected-lesson-details"><h3>{copyText('next.map.node')} {lesson.routeNumber}</h3><p>{copyText('next.map.notOpen')}</p><div className="next-unknown-badge" aria-hidden="true">?</div><p>{copyText('next3.badges.unknown')}</p></PixelPanel>;
   const state = learningState(lesson);
   const href = '/courses/' + courseId + '/lessons/' + lesson.id + '/learn';
   return <PixelPanel className="pixel-map-details" id="selected-lesson-details" data-testid="lesson-details" aria-labelledby="selected-lesson-title">
@@ -79,6 +80,7 @@ function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
     <Typography.Title level={3} id="selected-lesson-title">{lesson.title}</Typography.Title>
     <div className="pixel-map-details-state"><PixelTag tone={state.tone}>{state.label}</PixelTag><span>{copyText('system.map.022')}</span></div>
     <PixelProgress value={lesson.progress ?? 0} label={lesson.title + copyText('system.map.023')} />
+    <LessonBadge key={lesson.id} lessonId={lesson.id}/>
     {lesson.status === 'cancelled'
       ? <Alert type="warning" showIcon title={copyText('system.map.025')} description={lesson.cancel_reason || copyText('system.map.026')} />
       : <div className="pixel-map-enter"><PixelButton type="primary" onClick={() => navigate(href)} icon={<PixelIcon name="continue" />}>{copyText(lesson.presentation_type==='visit'?'next.visit.enter':'system.map.027')}</PixelButton></div>}

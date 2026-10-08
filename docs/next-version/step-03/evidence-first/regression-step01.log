@@ -1,0 +1,86 @@
+FAILURE Cannot read properties of undefined (reading 'id') http://127.0.0.1:4194/courses/9003?tab=maintenance txt
+滑翔机试飞理论课课件
+
+隔离资料.txt · TXT · 24 B
+
+可检索
+下 载
+修改资料说明与归属
+删 除
+teaching-replay.webm
+课堂回放 · 课程公共资料
+修改资料说明与归属
+查看索引与重试
+
+上传和索引是不同状态；解析失败只重试索引，不重复上传。扫描 PDF 没有 OCR
+
+可上传、预览与 AI 解析说明
+类型	上限	显示位置	学生预览	AI 文字索引
+
+类型
+	
+上限
+	
+显示位置
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.jpeg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.png	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.gif	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.webp	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.pdf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端隔离 PDF 预览（浏览器支持时），可下载	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引 about:blank 
+▶ 下一版第一步：隔离持久环境和真实浏览器
+  ✖ 导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖 (4505.9534ms)
+✖ 下一版第一步：隔离持久环境和真实浏览器 (8107.4393ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8958.0501
+
+✖ failing tests:
+
+test at tests\next-step01.browser.test.js:30:52
+✖ 导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖 (4505.9534ms)
+  TypeError: Cannot read properties of undefined (reading 'id')
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:35:410
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:76)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:44)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:33:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests\next-step01.browser.test.js:13:1
+✖ 下一版第一步：隔离持久环境和真实浏览器 (8107.4393ms)
+  TypeError: Cannot read properties of undefined (reading 'id')
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:35:410
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:76)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:44)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:33:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

@@ -1,0 +1,460 @@
+TEACHER_SELECTION []
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"隔离验收：请比较条件并保留证据。","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"1b257a9fcc358793093b3dd30a1a2671b0199529af1d6bbea3be85cde5a4fec8"}
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✔ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (6124.9374ms)
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/learning/manage/cards/900113 {"title":"隔离知识卡片","content":"隔离正文二次更新。","estimated_minutes":10,"is_required":true,"status":"published","expected_revision":"372b65af6fff3167b4a3357d8d511b573afdb35f0d2a4c7a220aebcdf9702f0f"}
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/learning/manage/exercises/900112 {"question_type":"true_false","prompt":"隔离题：要记录条件吗（更新）","answer":true,"explanation":"仅作答后可见的隔离解释","options":[],"max_attempts":1,"expected_revision":"fb88757be6f465c1140abbe3a5bc041c38f910f194973c4b1bed943563f1d897"}
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"旧预览不应覆盖","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"078410aa5fb46a69094bb0c7dd5b711a84f772b91a3506388bd18a6278b9681e"}
+  ✔ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (4458.9305ms)
+  ✔ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (4906.5134ms)
+  ✔ 管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘 (5510.1942ms)
+  ✔ 开放日志任意一框提交、空框客户端拒绝、失败草稿与每日限次保输入 (4348.5644ms)
+  ✔ 旧四项草稿保留独立备份与第四项原义，报告三框真实提交与导师直接评审 (4394.2519ms)
+  ✔ 学生导师反馈直接选报告，不跳课程结构，退回状态和只读教师新旧反思 (4257.3714ms)
+FAILURE 退回后开放报告新版本重审通过，学生直选最终反馈，迟到队列不覆盖新筛选 locator.click: Timeout 12000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('tab', { name: '导师反馈', exact: true })[22m
+[2m    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-0-tab-feedback" aria-controls="rc-tabs-0-panel-feedback">导师反馈</div>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  2 × retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  5 × retrying click action[22m
+[2m      - waiting 500ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 500ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 500ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 500ms[22m
+[2m      - waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 500ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+[2m    - done scrolling[22m
+[2m    - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+[2m  - retrying click action[22m
+[2m    - waiting 500ms[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+
+PAGE http://127.0.0.1:4194/mentor/reviews/3 PBL 科创平台
+工作台
+课程管理
+学习内容编排
+学生管理
+作品管理
+学习报告评审
+成长档案
+任务总览
+灵境小智
+帮助与反馈
+通知中心
+← 返回上一页
+2
+帮助与反馈
+张导师
+学术导师
+王小明 · 滑翔机试飞理论课
+星海远航 · 学习报告第 2 版 · 已通过
+返回评审队列
+学习报告
+学习总结	隔离总结
+关键收获	-
+应用设想	-
+困难与疑问	-
+下一步计划	-
+反思记录
+今天想记下什么
+第二版补充证据
+和别人一起时的感受
+未填写
+还想说些什么
+报告附带开放反思
+知识学习证据
+知识卡片	状态	答题得分	作答次数
+隔离知识卡片	已完成	100 分	1
+学习闭环
+课堂回顾、知识卡片、报告与反思共同作为评审依据。
+评审结果
+报告已通过 · 88 分
+第二版通过，证据清楚
+PAGE http://127.0.0.1:4194/courses/9003/archives 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+3
+王小明
+返回课程地图
+全部课程
+GROWTH LOG / 成长记录
+我的成长档案
+
+回看参与、作品与反馈，找到下一次改进的方向
+
+刷新档案
+写反思日志
+我的作品
+积分与徽章（本地演示）
+王小明
+
+北航附属实验学校 · 四年级1班
+
+参与课程
+1
+项目作品
+0
+作品迭代
+0
+反思记录
+3
+课程评价
+0
+
+课程相关记录仅展示当前可进入的课程；仅展示本课程有明确关联的记录；未关联的历史记录不会自动归入本课程资料读取于 2026/10/9 00:29:24
+
+课程记录
+作品与迭代
+导师反馈
+成长足迹
+01
+我参与的课程
+
+参与记录不等于完成记录；完成日期仅在老师或系统已有记录时显示
+
+星海远航
+
+参与于2026-10-09 00:28
+
+尚无课程完成日期
+
+参与课程
+课时学习与报告
+
+先选课程，再选课时。每份报告的状态独立保留
+
+选择课程
+星海远航 · #9003
+选择课时
+选择课时后查看最新报告
+
+选择一个课时，查看真实学习进度、最新报告与评审。没有作品任务的课时也可以查看
+
+收获一枚新徽章
+
+恭喜你获得了理论探索徽章！已经佩戴在你的主页啦！快去看看吧~
+
+真实课时通关徽章 · 已保存到当前账号
+
+关闭并跳过
+去我的主页看看
+重置机器人位置（机器人聚焦后也可按 Home）
+PAGE http://127.0.0.1:4194/courses/9003?tab=maintenance 
+	
+上限
+	
+显示位置
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.jpeg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.png	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.gif	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.webp	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端授权图片预览；学生按原课时展示	不支持文字索引
+.pdf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	维护端隔离 PDF 预览（浏览器支持时），可下载	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+PAGE http://127.0.0.1:4194/observer/students/4 PBL 科创平台
+观察工作台
+我的学生
+成长档案
+帮助与反馈
+通知中心
+← 返回上一页
+帮助与反馈
+李老师
+教师
+王小明
+北航附属实验学校 · 四年级1班 · 只读学情档案
+返回学生列表
+登录账号
+student_wang
+	
+年级
+四年级
+	
+班级
+四年级1班
+课程进展
+星海远航
+0/3 个课时已完成
+0%
+星海远航 · 视觉测试课程
+0/6 个课时已完成
+0%
+工程观察 · 测试课程
+0/1 个课时已完成
+0%
+课时与学习报告
+星海远航 · 滑翔机试飞理论课
+60%
+隔离总结
+查看报告第 1 版
+导师意见：隔离反馈：请补充证据
+rejected
+星海远航 · 视觉测试课程 · 记录实验条件
+35%
+尚未提交学习报告
+未提交
+星海远航 · 视觉测试课程 · 比较设计方案
+测试报告已通过
+查看报告第 1 版
+approved
+近期成长轨迹
+反思记录
+滑翔机试飞理论课
+今天想记下什么
+未填写
+和别人一起时的感受
+未填写
+还想说些什么
+报告附带开放反思
+课程反思
+今天想记下什么
+未填写
+和别人一起时的感受
+未填写
+还想说些什么
+隔离生活感受
+基础观察（测试课时）
+遇到的困难
+另一课程反思（测试记录）
+解决方式
+未填写
+改进收获
+未填写
+新问题
+未填写
+已通过成果
+暂无已通过成果
+  ✖ 退回后开放报告新版本重审通过，学生直选最终反馈，迟到队列不覆盖新筛选 (18124.8132ms)
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (56214.61ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 7
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 56944.7375
+
+✖ failing tests:
+
+test at tests\next-step02.browser.test.js:12:50
+✖ 退回后开放报告新版本重审通过，学生直选最终反馈，迟到队列不覆盖新筛选 (18124.8132ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('tab', { name: '导师反馈', exact: true })[22m
+  [2m    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-0-tab-feedback" aria-controls="rc-tabs-0-panel-feedback">导师反馈</div>[22m
+  [2m  - attempting click action[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  2 × retrying click action[22m
+  [2m      - waiting 100ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  5 × retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:22:892
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:22:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('tab', { name: '导师反馈', exact: true })", '    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-0-tab-feedback" aria-controls="rc-tabs-0-panel-feedback">导师反馈</div>', '  - attempting click action', '    2 × waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '    - waiting 20ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  2 × retrying click action', '      - waiting 100ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  5 × retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms', '    - waiting for element to be visible, enabled and stable' ]
+  }
+
+test at tests\next-step02.browser.test.js:4:1
+✖ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (56214.61ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('tab', { name: '导师反馈', exact: true })[22m
+  [2m    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-0-tab-feedback" aria-controls="rc-tabs-0-panel-feedback">导师反馈</div>[22m
+  [2m  - attempting click action[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  2 × retrying click action[22m
+  [2m      - waiting 100ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  5 × retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 500ms[22m
+  [2m      - waiting for element to be visible, enabled and stable[22m
+  [2m      - element is visible, enabled and stable[22m
+  [2m      - scrolling into view if needed[22m
+  [2m      - done scrolling[22m
+  [2m      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  [2m    - element is visible, enabled and stable[22m
+  [2m    - scrolling into view if needed[22m
+  [2m    - done scrolling[22m
+  [2m    - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events[22m
+  [2m  - retrying click action[22m
+  [2m    - waiting 500ms[22m
+  [2m    - waiting for element to be visible, enabled and stable[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:22:892
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:74)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:12:42)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step02.browser.test.js:22:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('tab', { name: '导师反馈', exact: true })", '    - locator resolved to <div role="tab" tabindex="-1" aria-selected="false" class="ant-tabs-tab-btn" id="rc-tabs-0-tab-feedback" aria-controls="rc-tabs-0-panel-feedback">导师反馈</div>', '  - attempting click action', '    2 × waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '    - waiting 20ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  2 × retrying click action', '      - waiting 100ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  5 × retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <img alt="" class="" width="144" height="144" src="/assets/next-rewards/theory-192.webp"/> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '    - retrying click action', '      - waiting 500ms', '      - waiting for element to be visible, enabled and stable', '      - element is visible, enabled and stable', '      - scrolling into view if needed', '      - done scrolling', '      - <div class="next-award" data-grant-id="452fbd79-c0ce-4132-a741-8cf47224b6fc">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms', '    - waiting for element to be visible, enabled and stable', '    - element is visible, enabled and stable', '    - scrolling into view if needed', '    - done scrolling', '    - <div class="ant-modal-footer">…</div> from <div class="ant-modal-root css-viwxw0 student-pixel student-interactions next-award-modal css-var-_r_c_ ant-modal-css-var">…</div> subtree intercepts pointer events', '  - retrying click action', '    - waiting 500ms', '    - waiting for element to be visible, enabled and stable' ]
+  }

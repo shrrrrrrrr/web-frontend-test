@@ -6,7 +6,7 @@ import {pathToFileURL} from 'node:url';
 import {chromium} from 'playwright';
 import {readCopy} from '../scripts/fortune-copy.mjs';
 import {applyStep02Edits} from '../scripts/step02-copy.mjs';
-const root=path.resolve(import.meta.dirname,'..'),out=path.join(root,'docs/next-version/step-02'),file=path.join(out,'copy-review.html');
+const root=path.resolve(import.meta.dirname,'..'),out=path.resolve(process.env.PBL_EVIDENCE_DIR||path.join(root,'docs/next-version/step-02')),file=path.join(root,'docs/next-version/step-02/copy-review.html');
 test('第二步独立文案 HTML 真实编辑、JSON 导出、保存重开，旧稿不变',async()=>{
  const original=fs.readFileSync(file),browser=await chromium.launch({channel:'msedge',headless:true});
  try{

@@ -10,6 +10,9 @@ import { PixelButton, PixelImage, PixelPanel, PixelTag } from './visual/PixelUI'
 import PixelIcon from './visual/PixelIcon';
 import { StudyHeader } from './visual/StudyUI';
 import './visual/pixel-rewards.css';
+import {BadgeArt} from './ServerRewards';
+import {useServerRewards} from './useServerRewards';
+import {copyText} from '../content/copy';
 
 
 // Explicitly cycle at the edges: browser chrome is outside the library's focusin trap.
@@ -23,6 +26,7 @@ function trapDialogFocus(event) {
 }
 
 function RewardArt({ id, badge = false }) {
+  if(id.startsWith('digital-'))return <BadgeArt art={id.slice(8)} size={128}/>;
   return <PixelImage className="reward-art" src={`/assets/pixel-v1/rewards/${badge ? 'badge' : 'gift'}-${id}.svg`} width={128} height={128} alt="" />;
 }
 function GiftConditions({ gift, available }) {
@@ -32,11 +36,11 @@ function GiftConditions({ gift, available }) {
 function RecordList({ data, ledger = false, highlight }) {
   const [page, setPage] = useState(1);
   const current = Math.min(page, Math.max(1, Math.ceil(data.length / 8)));
-  return <PixelPanel className="reward-history"><header><h3>{ledger ? '每一笔演示积分' : '本浏览器的兑换记录'}</h3><Sentence>{ledger ? '仅包含演示初始值和本地演示兑换。' : '记录属于当前账号，不代表礼品已发放。'}</Sentence></header>
+  return <PixelPanel className="reward-history"><header><h3>{ledger ? '每一笔演示金币' : '本浏览器的兑换记录'}</h3><Sentence>{ledger ? '包含演示初始值、每日签到与本地演示兑换。' : '记录属于当前账号，不代表礼品已发放。'}</Sentence></header>
     {!data.length ? <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="还没有演示兑换记录" /> : <ol className="reward-record-list">{data.slice((current - 1) * 8, current * 8).map((item) => <li key={item.id} className={highlight === item.id ? 'reward-record--highlight' : ''}>
       <span className={`reward-record-mark ${ledger && item.amount > 0 ? 'reward-record-mark--initial' : ''}`} aria-hidden="true"><PixelIcon name={ledger && item.amount > 0 ? 'coin' : 'archive'} /></span>
-      <div className="reward-record-text"><strong>{item.title}</strong><Sentence>{item.time ? <time dateTime={item.time}>{formatBeijingTime(item.time)}（北京时间）</time> : '演示初始值 · 无发放时间'}</Sentence>{!ledger && <PixelTag tone="neutral">{item.status || '本地演示记录（不发货）'}</PixelTag>}{highlight === item.id && <span className="reward-current-record">本次兑换</span>}</div>
-      <div className={`reward-amount ${ledger && item.amount > 0 ? 'reward-amount--positive' : ''}`}><strong>{ledger ? `${item.amount > 0 ? '+' : ''}${item.amount}` : `−${item.cost}`}</strong><span>演示积分</span></div>
+      <div className="reward-record-text"><strong>{item.title.replaceAll('积分','金币')}</strong><Sentence>{item.time ? <time dateTime={item.time}>{formatBeijingTime(item.time)}（北京时间）</time> : '演示初始值 · 无发放时间'}</Sentence>{!ledger && <PixelTag tone="neutral">{item.status || '本地演示记录（不发货）'}</PixelTag>}{highlight === item.id && <span className="reward-current-record">本次兑换</span>}</div>
+      <div className={`reward-amount ${ledger && item.amount > 0 ? 'reward-amount--positive' : ''}`}><strong>{ledger ? `${item.amount > 0 ? '+' : ''}${item.amount}` : `−${item.cost}`}</strong><span>演示金币</span></div>
     </li>)}</ol>}
     {data.length > 8 && <Pagination current={current} pageSize={8} total={data.length} onChange={setPage} showSizeChanger={false} />}
   </PixelPanel>;
@@ -44,6 +48,7 @@ function RecordList({ data, ledger = false, highlight }) {
 
 export default function Rewards() {
   const { data, status, error, refreshing, syncWarning, store } = useRewards();
+  const remote=useServerRewards();
   const [activeTab, setActiveTab] = useState('gifts');
   const [dialog, setDialog] = useState(null);
   const [operationError, setOperationError] = useState(null);
@@ -79,13 +84,14 @@ export default function Rewards() {
       } else {
         const record = await store.redeem(dialog.giftId, dialog.requestId, { signal });
         if (signal.aborted) return;
-        setDialog({ kind: 'success', record });
+        let synced=false;try{synced=await remote.syncIntent(record);}catch{/* Committed debit stays pending with its original operation ID. */}
+        if(signal.aborted)return;setDialog({ kind: 'success', record, synced });
       }
     } catch (err) { if (!signal.aborted) setOperationError(err); }
     finally { if (!signal.aborted) { inFlight.current = false; setBusy(false); } }
   };
   const title = dialog?.kind === 'reset' ? '重置本账号的演示数据？' : dialog?.kind === 'confirm' ? '确认演示兑换'
-    : dialog?.kind === 'success' ? (status === 'ready' && !resultExists ? '演示记录已变化' : '演示兑换成功') : badge?.title || gift?.title || '演示详情';
+    : dialog?.kind === 'success' ? (status === 'ready' && !resultExists ? '演示记录已变化' : (dialog?.synced?'演示兑换成功':'演示记录待同步')) : badge?.title || gift?.title || '演示详情';
   const showRecord = () => { setActiveTab('records'); setHighlight(dialog.record.id); close(); trigger.current = null; requestAnimationFrame(() => document.querySelector('#reward-tabs-tab-records')?.focus()); };
   let footer;
   if (dialog?.kind === 'gift') footer = <><PixelButton onClick={close}>关闭</PixelButton><PixelButton type="primary" disabled={!ready || !!gift?.blockedReason} onClick={confirm}>演示兑换</PixelButton></>;
@@ -95,24 +101,26 @@ export default function Rewards() {
   else footer = <PixelButton onClick={close}>关闭</PixelButton>;
 
   return <PageContainer><div className="study-workspace reward-workspace">
-    <StudyHeader eyebrow={<Link to="/me">我的 / 本地演示</Link>} title="积分与徽章" description="浏览礼品，查看演示记录。">
+    <StudyHeader eyebrow={<Link to="/me">我的 / 本地演示</Link>} title="金币与徽章" description="浏览礼品，查看演示记录。">
       <PixelButton onClick={(event) => open({ kind: 'reset' }, event)}>重置演示数据</PixelButton>
     </StudyHeader>
-    <PixelPanel className="reward-overview" aria-label="演示积分概况">
-      <div className="reward-balance"><PixelIcon name="coin" size={36} /><div><span>演示积分余额</span><strong data-testid="reward-balance">{status === 'ready' ? data.balance : status === 'loading' ? '读取中' : '暂不可读取'}</strong></div></div>
-      <div className="reward-scope"><PixelTag tone="neutral">本地演示，规则待定</PixelTag><Sentence>只保存在本浏览器，按当前账号隔离。<br />不会扣除真实积分，也不会真实发货。</Sentence></div>
+    <PixelPanel className="reward-overview" aria-label="演示金币概况">
+      <div className="reward-balance"><PixelIcon name="coin" size={36} /><div><span>演示金币余额</span><strong data-testid="reward-balance">{status === 'ready' ? data.balance : status === 'loading' ? '读取中' : '暂不可读取'}</strong></div></div>
+      <div className="reward-scope"><PixelTag tone="neutral">本地演示，规则待定</PixelTag><Sentence>只保存在本浏览器，按当前账号隔离。<br />不会扣除真实金币，也不会真实发货。</Sentence></div>
     </PixelPanel>
+    <Sentence>{copyText('next3.exchange.scope')}</Sentence>
+    {(data?.outbox||[]).some(e=>e.sync==='pending')&&<Alert type="warning" title={copyText('next3.exchange.pending')} description={remote.syncError} action={<PixelButton onClick={remote.flush}>{copyText('next3.exchange.retry')}</PixelButton>}/>}
     {syncWarning && <Alert className="reward-notice" type="warning" showIcon title="跨页面显示提醒" description={syncWarning} />}
     {notice && <Alert className="reward-notice" type="success" showIcon title={notice} closable />}
     {error && <Alert className="reward-notice" type="error" showIcon title="演示数据暂不可用" description={<>{error.message}{data && <Sentence>下面保留上次读取的列表，当前兑换条件暂停使用。</Sentence>}</>} action={<PixelButton onClick={store.refresh} loading={refreshing}>重试读取</PixelButton>} />}
     {status === 'loading' && <div className="reward-loading"><Spin /><Sentence>正在读取本账号的演示记录</Sentence></div>}
     {data && <Tabs id="reward-tabs" className="reward-tabs" activeKey={activeTab} onChange={setActiveTab} items={[
-      { key: 'gifts', label: '礼品', children: <><div className="reward-section-intro"><h3>礼品陈列架</h3><span>图案与兑换条件均为演示</span></div><div className="reward-gift-grid">{data.gifts.map((item, index) => <PixelPanel as="article" key={item.id} className="reward-gift" data-gift={item.id}>
+      { key: 'gifts', label: '礼品', children: <><div className="reward-section-intro"><h3>礼品陈列架</h3><span>图案与兑换条件均为演示 · 数字徽章 / 实物</span></div><div className="reward-gift-grid">{data.gifts.map((item, index) => <PixelPanel as="article" key={item.id} className="reward-gift" data-gift={item.id}>
         <div className="reward-gift-art"><span className="reward-item-number" aria-hidden="true">0{index + 1}</span><RewardArt id={item.id} /><span className="reward-art-caption">礼品演示</span></div>
-        <div className="reward-gift-content"><h3>{item.title}</h3><Sentence className="reward-cost"><PixelIcon name="coin" size={20} /><strong>{item.cost}</strong><span>演示积分</span></Sentence><GiftConditions gift={item} available={ready} /><PixelButton block onClick={(event) => open({ kind: 'gift', giftId: item.id }, event)}>查看礼品详情</PixelButton></div>
+        <div className="reward-gift-content"><h3>{item.title}</h3><PixelTag>{item.type==='badge'?'数字徽章（演示）':'实物（演示）'}</PixelTag><Sentence className="reward-cost"><PixelIcon name="coin" size={20} /><strong>{item.cost}</strong><span>演示金币</span></Sentence><GiftConditions gift={item} available={ready} /><PixelButton block onClick={(event) => open({ kind: 'gift', giftId: item.id }, event)}>查看礼品详情</PixelButton></div>
       </PixelPanel>)}</div><Sentence className="reward-footnote">库存与限兑次数只计算本账号的本地演示记录。</Sentence></> },
-      { key: 'ledger', label: '积分明细', children: <RecordList data={data.ledger} ledger /> },
-      { key: 'records', label: '兑换记录', children: <RecordList data={data.records} highlight={highlight} /> },
+      { key: 'ledger', label: '金币明细', children: <RecordList data={data.ledger} ledger /> },
+      { key: 'records', label: '兑换记录', children: <><RecordList data={data.records} highlight={highlight}/><PixelPanel className="reward-history"><h3>{copyText('next3.exchange.serverTitle')}</h3><Sentence>{copyText('next3.exchange.serverScope')}</Sentence>{remote.error?<Alert type="warning" title={remote.error} action={<PixelButton onClick={remote.read}>{copyText('next3.retry')}</PixelButton>}/>:<ul className="reward-record-list">{(remote.data?.exchanges||[]).map(e=><li key={e.id}><div><strong>{e.gift_name}</strong><Sentence>{e.gift_type==='badge'?copyText('next3.exchange.digitalType'):copyText('next3.exchange.physicalType')} · {formatBeijingTime(e.created_at)}（北京）</Sentence></div><PixelTag>{copyText('next3.exchange.serverSaved')}</PixelTag></li>)}</ul>}</PixelPanel></> },
       { key: 'badges', label: '徽章', children: <><div className="reward-section-intro"><h3>探索徽章</h3><span>演示视觉稿 · 正式条件待制定</span></div><div className="reward-badge-grid">{data.badges.map((item) => <PixelPanel as="article" className={`reward-badge ${item.earned ? '' : 'reward-badge--unearned'}`} key={item.id}>
         <div className="reward-badge-art"><RewardArt id={item.id} badge /></div><div><PixelTag tone={item.earned ? 'success' : 'neutral'}>{item.earned ? '演示已获得' : '演示未获得'}</PixelTag><h3>{item.title}</h3><Sentence>{item.description}</Sentence><PixelButton onClick={(event) => open({ kind: 'badge', badgeId: item.id }, event)}>查看徽章详情</PixelButton></div>
       </PixelPanel>)}</div></> },
@@ -124,16 +132,18 @@ export default function Rewards() {
       <div ref={dialogBody} tabIndex={-1} className="reward-dialog-body">
         <span className="reward-dialog-demo">本地演示 · 规则待定</span>
         {(dialog?.kind === 'gift' || dialog?.kind === 'confirm') && gift && <>
-          <div className="reward-detail-heading"><RewardArt id={gift.id} /><div><h3>{gift.title}</h3><Sentence className="reward-cost"><strong>{gift.cost}</strong> 演示积分</Sentence></div></div>
-          <Sentence>{gift.description}</Sentence><GiftConditions gift={gift} available={ready} />
-          {dialog.kind === 'confirm' && <Sentence className="reward-confirm-note">确认后消耗 <strong>{gift.cost} 演示积分</strong>，仅保存本账号的本地记录，不会真实发货。</Sentence>}
+          <div className="reward-detail-heading"><RewardArt id={gift.id} /><div><h3>{gift.title}</h3><Sentence className="reward-cost"><strong>{gift.cost}</strong> 演示金币</Sentence></div></div>
+          <Sentence>{gift.description.replaceAll('积分','金币')}</Sentence><GiftConditions gift={gift} available={ready} />
+          {gift.type==='physical'&&<Alert type="info" title={copyText('next3.exchange.demo')}/>}
+          {dialog.kind === 'confirm' && <Sentence className="reward-confirm-note">确认后消耗 <strong>{gift.cost} 演示金币</strong>，保存本地扣币与同步意图，并同步后端演示事件和管理员通知，不会真实发货。</Sentence>}
           {!ready && <Alert type="warning" title={error?.message || '正在重新核对当前条件'} action={error && <PixelButton onClick={store.refresh} loading={refreshing}>重新核对</PixelButton>} />}
         </>}
         {dialog?.kind === 'badge' && badge && <><div className="reward-badge-detail"><RewardArt id={badge.id} badge /><PixelTag tone={badge.earned ? 'success' : 'neutral'}>{badge.earned ? '演示已获得' : '演示未获得'}</PixelTag></div><Sentence>{badge.description}</Sentence><Sentence className="reward-confirm-note">{badge.condition}</Sentence></>}
-        {dialog?.kind === 'reset' && <><Sentence>只清除<strong>当前账号在本浏览器</strong>的奖励演示记录，余额恢复为配置的演示初始值。</Sentence><Sentence>学习成果、报告、作品和其他账号的数据不受影响。</Sentence><Sentence className="reward-confirm-note">此操作会清除演示兑换记录与兑换明细，无法撤销。</Sentence></>}
-        {dialog?.kind === 'success' && <><div className="reward-success-mark" aria-hidden="true"><PixelIcon name="check" size={40} /></div><h3 className="reward-success-title">{dialog.record.title}</h3><Sentence className="reward-success-copy">已保存本次本地演示记录，不会发货。</Sentence><dl className="reward-conditions"><div><dt>本次消耗</dt><dd>{dialog.record.cost} 演示积分</dd></div><div><dt>保存时间（北京）</dt><dd>{formatBeijingTime(dialog.record.time)}</dd></div></dl>
+        {dialog?.kind === 'reset' && <><Sentence>只清除<strong>当前账号在本浏览器</strong>的奖励演示记录，余额恢复为配置的演示初始值。</Sentence><Sentence>学习成果、报告、作品和其他账号的数据不受影响。</Sentence><Sentence className="reward-confirm-note">清除本地演示明细后仍保留签到去重和兑换同步意图；真实通关徽章、后端演示记录与管理员通知不变。</Sentence></>}
+        {dialog?.kind === 'success' && <><div className="reward-success-mark" aria-hidden="true"><PixelIcon name="check" size={40} /></div><h3 className="reward-success-title">{dialog.record.title}</h3><Sentence className="reward-success-copy">{copyText(!dialog.synced?'next3.exchange.pending':dialog.record.type==='badge'?'next3.exchange.digital':'next3.exchange.physical')}</Sentence><Alert type="info" title={copyText('next3.exchange.demo')}/><dl className="reward-conditions"><div><dt>本次消耗</dt><dd>{dialog.record.cost} 演示金币</dd></div><div><dt>保存时间（北京）</dt><dd>{formatBeijingTime(dialog.record.time)}</dd></div></dl>
           {status === 'ready' && !resultExists && <Alert type="info" title="记录已在其他页面重置，请以当前兑换记录为准。" />}
           {error && <Alert type="warning" title="本次已保存，但当前余额暂不可读取，请重试读取。" />}
+          {dialog.synced&&remote.error&&<Alert type="warning" title={copyText('next3.exchange.profileReadFailed')} action={<PixelButton onClick={remote.read}>{copyText('next3.retry')}</PixelButton>}/>}
         </>}
         {operationError && <Alert className="reward-operation-error" type="error" showIcon title={dialog?.kind === 'reset' ? '未完成重置' : '未完成演示兑换'} description={operationError.message} />}
       </div>

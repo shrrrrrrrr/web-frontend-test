@@ -1,0 +1,28 @@
+TEACHER_SELECTION []
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"隔离验收：请比较条件并保留证据。","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"0a0e03809d993e8763ea3b059d1b50c8b0a654b75f54df8fd42e35770cba8d8e"}
+▶ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收
+  ✔ 可视化填写真实课时安排、指导与学生布局；预览无学习副作用 (6338.5392ms)
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/learning/manage/cards/900113 {"title":"隔离知识卡片","content":"隔离正文二次更新。","estimated_minutes":10,"is_required":true,"status":"published","expected_revision":"9f7fcbf16b571f9fdab15de9a5d9e7f9844933b4f501d445bd92768c20bed6c5"}
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/learning/manage/exercises/900112 {"question_type":"true_false","prompt":"隔离题：要记录条件吗（更新）","answer":true,"explanation":"仅作答后可见的隔离解释","options":[],"max_attempts":1,"expected_revision":"f2aac8c1c57fbd65866a0343277b157cc11123c0900e472e1ee97b10630e09c9"}
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90023 {"title":"滑翔机试飞理论课","description":"旧预览不应覆盖","teaching_tip":"隔离指导：先记录条件，再自由试飞。","sort_order":2,"start_at":"2026-10-20T09:00","end_at":"2026-10-20T09:45","location":"隔离科创教室","duration":45,"instructor_id":2,"presentation_type":"theory","content_state":"preparing","moments_note":null,"article_title":null,"article_url":null,"chapter_id":null,"expected_revision":"0427aff20b39fa5e31002770332df59d38612e73645134ec9184e7ff5d9c1c7f"}
+  ✔ 新增卡片保存后回读失败保留真实 ID，再次编辑不重复创建；答案不出现在预览 (4084.1429ms)
+  ✔ 真实附件上传失败重试、回读失败与终态历史不占20名额；学生下载字节 (4950.5549ms)
+  ✔ 管理员真实回放上传和学生授权签名播放；其他角色旧嵌套端点拒绝不落盘 (5853.5505ms)
+  ✔ 开放日志任意一框提交、空框客户端拒绝、失败草稿与每日限次保输入 (4331.9449ms)
+  ✔ 旧四项草稿保留独立备份与第四项原义，报告三框真实提交与导师直接评审 (3826.3532ms)
+  ✔ 学生导师反馈直接选报告，不跳课程结构，退回状态和只读教师新旧反思 (9478.5379ms)
+  ✔ 退回后开放报告新版本重审通过，学生直选最终反馈，迟到队列不覆盖新筛选 (7434.5131ms)
+SYNTHETIC_WRITE http://127.0.0.1:4194/api/courses/9003/maintenance/lessons/90022 {"title":"参观 VR 实验室","description":null,"teaching_tip":null,"sort_order":1,"start_at":null,"end_at":null,"location":null,"duration":null,"instructor_id":null,"presentation_type":"visit","content_state":"preparing","moments_note":"合成验收精彩瞬间说明。","article_title":"合成验收文章","article_url":"https://example.invalid/isolated-article","chapter_id":null,"expected_revision":"9bc69be625305fa4e3016c1b05f4f4acb24ed292a06cab0c0f65b05751e3fa5b"}
+  ✔ 可视化参观填写、图片安全预览与五视口维护弹窗 (7811.8493ms)
+  ✔ 四种维护角色五视口实际控件、侧栏、键盘与减少运动 (18758.7231ms)
+  ✔ 非学生全角色实际可访问路由 smoke 与对象详情，菜单无遗漏 (96649.8046ms)
+  ✔ 权限撤回清除旧内容、附件404局部错误、第三课实验往返和十关保留 (3563.8666ms)
+✔ 下一版第二步：真实持久维护、开放反思及全角色浏览器验收 (177280.6807ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 178095.3464

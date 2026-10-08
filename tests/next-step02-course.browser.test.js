@@ -5,7 +5,7 @@ import path from 'node:path';
 import {spawn,execFileSync} from 'node:child_process';
 import {chromium} from 'playwright';
 import {fixture,root,Database} from './v2-fixture.mjs';
-const out=path.join(root,'docs/next-version/step-02/course-browser');fs.mkdirSync(out,{recursive:true});
+const out=path.resolve(process.env.PBL_EVIDENCE_DIR||path.join(root,'docs/next-version/step-02/course-browser'));fs.mkdirSync(out,{recursive:true});
 test('可视化课程介绍真实保存、读失败保持草稿和封面替换原生命周期',{timeout:120000},async()=>{
  const f=fixture(3174,4204),source=path.join(root,'test-results/step02-course-source.json');fs.writeFileSync(source,JSON.stringify({db:f.env.DB_PATH,scratch:f.scratch}));
  const rel='.local/step02-course-'+Date.now(),dir=path.join(root,rel);execFileSync(process.execPath,['scripts/teaching.mjs','init','--source',source,'--data',rel],{cwd:root,stdio:'pipe',windowsHide:true});

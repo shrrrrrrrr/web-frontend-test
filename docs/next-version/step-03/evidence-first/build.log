@@ -1,0 +1,142 @@
+
+> star-voyage-student@0.1.0 build:teaching
+> npm --prefix frontend run build -- --outDir ../build/teaching
+
+
+> frontend@0.0.0 build
+> vite build --outDir ../build/teaching
+
+vite v8.2.1 building client environment for production...
+transforming...
+✓ 3334 modules transformed.
+
+(!) outDir C:\Users\shr\Desktop\nmg前端\app\build\teaching is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../build/teaching/index.html                                 4.41 kB │ gzip:   1.09 kB
+../build/teaching/assets/Detail-Do4OPE-1.css                 2.13 kB │ gzip:   0.75 kB
+../build/teaching/assets/pixel-archive-DrFSakwf.css          7.36 kB │ gzip:   1.62 kB
+../build/teaching/assets/StudyUI-DW7b9n1k.css               11.51 kB │ gzip:   2.39 kB
+../build/teaching/assets/pixel-service-m6kMJ5eZ.css         11.68 kB │ gzip:   2.54 kB
+../build/teaching/assets/Personal-CUbCjl-g.css              12.01 kB │ gzip:   2.44 kB
+../build/teaching/assets/pixel-compatibility-CA-01HOA.css   12.35 kB │ gzip:   2.51 kB
+../build/teaching/assets/index-ChnBTRcS.css                 94.60 kB │ gzip:  18.52 kB
+../build/teaching/assets/row-q4mGuBeu.js                     0.06 kB │ gzip:   0.08 kB
+../build/teaching/assets/maintenanceCopy-CcGmpxuG.js         0.07 kB │ gzip:   0.09 kB
+../build/teaching/assets/status-CXNA8hw5.js                  0.23 kB │ gzip:   0.22 kB
+../build/teaching/assets/FeedbackStatusTag-DCUxRxCK.js       0.27 kB │ gzip:   0.23 kB
+../build/teaching/assets/FeedbackPriorityTag-CMz4q2pD.js     0.27 kB │ gzip:   0.23 kB
+../build/teaching/assets/pixel-service-CtelXs_E.js           0.27 kB │ gzip:   0.21 kB
+../build/teaching/assets/RoleSentence-C87BJAOv.js            0.30 kB │ gzip:   0.22 kB
+../build/teaching/assets/StudentAlert-CXxPUmDH.js            0.33 kB │ gzip:   0.22 kB
+../build/teaching/assets/collapse-DNXyBCq_.js                0.38 kB │ gzip:   0.22 kB
+../build/teaching/assets/pixel-compatibility-euMEvhxJ.js     0.40 kB │ gzip:   0.28 kB
+../build/teaching/assets/useMergedMask-Oo7p7qp9.js           0.46 kB │ gzip:   0.31 kB
+../build/teaching/assets/AsyncPageState-BwEsvEu2.js          0.51 kB │ gzip:   0.38 kB
+../build/teaching/assets/displayText-EJSbmHOx.js             0.52 kB │ gzip:   0.40 kB
+../build/teaching/assets/reflectionModel-DxCF7T3N.js         0.52 kB │ gzip:   0.28 kB
+../build/teaching/assets/feedbackFiles-BW-Ii2md.js           0.63 kB │ gzip:   0.55 kB
+../build/teaching/assets/EllipsisOutlined-BDnAGUBB.js        0.78 kB │ gzip:   0.49 kB
+../build/teaching/assets/LeftOutlined-D0mv4RCe.js            0.83 kB │ gzip:   0.57 kB
+../build/teaching/assets/RightOutlined-DyJAidzh.js           0.83 kB │ gzip:   0.57 kB
+../build/teaching/assets/useRemote-CK2vPxmY.js               0.85 kB │ gzip:   0.54 kB
+../build/teaching/assets/ArrowLeftOutlined-BbksjDJf.js       0.87 kB │ gzip:   0.61 kB
+../build/teaching/assets/FileOutlined-D49ZEVDT.js            0.88 kB │ gzip:   0.61 kB
+../build/teaching/assets/model-B9fEgwjD.js                   0.88 kB │ gzip:   0.59 kB
+../build/teaching/assets/ActionButton-BeRPPhGB.js            0.89 kB │ gzip:   0.55 kB
+../build/teaching/assets/TeachingSections-DFrnsa4M.js        0.90 kB │ gzip:   0.43 kB
+../build/teaching/assets/OpenReflectionForm-CJywbxc3.js      0.95 kB │ gzip:   0.54 kB
+../build/teaching/assets/DownloadOutlined-Cl4g3VLX.js        0.95 kB │ gzip:   0.62 kB
+../build/teaching/assets/PurePanel-D0i0yet1.js               1.02 kB │ gzip:   0.63 kB
+../build/teaching/assets/TempPasswordModal-CgZP6eco.js       1.04 kB │ gzip:   0.66 kB
+../build/teaching/assets/EyeOutlined-DZaYoUOh.js             1.13 kB │ gzip:   0.71 kB
+../build/teaching/assets/NotificationLevelTag-B1-6VkQj.js    1.15 kB │ gzip:   0.65 kB
+../build/teaching/assets/SearchOutlined-jpJMJ7gt.js          1.16 kB │ gzip:   0.73 kB
+../build/teaching/assets/FeedbackFilters-cxGnjMte.js         1.19 kB │ gzip:   0.56 kB
+../build/teaching/assets/feedback-C1a5veMy.js                1.21 kB │ gzip:   0.60 kB
+../build/teaching/assets/LegacyEntry-hRetdMuN.js             1.22 kB │ gzip:   0.83 kB
+../build/teaching/assets/useClosable-BVx2MhCg.js             1.28 kB │ gzip:   0.67 kB
+../build/teaching/assets/modal-BNbcD5in.js                   1.40 kB │ gzip:   0.76 kB
+../build/teaching/assets/RocketOutlined-BKp9crX0.js          1.60 kB │ gzip:   1.00 kB
+../build/teaching/assets/useBreakpoint-QrmLhAX4.js           1.85 kB │ gzip:   0.89 kB
+../build/teaching/assets/ArchiveRecords-b_el5nQG.js          1.92 kB │ gzip:   0.87 kB
+../build/teaching/assets/style-CjNXwR66.js                   1.97 kB │ gzip:   0.82 kB
+../build/teaching/assets/move-Bptx7vbM.js                    1.97 kB │ gzip:   0.48 kB
+../build/teaching/assets/StudentList-DZReL3Ou.js             1.99 kB │ gzip:   1.17 kB
+../build/teaching/assets/School-CdYK7k16.js                  2.28 kB │ gzip:   1.19 kB
+../build/teaching/assets/date-D3egdRiN.js                    2.43 kB │ gzip:   1.08 kB
+../build/teaching/assets/Input-C5YJsc5n.js                   2.43 kB │ gzip:   1.16 kB
+../build/teaching/assets/Dashboard-CU8r4tLW.js               2.50 kB │ gzip:   1.21 kB
+../build/teaching/assets/row-D-Uw5hJ6.js                     2.52 kB │ gzip:   1.31 kB
+../build/teaching/assets/List-B8zLLCzJ.js                    2.64 kB │ gzip:   1.38 kB
+../build/teaching/assets/Detail-DOZ-UckX.js                  2.70 kB │ gzip:   1.38 kB
+../build/teaching/assets/ContentHub-D1zJVlSx.js              2.73 kB │ gzip:   1.47 kB
+../build/teaching/assets/ChangePassword-Cr2VqxE2.js          3.05 kB │ gzip:   1.59 kB
+../build/teaching/assets/List-RwV-2tum.js                    3.15 kB │ gzip:   1.64 kB
+../build/teaching/assets/style-Duvsesly.js                   3.16 kB │ gzip:   1.22 kB
+../build/teaching/assets/AISettings-Cn2AvR_P.js              3.39 kB │ gzip:   1.76 kB
+../build/teaching/assets/popconfirm-9bpBQ__4.js              3.58 kB │ gzip:   1.59 kB
+../build/teaching/assets/archiveModel-9Sk3nQOm.js            3.64 kB │ gzip:   1.76 kB
+../build/teaching/assets/AIKnowledge-DoJ8OTC6.js             3.77 kB │ gzip:   1.97 kB
+../build/teaching/assets/Sentence-PLeKeMO5.js                3.89 kB │ gzip:   1.75 kB
+../build/teaching/assets/StudentDetail-Dux7jWzQ.js           4.04 kB │ gzip:   1.70 kB
+../build/teaching/assets/ReviewList-Bw9XKVeo.js              4.08 kB │ gzip:   1.98 kB
+../build/teaching/assets/Form-RWy1ntfp.js                    4.10 kB │ gzip:   1.94 kB
+../build/teaching/assets/statistic-B4vP4YTc.js               4.13 kB │ gzip:   1.91 kB
+../build/teaching/assets/AuthContext-BZLzGijr.js             4.24 kB │ gzip:   1.97 kB
+../build/teaching/assets/List-CNo9jPqw.js                    4.31 kB │ gzip:   2.12 kB
+../build/teaching/assets/useForm-IlIFDMOB.js                 4.75 kB │ gzip:   2.13 kB
+../build/teaching/assets/empty-D8J3uBhd.js                   4.75 kB │ gzip:   2.06 kB
+../build/teaching/assets/Detail-B3x50YFU.js                  4.78 kB │ gzip:   2.25 kB
+../build/teaching/assets/Form-DfOPpwcp.js                    5.04 kB │ gzip:   2.59 kB
+../build/teaching/assets/space-Bl8tTrqr.js                   5.08 kB │ gzip:   2.09 kB
+../build/teaching/assets/Manage-BdQ3ybHf.js                  5.08 kB │ gzip:   2.42 kB
+../build/teaching/assets/StudyUI-Ct5U-iGf.js                 5.17 kB │ gzip:   2.27 kB
+../build/teaching/assets/Upload-DwxrUIPv.js                  5.55 kB │ gzip:   2.00 kB
+../build/teaching/assets/ReviewDetail-C1lQyiN8.js            5.71 kB │ gzip:   2.63 kB
+../build/teaching/assets/es-Du6n-jVr.js                      6.39 kB │ gzip:   2.58 kB
+../build/teaching/assets/alert-Ds50-3aW.js                   6.40 kB │ gzip:   2.70 kB
+../build/teaching/assets/AI-BYQCZy0U.js                      6.41 kB │ gzip:   3.34 kB
+../build/teaching/assets/List-yxq-a5MY.js                    7.10 kB │ gzip:   2.98 kB
+../build/teaching/assets/List-cDC-FQ0E.js                    7.18 kB │ gzip:   2.85 kB
+../build/teaching/assets/Reflection-BzHL81WC.js              7.28 kB │ gzip:   2.46 kB
+../build/teaching/assets/Learning-B3CVge5C.js                7.36 kB │ gzip:   2.54 kB
+../build/teaching/assets/spin-D9jPanMl.js                    7.50 kB │ gzip:   3.11 kB
+../build/teaching/assets/switch-DyifQn95.js                  7.53 kB │ gzip:   2.63 kB
+../build/teaching/assets/dayjs.min-CLFftfrj.js               7.84 kB │ gzip:   3.38 kB
+../build/teaching/assets/LessonContentEditor-kgKyHJpm.js     8.52 kB │ gzip:   3.38 kB
+../build/teaching/assets/tag-B1x1jXII.js                     8.57 kB │ gzip:   3.37 kB
+../build/teaching/assets/Detail-DzpgKo2m.js                  8.74 kB │ gzip:   3.69 kB
+../build/teaching/assets/card-BH1bDLmu.js                    9.29 kB │ gzip:   3.27 kB
+../build/teaching/assets/Index-Chm7x_UL.js                   9.42 kB │ gzip:   3.65 kB
+../build/teaching/assets/skeleton-BE1WjOBY.js                9.44 kB │ gzip:   3.25 kB
+../build/teaching/assets/list-QFxJpXs5.js                    9.73 kB │ gzip:   3.63 kB
+../build/teaching/assets/Detail-RU7nEEsw.js                 10.18 kB │ gzip:   4.41 kB
+../build/teaching/assets/input-CiXt8vZ9.js                  11.10 kB │ gzip:   5.16 kB
+../build/teaching/assets/Detail-Ds2mqNrk.js                 11.60 kB │ gzip:   3.88 kB
+../build/teaching/assets/List-CxK7GCrp.js                   14.25 kB │ gzip:   5.04 kB
+../build/teaching/assets/progress-B_um2fDJ.js               14.81 kB │ gzip:   5.74 kB
+../build/teaching/assets/checkbox-VlKFC1J9.js               15.10 kB │ gzip:   5.29 kB
+../build/teaching/assets/Index-BjSyNTqp.js                  18.65 kB │ gzip:   5.93 kB
+../build/teaching/assets/input-number-CL-s8gvG.js           20.99 kB │ gzip:   7.62 kB
+../build/teaching/assets/Personal-C8j3j9uz.js               22.75 kB │ gzip:   7.45 kB
+../build/teaching/assets/pagination-CdQFvr7f.js             24.13 kB │ gzip:   7.27 kB
+../build/teaching/assets/useModal-DaLQZVjE.js               25.24 kB │ gzip:   8.71 kB
+../build/teaching/assets/LessonLearn-i9kWNCni.js            25.29 kB │ gzip:   8.13 kB
+../build/teaching/assets/UploadOutlined-BE_Ij_74.js         31.82 kB │ gzip:  11.37 kB
+../build/teaching/assets/result-DDIhG442.js                 34.55 kB │ gzip:  10.84 kB
+../build/teaching/assets/timeline-oa0yUt1_.js               36.32 kB │ gzip:  10.30 kB
+../build/teaching/assets/tree-D-deULrM.js                   50.48 kB │ gzip:  15.61 kB
+../build/teaching/assets/Detail-DYHQDD1C.js                 52.14 kB │ gzip:  15.19 kB
+../build/teaching/assets/tabs-B-r8ylBp.js                   58.16 kB │ gzip:  18.52 kB
+../build/teaching/assets/Simulator-DVQ3W2wR.js              60.50 kB │ gzip:  21.65 kB
+../build/teaching/assets/select-DeWhVvC4.js                 67.52 kB │ gzip:  23.35 kB
+../build/teaching/assets/table-CF153UAC.js                  90.97 kB │ gzip:  30.30 kB
+../build/teaching/assets/typography-DqebbFrM.js            117.45 kB │ gzip:  37.35 kB
+../build/teaching/assets/index-Chn0f1ac.js                 256.99 kB │ gzip:  80.54 kB
+../build/teaching/assets/copy-B6x1qbdP.js                  288.52 kB │ gzip:  27.37 kB
+../build/teaching/assets/jsx-runtime-CCEwlgb1.js           480.03 kB │ gzip: 161.92 kB
+
+✓ built in 828ms

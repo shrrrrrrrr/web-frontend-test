@@ -1,0 +1,14 @@
+SYNTHETIC_COURSE_WRITE http://127.0.0.1:4204/api/courses/9003/maintenance/course {"title":"星海远航","theme":null,"presentation_theme":"voyage","cover_image":"","description":"合成验收课程介绍。","driving_question":"合成验收驱动问题？","story_line":null,"materials_needed":null,"expected_revision":"77e24bde368febb720e11cdff80930f04cac74aa7cdc27636c8cdcd5354b800e"}
+SYNTHETIC_COURSE_WRITE http://127.0.0.1:4204/api/courses/9003/maintenance/course {"title":"星海远航","theme":null,"presentation_theme":"voyage","cover_image":"","description":"合成验收第二次更新。","driving_question":"合成验收驱动问题？","story_line":null,"materials_needed":null,"expected_revision":"7dac82938afef92c1d254486f0a8266bffe468be8aa16be62cbcbe99521391f8"}
+SYNTHETIC_COURSE_WRITE http://127.0.0.1:4204/api/courses/9003/maintenance/course {"title":"星海远航","theme":null,"presentation_theme":"voyage","cover_image":"/assets/redesign-v2/web/campus-960.webp","description":"合成验收第二次更新。","driving_question":"合成验收驱动问题？","story_line":null,"materials_needed":null,"expected_revision":"4ece7f6c385eb231d0634adb90ba35e530bd0a4a70f81bcc1707a293d0fba4b4"}
+SYNTHETIC_COURSE_WRITE http://127.0.0.1:4204/api/courses/9003/maintenance/course {"title":"星海远航","theme":null,"presentation_theme":"voyage","cover_image":"/assets/redesign-v2/web/campus-960.webp","description":"合成验收第二次更新。","driving_question":"合成验收驱动问题？","story_line":null,"materials_needed":null,"expected_revision":"38efce3ae5f8a19dd44b55d5c5ec4fb3cd927bff2a3f775c4070e4f69a7b1858"}
+COVER_AFTER_SAVE { cover_image: '/assets/redesign-v2/web/campus-960.webp' }
+✔ 可视化课程介绍真实保存、读失败保持草稿和封面替换原生命周期 (7665.6727ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8393.9066

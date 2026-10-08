@@ -1,0 +1,21 @@
+{
+  "records": [
+    {
+      "name": "导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖",
+      "status": "failed",
+      "error": "Cannot read properties of undefined (reading 'id')"
+    }
+  ],
+  "pageErrors": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "ports": {
+    "base": "http://127.0.0.1:4194",
+    "api": "http://127.0.0.1:3164"
+  },
+  "scope": "isolated synthetic persistent runtime; existing teaching/4174 untouched"
+}

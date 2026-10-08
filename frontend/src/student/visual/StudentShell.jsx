@@ -19,7 +19,7 @@ import '../space/course-pages.css';
 import SceneArt from '../space/SceneArt';
 import {useCoursePresentation} from '../space/CoursePresentation';
 
-function Points({to}){const {data,status}=useRewards();return <Link to={to} className="student-points" data-testid="header-demo-points" aria-label={copyText('system.shell.001')+(status==='ready'?data.balance:copyText('system.shell.002'))}><PixelIcon name="coin"/><strong>{status==='ready'?data.balance:'—'}</strong><span className="student-demo-tag">{copyText('system.shell.003')}</span></Link>;}
+function Points({to}){const {data,status}=useRewards();return <Link to={to} className="student-points" data-testid="header-demo-points" aria-label={copyText('next3.header.coins')+(status==='ready'?data.balance:copyText('system.shell.002'))}><PixelIcon name="coin"/><strong>{status==='ready'?data.balance:'—'}</strong><span className="student-demo-tag">{copyText('system.shell.003')}</span></Link>;}
 function CourseNavigation({id,course,close}){
  const {pathname}=useLocation();const theme=useCoursePresentation().theme;
  const entries=[['','map',copyText('course.nav.map')],['/lab','lab',copyText('course.nav.lab')],['/archives','archive',copyText('course.nav.archive')]];

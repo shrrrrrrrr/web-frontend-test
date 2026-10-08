@@ -60,6 +60,8 @@ export function createRewardStore({ accountId, adapter, target, createChannel = 
   };
   return { subscribe, getSnapshot: () => state, refresh,
     redeem: (...args) => mutate(() => adapter.redeem(...args)),
+    checkin:(...args)=>mutate(()=>adapter.checkin(...args)),
+    markSynced:(...args)=>mutate(()=>adapter.markSynced(...args)),
     reset: (...args) => mutate(() => adapter.reset(...args)),
   };
 }

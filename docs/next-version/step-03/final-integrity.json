@@ -1,0 +1,19 @@
+{
+  "checkedDocuments": 296,
+  "exposedSecrets": [],
+  "missingLinks": [],
+  "teachingApiHealth": 200,
+  "previewPortsPreserved": [
+    4173,
+    4174,
+    3144
+  ],
+  "currentPorts": [
+    4184,
+    3154
+  ],
+  "unchangedTunnelProcessIds": [
+    23332,
+    43188
+  ]
+}

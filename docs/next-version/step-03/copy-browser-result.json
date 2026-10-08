@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "entryCount": 50,
+  "exportedChanges": 1,
+  "savedHtmlReopened": true,
+  "oldCopyUnchanged": true,
+  "scriptTextEscaped": true,
+  "necessaryEmptyRejected": true,
+  "pages": [
+    {
+      "page": "index.html",
+      "decodedImages": 27
+    },
+    {
+      "page": "assets.html",
+      "decodedImages": 3
+    }
+  ]
+}

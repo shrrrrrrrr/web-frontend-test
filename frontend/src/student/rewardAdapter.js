@@ -1,12 +1,19 @@
 import { rewardStorageKey, notifyDemoRewardsChanged } from './rewardEvents.js';
 import { initialRewardState, validateRewardState, redeemReward, rewardSnapshot, rewardFailure } from './rewardModel.js';
 import { openRewardDatabase, rewardTransaction, REWARD_DATABASE } from './rewardDatabase.js';
+import {rewardDemoConfig} from './rewardConfig.js';
 
 const corrupt = () => rewardFailure('CORRUPT_DATA', '本账号的演示数据损坏。可以重试读取，或确认后重置；当前数据尚未清除。');
 function validateAccount(record) {
   if (!record?.initialized || record.schemaVersion !== 1 || !Number.isInteger(record.revision) || record.revision < 1) throw corrupt();
   validateRewardState(record.state);
+  validateMeta(record);
   return record;
+}
+function validateMeta(record){
+ const meta=record.meta;
+ if(meta!==undefined&&(!meta||!Array.isArray(meta.checkins)||!Array.isArray(meta.outbox)||meta.checkins.some(d=>typeof d!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(d))||meta.outbox.some(e=>!e||typeof e.id!=='string'||typeof e.giftId!=='string'||!['pending','synced'].includes(e.sync))))throw corrupt();
+ return meta||{checkins:[],outbox:[]};
 }
 // The first argument is a v1 migration source only. It is never a write destination.
 export function createDemoRewardAdapter(storageSource, accountId, options = {}) {
@@ -51,7 +58,7 @@ export function createDemoRewardAdapter(storageSource, accountId, options = {}) 
     const db = await openRewardDatabase(factory, databaseName);
     try { return await operation(db); } finally { db.close(); }
   };
-  const change = async (kind, giftId, requestId, { signal } = {}) => {
+  const change = async (kind, giftId, requestId, { signal, day } = {}) => {
     signal?.throwIfAborted();
     const result = await withDatabase(async db => {
       if (kind !== 'reset' && !initialized) { await ensure(db, signal); initialized = true; }
@@ -62,14 +69,30 @@ export function createDemoRewardAdapter(storageSource, accountId, options = {}) 
             const existing = request.result;
             if (kind === 'reset') {
               // Confirmed reset also recovers corrupt/missing state, without reading a broken v1 source.
-              const account = { accountId: id, schemaVersion: 1, initialized: true, source: 'reset',
+              const meta=validateMeta(existing||{});
+              const account = { accountId: id, schemaVersion: 1, initialized: true, source: 'reset',meta,
                 initializedAt: existing?.initializedAt || new Date().toISOString(),
                 revision: Number.isInteger(existing?.revision) && existing.revision >= 1 ? existing.revision + 1 : 1, state: initialRewardState() };
               store.put(account); done(rewardSnapshot(account.state)); return;
             }
             const account = validateAccount(existing);
+            const meta=account.meta=validateMeta(account);
+            if(kind==='checkin'){
+              const now=options.clock?options.clock():performance.now();
+              if(!day||!/^\d{4}-\d{2}-\d{2}$/.test(day.date)||!Number.isFinite(day.expires)||now>=day.expires)throw rewardFailure('DATE_EXPIRED','服务器日期已失效，请重新核对后签到');
+              if(meta.checkins.includes(day.date)){done({changed:false,date:day.date});return;}
+              meta.checkins.push(day.date);account.state.balance+=rewardDemoConfig.dailyCoins;
+              account.state.ledger.unshift({id:'checkin:'+day.date,title:'每日签到（本地演示）',amount:rewardDemoConfig.dailyCoins,time:new Date().toISOString()});
+              account.revision++;store.put(account);done({changed:true,date:day.date,amount:rewardDemoConfig.dailyCoins});return;
+            }
+            if(kind==='synced'){
+              const event=meta.outbox.find(e=>e.id===requestId);if(!event)throw corrupt();
+              if(event.sync!=='synced'){event.sync='synced';account.revision++;const record=account.state.records.find(r=>r.id===requestId);if(record)record.status='演示兑换已同步（不发货）';store.put(account);}done(event);return;
+            }
+            const intent=meta.outbox.find(e=>e.id===requestId);
+            if(intent){if(intent.giftId!==giftId)throw rewardFailure('REQUEST_CONFLICT','同一兑换编号不能更换礼品');done(intent);return;}
             const { record, changed } = redeemReward(account.state, giftId, requestId);
-            if (changed) { account.revision++; store.put(account); }
+            if (changed) { meta.outbox.push({...record,sync:'pending'});account.revision++; store.put(account); }
             done(record);
           } catch (error) { fail(error); }
         };
@@ -82,8 +105,10 @@ export function createDemoRewardAdapter(storageSource, accountId, options = {}) 
   };
   return {
     mode: 'demo',
-    load: () => withDatabase(async db => { const account = await ensure(db); initialized = true; return { ...rewardSnapshot(account.state), syncWarning }; }),
+    load: () => withDatabase(async db => { const account = await ensure(db); initialized = true; return { ...rewardSnapshot(account.state),...validateMeta(account), syncWarning }; }),
     redeem: (giftId, requestId, settings) => change('redeem', giftId, requestId, settings),
+    checkin: settings=>change('checkin',undefined,undefined,settings),
+    markSynced:(requestId,settings)=>change('synced',undefined,requestId,settings),
     reset: settings => change('reset', undefined, undefined, settings),
   };
 }

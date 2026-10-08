@@ -14,7 +14,7 @@ export function rewardCondition(gift, state) {
   const count = state.records.filter(record => record.giftId === gift.id).length;
   if (count >= gift.limit) return '已达到演示兑换次数上限';
   if (count >= gift.stock) return '演示库存不足';
-  if (state.balance < gift.cost) return `还差 ${gift.cost - state.balance} 演示积分`;
+  if (state.balance < gift.cost) return `还差 ${gift.cost - state.balance} 演示金币`;
   return '';
 }
 export function rewardSnapshot(state) {
@@ -27,12 +27,15 @@ export function redeemReward(state, giftId, requestId) {
   validateRewardState(state);
   if (!requestId) throw rewardFailure('REQUEST_INVALID', '缺少兑换确认编号，请重新打开详情。');
   const previous = state.records.find(record => record.id === requestId);
-  if (previous) return { record: previous, changed: false };
+  if (previous) {
+    if(previous.giftId!==giftId)throw rewardFailure('REQUEST_CONFLICT','同一兑换编号不能更换礼品');
+    return { record: previous, changed: false };
+  }
   const gift = config.gifts.find(item => item.id === giftId);
   if (!gift) throw rewardFailure('REQUEST_INVALID', '演示礼品不存在');
   const reason = rewardCondition(gift, state);
   if (reason) throw rewardFailure('RULE_BLOCKED', reason);
-  const record = { id: requestId, giftId, title: gift.title, cost: gift.cost, time: new Date().toISOString(), status: '演示兑换成功（不发货）' };
+  const record = { id: requestId, giftId, title: gift.title, type:gift.type, art:gift.art, cost: gift.cost, time: new Date().toISOString(), status: '演示兑换已记录，消息待同步' };
   state.balance -= gift.cost; state.records.unshift(record);
   state.ledger.unshift({ id: requestId, title: `演示兑换：${gift.title}`, amount: -gift.cost, time: record.time });
   return { record, changed: true };

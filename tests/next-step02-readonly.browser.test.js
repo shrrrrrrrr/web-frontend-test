@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {chromium} from 'playwright';
-const root=path.resolve(import.meta.dirname,'..'),out=path.join(root,'docs/next-version/step-02/actual-readonly');fs.mkdirSync(out,{recursive:true});
+const root=path.resolve(import.meta.dirname,'..'),out=path.resolve(process.env.PBL_EVIDENCE_DIR||path.join(root,'docs/next-version/step-02/actual-readonly'));fs.mkdirSync(out,{recursive:true});
 test('最终持久教学入口只读预览，未导入合成验收教材',{timeout:60000},async()=>{
  const id=JSON.parse(fs.readFileSync(path.join(root,'.local/teaching/import-report.json'))).courseId;
  assert.equal((await fetch('http://127.0.0.1:3154/api/health')).status,200);

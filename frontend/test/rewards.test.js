@@ -10,7 +10,7 @@ const channel = () => ({ close() {} });
 // tests/round10-rewards.browser.test.js and the complete round8 browser suite.
 test('奖励纯规则保持原数值和固定徽章', () => {
  assert.equal(rewardDemoConfig.initialPoints,120);
- assert.deepEqual(rewardDemoConfig.gifts.map(({id,cost,stock,limit})=>[id,cost,stock,limit]),[['notebook',40,3,2],['model',160,2,1],['sticker',20,0,1]]);
+ assert.deepEqual(rewardDemoConfig.gifts.slice(0,3).map(({id,cost,stock,limit})=>[id,cost,stock,limit]),[['notebook',40,3,2],['model',160,2,1],['sticker',20,0,1]]);
  assert.deepEqual(rewardDemoConfig.badges.map(({id,earned})=>[id,earned]),[['record',true],['iterate',false]]);
 });
 test('v1 验证保留合法原值，不重新计算；损坏数据明确拒绝',()=>{

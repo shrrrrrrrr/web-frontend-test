@@ -1,0 +1,18 @@
+[
+  {
+    "offset": 0,
+    "easing": "ease-out",
+    "composite": "auto",
+    "opacity": "0",
+    "transform": "scale(0.92)",
+    "computedOffset": 0
+  },
+  {
+    "offset": 1,
+    "easing": "ease-out",
+    "composite": "auto",
+    "opacity": "1",
+    "transform": "scale(1)",
+    "computedOffset": 1
+  }
+]

@@ -1,0 +1,91 @@
+
+> star-voyage-student@0.1.0 test:teaching
+> node --test tests/teaching.test.mjs
+
+✖ 精确样例归档不删除原任务、作品、报告、试飞和反思；十关仅三课 (867.6362ms)
+✖ 样例内新增徽章配置仍阻止样例归档，不把非空奖励数据视为历史空表 (830.3759ms)
+✖ 样例内报告/题目/安排/角色有任何已保存改变时，保留课程可见及原记录 (894.6136ms)
+✔ 首次导入保留 WAL 提交、用户填写及真实文件；备份源与同名目标不覆盖 (1208.6992ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 1
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4117.7401
+
+✖ failing tests:
+
+test at tests\teaching.test.mjs:8:1
+✖ 精确样例归档不删除原任务、作品、报告、试飞和反思；十关仅三课 (867.6362ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      9001,
+  -   9002
+    ]
+  
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/teaching.test.mjs:10:39)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1366:25)
+      at Test.start (node:internal/test_runner/test:1226:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 9001 ],
+    expected: [ 9001, 9002 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\teaching.test.mjs:12:1
+✖ 样例内新增徽章配置仍阻止样例归档，不把非空奖励数据视为历史空表 (830.3759ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + []
+  - [
+  -   9002
+  - ]
+  
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/teaching.test.mjs:15:89)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1366:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:946:18)
+      at Test.postRun (node:internal/test_runner/test:1506:19)
+      at Test.run (node:internal/test_runner/test:1431:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [ 9002 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\teaching.test.mjs:19:1
+✖ 样例内报告/题目/安排/角色有任何已保存改变时，保留课程可见及原记录 (894.6136ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + []
+  - [
+  -   9002
+  - ]
+  
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/teaching.test.mjs:21:192)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1366:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:946:18)
+      at Test.postRun (node:internal/test_runner/test:1506:19)
+      at Test.run (node:internal/test_runner/test:1431:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:946:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [ 9002 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

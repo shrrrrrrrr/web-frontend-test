@@ -1,0 +1,55 @@
+▶ 下一版第三步补充：徽章队列、回读失败、账号切换及离线重置恢复
+  ✖ 颁发已提交但主页回读失败，不称已佩戴；重读后两个徽章依次可关闭且不重复 (2600.0498ms)
+✖ 下一版第三步补充：徽章队列、回读失败、账号切换及离线重置恢复 (8796.2429ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9521.2228
+
+✖ failing tests:
+
+test at tests\next-step03-recovery.browser.test.js:8:423
+✖ 颁发已提交但主页回读失败，不称已佩戴；重读后两个徽章依次可关闭且不重复 (2600.0498ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 'page'
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03-recovery.browser.test.js:16:442
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03-recovery.browser.test.js:8:447)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03-recovery.browser.test.js:8:415)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03-recovery.browser.test.js:11:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 'page',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\next-step03-recovery.browser.test.js:3:1
+✖ 下一版第三步补充：徽章队列、回读失败、账号切换及离线重置恢复 (8796.2429ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 'page'
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03-recovery.browser.test.js:16:442
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03-recovery.browser.test.js:8:447)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03-recovery.browser.test.js:8:415)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step03-recovery.browser.test.js:11:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 'page',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,1 @@
+{"status":"passed","oldTablesPreserved":45,"integrity":"ok","foreignKeyViolations":0,"migration21":1,"health":200,"scope":"Restored from private pre-step03 backup into independent directory; port-only changes to clone private config; original teaching untouched."}

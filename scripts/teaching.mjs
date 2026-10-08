@@ -22,7 +22,16 @@ export function sampleFingerprint(db,id){
   const columns=db.prepare(`PRAGMA table_info("${table}")`).all().map(c=>c.name),key=Object.keys(joins).find(k=>columns.includes(k));
   if(!key&&table!=='courses')continue;
   const rows=db.prepare(`SELECT * FROM "${table}" WHERE ${table==='courses'?'id=?':`"${key}" ${joins[key]}`} ORDER BY rowid`).all(id);
-  records[table]=rows.map(row=>Object.fromEntries(Object.entries(row).filter(([k])=>!['created_at','updated_at'].includes(k)).map(([k,v])=>[k,['file_path','video_path'].includes(k)&&v?path.basename(v):k.endsWith('_at')&&!['start_at','end_at'].includes(k)&&v?'timestamp-present':v])));
+  // Empty step-03 tables add no user data to the reviewed historical fixture.
+  // Any saved definition or course-linked grant still changes the fingerprint and prevents archival.
+  if(['lesson_badge_definitions','student_badge_grants','demo_exchange_events'].includes(table)&&rows.length===0)continue;
+  records[table]=rows.map(row=>Object.fromEntries(Object.entries(row).filter(([k,v])=>{
+   if(['created_at','updated_at'].includes(k))return false;
+   // Migration 020's untouched legacy defaults were absent in the original fingerprint.
+   // Nondefault/open-reflection content remains part of the hash and prevents archival.
+   if(table==='reflections'&&((k==='reflection_version'&&v===1)||(['entry_note','together_note','extra_note'].includes(k)&&v===null)))return false;
+   return true;
+  }).map(([k,v])=>[k,['file_path','video_path'].includes(k)&&v?path.basename(v):k.endsWith('_at')&&!['start_at','end_at'].includes(k)&&v?'timestamp-present':v])));
  }
  return createHash('sha256').update(JSON.stringify(records)).digest('hex');
 }
@@ -47,6 +56,7 @@ export function prepareSkeleton(db){
  const lessons=[];
  for(const [index,title,type]of [[1,'参观 VR 实验室','visit'],[2,'滑翔机试飞理论课','theory'],[3,'滑翔机试飞实验课','experiment']]){
   const lesson=Number(db.prepare("INSERT INTO lessons(course_id,title,sort_order,presentation_type,content_state) VALUES(?,?,?,?,'preparing')").run(id,title,index,type).lastInsertRowid);lessons.push(lesson);
+  db.prepare('INSERT INTO lesson_badge_definitions(lesson_id,name,art_id,description) VALUES(?,?,?,?)').run(lesson,type==='visit'?'VR参观':type==='theory'?'理论探索':'滑翔机实践',type==='visit'?'vr':type==='theory'?'theory':'glider','完成本课时的真实学习要求后获得');
  }
  for(let i=1;i<=10;i++)db.prepare('INSERT INTO course_plan_nodes(course_id,position,lesson_id,state) VALUES(?,?,?,?)').run(id,i,lessons[i-1]||null,i<=3?'linked':'preparing');
  db.prepare("INSERT INTO course_experiments(course_id,experiment_id,lesson_id,label) VALUES(?,'glider',?,'滑翔机试飞')").run(id,lessons[2]);
