@@ -1,0 +1,34 @@
+{
+  "chapterAfterFirst": [
+    {
+      "id": 90013,
+      "title": "独立复核新增章节"
+    }
+  ],
+  "chapterAfterSecond": [
+    {
+      "id": 90013,
+      "title": "独立复核新增章节"
+    },
+    {
+      "id": 90014,
+      "title": "独立复核修改章节"
+    }
+  ],
+  "experimentAfterFirst": [
+    {
+      "id": 2,
+      "label": "独立复核新增关联"
+    }
+  ],
+  "experimentAfterSecond": [
+    {
+      "id": 2,
+      "label": "独立复核新增关联"
+    }
+  ],
+  "experimentMessage": "该来源已有关联，请修改已有记录",
+  "cancelledRows": 20,
+  "rowsAfterNewFile": 20,
+  "queueMessage": "每次最多选择 20 份资料"
+}

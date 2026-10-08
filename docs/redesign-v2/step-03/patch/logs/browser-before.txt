@@ -1,0 +1,125 @@
+▶ 第三步补修：创建转更新与队列容量恢复（真实隔离 API）
+  ✖ 新增章节同弹窗再次保存更新原 ID，学生读取改名且数据库不增副本 (15269.2792ms)
+  ✖ 新增滑翔机关联同弹窗转 PUT，同课对象链和唯一约束保留 (15089.61ms)
+  ✖ 创建成功但回读失败保真实 ID，重读不 POST，再编辑仍更新同一章节和关联 (14131.5098ms)
+  ✖ 真正创建写失败保留输入和离开提醒，重试创建后再次保存仍转更新 (15749.0228ms)
+  ✖ 20 份待处理上限仍有效，全部取消后不刷新可选新批次并清容量提示 (14131.8315ms)
+  ✖ 20 份成功历史保留 ID，新批次可上传且失败输入与 token 不丢，成功项不重传 (21749.9273ms)
+  ✖ 取消真实在途但已落库请求显示未确认，仍计容量并用原 token 重试不重复 (14692.9576ms)
+  ✖ 上传成功回读失败不重传，新文件选中后保历史与作用域，失权拒绝不改数据 (15461.4697ms)
+✖ 第三步补修：创建转更新与队列容量恢复（真实隔离 API） (131569.1513ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 0
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 132501.3664
+
+✖ failing tests:
+
+test at tests\redesign-v2.step03-patch.browser.test.js:19:35
+✖ 新增章节同弹窗再次保存更新原 ID，学生读取改名且数据库不增副本 (15269.2792ms)
+  locator.click: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().getByRole('button', { name: /^保\s*存$/ })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:36:83
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:22:146)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:31:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().getByRole('button', { name: /^保\\s*存$/ })" ]
+  }
+
+test at tests\redesign-v2.step03-patch.browser.test.js:19:35
+✖ 新增滑翔机关联同弹窗转 PUT，同课对象链和唯一约束保留 (15089.61ms)
+  locator.waitFor: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().getByText('已保存 #2', { exact: true }) to be visible[22m
+  
+      at saved (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:14:71)
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:44:192
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:22:146)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:41:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().getByText('已保存 #2', { exact: true }) to be visible" ]
+  }
+
+test at tests\redesign-v2.step03-patch.browser.test.js:19:35
+✖ 创建成功但回读失败保真实 ID，重读不 POST，再编辑仍更新同一章节和关联 (14131.5098ms)
+  locator.waitFor: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().getByText('已保存，但重新读取失败；请重读，不要重复保存', { exact: true }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:56:91
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:22:146)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:48:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().getByText('已保存，但重新读取失败；请重读，不要重复保存', { exact: true }) to be visible" ]
+  }
+
+test at tests\redesign-v2.step03-patch.browser.test.js:19:35
+✖ 真正创建写失败保留输入和离开提醒，重试创建后再次保存仍转更新 (15749.0228ms)
+  locator.click: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal').visible().getByRole('button', { name: /^保\s*存$/ })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:68:302
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:22:146)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:64:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal').visible().getByRole('button', { name: /^保\\s*存$/ })" ]
+  }
+
+test at tests\redesign-v2.step03-patch.browser.test.js:19:35
+✖ 20 份待处理上限仍有效，全部取消后不刷新可选新批次并清容量提示 (14131.8315ms)
+  locator.waitFor: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for getByTestId('upload-resource').getByTestId('upload-item').filter({ hasText: '补修新批次-1.txt' }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:74:139
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:22:146)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:70:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByTestId('upload-resource').getByTestId('upload-item').filter({ hasText: '补修新批次-1.txt' }) to be visible" ]
+  }
+
+test at tests\redesign-v2.step03-patch.browser.test.js:19:35
+✖ 20 份成功历史保留 ID，新批次可上传且失败输入与 token 不丢，成功项不重传 (21749.9273ms)
+  locator.waitFor: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for getByTestId('upload-resource').getByTestId('upload-item').filter({ hasText: '补修后续批次-2.txt' }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:80:141
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:22:146)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:76:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByTestId('upload-resource').getByTestId('upload-item').filter({ hasText: '补修后续批次-2.txt' }) to be visible" ]
+  }
+
+test at tests\redesign-v2.step03-patch.browser.test.js:19:35
+✖ 取消真实在途但已落库请求显示未确认，仍计容量并用原 token 重试不重复 (14692.9576ms)
+  locator.evaluate: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for getByTestId('upload-resource').getByRole('button', { name: /^上\s*传\s*待\s*处\s*理\s*文\s*件$/ })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:92:31
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:22:146)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:87:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByTestId('upload-resource').getByRole('button', { name: /^上\\s*传\\s*待\\s*处\\s*理\\s*文\\s*件$/ })" ]
+  }
+
+test at tests\redesign-v2.step03-patch.browser.test.js:19:35
+✖ 上传成功回读失败不重传，新文件选中后保历史与作用域，失权拒绝不改数据 (15461.4697ms)
+  locator.waitFor: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText('课程不存在或已不在负责范围', { exact: true }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:100:158
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:22:146)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\redesign-v2.step03-patch.browser.test.js:96:3) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByText('课程不存在或已不在负责范围', { exact: true }) to be visible" ]
+  }

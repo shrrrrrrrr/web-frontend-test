@@ -1,0 +1,1 @@
+PASS: all local gallery links exist and 16 real images decode; 13 passed screenshots separate from 3 original defect screenshots.

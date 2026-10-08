@@ -1,0 +1,40 @@
+▶ 第三步补修：创建转更新与队列容量恢复（真实隔离 API）
+  ✔ 新增章节同弹窗再次保存更新原 ID，学生读取改名且数据库不增副本 (8826.6469ms)
+  ✔ 新增滑翔机关联同弹窗转 PUT，同课对象链和唯一约束保留 (5249.8139ms)
+  ✔ 创建成功但回读失败保真实 ID，重读不 POST，再编辑仍更新同一章节和关联 (9731.4367ms)
+  ✔ 真正创建写失败保留输入和离开提醒，重试创建后再次保存仍转更新 (5919.3732ms)
+  ✔ 20 份待处理上限仍有效，全部取消后不刷新可选新批次并清容量提示 (4108.5266ms)
+  ✖ 20 份成功历史保留 ID，新批次可上传且失败输入与 token 不丢，成功项不重传 (15067.017ms)
+  ✔ 取消真实在途但已落库请求显示未确认，仍计容量并用原 token 重试不重复 (5618.8173ms)
+  ✔ 上传成功回读失败不重传，新文件选中后保历史与作用域，失权拒绝不改数据 (7075.9223ms)
+✖ 第三步补修：创建转更新与队列容量恢复（真实隔离 API） (66580.4898ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 7
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 67511.8302
+
+✖ failing tests:
+
+test at tests\redesign-v2.step03-patch.browser.test.js:19:35
+✖ 20 份成功历史保留 ID，新批次可上传且失败输入与 token 不丢，成功项不重传 (15067.017ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 2
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03-patch.browser.test.js:85:192
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03-patch.browser.test.js:22:146)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/redesign-v2.step03-patch.browser.test.js:76:3)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

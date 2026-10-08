@@ -1,0 +1,48 @@
+{
+  "run": "before",
+  "browser": "154.0.4258.53",
+  "records": [
+    {
+      "name": "新增章节同弹窗再次保存更新原 ID，学生读取改名且数据库不增副本",
+      "result": "fail",
+      "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ant-modal').visible().getByRole('button', { name: /^保\\s*存$/ })\u001b[22m\n"
+    },
+    {
+      "name": "新增滑翔机关联同弹窗转 PUT，同课对象链和唯一约束保留",
+      "result": "fail",
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ant-modal').visible().getByText('已保存 #2', { exact: true }) to be visible\u001b[22m\n"
+    },
+    {
+      "name": "创建成功但回读失败保真实 ID，重读不 POST，再编辑仍更新同一章节和关联",
+      "result": "fail",
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ant-modal').visible().getByText('已保存，但重新读取失败；请重读，不要重复保存', { exact: true }) to be visible\u001b[22m\n"
+    },
+    {
+      "name": "真正创建写失败保留输入和离开提醒，重试创建后再次保存仍转更新",
+      "result": "fail",
+      "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ant-modal').visible().getByRole('button', { name: /^保\\s*存$/ })\u001b[22m\n"
+    },
+    {
+      "name": "20 份待处理上限仍有效，全部取消后不刷新可选新批次并清容量提示",
+      "result": "fail",
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('upload-resource').getByTestId('upload-item').filter({ hasText: '补修新批次-1.txt' }) to be visible\u001b[22m\n"
+    },
+    {
+      "name": "20 份成功历史保留 ID，新批次可上传且失败输入与 token 不丢，成功项不重传",
+      "result": "fail",
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('upload-resource').getByTestId('upload-item').filter({ hasText: '补修后续批次-2.txt' }) to be visible\u001b[22m\n"
+    },
+    {
+      "name": "取消真实在途但已落库请求显示未确认，仍计容量并用原 token 重试不重复",
+      "result": "fail",
+      "error": "locator.evaluate: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('upload-resource').getByRole('button', { name: /^上\\s*传\\s*待\\s*处\\s*理\\s*文\\s*件$/ })\u001b[22m\n"
+    },
+    {
+      "name": "上传成功回读失败不重传，新文件选中后保历史与作用域，失权拒绝不改数据",
+      "result": "fail",
+      "error": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('课程不存在或已不在负责范围', { exact: true }) to be visible\u001b[22m\n"
+    }
+  ],
+  "pageErrors": [],
+  "data": "fresh isolated fixture; existing 4174 never stopped or restarted"
+}

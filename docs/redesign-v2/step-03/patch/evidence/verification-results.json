@@ -1,0 +1,113 @@
+{
+  "checkedAt": "2026-10-08T02:50:22.694Z",
+  "businessScenes": 18,
+  "businessPass": 18,
+  "parentTests": 2,
+  "parentsPass": 2,
+  "records": [
+    {
+      "name": "新增章节同弹窗再次保存更新原 ID，学生读取改名且数据库不增副本",
+      "result": "pass",
+      "log": "logs/browser-screenshots-final.txt"
+    },
+    {
+      "name": "新增滑翔机关联同弹窗转 PUT，同课对象链和唯一约束保留",
+      "result": "pass",
+      "log": "logs/browser-screenshots-final.txt"
+    },
+    {
+      "name": "创建成功但回读失败保真实 ID，重读不 POST，再编辑仍更新同一章节和关联",
+      "result": "pass",
+      "log": "logs/browser-screenshots-final.txt"
+    },
+    {
+      "name": "真正创建写失败保留输入和离开提醒，重试创建后再次保存仍转更新",
+      "result": "pass",
+      "log": "logs/browser-screenshots-final.txt"
+    },
+    {
+      "name": "20 份待处理上限仍有效，全部取消后不刷新可选新批次并清容量提示",
+      "result": "pass",
+      "log": "logs/browser-screenshots-final.txt"
+    },
+    {
+      "name": "20 份成功历史保留 ID，新批次可上传且失败输入与 token 不丢，成功项不重传",
+      "result": "pass",
+      "log": "logs/browser-screenshots-final.txt"
+    },
+    {
+      "name": "取消真实在途但已落库请求显示未确认，仍计容量并用原 token 重试不重复",
+      "result": "pass",
+      "log": "logs/browser-screenshots-final.txt"
+    },
+    {
+      "name": "上传成功回读失败不重传，新文件选中后保历史与作用域，失权拒绝不改数据",
+      "result": "pass",
+      "log": "logs/browser-screenshots-final.txt"
+    },
+    {
+      "name": "导师通过页面创建明确主题课程，原入口排课和任务保留",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    },
+    {
+      "name": "页面填写介绍、章节/排序、课时提示与任务要求，清空说明和读失败保输入",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    },
+    {
+      "name": "原卡片/练习编辑发布和真实持久化滑翔机关联",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    },
+    {
+      "name": "公共/课时资料与四种新增格式、混合失败队列、重试不重复成功",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    },
+    {
+      "name": "页面上传真实可播放回放和私有封面，三尺寸维护/队列/格式矩阵可用",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    },
+    {
+      "name": "原导入学生与发布入口授权；学生真实主题、章节、详情、资料/回放范围",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    },
+    {
+      "name": "课堂回顾→一次练习→指定卡片真实试飞→原卡片返回，解除关联不删试飞",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    },
+    {
+      "name": "主题与章节刷新保报告/助手草稿，报告作品分开提交、原评审/版本/档案",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    },
+    {
+      "name": "只读教师/无关导师与失去负责范围：旧表单被拒绝，课程撤回/恢复及时清理",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    },
+    {
+      "name": "队列取消/防双击/成功回读失败，切课不带文件；解析失败只重试索引",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    }
+  ],
+  "parents": [
+    {
+      "name": "第三步补修：创建转更新与队列容量恢复（真实隔离 API）",
+      "result": "pass",
+      "log": "logs/browser-screenshots-final.txt"
+    },
+    {
+      "name": "第三步真实内容维护→学生读取与上传恢复完整旅程",
+      "result": "pass",
+      "log": "logs/journey-final.txt"
+    }
+  ],
+  "pageErrors": [],
+  "method": "Eight patch child scenes plus ten unchanged maintenance journey scenes; two parent wrappers counted separately; no duplicate recheck accumulation."
+}

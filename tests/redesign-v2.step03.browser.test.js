@@ -5,7 +5,7 @@ import path from 'node:path';
 import {setup,login,go,base,api,gate} from './helpers/step02.fixture.mjs';
 import {root} from './v2-fixture.mjs';
 import {syntheticReplay} from './helpers/syntheticReplay.mjs';
-const out=path.join(root,'docs/redesign-v2/step-03/screenshots'),sizes=[[1440,900],[768,1024],[390,844],[360,800],[844,390]];
+const out=path.resolve(root,process.env.PBL_STEP03_SCREENSHOTS||'docs/redesign-v2/step-03/screenshots'),sizes=[[1440,900],[768,1024],[390,844],[360,800],[844,390]];
 const b=(p,name)=>p.getByRole('button',{name:new RegExp('(?:^| )'+[...name].map(ch=>ch.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('\\s*')+'$')}),dialog=p=>p.locator('.ant-modal').filter({visible:true});
 async function select(p,label,value){await p.getByLabel(label,{exact:true}).click();const owner=typeof p.page==='function'?p.page():p;await owner.locator('.ant-select-dropdown').filter({visible:true}).getByText(value,{exact:true}).click();}
 async function shot(p,name){await p.evaluate(()=>document.fonts.ready);await p.waitForFunction(()=>document.documentElement.scrollWidth<=innerWidth+1);await p.screenshot({path:path.join(out,name+'.png'),animations:'disabled'});}

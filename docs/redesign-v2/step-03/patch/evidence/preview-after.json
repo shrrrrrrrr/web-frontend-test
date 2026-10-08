@@ -1,0 +1,225 @@
+{
+  "checkedAt": "2026-10-08T02:44:30.488Z",
+  "preview": {
+    "pid": 30228,
+    "db": "D:\\Temp\\pbl-redesign-v2-r9vb8i\\v2.db",
+    "scratch": "D:\\Temp\\pbl-redesign-v2-r9vb8i",
+    "url": "http://127.0.0.1:4174",
+    "api": "http://127.0.0.1:3144"
+  },
+  "ports": [
+    {
+      "LocalPort": 4174,
+      "OwningProcess": 43408
+    },
+    {
+      "LocalPort": 4173,
+      "OwningProcess": 14072
+    },
+    {
+      "LocalPort": 3144,
+      "OwningProcess": 47032
+    }
+  ],
+  "samePorts": true,
+  "samePreviewMetadata": true,
+  "status": 200,
+  "currentHtmlSha256": "77ddeff7623faade549bbaa942c80b6d44f3f931041c306269bdbb8475f7a6e8",
+  "distHtmlSha256": "77ddeff7623faade549bbaa942c80b6d44f3f931041c306269bdbb8475f7a6e8",
+  "previousHtmlSha256": "6e2466258a75e25a3ca0ea3dc5e1bc6ff80ee953b45eba40026691f13ba6105d",
+  "assets": [
+    {
+      "file": "/assets/index-D3kbh1NK.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/dayjs.min-CLFftfrj.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/jsx-runtime-C-GVBRSp.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/typography-B6qESNXC.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/useClosable-BfU_l_I5.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/alert-T5GX8Z65.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/useForm-Ds9B0Q8f.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/useBreakpoint-BRJuzdm_.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/useMergedMask-CJcwnG5L.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/ActionButton-CxCBcEJI.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/skeleton-DCMw9giS.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/style-Q5WVimYn.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/useModal-DvNk1ORq.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/collapse-DNXyBCq_.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/move-c7fOLM7E.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/extends-CvVTau-c.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/es-D7uByyYY.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/RightOutlined-w8fDO-we.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/PurePanel-DopAyFY8.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/empty-CUp4gxcF.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/LeftOutlined-COv6D-TI.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/tabs-DQSegjZs.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/card-DaI2MDks.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/spin-4yNjfwCq.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/row-umaGN_eg.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/space-DNQ9pqEX.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/SearchOutlined-vNEE4xIN.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/Input-33xrtTie.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/EyeOutlined-BsjHvxlr.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/input-rBn3lLE9.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/modal-CV0Qu94M.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/result-C6dAgnrC.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/tag-ClOc-BCs.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/AuthContext-B9_BWCkT.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/displayText-EJSbmHOx.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/useCourseApis-B5iTfRa0.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/useRemote-Bg4L6UFS.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/copy-C4pR-L7i.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/Sentence-J48lmgVX.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/StudyUI-Cj3bfXQq.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/NotificationLevelTag-DTZXO1go.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/pixel-service-03wmubov.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/date-D3egdRiN.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/AsyncPageState-Cz3qsHVc.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/model-B9fEgwjD.js",
+      "status": 200
+    },
+    {
+      "file": "/assets/StudyUI-CNWYZa9I.css",
+      "status": 200
+    },
+    {
+      "file": "/assets/pixel-service-m6kMJ5eZ.css",
+      "status": 200
+    },
+    {
+      "file": "/assets/index-CPU-AhzK.css",
+      "status": 200
+    }
+  ],
+  "action": "npm run build updated static dist; no stop/restart/login/write to existing 4174/3144"
+}

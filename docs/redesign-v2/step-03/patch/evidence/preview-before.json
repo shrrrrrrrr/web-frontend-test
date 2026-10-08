@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-08T02:32:13.172Z",
+  "preview": {
+    "pid": 30228,
+    "db": "D:\\Temp\\pbl-redesign-v2-r9vb8i\\v2.db",
+    "scratch": "D:\\Temp\\pbl-redesign-v2-r9vb8i",
+    "url": "http://127.0.0.1:4174",
+    "api": "http://127.0.0.1:3144"
+  },
+  "ports": [
+    {
+      "LocalPort": 4174,
+      "OwningProcess": 43408
+    },
+    {
+      "LocalPort": 4173,
+      "OwningProcess": 14072
+    },
+    {
+      "LocalPort": 3144,
+      "OwningProcess": 47032
+    }
+  ],
+  "buildHtmlSha256": "6e2466258a75e25a3ca0ea3dc5e1bc6ff80ee953b45eba40026691f13ba6105d",
+  "action": "Read only; no preview restart"
+}

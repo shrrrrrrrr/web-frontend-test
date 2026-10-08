@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-08T02:42:22.374Z",
+  "baseline": "d2defe029ef9eac7f1f726783bce7aa2de7d017c",
+  "changedProtected": [],
+  "changedOldDelivery": [],
+  "hashes": [
+    {
+      "file": "frontend/src/content/uiCopy.jsx",
+      "current": "78af5de29d050402cf21e05da0a70bf821de90008218b2b68a925d67fc5af597",
+      "baseline": "78af5de29d050402cf21e05da0a70bf821de90008218b2b68a925d67fc5af597"
+    },
+    {
+      "file": "docs/redesign-v2/step-03/copy-review.html",
+      "current": "508da4df1dc589a7b7991aa34db96d1aa6c53d972ef4748aae03f008d2182897",
+      "baseline": "508da4df1dc589a7b7991aa34db96d1aa6c53d972ef4748aae03f008d2182897"
+    },
+    {
+      "file": "docs/redesign-v2/step-03/copy-baseline.json",
+      "current": "7e51e6869dd04ca6bdb6dea2e9b97507fdb79238c4da2e0613e9c7ac3f5efc89",
+      "baseline": "7e51e6869dd04ca6bdb6dea2e9b97507fdb79238c4da2e0613e9c7ac3f5efc89"
+    },
+    {
+      "file": "docs/redesign-v2/step-02/visual-patch/copy-review.html",
+      "current": "38890f90708676d33c517f220c408d4ef633fa0afd8ad28167e7a5906e47af86",
+      "baseline": "38890f90708676d33c517f220c408d4ef633fa0afd8ad28167e7a5906e47af86"
+    }
+  ]
+}

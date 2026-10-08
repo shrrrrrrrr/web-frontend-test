@@ -15,13 +15,14 @@ export default function UploadQueue({courseId,lessons,policy,kind,refresh,dirty,
  useEffect(()=>{dirtyRef.current(rows.some(row=>!['success','cancelled'].includes(row.status)));},[rows]);
  const accept=(kind==='resource'?policy.formats.map(f=>f.ext):kind==='replay'?policy.replayExtensions:policy.coverExtensions).join(',');
  const limit=kind==='resource'?policy.resourceLimitMB:kind==='replay'?policy.replayLimitMB:policy.coverLimitMB;
- const select=(file,fileList)=>{
+ const select=file=>{
   // Ant Design invokes beforeUpload for each file: add this immutable source exactly once.
-  if(rowsRef.current.length>=20){setSelectionError(c('upload.limit'));return Upload.LIST_IGNORE;}
   if(rowsRef.current.some(row=>row.file===file))return Upload.LIST_IGNORE;
+  // Only files still needing attention consume capacity; keep terminal history/IDs.
+  if(rowsRef.current.filter(row=>!['success','cancelled'].includes(row.status)).length>=20){setSelectionError(c('upload.limit'));return Upload.LIST_IGNORE;}
   const ext='.'+file.name.split('.').pop().toLowerCase(),valid=accept.split(',').includes(ext)&&file.size<=limit*1024*1024;
   const key=crypto.randomUUID();change(list=>[...list,{key,token:key,courseId:Number(courseId),lessonId,type,file,title:file.name,description:'',status:valid?'pending':'invalid',error:valid?'':`${c('upload.invalid')} (${accept}; ≤${limit} MB)`}]);
-  if(fileList.length>20)setSelectionError(c('upload.limit'));return Upload.LIST_IGNORE;
+  setSelectionError('');return Upload.LIST_IGNORE;
  };
  const upload=async retry=>{
   if(running.current||disabled)return;running.current=true;setBusy(true);
