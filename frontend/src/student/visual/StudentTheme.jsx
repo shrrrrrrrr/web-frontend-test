@@ -4,6 +4,7 @@ import './pixel-base.css';
 import { PLATFORM_FONT } from '../space/identity';
 import '../space/space.css';
 import '../space/visual-patch.css';
+import '../space/next.css';
 
 const theme = {
   token: {

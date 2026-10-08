@@ -1,0 +1,299 @@
+{
+  "baseline": "4138c9f6ed3a867b806a0c1d4eeb7ed9763e8730",
+  "oldPreview": {
+    "url": "http://127.0.0.1:4174",
+    "api": "http://127.0.0.1:3144"
+  },
+  "oldData": {
+    "tables": [
+      {
+        "table": "ai_chunks",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "ai_documents",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "ai_settings",
+        "originalRows": 1,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "ai_usage",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "card_exercise_attempts",
+        "originalRows": 1,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "card_exercises",
+        "originalRows": 1,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "classes",
+        "originalRows": 3,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "course_avatar_preferences",
+        "originalRows": 1,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "course_chapters",
+        "originalRows": 2,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "course_covers",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "course_experiments",
+        "originalRows": 1,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "course_replays",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "courses",
+        "originalRows": 5,
+        "allowedSampleStatusChanges": 2
+      },
+      {
+        "table": "enrollments",
+        "originalRows": 5,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "evaluations",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "feedback_attachments",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "feedback_messages",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "feedbacks",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "glider_simulations",
+        "originalRows": 3,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "glider_trajectories",
+        "originalRows": 1,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "growth_records",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "knowledge_cards",
+        "originalRows": 2,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "lesson_learning_reports",
+        "originalRows": 2,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "lesson_progress",
+        "originalRows": 4,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "lesson_review_completions",
+        "originalRows": 2,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "lessons",
+        "originalRows": 10,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "media_assets",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "micro_projects",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "notifications",
+        "originalRows": 1,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "project_milestones",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "project_team_members",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "project_teams",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "reflections",
+        "originalRows": 2,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "resources",
+        "originalRows": 4,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "schools",
+        "originalRows": 2,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "student_card_progress",
+        "originalRows": 2,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "student_status_events",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "tasks",
+        "originalRows": 6,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "team_members",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "teams",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "user_notifications",
+        "originalRows": 1,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "users",
+        "originalRows": 6,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "work_reviews",
+        "originalRows": 0,
+        "allowedSampleStatusChanges": 0
+      },
+      {
+        "table": "works",
+        "originalRows": 2,
+        "allowedSampleStatusChanges": 0
+      }
+    ],
+    "unexpectedChanges": []
+  },
+  "copy": {
+    "preserved": 912,
+    "changedOldIds": [],
+    "newIds": [
+      "next.map.future",
+      "next.map.preparing",
+      "next.map.node",
+      "next.map.notOpen",
+      "next.map.route",
+      "next.map.unknown",
+      "next.visit.enter",
+      "next.visit.info",
+      "next.visit.moments",
+      "next.visit.empty",
+      "next.visit.article",
+      "next.visit.original",
+      "next.visit.noArticle",
+      "next.visit.noCompletion",
+      "next.visit.photoUnavailable",
+      "next.template.preparing",
+      "next.template.review",
+      "next.template.cards",
+      "next.template.tasks",
+      "next.template.empty",
+      "next.template.experiment",
+      "next.template.description",
+      "next.template.noResources",
+      "next.avatar.open",
+      "next.avatar.change",
+      "next.avatar.independent",
+      "next.avatar.saved",
+      "next.avatar.uncertain",
+      "next.avatar.saving",
+      "next.avatar.pilot",
+      "next.avatar.glider",
+      "next.avatar.ginkgo",
+      "next.avatar.robot",
+      "next.avatar.telescope",
+      "next.avatar.rocket",
+      "next.avatar.book",
+      "next.avatar.observatory",
+      "next.retry",
+      "next.robot.reset",
+      "next.maintenance.planHelp",
+      "next.maintenance.plan",
+      "next.maintenance.link",
+      "next.maintenance.type",
+      "next.maintenance.state",
+      "next.maintenance.moments",
+      "next.maintenance.articleTitle",
+      "next.maintenance.articleUrl",
+      "next.type.learning",
+      "next.type.visit",
+      "next.type.theory",
+      "next.type.experiment",
+      "next.state.preparing",
+      "next.state.ready",
+      "next.lab.free",
+      "next.map.count"
+    ]
+  },
+  "protectedChanges": [],
+  "oldDist": {
+    "indexHtmlSha256": "77ddeff7623faade549bbaa942c80b6d44f3f931041c306269bdbb8475f7a6e8",
+    "matchesRecordedOldPreview": true
+  },
+  "method": "只读逐行比较导入时一致性 before-skeleton 快照的旧表原有字段（BLOB 比较字节）；仅允许两明确合成课程归档。新字段/新行不视为覆盖。未导出原文字、密钥或文件。refresh_tokens 属登录/过期轮换记录，排除；FTS 派生索引由原回归检查。没有把仍运行的原预览后续登录当成导入丢失。"
+}

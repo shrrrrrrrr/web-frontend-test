@@ -23,6 +23,7 @@ import { availableCardIndex, learningStage } from '../../student/experimentConte
 import { PixelButton as Button, PixelProgress, PixelTag } from '../../student/visual/PixelUI';
 import { StudyHeader, StudySection } from '../../student/visual/StudyUI';
 import PixelIcon from '../../student/visual/PixelIcon';
+import LessonTemplate from '../../student/space/LessonTemplate';
 import { formatBeijingTime } from '../../utils/date';
 
 const { Text } = Typography;
@@ -210,6 +211,7 @@ export default function LessonLearn() {
   const currentStep = learningStage(data);
   const activeCard = cards[cardIndex];
   const cardExercisesDone = activeCard?.exercises?.every((exercise) => exercise.attempted) ?? false;
+  if(data.lesson.presentation_type==='visit'||data.lesson.content_state==='preparing')return <LessonTemplate data={data}/>;
   const stageDone = [progress.review_completed, progress.cards_done, report && report.status !== 'rejected', report?.status === 'approved'];
   const stageReasons = ['', copyText('system.learning.052'), copyText('system.learning.053'), copyText('system.learning.054')];
   const reportFields = [['summary', copyText('system.learning.055')], ['key_points', copyText('system.learning.056')], ['application', copyText('system.learning.057')], ['difficulties', copyText('system.learning.058')], ['next_plan', copyText('system.learning.059')]];

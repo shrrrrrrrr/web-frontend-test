@@ -1,0 +1,114 @@
+fresh tap [
+  [ 'pointerdown', 320, 756, 0, true, 'touch', 'BUTTON', false ],
+  [
+    'touchstart',
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    'BUTTON',
+    false
+  ],
+  [ 'pointerup', 320, 756, 0, true, 'touch', 'BUTTON', false ],
+  [
+    'touchend', undefined,
+    undefined,  undefined,
+    undefined,  undefined,
+    'BUTTON',   false
+  ],
+  [ 'mousedown', 320, 756, 0, undefined, undefined, 'BUTTON', false ],
+  [
+    'mouseup', 320,
+    756,       0,
+    undefined, undefined,
+    'BUTTON',  false
+  ],
+  [
+    'click',  320,
+    756,      0,
+    false,    'touch',
+    'BUTTON', false
+  ]
+] true
+drag { x: 80, y: 220, width: 64, height: 64 } [
+  [ 'pointerdown', 318, 754, 0, true, 'touch', 'BUTTON', false ],
+  [
+    'touchstart',
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    'BUTTON',
+    false
+  ],
+  [ 'pointermove', 292, 691, -1, true, 'touch', 'BUTTON', false ],
+  [ 'pointermove', 266, 628, -1, true, 'touch', 'BUTTON', false ],
+  [ 'pointermove', 240, 565, -1, true, 'touch', 'BUTTON', false ],
+  [ 'pointermove', 214, 502, -1, true, 'touch', 'BUTTON', false ],
+  [ 'pointermove', 188, 439, -1, true, 'touch', 'BUTTON', false ],
+  [ 'pointermove', 162, 376, -1, true, 'touch', 'BUTTON', false ],
+  [ 'pointermove', 136, 313, -1, true, 'touch', 'BUTTON', false ],
+  [ 'pointermove', 110, 250, -1, true, 'touch', 'BUTTON', false ],
+  [ 'pointerup', 110, 250, 0, true, 'touch', 'BUTTON', false ],
+  [
+    'touchend', undefined,
+    undefined,  undefined,
+    undefined,  undefined,
+    'BUTTON',   false
+  ]
+]
+tap { x: 80, y: 220, width: 64, height: 64 } [
+  [ 'pointerdown', 112, 252, 0, true, 'touch', 'BUTTON', false ],
+  [
+    'touchstart',
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    'BUTTON',
+    false
+  ],
+  [ 'pointerup', 112, 252, 0, true, 'touch', 'BUTTON', false ],
+  [
+    'touchend', undefined,
+    undefined,  undefined,
+    undefined,  undefined,
+    'BUTTON',   false
+  ]
+] false false
+capture noop [
+  [ 'pointerdown', 112, 252, 0, true, 'touch', 'BUTTON', false ],
+  [
+    'touchstart',
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    'BUTTON',
+    false
+  ],
+  [ 'pointerup', 112, 252, 0, true, 'touch', 'BUTTON', false ],
+  [
+    'touchend', undefined,
+    undefined,  undefined,
+    undefined,  undefined,
+    'BUTTON',   false
+  ],
+  [ 'mousedown', 112, 252, 0, undefined, undefined, 'BUTTON', false ],
+  [
+    'mouseup', 112,
+    252,       0,
+    undefined, undefined,
+    'BUTTON',  false
+  ],
+  [
+    'click',  112,
+    252,      0,
+    false,    'touch',
+    'BUTTON', false
+  ]
+] true

@@ -1,0 +1,49 @@
+{
+  "records": [
+    {
+      "name": "导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖",
+      "status": "passed"
+    },
+    {
+      "name": "一致性备份与独立副本恢复保留数据库、文件与稳定密钥",
+      "status": "passed"
+    },
+    {
+      "name": "十关首三真实对象、未知节点、曲线路线五视口与地图末端",
+      "status": "passed"
+    },
+    {
+      "name": "参观空精彩瞬间和文章位；理论实验无样例教材且不批量完成",
+      "status": "passed"
+    },
+    {
+      "name": "实验第三课关联往返；未关联课时无入口且独立实验仍可用",
+      "status": "passed"
+    },
+    {
+      "name": "账号头像真实读写重登、课程选择隔离及失败/回读失败",
+      "status": "passed"
+    },
+    {
+      "name": "机器人 Portal 固定视口、鼠标拖动不打开、缩放夹紧、键盘重置",
+      "status": "passed"
+    },
+    {
+      "name": "触屏拖动不误开；减少运动、页面滚动、横屏和模拟软键盘夹紧",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#course-chat') to be visible\u001b[22m\n\u001b[2m    62 × locator resolved to hidden <section hidden=\"\" role=\"dialog\" id=\"course-chat\" aria-modal=\"true\" class=\"course-chat\" aria-labelledby=\"course-chat-title\">…</section>\u001b[22m\n"
+    }
+  ],
+  "pageErrors": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "ports": {
+    "base": "http://127.0.0.1:4194",
+    "api": "http://127.0.0.1:3164"
+  },
+  "scope": "isolated synthetic persistent runtime; existing teaching/4174 untouched"
+}

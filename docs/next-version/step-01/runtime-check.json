@@ -1,0 +1,60 @@
+{
+  "time": "2026-10-08T11:29:52.707Z",
+  "ports": {
+    "newFrontend": 4184,
+    "newApi": 3154
+  },
+  "oldServices": {
+    "frontend4174": 43408,
+    "api3144": 47032,
+    "unrelated4173": 14072,
+    "cloudflared": [
+      23332,
+      43188
+    ],
+    "checked": "PowerShell Get-NetTCPConnection/Get-Process after final new-environment restart; original PIDs unchanged"
+  },
+  "versions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "courseId": 9003,
+  "lessons": [
+    {
+      "id": 90022,
+      "presentation_type": "visit",
+      "content_state": "preparing"
+    },
+    {
+      "id": 90023,
+      "presentation_type": "theory",
+      "content_state": "preparing"
+    },
+    {
+      "id": 90024,
+      "presentation_type": "experiment",
+      "content_state": "preparing"
+    }
+  ],
+  "formalBodyEmpty": true,
+  "integrity": "ok",
+  "backupBefore019": true,
+  "privateDataGitIgnored": true
+}

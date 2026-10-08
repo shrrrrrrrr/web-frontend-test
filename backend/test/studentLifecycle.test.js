@@ -122,7 +122,7 @@ test('旧库增量迁移幂等且保留账号与密码，新库结构一致', ()
     old.exec('CREATE TABLE courses(id INTEGER PRIMARY KEY); ALTER TABLE resources ADD COLUMN course_id INTEGER; ALTER TABLE resources ADD COLUMN upload_by INTEGER;');
     const { runMigrations } = require('../database/migrate');
     runMigrations(old); runMigrations(old);
-    assert.deepEqual(old.prepare('SELECT * FROM users').get(), { id: 1, username: 'old', password_hash: 'unchanged', role: 'student', is_active: 1, archived_at: null, auth_version: 0 });
+    assert.deepEqual(old.prepare('SELECT * FROM users').get(), { id: 1, username: 'old', password_hash: 'unchanged', role: 'student', is_active: 1, archived_at: null, auth_version: 0, avatar_preset: null });
     assert.equal(old.prepare('SELECT COUNT(*) c FROM schema_migrations WHERE version=9').get().c, 1);
     assert.ok(db.prepare('PRAGMA table_info(users)').all().some(c => c.name === 'archived_at'));
   } finally { old.close(); }

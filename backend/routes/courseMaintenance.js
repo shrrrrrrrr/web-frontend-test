@@ -46,9 +46,19 @@ router.delete('/chapters/:chapterId',action(req=>{
 }));
 router.put('/lessons/:lessonId',action(req=>{
  const row=object('lessons',req.params.lessonId,req.params.id);if(row.status==='cancelled')v.invalid('课时已取消，不能修改教学内容',409);
- fields(req.body,['title','description','teaching_tip','chapter_id']);const data={};
+ fields(req.body,['title','description','teaching_tip','chapter_id','presentation_type','content_state','article_url','article_title','moments_note']);const data={};
  for(const [key,max,required]of[['title',120,true],['description',10000,false],['teaching_tip',2000,false]])if(v.own(req.body,key))data[key]=v.text(req.body[key],key,max,required);
+ for(const [key,values]of [['presentation_type',['learning','visit','theory','experiment']],['content_state',['ready','preparing']]])if(v.own(req.body,key)){if(!values.includes(req.body[key]))v.invalid('课时模板状态无效');data[key]=req.body[key];}
+ for(const [key,max]of [['article_title',120],['moments_note',10000]])if(v.own(req.body,key))data[key]=v.text(req.body[key],key,max);
+ if(v.own(req.body,'article_url')){const value=v.text(req.body.article_url,'文章地址',2000);if(value){let url;try{url=new URL(value);}catch{v.invalid('文章地址无效');}if(url.protocol!=='https:'||url.username||url.password)v.invalid('文章地址须为 HTTPS');}data.article_url=value;}
  if(v.own(req.body,'chapter_id'))data.chapter_id=v.chapterId(req.body.chapter_id,req.params.id);return update('lessons',row.id,data);
+}));
+router.put('/plan',action(req=>{
+ fields(req.body,['nodes']);const nodes=req.body.nodes;
+ if(!Array.isArray(nodes)||!nodes.length||nodes.length>100)v.invalid('地图节点无效');
+ const positions=new Set(),lessons=new Set();
+ const rows=nodes.map(n=>{fields(n,['position','lessonId']);const position=v.integer(n.position,'关卡编号',{min:1,max:100}),lessonId=v.lessonId(n.lessonId,req.params.id);if(positions.has(position)||(lessonId&&lessons.has(lessonId)))v.invalid('关卡编号和课时不能重复');positions.add(position);if(lessonId)lessons.add(lessonId);return{position,lessonId};});
+ db.transaction(()=>{db.prepare('DELETE FROM course_plan_nodes WHERE course_id=?').run(req.params.id);const insert=db.prepare('INSERT INTO course_plan_nodes(course_id,position,lesson_id,state) VALUES(?,?,?,?)');for(const n of rows)insert.run(req.params.id,n.position,n.lessonId,n.lessonId?'linked':'preparing');db.prepare("UPDATE courses SET map_mode='plan' WHERE id=?").run(req.params.id);})();return{saved:true};
 }));
 router.put('/tasks/:taskId',action(req=>{
  const row=object('tasks',req.params.taskId,req.params.id);if(row.lesson_status==='cancelled'||row.status!=='active')v.invalid('任务或课时已取消，不能修改',409);

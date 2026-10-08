@@ -1,0 +1,56 @@
+▶ 第二步：真实页面加载、局部错误、空数据与关键动作
+  ✖ 各主要页面保留真实加载与局部接口错误，重试可恢复 (605266.1428ms)
+✖ 第二步：真实页面加载、局部错误、空数据与关键动作 (609669.4726ms)
+✖ 下载附件 404 保留学习；机器人不会挡住下载及主要操作 (4496.8845ms)
+✖ 长成果文字、真实上传失败保输入，恢复可提交新版本 (59.9668ms)
+✖ 档案空作品与缺失反馈真实降级；反思每日一次限制 (63.9527ms)
+✖ 实验注册页共享真实权限加载、网络错误及课程撤回清理 (901223.6191ms)
+▶ 第二步：头像、课程浮窗、真实接口与响应式页面
+  ✔ 头像未选中、六人真实保存、重新登录、账号与课程隔离 (8040.9106ms)
+  ✔ 头像写失败与写成功回读失败分开，不自动重复写入 (2188.0878ms)
+  ✔ 同课程切页保留草稿、关窗继续请求、单次问答与不重复发送 (2803.3893ms)
+  ✔ 服务错误保留原问题和新草稿，资料变更清旧引用 (2413.7248ms)
+  ✔ 中文输入法 Enter 不发送，Shift Enter 换行；真实 JWT 轮换保输入 (311.7165ms)
+  ✔ 旧消息滚动不抢位置，最新回复可定位 (1417.1942ms)
+  ✔ 课程引用只生成当前课程站内动作，不执行回答 HTML (857.3047ms)
+  ✔ 两课切换清会话，迟到旧响应不进入新课；平台不出现机器人 (1812.2163ms)
+  ✔ 真实课程撤回清会话，恢复重新检查不恢复旧回答 (1636.8856ms)
+  ✔ 未启用和目录错误展示真实状态，恢复后可提问 (64328.2748ms)
+  ✔ 旧助手链接 replace 打开一次，不回到中转页；后台入口保留 (4054.8194ms)
+  ✔ 五尺寸课程页面、窗口遮罩、焦点、互斥和键盘高度 (29009.829ms)
+  ✔ 停用、强制改密、退出和换账号清机器人上下文 (6636.2246ms)
+✔ 第二步：头像、课程浮窗、真实接口与响应式页面 (135364.9683ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 14
+ℹ fail 4
+ℹ cancelled 2
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1652982.2185
+
+✖ failing tests:
+
+test at tests\redesign-v2.step02-states.browser.test.js:18:11
+✖ 各主要页面保留真实加载与局部接口错误，重试可恢复 (605266.1428ms)
+  'test did not finish before its parent and was cancelled'
+
+test at tests\redesign-v2.step02-states.browser.test.js:12:1
+✖ 第二步：真实页面加载、局部错误、空数据与关键动作 (609669.4726ms)
+  'test timed out after 180000ms'
+
+test at tests\redesign-v2.step02-states.browser.test.js:25:11
+✖ 下载附件 404 保留学习；机器人不会挡住下载及主要操作 (4496.8845ms)
+  'test could not be started because its parent finished'
+
+test at tests\redesign-v2.step02-states.browser.test.js:28:11
+✖ 长成果文字、真实上传失败保输入，恢复可提交新版本 (59.9668ms)
+  'test could not be started because its parent finished'
+
+test at tests\redesign-v2.step02-states.browser.test.js:35:11
+✖ 档案空作品与缺失反馈真实降级；反思每日一次限制 (63.9527ms)
+  'test could not be started because its parent finished'
+
+test at tests\redesign-v2.step02-states.browser.test.js:39:11
+✖ 实验注册页共享真实权限加载、网络错误及课程撤回清理 (901223.6191ms)
+  'test could not be started because its parent finished'

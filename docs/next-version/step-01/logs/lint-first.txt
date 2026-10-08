@@ -1,0 +1,30 @@
+
+> star-voyage-student@0.1.0 lint
+> npm --prefix frontend run lint
+
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\student\space\AccountAvatar.jsx
+  10:9   error    'user' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          no-unused-vars
+  13:40  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  11 |  const trigger=useRef(null),live=useRef(true),seq=useRef(0),writing=useRef(false);
+  12 |  const read=useCallback(async()=>{const ticket=++seq.current;try{const r=await client.get('/account/avatar',{silent:true});if(live.current&&ticket===seq.current){setData(r);setNotice('');}}catch(e){if(live.current&&ticket===seq.current)setNotice(requestError(e));}},[]);
+> 13 |  useEffect(()=>{live.current=true;void read();return()=>{live.current=false;seq.current++;};},[read]);
+     |                                        ^^^^ Avoid calling setState() directly within an effect
+  14 |  const save=async presetId=>{
+  15 |   if(writing.current)return;writing.current=true;setBusy(true);setNotice('');const ticket=++seq.current;let saved=false;
+  16 |   try{await client.put('/account/avatar',{presetId},{silent:true});saved=true;if(!live.current||ticket!==seq.current)return;setData(s=>({...s,presetId}));await refreshUser();if(live.current&&ticket===seq.current)setNotice(copyText('next.avatar.saved'));}  react-hooks/set-state-in-effect
+  13:81  warning  The ref value 'seq.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'seq.current' to a variable inside the effect, and use that variable in the cleanup function                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react-hooks/exhaustive-deps
+
+✖ 3 problems (2 errors, 1 warning)
+

@@ -180,6 +180,7 @@ function lessonPackage(studentId, lessonId) {
     course: { id: lesson.course_id, title: lesson.course_title },
     lesson: {
       id: lesson.id, title: lesson.title, description: lesson.description,teaching_tip:lesson.teaching_tip,
+      presentation_type:lesson.presentation_type,content_state:lesson.content_state,article_url:lesson.article_url,article_title:lesson.article_title,moments_note:lesson.moments_note,
       duration: lesson.duration, start_at: lesson.start_at, end_at: lesson.end_at,
     },
     enrollment_id: enrollment.enrollment_id,
@@ -200,6 +201,7 @@ function lessonPackage(studentId, lessonId) {
 
 function completeReview(studentId, lessonId) {
   assertStudentLesson(studentId, lessonId);
+  if(lessonContext(lessonId).content_state==='preparing')throw new LearningError('教学内容尚未准备，不能标记完成',409,'CONTENT_PREPARING');
   db.prepare(`
     INSERT INTO lesson_review_completions (student_id, lesson_id, completed_at, updated_at)
     VALUES (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
@@ -355,6 +357,7 @@ function validateReport(data) {
 
 function submitReport(studentId, lessonId, data) {
   const enrollment = assertStudentLesson(studentId, lessonId);
+  if(lessonContext(lessonId).content_state==='preparing')throw new LearningError('教学内容尚未准备，不能提交报告',409,'CONTENT_PREPARING');
   if (!learningGate.canSubmitLessonReport(studentId, lessonId)) {
     throw new LearningError('请先完成课堂回顾、全部知识卡片和配套练习', 409, 'REPORT_LOCKED');
   }

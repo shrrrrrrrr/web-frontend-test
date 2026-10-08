@@ -1,0 +1,7 @@
+
+> star-voyage-student@0.1.0 teaching
+> node scripts/teaching.mjs init --source test-results/redesign-v2/preview.json
+
+✅ 数据库迁移 018_course_plan_templates_account_avatar.sql 已应用
+✅ SQLite 数据库连接成功: C:\Users\shr\Desktop\nmg前端\app\.local\teaching\teaching.db
+一次性导入完成。实际课程 ID：9003；文件核对缺失 1 项。详情位于私有 import-report.json

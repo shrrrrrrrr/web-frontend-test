@@ -1,0 +1,37 @@
+{
+  "records": [
+    {
+      "name": "导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖",
+      "status": "passed"
+    },
+    {
+      "name": "一致性备份与独立副本恢复保留数据库、文件与稳定密钥",
+      "status": "passed"
+    },
+    {
+      "name": "十关首三真实对象、未知节点、曲线路线五视口与地图末端",
+      "status": "passed"
+    },
+    {
+      "name": "参观空精彩瞬间和文章位；理论实验无样例教材且不批量完成",
+      "status": "passed"
+    },
+    {
+      "name": "实验第三课关联往返；未关联课时无入口且独立实验仍可用",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: /开始实验/ }) to be visible\u001b[22m\n"
+    }
+  ],
+  "pageErrors": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "ports": {
+    "base": "http://127.0.0.1:4194",
+    "api": "http://127.0.0.1:3164"
+  },
+  "scope": "isolated synthetic persistent runtime; existing teaching/4174 untouched"
+}

@@ -29,3 +29,6 @@ playwright-report/
 
 # Official font download/extraction scratch; shipped font/license are tracked.
 /tmp/chill-reunion/
+
+# Persistent local teaching data and private backups
+.local/

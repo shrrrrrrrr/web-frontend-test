@@ -1,0 +1,29 @@
+DOWNLOAD_REQUEST http://127.0.0.1:4194/api/course-spaces/9003/courses/resources/9002/download
+DOWNLOAD_RESPONSE 200
+▶ 下一版第一步：隔离持久环境和真实浏览器
+  ✔ 导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖 (10062.5987ms)
+  ✔ 一致性备份与独立副本恢复保留数据库、文件与稳定密钥 (941.9926ms)
+  ✔ 十关首三真实对象、未知节点、曲线路线五视口与地图末端 (5910.8757ms)
+  ✔ 参观空精彩瞬间和文章位；理论实验无样例教材且不批量完成 (4118.7942ms)
+  ✔ 实验第三课关联往返；未关联课时无入口且独立实验仍可用 (30248.1008ms)
+BROWSER_CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable)
+BROWSER_CONSOLE Failed to load resource: the server responded with a status of 503 (Service Unavailable)
+  ✔ 账号头像真实读写重登、课程选择隔离及失败/回读失败 (10537.4422ms)
+  ✔ 机器人 Portal 固定视口、鼠标拖动不打开、缩放夹紧、键盘重置 (1602.4373ms)
+  ✔ 触屏拖动不误开；减少运动、页面滚动、横屏和模拟软键盘夹紧 (3252.604ms)
+BROWSER_CONSOLE Failed to load resource: the server responded with a status of 404 (Not Found)
+BROWSER_CONSOLE Failed to load resource: the server responded with a status of 404 (Not Found)
+  ✔ 未知平台图像失效仍显示编号、说明和可用详情 (1204.0112ms)
+BROWSER_CONSOLE Failed to load resource: the server responded with a status of 404 (Not Found)
+BROWSER_CONSOLE Failed to load resource: the server responded with a status of 404 (Not Found)
+BROWSER_CONSOLE Failed to load resource: the server responded with a status of 404 (Not Found)
+  ✔ 权限失效清除；教师学生不可写；未来计划不绕过授权 (2195.4867ms)
+✔ 下一版第一步：隔离持久环境和真实浏览器 (75248.693ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 76071.5151

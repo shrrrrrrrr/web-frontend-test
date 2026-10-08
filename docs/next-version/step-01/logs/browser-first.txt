@@ -1,0 +1,153 @@
+▶ 下一版第一步：隔离持久环境和真实浏览器
+  ✖ 导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖 (15775.8639ms)
+  ✖ 一致性备份与独立副本恢复保留数据库、文件与稳定密钥 (930.6113ms)
+  ✖ 十关首三真实对象、未知节点、曲线路线五视口与地图末端 (30262.9501ms)
+  ✖ 参观空精彩瞬间和文章位；理论实验无样例教材且不批量完成 (30211.1448ms)
+  ✖ 实验第三课关联往返；未关联课时无入口且独立实验仍可用 (30194.4556ms)
+  ✖ 账号头像真实读写重登、课程选择隔离及失败/回读失败 (30185.0708ms)
+  ✖ 机器人 Portal 固定视口、鼠标拖动不打开、缩放夹紧、键盘重置 (30188.4245ms)
+  ✖ 权限失效清除；教师学生不可写；未来计划不绕过授权 (321.3846ms)
+✖ 下一版第一步：隔离持久环境和真实浏览器 (173746.6594ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 0
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 174588.115
+
+✖ failing tests:
+
+test at tests\next-step01.browser.test.js:30:40
+✖ 导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖 (15775.8639ms)
+  page.waitForURL: Timeout 15000ms exceeded.
+  =========================== logs ===========================
+  waiting for navigation until "load"
+  ============================================================
+      at login (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:25:252)
+      at async file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:34:3
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:60)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:32)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:33:2) {
+    name: 'TimeoutError',
+    log: []
+  }
+
+test at tests\next-step01.browser.test.js:30:40
+✖ 一致性备份与独立副本恢复保留数据库、文件与稳定密钥 (930.6113ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + null
+  - '隔离验收：重启后保留的课时说明。'
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:40:474
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:66)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1366:25)
+      at Test.start (node:internal/test_runner/test:1226:17)
+      at TestContext.test (node:internal/test_runner/test:392:20)
+      at scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:40)
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:39:8)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: '隔离验收：重启后保留的课时说明。',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\next-step01.browser.test.js:30:40
+✖ 十关首三真实对象、未知节点、曲线路线五视口与地图末端 (30262.9501ms)
+  locator.waitFor: Timeout 15000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('[data-plan-position="10"]') to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:43:77
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:60)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:32)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:42:2) {
+    name: 'TimeoutError',
+    log: [ `  - waiting for locator('[data-plan-position="10"]') to be visible` ]
+  }
+
+test at tests\next-step01.browser.test.js:30:40
+✖ 参观空精彩瞬间和文章位；理论实验无样例教材且不批量完成 (30211.1448ms)
+  locator.waitFor: Timeout 15000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText('精彩瞬间', { exact: true }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:48:94
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:60)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:32)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:47:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByText('精彩瞬间', { exact: true }) to be visible" ]
+  }
+
+test at tests\next-step01.browser.test.js:30:40
+✖ 实验第三课关联往返；未关联课时无入口且独立实验仍可用 (30194.4556ms)
+  locator.waitFor: Timeout 15000ms exceeded.
+  Call log:
+  [2m  - waiting for getByTestId('lesson-template') to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:52:95
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:60)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:32)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:51:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByTestId('lesson-template') to be visible" ]
+  }
+
+test at tests\next-step01.browser.test.js:30:40
+✖ 账号头像真实读写重登、课程选择隔离及失败/回读失败 (30185.0708ms)
+  locator.click: Timeout 15000ms exceeded.
+  Call log:
+  [2m  - waiting for getByRole('button', { name: '选择账号头像', exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:55:41
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:60)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:32)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:54:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByRole('button', { name: '选择账号头像', exact: true })" ]
+  }
+
+test at tests\next-step01.browser.test.js:30:40
+✖ 机器人 Portal 固定视口、鼠标拖动不打开、缩放夹紧、键盘重置 (30188.4245ms)
+  locator.waitFor: Timeout 15000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.course-robot') to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:60:83
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:60)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:32)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:59:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.course-robot') to be visible" ]
+  }
+
+test at tests\next-step01.browser.test.js:30:40
+✖ 权限失效清除；教师学生不可写；未来计划不绕过授权 (321.3846ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 400
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:65:141
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:60)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:32)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:63:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

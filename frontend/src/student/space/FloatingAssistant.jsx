@@ -6,16 +6,18 @@ import { useCourseExperience } from './useCourseExperience';
 import { asset } from './identity';
 import { PixelImage } from '../visual/PixelUI';
 import PixelIcon from '../visual/PixelIcon';
-import useRobotAvoidance from './useRobotAvoidance';
+import {createPortal} from 'react-dom';
+import useRobotPosition from './useRobotPosition';
+import {PLATFORM_FONT} from './identity';
 import {patchAsset} from './visualAssets';
 
 export default function FloatingAssistant() {
   const s=useCourseExperience(),location=useLocation(),navigate=useNavigate();
   const button=useRef(null),dialog=useRef(null),lastOpen=useRef(false),consumedOpen=useRef(null);
-  const avoidOffset=useRobotAvoidance(button,location.pathname);
   const [imageFailed,setImageFailed]=useState(false);
   const [viewport,setViewport]=useState(()=>({width:innerWidth,height:window.visualViewport?.height||innerHeight,top:window.visualViewport?.offsetTop||0}));
   const open=s?.overlay==='chat',mobile=viewport.width<768||(viewport.width<992&&viewport.height<450);
+  const robot=useRobotPosition(viewport.width<768?64:80);
   useEffect(()=>{
     const update=()=>setViewport({width:innerWidth,height:window.visualViewport?.height||innerHeight,top:window.visualViewport?.offsetTop||0});
     window.addEventListener('resize',update);window.visualViewport?.addEventListener('resize',update);window.visualViewport?.addEventListener('scroll',update);
@@ -52,16 +54,17 @@ export default function FloatingAssistant() {
     const first=items[0],last=items.at(-1);
     if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
   };
-  return <div className="course-assistant">
-    <button ref={button} type="button" className="course-robot" disabled={!!s.overlay&&s.overlay!=='chat'} style={{bottom:`calc(max(${mobile?16:20}px, env(safe-area-inset-bottom)) + ${avoidOffset}px)`}} aria-label={copyText('assistant.open')} aria-expanded={open} aria-controls="course-chat" onClick={()=>s.openOverlay(open?null:'chat')}>
+  return createPortal(<div className="student-pixel student-interactions course-assistant-host" data-space-theme="voyage" style={{fontFamily:PLATFORM_FONT}}>
+    <button ref={button} type="button" className="course-robot" disabled={!!s.overlay&&s.overlay!=='chat'} style={{left:robot.position.x,top:robot.position.y}} onPointerDown={robot.pointerDown} onPointerMove={robot.pointerMove} onPointerUp={e=>{if(robot.pointerUp(e))s.openOverlay(open?null:'chat');}} onPointerCancel={robot.pointerCancel} onKeyDown={e=>{if(e.key==='Home'){e.preventDefault();robot.reset();}}} aria-label={copyText('assistant.open')} aria-expanded={open} aria-controls="course-chat" onClick={e=>{if(!robot.consumeClick(e))s.openOverlay(open?null:'chat');}}>
       {imageFailed?<PixelIcon name="help" size={44}/>:<img src={patchAsset('robot-wink',96)} srcSet={`${patchAsset('robot-wink',96)} 96w, ${patchAsset('robot-wink',192)} 192w`} sizes="80px" width={80} height={80} alt="" onError={()=>setImageFailed(true)}/>}
       {s.unseen&&<span className="course-chat-unread" aria-label={copyText('system.robot.001')}/>}
     </button>
+    <button className="robot-reset" onClick={()=>{robot.reset();button.current?.focus();}}>{copyText('next.robot.reset')}</button>
     {open&&mobile&&<button type="button" className="course-chat-mask" tabIndex={-1} aria-label={copyText('system.robot.002')} onClick={close}/>}
     <section ref={dialog} id="course-chat" className="course-chat" hidden={!open} role="dialog" aria-modal={mobile?'true':undefined} aria-labelledby="course-chat-title" onKeyDown={keys}
-      style={mobile?{top:viewport.top+8,height:Math.max(200,viewport.height-16),bottom:'auto'}:undefined}>
+      style={mobile?{top:viewport.top+8,height:Math.max(0,viewport.height-16),bottom:'auto'}:{top:viewport.top+Math.max(8,viewport.height-Math.min(640,viewport.height-100)-24),height:Math.min(640,viewport.height-100),bottom:'auto'}}>
       <header><PixelImage src={asset('robot',96)} alt="" width={42} height={42}/><div><h2 id="course-chat-title">{copyText('assistant.name')}</h2><span>{copyText('system.robot.003')}</span></div><button aria-label={copyText('assistant.close')} onClick={close}>×</button></header>
       <AssistantContent open={open}/>
     </section>
-  </div>;
+  </div>,document.body);
 }

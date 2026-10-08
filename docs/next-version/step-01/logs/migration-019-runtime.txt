@@ -1,0 +1,10 @@
+
+> star-voyage-student@0.1.0 teaching
+> node scripts/teaching.mjs stop
+
+仅请求本持久环境退出
+
+> star-voyage-student@0.1.0 teaching
+> node scripts/teaching.mjs backup --to .local/teaching-before-019-1791458183
+
+一致性备份完成，缺失引用 1 项；保持密钥私有

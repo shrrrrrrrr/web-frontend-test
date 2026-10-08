@@ -1,0 +1,230 @@
+{
+  "version": "next-step-01-v1",
+  "origin": "本轮调用 imagegen 生成原创透明粗像素素材；不复制旧角色 PDF 或修改已认可校园/课程场景",
+  "sources": [
+    {
+      "file": "frontend/public/assets/next-version/step-01/source/account-sheet-v1.png",
+      "pixels": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "bytes": 736206,
+      "sha256": "e0c61b71bfd1b8cee912043a20fc71161d1c297da73b86675fd3ddfd8930281c"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/source/astronaut-v1.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 525132,
+      "sha256": "0422eb85744f50ef5239292a0a221128383a2c3ce9125a10e3005d8d8b692342"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/source/unknown-platform-v1.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 621904,
+      "sha256": "5927b3598844a5aea5ee050c247d8cb632091e14e4eca79b1f8021420c21582b"
+    }
+  ],
+  "web": [
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-book-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 19184,
+      "sha256": "de1e2a45e60e36852255b4c1e22bc2addd6293c3a08d2b54a8120050c098f891"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-book-96.webp",
+      "pixels": [
+        96,
+        96
+      ],
+      "bytes": 6526,
+      "sha256": "b681f28c574f85d1994750e99a67a6bac6ad003be0712a398339fb482d52903b"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-ginkgo-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 14898,
+      "sha256": "c1f1e83a2112adc0ef2eeb4005ac42cc10e3d52249378c7896f85b807e9eadd8"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-ginkgo-96.webp",
+      "pixels": [
+        96,
+        96
+      ],
+      "bytes": 5096,
+      "sha256": "b62afd36cf17526e6fbbd081feae473a2919233306bcc9a03f81efe4b263471c"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-glider-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 14184,
+      "sha256": "6a958ef8cd76f9bb7d1ec2da126a7933b2627ce171873d047823ee14e666bc6b"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-glider-96.webp",
+      "pixels": [
+        96,
+        96
+      ],
+      "bytes": 4892,
+      "sha256": "6e8c48d2a964c3dea76a2e5842249c913a22009475c2891421fe12d617f24ba2"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-observatory-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 19908,
+      "sha256": "e4cea954948595663296f38105a06ca7ceb650e8a7287b66efff9bcdefd5c2e4"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-observatory-96.webp",
+      "pixels": [
+        96,
+        96
+      ],
+      "bytes": 6930,
+      "sha256": "b442b30e7579bec4e6b13245617ab71a2b90382301f56906647cda22b5364fd5"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-pilot-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 20444,
+      "sha256": "2b191fb1f8d0cc7a0aeaf80e679b346b72c5fedf802275349fc8d9e753173790"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-pilot-96.webp",
+      "pixels": [
+        96,
+        96
+      ],
+      "bytes": 6794,
+      "sha256": "18ffcd161d36e675983f27130b42590c2c99feedd322a79feb2ba4fa93ab7905"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-robot-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 20918,
+      "sha256": "9805e5a0d6e01e12bd1df6b925b453a807bceb90ab5e9aa8cadfcdb5bc0e0077"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-robot-96.webp",
+      "pixels": [
+        96,
+        96
+      ],
+      "bytes": 6966,
+      "sha256": "b11db5a7fb7df9e88fd46f6ce9c9fd6d36df03cbcd7268493ed44b5d5481eab7"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-rocket-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 16338,
+      "sha256": "f62eefb474efa685f4e5ddc48a8f6cb54617eaf725668696b5ad476506a66984"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-rocket-96.webp",
+      "pixels": [
+        96,
+        96
+      ],
+      "bytes": 5476,
+      "sha256": "e930deadb2c9ab07b210283d29dc1540e6b9f6f3ceffcff9d01a53ccd0e2c284"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-telescope-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 18060,
+      "sha256": "ee183c823ea4f3abe07211b4f412c198cf803d25d76009995b05ba47a05bb62c"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/account-telescope-96.webp",
+      "pixels": [
+        96,
+        96
+      ],
+      "bytes": 6158,
+      "sha256": "b01965fb603569b360feecaad4b0b8b0b63126e87d8ed0651dce42ae8de4a639"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/astronaut-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 17240,
+      "sha256": "e1b63a2488047cfbafe8333ca83951a8ef35c778b2531d181524b737fb3fedc1"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/astronaut-96.webp",
+      "pixels": [
+        96,
+        96
+      ],
+      "bytes": 5802,
+      "sha256": "5928dcd2c3537d702817bca9a455582f81c11df85baac4001ec3357aacaf3241"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/unknown-platform-192.webp",
+      "pixels": [
+        192,
+        192
+      ],
+      "bytes": 18278,
+      "sha256": "5bbc96330e8418a8989d2edd93322dbdc9c42dee893fa6a853ac11ad75f5ec52"
+    },
+    {
+      "file": "frontend/public/assets/next-version/step-01/web/unknown-platform-384.webp",
+      "pixels": [
+        384,
+        384
+      ],
+      "bytes": 54770,
+      "sha256": "7d69b5805e93913127fcd69857efd7920bd87daa458988b6e67f895f854f53e2"
+    }
+  ],
+  "uses": {
+    "astronaut": "当前星海远航关卡上的全身宇航员；96/192",
+    "account-sheet": "4×2 单页预设，八个受控本人账号头像；每格按 96/192 最近邻缩放",
+    "unknown-platform": "4–10 灰色未知轮廓；192/384"
+  },
+  "prompts": {
+    "astronaut": "低分辨率粗像素、小全身宇航员，奶白和海军蓝宇航服、金色面罩、青色背包、透明背景、硬阶梯边缘、无字无场景",
+    "account-sheet": "八枚统一粗像素校园/航空头像，飞行员、滑翔机、银杏、小机器人、望远镜、火箭、书本、观测站，四列两排，透明背景、硬像素边缘、无字",
+    "unknown-platform": "原创粗像素灰蓝浮空岩石停机平台，简化阶梯轮廓、透明背景、无字无发光无场景"
+  },
+  "derivatives": "对 PNG 原图最近邻缩放；头像按精确等分网格裁切单格；WebP 无损，保留 alpha。没有用代码重画素材，没有严格限色数声明。素材编号/问号/状态/路线由 DOM/SVG 绘制。",
+  "licensing": "本项目生成的原创素材；生成提示及版本在此记录，既有素材许可保持原样。"
+}

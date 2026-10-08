@@ -12219,5 +12219,555 @@ export const uiCopy = {
     "scope": "system",
     "optional": false,
     "futureTeacher": false
+  },
+  "next.map.future": {
+    "text": "尚未开放",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.map.future",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.map.preparing": {
+    "text": "内容待准备",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.map.preparing",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.map.node": {
+    "text": "关卡",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.map.node",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.map.notOpen": {
+    "text": "这一关尚未开放，课时和任务正在准备",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.map.notOpen",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.map.route": {
+    "text": "十关航线",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.map.route",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.map.unknown": {
+    "text": "未知关卡",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.map.unknown",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.visit.enter": {
+    "text": "查看精彩瞬间",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.visit.enter",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.visit.info": {
+    "text": "参观展示 · 教学内容待填写",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.visit.info",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.visit.moments": {
+    "text": "精彩瞬间",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.visit.moments",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.visit.empty": {
+    "text": "照片和说明待提供",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.visit.empty",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.visit.article": {
+    "text": "公众号文章",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.visit.article",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.visit.original": {
+    "text": "阅读原文",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.visit.original",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.visit.noArticle": {
+    "text": "文章链接待提供",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.visit.noArticle",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.visit.noCompletion": {
+    "text": "参观已开展不代表个人通关；当前没有参加名单或完成记录",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.visit.noCompletion",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.visit.photoUnavailable": {
+    "text": "照片暂时无法读取，请重试下载",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.visit.photoUnavailable",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.template.preparing": {
+    "text": "教学内容正在准备，暂不记录完成",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.template.preparing",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.template.review": {
+    "text": "课堂回顾",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.template.review",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.template.cards": {
+    "text": "知识卡片与练习",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.template.cards",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.template.tasks": {
+    "text": "任务与学习报告",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.template.tasks",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.template.empty": {
+    "text": "本课内容待老师填写",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.template.empty",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.template.experiment": {
+    "text": "实验指导",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.template.experiment",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.template.description": {
+    "text": "课时说明",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.template.description",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.template.noResources": {
+    "text": "本课资料待提供",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.template.noResources",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.open": {
+    "text": "选择账号头像",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.open",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.change": {
+    "text": "更换头像",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.change",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.independent": {
+    "text": "头像保存在当前账号，与课程内六角色选择分别保存",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.independent",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.saved": {
+    "text": "账号头像已保存",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.saved",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.uncertain": {
+    "text": "头像已写入服务器，重新读取失败；请重新检查或重新登录",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.uncertain",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.saving": {
+    "text": "正在保存头像",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.saving",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.pilot": {
+    "text": "飞行头盔",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.pilot",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.glider": {
+    "text": "纸飞机",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.glider",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.ginkgo": {
+    "text": "校园银杏",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.ginkgo",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.robot": {
+    "text": "小机器人",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.robot",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.telescope": {
+    "text": "望远镜",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.telescope",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.rocket": {
+    "text": "小火箭",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.rocket",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.book": {
+    "text": "探索笔记",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.book",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.avatar.observatory": {
+    "text": "观测站",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.avatar.observatory",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.retry": {
+    "text": "重新检查",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.retry",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.robot.reset": {
+    "text": "重置机器人位置（机器人聚焦后也可按 Home）",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.robot.reset",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.maintenance.planHelp": {
+    "text": "计划节点只决定地图展示顺序，不新增学习门槛；未关联课时不会生成学习入口",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.maintenance.planHelp",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.maintenance.plan": {
+    "text": "地图计划与课时",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.maintenance.plan",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.maintenance.link": {
+    "text": "关联真实课时（留空为待准备）",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.maintenance.link",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.maintenance.type": {
+    "text": "课时展示类型",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.maintenance.type",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.maintenance.state": {
+    "text": "内容准备状态",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.maintenance.state",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.maintenance.moments": {
+    "text": "精彩瞬间说明（照片使用本课资料上传）",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.maintenance.moments",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.maintenance.articleTitle": {
+    "text": "文章标题（可留空）",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.maintenance.articleTitle",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.maintenance.articleUrl": {
+    "text": "文章 HTTPS 链接（可留空，不自动内嵌）",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.maintenance.articleUrl",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.type.learning": {
+    "text": "原学习流程",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.type.learning",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.type.visit": {
+    "text": "参观展示",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.type.visit",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.type.theory": {
+    "text": "理论课",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.type.theory",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.type.experiment": {
+    "text": "实验课",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.type.experiment",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.state.preparing": {
+    "text": "内容待准备",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.state.preparing",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.state.ready": {
+    "text": "使用原学习流程",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.state.ready",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.lab.free": {
+    "text": "自由实验室",
+    "enabled": true,
+    "page": "下一版第一步",
+    "position": "next.lab.free",
+    "purpose": "持久课程骨架与学生界面",
+    "scope": "system",
+    "optional": false,
+    "futureTeacher": false
+  },
+  "next.map.count": {
+    "text": "个关卡",
+    "scope": "system",
+    "page": "课程地图",
+    "position": "地图概览",
+    "purpose": "计划关卡数量，不冒称尚未建立的课时",
+    "optional": false,
+    "enabled": true,
+    "futureTeacher": false
   }
 };

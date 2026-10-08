@@ -1,0 +1,176 @@
+DOWNLOAD_REQUEST http://127.0.0.1:4194/api/course-spaces/9003/courses/resources/9002/download
+DOWNLOAD_RESPONSE 200
+▶ 下一版第一步：隔离持久环境和真实浏览器
+  ✔ 导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖 (9687.513ms)
+  ✔ 一致性备份与独立副本恢复保留数据库、文件与稳定密钥 (1108.6624ms)
+FAILURE bottom gap 151.640625 http://127.0.0.1:4194/courses/9003?tab=maintenance 当前课程及选择时的课时和类型，之后改变选择不会修改已有队列
+
+课程公共资料
+选择文件
+上传待处理文件
+只重试失败项
+取消待上传文件
+持久验收.txt
+课程公共资料课件
+
+持久验收.txt · TXT · 39 B
+
+可检索
+下 载
+修改资料说明与归属
+删 除
+查看索引与重试
+
+上传和索引是不同状态；解析失败只重试索引，不重复上传。扫描 PDF 没有 OCR
+
+可上传、预览与 AI 解析说明
+类型	上限	显示位置	学生预览	AI 文字索引
+
+类型
+	
+上限
+	
+显示位置
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.jpeg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.png	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gif	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webp	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pdf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引 http://127.0.0.1:4194/courses/9003 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+王小明
+星海远航
+课程信息
+课程资源
+下一步 · 继续学习（3）
+关卡地图
+10个课时
+课时学习进度
+0%
+01
+当前学习
+详情
+参观 VR 实验室
+内容待准备
+02
+滑翔机试飞理论课
+内容待准备
+03
+滑翔机试飞实验课
+内容待准备
+04
+?
+未知关卡
+尚未开放
+05
+?
+未知关卡
+尚未开放
+06
+?
+未知关卡
+尚未开放
+07
+?
+未知关卡
+尚未开放
+08
+?
+未知关卡
+尚未开放
+09
+?
+未知关卡
+尚未开放
+10
+?
+未知关卡
+尚未开放
+
+路线表示学习顺序，可用课时都能进入
+
+课后任务
+我的作品
+反思日志
+重置机器人位置（机器人聚焦后也可按 Home）
+  ✖ 十关首三真实对象、未知节点、曲线路线五视口与地图末端 (2009.2047ms)
+✖ 下一版第一步：隔离持久环境和真实浏览器 (18495.3138ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19369.1042
+
+✖ failing tests:
+
+test at tests\next-step01.browser.test.js:30:52
+✖ 十关首三真实对象、未知节点、曲线路线五视口与地图末端 (2009.2047ms)
+  AssertionError [ERR_ASSERTION]: bottom gap 151.640625
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:44:618
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:76)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:44)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:42:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\next-step01.browser.test.js:13:1
+✖ 下一版第一步：隔离持久环境和真实浏览器 (18495.3138ms)
+  AssertionError [ERR_ASSERTION]: bottom gap 151.640625
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:44:618
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:76)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:30:44)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/next-step01.browser.test.js:42:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

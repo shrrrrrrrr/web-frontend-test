@@ -1,0 +1,43 @@
+{
+  "browser": "154.0.4258.53",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "chatFocus": true,
+      "avatarThumbnailVisible": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "chatFocus": true,
+      "avatarThumbnailVisible": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "chatFocus": true,
+      "avatarThumbnailVisible": true
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "overflow": false,
+      "chatFocus": true,
+      "avatarThumbnailVisible": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "overflow": false,
+      "chatFocus": true,
+      "avatarThumbnailVisible": true
+    }
+  ],
+  "provider": "真实 AI 接口＋隔离 HTTPS 本地测试 provider；未验证外部模型质量",
+  "providerRequests": 9,
+  "pageErrors": []
+}

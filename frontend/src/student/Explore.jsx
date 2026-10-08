@@ -30,6 +30,8 @@ const difficulties = { basic: copyText('system.map.004'), advanced: copyText('sy
 
 
 function learningState(lesson) {
+  if (lesson.future) return {label:copyText('next.map.future'),tone:'neutral'};
+  if (lesson.content_state==='preparing') return {label:copyText('next.map.preparing'),tone:'neutral'};
   if (lesson.status === 'cancelled') return { label: copyText('system.map.007'), tone: 'neutral' };
   if (Number(lesson.progress) >= 100) return { label: copyText('system.map.008'), tone: 'success' };
   if (Number(lesson.progress) > 0) return { label: copyText('system.map.009'), tone: 'current' };
@@ -69,6 +71,7 @@ function CourseResources({ resources, courseId }) {
 
 function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
   const navigate = useNavigate();
+  if(lesson.future)return <PixelPanel className="pixel-map-details" id="selected-lesson-details"><h3>{copyText('next.map.node')} {lesson.routeNumber}</h3><p>{copyText('next.map.notOpen')}</p></PixelPanel>;
   const state = learningState(lesson);
   const href = '/courses/' + courseId + '/lessons/' + lesson.id + '/learn';
   return <PixelPanel className="pixel-map-details" id="selected-lesson-details" data-testid="lesson-details" aria-labelledby="selected-lesson-title">
@@ -78,7 +81,7 @@ function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
     <PixelProgress value={lesson.progress ?? 0} label={lesson.title + copyText('system.map.023')} />
     {lesson.status === 'cancelled'
       ? <Alert type="warning" showIcon title={copyText('system.map.025')} description={lesson.cancel_reason || copyText('system.map.026')} />
-      : <div className="pixel-map-enter"><PixelButton type="primary" onClick={() => navigate(href)} icon={<PixelIcon name="continue" />}>{copyText('system.map.027')}</PixelButton></div>}
+      : <div className="pixel-map-enter"><PixelButton type="primary" onClick={() => navigate(href)} icon={<PixelIcon name="continue" />}>{copyText(lesson.presentation_type==='visit'?'next.visit.enter':'system.map.027')}</PixelButton></div>}
     {lesson.description&&<Sentence as={Typography.Paragraph} className="pixel-map-lesson-description">{lesson.description}</Sentence>}
     {lesson.teaching_tip&&<Sentence className="pixel-map-lesson-description">{lesson.teaching_tip}</Sentence>}
     <div className="pixel-map-schedule">
@@ -121,7 +124,12 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
           if (!index) return `M ${point.x} ${point.y}`;
           const previous = points[index - 1];
           const middle = (point.y + previous.y) / 2;
-          return `L ${previous.x} ${middle} L ${point.x} ${middle} L ${point.x} ${point.y}`;
+          // Turn around the outside of label rows, then approach the next pad sideways.
+          if(Math.abs(point.y-previous.y)>150){
+            const side=point.x>=previous.x?bounds.width-4:4;
+            return `C ${side} ${previous.y}, ${side} ${previous.y}, ${side} ${middle} C ${side} ${point.y}, ${side} ${point.y}, ${point.x} ${point.y}`;
+          }
+          return `C ${previous.x} ${middle}, ${point.x} ${middle}, ${point.x} ${point.y}`;
         }).join(' '));
       });
     };
@@ -133,7 +141,7 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
   }, [group.key, group.lessons.length]);
 
   return <section className="route-group pixel-map-region" aria-label={group.title}>
-    <h4 className="pixel-map-region-title"><span className="pixel-map-region-index" aria-hidden="true">{String(groupIndex + 1).padStart(2, '0')}</span>{group.title}</h4>
+    {!group.planned&&<h4 className="pixel-map-region-title"><span className="pixel-map-region-index" aria-hidden="true">{String(groupIndex + 1).padStart(2, '0')}</span>{group.title}</h4>}
     <div className="pixel-map-platform">
       <div ref={routeRef} className="pixel-map-route-canvas">
         <svg className="pixel-map-route-track" aria-hidden="true"><path className="pixel-map-track-outline" d={routePath} /><path className="pixel-map-track-dashes" d={routePath} /></svg>
@@ -144,11 +152,11 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
           const isSelected = selected?.id === lesson.id;
           const row = Math.floor(index / 3);
           const column = row % 2 ? 3-index%3 : index%3+1;
-          return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.id} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 3 === 1 ? '58px' : '0px', '--stop-row': row + 1, '--stop-column': column }}>
+          return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.future?undefined:lesson.id} data-plan-position={group.planned?lesson.routeNumber:undefined} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 3 === 1 ? '58px' : '0px', '--stop-row': row + 1, '--stop-column': column }}>
             <button type="button" className="route-node" aria-current={isCurrent ? 'step' : undefined} aria-pressed={isSelected} aria-controls="selected-lesson-details"
               aria-label={copyText('system.map.042') + lesson.routeNumber + copyText('system.map.043') + lesson.title + '，' + state.label + (isCurrent ? copyText('system.map.044') : '')}
               onClick={(event) => onSelect({ key: selectionKey, lessonId: lesson.id },event.currentTarget)}>
-              <LessonPlace number={lesson.routeNumber} current={isCurrent} selected={isSelected} completed={state.tone==='success'} priority={groupIndex===0&&index<3} theme={theme}/>
+              <LessonPlace number={lesson.routeNumber} current={isCurrent} selected={isSelected} completed={state.tone==='success'} priority={groupIndex===0&&index<3} theme={theme} unknown={lesson.future}/>
               <span className="pixel-map-node-label"><strong>{lesson.title}</strong><PixelTag tone={state.tone}>{state.label}</PixelTag></span>
             </button>
           </li>;
@@ -173,7 +181,9 @@ export function CourseMap() {
   const fetcher = useCallback(() => courseAPI.detail(id), [id,courseAPI]);
   const { data, loading, error, retry } = useRemote(fetcher, { courseSensitive: true, courseId: id });
   const current = currentLesson(data?.lessons || [], params.get('lesson'));
-  const groups = buildCourseRoute(data?.lessons || [], (data?.chapters||[]).map(c=>({title:c.title,lessonIds:(data?.lessons||[]).filter(l=>l.chapter_id===c.id).map(l=>l.id)})),true);
+  const legacyGroups = buildCourseRoute(data?.lessons || [], (data?.chapters||[]).map(c=>({title:c.title,lessonIds:(data?.lessons||[]).filter(l=>l.chapter_id===c.id).map(l=>l.id)})),true);
+  const planned=data?.course?.map_mode==='plan'&&data?.planNodes?.length;
+  const groups=planned?[{key:'plan',planned:true,title:copyText('next.map.route'),lessons:data.planNodes.map(n=>{const l=data.lessons.find(l=>l.id===n.lesson_id);return l?{...l,routeNumber:n.position}:{id:'plan-'+n.id,future:true,title:copyText('next.map.unknown'),routeNumber:n.position};})}]:legacyGroups;
   const lessons = groups.flatMap((group) => group.lessons);
   const selectionKey = id + ':' + (params.get('lesson') || '');
   const selectedId = selection?.key === selectionKey ? selection.lessonId : (params.get('lesson') || current?.id);
@@ -194,7 +204,7 @@ export function CourseMap() {
   const toggleSection = (section) => setOpenSection((previous) => previous === section ? null : section);
 
   return <PageContainer>
-    <div className="pixel-map space-map" data-map-theme={look.theme}>
+    <div className={'pixel-map space-map'+(planned?' space-map--planned':'')} data-map-theme={look.theme}>
       <header className="pixel-map-header">
         <div>
           <Link to="/explore" className="pixel-map-back"><PixelIcon name="back" />{copyText('system.map.045')}</Link>
@@ -234,7 +244,7 @@ export function CourseMap() {
           </PixelPanel>
           <CourseTodos detail={data}/>
           <div className="pixel-map-overview">
-            <div className="space-route-summary"><Typography.Title level={3}>{copyText('system.map.071')}</Typography.Title><span>{data.lessons.length}{copyText('system.map.072')}</span></div>
+            <div className="space-route-summary"><Typography.Title level={3}>{copyText('system.map.071')}</Typography.Title><span>{planned?lessons.length:data.lessons.length}{copyText(planned?'next.map.count':'system.map.072')}</span></div>
             <div className="pixel-map-course-progress"><span>{copyText('system.map.073')}</span><PixelProgress value={data.progress} label={copyText('system.map.074')} /></div>
           </div>
           {!lessons.length ? <PixelPanel className="pixel-map-empty"><Empty description={copyText('system.map.075')} /></PixelPanel> : <div className="pixel-map-layout">

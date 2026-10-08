@@ -1,0 +1,29 @@
+{
+  "records": [
+    {
+      "name": "导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖",
+      "status": "passed"
+    },
+    {
+      "name": "一致性备份与独立副本恢复保留数据库、文件与稳定密钥",
+      "status": "passed"
+    },
+    {
+      "name": "十关首三真实对象、未知节点、曲线路线五视口与地图末端",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+    }
+  ],
+  "pageErrors": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "ports": {
+    "base": "http://127.0.0.1:4194",
+    "api": "http://127.0.0.1:3164"
+  },
+  "scope": "isolated synthetic persistent runtime; existing teaching/4174 untouched"
+}

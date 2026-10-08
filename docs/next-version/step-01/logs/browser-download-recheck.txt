@@ -1,0 +1,142 @@
+FAILURE page.waitForEvent: Timeout 15000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================ http://127.0.0.1:4194/courses/9003?tab=maintenance 当前课程及选择时的课时和类型，之后改变选择不会修改已有队列
+
+课程公共资料
+选择文件
+上传待处理文件
+只重试失败项
+取消待上传文件
+持久验收.txt
+课程公共资料课件
+
+持久验收.txt · TXT · 39 B
+
+解析中
+下 载
+修改资料说明与归属
+删 除
+查看索引与重试
+
+上传和索引是不同状态；解析失败只重试索引，不重复上传。扫描 PDF 没有 OCR
+
+可上传、预览与 AI 解析说明
+类型	上限	显示位置	学生预览	AI 文字索引
+
+类型
+	
+上限
+	
+显示位置
+	
+学生预览
+	
+AI 文字索引
+
+.jpg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.jpeg	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.png	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gif	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webp	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pdf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.doc	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.docx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.ppt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.pptx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.txt	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	可提取文字；扫描 PDF 无 OCR
+.md	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.csv	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xls	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.xlsx	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.mp4	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.webm	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.zip	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.obj	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.glb	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.gltf	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引
+.stl	50 MB	每份最多 50 MB，学生在课程资料总览及本课时＋公共资料中下载	仅下载（视频回放使用专用入口）	不支持文字索引 http://127.0.0.1:4194/courses/9003/lessons/90023/learn 跳到页面内容
+返回课程选择
+星海远航
+课程 #9003
+关卡地图
+›
+实验室
+›
+成长档案
+›
+星海远航
+选择角色头像
+120
+演示
+王小明
+返回课程地图
+全部课程
+滑翔机试飞理论课
+
+教学内容正在准备，暂不记录完成
+
+返回课程地图
+课堂回顾
+
+本课内容待老师填写
+
+知识卡片与练习
+
+本课内容待老师填写
+
+任务与学习报告
+
+本课内容待老师填写
+
+实验指导
+
+课时说明
+
+隔离验收：重启后保留的课时说明
+
+课程资源与回放
+持久验收.txt
+下载资料
+重置机器人位置（机器人聚焦后也可按 Home）
+▶ 下一版第一步：隔离持久环境和真实浏览器
+  ✖ 导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖 (23722.3275ms)
+✖ 下一版第一步：隔离持久环境和真实浏览器 (29584.1372ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 30460.9929
+
+✖ failing tests:
+
+test at tests\next-step01.browser.test.js:30:52
+✖ 导师保存真实课时文字与附件；独立前后端重启和二次启动不覆盖 (23722.3275ms)
+  page.waitForEvent: Timeout 15000ms exceeded while waiting for event "download"
+  =========================== logs ===========================
+  waiting for event "download"
+  ============================================================
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:37:167
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:76)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:44)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:33:2) {
+    name: 'TimeoutError',
+    log: []
+  }
+
+test at tests\next-step01.browser.test.js:13:1
+✖ 下一版第一步：隔离持久环境和真实浏览器 (29584.1372ms)
+  page.waitForEvent: Timeout 15000ms exceeded while waiting for event "download"
+  =========================== logs ===========================
+  waiting for event "download"
+  ============================================================
+      at C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:37:167
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:76)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:30:44)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\next-step01.browser.test.js:33:2) {
+    name: 'TimeoutError',
+    log: []
+  }

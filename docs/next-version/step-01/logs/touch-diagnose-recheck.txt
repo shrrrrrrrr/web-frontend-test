@@ -1,0 +1,16 @@
+drag { x: 80, y: 220, width: 64, height: 64 } [
+  [ 'pointerdown', 318, 754, 0, true, 'touch', 'BUTTON' ],
+  [ 'pointermove', 292, 691, -1, true, 'touch', 'BUTTON' ],
+  [ 'pointermove', 266, 628, -1, true, 'touch', 'BUTTON' ],
+  [ 'pointermove', 240, 565, -1, true, 'touch', 'BUTTON' ],
+  [ 'pointermove', 214, 502, -1, true, 'touch', 'BUTTON' ],
+  [ 'pointermove', 188, 439, -1, true, 'touch', 'BUTTON' ],
+  [ 'pointermove', 162, 376, -1, true, 'touch', 'BUTTON' ],
+  [ 'pointermove', 136, 313, -1, true, 'touch', 'BUTTON' ],
+  [ 'pointermove', 110, 250, -1, true, 'touch', 'BUTTON' ],
+  [ 'pointerup', 110, 250, 0, true, 'touch', 'BUTTON' ]
+]
+tap { x: 80, y: 220, width: 64, height: 64 } [
+  [ 'pointerdown', 112, 252, 0, true, 'touch', 'BUTTON' ],
+  [ 'pointerup', 112, 252, 0, true, 'touch', 'BUTTON' ]
+] false false

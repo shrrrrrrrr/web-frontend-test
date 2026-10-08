@@ -1,0 +1,5 @@
+
+> star-voyage-student@0.1.0 teaching
+> node scripts/teaching.mjs stop
+
+仅请求本持久环境退出

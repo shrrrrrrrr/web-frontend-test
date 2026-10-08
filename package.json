@@ -28,7 +28,10 @@
     "preview:v2": "node scripts/preview-v2.mjs",
     "test:e2e:v2": "node --test --test-concurrency=1 tests/redesign-v2.browser.test.js tests/redesign-v2.states.browser.test.js",
     "test:e2e:v2:patch": "node --test tests/redesign-v2.patch.browser.test.js",
-    "test:e2e:v2:step02": "node --test --test-concurrency=1 tests/redesign-v2.step02.browser.test.js tests/redesign-v2.step02-states.browser.test.js tests/redesign-v2.step02-copy.browser.test.js"
+    "test:e2e:v2:step02": "node --test --test-concurrency=1 tests/redesign-v2.step02.browser.test.js tests/redesign-v2.step02-states.browser.test.js tests/redesign-v2.step02-copy.browser.test.js",
+    "build:teaching": "npm --prefix frontend run build -- --outDir ../build/teaching",
+    "teaching": "node scripts/teaching.mjs",
+    "test:teaching": "node --test tests/teaching.test.mjs"
   },
   "devDependencies": {
     "playwright": "^1.63.0"

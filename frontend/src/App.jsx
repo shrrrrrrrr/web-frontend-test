@@ -92,14 +92,14 @@ function App() {
                 <Route index element={<RoleHomeRedirect />} />
                 <Route path="explore" element={guard(<ExploreHome />, ['student'])} />
                 {import.meta.env.DEV && <Route path="__pixel-preview" element={guard(<PixelPreview />, ['student'])} />}
-                <Route path="lab" element={guard(<LegacyEntry />, ['student'])} />
+                <Route path="lab" element={guard(<LegacyEntry free={<Lab/>}/>, ['student'])} />
                 <Route path="archives/rewards" element={guard(<Navigate to="/me" replace/>, ['student'])} />
                 <Route path="me" element={guard(<Personal/>, ['student'])} />
                 <Route path="dashboard" element={guard(<StudentView student={<ExploreHome />} legacy={<Dashboard />} />, ['admin', 'academic_mentor', 'student', 'media'])} />
                 <Route path="dashboard/schools/:id" element={guard(<SchoolDetail />, ['admin'])} />
                 <Route path="dashboard/ai" element={guard(<StudentView student={<LegacyEntry/>} legacy={<AIAssistant/>}/>, ['admin', 'academic_mentor', 'student'])} />
                 <Route path="dashboard/ai/settings" element={guard(<AISettings />, ['admin'])} />
-                <Route path="glider" element={guard(<StudentView student={<LegacyEntry/>} legacy={<GliderSimulator/>}/>, ['admin', 'academic_mentor', 'student'])} />
+                <Route path="glider" element={guard(<StudentView student={<LegacyEntry free={<GliderSimulator/>}/>} legacy={<GliderSimulator/>}/>, ['admin', 'academic_mentor', 'student'])} />
                 <Route path="courses" element={guard(<StudentView student={<ExploreHome />} legacy={<CourseList />} />, ['admin', 'academic_mentor', 'student', 'media'])} />
                 <Route path="courses/create" element={guard(<CourseForm />, ['admin', 'academic_mentor'])} />
                 <Route path="courses/:id" element={guard(<StudentView student={<CourseMap />} legacy={<CourseDetail />} />, ['admin', 'academic_mentor', 'student'])} />
