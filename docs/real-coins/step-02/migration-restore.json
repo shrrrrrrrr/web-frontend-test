@@ -1,0 +1,18 @@
+{
+  "oldVersion": 21,
+  "newVersion": 22,
+  "durationMs": 16.9541999999999,
+  "preservedTables": 54,
+  "preserved": true,
+  "idempotent": true,
+  "integrity": "ok",
+  "foreignKeys": 0,
+  "restoredIntegrity": "ok",
+  "ledgerRestored": {
+    "n": 1,
+    "amount": 5
+  },
+  "bytesPreserved": true,
+  "configPreserved": true,
+  "scope": "Only private disposable upgrade and restore directories. Actual teaching DB untouched; synthetic restore ledger is isolated and never served."
+}

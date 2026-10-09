@@ -1,0 +1,11 @@
+file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/scripts/real-coins-protection-audit.mjs:9
+ fs.writeFileSync(path.join(out,'data-protection.json'),JSON.stringify(result,null,2));if(tables.some(t=>!t.businessFieldsPreserved)||!result.fileBytesPreserved||!result.privateConfigPreserved||result.integrity!=='ok'||result.foreignKeys||!result.onlyAdditiveMigration)throw Error('教学保护检查失败');
+                                                                                                                                                                                                                                                                                   ^
+
+Error: 教学保护检查失败
+    at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/scripts/real-coins-protection-audit.mjs:9:276
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:666:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v26.2.0

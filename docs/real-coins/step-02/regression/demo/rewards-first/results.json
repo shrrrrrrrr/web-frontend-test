@@ -1,0 +1,69 @@
+{
+  "browser": "154.0.4258.53",
+  "records": [
+    {
+      "name": "真实课时徽章资格和十关未知节点可见；无自动发放空参观与实验",
+      "status": "passed"
+    },
+    {
+      "name": "首次真正满足全部要求才持久获章；动画已读稳定ID、Esc关闭及原焦点恢复",
+      "status": "passed"
+    },
+    {
+      "name": "实物演示兑换确认、指定结果文案、余额扣一次和管理员通知",
+      "status": "passed"
+    },
+    {
+      "name": "数字徽章兑换单独标识；另一浏览器可读后端事件但金币仍为本地120",
+      "status": "passed"
+    },
+    {
+      "name": "服务器已写但响应丢失：重试/刷新同编号，只扣一次、只通知一次",
+      "status": "passed"
+    },
+    {
+      "name": "演示重置保留真实账户与真实徽章，金币不足/库存不足仍解释并禁用",
+      "status": "passed"
+    },
+    {
+      "name": "维护可编辑名称及受控艺术，已获得快照保持不变",
+      "status": "passed"
+    },
+    {
+      "name": "权限撤回后停止课时入口，历史徽章保留安全快照；恢复正常",
+      "status": "passed"
+    },
+    {
+      "name": "我的页与奖励反馈 1440×900 无横溢、键盘关闭和 reduced-motion",
+      "status": "passed"
+    },
+    {
+      "name": "我的页与奖励反馈 768×1024 无横溢、键盘关闭和 reduced-motion",
+      "status": "passed"
+    },
+    {
+      "name": "我的页与奖励反馈 390×844 无横溢、键盘关闭和 reduced-motion",
+      "status": "passed"
+    },
+    {
+      "name": "我的页与奖励反馈 360×800 无横溢、键盘关闭和 reduced-motion",
+      "status": "passed"
+    },
+    {
+      "name": "我的页与奖励反馈 844×390 无横溢、键盘关闭和 reduced-motion",
+      "status": "passed"
+    },
+    {
+      "name": "服务重启后真实徽章和兑换记录仍一致；参观和未准备第三关无假获得",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "scope": "Isolated synthetic teaching database only. Date rollover is an explicitly intercepted server date DTO; no actual teaching records or server clock changed."
+}

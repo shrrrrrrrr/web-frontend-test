@@ -1,0 +1,17 @@
+C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\better-sqlite3\lib\methods\wrappers.js:5
+	return this[cppdb].prepare(sql, this, false, false);
+	                   ^
+
+SqliteError: no such column: rowid
+    at Database.prepare (C:\Users\shr\Desktop\nmg前端\app\backend\node_modules\better-sqlite3\lib\methods\wrappers.js:5:21)
+    at rows (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/scripts/verify-real-coins-migration.mjs:6:35)
+    at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/scripts/verify-real-coins-migration.mjs:8:54
+    at Array.map (<anonymous>)
+    at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/scripts/verify-real-coins-migration.mjs:8:39
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:666:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  code: 'SQLITE_ERROR'
+}
+
+Node.js v26.2.0

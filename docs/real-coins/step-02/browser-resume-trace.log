@@ -1,0 +1,49 @@
+▶ 真实金币与连续签到浏览器验收
+  ✔ 正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口 (1465.4692ms)
+  ✔ 负责导师原生评审报告83分，作品未完成不发币；等待原因可查看 (4915.9251ms)
+  ✔ 最后作品由导师原生通过，学生状态刷新按报告得分一次到账，来源明细可见 (5718.8215ms)
+  ✔ 两个独立浏览器模拟两设备并发签到与同课核对，唯一流水、同一余额 (2744.1425ms)
+  ✔ 北京午夜提交以事务日期为准；响应已提交但丢失，回读恢复且重试不重复 (980.9486ms)
+  ✔ 月历真实日期和金额、历史只读、未来不可签到，月份按钮支持键盘 (206.5458ms)
+  ✔ 五尺寸真实月历和明细无横溢，短屏纵向滚动；错误局部恢复截图 (10410.3714ms)
+  ✔ 正式读取失败不显示0或演示余额；网络恢复正常，演示存储禁用不影响正式金币 (3489.8524ms)
+  ✔ 后续改分/新版本/重新报名不重发；课程撤回仍保留金额并清除来源链接 (465.9163ms)
+  ✔ 另一账号与迟到读取隔离，教师拒绝真实账户接口 (4423.7753ms)
+  ✔ 未写入的网络失败可安全重试；恢复可见后另一设备读取新签到 (4366.6141ms)
+  ✔ 服务重启与休眠恢复读取最新余额；旧演示reset和兑换不改真实金币 (3384.4571ms)
+  ✖ 浏览器冻结模拟休眠，另一设备次日签到后恢复可见同步余额和连签 (15584.4171ms)
+✖ 真实金币与连续签到浏览器验收 (64942.4635ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 12
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65755.7655
+
+✖ failing tests:
+
+test at tests\real-coins.browser.test.js:14:51
+✖ 浏览器冻结模拟休眠，另一设备次日签到后恢复可见同步余额和连签 (15584.4171ms)
+  page.waitForFunction: Timeout 12000ms exceeded.
+      at balance (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:16:37)
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:31:950
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:31:2) {
+    name: 'TimeoutError',
+    log: []
+  }
+
+test at tests\real-coins.browser.test.js:4:1
+✖ 真实金币与连续签到浏览器验收 (64942.4635ms)
+  page.waitForFunction: Timeout 12000ms exceeded.
+      at balance (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:16:37)
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:31:950
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:31:2) {
+    name: 'TimeoutError',
+    log: []
+  }

@@ -1,0 +1,71 @@
+▶ 真实金币与连续签到浏览器验收
+  ✔ 正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口 (1419.3701ms)
+  ✔ 负责导师原生评审报告83分，作品未完成不发币；等待原因可查看 (4745.7174ms)
+  ✖ 最后作品由导师原生通过，学生状态刷新按报告得分一次到账，来源明细可见 (14199.4158ms)
+✖ 真实金币与连续签到浏览器验收 (26578.0647ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27416.4535
+
+✖ failing tests:
+
+test at tests\real-coins.browser.test.js:14:51
+✖ 最后作品由导师原生通过，学生状态刷新按报告得分一次到账，来源明细可见 (14199.4158ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-select-dropdown:visible').last().locator('.ant-select-item-option[title="4 分"]')[22m
+  [2m    - locator resolved to <div title="4 分" aria-disabled="false" class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected">…</div>[22m
+  [2m  - attempting click action[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is not stable[22m
+  [2m    - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is not visible[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 100ms[22m
+  [2m    23 × waiting for element to be visible, enabled and stable[22m
+  [2m       - element is not visible[22m
+  [2m     - retrying click action[22m
+  [2m       - waiting 500ms[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:21:316
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:21:2) {
+    name: 'TimeoutError',
+    log: [ `  - waiting for locator('.ant-select-dropdown:visible').last().locator('.ant-select-item-option[title="4 分"]')`, '    - locator resolved to <div title="4 分" aria-disabled="false" class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected">…</div>', '  - attempting click action', '    2 × waiting for element to be visible, enabled and stable', '      - element is not stable', '    - retrying click action', '    - waiting 20ms', '    2 × waiting for element to be visible, enabled and stable', '      - element is not visible', '    - retrying click action', '      - waiting 100ms', '    23 × waiting for element to be visible, enabled and stable', '       - element is not visible', '     - retrying click action', '       - waiting 500ms' ]
+  }
+
+test at tests\real-coins.browser.test.js:4:1
+✖ 真实金币与连续签到浏览器验收 (26578.0647ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-select-dropdown:visible').last().locator('.ant-select-item-option[title="4 分"]')[22m
+  [2m    - locator resolved to <div title="4 分" aria-disabled="false" class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected">…</div>[22m
+  [2m  - attempting click action[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is not stable[22m
+  [2m    - retrying click action[22m
+  [2m    - waiting 20ms[22m
+  [2m    2 × waiting for element to be visible, enabled and stable[22m
+  [2m      - element is not visible[22m
+  [2m    - retrying click action[22m
+  [2m      - waiting 100ms[22m
+  [2m    23 × waiting for element to be visible, enabled and stable[22m
+  [2m       - element is not visible[22m
+  [2m     - retrying click action[22m
+  [2m       - waiting 500ms[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:21:316
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:21:2) {
+    name: 'TimeoutError',
+    log: [ `  - waiting for locator('.ant-select-dropdown:visible').last().locator('.ant-select-item-option[title="4 分"]')`, '    - locator resolved to <div title="4 分" aria-disabled="false" class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected">…</div>', '  - attempting click action', '    2 × waiting for element to be visible, enabled and stable', '      - element is not stable', '    - retrying click action', '    - waiting 20ms', '    2 × waiting for element to be visible, enabled and stable', '      - element is not visible', '    - retrying click action', '      - waiting 100ms', '    23 × waiting for element to be visible, enabled and stable', '       - element is not visible', '     - retrying click action', '       - waiting 500ms' ]
+  }

@@ -1,0 +1,62 @@
+✅ SQLite 数据库连接成功: D:\Temp\pbl-real-coins-jp00Mh\coins.db
+[API GET /api/rewards/coins] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/rewards/coins] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/rewards/coins] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/rewards/coins] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/rewards/coins] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API GET /api/rewards/coins?studentId=5] → 400: {"error":"奖励仅操作当前账号"}
+[API GET /api/rewards/coins/calendar?month=2026-01&studentId=5] → 400: {"error":"奖励仅操作当前账号"}
+[API GET /api/rewards/coins/calendar?month=2026-01&month=2026-02] → 400: {"error":"月份须为2000–2099年内的YYYY-MM"}
+[API GET /api/rewards/coins/calendar?month=2026-13] → 400: {"error":"月份须为2000–2099年内的YYYY-MM"}
+[API GET /api/rewards/coins/calendar?month=1999-12] → 400: {"error":"月份须为2000–2099年内的YYYY-MM"}
+[API GET /api/rewards/coins/ledger?before=-1] → 400: {"error":"明细游标无效"}
+[API GET /api/rewards/day?month=2026-01] → 400: {"error":"奖励仅操作当前账号"}
+[API GET /api/rewards/badges?month=2026-01] → 400: {"error":"奖励仅操作当前账号"}
+[API POST /api/rewards/coins/checkin] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/coins/checkin] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/coins/checkin] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/coins/checkin] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/coins/reconcile] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/coins/reconcile] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/coins/reconcile] → 400: {"error":"包含无效字段"}
+[API POST /api/rewards/coins/reconcile] → 400: {"error":"包含无效字段"}
+✔ 正式账户0起步；GET不发币；query/body白名单与本人角色权限 (248.0737ms)
+✔ 无徽章定义仍按全部任务及评分结算；并发仅一条，快照不可重算 (187.4817ms)
+✔ 报告通过但作品最新退回/待审不发；练习只要求原有作答；最后通过后发一次 (83.309ms)
+✖ 合法0分也只结算一次；空/越界/小数分未结算可重试，不能用进度或徽章代替任务 (42.2599ms)
+✔ 回顾/卡片/报告新版本/内容准备/参观/撤回/课时取消分别阻止新奖励；已有历史不追扣 (122.0973ms)
+[API POST /api/mentor-reviews/7/review] → 400: {"error":"请填写 0–100 的整数评分","code":"MENTOR_REVIEW_INVALID"}
+[API POST /api/mentor-reviews/7/review] → 400: {"error":"请填写 0–100 的整数评分","code":"MENTOR_REVIEW_INVALID"}
+[API POST /api/mentor-reviews/7/review] → 400: {"error":"请填写 0–100 的整数评分","code":"MENTOR_REVIEW_INVALID"}
+[API POST /api/mentor-reviews/7/review] → 400: {"error":"请填写 0–100 的整数评分","code":"MENTOR_REVIEW_INVALID"}
+[API POST /api/mentor-reviews/7/review] → 400: {"error":"请填写 0–100 的整数评分","code":"MENTOR_REVIEW_INVALID"}
+[API POST /api/mentor-reviews/7/review] → 400: {"error":"请填写 0–100 的整数评分","code":"MENTOR_REVIEW_INVALID"}
+[API POST /api/mentor-reviews/7/review] → 400: {"error":"请填写 0–100 的整数评分","code":"MENTOR_REVIEW_INVALID"}
+[API POST /api/mentor-reviews/7/review] → 400: {"error":"请填写 0–100 的整数评分","code":"MENTOR_REVIEW_INVALID"}
+[API POST /api/mentor-reviews/7/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/mentor-reviews/7/review] → 403: {"error":"无权限","message":"您没有权限执行此操作"}
+[API POST /api/mentor-reviews/7/review] → 403: {"error":"无权访问该学习报告","code":"REPORT_FORBIDDEN"}
+✔ 原评分入口拒绝null/空/布尔/非整数，合法0及负责导师/管理员权限保留 (71.8584ms)
+✔ 服务端北京连续1/2/5/6/7天、上限10、中断重置、午夜/跨年/闰日及同日幂等 (33.0502ms)
+✔ 并发今日签到/响应丢失后重试不重复；故障事务整体回滚；余额等于流水SUM (71.8113ms)
+✔ 演示兑换消息、重置不进真实账；有限游标无重复/他人数据；数据库唯一与金额约束 (35.9635ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2023.5819
+
+✖ failing tests:
+
+test at backend\test\studentCoins.test.js:18:1
+✖ 合法0分也只结算一次；空/越界/小数分未结算可重试，不能用进度或徽章代替任务 (42.2599ms)
+  Error [SqliteError]: CHECK constraint failed: score BETWEEN 0 AND 100
+      at TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\backend\test\studentCoins.test.js:18:330)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:946:7) {
+    code: 'SQLITE_CONSTRAINT_CHECK'
+  }

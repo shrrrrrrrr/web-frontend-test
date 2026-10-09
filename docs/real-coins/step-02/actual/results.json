@@ -1,0 +1,108 @@
+{
+  "base": "http://127.0.0.1:4184",
+  "browser": "154.0.4258.53",
+  "screens": [
+    {
+      "file": "me-1440x900.png",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "calendar-1440x900.png",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "ledger-1440x900.png",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "error-1440x900.png",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "file": "me-768x1024.png",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "calendar-768x1024.png",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "ledger-768x1024.png",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "error-768x1024.png",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "file": "me-390x844.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "calendar-390x844.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "ledger-390x844.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "error-390x844.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "me-360x800.png",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "file": "calendar-360x800.png",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "file": "ledger-360x800.png",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "file": "error-360x800.png",
+      "width": 360,
+      "height": 800
+    },
+    {
+      "file": "me-844x390.png",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "file": "calendar-844x390.png",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "file": "ledger-844x390.png",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "file": "error-844x390.png",
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "pageErrors": [],
+  "scope": "Actual persistent teaching data. No checkin clicked, no report/grade/work fixture inserted. Error screenshots use browser-only response interception explicitly labelled; retries hit real API. Existing authenticated reconcile may settle only legal evidence; protection audit separately checks actual new ledger."
+}

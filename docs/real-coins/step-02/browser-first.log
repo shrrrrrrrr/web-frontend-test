@@ -1,0 +1,55 @@
+▶ 真实金币与连续签到浏览器验收
+  ✖ 正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口 (716.925ms)
+✖ 真实金币与连续签到浏览器验收 (7172.908ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8010.5479
+
+✖ failing tests:
+
+test at tests\real-coins.browser.test.js:14:51
+✖ 正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口 (716.925ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '读取中' !== '120'
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/real-coins.browser.test.js:19:84
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/real-coins.browser.test.js:14:75)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/real-coins.browser.test.js:19:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '读取中',
+    expected: '120',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\real-coins.browser.test.js:4:1
+✖ 真实金币与连续签到浏览器验收 (7172.908ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '读取中' !== '120'
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/real-coins.browser.test.js:19:84
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/real-coins.browser.test.js:14:75)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/real-coins.browser.test.js:19:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '读取中',
+    expected: '120',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

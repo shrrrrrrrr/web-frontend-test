@@ -1,0 +1,51 @@
+▶ 真实金币与连续签到浏览器验收
+  ✔ 正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口 (1437.5801ms)
+  ✔ 负责导师原生评审报告83分，作品未完成不发币；等待原因可查看 (5204.2916ms)
+  ✔ 最后作品由导师原生通过，学生状态刷新按报告得分一次到账，来源明细可见 (5798.3162ms)
+  ✔ 两个独立浏览器模拟两设备并发签到与同课核对，唯一流水、同一余额 (2659.5988ms)
+  ✔ 北京午夜提交以事务日期为准；响应已提交但丢失，回读恢复且重试不重复 (1009.7228ms)
+  ✔ 月历真实日期和金额、历史只读、未来不可签到，月份按钮支持键盘 (193.9486ms)
+  ✔ 五尺寸真实月历和明细无横溢，短屏纵向滚动；错误局部恢复截图 (10408.8269ms)
+  ✔ 正式读取失败不显示0或演示余额；网络恢复正常，演示存储禁用不影响正式金币 (3777.2329ms)
+  ✔ 后续改分/新版本/重报名不重发；课程撤回仍保留金额并清除来源链接 (480.7148ms)
+  ✔ 另一账号与迟到读取隔离，教师拒绝真实账户接口 (4339.2673ms)
+  ✖ 服务重启与休眠恢复读取最新余额；旧演示reset和兑换不改真实金币 (14745.4693ms)
+✖ 真实金币与连续签到浏览器验收 (56368.4063ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 10
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 57154.3407
+
+✖ failing tests:
+
+test at tests\real-coins.browser.test.js:14:51
+✖ 服务重启与休眠恢复读取最新余额；旧演示reset和兑换不改真实金币 (14745.4693ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.reward-modal').getByRole('button', { name: '确认重置', exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:29:265
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:29:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.reward-modal').getByRole('button', { name: '确认重置', exact: true })" ]
+  }
+
+test at tests\real-coins.browser.test.js:4:1
+✖ 真实金币与连续签到浏览器验收 (56368.4063ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.reward-modal').getByRole('button', { name: '确认重置', exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:29:265
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:29:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.reward-modal').getByRole('button', { name: '确认重置', exact: true })" ]
+  }

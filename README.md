@@ -1,3 +1,5 @@
+当前交付：[真实金币与连续签到 · 第2步验收](docs/real-coins/step-02/index.html) · [启动、备份与边界](docs/real-coins/step-02/README.md) · [实际验证](docs/real-coins/step-02/verification.md)。真实金币已按账号后端保存；原演示兑换余额仍独立，未接正式礼品或公网。
+
 # 当前交付：徽章陈列室与小智点击 · 第1步
 
 [真实4184徽章墙](http://127.0.0.1:4184/me/badges) · [五尺寸截图与原创素材](docs/badge-room/step-01/index.html) · [本步增量文案](docs/badge-room/step-01/copy-review/index.html) · [验证与边界](docs/badge-room/step-01/verification.md)

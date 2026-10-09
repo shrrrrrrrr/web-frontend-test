@@ -1,0 +1,167 @@
+{
+  "screens": [
+    {
+      "file": "actual/me-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "actual/calendar-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "actual/ledger-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "actual/error-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "actual/me-768x1024.png",
+      "dimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "actual/calendar-768x1024.png",
+      "dimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "actual/ledger-768x1024.png",
+      "dimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "actual/error-768x1024.png",
+      "dimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "actual/me-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "actual/calendar-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "actual/ledger-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "actual/error-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "actual/me-360x800.png",
+      "dimensions": [
+        360,
+        800
+      ]
+    },
+    {
+      "file": "actual/calendar-360x800.png",
+      "dimensions": [
+        360,
+        800
+      ]
+    },
+    {
+      "file": "actual/ledger-360x800.png",
+      "dimensions": [
+        360,
+        800
+      ]
+    },
+    {
+      "file": "actual/error-360x800.png",
+      "dimensions": [
+        360,
+        800
+      ]
+    },
+    {
+      "file": "actual/me-844x390.png",
+      "dimensions": [
+        844,
+        390
+      ]
+    },
+    {
+      "file": "actual/calendar-844x390.png",
+      "dimensions": [
+        844,
+        390
+      ]
+    },
+    {
+      "file": "actual/ledger-844x390.png",
+      "dimensions": [
+        844,
+        390
+      ]
+    },
+    {
+      "file": "actual/error-844x390.png",
+      "dimensions": [
+        844,
+        390
+      ]
+    }
+  ],
+  "brokenLinks": [],
+  "featureScenes": 14,
+  "badgeScenes": 12,
+  "demoRawChecks": 14,
+  "demoUniqueScenes": 10,
+  "teachingScenes": 12,
+  "copyScenes": 3,
+  "browserBusinessScenes": 51,
+  "reviewFiles": 3,
+  "originalReviewFiles": 46,
+  "productionReviewViews": 48,
+  "previousCopyEntries": 1168,
+  "oldCopyChanges": 0,
+  "teachingBusinessTables": 48,
+  "realLedger": {
+    "entries": 0,
+    "amount": 0,
+    "checkins": 0,
+    "inconsistentCheckins": 0
+  },
+  "migrationVersion": 22,
+  "migrationRestorePassed": true,
+  "protectedDiff": null
+}

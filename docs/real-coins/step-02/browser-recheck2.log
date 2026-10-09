@@ -1,0 +1,47 @@
+▶ 真实金币与连续签到浏览器验收
+  ✔ 正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口 (1446.7767ms)
+  ✔ 负责导师原生评审报告83分，作品未完成不发币；等待原因可查看 (5207.8179ms)
+  ✖ 最后作品由导师原生通过，学生状态刷新按报告得分一次到账，来源明细可见 (2157.4166ms)
+✖ 真实金币与连续签到浏览器验收 (15047.83ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15856.518
+
+✖ failing tests:
+
+test at tests\real-coins.browser.test.js:14:51
+✖ 最后作品由导师原生通过，学生状态刷新按报告得分一次到账，来源明细可见 (2157.4166ms)
+  locator.click: Error: strict mode violation: locator('.ant-select-dropdown:visible .ant-select-item-option').filter({ hasText: /4/ }) resolved to 2 elements:
+      1) <div title="4 分" aria-disabled="false" class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected">…</div> aka getByTitle('分').nth(5)
+      2) <div title="4 分" aria-disabled="false" class="ant-select-item ant-select-item-option">…</div> aka getByTitle('4 分').nth(2)
+  
+  Call log:
+  [2m  - waiting for locator('.ant-select-dropdown:visible .ant-select-item-option').filter({ hasText: /4/ })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:21:307
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:21:2) {
+    log: [ "  - waiting for locator('.ant-select-dropdown:visible .ant-select-item-option').filter({ hasText: /4/ })" ]
+  }
+
+test at tests\real-coins.browser.test.js:4:1
+✖ 真实金币与连续签到浏览器验收 (15047.83ms)
+  locator.click: Error: strict mode violation: locator('.ant-select-dropdown:visible .ant-select-item-option').filter({ hasText: /4/ }) resolved to 2 elements:
+      1) <div title="4 分" aria-disabled="false" class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected">…</div> aka getByTitle('分').nth(5)
+      2) <div title="4 分" aria-disabled="false" class="ant-select-item ant-select-item-option">…</div> aka getByTitle('4 分').nth(2)
+  
+  Call log:
+  [2m  - waiting for locator('.ant-select-dropdown:visible .ant-select-item-option').filter({ hasText: /4/ })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:21:307
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:21:2) {
+    log: [ "  - waiting for locator('.ant-select-dropdown:visible .ant-select-item-option').filter({ hasText: /4/ })" ]
+  }

@@ -11,6 +11,7 @@ import {trapFocus} from './visual/trapFocus';
 import {copyText} from '../content/copy';
 import './visual/next-rewards.css';
 import {STUDENT_COURSES_CHANGED} from './accessPolicy';
+import RealCoinsProvider from './RealCoinsProvider';
 import {formatBeijingTime} from '../utils/date';
 import {ServerRewardsContext as Context,useServerRewards} from './useServerRewards';
 export function BadgeArt({art,size=96,...rest}){return <PixelImage src={`/assets/next-rewards/${art}-192.webp`} width={size} height={size} style={{width:size,height:size,background:'transparent'}} alt="" className="next-badge-art" {...rest}/>;}
@@ -38,7 +39,7 @@ export default function ServerRewards({accountId,children}){
  useEffect(()=>{if(state.data)void claim(state.data).catch(()=>{});},[state.data,claim]);
  useEffect(()=>{let cancelled=false;const refresh=async()=>{setState({data:null,loading:true,error:''});try{await request('/badges/reconcile',{});const data=await read();if(!cancelled)await claim(data);await flush();}catch(e){if(!cancelled&&!live.current.signal.aborted)setState({data:null,loading:false,error:e.response?.data?.error||e.message});}};void refresh();window.addEventListener('online',refresh);window.addEventListener('focus',refresh);window.addEventListener(STUDENT_COURSES_CHANGED,refresh);return()=>{cancelled=true;window.removeEventListener('online',refresh);window.removeEventListener('focus',refresh);window.removeEventListener(STUDENT_COURSES_CHANGED,refresh);};},[location.pathname,request,read,flush,claim]);
  const close=()=>{activeAward.current=null;setAward(null);};
- return <Context.Provider value={{...state,request,read,syncIntent,flush,syncError}}>{children}
+ return <Context.Provider value={{...state,request,read,syncIntent,flush,syncError}}><RealCoinsProvider>{children}</RealCoinsProvider>
   <Modal open={!!award} centered zIndex={1320} title={copyText('next3.award.title')} onCancel={close} footer={<><PixelButton onClick={close}>{copyText('next3.award.skip')}</PixelButton><Link to={award?"/me/badges?grant="+encodeURIComponent(award.id):"/me/badges"} onClick={close}>{copyText('next3.award.view')}</Link></>} rootClassName="student-pixel student-interactions next-award-modal" width={480} focusable={{trap:true,focusTriggerAfterClose:false}} modalRender={node=><div onKeyDownCapture={trapFocus}>{node}</div>} afterClose={()=>{const trigger=focus.current;const target=trigger?.isConnected&&trigger!==document.body&&!trigger.closest('.ant-modal-root')?trigger:document.querySelector('.space-header a[aria-current="page"]');target?.focus();void read().then(claim).catch(()=>{});}}>
    {award&&<div className="next-award" data-grant-id={award.id}><BadgeArt art={award.art_id} size={144}/><p>{copyText('next3.award.before')}{award.name}{copyText('next3.award.after')}</p><p>{copyText('next3.award.real')}</p></div>}
   </Modal>

@@ -1,0 +1,100 @@
+{
+  "sqlite": "3.53.4",
+  "migrations": [
+    {
+      "version": 1,
+      "name": "baseline_schema"
+    },
+    {
+      "version": 2,
+      "name": "002_enrollment_management.sql"
+    },
+    {
+      "version": 3,
+      "name": "003_archive_timeline.sql"
+    },
+    {
+      "version": 4,
+      "name": "004_works_root_unique.sql"
+    },
+    {
+      "version": 5,
+      "name": "005_glider_course_scope.sql"
+    },
+    {
+      "version": 6,
+      "name": "006_lesson_lifecycle.sql"
+    },
+    {
+      "version": 7,
+      "name": "007_task_lifecycle.sql"
+    },
+    {
+      "version": 8,
+      "name": "008_student_lifecycle.sql"
+    },
+    {
+      "version": 9,
+      "name": "009_lesson_learning_flow.sql"
+    },
+    {
+      "version": 10,
+      "name": "010_lesson_learning_stages.sql"
+    },
+    {
+      "version": 11,
+      "name": "011_report_score_dimensions.sql"
+    },
+    {
+      "version": 12,
+      "name": "012_ai_assistant.sql"
+    },
+    {
+      "version": 13,
+      "name": "013_ai_usage.sql"
+    },
+    {
+      "version": 14,
+      "name": "014_glider_design_params.sql"
+    },
+    {
+      "version": 15,
+      "name": "015_glider_trajectories.sql"
+    },
+    {
+      "version": 16,
+      "name": "016_course_avatar_preferences.sql"
+    },
+    {
+      "version": 17,
+      "name": "017_course_content_maintenance.sql"
+    },
+    {
+      "version": 18,
+      "name": "018_course_plan_templates_account_avatar.sql"
+    },
+    {
+      "version": 19,
+      "name": "019_course_plan_detach_lesson.sql"
+    },
+    {
+      "version": 20,
+      "name": "020_open_reflections.sql"
+    },
+    {
+      "version": 21,
+      "name": "021_badges_demo_exchange.sql"
+    }
+  ],
+  "schemaHash": "00dbc4ae27b2e7dee6c5f97cc22d3243f62449b42cf528d01cc92338c968ef0b",
+  "tableCount": 55,
+  "approved": {
+    "total": 1,
+    "missing": 1,
+    "invalid": 0
+  },
+  "integrity": "ok",
+  "foreignKeys": 0,
+  "databaseBytes": 901120,
+  "scope": "Read-only aggregates only. No student values, tokens, private config, changes or migrations."
+}

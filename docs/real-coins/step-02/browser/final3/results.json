@@ -1,0 +1,59 @@
+{
+  "records": [
+    {
+      "name": "正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口",
+      "status": "passed"
+    },
+    {
+      "name": "负责导师原生评审报告83分，作品未完成不发币；等待原因可查看",
+      "status": "passed"
+    },
+    {
+      "name": "最后作品由导师原生通过，学生状态刷新按报告得分一次到账，来源明细可见",
+      "status": "passed"
+    },
+    {
+      "name": "两个独立浏览器模拟两设备并发签到与同课核对，唯一流水、同一余额",
+      "status": "passed"
+    },
+    {
+      "name": "北京午夜提交以事务日期为准；响应已提交但丢失，回读恢复且重试不重复",
+      "status": "passed"
+    },
+    {
+      "name": "月历真实日期和金额、历史只读、未来不可签到，月份按钮支持键盘",
+      "status": "passed"
+    },
+    {
+      "name": "五尺寸真实月历和明细无横溢，短屏纵向滚动；错误局部恢复截图",
+      "status": "passed"
+    },
+    {
+      "name": "正式读取失败不显示0或演示余额；网络恢复正常，演示存储禁用不影响正式金币",
+      "status": "passed"
+    },
+    {
+      "name": "后续改分/新版本/重新报名不重发；课程撤回仍保留金额并清除来源链接",
+      "status": "passed"
+    },
+    {
+      "name": "另一账号与迟到读取隔离，教师拒绝真实账户接口",
+      "status": "passed"
+    },
+    {
+      "name": "未写入的网络失败可安全重试；恢复可见后另一设备读取新签到",
+      "status": "passed"
+    },
+    {
+      "name": "服务重启与休眠恢复读取最新余额；旧演示reset和兑换不改真实金币",
+      "status": "passed"
+    },
+    {
+      "name": "模拟跨日休眠后原生回焦，另一设备签到后同步余额和连签",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "browser": "154.0.4258.53",
+  "scope": "Disposable synthetic SQLite/3207/4237 only. Two independent browser contexts simulate devices, not real hardware. Clock override lives exclusively in test child bootstrap; no application date override. Native page clicks/keyboards; concurrent requests use actual authenticated browser fetch."
+}

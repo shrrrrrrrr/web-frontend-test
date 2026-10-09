@@ -38,3 +38,5 @@ playwright-report/
 docs/next-version/step-02/browser-first/
 !docs/experience-patch/**/*.log
 !docs/badge-room/step-01/**/*.log
+
+!docs/real-coins/step-02/**/*.log

@@ -1,0 +1,12 @@
+{
+  "records": [
+    {
+      "name": "正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\n'读取中' !== '120'\n"
+    }
+  ],
+  "pageErrors": [],
+  "browser": "154.0.4258.53",
+  "scope": "Disposable synthetic SQLite/3207/4237 only. Two independent browser contexts simulate devices, not real hardware. Clock override lives exclusively in test child bootstrap; no application date override. Native page clicks/keyboards; concurrent requests use actual authenticated browser fetch."
+}

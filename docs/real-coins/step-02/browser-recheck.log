@@ -1,0 +1,42 @@
+▶ 真实金币与连续签到浏览器验收
+  ✔ 正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口 (1419.9341ms)
+  ✖ 负责导师原生评审报告83分，作品未完成不发币；等待原因可查看 (15493.5559ms)
+✖ 真实金币与连续签到浏览器验收 (23128.5144ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 1
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 23968.4545
+
+✖ failing tests:
+
+test at tests\real-coins.browser.test.js:14:51
+✖ 负责导师原生评审报告83分，作品未完成不发币；等待原因可查看 (15493.5559ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal-confirm').getByRole('button', { name: '确定', exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:20:429
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:20:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal-confirm').getByRole('button', { name: '确定', exact: true })" ]
+  }
+
+test at tests\real-coins.browser.test.js:4:1
+✖ 真实金币与连续签到浏览器验收 (23128.5144ms)
+  locator.click: Timeout 12000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('.ant-modal-confirm').getByRole('button', { name: '确定', exact: true })[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:20:429
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:14:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\real-coins.browser.test.js:20:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('.ant-modal-confirm').getByRole('button', { name: '确定', exact: true })" ]
+  }

@@ -24,7 +24,7 @@ export function sampleFingerprint(db,id){
   const rows=db.prepare(`SELECT * FROM "${table}" WHERE ${table==='courses'?'id=?':`"${key}" ${joins[key]}`} ORDER BY rowid`).all(id);
   // Empty step-03 tables add no user data to the reviewed historical fixture.
   // Any saved definition or course-linked grant still changes the fingerprint and prevents archival.
-  if(['lesson_badge_definitions','student_badge_grants','demo_exchange_events'].includes(table)&&rows.length===0)continue;
+  if(['lesson_badge_definitions','student_badge_grants','demo_exchange_events','student_coin_ledger'].includes(table)&&rows.length===0)continue;
   records[table]=rows.map(row=>Object.fromEntries(Object.entries(row).filter(([k,v])=>{
    if(['created_at','updated_at'].includes(k))return false;
    // Migration 020's untouched legacy defaults were absent in the original fingerprint.

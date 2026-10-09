@@ -102,11 +102,11 @@ export default function Rewards({giftType="physical"}) {
   else footer = <PixelButton onClick={close}>{siteText("site.0f2b58a41962851a")}</PixelButton>;
 
   return <PageContainer><div className="study-workspace reward-workspace">
-    <StudyHeader eyebrow={<Link to="/me">{siteText("site.57b0f5d196a3b9bc")}</Link>} title={siteText("site.a14e3339b09b90b4")} description={siteText("site.83be7c387ada5129")}>
+    <StudyHeader eyebrow={<Link to="/me">{siteText("site.57b0f5d196a3b9bc")}</Link>} title={copyText("coins.demoTitle")} description={siteText("site.83be7c387ada5129")}>
       <PixelButton onClick={(event) => open({ kind: 'reset' }, event)}>{siteText("site.db412e8008c55e6c")}</PixelButton>
     </StudyHeader>
     <PixelPanel className="reward-overview" aria-label={siteText("site.5584e603b0e405d1")}>
-      <div className="reward-balance"><PixelIcon name="coin" size={36} /><div><span>{siteText("site.e99af6b5950f71fd")}</span><strong data-testid="reward-balance">{status === 'ready' ? data.balance : status === 'loading' ? siteText("site.bec12ad4a9d7500a") : siteText("site.b76344885b619338")}</strong></div></div>
+      <div className="reward-balance"><PixelIcon name="coin" size={36} /><div><span>{copyText("coins.demoBalance")}</span><strong data-testid="reward-balance">{status === 'ready' ? data.balance : status === 'loading' ? siteText("site.bec12ad4a9d7500a") : siteText("site.b76344885b619338")}</strong></div></div>
       <div className="reward-scope"><PixelTag tone="neutral">{siteText("site.2218288512167cb0")}</PixelTag><Sentence>{siteText("site.2911debb934ff232")}<br />{siteText("site.821f60a1c3cb1ede")}</Sentence></div>
     </PixelPanel>
     <Sentence>{copyText('next3.exchange.scope')}</Sentence>

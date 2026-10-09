@@ -49,6 +49,7 @@ export const reviewPages=[
  page('notification-detail','通知详情与跳转',['/notifications/:id'],all,['pages/notifications/Detail.jsx']),
  page('not-found','地址不存在与角色拦截',['/*'],all,['components/NotFound.jsx','components/RoleGuard.jsx']),
  page('shared','公共导航、加载、错误、空状态与伙伴',['所有已登录页面'],all,['components/AppLayout.jsx','components/Header.jsx','components/Sidebar.jsx','components/PageStatus.jsx','student/visual/StudentShell.jsx','student/visual/Partner.jsx'],['shell','平台']),
+ page('real-coins','真实金币、连签与日历',['/me'],['student'],['student/RealCoins.jsx','student/visual/StudentShell.jsx'],['平台我的 / 真实金币']),
  page('fortune','今日运势全部词库',['/me'],['student'],['student/space/DailyFortune.jsx'],['平台我的 / 运势']),
  page('copy-review','系统文案审阅',['/copy-review'],['admin'],['copy-review/CopyReview.jsx']),
 ];

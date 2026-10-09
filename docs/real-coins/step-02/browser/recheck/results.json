@@ -1,0 +1,16 @@
+{
+  "records": [
+    {
+      "name": "正式余额从0起，旧演示120独立保留，缺徽章定义不影响奖励入口",
+      "status": "passed"
+    },
+    {
+      "name": "负责导师原生评审报告83分，作品未完成不发币；等待原因可查看",
+      "status": "failed",
+      "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ant-modal-confirm').getByRole('button', { name: '确定', exact: true })\u001b[22m\n"
+    }
+  ],
+  "pageErrors": [],
+  "browser": "154.0.4258.53",
+  "scope": "Disposable synthetic SQLite/3207/4237 only. Two independent browser contexts simulate devices, not real hardware. Clock override lives exclusively in test child bootstrap; no application date override. Native page clicks/keyboards; concurrent requests use actual authenticated browser fetch."
+}

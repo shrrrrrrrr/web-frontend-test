@@ -3,6 +3,7 @@ import Alert from '../../student/visual/StudentAlert';
 import Sentence from '../../content/Sentence';
 import {copyText} from '../../content/copy';
 import CopyBlock from '../../content/CopyBlock';
+import {COIN_LEARNING_CHANGED} from '../../student/useRealCoins';
 import {useCourseApis} from '../../student/useCourseApis';
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -121,6 +122,7 @@ function LessonLearnEditor() {
       const payload = await learningAPI.lesson(lessonId);
       if (String(payload.course.id) !== String(courseId)) throw new Error(copyText('system.learning.031'));
       setData(payload);
+      window.dispatchEvent(new Event(COIN_LEARNING_CHANGED));
       const requestedStage = Number(searchParams.get('stage'));
       // 已有报告可从原评审页回看；资料调整后的学习阶段不能吞掉档案的只读跳转。
       // 报告表单仍按 progress.report_unlocked 禁用，提交规则没有改变。
