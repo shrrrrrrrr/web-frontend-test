@@ -1,3 +1,4 @@
+import {copyTemplate as siteTemplate} from "../../content/copy";
 import Alert from '../../student/visual/StudentAlert';
 import Sentence from '../../content/Sentence';
 import {copyText} from '../../content/copy';
@@ -231,7 +232,7 @@ function LessonLearnEditor() {
   const reportTone = report?.status === 'approved' ? 'success' : report?.status === 'rejected' ? 'warning' : 'info';
 
   return <PageContainer><div className="study-workspace">
-    <StudyHeader eyebrow={<><PixelIcon name="book" />{data.course.title}</>} title={lesson.title} description={`正在查看：${LEARNING_STEPS[activeStage]}`}>
+    <StudyHeader eyebrow={<><PixelIcon name="book" />{data.course.title}</>} title={lesson.title} description={siteTemplate("site.069298f6b6e23160", {slot0: (LEARNING_STEPS[activeStage])})}>
       <Button onClick={() => navigate(`/courses/${courseId}?lesson=${lessonId}`)} icon={<PixelIcon name="back" />}>{copyText('system.learning.064')}</Button>
       <Button onClick={() => navigate('/tasks')}>{copyText('system.learning.065')}</Button>
     </StudyHeader>
@@ -284,7 +285,7 @@ function LessonLearnEditor() {
         </StudySection>}
 
         {activeStage === 2 && <StudySection number="03" title={copyText('system.learning.108')} description={copyText('system.learning.109')}>
-          {report && <Alert type={reportTone} showIcon title={`第 ${report.version} 版：${REPORT_STATUS[report.status]?.label || report.status}${Number.isInteger(report.score) ? ` · ${report.score} 分` : ''}`} description={report.review_comment} />}
+          {report && <Alert type={reportTone} showIcon title={siteTemplate("site.ee7472f3d349826c", {slot0: (report.version), slot1: (REPORT_STATUS[report.status]?.label || report.status), slot2: (Number.isInteger(report.score) ? ` · ${report.score} 分` : '')})} description={report.review_comment} />}
           {(!report || report.status === 'rejected') && <Form form={form} layout="vertical" onFinish={submitReport} onFinishFailed={validationFailed} disabled={!progress.report_unlocked || submitting} onValuesChange={saveDraft}>
             <Alert type={draftFailed ? 'error' : 'info'} showIcon title={draftState} description={copyText('system.learning.111')} />
             <h4>{copyText('system.learning.112')}</h4>

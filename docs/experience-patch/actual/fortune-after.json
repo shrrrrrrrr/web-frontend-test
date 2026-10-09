@@ -1,0 +1,28 @@
+{
+  "url": "http://127.0.0.1:4184/api/account/daily-fortune",
+  "status": 200,
+  "dto": {
+    "version": "campus-fortune-v3",
+    "date": "2026-10-09",
+    "nextUpdateAt": "2026-10-09T16:00:00.000Z",
+    "level": "lucky",
+    "art": "fortune-device",
+    "good": [
+      "thanks",
+      "patience"
+    ],
+    "avoid": [
+      "stop-thinking"
+    ]
+  },
+  "display": {
+    "good": [
+      "感谢帮助",
+      "给自己一点耐心"
+    ],
+    "avoid": [
+      "看到答案就停止思考"
+    ]
+  },
+  "scope": "Authenticated actual local 4184, real server date; no clock or response overrides"
+}

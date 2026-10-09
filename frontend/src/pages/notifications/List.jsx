@@ -1,3 +1,4 @@
+import {copyText as siteText, copyTemplate as siteTemplate} from "../../content/copy";
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button, Pagination, Space } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -25,7 +26,7 @@ function Results({ filters, setFilters, currentReadRef }) {
     if (filters.page > last) setFilters(value => ({ ...value, page: last }));
   }, [resource.data, filters, setFilters]);
   const items = resource.data?.items || [], pagination = resource.data?.pagination;
-  return <ReadState {...resource} object="通知列表" empty={!items.length} emptyText={filters.read || filters.category || filters.level ? '没有符合筛选条件的通知，可调整筛选。' : '暂时没有通知。有新消息时，会出现在这里。'}>
+  return <ReadState {...resource} object={siteText("site.405493918b74e7d2")} empty={!items.length} emptyText={filters.read || filters.category || filters.level ? siteText("site.71da1f4b3006d37d") : siteText("site.49ccba0c67a677b4")}>
     <div className="notification-list">{items.map(item => <NotificationItem key={item.id} notification={item} onClick={() => navigate(`/notifications/${item.id}`)} />)}</div>
     {pagination && <Pagination className="service-pagination" current={pagination.page} pageSize={pagination.pageSize} total={pagination.total} showSizeChanger showTotal={total => `共 ${total} 条`}
       onChange={(page, pageSize) => setFilters(value => ({ ...value, page, pageSize }))} />}
@@ -49,7 +50,7 @@ function AccountList() {
   };
   const reread = async () => {
     const [list, count] = await Promise.all([readLatest(), refreshUnread().then(() => true, () => false)]);
-    if (alive.current) setNotice(list && count ? null : { type: 'warning', text: '显示暂未刷新，请重新读取。', retry: true });
+    if (alive.current) setNotice(list && count ? null : { type: 'warning', text: siteText("site.3751e84dbff2566e"), retry: true });
     return list && count;
   };
   const run = async (action, success) => {
@@ -61,23 +62,23 @@ function AccountList() {
       setConfirm(false);
       setNotice({ type: 'success', text: success });
       const ok = await reread();
-      if (alive.current) setNotice({ type: ok ? 'success' : 'warning', text: ok ? success : `${success}。已完成操作，显示暂未刷新。`, retry: !ok });
+      if (alive.current) setNotice({ type: ok ? 'success' : 'warning', text: ok ? success : siteTemplate("site.56d627e208da56a1", {slot0: (success)}), retry: !ok });
     } catch (error) {
-      if (alive.current) setNotice({ type: 'error', text: requestError(error, { action: '通知操作', write: true }) });
+      if (alive.current) setNotice({ type: 'error', text: requestError(error, { action: siteText("site.c82af180cfd2ae07"), write: true }) });
     } finally { if (alive.current) { pending.current = false; setBusy(false); } }
   };
-  return <ServicePage title="通知中心" eyebrow="消息 / NOTIFICATIONS" description="课程提醒、导师反馈和处理进展，都在这里。">
+  return <ServicePage title={siteText("site.79416a8ce702704f")} eyebrow={siteText("site.f3a5908f35d5a8aa")} description={siteText("site.d3e87f5e79033aaa")}>
     <ServicePanel>
       <div className="service-toolbar"><NotificationFilters value={filters} onChange={setFilters} /><Space wrap>
-        <Button disabled={busy || notice?.retry} onClick={() => run(notificationAPI.markAllRead, '已将全部通知标为已读')}>全部已读</Button>
-        <Button disabled={busy || notice?.retry} onClick={() => setConfirm(true)}>清理已读</Button>
+        <Button disabled={busy || notice?.retry} onClick={() => run(notificationAPI.markAllRead, siteText("site.3a6ffa684c57a9b6"))}>{siteText("site.76c5c80ccc07591e")}</Button>
+        <Button disabled={busy || notice?.retry} onClick={() => setConfirm(true)}>{siteText("site.12dd0a248334665f")}</Button>
       </Space></div>
-      <p className="service-muted">批量操作适用于当前账号的全部未隐藏通知，包括其他筛选条件和分页中的通知。</p>
+      <p className="service-muted">{siteText("site.f086bf89a6f1a314")}</p>
       <OperationNotice value={notice} onRetry={reread} />
       <Results key={JSON.stringify(filters)} filters={filters} setFilters={setFilters} currentReadRef={currentReadRef} />
-      <ServiceModal title="清理全部已读通知？" open={confirm} onCancel={() => !busy && setConfirm(false)} okText="确认清理" cancelText="取消" confirmLoading={busy}
-        onOk={() => run(notificationAPI.hideRead, '已隐藏全部已读通知')}>
-        <p>当前账号所有已读通知将从列表中隐藏，包括当前筛选和分页之外的通知。不会删除课程、反馈或其他业务记录。</p>
+      <ServiceModal title={siteText("site.d9e95b15b0c22838")} open={confirm} onCancel={() => !busy && setConfirm(false)} okText={siteText("site.498398e07f0cba40")} cancelText={siteText("site.a7740a240aee5108")} confirmLoading={busy}
+        onOk={() => run(notificationAPI.hideRead, siteText("site.83df7e0be066d32f"))}>
+        <p>{siteText("site.94b33fc322781440")}</p>
         {confirm && <OperationNotice value={notice} />}
       </ServiceModal>
     </ServicePanel>

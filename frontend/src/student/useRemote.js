@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 import { useCallback, useEffect, useState } from 'react';
 import { shouldRefreshCourses, STUDENT_COURSES_CHANGED } from './accessPolicy';
 
@@ -18,7 +19,7 @@ export default function useRemote(fetcher, { courseSensitive = false, courseId, 
     setState(previous=>({ loading: true, data: retainDataOnRetry?previous.data:null, error: '' }));
     fetcher().then((data) => { if (active) setState({ loading: false, data, error: '' }); })
       .catch((error) => { if (active) setState(previous=>({ loading: false, data: retainDataOnRetry&&![403,404].includes(error.response?.status)?previous.data:null,
-        error: error.response?.data?.error || error.message || '网络连接失败，请重试。' })); });
+        error: error.response?.data?.error || error.message || siteText("site.3e68874ac03a1fe3") })); });
     return () => { active = false; };
   }, [fetcher, attempt, retainDataOnRetry]);
   return { ...state, retry };

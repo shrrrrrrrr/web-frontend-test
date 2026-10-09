@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/set-state-in-effect */
+import {copyText as siteText} from "../content/copy";
 import {useEffect,useLayoutEffect,useCallback,useRef,useState} from 'react';
 import {useLocation,Link} from 'react-router-dom';
 import {Modal,Alert,Spin} from 'antd';
@@ -16,7 +17,7 @@ export default function ServerRewards({accountId,children}){
  const {store,data:localData}=useRewards(),location=useLocation(),[state,setState]=useState({data:null,loading:true,error:''}),[award,setAward]=useState(null),[syncError,setSyncError]=useState('');
  const live=useRef(null),syncing=useRef(false),claiming=useRef(false),activeAward=useRef(null),focus=useRef(null);
  const request=useCallback(async(path,body)=>{
-  const check=()=>{let token;try{token=JSON.parse(atob(localStorage.getItem('token').split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));}catch{throw Error('请重新登录');}if(String(token.id)!==String(accountId)||!live.current||live.current.signal.aborted)throw Error('账号已切换，本次操作已停止');};
+  const check=()=>{let token;try{token=JSON.parse(atob(localStorage.getItem('token').split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));}catch{throw Error(siteText("site.1eea9fe2e9eb0522"));}if(String(token.id)!==String(accountId)||!live.current||live.current.signal.aborted)throw Error(siteText("site.76466dce4bd9fcdb"));};
   check();const settings={silent:true,signal:live.current.signal,_authRevision:sessionRevision()};const result=await(body===undefined?client.get('/rewards'+path,settings):client.post('/rewards'+path,body,settings));check();return result;
  },[accountId]);
  const read=useCallback(async()=>{try{setState(s=>({...s,loading:true,error:''}));const data=await request('/badges');setState({data,loading:false,error:''});return data;}catch(e){if(live.current&&!live.current.signal.aborted)setState({data:null,loading:false,error:e.response?.data?.error||e.message});return null;}},[request]);
@@ -48,7 +49,7 @@ export function RealBadgeShelf(){
  if(remote.error)return <Alert type="warning" title={remote.error} action={<PixelButton onClick={remote.read}>{copyText('next3.retry')}</PixelButton>}/>;
  const data=remote.data;if(!data)return null;
  return <section className="next-badge-shelf"><h2>{copyText('next3.badges.title')}</h2><p>{copyText('next3.badges.real')}</p><div className="next-badge-grid">
-  {data.grants.map(g=><article key={g.id} data-real-grant={g.id}><BadgeArt art={g.art_id}/><strong>{g.name}</strong><span>{copyText('next3.badges.earned')}</span><small>{g.lesson_title} · {formatBeijingTime(g.earned_at)}（北京）</small>{g.accessible?<Link to={`/courses/${g.course_id}/lessons/${g.lesson_id}/learn`}>{copyText('next3.badges.lesson')}</Link>:<p>{copyText('next3.badges.history')}</p>}</article>)}
+  {data.grants.map(g=><article key={g.id} data-real-grant={g.id}><BadgeArt art={g.art_id}/><strong>{g.name}</strong><span>{copyText('next3.badges.earned')}</span><small>{g.lesson_title} · {formatBeijingTime(g.earned_at)}{siteText("site.759bd62b36268043")}</small>{g.accessible?<Link to={`/courses/${g.course_id}/lessons/${g.lesson_id}/learn`}>{copyText('next3.badges.lesson')}</Link>:<p>{copyText('next3.badges.history')}</p>}</article>)}
   {data.locked.filter(l=>!data.grants.some(g=>g.lesson_id===l.lessonId)).map(l=><article key={l.lessonId} className="next-badge-locked"><BadgeArt art={l.definition.art_id}/><strong>{l.definition.name}</strong><span>{copyText('next3.badges.locked')}</span><ul>{l.checks.filter(c=>!c.satisfied).map(c=><li key={c.key}>{c.reason}</li>)}</ul></article>)}
  </div>{!data.grants.length&&<p>{copyText('next3.badges.empty')}</p>}<h3>{copyText('next3.badges.demo')}</h3><div className="next-badge-grid">{data.exchanges.filter(e=>e.gift_type==='badge').map(e=><article key={e.id}><BadgeArt art={e.art_id}/><strong>{e.gift_name}</strong><span>{copyText('next3.badges.demoSource')}</span></article>)}</div>
  </section>;

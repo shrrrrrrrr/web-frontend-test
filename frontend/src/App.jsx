@@ -58,6 +58,7 @@ const ObserverDashboard = lazy(() => import('./pages/observer/Dashboard'));
 const ObserverStudents = lazy(() => import('./pages/observer/StudentList'));
 const ObserverStudentDetail = lazy(() => import('./pages/observer/StudentDetail'));
 const MentorContentHub = lazy(() => import('./pages/mentor/ContentHub'));
+const CopyReview = lazy(() => import('./copy-review/CopyReview'));
 
 const guard = (element, roles) => <RoleGuard roles={roles}>{element}</RoleGuard>;
 
@@ -89,6 +90,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/" element={<AppLayout />}>
                 <Route path="change-password" element={<ChangePassword />} />
+                <Route path="copy-review" element={guard(<CopyReview />, ['admin'])} />
                 <Route index element={<RoleHomeRedirect />} />
                 <Route path="explore" element={guard(<ExploreHome />, ['student'])} />
                 {import.meta.env.DEV && <Route path="__pixel-preview" element={guard(<PixelPreview />, ['student'])} />}

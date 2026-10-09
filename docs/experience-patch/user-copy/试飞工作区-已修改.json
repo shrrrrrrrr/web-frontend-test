@@ -1,0 +1,147 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "试飞工作区",
+  "edits": [
+    {
+      "id": "system.flight.002",
+      "text": "文件可能已移除或网络中断。其他数值和图表仍可查看",
+      "enabled": true,
+      "baseText": "文件可能已移除或网络中断。其他数值和图表仍可查看。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.008",
+      "text": "这是本条记录提交时的参数；参数编辑区的修改尚未用于本次结果",
+      "enabled": true,
+      "baseText": "这是本条记录提交时的参数；参数编辑区的修改尚未用于本次结果。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.010",
+      "text": "先调整参数，再点击「开始试飞」",
+      "enabled": true,
+      "baseText": "先调整参数，再点击「开始试飞」。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.011",
+      "text": "结果将保存在下方的试飞记录中",
+      "enabled": true,
+      "baseText": "结果将保存在下方的试飞记录中。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.014",
+      "text": "已停止自动读取。后台可能仍在计算，你可以重新读取这条记录",
+      "enabled": true,
+      "baseText": "已停止自动读取。后台可能仍在计算，你可以重新读取这条记录。重读不会再次提交试飞。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.017",
+      "text": "已连续 3 次读取失败。后台可能仍在计算，请重试读取",
+      "enabled": true,
+      "baseText": "已连续 3 次读取失败。后台可能仍在计算，请重试读取。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.024",
+      "text": "秒，每 2 秒读取一次状态",
+      "enabled": true,
+      "baseText": "秒，每 2 秒读取一次状态。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.025",
+      "text": "计算结果将保存到你的账号，可以稍后从历史记录查看",
+      "enabled": true,
+      "baseText": "计算结果将保存到你的账号，可以稍后从历史记录查看。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.027",
+      "text": "模拟引擎异常，请稍后再试",
+      "enabled": true,
+      "baseText": "模拟引擎异常，请稍后再试。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.031",
+      "text": "本次可查看数值和图表。观察变化，再决定下一次要调整什么",
+      "enabled": true,
+      "baseText": "本次可查看数值和图表。观察变化，再决定下一次要调整什么。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.040",
+      "text": "改变一个条件，观察一次飞行。让结果帮助你调整下一次尝试",
+      "enabled": true,
+      "baseText": "改变一个条件，观察一次飞行。让结果帮助你调整下一次尝试。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.047",
+      "text": "无需选择课程，可独立试飞",
+      "enabled": true,
+      "baseText": "无需选择课程，可独立试飞；也可按需关联课程。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.048",
+      "text": "试飞结果将保存到你的账号",
+      "enabled": true,
+      "baseText": "试飞结果保存到你的账号，不会自动提交作品或完成课时。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.050",
+      "text": "这里是正在编辑的参数",
+      "enabled": true,
+      "baseText": "这里是正在编辑的参数。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.051",
+      "text": "实验环境就绪，可以开始试飞",
+      "enabled": true,
+      "baseText": "实验环境就绪，可以开始试飞。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.057",
+      "text": "来自课程的实验保留原学习位置",
+      "enabled": true,
+      "baseText": "来自课程的实验保留原学习位置。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.058",
+      "text": "留空为独立实验；选择后本次试飞才会关联课程",
+      "enabled": true,
+      "baseText": "留空为独立实验；选择后本次试飞才会关联课程。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.066",
+      "text": "提交后将使用当前参数进行一次新试飞",
+      "enabled": true,
+      "baseText": "提交后将使用当前参数进行一次新试飞。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.068",
+      "text": "每次试飞都有自己的记录，结果与编辑区分开保存",
+      "enabled": true,
+      "baseText": "每次试飞都有自己的记录，结果与编辑区分开保存。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.flight.071",
+      "text": "选择一条查看当时的结果，不会更改正在编辑的参数",
+      "enabled": true,
+      "baseText": "选择一条查看当时的结果，不会更改正在编辑的参数。",
+      "baseEnabled": true
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 const COURSE_CONCURRENCY = 3;
 
 async function settleCourseDetails(courses, detail) {
@@ -26,7 +27,7 @@ export async function loadExploreHome({ courseAPI, taskAPI }) {
   if (courseResult.status === 'rejected') throw courseResult.reason;
   const listed = courseResult.value.courses || [];
   const warnings = [];
-  if (taskResult.status === 'rejected') warnings.push('任务与作品状态未能加载，待办可能不完整。请重试；已加载的课程仍可进入。');
+  if (taskResult.status === 'rejected') warnings.push(siteText("site.51ec868473526871"));
   const results = await settleCourseDetails(listed, (id) => courseAPI.detail(id));
   const courseDetails = [];
   const courses = [];
@@ -36,7 +37,7 @@ export async function loadExploreHome({ courseAPI, taskAPI }) {
       courses.push(course);
       courseDetails.push(result.value);
     } else if (inaccessibleCourse(result.reason)) {
-      warnings.push('一门课程已不可访问，已从当前课程与待办中移除。');
+      warnings.push(siteText("site.08d32c9fb7b826ae"));
     } else {
       courses.push(course);
       warnings.push(`《${course.title}》的课时安排与待办未能加载，请重试或进入课程重新加载。`);

@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../../content/systemText.js";
 import { useCourseApis } from '../../student/useCourseApis';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -21,7 +22,7 @@ export default function useGliderRecords() {
       const result = await gliderAPI.list();
       if (request === historyRequest.current) setHistory(result.items || []);
     } catch {
-      if (request === historyRequest.current) { setHistory([]); setHistoryError('试飞记录加载失败，请重试。'); }
+      if (request === historyRequest.current) { setHistory([]); setHistoryError(siteText("site.fdae589dadb8340e")); }
     } finally { if (request === historyRequest.current) setLoadingHistory(false); }
   }, [gliderAPI]);
   useEffect(() => {

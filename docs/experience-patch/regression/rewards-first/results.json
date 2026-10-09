@@ -1,0 +1,30 @@
+{
+  "browser": "154.0.4258.53",
+  "records": [
+    {
+      "name": "本人签到双标签去重、余额和明细共享；报告已通过但作品退回不发徽章",
+      "status": "passed"
+    },
+    {
+      "name": "离线日期不放行；模拟北京午夜及重新可见后次日只加一次",
+      "status": "passed"
+    },
+    {
+      "name": "真实课时徽章资格和十关未知节点可见；无自动发放空参观与实验",
+      "status": "passed"
+    },
+    {
+      "name": "首次真正满足全部要求才持久获章；动画已读稳定ID、Esc关闭及原焦点恢复",
+      "status": "failed",
+      "error": "The input did not match the regular expression /恭喜你获得了理论探索徽章！已经佩戴在你的主页啦！快去看看吧~/. Input:\n\n'收获一枚新徽章\\n\\n恭喜你获得了理论探索徽章已经佩戴在你的主页啦！快去看看吧~\\n\\n真实课时通关徽章 · 已保存到当前账号\\n\\n关闭并跳过\\n去我的主页看看'\n"
+    }
+  ],
+  "pageErrors": [],
+  "courseId": 9003,
+  "lessonIds": [
+    90022,
+    90023,
+    90024
+  ],
+  "scope": "Isolated synthetic teaching database only. Date rollover is an explicitly intercepted server date DTO; no actual teaching records or server clock changed."
+}

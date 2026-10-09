@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/copy";
 import Sentence from '../content/Sentence';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -34,20 +35,20 @@ export default function StudyPartner() {
     };
   }, []);
   const close = () => { setCollapsed(true); toggle.current?.focus(); };
-  return <aside ref={dock} className={`student-partner${collapsed ? ' student-partner--collapsed' : ''}`} aria-label="学习伙伴" data-testid="study-partner"
+  return <aside ref={dock} className={`student-partner${collapsed ? ' student-partner--collapsed' : ''}`} aria-label={siteText("site.06b77d3d99ae4f63")} data-testid="study-partner"
     onKeyDown={(event) => { if (event.key === 'Escape' && !collapsed) { event.preventDefault(); close(); } }}>
     <div className="student-partner-bar">
-      <button ref={toggle} type="button" className="student-partner-toggle" aria-label={collapsed ? '打开学习伙伴' : '收起学习伙伴'}
+      <button ref={toggle} type="button" className="student-partner-toggle" aria-label={collapsed ? siteText("site.dd73858ab12cc099") : siteText("site.646e8619b4edc66e")}
         aria-expanded={!collapsed} aria-controls={collapsed ? undefined : 'student-partner-actions'} onClick={() => setCollapsed((value) => !value)}>
         {collapsed ? <PixelImage className="student-partner-image student-partner-image--compact" {...pixelImageProps('companion-cat', '32px')} alt="" fallback={<PixelIcon name="cat" size={32} />} /> : <PixelIcon name="close" size={16} />}
-        <span>{collapsed ? '打开学习伙伴' : '收起学习伙伴'}</span>
+        <span>{collapsed ? siteText("site.dd73858ab12cc099") : siteText("site.646e8619b4edc66e")}</span>
       </button>
       {!collapsed && <div className="student-partner-expanded" id="student-partner-actions">
         <div className="student-partner-intro">
           <PixelImage className="student-partner-image" {...pixelImageProps('companion-cat', '48px')} alt="" fallback={<PixelIcon name="cat" size={48} />} />
-          <div><strong>学习伙伴 · 灵境小智</strong><Sentence>需要一点思路？一起理清下一步。</Sentence></div>
+          <div><strong>{siteText("site.5d62c0bd614a81c5")}</strong><Sentence>{siteText("site.83c57a01a5cee346")}</Sentence></div>
         </div>
-        <PixelButton aria-label="向灵境小智提问" onClick={() => navigate(`/dashboard/ai${courseId ? `?course_id=${courseId}` : ''}`)}>向小智提问</PixelButton>
+        <PixelButton aria-label={siteText("site.bfc47dd43decdb91")} onClick={() => navigate(`/dashboard/ai${courseId ? `?course_id=${courseId}` : ''}`)}>{siteText("site.84b1cf9b0efc27d6")}</PixelButton>
       </div>}
     </div>
   </aside>;

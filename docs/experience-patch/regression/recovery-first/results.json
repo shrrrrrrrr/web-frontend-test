@@ -1,0 +1,18 @@
+{
+  "records": [
+    {
+      "name": "颁发已提交但主页回读失败，不称已佩戴；重读后两个徽章依次可关闭且不重复",
+      "status": "passed"
+    },
+    {
+      "name": "离线已扣币后重置保留原意图，切账号不发旧意图；回到原账号补发一条消息",
+      "status": "passed"
+    },
+    {
+      "name": "真实浏览器存储拒绝不签到成功，恢复后只保存一次；日期重读仍真实",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "scope": "All qualification data, storage faults and account switching use isolated synthetic database/browser. Animation frames are real CSS animation paused at 120/420ms in this test only."
+}

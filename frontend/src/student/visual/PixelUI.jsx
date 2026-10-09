@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../../content/copy";
 import { useState } from 'react';
 import { Button } from 'antd';
 import PixelIcon from './PixelIcon';
@@ -15,7 +16,7 @@ export function PixelTag({ children, tone = 'neutral', className = '', ...props 
   return <span className={`pixel-tag pixel-tag--${tone} ${className}`} {...props}>{children}</span>;
 }
 
-export function PixelProgress({ value = 0, label = '学习进度', className = '' }) {
+export function PixelProgress({ value = 0, label = siteText("site.3e8981486e3d8653"), className = '' }) {
   const percent = Math.min(100, Math.max(0, Number(value) || 0));
   return <div className={`pixel-progress ${className}`}>
     <div className="pixel-progress-track" role="progressbar" aria-label={label} aria-valuenow={percent} aria-valuemin={0} aria-valuemax={100}>

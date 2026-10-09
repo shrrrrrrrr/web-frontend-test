@@ -1,3 +1,4 @@
+import {copyTemplate as siteTemplate} from "../content/copy";
 import Alert from '../student/visual/StudentAlert';
 import Sentence from '../content/Sentence';
 import {copyText} from '../content/copy';
@@ -18,7 +19,7 @@ function ResultFile({ record, revision, name, title }) {
   return <figure className="flight-file" data-file={name}>
     <figcaption>{title}</figcaption>
     {file.status === 'loading' ? <div className="flight-file-placeholder"><Spin size="small" />{copyText('system.flight.001')}{title}…</div>
-      : file.status === 'error' ? <Alert type="warning" showIcon title={`${title}暂时无法加载`}
+      : file.status === 'error' ? <Alert type="warning" showIcon title={siteTemplate("site.0b532c8bb84a670b", {slot0: (title)})}
         description={copyText('system.flight.002')}
         action={<PixelButton onClick={file.retry}>{copyText('system.flight.003')}{title}</PixelButton>} />
         : name === 'video' ? <video src={file.url} controls playsInline preload="metadata" onError={file.fail} aria-label={copyText('system.flight.004')} />
@@ -30,11 +31,11 @@ function RecordResults({ records }) {
   const { viewingId, viewing, waitSec, pollFailed, pollTimedOut, openRecord, revision } = records;
   const meta = stateMeta(viewing?.state);
   return <>
-    <div className="flight-record-heading"><PixelTag tone={viewing?.status === 'success' ? 'success' : 'neutral'}>{viewingId ? `试飞 #${viewingId}` : copyText('system.flight.006')}</PixelTag>
+    <div className="flight-record-heading"><PixelTag tone={viewing?.status === 'success' ? 'success' : 'neutral'}>{viewingId ? siteTemplate("site.bb7a90ecdb798198", {slot0: (viewingId)}) : copyText('system.flight.006')}</PixelTag>
       {viewing && <time>{formatBeijingTime(viewing.created_at)}</time>}
       {viewingId && <PixelButton size="small" onClick={() => openRecord(viewingId)}>{copyText('system.flight.007')}</PixelButton>}
     </div>
-    {viewing && <Collapse className="flight-snapshot" items={[{ key: 'snapshot', label: `试飞 #${viewing.id} 使用的参数`, children: <><CopyBlock id="system.flight.008" as="p" className="flight-note"/><dl className="flight-snapshot-grid">{flightParameters.map((parameter) => <div key={parameter.field}><dt>{parameter.title}</dt><dd>{viewing[parameter.field] ?? '—'} {parameter.unit}</dd></div>)}</dl></> }]} />}
+    {viewing && <Collapse className="flight-snapshot" items={[{ key: 'snapshot', label: siteTemplate("site.e90d5b2c5e3bce72", {slot0: (viewing.id)}), children: <><CopyBlock id="system.flight.008" as="p" className="flight-note"/><dl className="flight-snapshot-grid">{flightParameters.map((parameter) => <div key={parameter.field}><dt>{parameter.title}</dt><dd>{viewing[parameter.field] ?? '—'} {parameter.unit}</dd></div>)}</dl></> }]} />}
     {!viewingId ? <div className="flight-ready"><PixelIcon name="lab" size={56} /><h4>{copyText('system.flight.009')}</h4><Sentence>{copyText('system.flight.010')}<br />{copyText('system.flight.011')}</Sentence><span>{copyText('system.flight.012')}</span></div>
       : pollTimedOut ? <Alert type="warning" showIcon title={copyText('system.flight.013')} description={copyText('system.flight.014')} action={<PixelButton onClick={() => openRecord(viewingId)}>{copyText('system.flight.015')}</PixelButton>} />
         : pollFailed ? <Alert type="warning" showIcon title={copyText('system.flight.016')} description={copyText('system.flight.017')} action={<PixelButton onClick={() => openRecord(viewingId)}>{copyText('system.flight.018')}</PixelButton>} />
@@ -64,12 +65,12 @@ export default function StudentGliderWorkspace({ form, records, startSim, submit
   const finishFailed = ({ errorFields }) => {
     const field = errorFields?.[0];
     if (flightParameters.slice(3).some((parameter) => parameter.name === field?.name?.[0])) setAdvanced(['advanced']);
-    message.error(`无法开始试飞：${field?.errors?.[0] || copyText('system.flight.035')}`);
+    message.error(siteTemplate("site.ebad53955e500a57", {slot0: (field?.errors?.[0] || copyText('system.flight.035'))}));
     if (field) setTimeout(() => form.scrollToField(field.name, { focus: true, block: 'center' }), 0);
   };
   const parameterInput = (parameter) => <Form.Item key={parameter.name} name={parameter.name} label={parameter.label}
     extra={<>{parameter.extra}<span className="flight-range">{copyText('system.flight.036')}{parameter.min}–{parameter.max} {parameter.unit}{copyText('system.flight.037')}{parameter.step}</span></>}
-    rules={[{ required: !!parameter.required, type: 'number', min: parameter.min, max: parameter.max, message: `请设置${parameter.title}（${parameter.min}–${parameter.max} ${parameter.unit}）` }]}>
+    rules={[{ required: !!parameter.required, type: 'number', min: parameter.min, max: parameter.max, message: siteTemplate("site.99b8017af6c4b84a", {slot0: (parameter.title), slot1: (parameter.min), slot2: (parameter.max), slot3: (parameter.unit)}) }]}>
     <InputNumber min={parameter.min} max={parameter.max} step={parameter.step} style={{ width: '100%' }} suffix={parameter.unit} />
   </Form.Item>;
   return <div className="study-workspace lab-workspace">

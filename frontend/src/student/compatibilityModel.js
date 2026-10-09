@@ -1,15 +1,16 @@
+import {copyText as siteText} from "../content/systemText.js";
 export const validId = value => /^[1-9]\d*$/.test(String(value)) && Number.isSafeInteger(Number(value));
 export function sourceAction(source, courseId) {
   if (!validId(source.id) || !validId(courseId)) return null;
   if (source.type === 'resource') return { download: true };
-  if (source.type === 'task') return { href: `/tasks/${source.id}`, label: '查看任务' };
-  if (['course', 'lesson', 'card'].includes(source.type)) return { href: `/courses/${courseId}`, label: '查看课程地图' };
+  if (source.type === 'task') return { href: `/tasks/${source.id}`, label: siteText("site.04070f94dbd1aea8") };
+  if (['course', 'lesson', 'card'].includes(source.type)) return { href: `/courses/${courseId}`, label: siteText("site.6f8a296bbc69dd5c") };
   return null;
 }
-export const sourceTypes = { resource: '课堂资料', task: '课后任务', course: '课程', lesson: '课时', card: '知识卡片' };
-export const scopeLabels = { core: '课程相关', extension: '课程拓展', unrelated: '问题范围说明' };
-export const taskLabels = { pending: '待完成', in_progress: '进行中', submitted: '待导师评审', completed: '学习已完成' };
-export const reportLabels = { draft: '草稿', submitted: '待评审', approved: '已通过', rejected: '需修改' };
+export const sourceTypes = { resource: siteText("site.72580f0e1b8c5a24"), task: siteText("site.12905f2c2f2f631f"), course: siteText("site.cfa0082ddc897314"), lesson: siteText("site.f8f53436b10210e2"), card: siteText("site.5852d43924b2e8b6") };
+export const scopeLabels = { core: siteText("site.f0a452ae02128642"), extension: siteText("site.f59a05eafcdd536e"), unrelated: siteText("site.d24f329d0f54b32a") };
+export const taskLabels = { pending: siteText("site.d51a9088b5cef6b2"), in_progress: siteText("site.190e2ec42eadeddc"), submitted: siteText("site.7b852746ce6ef8cc"), completed: siteText("site.4774134a09fbb0f6") };
+export const reportLabels = { draft: siteText("site.b3338cf69714e63d"), submitted: siteText("site.c50832d2197dc3b0"), approved: siteText("site.ed8e5c644ef3cd85"), rejected: siteText("site.53a13ea741868fd1") };
 export function taskGroups(tasks) {
   const groups = new Map();
   for (const task of tasks) {
@@ -30,5 +31,5 @@ export function replayDuration(value) {
 }
 export function courseReadError(error) {
   return [403, 404].includes(error?.response?.status) || (error?.response?.status === 400 && error?.response?.data?.error === '课程不存在')
-    ? '课程不存在或已不可访问' : '课程暂时无法读取';
+    ? siteText("site.f995c7841fa138d8") : siteText("site.c52dd33e5275bcb5");
 }

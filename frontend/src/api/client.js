@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 import axios from 'axios';
 import { message } from 'antd';
 import { accessCheckForError, STUDENT_ACCESS_CHECK } from '../student/accessPolicy';
@@ -61,7 +62,7 @@ async function doRefresh() {
     const { token, refresh_token } = await readStableSession();
     // Another tab may have rotated the one-use refresh token while this request waited.
     if (token && refresh_token && refresh_token !== initial.refresh_token) return token;
-    if (!refresh_token) throw Object.assign(new Error('登录已失效，请重新登录。'), { code: 'NO_REFRESH' });
+    if (!refresh_token) throw Object.assign(new Error(siteText("site.cdbfa03ab37f5248")), { code: 'NO_REFRESH' });
     let res;
     try { res = await authClient.post('/auth/refresh', { refresh_token }); }
     catch (error) {
@@ -76,7 +77,7 @@ async function doRefresh() {
     if (!sameOwner() || (await readStableSession()).refresh_token !== refresh_token) throw authStoppedError();
     try { saveAuthSession(() => window.localStorage, res.data, 'rotation'); }
     catch (error) {
-      stopAuthSession('刷新后的登录信息无法保存，请恢复浏览器存储后重新登录。');
+      stopAuthSession(siteText("site.44956f109806ba2a"));
       authClient.post('/auth/logout', { refresh_token: res.data.refresh_token }).catch(() => {});
       throw error;
     }
@@ -97,7 +98,7 @@ function refresh() {
 }
 function handleRefreshFailure(error, revision) {
   if (revision === sessionRevision() && (error.response?.status === 401 || error.code === 'NO_REFRESH')) {
-    stopAuthSession('登录已失效，请重新登录；如账号被停用，请联系老师。');
+    stopAuthSession(siteText("site.d81c1a6f086ac4a7"));
   }
 }
 client.interceptors.request.use(async (config) => {
@@ -144,7 +145,7 @@ client.interceptors.response.use(
           return Promise.reject(refreshError);
         }
       }
-      stopAuthSession('登录已失效，请重新登录；如账号被停用，请联系老师。');
+      stopAuthSession(siteText("site.d81c1a6f086ac4a7"));
       return Promise.reject(error);
     }
     if (response?.status === 403 && response.data?.code === 'FORCE_RESET') {
@@ -154,7 +155,7 @@ client.interceptors.response.use(
     }
     const accessCheck = accessCheckForError(error);
     if (accessCheck) window.dispatchEvent(new CustomEvent(STUDENT_ACCESS_CHECK, { detail: accessCheck }));
-    if (!config?.silent) message.error(response?.data?.error || response?.data?.message || '请求失败');
+    if (!config?.silent) message.error(response?.data?.error || response?.data?.message || siteText("site.3b3c92d4e9519297"));
     return Promise.reject(error);
   }
 );

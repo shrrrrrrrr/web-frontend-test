@@ -1,0 +1,21 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "我的",
+  "edits": [
+    {
+      "id": "system.me.001",
+      "text": "哎呀，这里出错啦，请返回课程地图",
+      "enabled": true,
+      "baseText": "原位置暂不可访问，可返回课程地图。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.me.006",
+      "text": "哎呀，这里出错啦，请返回课程选择",
+      "enabled": true,
+      "baseText": "来源课程暂不可访问，请返回课程选择。",
+      "baseEnabled": true
+    }
+  ]
+}

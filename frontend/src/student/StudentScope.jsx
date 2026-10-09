@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/copy";
 import Alert from '../student/visual/StudentAlert';
 import { useEffect, useRef, useState } from 'react';
 import { Button } from 'antd';
@@ -63,15 +64,15 @@ export default function StudentScope({ children }) {
             if ([403, 404].includes(error.response?.status)
               || (error.response?.status === 400 && error.response?.data?.error === '作品不存在')) {
               setState((previous) => ({ ...previous, blocked: { key: target.key,
-                reason: error.response?.data?.error || '当前内容已不可访问，可能已撤回或权限发生变化。' } }));
+                reason: error.response?.data?.error || siteText("site.a862330b931c8c9d") } }));
             } else {
-              setState((previous) => ({ ...previous, warning: '暂时无法重新核验当前内容，请检查网络后重试。页面中的填写内容仍保留。' }));
+              setState((previous) => ({ ...previous, warning: siteText("site.79411935202f6cc3") }));
             }
           }
         }
       } catch (error) {
         if (alive) setState((previous) => ({ ...previous, warning: error.response?.data?.error
-          || '暂时无法重新检查账号与课程，请检查网络后重试。已有填写内容仍保留，提交时仍由服务器校验。' }));
+          || siteText("site.27da8f7fb86fb089") }));
       } finally {
         running = false;
         if (alive && queuedObjectCheck) { queuedObjectCheck = false; check(true); }
@@ -93,22 +94,22 @@ export default function StudentScope({ children }) {
     };
   }, [user.id]);
 
-  if (state.userId !== user.id) return <PageLoading>正在确认可进入的课程，请稍候。</PageLoading>;
+  if (state.userId !== user.id) return <PageLoading>{siteText("site.74068fd8305fe78e")}</PageLoading>;
   const target = currentAccessTarget(location.pathname, location.search);
   const missingCourse = target.courseId && state.courses && !state.courses.some((course) => String(course.id) === target.courseId);
   const blocked = state.blocked?.key === target.key ? state.blocked : null;
-  const retry = <Button onClick={() => checkRef.current?.(true)}>重新检查</Button>;
-  if (missingCourse || blocked) return <StudentPageStatus title="当前内容已不可访问"
-    description={<>{missingCourse ? '课程已撤回或报名关系已变化，相关学习内容已清除。请返回课程选择选择可进入的课程。' : blocked.reason}
+  const retry = <Button onClick={() => checkRef.current?.(true)}>{siteText("site.fc5aff20bb11078a")}</Button>;
+  if (missingCourse || blocked) return <StudentPageStatus title={siteText("site.8854b62a379e0474")}
+    description={<>{missingCourse ? siteText("site.cd57694981c3d228") : blocked.reason}
       {state.warning && <><br /><span role="status">{state.warning}</span></>}</>}>
-    <Link to="/explore" className="student-status-return">返回课程选择</Link>
+    <Link to="/explore" className="student-status-return">{siteText("site.f8c8b469fb2c223d")}</Link>
     {retry}
   </StudentPageStatus>;
   if (!state.ready) return state.warning
-    ? <StudentPageStatus title="暂时无法确认账号与课程" description="暂时无法连接服务来确认你的账号与课程。这不代表课程已撤回，请检查网络后重新检查。">{retry}</StudentPageStatus>
-    : <PageLoading>正在确认可进入的课程，请稍候。</PageLoading>;
+    ? <StudentPageStatus title={siteText("site.2fa825f21dd7d02a")} description={siteText("site.c5b063b2ada193b5")}>{retry}</StudentPageStatus>
+    : <PageLoading>{siteText("site.74068fd8305fe78e")}</PageLoading>;
   return <CoursePresentationProvider><CourseExperience>
-    {state.warning && <Alert type="warning" showIcon title="权限检查暂未完成" description={state.warning} action={retry} style={{ margin: 16 }} />}
+    {state.warning && <Alert type="warning" showIcon title={siteText("site.56a5ad14c3c707a9")} description={state.warning} action={retry} style={{ margin: 16 }} />}
     <div key={`${user.id}:${location.pathname}:${/\/archives$/.test(location.pathname) ? state.archiveRevision : 0}`}>{children}</div>
   </CourseExperience></CoursePresentationProvider>;
 }

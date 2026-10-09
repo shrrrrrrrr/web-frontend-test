@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/copy";
 import Alert from '../student/visual/StudentAlert';
 import Sentence from '../content/Sentence';
 import {useCourseApis} from './useCourseApis';
@@ -23,17 +24,17 @@ function TaskRedirect({ id }) {
   const read = useCallback(async () => {
     const data = await taskAPI.detail(id);
     const current = await courseAPI.list();
-    if (!(current.courses || []).some(c => String(c.id) === String(data.task.course_id))) throw { response: { status: 404, data: { error: '任务所属课程已不可访问，请返回探索地图。' } } };
-    if (!validId(data.task.course_id) || !validId(data.task.lesson_id)) throw new Error('任务的课程或课时信息不完整，请联系老师。');
+    if (!(current.courses || []).some(c => String(c.id) === String(data.task.course_id))) throw { response: { status: 404, data: { error: siteText("site.9957663d3d717472") } } };
+    if (!validId(data.task.course_id) || !validId(data.task.lesson_id)) throw new Error(siteText("site.307ebeea8c3efd3d"));
     return data;
   }, [id,taskAPI,courseAPI]);
   const { data, loading, error, reload } = useCourseResource(read);
   if (data) return <Navigate replace to={`/courses/${data.task.course_id}/lessons/${data.task.lesson_id}/learn`} />;
-  return <ServicePage title="打开课后任务" eyebrow="任务入口 / 进入课时" description="核对任务和课程后，将进入对应的课时学习页。">
+  return <ServicePage title={siteText("site.d84f377fe206084c")} eyebrow={siteText("site.771b311154012644")} description={siteText("site.8a57c06caa5758bd")}>
     <PixelPanel className="compat-redirect"><span className="compat-route-mark" aria-hidden="true">→</span>
-      {loading ? <div role="status"><Spin /><h3>正在核对任务…</h3><Sentence>确认后直接进入对应课时。</Sentence></div>
-        : <><Alert role="alert" type="warning" title={objectErrorTitle(error, '任务')} description={error?.message || requestError(error)} /><PixelButton type="primary" onClick={reload}>重新读取任务</PixelButton></>}
-      <div className="compat-row-actions"><Link to="/tasks">返回任务列表</Link><Link to="/explore">返回探索地图</Link></div>
+      {loading ? <div role="status"><Spin /><h3>{siteText("site.1d56f8824148d016")}</h3><Sentence>{siteText("site.40161d665232a523")}</Sentence></div>
+        : <><Alert role="alert" type="warning" title={objectErrorTitle(error, siteText("site.26be51a635380b55"))} description={error?.message || requestError(error)} /><PixelButton type="primary" onClick={reload}>{siteText("site.c0ec52c25ca600c3")}</PixelButton></>}
+      <div className="compat-row-actions"><Link to="/tasks">{siteText("site.fcfd13328a828a5a")}</Link><Link to="/explore">{siteText("site.026e145d71cae1d7")}</Link></div>
     </PixelPanel>
   </ServicePage>;
 }

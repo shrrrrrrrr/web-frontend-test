@@ -1,0 +1,98 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "作品详情",
+  "edits": [
+    {
+      "id": "system.workDetail.007",
+      "text": "作品未关联当前可访问的课程，请联系老师核对",
+      "enabled": true,
+      "baseText": "作品未关联当前可访问的课程，请联系老师核对。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.008",
+      "text": "该作品所属课程已不可访问，作品内容已清除。请返回探索地图查看可进入的课程",
+      "enabled": true,
+      "baseText": "该作品所属课程已不可访问，作品内容已清除。请返回探索地图查看可进入的课程。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.014",
+      "text": "附件暂不可用，文件可能已移除。你仍可查看作品文字、历史版本和导师反馈",
+      "enabled": true,
+      "baseText": "附件暂不可用，文件可能已移除。你仍可查看作品文字、历史版本和导师反馈。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.015",
+      "text": "附件下载失败，请检查网络后重试。作品内容仍保留在本页",
+      "enabled": true,
+      "baseText": "附件下载失败，请检查网络后重试。作品内容仍保留在本页。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.020",
+      "text": "网络连接失败，请检查连接后重新加载",
+      "enabled": true,
+      "baseText": "网络连接失败，请检查连接后重新加载。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.022",
+      "text": "每一次提交都保留自己的内容和反馈",
+      "enabled": true,
+      "baseText": "每一次提交都保留自己的内容和反馈。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.029",
+      "text": "已有更新版本，请在版本记录中切换查看",
+      "enabled": true,
+      "baseText": "已有更新版本，请在版本记录中切换查看。旧版本不再开放重新提交。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.030",
+      "text": "本版未填写成果文字，请查看附件",
+      "enabled": true,
+      "baseText": "本版未填写成果文字，请查看附件。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.039",
+      "text": "本版没有附件，作品以成果文字提交",
+      "enabled": true,
+      "baseText": "本版没有附件，作品以成果文字提交。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.044",
+      "text": "导师暂未留下评语，请耐心等候~",
+      "enabled": true,
+      "baseText": "导师暂未留下评语。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.048",
+      "text": "作品正在等待导师评审中……",
+      "enabled": true,
+      "baseText": "作品正在等待导师评审",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.050",
+      "text": "可以回到课时继续学习；报告与作品的评审分别进行",
+      "enabled": true,
+      "baseText": "可以回到课时继续学习；报告与作品的评审分别进行。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workDetail.060",
+      "text": "只有最新版本被导师退回，才可以提交修改后的作品。历史版本与原反馈会保留",
+      "enabled": true,
+      "baseText": "只有最新版本被导师退回，才可以提交修改后的作品。历史版本与原反馈会保留。",
+      "baseEnabled": true
+    }
+  ]
+}

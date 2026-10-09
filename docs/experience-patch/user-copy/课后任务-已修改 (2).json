@@ -1,0 +1,42 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "课后任务",
+  "edits": [
+    {
+      "id": "system.tasks.002",
+      "text": "可以找到要继续的课时，查看报告和作品的状态",
+      "enabled": true,
+      "baseText": "找到要继续的课时，查看报告和作品各自的状态。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.tasks.005",
+      "text": "这里显示老师布置的任务。其他课时可从课程地图继续学习",
+      "enabled": true,
+      "baseText": "这里显示老师布置的任务。其他课时可从课程地图继续学习。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.tasks.008",
+      "text": "这个学习状态下暂无任务，可切换筛选或返回探索地图",
+      "enabled": true,
+      "baseText": "这个学习状态下暂无任务，可切换筛选或返回探索地图。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.tasks.009",
+      "text": "暂无课后任务。没有作品任务的课时，也可以从课程地图继续学习",
+      "enabled": true,
+      "baseText": "暂无课后任务。没有作品任务的课时，也可以从课程地图继续学习。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.tasks.030",
+      "text": "学习状态来自课时进度与报告；作品评审将会单独显示",
+      "enabled": true,
+      "baseText": "学习状态来自课时进度与报告；作品评审单独显示。",
+      "baseEnabled": true
+    }
+  ]
+}

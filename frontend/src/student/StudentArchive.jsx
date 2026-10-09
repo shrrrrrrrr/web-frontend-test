@@ -1,3 +1,4 @@
+import {copyTemplate as siteTemplate} from "../content/copy";
 import Alert from '../student/visual/StudentAlert';
 import Sentence from '../content/Sentence';
 import {copyText} from '../content/copy';
@@ -35,7 +36,7 @@ export default function StudentArchive() {
   const selection = data?.courses.some((course) => String(course.id) === String(courseId)) ? courseId : undefined;
   const reload = () => { setRefreshing(true); retry(); };
   const coursesContent = <StudySection number="01" title={copyText('system.archive.001')} description={copyText('system.archive.002')}>
-    {archive ? archive.courses.length ? <ul className="archive-course-list">{archive.courses.map((course) => <li key={course.enrollment_id}><div><Link className="archive-record-title" to={`/courses/${course.course_id}`}>{course.course_title}</Link><Sentence>{copyText('system.archive.003')}{formatBeijingTime(course.enrolled_at)}</Sentence><Sentence>{course.completed_at ? `课程完成于 ${formatBeijingTime(course.completed_at)}` : copyText('system.archive.004')}</Sentence></div><PixelTag tone="current">{copyText('system.archive.005')}</PixelTag></li>)}</ul> : <Empty description={copyText('system.archive.006')} /> : <CopyBlock id="system.archive.007" as="p" />}
+    {archive ? archive.courses.length ? <ul className="archive-course-list">{archive.courses.map((course) => <li key={course.enrollment_id}><div><Link className="archive-record-title" to={`/courses/${course.course_id}`}>{course.course_title}</Link><Sentence>{copyText('system.archive.003')}{formatBeijingTime(course.enrolled_at)}</Sentence><Sentence>{course.completed_at ? siteTemplate("site.e6c4d17372472901", {slot0: (formatBeijingTime(course.completed_at))}) : copyText('system.archive.004')}</Sentence></div><PixelTag tone="current">{copyText('system.archive.005')}</PixelTag></li>)}</ul> : <Empty description={copyText('system.archive.006')} /> : <CopyBlock id="system.archive.007" as="p" />}
     <section className="archive-report-browser" aria-label={copyText('system.archive.008')}><h4>{copyText('system.archive.009')}</h4><CopyBlock id="system.archive.010" as="p" className="study-help"/>
       {courseId && !selection && <Alert type="warning" title={copyText('system.archive.011')} />}
       <label className="archive-select-label" htmlFor="archive-course">{copyText('system.archive.012')}</label><Select id="archive-course" disabled={!!spaceId} className="archive-select" placeholder={copyText('system.archive.013')} allowClear value={selection} onChange={setCourseId} options={(data?.courses || []).map((course) => ({ value: course.id, label: `${course.title} · #${course.id}` }))} />
@@ -62,17 +63,17 @@ export default function StudentArchive() {
       <PixelButton aria-label={copyText('system.archive.050')} loading={loading} onClick={reload}>{copyText('system.archive.051')}</PixelButton><PixelButton type="primary" onClick={() => navigate('/archives/reflection')}>{copyText('system.archive.052')}</PixelButton>
     </StudyHeader>
     <div className="archive-quick-links"><Link to="/works">{copyText('system.archive.053')}</Link><Link to="/archives/rewards">{copyText('system.archive.054')}</Link></div>
-    {error && <Alert type="error" showIcon title={refreshing ? copyText('system.archive.055') : copyText('system.archive.056')} description={`${error} 归属核验完成前不展示旧记录。`} action={<PixelButton onClick={reload}>{copyText('system.archive.057')}</PixelButton>} />}
+    {error && <Alert type="error" showIcon title={refreshing ? copyText('system.archive.055') : copyText('system.archive.056')} description={siteTemplate("site.7b57a098dd31f284", {slot0: (error)})} action={<PixelButton onClick={reload}>{copyText('system.archive.057')}</PixelButton>} />}
     <AsyncPageState loading={loading}>
       {data && <>
         {data.archiveError && <Alert type="warning" showIcon title={copyText('system.archive.058')} description={data.archiveError} action={<PixelButton onClick={reload}>{copyText('system.archive.059')}</PixelButton>} />}
         <PixelPanel className="archive-overview" aria-label={copyText('system.archive.060')}><div className="archive-identity"><PixelIcon name="user" size={32} /><div><strong>{archive?.student.real_name || user.real_name || copyText('system.archive.061')}</strong><Sentence>{archive?.student.school_name || copyText('system.archive.062')} · {archive?.student.class_name || copyText('system.archive.063')}</Sentence></div></div>
           <dl className="archive-counts">{[['courses', copyText('system.archive.064')], ['projects', copyText('system.archive.065')], ['iterations', copyText('system.archive.066')], ['reflections', copyText('system.archive.067')], ['evaluations', copyText('system.archive.068')]].map(([field, label]) => <div key={field}><dt>{label}</dt><dd>{archive ? archive.counts[field] : '—'}</dd></div>)}</dl>
-          <Sentence className="archive-scope-note">{copyText('system.archive.069')}{archive && `资料读取于 ${archive.generatedAt}`}</Sentence>
+          <Sentence className="archive-scope-note">{copyText('system.archive.069')}{archive && siteTemplate("site.4c9179995dfe0c3c", {slot0: (archive.generatedAt)})}</Sentence>
         </PixelPanel>
         <Tabs className="archive-tabs" activeKey={tab} onChange={setTab} items={[
           { key: 'courses', label: copyText('system.archive.070'), children: coursesContent },
-          { key: 'works', label: copyText('system.archive.071'), children: archive && <StudySection number="02" title={copyText('system.archive.072')} description={`${archive.counts.projects} 个项目作品 · ${archive.counts.iterations} 次迭代。各版本分别保留，报告不计入作品。`}><WorkRecords works={archive.works} compact /><div className="study-actions"><PixelButton onClick={() => navigate('/works')}>{copyText('system.archive.073')}</PixelButton></div></StudySection> },
+          { key: 'works', label: copyText('system.archive.071'), children: archive && <StudySection number="02" title={copyText('system.archive.072')} description={siteTemplate("site.45c5e89e44a823ad", {slot0: (archive.counts.projects), slot1: (archive.counts.iterations)})}><WorkRecords works={archive.works} compact /><div className="study-actions"><PixelButton onClick={() => navigate('/works')}>{copyText('system.archive.073')}</PixelButton></div></StudySection> },
           { key: 'feedback', label: copyText('system.archive.074'), children: feedback }, { key: 'trail', label: copyText('system.archive.075'), children: trail },
         ].map((item) => ({ ...item, children: item.children || <Alert type="warning" title={copyText('system.archive.076')} /> }))} />
       </>}

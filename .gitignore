@@ -32,3 +32,8 @@ playwright-report/
 
 # Persistent local teaching data and private backups
 .local/
+
+# A disposable regression run used the legacy test's default output name.
+# Historical tracked deliveries remain tracked; new evidence lives in experience-patch.
+docs/next-version/step-02/browser-first/
+!docs/experience-patch/**/*.log

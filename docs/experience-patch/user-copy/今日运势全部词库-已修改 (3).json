@@ -1,0 +1,14 @@
+{
+  "format": "fortune-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "今日运势全部词库",
+  "edits": [
+    {
+      "id": "fortune.avoid.compare",
+      "text": "和别人比分数",
+      "enabled": true,
+      "baseText": "只和别人比分数",
+      "baseEnabled": true
+    }
+  ]
+}

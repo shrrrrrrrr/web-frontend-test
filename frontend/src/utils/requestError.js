@@ -1,13 +1,14 @@
-export function requestError(error, { action = '读取', write = false } = {}) {
+import {copyText as siteText} from "../content/systemText.js";
+export function requestError(error, { action = siteText("site.1542280ccb3c9f4c"), write = false } = {}) {
   if (error?.code === 'AUTH_STORAGE' || error?.code === 'PASSWORD_CHANGED_STORAGE') return error.message;
   if (error?.code === 'ECONNABORTED' || error?.code === 'ETIMEDOUT') return write
-    ? action + '请求超时，结果暂未确认。请先重新读取记录，避免重复提交。'
-    : action + '请求超时，请检查网络后重试。';
+    ? action + siteText("site.96d23b0be0a1ca36")
+    : action + siteText("site.afc0506d647eb2de");
   if (error?.response?.data?.error || error?.response?.data?.message) return error.response.data.error || error.response.data.message;
-  if (!error?.response) return write ? action + '未收到服务端确认。请检查网络并先查看记录，再决定是否重试。' : '暂时无法连接服务，请检查网络后重试。';
-  return action + '失败，请稍后重试。';
+  if (!error?.response) return write ? action + siteText("site.265a3de82f37bba5") : siteText("site.ad763f0f31deeb3e");
+  return action + siteText("site.f46bf25949069f2c");
 }
 export function objectErrorTitle(error, object) {
-  return error?.response?.status === 404 ? object + '不存在或已不可访问'
-    : error?.response?.status === 403 ? '无权访问这条' + object : object + '暂时无法读取';
+  return error?.response?.status === 404 ? object + siteText("site.c17447bfc59c1b00")
+    : error?.response?.status === 403 ? siteText("site.f38395ffc0882a3e") + object : object + siteText("site.865e772e54d4a87d");
 }

@@ -1,0 +1,84 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "课程资料回看",
+  "edits": [
+    {
+      "id": "system.review.002",
+      "text": "课后回看课堂内容，查找资料与提交记录",
+      "enabled": true,
+      "baseText": "课后回看课堂内容，查找资料与提交记录。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.007",
+      "text": "暂无课程简介，请结合课堂内容与资料学习",
+      "enabled": true,
+      "baseText": "暂无课程简介，请结合课堂内容与资料学习。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.009",
+      "text": "按需下载老师提供的资料",
+      "enabled": true,
+      "baseText": "按需下载老师提供的资料。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.018",
+      "text": "这份资料暂未提供文件",
+      "enabled": true,
+      "baseText": "这份资料暂未提供文件。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.019",
+      "text": "暂无课堂资料",
+      "enabled": true,
+      "baseText": "暂无课堂资料。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.021",
+      "text": "从原课时入口继续学习",
+      "enabled": true,
+      "baseText": "从原课时入口继续学习。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.026",
+      "text": "暂无课后任务。其他学习内容可从课程地图进入",
+      "enabled": true,
+      "baseText": "暂无课后任务。其他学习内容可从课程地图进入。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.029",
+      "text": "作品及其版本记录，报告仍在课时学习页",
+      "enabled": true,
+      "baseText": "作品及其版本记录，报告仍在课时学习页。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.034",
+      "text": "播放地址不可用，请重新读取",
+      "enabled": true,
+      "baseText": "播放地址不可用，请重新读取。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.035",
+      "text": "坏了，视频暂时无法播放，唉",
+      "enabled": true,
+      "baseText": "视频暂时无法播放，地址可能已过期，或文件、网络暂不可用。请重新获取播放地址。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.review.037",
+      "text": "按需打开回放，播放不会自动完成课时",
+      "enabled": true,
+      "baseText": "按需打开回放，播放不会自动完成课时。",
+      "baseEnabled": true
+    }
+  ]
+}

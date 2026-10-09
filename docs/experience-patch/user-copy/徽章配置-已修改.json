@@ -1,0 +1,14 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "徽章配置",
+  "edits": [
+    {
+      "id": "next3.maintenance.scope",
+      "text": "仅选择真实课时、名称和受控素材；不能手工替学生发放。已获得徽章保留当时快照",
+      "enabled": true,
+      "baseText": "仅选择真实课时、名称和受控素材；不能手工替学生发放。已获得徽章保留当时快照。",
+      "baseEnabled": true
+    }
+  ]
+}

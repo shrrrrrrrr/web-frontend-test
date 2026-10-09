@@ -1,0 +1,353 @@
+{
+  "tables": [
+    {
+      "table": "ai_chunks",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "ai_documents",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "ai_settings",
+      "rows": 1,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "ai_usage",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "card_exercise_attempts",
+      "rows": 1,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "card_exercises",
+      "rows": 1,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "classes",
+      "rows": 3,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "course_avatar_preferences",
+      "rows": 1,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "course_chapters",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "course_covers",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "course_experiments",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "course_plan_nodes",
+      "rows": 10,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "course_replays",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "courses",
+      "rows": 6,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "demo_exchange_events",
+      "rows": 1,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "enrollments",
+      "rows": 6,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "evaluations",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "feedback_attachments",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "feedback_messages",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "feedbacks",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "glider_simulations",
+      "rows": 4,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "glider_trajectories",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "growth_records",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "knowledge_cards",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "lesson_badge_definitions",
+      "rows": 3,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "lesson_learning_reports",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "lesson_progress",
+      "rows": 7,
+      "unchanged": false,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 1
+    },
+    {
+      "table": "lesson_review_completions",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "lessons",
+      "rows": 13,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "media_assets",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "micro_projects",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "notifications",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "project_milestones",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "project_team_members",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "project_teams",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "reflections",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "resources",
+      "rows": 4,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "schema_migrations",
+      "rows": 21,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "schools",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "student_badge_grants",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "student_card_progress",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "student_status_events",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "tasks",
+      "rows": 6,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "team_members",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "teams",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "user_notifications",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "users",
+      "rows": 6,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "work_reviews",
+      "rows": 0,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    },
+    {
+      "table": "works",
+      "rows": 2,
+      "unchanged": true,
+      "businessFieldsPreserved": true,
+      "existingReadTimestampChanges": 0
+    }
+  ],
+  "fileBytesPreserved": true,
+  "privateConfigPreserved": true,
+  "integrity": "ok",
+  "foreignKeys": 0,
+  "noMigrationAdded": true,
+  "scope": "Read-only consistent-backup comparison. Teaching/user/grades/reflections/avatars/reward tables and upload bytes; auth refresh token lifecycle excluded. Only existing learningGate.recalculateLessonProgress updated_at is separately reported; progress and all other fields remain compared. No row values or secrets exported."
+}

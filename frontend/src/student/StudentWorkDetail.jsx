@@ -1,3 +1,4 @@
+import {copyTemplate as siteTemplate} from "../content/copy";
 import Alert from '../student/visual/StudentAlert';
 import Sentence from '../content/Sentence';
 import {copyText} from '../content/copy';
@@ -75,18 +76,18 @@ export default function StudentWorkDetail() {
             </> : <CopyBlock id="system.workDetail.039" as="p" className="study-help"/>}
           </section>
         </StudySection>
-        <StudySection number="F" title={copyText('system.workDetail.040')} description={`以下反馈对应第 ${work.version || 1} 版。`}>
+        <StudySection number="F" title={copyText('system.workDetail.040')} description={siteTemplate("site.79700c3a50e50835", {slot0: (work.version || 1)})}>
           {review || work.reject_reason ? <div className={`study-feedback${work.review_status === 'rejected' ? ' study-feedback--rejected' : ''}`}>
             {review?.reviewer_name && <Sentence className="study-help">{copyText('system.workDetail.041')}{review.reviewer_name}</Sentence>}
             {(review?.updated_at || review?.created_at) && <Sentence className="study-help">{copyText('system.workDetail.042')}{formatBeijingTime(review.updated_at || review.created_at)}</Sentence>}
             <h4>{copyText('system.workDetail.043')}</h4><Sentence className="study-prose">{review?.comment || copyText('system.workDetail.044')}</Sentence>
             <h4>{copyText('system.workDetail.045')}</h4><Sentence className="study-prose">{review?.suggestion || work.reject_reason || copyText('system.workDetail.046')}</Sentence>
-            {review && work.review_status === 'approved' && <ul className="study-scores">{dimensions.map(([key, label]) => <li key={key}><span>{label}</span><strong>{review[key] == null ? copyText('system.workDetail.047') : `${review[key]} 分`}</strong></li>)}</ul>}
+            {review && work.review_status === 'approved' && <ul className="study-scores">{dimensions.map(([key, label]) => <li key={key}><span>{label}</span><strong>{review[key] == null ? copyText('system.workDetail.047') : siteTemplate("site.1a54fb1b3e22dbf3", {slot0: (review[key])})}</strong></li>)}</ul>}
           </div> : <Alert showIcon type="info" title={work.review_status === 'pending' ? copyText('system.workDetail.048') : copyText('system.workDetail.049')} description={copyText('system.workDetail.050')} />}
           {canRevise && <div className="study-actions"><PixelButton type="primary" onClick={() => navigate(`/works/upload?parent_work_id=${work.id}&task_id=${work.task_id || ''}&enrollment_id=${work.enrollment_id || ''}`)}>{copyText('system.workDetail.051')}</PixelButton></div>}
         </StudySection>
       </div><aside className="study-context" aria-label={copyText('system.workDetail.052')}><h3>{copyText('system.workDetail.053')}</h3>
-        <div className="study-version-control"><label htmlFor="student-work-version">{copyText('system.workDetail.054')}</label><Select id="student-work-version" value={Number(id)} onChange={(value) => navigate(`/works/${value}`)} options={versions.map((version) => ({ value: version.id, label: `第 ${version.version || 1} 版` }))} /></div>
+        <div className="study-version-control"><label htmlFor="student-work-version">{copyText('system.workDetail.054')}</label><Select id="student-work-version" value={Number(id)} onChange={(value) => navigate(`/works/${value}`)} options={versions.map((version) => ({ value: version.id, label: siteTemplate("site.366d4f786e8e4959", {slot0: (version.version || 1)}) }))} /></div>
         <dl><dt>{copyText('system.workDetail.055')}</dt><dd>{work.course_title || copyText('system.workDetail.056')}</dd><dt>{copyText('system.workDetail.057')}</dt><dd>{work.task_title || copyText('system.workDetail.058')}</dd><dt>{copyText('system.workDetail.059')}</dt><dd>{status}</dd></dl>
         <CopyBlock id="system.workDetail.060" as="p" />
       </aside></div>}

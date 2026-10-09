@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/copy";
 import { Outlet, Navigate, useLocation } from 'react-router-dom';
 
 import { useAuth } from '../store/AuthContext';
@@ -15,7 +16,7 @@ export default function AppLayout() {
   const { user, loading } = useAuth();
   const location = useLocation();
 
-  if (loading) return <PageLoading>正在确认登录状态，请稍候。</PageLoading>;
+  if (loading) return <PageLoading>{siteText("site.9971c3f7b8e21373")}</PageLoading>;
 
   if (!user) {
     return <Navigate to="/login" replace />;

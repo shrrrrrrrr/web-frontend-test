@@ -1,0 +1,112 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "反思日志",
+  "edits": [
+    {
+      "id": "system.reflection.001",
+      "text": "网络连接失败，请重试；",
+      "enabled": true,
+      "baseText": "网络连接失败，请重试；本页文字仍然保留。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.002",
+      "text": "所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程",
+      "enabled": true,
+      "baseText": "所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.003",
+      "text": "所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程",
+      "enabled": true,
+      "baseText": "所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.004",
+      "text": "暂时无法核验课程，请重试。反思尚未提交，文字仍保留",
+      "enabled": true,
+      "baseText": "暂时无法核验课程，请重试。反思尚未提交，文字仍保留。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.005",
+      "text": "课程关联已失效，请重新选择后提交",
+      "enabled": true,
+      "baseText": "课程关联已失效，请重新选择后提交。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.006",
+      "text": "课程选择发生变化，请核对后再次提交",
+      "enabled": true,
+      "baseText": "课程选择发生变化，请核对后再次提交。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.010",
+      "text": "记下困难、尝试与发现，为下一步留下线索",
+      "enabled": true,
+      "baseText": "记下困难、尝试与发现，为下一步留下线索。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.016",
+      "text": "课程必选，课时可选；请用自己的话记录",
+      "enabled": true,
+      "baseText": "课程必选，课时可选；请用自己的话记录。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.020",
+      "text": "请联系老师确认课程安排。已填写文字保留在当前页面",
+      "enabled": true,
+      "baseText": "请联系老师确认课程安排。已填写文字保留在当前页面。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.040",
+      "text": "当前文字仅在本页保留，离开或刷新页面会丢失。提交成功后才保存到服务端",
+      "enabled": true,
+      "baseText": "当前文字仅在本页保留，离开或刷新页面会丢失。提交成功后才保存到服务端。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.043",
+      "text": "反思不需要标准答案，记录你的实际尝试和下一步计划",
+      "enabled": true,
+      "baseText": "反思不需要标准答案，记录你的实际尝试和下一步计划。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.045",
+      "text": "独立反思日志每天可提交一次，以北京时间为准。当天学习报告中提交的反思也可能占用这次额度；是否可提交由服务器判断",
+      "enabled": true,
+      "baseText": "独立反思日志每天可提交一次，以北京时间为准。当天学习报告中提交的反思也可能占用这次额度；是否可提交由服务器判断。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reflection.046",
+      "text": "课程报告仍从课时学习页面提交。这里不会代替或完成报告任务",
+      "enabled": true,
+      "baseText": "课程报告仍从课时学习页面提交。这里不会代替或完成报告任务。",
+      "baseEnabled": true
+    },
+    {
+      "id": "next2.reflection.scope",
+      "text": "你提交的记录可由负责课程的老师查看，其他同学是看不见滴",
+      "enabled": true,
+      "baseText": "你提交的记录可由负责课程的执行导师、按原档案范围分配你的教师和管理员查看，其他同学及新媒体不可查看",
+      "baseEnabled": true
+    },
+    {
+      "id": "next2.reflection.help",
+      "text": "三个框任选一项填写，也可以记录心情或生活等一切你愿意分享的东西，非常期待你的分享~",
+      "enabled": true,
+      "baseText": "三个框任选一项填写，也可以记录心情或生活，提示只是方向，不必写隐私细节",
+      "baseEnabled": true
+    }
+  ]
+}

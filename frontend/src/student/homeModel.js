@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 // 仅组织首页动作，不计算学习完成度，也不参与学习解锁。
 // /tasks 的 status 是报告/学习汇总；作品必须读取独立的 review_status/work_id。
 export function buildHomeTodos({ courses = [], courseDetails = [], tasks = [] }) {
@@ -27,29 +28,29 @@ export function buildHomeTodos({ courses = [], courseDetails = [], tasks = [] })
         lessonTitle: lesson.title, learningProgress, reportStatus,
       };
       if (reportStatus === 'rejected') {
-        candidates.push({ ...base, id: `report:${key}`, kind: 'revise-report', action: '修改报告',
+        candidates.push({ ...base, id: `report:${key}`, kind: 'revise-report', action: siteText("site.300d3b6c9fc3baae"),
           title: lesson.title, href: `${href}?stage=2`, priority: 0,
-          description: '学习报告被退回，请查看导师意见并提交修改后的报告。' });
+          description: siteText("site.f2a36f380e3f11c7") });
       } else if (learningProgress < 100 && reportStatus !== 'submitted') {
         // 不能用 25/60/85 等百分比反推出卡片或报告状态；实际阶段由学习页的真实接口决定。
-        candidates.push({ ...base, id: `learning:${key}`, kind: 'continue-learning', action: '继续学习',
+        candidates.push({ ...base, id: `learning:${key}`, kind: 'continue-learning', action: siteText("site.9c188ce5b4657073"),
           title: lesson.title, href, priority: learningProgress > 0 ? 1 : 3,
           description: reportStatus === 'approved'
-            ? '报告已通过，但课时学习进度仍未完成。进入课时查看还需完成的学习内容。'
-            : '进入课时查看当前学习阶段，继续课堂回顾、知识卡片或学习报告。' });
+            ? siteText("site.d4f74e1bdb3aed9d")
+            : siteText("site.d11bc6476c7465b9") });
       }
 
       for (const task of lessonTasks) {
         const workBase = { ...base, taskId: task.id, title: task.title, deadline: task.deadline,
           workId: task.work_id, workStatus: task.review_status };
         if (task.review_status === 'rejected' && task.work_id) {
-          candidates.push({ ...workBase, id: `work:${task.id}`, kind: 'revise-work', action: '修改作品',
+          candidates.push({ ...workBase, id: `work:${task.id}`, kind: 'revise-work', action: siteText("site.634734a90f952a91"),
             href: `/works/${task.work_id}`, priority: 0,
-            description: '作品被退回，请查看这份作品的反馈并修改。作品与学习报告分别评审。' });
+            description: siteText("site.d08e4a74a183fe3a") });
         } else if (!task.work_id) {
-          candidates.push({ ...workBase, id: `work:${task.id}`, kind: 'submit-work', action: '提交作品',
+          candidates.push({ ...workBase, id: `work:${task.id}`, kind: 'submit-work', action: siteText("site.7c9fc54eb9d888ad"),
             href: `${href}?task_id=${task.id}#task-${task.id}`, priority: 2,
-            description: '本任务还没有作品，查看任务要求后提交文字或附件。' });
+            description: siteText("site.e0bc728d19f51fea") });
         }
       }
     }

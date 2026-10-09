@@ -23,6 +23,7 @@ import {trapFocus} from './visual/trapFocus';
 import './visual/pixel-map.css';
 import './space/map.css';
 import {LessonBadge} from './ServerRewards';
+import {mapSegments} from './mapGeometry';
 
 export { default as ExploreHome } from './ExploreHome';
 
@@ -110,7 +111,8 @@ function LessonDetails({ lesson, tasks, courseId, isCurrent }) {
 // They are decoration only: buttons retain all selection and keyboard behavior.
 function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey, onSelect, hasNext, theme }) {
   const routeRef = useRef(null);
-  const [routePath, setRoutePath] = useState('');
+  const [segments, setSegments] = useState([]);
+  const routePath=segments.map(segment=>segment.d).join(' ');
   useLayoutEffect(() => {
     const route = routeRef.current;
     let frame;
@@ -118,35 +120,23 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const bounds = route.getBoundingClientRect();
-        const points = [...route.querySelectorAll('.space-landing-anchor')].map((marker) => {
-          const rect = marker.getBoundingClientRect();
-          return { x: rect.left - bounds.left + rect.width / 2, y: rect.top - bounds.top + rect.height / 2 };
-        });
-        setRoutePath(points.map((point, index) => {
-          if (!index) return `M ${point.x} ${point.y}`;
-          const previous = points[index - 1];
-          const middle = (point.y + previous.y) / 2;
-          // Turn around the outside of label rows, then approach the next pad sideways.
-          if(Math.abs(point.y-previous.y)>150){
-            const side=point.x>=previous.x?bounds.width-4:4;
-            return `C ${side} ${previous.y}, ${side} ${previous.y}, ${side} ${middle} C ${side} ${point.y}, ${side} ${point.y}, ${point.x} ${point.y}`;
-          }
-          return `C ${previous.x} ${middle}, ${point.x} ${middle}, ${point.x} ${point.y}`;
-        }).join(' '));
+        const nodes=[...route.querySelectorAll('.route-node')].map(button=>{const rect=button.getBoundingClientRect(),pad=button.querySelector('.space-landing-anchor').getBoundingClientRect(),stop=button.closest('.pixel-map-route-stop');return {id:stop.dataset.planPosition||stop.dataset.lessonId,row:Number(stop.dataset.routeRow),left:rect.left-bounds.left,right:rect.right-bounds.left,top:rect.top-bounds.top,bottom:rect.bottom-bounds.top,width:rect.width,padY:pad.top-bounds.top};});
+        setSegments(mapSegments(nodes,{width:bounds.width,narrow:window.matchMedia('(max-width:767px)').matches}));
       });
     };
     const observer = new ResizeObserver(draw);
     observer.observe(route);
     route.querySelectorAll('.pixel-map-route-stop').forEach((stop) => observer.observe(stop));
+    let active=true;const fontReady=()=>{if(active)draw();};document.fonts.ready.then(fontReady);document.fonts.addEventListener('loadingdone',fontReady);route.addEventListener('load',fontReady,true);route.addEventListener('error',fontReady,true);
     draw();
-    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
+    return () => { active=false;observer.disconnect(); cancelAnimationFrame(frame);document.fonts.removeEventListener('loadingdone',fontReady);route.removeEventListener('load',fontReady,true);route.removeEventListener('error',fontReady,true); };
   }, [group.key, group.lessons.length]);
 
   return <section className="route-group pixel-map-region" aria-label={group.title}>
     {!group.planned&&<h4 className="pixel-map-region-title"><span className="pixel-map-region-index" aria-hidden="true">{String(groupIndex + 1).padStart(2, '0')}</span>{group.title}</h4>}
     <div className="pixel-map-platform">
       <div ref={routeRef} className="pixel-map-route-canvas">
-        <svg className="pixel-map-route-track" aria-hidden="true"><path className="pixel-map-track-outline" d={routePath} /><path className="pixel-map-track-dashes" d={routePath} /></svg>
+        <svg className="pixel-map-route-track" aria-hidden="true"><metadata data-testid="route-segments">{JSON.stringify(segments)}</metadata><path className="pixel-map-track-outline" d={routePath} /><path className="pixel-map-track-dashes" d={routePath} /></svg>
       <ol className="pixel-map-route">
         {group.lessons.map((lesson, index) => {
           const state = learningState(lesson);
@@ -154,11 +144,11 @@ function CourseRouteRegion({ group, groupIndex, current, selected, selectionKey,
           const isSelected = selected?.id === lesson.id;
           const row = Math.floor(index / 3);
           const column = row % 2 ? 3-index%3 : index%3+1;
-          return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.future?undefined:lesson.id} data-plan-position={group.planned?lesson.routeNumber:undefined} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 3 === 1 ? '58px' : '0px', '--stop-row': row + 1, '--stop-column': column }}>
+          return <li key={lesson.id} className="pixel-map-route-stop" data-lesson-id={lesson.future?undefined:lesson.id} data-plan-position={group.planned?lesson.routeNumber:undefined} data-route-row={row} data-selected={isSelected || undefined} style={{ '--stop-lift': index % 3 === 1 ? '16px' : '0px', '--stop-row': row + 1, '--stop-column': column }}>
             <button type="button" className="route-node" aria-current={isCurrent ? 'step' : undefined} aria-pressed={isSelected} aria-controls="selected-lesson-details"
               aria-label={copyText('system.map.042') + lesson.routeNumber + copyText('system.map.043') + lesson.title + '，' + state.label + (isCurrent ? copyText('system.map.044') : '')}
               onClick={(event) => onSelect({ key: selectionKey, lessonId: lesson.id },event.currentTarget)}>
-              <LessonPlace number={lesson.routeNumber} current={isCurrent} selected={isSelected} completed={state.tone==='success'} priority={groupIndex===0&&index<3} theme={theme} unknown={lesson.future}/>
+              <LessonPlace type={lesson.presentation_type} number={lesson.routeNumber} current={isCurrent} selected={isSelected} completed={state.tone==='success'} priority={groupIndex===0&&index<3} theme={theme} unknown={lesson.future}/>
               <span className="pixel-map-node-label"><strong>{lesson.title}</strong><PixelTag tone={state.tone}>{state.label}</PixelTag></span>
             </button>
           </li>;

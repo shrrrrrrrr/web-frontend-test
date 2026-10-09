@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/copy";
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { notificationAPI } from '../api';
 import { useAuth } from './AuthContext';
@@ -17,7 +18,7 @@ function AccountNotifications({ enabled, children }) {
       if (alive.current && current === sequence.current) { setUnreadCount(response.data.count); setCountError(''); }
       return response.data.count;
     } catch (error) {
-      if (alive.current && current === sequence.current) { setUnreadCount(null); setCountError(requestError(error, { action: '读取未读数' })); }
+      if (alive.current && current === sequence.current) { setUnreadCount(null); setCountError(requestError(error, { action: siteText("site.96869c9fe4f00ac9") })); }
       throw error;
     }
   }, [enabled]);

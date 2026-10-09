@@ -1,0 +1,147 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "成长档案",
+  "edits": [
+    {
+      "id": "system.archive.002",
+      "text": "参与记录不等于完成记录；完成日期仅在老师或系统已有记录时显示",
+      "enabled": true,
+      "baseText": "参与记录不等于完成记录；完成日期仅在老师或系统已有记录时显示。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.006",
+      "text": "暂无当前可展示的课程记录",
+      "enabled": true,
+      "baseText": "暂无当前可展示的课程记录。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.007",
+      "text": "课程参与记录暂未读取，下方仍可查看已核验课程的课时",
+      "enabled": true,
+      "baseText": "课程参与记录暂未读取，下方仍可查看已核验课程的课时。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.010",
+      "text": "先选课程，再选课时。每份报告的状态独立保留",
+      "enabled": true,
+      "baseText": "先选课程，再选课时。每份报告的状态独立保留。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.011",
+      "text": "所选课程已不可访问，请重新选择",
+      "enabled": true,
+      "baseText": "所选课程已不可访问，请重新选择。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.014",
+      "text": "尚未选择课程。选择后可浏览课时，查看报告和导师意见",
+      "enabled": true,
+      "baseText": "尚未选择课程。选择后可浏览课时，查看报告和导师意见。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.015",
+      "text": "暂无可进入的课程，请联系老师确认课程安排",
+      "enabled": true,
+      "baseText": "暂无可进入的课程，请联系老师确认课程安排。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.017",
+      "text": "课程评价、报告评审与作品评审会分别记录",
+      "enabled": true,
+      "baseText": "课程评价、报告评审与作品评审分别记录，不合成为总分。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.026",
+      "text": "暂无评语",
+      "enabled": true,
+      "baseText": "暂无评语。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.027",
+      "text": "暂无课程评价",
+      "enabled": true,
+      "baseText": "暂无课程评价。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.029",
+      "text": "按课时查看最新报告的评语与实际评分",
+      "enabled": true,
+      "baseText": "按课时查看最新报告的评语与实际评分。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.032",
+      "text": "打开具体版本，查看导师评语、修改建议和五项评分",
+      "enabled": true,
+      "baseText": "打开具体版本，查看导师评语、修改建议和五项评分。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.035",
+      "text": "仅汇总作品评审，不代表固定能力标签，也不用于同学排名",
+      "enabled": true,
+      "baseText": "仅汇总作品评审，不代表固定能力标签，也不用于同学排名。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.037",
+      "text": "现有汇总包含不在当前展示范围内的作品。请进入可查看的作品，阅读单次评审",
+      "enabled": true,
+      "baseText": "现有汇总包含不在当前展示范围内的作品。请进入可查看的作品，阅读单次评审。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.040",
+      "text": "保留实际提交、反思和导师记录；一次作品提交不重复计入",
+      "enabled": true,
+      "baseText": "保留实际提交、反思和导师记录；一次作品提交不重复计入。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.042",
+      "text": "这些系统记录缺少可靠的对象关联，暂时无法确认所属课程。已关联的记录仍可查看",
+      "enabled": true,
+      "baseText": "这些系统记录缺少可靠的对象关联，暂时无法确认所属课程。已关联的记录仍可查看。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.046",
+      "text": "还没有可展示的成长足迹，继续学习，留下你的第一次记录",
+      "enabled": true,
+      "baseText": "还没有可展示的成长足迹，继续学习，留下你的第一次记录。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.049",
+      "text": "回看参与、作品与反馈，找到下一次改进的方向",
+      "enabled": true,
+      "baseText": "回看参与、作品与反馈，找到下一次改进的方向。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.069",
+      "text": "课程相关记录仅展示当前可进入的课程；仅展示本课程有明确关联的记录；未关联的历史记录不会自动归入本课程",
+      "enabled": true,
+      "baseText": "课程相关记录仅展示当前可进入的课程；仅展示本课程有明确关联的记录；未关联的历史记录不会自动归入本课程。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.archive.076",
+      "text": "这部分档案尚未读取，请重试档案",
+      "enabled": true,
+      "baseText": "这部分档案尚未读取，请重试档案。",
+      "baseEnabled": true
+    }
+  ]
+}

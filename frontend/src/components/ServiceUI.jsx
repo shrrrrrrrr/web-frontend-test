@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/copy";
 import { Button, Card, Empty, Spin, Modal } from 'antd';
 import Alert from '../content/RoleAlert';
 import {displayText} from '../content/displayText';
@@ -20,16 +21,16 @@ export function ServicePanel({ children, className = '' }) {
   const { user } = useAuth();
   return user?.role === 'student' ? <PixelPanel className={`service-panel ${className}`}>{children}</PixelPanel> : <Card>{children}</Card>;
 }
-export function ReadState({ loading, error, reload, empty, emptyText, object = '内容', children }) {
+export function ReadState({ loading, error, reload, empty, emptyText, object = siteText("site.24ba41835efe9305"), children }) {
   const {user}=useAuth();
-  if (loading) return <div className="service-loading" role="status"><Spin /><p>正在读取{object}…</p></div>;
-  if (error) return <Alert type="error" showIcon role="alert" title={objectErrorTitle(error, object)} description={requestError(error)} action={<Button onClick={reload}>重新读取</Button>} />;
-  if (empty) return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={user?.role==='student'?displayText(emptyText || '暂时没有内容'):emptyText || '暂时没有内容'} />;
+  if (loading) return <div className="service-loading" role="status"><Spin /><p>{siteText("site.94765e811629bb50")}{object}…</p></div>;
+  if (error) return <Alert type="error" showIcon role="alert" title={objectErrorTitle(error, object)} description={requestError(error)} action={<Button onClick={reload}>{siteText("site.7feabb0598d67a06")}</Button>} />;
+  if (empty) return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={user?.role==='student'?displayText(emptyText || siteText("site.4d20298f951668f8")):emptyText || siteText("site.3672fb6cc4837964")} />;
   return children;
 }
 export function OperationNotice({ value, onRetry }) {
   return value ? <Alert role="status" showIcon type={value.type} title={value.text}
-    action={value.retry && onRetry ? <Button onClick={onRetry}>重新读取显示</Button> : undefined} /> : null;
+    action={value.retry && onRetry ? <Button onClick={onRetry}>{siteText("site.70ed99e14268715a")}</Button> : undefined} /> : null;
 }
 function containFocus(event) {
   if (event.key !== 'Tab') return;
@@ -42,6 +43,6 @@ function containFocus(event) {
 }
 export function ServiceModal(props) {
   const { user } = useAuth();
-  return <Modal {...props} okButtonProps={{ ...props.okButtonProps, 'aria-label': props.okText || '确定' }} rootClassName={user?.role === 'student' ? 'student-pixel student-interactions service-modal' : undefined}
+  return <Modal {...props} okButtonProps={{ ...props.okButtonProps, 'aria-label': props.okText || siteText("site.7c81fd3f8d3e1f70") }} rootClassName={user?.role === 'student' ? 'student-pixel student-interactions service-modal' : undefined}
     modalRender={(node) => <div onKeyDownCapture={containFocus}>{node}</div>} />;
 }

@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 // Browser persistence guards only; token protocol and server authorization are unchanged.
 export const AUTH_SESSION_ENDED = 'auth-session-ended';
 export const AUTH_KEYS = ['token', 'refresh_token', 'user'];
@@ -27,21 +28,21 @@ export function clearAuthSession(storage) {
 }
 export function readAuthSession(storage) {
   let target;
-  try { target = source(storage); } catch { throw storageError('get', '浏览器不允许访问登录存储。请允许本站存储后重试，或重新登录。'); }
+  try { target = source(storage); } catch { throw storageError('get', siteText("site.40cb08c76f9d4fa8")); }
   try {
-    if (target.getItem(PENDING)) throw storageError('incomplete', '上次登录信息未完整保存，请恢复浏览器存储后重新登录。');
+    if (target.getItem(PENDING)) throw storageError('incomplete', siteText("site.7d75c1cdc658da11"));
     const result = { token: target.getItem('token'), refresh_token: target.getItem('refresh_token') };
-    if (target.getItem(PENDING)) throw storageError('incomplete', '上次登录信息未完整保存，请恢复浏览器存储后重新登录。');
+    if (target.getItem(PENDING)) throw storageError('incomplete', siteText("site.7d75c1cdc658da11"));
     return result;
   } catch (error) {
     if (error.code === 'AUTH_STORAGE') throw error;
-    throw storageError('read', '无法读取登录信息，请检查浏览器存储权限后重试。');
+    throw storageError('read', siteText("site.cbf6d0c1a354bba7"));
   }
 }
 export function saveAuthSession(storage, session, kind = 'login') {
-  if (!session?.token || !session?.refresh_token || !session?.user?.id) throw new Error('服务端未返回完整登录信息，请重新登录。');
+  if (!session?.token || !session?.refresh_token || !session?.user?.id) throw new Error(siteText("site.173416e7ee9f4432"));
   let target;
-  try { target = source(storage); } catch { throw storageError('get', '浏览器不允许保存登录信息，请允许本站存储后重新登录。'); }
+  try { target = source(storage); } catch { throw storageError('get', siteText("site.9b35c4d2497eec51")); }
   try {
     // A marker prevents a partially saved set from being restored on a later page load.
     target.setItem(PENDING, '1');
@@ -56,7 +57,7 @@ export function saveAuthSession(storage, session, kind = 'login') {
     let clean = true;
     for (const key of AUTH_KEYS) { try { target.removeItem(key); } catch { clean = false; } }
     if (clean) { try { target.removeItem(PENDING); } catch { clean = false; } }
-    throw storageError('write', clean ? '登录信息保存失败，未进入账号页面。请恢复浏览器存储后重新登录。' : '登录信息保存失败，部分旧记录暂时无法清理。当前页面已停止使用这些信息，请恢复存储后重新登录。', !clean);
+    throw storageError('write', clean ? siteText("site.2ab9584105449e17") : siteText("site.276dedaabc287bf2"), !clean);
   }
 }
 export function setSessionNotice(text) {
@@ -88,7 +89,7 @@ export function stopAuthSession(reason) {
   stopped = true; revision++;
   try { window.sessionStorage.setItem(BLOCKED, '1'); } catch { /* Runtime guard still stops this page. */ }
   const clean = clearAuthSession(() => window.localStorage);
-  const notice = reason + (clean ? '' : ' 浏览器暂时无法清理全部登录记录；当前页面已停止使用，请恢复存储后重新登录。');
+  const notice = reason + (clean ? '' : siteText("site.4c71026bdf3111e1"));
   setSessionNotice(notice);
   publishSessionEvent('ended');
   window.dispatchEvent(new CustomEvent(AUTH_SESSION_ENDED, { detail: { reason: notice } }));
@@ -99,4 +100,4 @@ export function resumeAuthSession() {
   try { window.sessionStorage.removeItem(BLOCKED); } catch { try { window.sessionStorage.setItem(BLOCKED, '0'); } catch { /* Credentials already persisted; this optional fence may require a new tab. */ } }
   setSessionNotice('');
 }
-export function authStoppedError() { return Object.assign(new Error('当前会话已停止，请重新登录。'), { code: 'AUTH_STOPPED' }); }
+export function authStoppedError() { return Object.assign(new Error(siteText("site.48e628c5631f410b")), { code: 'AUTH_STOPPED' }); }

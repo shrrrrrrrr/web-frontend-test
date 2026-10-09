@@ -1,0 +1,9 @@
+{
+  "base": "http://127.0.0.1:4184",
+  "api": "http://127.0.0.1:3154",
+  "courseId": 9003,
+  "browser": "154.0.4258.53",
+  "pageErrors": [],
+  "businessRequests": [],
+  "scope": "Actual local teaching data, no synthetic writes or clock interception. Existing badge reconcile request can run on normal student navigation; row preservation independently audited."
+}

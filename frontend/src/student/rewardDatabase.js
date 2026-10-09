@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 import { rewardFailure } from './rewardModel.js';
 export const REWARD_DATABASE = 'star-voyage-rewards';
 export const REWARD_STORE = 'accounts';
@@ -8,17 +9,17 @@ export function openRewardDatabase(factorySource, name = REWARD_DATABASE) {
     try {
       factory = typeof factorySource === 'function' ? factorySource() : factorySource;
       if (!factory) throw Error();
-    } catch { fail('DB_UNAVAILABLE', '浏览器不允许访问奖励数据库。请允许本站存储后重试，不会改用临时余额。'); return; }
+    } catch { fail('DB_UNAVAILABLE', siteText("site.004c8f1e9226af9f")); return; }
     try { request = factory.open(name, 1); }
-    catch { fail('DB_OPEN', '无法打开本浏览器的奖励数据库。请检查站点存储权限后重试。'); return; }
-    request.onblocked = () => fail('DB_BLOCKED', '其他旧页面正在占用奖励数据库。请关闭或刷新旧页面，再重试读取。');
-    request.onerror = () => fail('DB_OPEN', '无法打开本浏览器的奖励数据库。请检查站点存储权限后重试。');
+    catch { fail('DB_OPEN', siteText("site.60ef9834ca6f017a")); return; }
+    request.onblocked = () => fail('DB_BLOCKED', siteText("site.fe04533123137c8c"));
+    request.onerror = () => fail('DB_OPEN', siteText("site.60ef9834ca6f017a"));
     request.onupgradeneeded = () => {
       if (settled) { request.transaction.abort(); return; }
       try {
         if (!request.result.objectStoreNames.contains(REWARD_STORE)) request.result.createObjectStore(REWARD_STORE, { keyPath: 'accountId' });
       } catch {
-        fail('DB_OPEN', '奖励数据库初始化失败，原记录未改变。请检查存储权限后重试。');
+        fail('DB_OPEN', siteText("site.4ca457f743f50a79"));
         request.transaction.abort();
       }
     };
@@ -39,9 +40,9 @@ export function rewardTransaction(db, mode, operate, { signal, write = false } =
     const aborted = () => { try { transaction.abort(); } catch { /* Already committed: await complete, do not claim rollback. */ } };
     const cleanup = () => signal?.removeEventListener('abort', aborted);
     const databaseError = () => rewardFailure(write ? 'WRITE_FAILED' : 'READ_FAILED', write
-      ? '奖励事务未提交，原已保存记录未改变。请检查存储权限或空间后重试本次操作。'
-      : '暂时无法读取奖励数据库。请恢复存储权限后重新读取。');
-    if (signal?.aborted) { reject(signal.reason || new DOMException('操作已取消', 'AbortError')); return; }
+      ? siteText("site.1e9ef3073d307000")
+      : siteText("site.39597c181dab03ba"));
+    if (signal?.aborted) { reject(signal.reason || new DOMException(siteText("site.c32f49a8d7085186"), 'AbortError')); return; }
     try { transaction = db.transaction(REWARD_STORE, mode); }
     catch { reject(databaseError()); return; }
     transaction.oncomplete = () => { cleanup(); resolve(result); };

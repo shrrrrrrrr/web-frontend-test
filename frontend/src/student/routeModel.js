@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 import { groupLessons } from './model.js';
 
 export function buildCourseRoute(lessons, groups = [], persistedChapterOrder = false) {
@@ -31,5 +32,5 @@ export function currentLesson(lessons, requestedId) {
 
 // 原排课字段来自 datetime-local，保留教师录入的墙上时间，不擅自加八小时。
 export function scheduleTime(value) {
-  return typeof value === 'string' && value.trim() ? value.replace('T', ' ') : '待安排';
+  return typeof value === 'string' && value.trim() ? value.replace('T', ' ') : siteText("site.a1a656a94c873794");
 }

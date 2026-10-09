@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/copy";
 import { Button, Result } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../store/AuthContext';
@@ -9,10 +10,10 @@ export default function NotFound() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const goHome = () => navigate(homeForRole(user?.role), { replace: true });
-  if (user?.role === 'student') return <StudentPageStatus code="404" title="页面未找到"
-    description="这个地址可能有误，或页面已经移动。返回探索地图，选择接下来要学习的课程。">
-    <PixelButton type="primary" onClick={goHome}>返回探索地图</PixelButton>
+  if (user?.role === 'student') return <StudentPageStatus code="404" title={siteText("site.f68cf3bb67a54012")}
+    description={siteText("site.5228c122a4975647")}>
+    <PixelButton type="primary" onClick={goHome}>{siteText("site.b96998315eba668a")}</PixelButton>
   </StudentPageStatus>;
-  return <Result status="404" title="页面未找到" subTitle="这个地址可能有误，或页面已经移动。请返回当前身份的首页继续。"
-    extra={<Button type="primary" onClick={goHome}>返回工作台</Button>} />;
+  return <Result status="404" title={siteText("site.f68cf3bb67a54012")} subTitle={siteText("site.99bba994e46ee706")}
+    extra={<Button type="primary" onClick={goHome}>{siteText("site.e73d0a99e5aba0c8")}</Button>} />;
 }

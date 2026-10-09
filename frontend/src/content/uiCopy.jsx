@@ -104,7 +104,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "avatar.hint": {
-    "text": "没有最好的角色，只有最适合此刻的你。头像随时可更换，不影响学习与权限。",
+    "text": "没有最好的角色，只有最适合此刻的你",
     "enabled": true,
     "optional": true,
     "page": "角色头像",
@@ -116,7 +116,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "avatar.saved": {
-    "text": "头像已保存到当前账号的本课程偏好，可跨设备重新读取。",
+    "text": "头像已保存到当前账号的本课程偏好，可跨设备重新读取",
     "enabled": true,
     "optional": false,
     "page": "角色头像",
@@ -128,7 +128,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "avatar.uncertain": {
-    "text": "头像已保存，但最新显示未能读取。请重新读取确认，无需再次保存。",
+    "text": "头像已保存，但刚刚的读取失败了，请重新读取确认",
     "enabled": true,
     "optional": false,
     "page": "角色头像",
@@ -188,7 +188,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "assistant.boundary": {
-    "text": "每次只发送本次问题。记录仅保留在本次课程访问中；离开课程后清除。",
+    "text": "尽情向我提问吧~",
     "enabled": true,
     "optional": true,
     "page": "机器人",
@@ -200,7 +200,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "assistant.empty.title": {
-    "text": "从一个具体问题开始",
+    "text": "有什么可以帮到你的？",
     "enabled": true,
     "optional": true,
     "page": "机器人",
@@ -212,7 +212,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "assistant.empty.hint": {
-    "text": "说说你正在做什么、遇到了什么困难，以及已经尝试的方法。",
+    "text": "你最近在干什么呀",
     "enabled": true,
     "optional": true,
     "page": "机器人",
@@ -308,7 +308,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "assistant.failed": {
-    "text": "本次未取得回答",
+    "text": "哎呀，发送失败了，再试一次吧",
     "enabled": true,
     "optional": false,
     "page": "机器人",
@@ -320,7 +320,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "assistant.restore": {
-    "text": "将原问题放回输入框",
+    "text": "请将原问题放回输入框",
     "enabled": true,
     "optional": false,
     "page": "机器人",
@@ -360,7 +360,7 @@ export const uiCopy = {
     "sourceLine": 18
   },
   "system.platform.003": {
-    "text": "课程由老师分配。选择课程，进入它的学习空间。",
+    "text": "选择一门课程，开启学习之旅！",
     "enabled": true,
     "optional": true,
     "page": "platform",
@@ -402,7 +402,7 @@ export const uiCopy = {
     "sourceLine": 18
   },
   "system.platform.006": {
-    "text": "没有找到匹配课程，请清空搜索。",
+    "text": "没有找到匹配课程，是不是打错字了呀",
     "enabled": true,
     "optional": false,
     "page": "platform",
@@ -486,7 +486,7 @@ export const uiCopy = {
     "sourceLine": 23
   },
   "system.platform.012": {
-    "text": "进入课程，查看课时与学习任务。",
+    "text": "进入课程，查看课时与学习任务",
     "enabled": true,
     "optional": false,
     "page": "platform",
@@ -514,7 +514,7 @@ export const uiCopy = {
     "sourceLine": 24
   },
   "system.me.001": {
-    "text": "原位置暂不可访问，可返回课程地图。",
+    "text": "哎呀，这里出错啦，请返回课程地图",
     "enabled": true,
     "optional": false,
     "page": "me",
@@ -584,7 +584,7 @@ export const uiCopy = {
     "sourceLine": 20
   },
   "system.me.006": {
-    "text": "来源课程暂不可访问，请返回课程选择。",
+    "text": "哎呀，这里出错啦，请返回课程选择",
     "enabled": true,
     "optional": true,
     "page": "me",
@@ -1046,7 +1046,7 @@ export const uiCopy = {
     "sourceLine": 47
   },
   "system.map.012": {
-    "text": "这份附件暂不可用，请联系老师补充。你可以继续学习其他内容。",
+    "text": "这份附件暂不可用，请联系老师补充。你可以先继续学习其他内容哦",
     "enabled": true,
     "optional": false,
     "page": "map",
@@ -1060,7 +1060,7 @@ export const uiCopy = {
     "sourceLine": 50
   },
   "system.map.013": {
-    "text": "这份资料未能下载，请重试；若课程权限有变化，将重新确认。",
+    "text": "这份资料未能下载，请重试一下吧",
     "enabled": true,
     "optional": false,
     "page": "map",
@@ -1214,7 +1214,7 @@ export const uiCopy = {
     "sourceLine": 74
   },
   "system.map.024": {
-    "text": "老师尚未填写本课时说明。",
+    "text": "老师尚未填写本课时说明",
     "enabled": true,
     "optional": false,
     "page": "map",
@@ -1242,7 +1242,7 @@ export const uiCopy = {
     "sourceLine": 77
   },
   "system.map.026": {
-    "text": "请查看其他课时或联系老师。",
+    "text": "请查看其他课时或联系老师",
     "enabled": true,
     "optional": false,
     "page": "map",
@@ -1438,7 +1438,7 @@ export const uiCopy = {
     "sourceLine": 91
   },
   "system.map.040": {
-    "text": "本课时暂无作品任务，可进入课时学习。",
+    "text": "本课时暂无作品任务，可进入课时学习",
     "enabled": true,
     "optional": false,
     "page": "map",
@@ -1452,7 +1452,7 @@ export const uiCopy = {
     "sourceLine": 92
   },
   "system.map.041": {
-    "text": "作品提交与评审状态，在课时内单独查看。",
+    "text": "作品提交与评审状态，在课时内单独查看",
     "enabled": true,
     "optional": true,
     "page": "map",
@@ -1592,7 +1592,7 @@ export const uiCopy = {
     "sourceLine": 198
   },
   "system.map.051": {
-    "text": "老师尚未填写课程简介。",
+    "text": "老师尚未填写课程简介",
     "enabled": true,
     "optional": false,
     "page": "map",
@@ -1928,7 +1928,7 @@ export const uiCopy = {
     "sourceLine": 223
   },
   "system.map.075": {
-    "text": "这门课程还没有课时，请等待老师发布。",
+    "text": "这门课程还没有课时，请等待老师发布",
     "enabled": true,
     "optional": true,
     "page": "map",
@@ -1956,7 +1956,7 @@ export const uiCopy = {
     "sourceLine": 226
   },
   "system.map.077": {
-    "text": "路线表示学习顺序，可用课时都能进入。",
+    "text": "一起开启学习之旅~",
     "enabled": true,
     "optional": true,
     "page": "map",
@@ -2082,7 +2082,7 @@ export const uiCopy = {
     "sourceLine": 31
   },
   "system.learning.003": {
-    "text": "答案未能提交，请检查网络后再试。",
+    "text": "哎呀，答案提交失败了，请检查网络后再试",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2236,7 +2236,7 @@ export const uiCopy = {
     "sourceLine": 59
   },
   "system.learning.014": {
-    "text": "本题只有一次作答机会，提交后不能修改",
+    "text": "本题只有一次作答机会哦",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2334,7 +2334,7 @@ export const uiCopy = {
     "sourceLine": 64
   },
   "system.learning.021": {
-    "text": "导师暂未设置答案详解。",
+    "text": "导师暂未设置答案详解",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2404,7 +2404,7 @@ export const uiCopy = {
     "sourceLine": 65
   },
   "system.learning.026": {
-    "text": "导师暂未设置答案详解。",
+    "text": "导师暂未设置答案详解",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2418,7 +2418,7 @@ export const uiCopy = {
     "sourceLine": 65
   },
   "system.learning.027": {
-    "text": "填写后自动保存到本浏览器，按当前账号隔离。",
+    "text": "填写后自动保存到本浏览器，按当前账号隔离",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2432,7 +2432,7 @@ export const uiCopy = {
     "sourceLine": 75
   },
   "system.learning.028": {
-    "text": "已保存到当前浏览器，仅当前账号可恢复。附件不会保存在草稿中。",
+    "text": "已保存到当前浏览器，仅当前账号可恢复。附件不会保存在草稿中",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2446,7 +2446,7 @@ export const uiCopy = {
     "sourceLine": 97
   },
   "system.learning.029": {
-    "text": "草稿保存失败，请保留页面并复制填写内容；检查浏览器存储空间后重试。",
+    "text": "草稿保存失败，请保留页面并复制填写内容；检查浏览器存储空间后重试",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2460,7 +2460,7 @@ export const uiCopy = {
     "sourceLine": 99
   },
   "system.learning.030": {
-    "text": "课堂回放暂时无法播放，可能已移除或网络中断。请重试或联系导师，其他学习内容仍可继续。",
+    "text": "课堂回放暂时无法播放，可能已移除或网络中断。请重试或联系导师，其他学习内容仍可继续",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2488,7 +2488,7 @@ export const uiCopy = {
     "sourceLine": 112
   },
   "system.learning.032": {
-    "text": "原知识卡片已不可访问或尚未解锁，已返回课程地图。",
+    "text": "原知识卡片已不可访问或尚未解锁，已返回课程地图",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2502,7 +2502,7 @@ export const uiCopy = {
     "sourceLine": 123
   },
   "system.learning.033": {
-    "text": "已恢复当前浏览器中此账号的报告草稿。继续填写会自动保存在本浏览器。",
+    "text": "已恢复当前浏览器中此账号的报告草稿。继续填写会自动保存在本浏览器",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2516,7 +2516,7 @@ export const uiCopy = {
     "sourceLine": 134
   },
   "system.learning.034": {
-    "text": "草稿恢复失败，未能读取本浏览器中的记录；请核对并保留填写内容。",
+    "text": "草稿恢复失败，未能读取本浏览器中的记录；请核对并保留填写内容",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2530,7 +2530,7 @@ export const uiCopy = {
     "sourceLine": 135
   },
   "system.learning.035": {
-    "text": "来源课程已不可访问，已返回课程选择。",
+    "text": "来源课程已不可访问，已返回课程选择",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2544,7 +2544,7 @@ export const uiCopy = {
     "sourceLine": 143
   },
   "system.learning.036": {
-    "text": "来源课时已不可访问，已返回课程地图。",
+    "text": "来源课时已不可访问，已返回课程地图",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2558,7 +2558,7 @@ export const uiCopy = {
     "sourceLine": 143
   },
   "system.learning.037": {
-    "text": "无法加载本课时，请检查报名和发布状态。",
+    "text": "无法加载本课时，请检查报名和发布状态",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2586,7 +2586,7 @@ export const uiCopy = {
     "sourceLine": 159
   },
   "system.learning.039": {
-    "text": "未能确认课堂回顾，请重试。",
+    "text": "未能确认课堂回顾，请重试",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2628,7 +2628,7 @@ export const uiCopy = {
     "sourceLine": 171
   },
   "system.learning.042": {
-    "text": "未能完成本卡片，请重试。",
+    "text": "未能完成本卡片，请重试",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2684,7 +2684,7 @@ export const uiCopy = {
     "sourceLine": 190
   },
   "system.learning.046": {
-    "text": "提交后进入导师评审；若导师退回，可根据意见提交新版本。",
+    "text": "提交后进入导师评审；若导师退回，可根据意见提交新版本",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2712,7 +2712,7 @@ export const uiCopy = {
     "sourceLine": 196
   },
   "system.learning.048": {
-    "text": "报告已提交，但本地草稿未能清理。",
+    "text": "报告已提交，但本地草稿未能清理",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -2726,7 +2726,7 @@ export const uiCopy = {
     "sourceLine": 197
   },
   "system.learning.049": {
-    "text": "报告未能提交，填写内容仍保留，请检查网络后重试。",
+    "text": "报告未能提交，填写内容仍保留，请检查网络后重试",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -3132,7 +3132,7 @@ export const uiCopy = {
     "sourceLine": 242
   },
   "system.learning.078": {
-    "text": "回看课堂，整理观察。完成后由你确认，无需等待观看时长。",
+    "text": "回看课堂，整理观察。完成后由你确认，无需等待观看时长",
     "enabled": true,
     "optional": true,
     "page": "learning",
@@ -3202,7 +3202,7 @@ export const uiCopy = {
     "sourceLine": 244
   },
   "system.learning.083": {
-    "text": "回放文件未能播放，请重试或联系导师。其他学习内容仍可继续。",
+    "text": "回放文件未能播放，请重试或联系导师。可以先学习其他内容",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -3356,7 +3356,7 @@ export const uiCopy = {
     "sourceLine": 256
   },
   "system.learning.094": {
-    "text": "依次阅读、作答并确认完成。答错后可以查看解析，再继续学习。",
+    "text": "依次阅读、作答并确认完成。答错后可以查看解析，再继续学习",
     "enabled": true,
     "optional": true,
     "page": "learning",
@@ -3398,7 +3398,7 @@ export const uiCopy = {
     "sourceLine": 258
   },
   "system.learning.097": {
-    "text": "本阶段不会自动完成。请联系执行导师发布本课时的知识卡片后再继续。",
+    "text": "请联系执行导师发布本课时的知识卡片后再继续",
     "enabled": true,
     "optional": true,
     "page": "learning",
@@ -3468,7 +3468,7 @@ export const uiCopy = {
     "sourceLine": 264
   },
   "system.learning.102": {
-    "text": "本卡片没有配套练习，阅读后即可确认完成。",
+    "text": "本卡片没有配套练习，阅读后即可确认完成",
     "enabled": true,
     "optional": true,
     "page": "learning",
@@ -3566,7 +3566,7 @@ export const uiCopy = {
     "sourceLine": 274
   },
   "system.learning.109": {
-    "text": "记录学到了什么，以及你准备怎样改进。报告与作品分别提交、分别评审。",
+    "text": "记录学到了什么，以及你准备怎样改进。报告与作品会分别提交、分别评审",
     "enabled": true,
     "optional": true,
     "page": "learning",
@@ -3580,7 +3580,7 @@ export const uiCopy = {
     "sourceLine": 274
   },
   "system.learning.111": {
-    "text": "草稿不会上传服务器；换设备无法恢复。提交成功后清除本地草稿。",
+    "text": "草稿不会上传服务器；换设备无法恢复。提交成功后会清除本地草稿",
     "enabled": true,
     "optional": true,
     "page": "learning",
@@ -3692,7 +3692,7 @@ export const uiCopy = {
     "sourceLine": 283
   },
   "system.learning.119": {
-    "text": "提交后等待导师评审；退回后可按意见修改。",
+    "text": "提交后请等待导师评审；退回后可按意见修改",
     "enabled": true,
     "optional": true,
     "page": "learning",
@@ -3762,7 +3762,7 @@ export const uiCopy = {
     "sourceLine": 289
   },
   "system.learning.124": {
-    "text": "查看学习报告的反馈，再决定下一步。",
+    "text": "查看学习报告的反馈，再决定下一步",
     "enabled": true,
     "optional": true,
     "page": "learning",
@@ -3790,7 +3790,7 @@ export const uiCopy = {
     "sourceLine": 290
   },
   "system.learning.126": {
-    "text": "报告正在等待执行导师评审。你可以回看知识卡片、查看已提交的报告，或处理下方的作品任务。",
+    "text": "报告正在等待执行导师评审。你可以回看知识卡片、查看已提交的报告，或处理下方的作品任务",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -3804,7 +3804,7 @@ export const uiCopy = {
     "sourceLine": 290
   },
   "system.learning.127": {
-    "text": "请根据导师意见修改报告，再提交新版本。",
+    "text": "请根据导师意见修改报告，再提交新版本",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -3818,7 +3818,7 @@ export const uiCopy = {
     "sourceLine": 290
   },
   "system.learning.128": {
-    "text": "本版学习报告已通过。作品的提交与评审状态请在下方单独查看。",
+    "text": "本版学习报告已通过。作品的提交与评审状态请在下方单独查看",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -3832,7 +3832,7 @@ export const uiCopy = {
     "sourceLine": 290
   },
   "system.learning.129": {
-    "text": "完成前三个阶段后进入导师评审。",
+    "text": "完成前三个阶段后进入导师评审",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -3902,7 +3902,7 @@ export const uiCopy = {
     "sourceLine": 291
   },
   "system.learning.134": {
-    "text": "导师暂未留下评语。",
+    "text": "导师暂未留下评语，请耐心等待~",
     "enabled": true,
     "optional": false,
     "page": "learning",
@@ -3986,7 +3986,7 @@ export const uiCopy = {
     "sourceLine": 292
   },
   "system.workUpload.001": {
-    "text": "文字草稿自动保存到当前浏览器，按账号与任务隔离；附件不保存。",
+    "text": "文字草稿自动保存到当前浏览器，按账号与任务隔离；附件不保存",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4000,7 +4000,7 @@ export const uiCopy = {
     "sourceLine": 28
   },
   "system.workUpload.002": {
-    "text": "无法恢复本地草稿，请重新填写；原附件需要重新选择。",
+    "text": "无法恢复本地草稿，请重新填写；原附件需要重新选择",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4014,7 +4014,7 @@ export const uiCopy = {
     "sourceLine": 40
   },
   "system.workUpload.003": {
-    "text": "文字草稿已保存到当前浏览器，仅当前账号可恢复；附件请在提交前选择。",
+    "text": "文字草稿已保存到当前浏览器，仅当前账号可恢复；附件请在提交前选择",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4028,7 +4028,7 @@ export const uiCopy = {
     "sourceLine": 44
   },
   "system.workUpload.004": {
-    "text": "草稿保存失败，请复制文字留存，再检查浏览器存储权限或空间。",
+    "text": "草稿保存失败，请复制文字留存，再检查浏览器存储权限或空间",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4042,7 +4042,7 @@ export const uiCopy = {
     "sourceLine": 45
   },
   "system.workUpload.005": {
-    "text": "请填写成果文字或选择附件，至少提供一项。",
+    "text": "请填写成果文字或选择附件，至少提供一项",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4070,7 +4070,7 @@ export const uiCopy = {
     "sourceLine": 60
   },
   "system.workUpload.007": {
-    "text": "提交或附件上传失败，文字和已选附件仍保留在本页面，请检查网络后重试。",
+    "text": "提交或附件上传失败，文字和已选附件仍保留在本页面，请检查网络后重试",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4112,7 +4112,7 @@ export const uiCopy = {
     "sourceLine": 65
   },
   "system.workUpload.010": {
-    "text": "给作品起一个名字，用文字或附件展示你的探索。",
+    "text": "给作品起一个名字，用文字或附件展示你的探索",
     "enabled": true,
     "optional": true,
     "page": "workUpload",
@@ -4140,7 +4140,7 @@ export const uiCopy = {
     "sourceLine": 66
   },
   "system.workUpload.012": {
-    "text": "只有最新版本被导师退回后才可重新提交。请返回课时查看评审状态。",
+    "text": "只有最新版本被导师退回后才可重新提交。请返回课时查看评审状态",
     "enabled": true,
     "optional": true,
     "page": "workUpload",
@@ -4210,7 +4210,7 @@ export const uiCopy = {
     "sourceLine": 70
   },
   "system.workUpload.018": {
-    "text": "说明你做了什么、依据是什么，以及改进的过程。",
+    "text": "说明你做了什么、依据是什么，以及改进的过程",
     "enabled": true,
     "optional": true,
     "page": "workUpload",
@@ -4252,7 +4252,7 @@ export const uiCopy = {
     "sourceLine": 72
   },
   "system.workUpload.021": {
-    "text": "一次提交 1 个文件，最大 100 MB。附件不会保存在浏览器草稿中。",
+    "text": "一次提交 1 个文件，最大 100 MB。附件不会保存在浏览器草稿中",
     "enabled": true,
     "optional": true,
     "page": "workUpload",
@@ -4280,7 +4280,7 @@ export const uiCopy = {
     "sourceLine": 72
   },
   "system.workUpload.023": {
-    "text": "支持 JPG、JPEG、PNG、GIF、WebP、MP4、WebM、PDF、DOC、DOCX、PPT、PPTX、ZIP、OBJ、GLB、GLTF、STL；文件类型、内容和大小由服务器检查。",
+    "text": "支持 JPG、JPEG、PNG、GIF、WebP、MP4、WebM、PDF、DOC、DOCX、PPT、PPTX、ZIP、OBJ、GLB、GLTF、STL；文件类型、内容和大小由服务器检查",
     "enabled": true,
     "optional": true,
     "page": "workUpload",
@@ -4322,7 +4322,7 @@ export const uiCopy = {
     "sourceLine": 76
   },
   "system.workUpload.026": {
-    "text": "提交后等待导师评审；学习报告需在课时中单独提交。",
+    "text": "提交后等待导师评审；学习报告需在课时中单独提交",
     "enabled": true,
     "optional": true,
     "page": "workUpload",
@@ -4518,7 +4518,7 @@ export const uiCopy = {
     "sourceLine": 78
   },
   "system.workUpload.040": {
-    "text": "是否接受提交以服务器校验为准。",
+    "text": "是否接受提交以服务器校验为准",
     "enabled": true,
     "optional": true,
     "page": "workUpload",
@@ -4532,7 +4532,7 @@ export const uiCopy = {
     "sourceLine": 78
   },
   "system.workUpload.041": {
-    "text": "请从课时中的任务入口提交作品。",
+    "text": "请从课时中的任务入口提交作品",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4574,7 +4574,7 @@ export const uiCopy = {
     "sourceLine": 90
   },
   "system.workUpload.044": {
-    "text": "根据导师意见改进，保留每一次探索的版本。",
+    "text": "根据导师意见改进，保留每一次探索的版本",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4588,7 +4588,7 @@ export const uiCopy = {
     "sourceLine": 90
   },
   "system.workUpload.045": {
-    "text": "把你的观察、方案和验证过程整理成作品。",
+    "text": "把你的观察、方案和验证过程整理成作品",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4616,7 +4616,7 @@ export const uiCopy = {
     "sourceLine": 90
   },
   "system.workUpload.047": {
-    "text": "网络连接失败，请检查连接后重新加载。",
+    "text": "哎呀，网络连接失败了",
     "enabled": true,
     "optional": false,
     "page": "workUpload",
@@ -4658,7 +4658,7 @@ export const uiCopy = {
     "sourceLine": 28
   },
   "system.works.003": {
-    "text": "从一次尝试到一次改进，每个版本都有自己的记录。",
+    "text": "精益求精，止于至善",
     "enabled": true,
     "optional": true,
     "page": "works",
@@ -4686,7 +4686,7 @@ export const uiCopy = {
     "sourceLine": 28
   },
   "system.works.005": {
-    "text": "筛选课程已不可访问，相关作品已清除。",
+    "text": "筛选课程已不可访问，相关作品已清除",
     "enabled": true,
     "optional": false,
     "page": "works",
@@ -4728,7 +4728,7 @@ export const uiCopy = {
     "sourceLine": 30
   },
   "system.works.008": {
-    "text": "按名称或课程找到自己的提交。",
+    "text": "按名称或课程找到自己提交的作品",
     "enabled": true,
     "optional": false,
     "page": "works",
@@ -4938,7 +4938,7 @@ export const uiCopy = {
     "sourceLine": 19
   },
   "system.workDetail.007": {
-    "text": "作品未关联当前可访问的课程，请联系老师核对。",
+    "text": "作品未关联当前可访问的课程，请联系老师核对",
     "enabled": true,
     "optional": false,
     "page": "workDetail",
@@ -4952,7 +4952,7 @@ export const uiCopy = {
     "sourceLine": 29
   },
   "system.workDetail.008": {
-    "text": "该作品所属课程已不可访问，作品内容已清除。请返回探索地图查看可进入的课程。",
+    "text": "该作品所属课程已不可访问，作品内容已清除。请返回探索地图查看可进入的课程",
     "enabled": true,
     "optional": false,
     "page": "workDetail",
@@ -5036,7 +5036,7 @@ export const uiCopy = {
     "sourceLine": 51
   },
   "system.workDetail.014": {
-    "text": "附件暂不可用，文件可能已移除。你仍可查看作品文字、历史版本和导师反馈。",
+    "text": "附件暂不可用，文件可能已移除。你仍可查看作品文字、历史版本和导师反馈",
     "enabled": true,
     "optional": false,
     "page": "workDetail",
@@ -5050,7 +5050,7 @@ export const uiCopy = {
     "sourceLine": 54
   },
   "system.workDetail.015": {
-    "text": "附件下载失败，请检查网络后重试。作品内容仍保留在本页。",
+    "text": "附件下载失败，请检查网络后重试。作品内容仍保留在本页",
     "enabled": true,
     "optional": false,
     "page": "workDetail",
@@ -5120,7 +5120,7 @@ export const uiCopy = {
     "sourceLine": 60
   },
   "system.workDetail.020": {
-    "text": "网络连接失败，请检查连接后重新加载。",
+    "text": "网络连接失败，请检查连接后重新加载",
     "enabled": true,
     "optional": false,
     "page": "workDetail",
@@ -5148,7 +5148,7 @@ export const uiCopy = {
     "sourceLine": 64
   },
   "system.workDetail.022": {
-    "text": "每一次提交都保留自己的内容和反馈。",
+    "text": "每一次提交都保留自己的内容和反馈",
     "enabled": true,
     "optional": true,
     "page": "workDetail",
@@ -5218,7 +5218,7 @@ export const uiCopy = {
     "sourceLine": 67
   },
   "system.workDetail.029": {
-    "text": "已有更新版本，请在版本记录中切换查看。旧版本不再开放重新提交。",
+    "text": "已有更新版本，请在版本记录中切换查看",
     "enabled": true,
     "optional": true,
     "page": "workDetail",
@@ -5232,7 +5232,7 @@ export const uiCopy = {
     "sourceLine": 67
   },
   "system.workDetail.030": {
-    "text": "本版未填写成果文字，请查看附件。",
+    "text": "本版未填写成果文字，请查看附件",
     "enabled": true,
     "optional": false,
     "page": "workDetail",
@@ -5358,7 +5358,7 @@ export const uiCopy = {
     "sourceLine": 72
   },
   "system.workDetail.039": {
-    "text": "本版没有附件，作品以成果文字提交。",
+    "text": "本版没有附件，作品以成果文字提交",
     "enabled": true,
     "optional": true,
     "page": "workDetail",
@@ -5428,7 +5428,7 @@ export const uiCopy = {
     "sourceLine": 80
   },
   "system.workDetail.044": {
-    "text": "导师暂未留下评语。",
+    "text": "导师暂未留下评语，请耐心等候~",
     "enabled": true,
     "optional": false,
     "page": "workDetail",
@@ -5484,7 +5484,7 @@ export const uiCopy = {
     "sourceLine": 82
   },
   "system.workDetail.048": {
-    "text": "作品正在等待导师评审",
+    "text": "作品正在等待导师评审中……",
     "enabled": true,
     "optional": false,
     "page": "workDetail",
@@ -5512,7 +5512,7 @@ export const uiCopy = {
     "sourceLine": 83
   },
   "system.workDetail.050": {
-    "text": "可以回到课时继续学习；报告与作品的评审分别进行。",
+    "text": "可以回到课时继续学习；报告与作品的评审分别进行",
     "enabled": true,
     "optional": true,
     "page": "workDetail",
@@ -5652,7 +5652,7 @@ export const uiCopy = {
     "sourceLine": 88
   },
   "system.workDetail.060": {
-    "text": "只有最新版本被导师退回，才可以提交修改后的作品。历史版本与原反馈会保留。",
+    "text": "只有最新版本被导师退回，才可以提交修改后的作品。历史版本与原反馈会保留",
     "enabled": true,
     "optional": true,
     "page": "workDetail",
@@ -5792,7 +5792,7 @@ export const uiCopy = {
     "sourceLine": 17
   },
   "system.lab.010": {
-    "text": "先提出想法，再用实验验证。在当前课程的实验室自由尝试，不要求先进入课时。",
+    "text": "先提出想法，再用实验验证。可以在当前课程的实验室自由尝试",
     "enabled": true,
     "optional": true,
     "page": "lab",
@@ -5862,7 +5862,7 @@ export const uiCopy = {
     "sourceLine": 24
   },
   "system.lab.015": {
-    "text": "机翼、重心、速度、质量与尾翼，共 7 项参数。",
+    "text": "机翼、重心、速度、质量与尾翼，共 7 项参数",
     "enabled": true,
     "optional": false,
     "page": "lab",
@@ -5890,7 +5890,7 @@ export const uiCopy = {
     "sourceLine": 24
   },
   "system.lab.017": {
-    "text": "6 项数值指标、三维航迹与飞行遥测图。每次试飞保留独立记录。",
+    "text": "6 项数值指标、三维航迹与飞行遥测图。每次试飞保留独立记录",
     "enabled": true,
     "optional": false,
     "page": "lab",
@@ -5932,7 +5932,7 @@ export const uiCopy = {
     "sourceLine": 28
   },
   "system.lab.020": {
-    "text": "实验结果不会自动提交为作品，也不会自动完成课时。从课程进入时，可以返回原来的学习位置。",
+    "text": "实验结果不会自动提交为作品哦",
     "enabled": true,
     "optional": true,
     "page": "lab",
@@ -5960,7 +5960,7 @@ export const uiCopy = {
     "sourceLine": 18
   },
   "system.flight.002": {
-    "text": "文件可能已移除或网络中断。其他数值和图表仍可查看。",
+    "text": "文件可能已移除或网络中断。其他数值和图表仍可查看",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6044,7 +6044,7 @@ export const uiCopy = {
     "sourceLine": 33
   },
   "system.flight.008": {
-    "text": "这是本条记录提交时的参数；参数编辑区的修改尚未用于本次结果。",
+    "text": "这是本条记录提交时的参数；参数编辑区的修改尚未用于本次结果",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6072,7 +6072,7 @@ export const uiCopy = {
     "sourceLine": 36
   },
   "system.flight.010": {
-    "text": "先调整参数，再点击「开始试飞」。",
+    "text": "先调整参数，再点击「开始试飞」",
     "enabled": true,
     "optional": false,
     "page": "flight",
@@ -6086,7 +6086,7 @@ export const uiCopy = {
     "sourceLine": 36
   },
   "system.flight.011": {
-    "text": "结果将保存在下方的试飞记录中。",
+    "text": "结果将保存在下方的试飞记录中",
     "enabled": true,
     "optional": false,
     "page": "flight",
@@ -6128,7 +6128,7 @@ export const uiCopy = {
     "sourceLine": 37
   },
   "system.flight.014": {
-    "text": "已停止自动读取。后台可能仍在计算，你可以重新读取这条记录。重读不会再次提交试飞。",
+    "text": "已停止自动读取。后台可能仍在计算，你可以重新读取这条记录",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6170,7 +6170,7 @@ export const uiCopy = {
     "sourceLine": 38
   },
   "system.flight.017": {
-    "text": "已连续 3 次读取失败。后台可能仍在计算，请重试读取。",
+    "text": "已连续 3 次读取失败。后台可能仍在计算，请重试读取",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6268,7 +6268,7 @@ export const uiCopy = {
     "sourceLine": 40
   },
   "system.flight.024": {
-    "text": "秒，每 2 秒读取一次状态。",
+    "text": "秒，每 2 秒读取一次状态",
     "enabled": true,
     "optional": false,
     "page": "flight",
@@ -6282,7 +6282,7 @@ export const uiCopy = {
     "sourceLine": 40
   },
   "system.flight.025": {
-    "text": "计算结果将保存到你的账号，可以稍后从历史记录查看。",
+    "text": "计算结果将保存到你的账号，可以稍后从历史记录查看",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6310,7 +6310,7 @@ export const uiCopy = {
     "sourceLine": 41
   },
   "system.flight.027": {
-    "text": "模拟引擎异常，请稍后再试。",
+    "text": "模拟引擎异常，请稍后再试",
     "enabled": true,
     "optional": false,
     "page": "flight",
@@ -6366,7 +6366,7 @@ export const uiCopy = {
     "sourceLine": 43
   },
   "system.flight.031": {
-    "text": "本次可查看数值和图表。观察变化，再决定下一次要调整什么。",
+    "text": "本次可查看数值和图表。观察变化，再决定下一次要调整什么",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6492,7 +6492,7 @@ export const uiCopy = {
     "sourceLine": 74
   },
   "system.flight.040": {
-    "text": "改变一个条件，观察一次飞行。让结果帮助你调整下一次尝试。",
+    "text": "改变一个条件，观察一次飞行。让结果帮助你调整下一次尝试",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6590,7 +6590,7 @@ export const uiCopy = {
     "sourceLine": 78
   },
   "system.flight.047": {
-    "text": "无需选择课程，可独立试飞；也可按需关联课程。",
+    "text": "无需选择课程，可独立试飞",
     "enabled": true,
     "optional": false,
     "page": "flight",
@@ -6604,7 +6604,7 @@ export const uiCopy = {
     "sourceLine": 78
   },
   "system.flight.048": {
-    "text": "试飞结果保存到你的账号，不会自动提交作品或完成课时。",
+    "text": "试飞结果将保存到你的账号",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6632,7 +6632,7 @@ export const uiCopy = {
     "sourceLine": 81
   },
   "system.flight.050": {
-    "text": "这里是正在编辑的参数。",
+    "text": "这里是正在编辑的参数",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6646,7 +6646,7 @@ export const uiCopy = {
     "sourceLine": 81
   },
   "system.flight.051": {
-    "text": "实验环境就绪，可以开始试飞。",
+    "text": "实验环境就绪，可以开始试飞",
     "enabled": true,
     "optional": false,
     "page": "flight",
@@ -6730,7 +6730,7 @@ export const uiCopy = {
     "sourceLine": 87
   },
   "system.flight.057": {
-    "text": "来自课程的实验保留原学习位置。",
+    "text": "来自课程的实验保留原学习位置",
     "enabled": true,
     "optional": false,
     "page": "flight",
@@ -6744,7 +6744,7 @@ export const uiCopy = {
     "sourceLine": 87
   },
   "system.flight.058": {
-    "text": "留空为独立实验；选择后本次试飞才会关联课程。",
+    "text": "留空为独立实验；选择后本次试飞才会关联课程",
     "enabled": true,
     "optional": false,
     "page": "flight",
@@ -6856,7 +6856,7 @@ export const uiCopy = {
     "sourceLine": 90
   },
   "system.flight.066": {
-    "text": "提交后将使用当前参数进行一次新试飞。",
+    "text": "提交后将使用当前参数进行一次新试飞",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6884,7 +6884,7 @@ export const uiCopy = {
     "sourceLine": 93
   },
   "system.flight.068": {
-    "text": "每次试飞都有自己的记录，结果与编辑区分开保存。",
+    "text": "每次试飞都有自己的记录，结果与编辑区分开保存",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -6926,7 +6926,7 @@ export const uiCopy = {
     "sourceLine": 96
   },
   "system.flight.071": {
-    "text": "选择一条查看当时的结果，不会更改正在编辑的参数。",
+    "text": "选择一条查看当时的结果，不会更改正在编辑的参数",
     "enabled": true,
     "optional": true,
     "page": "flight",
@@ -7108,7 +7108,7 @@ export const uiCopy = {
     "sourceLine": 35
   },
   "system.archive.002": {
-    "text": "参与记录不等于完成记录；完成日期仅在老师或系统已有记录时显示。",
+    "text": "参与记录不等于完成记录；完成日期仅在老师或系统已有记录时显示",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7164,7 +7164,7 @@ export const uiCopy = {
     "sourceLine": 36
   },
   "system.archive.006": {
-    "text": "暂无当前可展示的课程记录。",
+    "text": "暂无当前可展示的课程记录",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7178,7 +7178,7 @@ export const uiCopy = {
     "sourceLine": 36
   },
   "system.archive.007": {
-    "text": "课程参与记录暂未读取，下方仍可查看已核验课程的课时。",
+    "text": "课程参与记录暂未读取，下方仍可查看已核验课程的课时",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7220,7 +7220,7 @@ export const uiCopy = {
     "sourceLine": 37
   },
   "system.archive.010": {
-    "text": "先选课程，再选课时。每份报告的状态独立保留。",
+    "text": "先选课程，再选课时。每份报告的状态独立保留",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7234,7 +7234,7 @@ export const uiCopy = {
     "sourceLine": 37
   },
   "system.archive.011": {
-    "text": "所选课程已不可访问，请重新选择。",
+    "text": "所选课程已不可访问，请重新选择",
     "enabled": true,
     "optional": false,
     "page": "archive",
@@ -7276,7 +7276,7 @@ export const uiCopy = {
     "sourceLine": 39
   },
   "system.archive.014": {
-    "text": "尚未选择课程。选择后可浏览课时，查看报告和导师意见。",
+    "text": "尚未选择课程。选择后可浏览课时，查看报告和导师意见",
     "enabled": true,
     "optional": false,
     "page": "archive",
@@ -7290,7 +7290,7 @@ export const uiCopy = {
     "sourceLine": 40
   },
   "system.archive.015": {
-    "text": "暂无可进入的课程，请联系老师确认课程安排。",
+    "text": "暂无可进入的课程，请联系老师确认课程安排",
     "enabled": true,
     "optional": false,
     "page": "archive",
@@ -7318,7 +7318,7 @@ export const uiCopy = {
     "sourceLine": 44
   },
   "system.archive.017": {
-    "text": "课程评价、报告评审与作品评审分别记录，不合成为总分。",
+    "text": "课程评价、报告评审与作品评审会分别记录",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7444,7 +7444,7 @@ export const uiCopy = {
     "sourceLine": 46
   },
   "system.archive.026": {
-    "text": "暂无评语。",
+    "text": "暂无评语",
     "enabled": true,
     "optional": false,
     "page": "archive",
@@ -7458,7 +7458,7 @@ export const uiCopy = {
     "sourceLine": 46
   },
   "system.archive.027": {
-    "text": "暂无课程评价。",
+    "text": "暂无课程评价",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7486,7 +7486,7 @@ export const uiCopy = {
     "sourceLine": 47
   },
   "system.archive.029": {
-    "text": "按课时查看最新报告的评语与实际评分。",
+    "text": "按课时查看最新报告的评语与实际评分",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7528,7 +7528,7 @@ export const uiCopy = {
     "sourceLine": 47
   },
   "system.archive.032": {
-    "text": "打开具体版本，查看导师评语、修改建议和五项评分。",
+    "text": "打开具体版本，查看导师评语、修改建议和五项评分",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7570,7 +7570,7 @@ export const uiCopy = {
     "sourceLine": 49
   },
   "system.archive.035": {
-    "text": "仅汇总作品评审，不代表固定能力标签，也不用于同学排名。",
+    "text": "仅汇总作品评审，不代表固定能力标签，也不用于同学排名",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7598,7 +7598,7 @@ export const uiCopy = {
     "sourceLine": 50
   },
   "system.archive.037": {
-    "text": "现有汇总包含不在当前展示范围内的作品。请进入可查看的作品，阅读单次评审。",
+    "text": "现有汇总包含不在当前展示范围内的作品。请进入可查看的作品，阅读单次评审",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7640,7 +7640,7 @@ export const uiCopy = {
     "sourceLine": 54
   },
   "system.archive.040": {
-    "text": "保留实际提交、反思和导师记录；一次作品提交不重复计入。",
+    "text": "保留实际提交、反思和导师记录；一次作品提交不重复计入",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7668,7 +7668,7 @@ export const uiCopy = {
     "sourceLine": 55
   },
   "system.archive.042": {
-    "text": "这些系统记录缺少可靠的对象关联，暂时无法确认所属课程。已关联的记录仍可查看。",
+    "text": "这些系统记录缺少可靠的对象关联，暂时无法确认所属课程。已关联的记录仍可查看",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7724,7 +7724,7 @@ export const uiCopy = {
     "sourceLine": 56
   },
   "system.archive.046": {
-    "text": "还没有可展示的成长足迹，继续学习，留下你的第一次记录。",
+    "text": "还没有可展示的成长足迹，继续学习，留下你的第一次记录",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -7766,7 +7766,7 @@ export const uiCopy = {
     "sourceLine": 59
   },
   "system.archive.049": {
-    "text": "回看参与、作品与反馈，找到下一次改进的方向。",
+    "text": "回看参与、作品与反馈，找到下一次改进的方向",
     "enabled": true,
     "optional": true,
     "page": "archive",
@@ -8046,7 +8046,7 @@ export const uiCopy = {
     "sourceLine": 68
   },
   "system.archive.069": {
-    "text": "课程相关记录仅展示当前可进入的课程；仅展示本课程有明确关联的记录；未关联的历史记录不会自动归入本课程。",
+    "text": "课程相关记录仅展示当前可进入的课程；仅展示本课程有明确关联的记录；未关联的历史记录不会自动归入本课程",
     "enabled": true,
     "optional": false,
     "page": "archive",
@@ -8144,7 +8144,7 @@ export const uiCopy = {
     "sourceLine": 74
   },
   "system.archive.076": {
-    "text": "这部分档案尚未读取，请重试档案。",
+    "text": "这部分档案尚未读取，请重试档案",
     "enabled": true,
     "optional": false,
     "page": "archive",
@@ -8158,7 +8158,7 @@ export const uiCopy = {
     "sourceLine": 75
   },
   "system.reports.001": {
-    "text": "课时归属发生变化，请重新选择。",
+    "text": "课时归属发生变化，请重新选择",
     "enabled": true,
     "optional": false,
     "page": "reports",
@@ -8242,7 +8242,7 @@ export const uiCopy = {
     "sourceLine": 29
   },
   "system.reports.007": {
-    "text": "暂无导师评语。",
+    "text": "暂无导师评语",
     "enabled": true,
     "optional": false,
     "page": "reports",
@@ -8354,7 +8354,7 @@ export const uiCopy = {
     "sourceLine": 30
   },
   "system.reports.015": {
-    "text": "这里显示最新报告，不是完整版本历史。作品状态请在「作品与迭代」中查看。",
+    "text": "这里显示最新报告，不是完整版本历史。作品状态请在「作品与迭代」中查看",
     "enabled": true,
     "optional": true,
     "page": "reports",
@@ -8368,7 +8368,7 @@ export const uiCopy = {
     "sourceLine": 31
   },
   "system.reports.016": {
-    "text": "可以回到课时整理学习报告。",
+    "text": "可以回到课时整理学习报告",
     "enabled": true,
     "optional": false,
     "page": "reports",
@@ -8382,7 +8382,7 @@ export const uiCopy = {
     "sourceLine": 32
   },
   "system.reports.017": {
-    "text": "完成课堂回顾、全部知识卡片与配套练习后才能提交报告。",
+    "text": "完成课堂回顾、全部知识卡片与配套练习后才能提交报告",
     "enabled": true,
     "optional": false,
     "page": "reports",
@@ -8452,7 +8452,7 @@ export const uiCopy = {
     "sourceLine": 43
   },
   "system.reports.022": {
-    "text": "这门课程还没有课时。",
+    "text": "这门课程还没有具体的课",
     "enabled": true,
     "optional": true,
     "page": "reports",
@@ -8466,7 +8466,7 @@ export const uiCopy = {
     "sourceLine": 44
   },
   "system.reports.023": {
-    "text": "选择一个课时，查看真实学习进度、最新报告与评审。没有作品任务的课时也可以查看。",
+    "text": "选择一个课时，查看真实学习进度、最新报告与评审。没有作品任务的课时也可以查看",
     "enabled": true,
     "optional": true,
     "page": "reports",
@@ -8480,7 +8480,7 @@ export const uiCopy = {
     "sourceLine": 44
   },
   "system.records.001": {
-    "text": "暂无作品记录；完成课时中的作品任务后会出现在这里。",
+    "text": "暂无作品记录；完成课时中的作品任务后会出现在这里",
     "enabled": true,
     "optional": true,
     "page": "records",
@@ -8648,7 +8648,7 @@ export const uiCopy = {
     "sourceLine": 28
   },
   "system.reflection.001": {
-    "text": "网络连接失败，请重试；本页文字仍然保留。",
+    "text": "网络连接失败，请重试；",
     "enabled": true,
     "optional": false,
     "page": "reflection",
@@ -8662,7 +8662,7 @@ export const uiCopy = {
     "sourceLine": 16
   },
   "system.reflection.002": {
-    "text": "所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程。",
+    "text": "所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程",
     "enabled": true,
     "optional": false,
     "page": "reflection",
@@ -8676,7 +8676,7 @@ export const uiCopy = {
     "sourceLine": 36
   },
   "system.reflection.003": {
-    "text": "所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程。",
+    "text": "所选课程已不可访问，已清除课程与课时关联。反思文字仍保留，请重新选择课程",
     "enabled": true,
     "optional": false,
     "page": "reflection",
@@ -8690,7 +8690,7 @@ export const uiCopy = {
     "sourceLine": 69
   },
   "system.reflection.004": {
-    "text": "暂时无法核验课程，请重试。反思尚未提交，文字仍保留。",
+    "text": "暂时无法核验课程，请重试。反思尚未提交，文字仍保留",
     "enabled": true,
     "optional": false,
     "page": "reflection",
@@ -8704,7 +8704,7 @@ export const uiCopy = {
     "sourceLine": 100
   },
   "system.reflection.005": {
-    "text": "课程关联已失效，请重新选择后提交。",
+    "text": "课程关联已失效，请重新选择后提交",
     "enabled": true,
     "optional": false,
     "page": "reflection",
@@ -8718,7 +8718,7 @@ export const uiCopy = {
     "sourceLine": 102
   },
   "system.reflection.006": {
-    "text": "课程选择发生变化，请核对后再次提交。",
+    "text": "课程选择发生变化，请核对后再次提交",
     "enabled": true,
     "optional": false,
     "page": "reflection",
@@ -8760,7 +8760,7 @@ export const uiCopy = {
     "sourceLine": 112
   },
   "system.reflection.010": {
-    "text": "记下困难、尝试与发现，为下一步留下线索。",
+    "text": "记下困难、尝试与发现，为下一步留下线索",
     "enabled": true,
     "optional": true,
     "page": "reflection",
@@ -8844,7 +8844,7 @@ export const uiCopy = {
     "sourceLine": 114
   },
   "system.reflection.016": {
-    "text": "课程必选，课时可选；请用自己的话记录。",
+    "text": "课程必选，课时可选；请用自己的话记录",
     "enabled": true,
     "optional": true,
     "page": "reflection",
@@ -8900,7 +8900,7 @@ export const uiCopy = {
     "sourceLine": 117
   },
   "system.reflection.020": {
-    "text": "请联系老师确认课程安排。已填写文字保留在当前页面。",
+    "text": "请联系老师确认课程安排。已填写文字保留在当前页面",
     "enabled": true,
     "optional": true,
     "page": "reflection",
@@ -9180,7 +9180,7 @@ export const uiCopy = {
     "sourceLine": 124
   },
   "system.reflection.040": {
-    "text": "当前文字仅在本页保留，离开或刷新页面会丢失。提交成功后才保存到服务端。",
+    "text": "当前文字仅在本页保留，离开或刷新页面会丢失。提交成功后才保存到服务端",
     "enabled": true,
     "optional": true,
     "page": "reflection",
@@ -9222,7 +9222,7 @@ export const uiCopy = {
     "sourceLine": 127
   },
   "system.reflection.043": {
-    "text": "反思不需要标准答案，记录你的实际尝试和下一步计划。",
+    "text": "反思不需要标准答案，记录你的实际尝试和下一步计划",
     "enabled": true,
     "optional": true,
     "page": "reflection",
@@ -9250,7 +9250,7 @@ export const uiCopy = {
     "sourceLine": 127
   },
   "system.reflection.045": {
-    "text": "独立反思日志每天可提交一次，以北京时间为准。当天学习报告中提交的反思也可能占用这次额度；是否可提交由服务器判断。",
+    "text": "独立反思日志每天可提交一次，以北京时间为准。当天学习报告中提交的反思也可能占用这次额度；是否可提交由服务器判断",
     "enabled": true,
     "optional": true,
     "page": "reflection",
@@ -9264,7 +9264,7 @@ export const uiCopy = {
     "sourceLine": 127
   },
   "system.reflection.046": {
-    "text": "课程报告仍从课时学习页面提交。这里不会代替或完成报告任务。",
+    "text": "课程报告仍从课时学习页面提交。这里不会代替或完成报告任务",
     "enabled": true,
     "optional": true,
     "page": "reflection",
@@ -9292,7 +9292,7 @@ export const uiCopy = {
     "sourceLine": 31
   },
   "system.review.002": {
-    "text": "课后回看课堂内容，查找资料与提交记录。",
+    "text": "课后回看课堂内容，查找资料与提交记录",
     "enabled": true,
     "optional": false,
     "page": "review",
@@ -9362,7 +9362,7 @@ export const uiCopy = {
     "sourceLine": 34
   },
   "system.review.007": {
-    "text": "暂无课程简介，请结合课堂内容与资料学习。",
+    "text": "暂无课程简介，请结合课堂内容与资料学习",
     "enabled": true,
     "optional": false,
     "page": "review",
@@ -9390,7 +9390,7 @@ export const uiCopy = {
     "sourceLine": 35
   },
   "system.review.009": {
-    "text": "按需下载老师提供的资料。",
+    "text": "按需下载老师提供的资料",
     "enabled": true,
     "optional": true,
     "page": "review",
@@ -9516,7 +9516,7 @@ export const uiCopy = {
     "sourceLine": 36
   },
   "system.review.018": {
-    "text": "这份资料暂未提供文件。",
+    "text": "这份资料暂未提供文件",
     "enabled": true,
     "optional": true,
     "page": "review",
@@ -9530,7 +9530,7 @@ export const uiCopy = {
     "sourceLine": 37
   },
   "system.review.019": {
-    "text": "暂无课堂资料。",
+    "text": "暂无课堂资料",
     "enabled": true,
     "optional": true,
     "page": "review",
@@ -9558,7 +9558,7 @@ export const uiCopy = {
     "sourceLine": 39
   },
   "system.review.021": {
-    "text": "从原课时入口继续学习。",
+    "text": "从原课时入口继续学习",
     "enabled": true,
     "optional": true,
     "page": "review",
@@ -9628,7 +9628,7 @@ export const uiCopy = {
     "sourceLine": 40
   },
   "system.review.026": {
-    "text": "暂无课后任务。其他学习内容可从课程地图进入。",
+    "text": "暂无课后任务。其他学习内容可从课程地图进入",
     "enabled": true,
     "optional": true,
     "page": "review",
@@ -9656,7 +9656,7 @@ export const uiCopy = {
     "sourceLine": 58
   },
   "system.review.029": {
-    "text": "作品及其版本记录，报告仍在课时学习页。",
+    "text": "作品及其版本记录，报告仍在课时学习页",
     "enabled": true,
     "optional": true,
     "page": "review",
@@ -9726,7 +9726,7 @@ export const uiCopy = {
     "sourceLine": 60
   },
   "system.review.034": {
-    "text": "播放地址不可用，请重新读取。",
+    "text": "播放地址不可用，请重新读取",
     "enabled": true,
     "optional": false,
     "page": "review",
@@ -9740,7 +9740,7 @@ export const uiCopy = {
     "sourceLine": 90
   },
   "system.review.035": {
-    "text": "视频暂时无法播放，地址可能已过期，或文件、网络暂不可用。请重新获取播放地址。",
+    "text": "坏了，视频暂时无法播放，唉",
     "enabled": true,
     "optional": false,
     "page": "review",
@@ -9768,7 +9768,7 @@ export const uiCopy = {
     "sourceLine": 99
   },
   "system.review.037": {
-    "text": "按需打开回放，播放不会自动完成课时。",
+    "text": "按需打开回放，播放不会自动完成课时",
     "enabled": true,
     "optional": true,
     "page": "review",
@@ -9908,7 +9908,7 @@ export const uiCopy = {
     "sourceLine": 19
   },
   "system.tasks.002": {
-    "text": "找到要继续的课时，查看报告和作品各自的状态。",
+    "text": "可以找到要继续的课时，查看报告和作品的状态",
     "enabled": true,
     "optional": true,
     "page": "tasks",
@@ -9950,7 +9950,7 @@ export const uiCopy = {
     "sourceLine": 20
   },
   "system.tasks.005": {
-    "text": "这里显示老师布置的任务。其他课时可从课程地图继续学习。",
+    "text": "这里显示老师布置的任务。其他课时可从课程地图继续学习",
     "enabled": true,
     "optional": true,
     "page": "tasks",
@@ -9992,7 +9992,7 @@ export const uiCopy = {
     "sourceLine": 21
   },
   "system.tasks.008": {
-    "text": "这个学习状态下暂无任务，可切换筛选或返回探索地图。",
+    "text": "这个学习状态下暂无任务，可切换筛选或返回探索地图",
     "enabled": true,
     "optional": false,
     "page": "tasks",
@@ -10006,7 +10006,7 @@ export const uiCopy = {
     "sourceLine": 36
   },
   "system.tasks.009": {
-    "text": "暂无课后任务。没有作品任务的课时，也可以从课程地图继续学习。",
+    "text": "暂无课后任务。没有作品任务的课时，也可以从课程地图继续学习",
     "enabled": true,
     "optional": false,
     "page": "tasks",
@@ -10300,7 +10300,7 @@ export const uiCopy = {
     "sourceLine": 47
   },
   "system.tasks.030": {
-    "text": "学习状态来自课时进度与报告；作品评审单独显示。",
+    "text": "学习状态来自课时进度与报告；作品评审将会单独显示",
     "enabled": true,
     "optional": true,
     "page": "tasks",
@@ -10454,7 +10454,7 @@ export const uiCopy = {
     "sourceLine": 36
   },
   "system.assistant.004": {
-    "text": "请联系老师了解开放时间。",
+    "text": "请联系老师了解开放时间哦",
     "enabled": true,
     "optional": true,
     "page": "assistant",
@@ -10468,7 +10468,7 @@ export const uiCopy = {
     "sourceLine": 37
   },
   "system.assistant.005": {
-    "text": "当前课程不可用于提问",
+    "text": "哎呀，当前课程不可用于提问",
     "enabled": true,
     "optional": false,
     "page": "assistant",
@@ -10538,7 +10538,7 @@ export const uiCopy = {
     "sourceLine": 46
   },
   "system.assistant.010": {
-    "text": "课程资料已有变化，旧引用已移除。请重新提问以取得当前依据。",
+    "text": "课程资料已有变化，你可以重新提问试试~",
     "enabled": true,
     "optional": true,
     "page": "assistant",
@@ -10650,7 +10650,7 @@ export const uiCopy = {
     "sourceLine": 54
   },
   "system.assistant.018": {
-    "text": "输入框里已有文字，原问题仍保留在上方，可复制后继续编辑。",
+    "text": "输入框里已有文字，原问题仍保留在上方，可复制后继续编辑",
     "enabled": true,
     "optional": false,
     "page": "assistant",
@@ -10664,7 +10664,7 @@ export const uiCopy = {
     "sourceLine": 56
   },
   "system.assistant.019": {
-    "text": "编辑后由你决定是否再次发送。",
+    "text": "编辑后由你决定是否再次发送",
     "enabled": true,
     "optional": false,
     "page": "assistant",
@@ -10959,7 +10959,7 @@ export const uiCopy = {
     "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
   },
   "fortune.avoid.compare": {
-    "text": "只和别人比分数",
+    "text": "和别人比分数",
     "enabled": true,
     "optional": false,
     "page": "平台我的 / 运势",
@@ -11043,7 +11043,7 @@ export const uiCopy = {
     "sourceFile": "frontend/src/pages/auth/Login.jsx"
   },
   "patch.login.hint": {
-    "text": "继续课程探索，记录新的发现。",
+    "text": "继续课程探索，记录新的发现",
     "enabled": true,
     "optional": true,
     "page": "视觉补修",
@@ -11055,7 +11055,7 @@ export const uiCopy = {
     "sourceFile": "frontend/src/pages/auth/Login.jsx"
   },
   "patch.login.note": {
-    "text": "还没有账号？请联系管理员创建。",
+    "text": "还没有账号？请联系管理员创建",
     "enabled": true,
     "optional": true,
     "page": "视觉补修",
@@ -12371,7 +12371,7 @@ export const uiCopy = {
     "futureTeacher": false
   },
   "next.template.preparing": {
-    "text": "教学内容正在准备，暂不记录完成",
+    "text": "教学内容正在准备中……",
     "enabled": true,
     "page": "下一版第一步",
     "position": "next.template.preparing",
@@ -12819,7 +12819,7 @@ export const uiCopy = {
     "sourceFile": "frontend/src/student/OpenReflectionForm.jsx"
   },
   "next2.reflection.scope": {
-    "text": "你提交的记录可由负责课程的执行导师、按原档案范围分配你的教师和管理员查看，其他同学及新媒体不可查看",
+    "text": "你提交的记录可由负责课程的老师查看，其他同学是看不见滴",
     "enabled": true,
     "optional": false,
     "page": "维护端 / 开放反思",
@@ -13071,7 +13071,7 @@ export const uiCopy = {
     "sourceFile": "frontend/src/components/StaffShell.jsx"
   },
   "next2.reflection.help": {
-    "text": "三个框任选一项填写，也可以记录心情或生活，提示只是方向，不必写隐私细节",
+    "text": "三个框任选一项填写，也可以记录心情或生活等一切你愿意分享的东西，非常期待你的分享~",
     "enabled": true,
     "optional": false,
     "page": "维护端 / 开放反思",
@@ -13866,7 +13866,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "next3.award.after": {
-    "text": "徽章！已经佩戴在你的主页啦！快去看看吧~",
+    "text": "徽章已经佩戴在你的主页啦！快去看看吧~",
     "enabled": true,
     "optional": false,
     "page": "签到徽章兑换",
@@ -14139,7 +14139,7 @@ export const uiCopy = {
     "sourceField": null
   },
   "next3.maintenance.scope": {
-    "text": "仅选择真实课时、名称和受控素材；不能手工替学生发放。已获得徽章保留当时快照。",
+    "text": "仅选择真实课时、名称和受控素材；不能手工替学生发放。已获得徽章保留当时快照",
     "enabled": true,
     "optional": false,
     "page": "签到徽章兑换",
@@ -14319,5 +14319,605 @@ export const uiCopy = {
     "type": "system",
     "futureTeacher": false,
     "sourceField": null
+  },
+  "fortune.good.share": {
+    "text": "分享想法",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.team": {
+    "text": "和同伴合作",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.thanks": {
+    "text": "感谢帮助",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.new-method": {
+    "text": "尝试新方法",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.check": {
+    "text": "检查实验条件",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.sketch": {
+    "text": "给方案画草图",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.small-step": {
+    "text": "记录一次小进步",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.encourage": {
+    "text": "给朋友鼓励",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.perspective": {
+    "text": "换个角度想",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.prepare": {
+    "text": "为明天做准备",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.notice": {
+    "text": "留意身边的小发现",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.different-opinion": {
+    "text": "听听不同意见",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.needs": {
+    "text": "说出自己的需要",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.help": {
+    "text": "及时向老师求助",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.split": {
+    "text": "把难题拆成小步",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.focus": {
+    "text": "认真完成一件小事",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.accept": {
+    "text": "接纳一次失误",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.patience": {
+    "text": "给自己一点耐心",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.mood": {
+    "text": "照顾自己的心情",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.stretch": {
+    "text": "喝水和伸展",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.talk": {
+    "text": "和朋友聊聊天",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.space": {
+    "text": "给桌面留点空间",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.window": {
+    "text": "看看窗外的风景",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.good.praise": {
+    "text": "为自己的尝试点赞",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "宜 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.late-night": {
+    "text": "熬夜硬撑",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.no-water": {
+    "text": "忘记喝水",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.screen": {
+    "text": "一直盯着屏幕",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.give-up": {
+    "text": "遇到困难就放弃",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.fear-question": {
+    "text": "害怕提问",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.interrupt": {
+    "text": "打断别人说话",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.argument": {
+    "text": "和别人拌嘴",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.result-only": {
+    "text": "只看结果不看过程",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.many-variables": {
+    "text": "一次改动太多条件",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.unchecked-flight": {
+    "text": "没检查就开始试飞",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.ignore-safety": {
+    "text": "忽略安全提醒",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.self-blame": {
+    "text": "把失误都怪给自己",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.deny-self": {
+    "text": "因为出错否定自己",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.hide-mood": {
+    "text": "把情绪憋在心里",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.force-self": {
+    "text": "不舒服还勉强自己",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.mock": {
+    "text": "拿别人的作品嘲笑",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.decide-for-others": {
+    "text": "替同伴做所有决定",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.no-explanation": {
+    "text": "合作时不听解释",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.discard-data": {
+    "text": "随手丢弃实验数据",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.one-result": {
+    "text": "只凭一次结果下结论",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.stop-thinking": {
+    "text": "看到答案就停止思考",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.hurry": {
+    "text": "用着急代替耐心",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.too-full": {
+    "text": "给自己安排太满",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.forget-thanks": {
+    "text": "忘记和帮助你的人道谢",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.skip-record": {
+    "text": "为了赶进度跳过记录",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
+  },
+  "fortune.avoid.deny-effort": {
+    "text": "因为进展慢就否定努力",
+    "enabled": true,
+    "optional": false,
+    "page": "平台我的 / 运势",
+    "position": "忌 · 新增待审条目",
+    "purpose": "新增候选文案，等待执行agent按审阅稿接入",
+    "scope": "system",
+    "type": "system",
+    "futureTeacher": false,
+    "sourceFile": "frontend/src/student/space/DailyFortune.jsx"
   }
 };

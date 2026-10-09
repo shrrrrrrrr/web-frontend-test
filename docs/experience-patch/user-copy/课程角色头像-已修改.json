@@ -1,0 +1,28 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "课程角色头像",
+  "edits": [
+    {
+      "id": "avatar.hint",
+      "text": "没有最好的角色，只有最适合此刻的你",
+      "enabled": true,
+      "baseText": "没有最好的角色，只有最适合此刻的你。头像随时可更换，不影响学习与权限。",
+      "baseEnabled": true
+    },
+    {
+      "id": "avatar.saved",
+      "text": "头像已保存到当前账号的本课程偏好，可跨设备重新读取",
+      "enabled": true,
+      "baseText": "头像已保存到当前账号的本课程偏好，可跨设备重新读取。",
+      "baseEnabled": true
+    },
+    {
+      "id": "avatar.uncertain",
+      "text": "头像已保存，但刚刚的读取失败了，请重新读取确认",
+      "enabled": true,
+      "baseText": "头像已保存，但最新显示未能读取。请重新读取确认，无需再次保存。",
+      "baseEnabled": true
+    }
+  ]
+}

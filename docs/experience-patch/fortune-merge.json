@@ -1,0 +1,17 @@
+{
+  "newEntries": 50,
+  "good": 30,
+  "avoid": 30,
+  "returnedVersion": 72,
+  "appliedEdits": [
+    {
+      "id": "fortune.avoid.argument",
+      "text": "和别人拌嘴",
+      "enabled": true,
+      "baseText": "把不同意见当成争吵",
+      "baseEnabled": true
+    }
+  ],
+  "issues": [],
+  "htmlScriptsExecuted": false
+}

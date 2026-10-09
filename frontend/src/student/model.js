@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 // 展示层排序和分组不产生新的解锁条件或进度。
 export function groupLessons(lessons, config = []) {
   const remaining = new Map(lessons.map((lesson) => [String(lesson.id), lesson]));
@@ -9,7 +10,7 @@ export function groupLessons(lessons, config = []) {
       return lesson ? [lesson] : [];
     }),
   })).filter((group) => group.lessons.length);
-  if (remaining.size) groups.push({ title: config.length ? '其他课时' : '课程课时', lessons: [...remaining.values()] });
+  if (remaining.size) groups.push({ title: config.length ? siteText("site.97936d292123886f") : siteText("site.73697a8c4ffb4eb3"), lessons: [...remaining.values()] });
   return groups;
 }
 
@@ -23,6 +24,6 @@ export function safeReturnTo(value, fallback = '/lab') {
 }
 
 export function draftKey(userId, courseId, lessonId) {
-  if (!userId || !courseId || !lessonId) throw new Error('草稿缺少账号或课时');
+  if (!userId || !courseId || !lessonId) throw new Error(siteText("site.b3a0e5436646dbab"));
   return `star-voyage:report:v1:${userId}:${courseId}:${lessonId}`;
 }

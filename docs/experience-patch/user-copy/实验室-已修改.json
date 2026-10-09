@@ -1,0 +1,35 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "实验室",
+  "edits": [
+    {
+      "id": "system.lab.010",
+      "text": "先提出想法，再用实验验证。可以在当前课程的实验室自由尝试",
+      "enabled": true,
+      "baseText": "先提出想法，再用实验验证。在当前课程的实验室自由尝试，不要求先进入课时。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.lab.015",
+      "text": "机翼、重心、速度、质量与尾翼，共 7 项参数",
+      "enabled": true,
+      "baseText": "机翼、重心、速度、质量与尾翼，共 7 项参数。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.lab.017",
+      "text": "6 项数值指标、三维航迹与飞行遥测图。每次试飞保留独立记录",
+      "enabled": true,
+      "baseText": "6 项数值指标、三维航迹与飞行遥测图。每次试飞保留独立记录。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.lab.020",
+      "text": "实验结果不会自动提交为作品哦",
+      "enabled": true,
+      "baseText": "实验结果不会自动提交为作品，也不会自动完成课时。从课程进入时，可以返回原来的学习位置。",
+      "baseEnabled": true
+    }
+  ]
+}

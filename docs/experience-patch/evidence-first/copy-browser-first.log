@@ -1,0 +1,59 @@
+▶ 逐页文案 HTML、安全改稿与真实管理员审阅授权
+  ✔ 46份实际页面文件可双击打开，基线与字段一致，均带角色、路由、区域和来源 (14383.6314ms)
+  ✔ HTML改稿保存重开、纯文本脚本不执行、变化项导出与基线冲突拒绝 (1414.2346ms)
+  ✖ 管理员真实页面点字审阅、导出只含一处变化，不写教学数据 (16886.5906ms)
+  ✔ 管理员目录点字编辑、本账号草稿恢复，旧基线和存储失败明确拒绝 (3445.6703ms)
+  ✖ 学生、只读教师、新媒体、执行导师不能进入系统编辑；负责导师保留真实教学维护 (16907.8446ms)
+✖ 逐页文案 HTML、安全改稿与真实管理员审阅授权 (58565.5725ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 3
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 59315.7474
+
+✖ failing tests:
+
+test at tests\experience-copy.browser.test.js:10:51
+✖ 管理员真实页面点字审阅、导出只含一处变化，不写教学数据 (16886.5906ms)
+  page.waitForEvent: Timeout 15000ms exceeded while waiting for event "download"
+  =========================== logs ===========================
+  waiting for event "download"
+  ============================================================
+      at C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:22:478
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:10:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:10:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:21:3) {
+    name: 'TimeoutError',
+    log: []
+  }
+
+test at tests\experience-copy.browser.test.js:10:51
+✖ 学生、只读教师、新媒体、执行导师不能进入系统编辑；负责导师保留真实教学维护 (16907.8446ms)
+  locator.waitFor: Timeout 15000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText(/该功能不属于你的工作范围/) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:29:383
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:10:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:10:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:28:3) {
+    name: 'TimeoutError',
+    log: [ '  - waiting for getByText(/该功能不属于你的工作范围/) to be visible' ]
+  }
+
+test at tests\experience-copy.browser.test.js:5:1
+✖ 逐页文案 HTML、安全改稿与真实管理员审阅授权 (58565.5725ms)
+  locator.waitFor: Timeout 15000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText(/该功能不属于你的工作范围/) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:29:383
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:10:75)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:10:43)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\experience-copy.browser.test.js:28:3) {
+    name: 'TimeoutError',
+    log: [ '  - waiting for getByText(/该功能不属于你的工作范围/) to be visible' ]
+  }

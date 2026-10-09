@@ -1,0 +1,12 @@
+{
+  "format": "fortune-review-v1",
+  "edits": [
+    {
+      "id": "fortune.avoid.argument",
+      "text": "和别人拌嘴",
+      "enabled": true,
+      "baseText": "把不同意见当成争吵",
+      "baseEnabled": true
+    }
+  ]
+}

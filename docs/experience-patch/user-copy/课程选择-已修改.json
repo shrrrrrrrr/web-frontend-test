@@ -1,0 +1,28 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "课程选择",
+  "edits": [
+    {
+      "id": "system.platform.003",
+      "text": "选择一门课程，开启学习之旅！",
+      "enabled": true,
+      "baseText": "课程由老师分配。选择课程，进入它的学习空间。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.platform.006",
+      "text": "没有找到匹配课程，是不是打错字了呀",
+      "enabled": true,
+      "baseText": "没有找到匹配课程，请清空搜索。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.platform.012",
+      "text": "进入课程，查看课时与学习任务",
+      "enabled": true,
+      "baseText": "进入课程，查看课时与学习任务。",
+      "baseEnabled": true
+    }
+  ]
+}

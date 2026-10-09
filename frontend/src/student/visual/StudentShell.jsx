@@ -15,6 +15,7 @@ import {PLATFORM_NAME,asset} from '../space/identity';
 import {useCourseExperience} from '../space/useCourseExperience';
 import FloatingAssistant from '../space/FloatingAssistant';
 import AvatarPreference from '../space/AvatarPreference';
+import AccountAvatarImage from '../space/AccountAvatarImage';
 import '../space/course-pages.css';
 import SceneArt from '../space/SceneArt';
 import {useCoursePresentation} from '../space/CoursePresentation';
@@ -48,7 +49,7 @@ function Shell({children}){
     <header className="space-header">
       {id?<div className="space-header-context">{!screens.lg&&<button className="space-menu-button" onClick={()=>setOpen(true)} aria-label={copyText('system.shell.008')} aria-expanded={open}><PixelIcon name="menu"/></button>}<span>{data?.course.title||copyText('system.shell.009')}</span></div>:<Link className="space-platform-brand" to="/explore"><PixelIcon name="book" size={28}/>{PLATFORM_NAME}</Link>}
       {!id&&<nav className="space-platform-nav" aria-label={copyText('system.shell.010')}><Link to="/explore" aria-current={location.pathname==='/explore'?'page':undefined}>{copyText('platform.nav.courses')}</Link><Link to="/me" aria-current={location.pathname==='/me'?'page':undefined}>{copyText('platform.nav.me')}</Link></nav>}
-      <div className="space-header-actions"><AvatarPreference/><Points to={me}/><NotificationBell icon={<PixelIcon name="notification"/>} buttonClassName="student-notification-button"/><Link to={me} className="space-account" aria-label={copyText('system.shell.013')}><PixelIcon name="user"/><span>{user.real_name||user.username}</span></Link></div>
+      <div className="space-header-actions"><AvatarPreference/><Points to={me}/><NotificationBell icon={<PixelIcon name="notification"/>} buttonClassName="student-notification-button"/><Link to={me} className="space-account" aria-label={copyText('system.shell.013')}><AccountAvatarImage preset={user.avatar_preset} legacyUrl={user.avatar_url}/><span>{user.real_name||user.username}</span></Link></div>
     </header>
     {deep&&<nav className="space-sticky-return" aria-label={copyText('system.shell.014')}><Link to={'/courses/'+id}><PixelIcon name="back"/>{copyText('course.nav.return')}</Link><Link to="/explore">{copyText('system.shell.016')}</Link></nav>}
     <main id="student-main" className="student-content space-content">{children}</main>

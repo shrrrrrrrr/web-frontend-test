@@ -1,0 +1,644 @@
+[
+  {
+    "file": "frontend/src/api/client.js",
+    "jsx": 0,
+    "strings": 5,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/AppLayout.jsx",
+    "jsx": 1,
+    "strings": 0,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/common/AsyncPageState.jsx",
+    "jsx": 1,
+    "strings": 2,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/common/PageLoading.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/feedback/FeedbackFilters.jsx",
+    "jsx": 0,
+    "strings": 10,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/feedback/FeedbackMessageForm.jsx",
+    "jsx": 0,
+    "strings": 10,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/feedback/FeedbackPriorityTag.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/feedback/FeedbackStatusTag.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/feedback/FeedbackTimeline.jsx",
+    "jsx": 2,
+    "strings": 2,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/Header.jsx",
+    "jsx": 1,
+    "strings": 8,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/NotFound.jsx",
+    "jsx": 2,
+    "strings": 4,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/notifications/NotificationBell.jsx",
+    "jsx": 4,
+    "strings": 10,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/components/notifications/NotificationFilters.jsx",
+    "jsx": 0,
+    "strings": 6,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/notifications/NotificationItem.jsx",
+    "jsx": 0,
+    "strings": 3,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/notifications/NotificationLevelTag.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/PageStatus.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/PasswordInput.jsx",
+    "jsx": 0,
+    "strings": 4,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/RoleGuard.jsx",
+    "jsx": 2,
+    "strings": 4,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/ServiceUI.jsx",
+    "jsx": 3,
+    "strings": 4,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/Sidebar.jsx",
+    "jsx": 0,
+    "strings": 35,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/components/TempPasswordModal.jsx",
+    "jsx": 1,
+    "strings": 6,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/constants/feedback.js",
+    "jsx": 0,
+    "strings": 23,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/constants/notification.js",
+    "jsx": 0,
+    "strings": 14,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/constants/status.js",
+    "jsx": 0,
+    "strings": 10,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/content/uiCopy.jsx",
+    "jsx": 0,
+    "strings": 2661,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/archives/Index.jsx",
+    "jsx": 15,
+    "strings": 20,
+    "templates": 5
+  },
+  {
+    "file": "frontend/src/pages/archives/Reflection.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/auth/ChangePassword.jsx",
+    "jsx": 4,
+    "strings": 19,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/auth/Login.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/courses/AIKnowledge.jsx",
+    "jsx": 5,
+    "strings": 22,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/pages/courses/BadgeMaintenance.jsx",
+    "jsx": 0,
+    "strings": 3,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/courses/Detail.jsx",
+    "jsx": 42,
+    "strings": 102,
+    "templates": 4
+  },
+  {
+    "file": "frontend/src/pages/courses/Form.jsx",
+    "jsx": 3,
+    "strings": 26,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/courses/List.jsx",
+    "jsx": 4,
+    "strings": 20,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/courses/TeachingPreview.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/dashboard/AI.jsx",
+    "jsx": 9,
+    "strings": 12,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/dashboard/AISettings.jsx",
+    "jsx": 5,
+    "strings": 18,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/dashboard/Index.jsx",
+    "jsx": 20,
+    "strings": 33,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/dashboard/School.jsx",
+    "jsx": 6,
+    "strings": 13,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/feedback/Detail.jsx",
+    "jsx": 14,
+    "strings": 33,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/pages/feedback/Form.jsx",
+    "jsx": 8,
+    "strings": 26,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/pages/feedback/List.jsx",
+    "jsx": 3,
+    "strings": 11,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/pages/feedback/Manage.jsx",
+    "jsx": 1,
+    "strings": 12,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/pages/glider/gliderModel.js",
+    "jsx": 0,
+    "strings": 39,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/glider/Simulator.jsx",
+    "jsx": 15,
+    "strings": 59,
+    "templates": 4
+  },
+  {
+    "file": "frontend/src/pages/glider/useGliderRecords.js",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/learning/LessonLearn.jsx",
+    "jsx": 0,
+    "strings": 0,
+    "templates": 5
+  },
+  {
+    "file": "frontend/src/pages/mentor/ContentHub.jsx",
+    "jsx": 1,
+    "strings": 15,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/pages/mentor/LessonContentEditor.jsx",
+    "jsx": 13,
+    "strings": 38,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "jsx": 4,
+    "strings": 40,
+    "templates": 5
+  },
+  {
+    "file": "frontend/src/pages/mentor/ReviewList.jsx",
+    "jsx": 1,
+    "strings": 10,
+    "templates": 3
+  },
+  {
+    "file": "frontend/src/pages/notifications/Detail.jsx",
+    "jsx": 4,
+    "strings": 11,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/notifications/List.jsx",
+    "jsx": 4,
+    "strings": 13,
+    "templates": 2
+  },
+  {
+    "file": "frontend/src/pages/observer/Dashboard.jsx",
+    "jsx": 2,
+    "strings": 12,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/observer/StudentDetail.jsx",
+    "jsx": 4,
+    "strings": 19,
+    "templates": 2
+  },
+  {
+    "file": "frontend/src/pages/observer/StudentList.jsx",
+    "jsx": 1,
+    "strings": 11,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/students/Detail.jsx",
+    "jsx": 12,
+    "strings": 52,
+    "templates": 2
+  },
+  {
+    "file": "frontend/src/pages/students/List.jsx",
+    "jsx": 22,
+    "strings": 69,
+    "templates": 2
+  },
+  {
+    "file": "frontend/src/pages/tasks/Detail.jsx",
+    "jsx": 4,
+    "strings": 19,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/pages/tasks/List.jsx",
+    "jsx": 3,
+    "strings": 17,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/pages/works/Detail.jsx",
+    "jsx": 9,
+    "strings": 35,
+    "templates": 2
+  },
+  {
+    "file": "frontend/src/pages/works/List.jsx",
+    "jsx": 3,
+    "strings": 18,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/store/AuthContext.jsx",
+    "jsx": 0,
+    "strings": 7,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/store/NotificationProvider.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/accessPolicy.js",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/archiveModel.js",
+    "jsx": 0,
+    "strings": 34,
+    "templates": 2
+  },
+  {
+    "file": "frontend/src/student/AssociatedExperiments.jsx",
+    "jsx": 3,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/compatibilityModel.js",
+    "jsx": 0,
+    "strings": 21,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/student/config.js",
+    "jsx": 0,
+    "strings": 5,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/CourseResourceDownload.jsx",
+    "jsx": 0,
+    "strings": 8,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/CourseReview.jsx",
+    "jsx": 0,
+    "strings": 7,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/student/DailyCheckin.jsx",
+    "jsx": 1,
+    "strings": 0,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/experimentConfig.js",
+    "jsx": 0,
+    "strings": 3,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/experimentContext.js",
+    "jsx": 0,
+    "strings": 13,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/homeData.js",
+    "jsx": 0,
+    "strings": 3,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/student/homeModel.js",
+    "jsx": 0,
+    "strings": 9,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/LessonWorks.jsx",
+    "jsx": 3,
+    "strings": 14,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/model.js",
+    "jsx": 0,
+    "strings": 3,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/rewardAdapter.js",
+    "jsx": 0,
+    "strings": 8,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/rewardConfig.js",
+    "jsx": 0,
+    "strings": 16,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/rewardDatabase.js",
+    "jsx": 0,
+    "strings": 8,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/rewardEvents.js",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/rewardModel.js",
+    "jsx": 0,
+    "strings": 8,
+    "templates": 2
+  },
+  {
+    "file": "frontend/src/student/Rewards.jsx",
+    "jsx": 47,
+    "strings": 47,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/rewardStore.js",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/routeModel.js",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/ServerRewards.jsx",
+    "jsx": 1,
+    "strings": 2,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/space/avatars.js",
+    "jsx": 0,
+    "strings": 18,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/space/CourseTodos.jsx",
+    "jsx": 4,
+    "strings": 10,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/space/identity.js",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/space/LegacyEntry.jsx",
+    "jsx": 0,
+    "strings": 2,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/space/LessonPlace.jsx",
+    "jsx": 2,
+    "strings": 0,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/StudentArchive.jsx",
+    "jsx": 0,
+    "strings": 0,
+    "templates": 4
+  },
+  {
+    "file": "frontend/src/student/StudentGliderWorkspace.jsx",
+    "jsx": 0,
+    "strings": 0,
+    "templates": 5
+  },
+  {
+    "file": "frontend/src/student/StudentScope.jsx",
+    "jsx": 4,
+    "strings": 9,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/StudentTaskRedirect.jsx",
+    "jsx": 5,
+    "strings": 6,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/StudentTasks.jsx",
+    "jsx": 0,
+    "strings": 2,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/student/StudentWorkDetail.jsx",
+    "jsx": 0,
+    "strings": 0,
+    "templates": 3
+  },
+  {
+    "file": "frontend/src/student/StudentWorks.jsx",
+    "jsx": 0,
+    "strings": 0,
+    "templates": 2
+  },
+  {
+    "file": "frontend/src/student/StudyPartner.jsx",
+    "jsx": 3,
+    "strings": 6,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/useRemote.js",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/student/visual/PixelPreview.jsx",
+    "jsx": 19,
+    "strings": 22,
+    "templates": 1
+  },
+  {
+    "file": "frontend/src/student/visual/PixelUI.jsx",
+    "jsx": 0,
+    "strings": 1,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/utils/accountExport.js",
+    "jsx": 0,
+    "strings": 15,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/utils/authSession.js",
+    "jsx": 0,
+    "strings": 10,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/utils/feedbackFiles.js",
+    "jsx": 0,
+    "strings": 11,
+    "templates": 0
+  },
+  {
+    "file": "frontend/src/utils/requestError.js",
+    "jsx": 0,
+    "strings": 9,
+    "templates": 0
+  }
+]

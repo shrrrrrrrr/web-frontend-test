@@ -1,9 +1,10 @@
+import {copyText as siteText} from "../content/systemText.js";
 import { rewardStorageKey, notifyDemoRewardsChanged } from './rewardEvents.js';
 import { initialRewardState, validateRewardState, redeemReward, rewardSnapshot, rewardFailure } from './rewardModel.js';
 import { openRewardDatabase, rewardTransaction, REWARD_DATABASE } from './rewardDatabase.js';
 import {rewardDemoConfig} from './rewardConfig.js';
 
-const corrupt = () => rewardFailure('CORRUPT_DATA', '本账号的演示数据损坏。可以重试读取，或确认后重置；当前数据尚未清除。');
+const corrupt = () => rewardFailure('CORRUPT_DATA', siteText("site.9b3b42e49ac0a0a5"));
 function validateAccount(record) {
   if (!record?.initialized || record.schemaVersion !== 1 || !Number.isInteger(record.revision) || record.revision < 1) throw corrupt();
   validateRewardState(record.state);
@@ -17,7 +18,7 @@ function validateMeta(record){
 }
 // The first argument is a v1 migration source only. It is never a write destination.
 export function createDemoRewardAdapter(storageSource, accountId, options = {}) {
-  if (!accountId) throw new Error('请先登录');
+  if (!accountId) throw new Error(siteText("site.9ff17e5009f01556"));
   const key = rewardStorageKey(accountId), id = String(accountId);
   const databaseName = options.databaseName || REWARD_DATABASE;
   const factory = Object.hasOwn(options, 'indexedDB') ? options.indexedDB : (() => window.indexedDB);
@@ -27,9 +28,9 @@ export function createDemoRewardAdapter(storageSource, accountId, options = {}) 
     try {
       storage = typeof storageSource === 'function' ? storageSource() : storageSource;
       if (!storage) throw Error();
-    } catch { throw rewardFailure('STORAGE_ACCESS', '浏览器拒绝读取旧版演示记录。请允许本站存储后重试；旧记录尚未改变。'); }
+    } catch { throw rewardFailure('STORAGE_ACCESS', siteText("site.f2d529c0ec0c28e2")); }
     try { saved = storage.getItem(key); }
-    catch { throw rewardFailure('READ_FAILED', '无法读取本账号的旧版演示记录，请恢复存储权限后重试。'); }
+    catch { throw rewardFailure('READ_FAILED', siteText("site.bfb7895a6afdd098")); }
     if (saved === null || saved === undefined) return { state: initialRewardState(), source: 'new' };
     try { return { state: validateRewardState(JSON.parse(saved)), source: 'v1' }; }
     catch { throw corrupt(); }
@@ -79,18 +80,18 @@ export function createDemoRewardAdapter(storageSource, accountId, options = {}) 
             const meta=account.meta=validateMeta(account);
             if(kind==='checkin'){
               const now=options.clock?options.clock():performance.now();
-              if(!day||!/^\d{4}-\d{2}-\d{2}$/.test(day.date)||!Number.isFinite(day.expires)||now>=day.expires)throw rewardFailure('DATE_EXPIRED','服务器日期已失效，请重新核对后签到');
+              if(!day||!/^\d{4}-\d{2}-\d{2}$/.test(day.date)||!Number.isFinite(day.expires)||now>=day.expires)throw rewardFailure('DATE_EXPIRED',siteText("site.a180b9d47a1d73f7"));
               if(meta.checkins.includes(day.date)){done({changed:false,date:day.date});return;}
               meta.checkins.push(day.date);account.state.balance+=rewardDemoConfig.dailyCoins;
-              account.state.ledger.unshift({id:'checkin:'+day.date,title:'每日签到（本地演示）',amount:rewardDemoConfig.dailyCoins,time:new Date().toISOString()});
+              account.state.ledger.unshift({id:'checkin:'+day.date,title:siteText("site.008129487629f259"),amount:rewardDemoConfig.dailyCoins,time:new Date().toISOString()});
               account.revision++;store.put(account);done({changed:true,date:day.date,amount:rewardDemoConfig.dailyCoins});return;
             }
             if(kind==='synced'){
               const event=meta.outbox.find(e=>e.id===requestId);if(!event)throw corrupt();
-              if(event.sync!=='synced'){event.sync='synced';account.revision++;const record=account.state.records.find(r=>r.id===requestId);if(record)record.status='演示兑换已同步（不发货）';store.put(account);}done(event);return;
+              if(event.sync!=='synced'){event.sync='synced';account.revision++;const record=account.state.records.find(r=>r.id===requestId);if(record)record.status=siteText("site.d91266861354a840");store.put(account);}done(event);return;
             }
             const intent=meta.outbox.find(e=>e.id===requestId);
-            if(intent){if(intent.giftId!==giftId)throw rewardFailure('REQUEST_CONFLICT','同一兑换编号不能更换礼品');done(intent);return;}
+            if(intent){if(intent.giftId!==giftId)throw rewardFailure('REQUEST_CONFLICT',siteText("site.4ff275ef2b159cb1"));done(intent);return;}
             const { record, changed } = redeemReward(account.state, giftId, requestId);
             if (changed) { meta.outbox.push({...record,sync:'pending'});account.revision++; store.put(account); }
             done(record);

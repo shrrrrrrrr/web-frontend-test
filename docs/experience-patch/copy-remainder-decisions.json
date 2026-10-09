@@ -1,0 +1,2081 @@
+[
+  {
+    "sourceFile": "frontend/src/api/client.js",
+    "line": 80,
+    "text": "刷新后的登录信息无法保存，请恢复浏览器存储后重新登录。",
+    "editable": true,
+    "id": "site.44956f109806ba2a"
+  },
+  {
+    "sourceFile": "frontend/src/api/client.js",
+    "line": 101,
+    "text": "登录已失效，请重新登录；如账号被停用，请联系老师。",
+    "editable": true,
+    "id": "site.d81c1a6f086ac4a7"
+  },
+  {
+    "sourceFile": "frontend/src/api/client.js",
+    "line": 148,
+    "text": "登录已失效，请重新登录；如账号被停用，请联系老师。",
+    "editable": true,
+    "id": "site.d81c1a6f086ac4a7"
+  },
+  {
+    "sourceFile": "frontend/src/components/notifications/NotificationBell.jsx",
+    "line": 40,
+    "text": "通知",
+    "editable": true,
+    "id": "site.3328b96d26841f3b"
+  },
+  {
+    "sourceFile": "frontend/src/components/ServiceUI.jsx",
+    "line": 28,
+    "text": "暂时没有内容",
+    "editable": true,
+    "id": "site.4d20298f951668f8"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 3,
+    "text": "功能建议",
+    "editable": true,
+    "id": "site.980bd5f3761ee613"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 4,
+    "text": "程序错误",
+    "editable": true,
+    "id": "site.f008f266458f9a16"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 5,
+    "text": "使用咨询",
+    "editable": true,
+    "id": "site.7547cfa127e70455"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 7,
+    "text": "其他",
+    "editable": true,
+    "id": "site.2fa61cb253029231"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 11,
+    "text": "登录注册",
+    "editable": true,
+    "id": "site.7b8cd75fd428f693"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 12,
+    "text": "工作台",
+    "editable": true,
+    "id": "site.29dd3f99a7984745"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 13,
+    "text": "课程管理",
+    "editable": true,
+    "id": "site.ec6c798ce431a517"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 14,
+    "text": "学生管理",
+    "editable": true,
+    "id": "site.31e9a480ae76c0f1"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 15,
+    "text": "作品管理",
+    "editable": true,
+    "id": "site.f37da9bba1e4692a"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 16,
+    "text": "成长档案",
+    "editable": true,
+    "id": "site.a464089f5c3c50b0"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 17,
+    "text": "学习助手",
+    "editable": true,
+    "id": "site.814cc87fde09f401"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 18,
+    "text": "其他",
+    "editable": true,
+    "id": "site.2fa61cb253029231"
+  },
+  {
+    "sourceFile": "frontend/src/constants/status.js",
+    "line": 14,
+    "text": "课堂回顾",
+    "editable": true,
+    "id": "site.ca36c6b73ce889a0"
+  },
+  {
+    "sourceFile": "frontend/src/constants/status.js",
+    "line": 14,
+    "text": "知识卡片与练习",
+    "editable": true,
+    "id": "site.077104634408f9d0"
+  },
+  {
+    "sourceFile": "frontend/src/constants/status.js",
+    "line": 14,
+    "text": "学习报告与反思",
+    "editable": true,
+    "id": "site.a7cba03f8541382b"
+  },
+  {
+    "sourceFile": "frontend/src/constants/status.js",
+    "line": 14,
+    "text": "导师评审",
+    "editable": true,
+    "id": "site.847ccf5aa1db2a34"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 68,
+    "text": "无法读取该学生档案",
+    "editable": true,
+    "id": "site.8b6efdf05e5bb8c1"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "问题发现",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "方案设计",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "动手操作",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "数据分析",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "表达展示",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Reflection.jsx",
+    "line": 121,
+    "text": "报名记录",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/AIKnowledge.jsx",
+    "line": 21,
+    "text": "课程",
+    "editable": true,
+    "id": "site.4fce977f48aab66e"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 84,
+    "text": "课程不存在，或当前身份无权查看。",
+    "editable": true,
+    "id": "site.2dff4fe99bd33a63"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 120,
+    "text": "课程资源",
+    "editable": true,
+    "id": "site.4902db407c8b5af0"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 323,
+    "text": "无权",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 528,
+    "text": "（执行导师）",
+    "editable": true,
+    "id": "site.93acd22f8d8d1880"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "调研",
+    "editable": false,
+    "reason": "原活动类型取值，不能通过改文案改变提交枚举"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "实验",
+    "editable": false,
+    "reason": "原活动类型取值，不能通过改文案改变提交枚举"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "创作",
+    "editable": false,
+    "reason": "原活动类型取值，不能通过改文案改变提交枚举"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "反思",
+    "editable": false,
+    "reason": "原活动类型取值，不能通过改文案改变提交枚举"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "展示",
+    "editable": false,
+    "reason": "原活动类型取值，不能通过改文案改变提交枚举"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/List.jsx",
+    "line": 39,
+    "text": "已发布",
+    "editable": true,
+    "id": "site.3835281eb0da37c4"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/List.jsx",
+    "line": 39,
+    "text": "草稿",
+    "editable": true,
+    "id": "site.c4822a69d1c33223"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/List.jsx",
+    "line": 39,
+    "text": "已归档",
+    "editable": true,
+    "id": "site.e1adc1105dc777ad"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/List.jsx",
+    "line": 60,
+    "text": "只读",
+    "editable": true,
+    "id": "site.2aafda3179dfd6dc"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/AI.jsx",
+    "line": 44,
+    "text": "当前课程已不可访问，已清除该课程的提问上下文。请选择其他可进入的课程；尚未发送的问题仍保留。",
+    "editable": true,
+    "id": "site.5410d8867dc1b996"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/AI.jsx",
+    "line": 66,
+    "text": "无法加载可提问课程，请刷新页面重试。",
+    "editable": true,
+    "id": "site.a9e67309ae3963e9"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/AI.jsx",
+    "line": 78,
+    "text": "课程资料",
+    "editable": true,
+    "id": "site.9423f5405308f993"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/AISettings.jsx",
+    "line": 42,
+    "text": "（已配置；留空表示不更换）",
+    "editable": true,
+    "id": "site.9efc5d99741803d5"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/Index.jsx",
+    "line": 133,
+    "text": "待评审",
+    "editable": true,
+    "id": "site.f7bb025c7a1ec661"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/Index.jsx",
+    "line": 133,
+    "text": "已通过",
+    "editable": true,
+    "id": "site.9c74a2d81bfdd157"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/Index.jsx",
+    "line": 133,
+    "text": "需修改",
+    "editable": true,
+    "id": "site.5cb9d1c01b5cd79f"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 73,
+    "text": "反馈",
+    "editable": true,
+    "id": "site.0ce7c559115c1036"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 89,
+    "text": "回复已发送",
+    "editable": true,
+    "id": "site.5701ff0ccb652d0c"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 91,
+    "text": "已确认解决",
+    "editable": true,
+    "id": "site.354962097eaa2a0f"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 97,
+    "text": "优先级已更新",
+    "editable": true,
+    "id": "site.3cb81d4b32d7099e"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 100,
+    "text": "状态已更新",
+    "editable": true,
+    "id": "site.07f417bbf1f12f81"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 102,
+    "text": "内部备注已保存",
+    "editable": true,
+    "id": "site.bf2bbecfa785b638"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 107,
+    "text": "反馈已重新打开",
+    "editable": true,
+    "id": "site.01836a87796760c6"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 112,
+    "text": "反馈已标记为已处理",
+    "editable": true,
+    "id": "site.b27404a8f08c5ff7"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/List.jsx",
+    "line": 26,
+    "text": "反馈列表",
+    "editable": true,
+    "id": "site.cfd5c362774f7e7e"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Manage.jsx",
+    "line": 52,
+    "text": "已注销用户",
+    "editable": true,
+    "id": "site.fb5dbb580501df5a"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 12,
+    "text": "滑翔机在设定时间内稳定飞行，气动布局比较合适，可以试试更高更远的目标。",
+    "editable": true,
+    "id": "site.09aaa2ea79fc4be3"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 13,
+    "text": "飞机平稳落地，这是一次成功的试飞！",
+    "editable": true,
+    "id": "site.7cb2b95fd9c16af0"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 14,
+    "text": "飞机下降太快，重重地“砸”在了地面上。试试把平尾偏角调小一些，或增大机翼、减轻重量。",
+    "editable": true,
+    "id": "site.075eeed51b9a25aa"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 15,
+    "text": "飞机发生了横滚失控。试试增大机翼上反角、把重心往前移，或适当提高投放速度。",
+    "editable": true,
+    "id": "site.446efa702ecc3f53"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 16,
+    "text": "飞机失速下坠了。试试把重心往前移一些、减小平尾上抬角度，或提高一点投放速度。",
+    "editable": true,
+    "id": "site.43feb7d63bd09975"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 17,
+    "text": "在设定时间内飞行稳定、没有落地。",
+    "editable": true,
+    "id": "site.e8262705b1a610ab"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 36,
+    "text": "滑翔时长",
+    "editable": true,
+    "id": "site.fee946981402170d"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 36,
+    "text": "水平距离",
+    "editable": true,
+    "id": "site.7247f908d1ee4fe4"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 37,
+    "text": "升阻比 L/D",
+    "editable": true,
+    "id": "site.b8fa7fbbfbd7a0c7"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 37,
+    "text": "平均下沉率",
+    "editable": true,
+    "id": "site.5ddf4a1db01ecc72"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 38,
+    "text": "平均空速",
+    "editable": true,
+    "id": "site.b3f9e88cc2248cec"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 38,
+    "text": "落地高度",
+    "editable": true,
+    "id": "site.2e7ccbb831159c5c"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 73,
+    "text": "无法获取实验环境状态",
+    "editable": true,
+    "id": "site.428e31905bab5aee"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 91,
+    "text": "已返回",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 91,
+    "text": "请返回",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 160,
+    "text": "航迹图",
+    "editable": true,
+    "id": "site.00c55a397c1790c7"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 160,
+    "text": "飞行遥测图",
+    "editable": true,
+    "id": "site.974fcba694075a4b"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 168,
+    "text": "飞行回放",
+    "editable": true,
+    "id": "site.d0ffe75e194fb4b0"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 197,
+    "text": "已返回",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 197,
+    "text": "请返回",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 199,
+    "text": "已返回",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 199,
+    "text": "请返回",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 220,
+    "text": "启动模拟失败，请稍后重试。",
+    "editable": true,
+    "id": "site.d4e886021c1bfac5"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 234,
+    "text": "正在检测实验环境…",
+    "editable": true,
+    "id": "site.f2fba4773aac84cb"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 238,
+    "text": "模拟引擎暂不可用，请稍后再试或联系老师。",
+    "editable": true,
+    "id": "site.1123cc8bb6d0596f"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 239,
+    "text": "正在确认来源课程…",
+    "editable": true,
+    "id": "site.8bc535ac2db22e5c"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 288,
+    "text": "真 novaPhy 物理引擎",
+    "editable": true,
+    "id": "site.6230c6b28be24fcc"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 288,
+    "text": "参考后端",
+    "editable": true,
+    "id": "site.ce0c1538ff1b1b71"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/useGliderRecords.js",
+    "line": 24,
+    "text": "试飞记录加载失败，请重试。",
+    "editable": true,
+    "id": "site.fdae589dadb8340e"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 16,
+    "text": "知识理解",
+    "editable": true,
+    "id": "site.8b310548b22c624b"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 17,
+    "text": "问题分析",
+    "editable": true,
+    "id": "site.9603aab650dcabfc"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 18,
+    "text": "实践应用",
+    "editable": true,
+    "id": "site.fd4fcc0eeeadf290"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 19,
+    "text": "反思表达",
+    "editable": true,
+    "id": "site.e5e4562ec821dc2b"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 62,
+    "text": "待评审",
+    "editable": true,
+    "id": "site.a5a91074d1bb591e"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 62,
+    "text": "已通过",
+    "editable": true,
+    "id": "site.1af4c53e88331339"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 62,
+    "text": "需修改",
+    "editable": true,
+    "id": "site.b8c8104cfbdb0482"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 87,
+    "text": "分",
+    "editable": true,
+    "id": "site.8a347b2b332813f5"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 88,
+    "text": "分",
+    "editable": true,
+    "id": "site.8a347b2b332813f5"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 93,
+    "text": "报告已通过",
+    "editable": true,
+    "id": "site.93cd797fbf2af309"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 93,
+    "text": "报告已退回修改",
+    "editable": true,
+    "id": "site.b6e5971ed05fd1cb"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 93,
+    "text": "未评分",
+    "editable": true,
+    "id": "site.5e53e44a66a97b5e"
+  },
+  {
+    "sourceFile": "frontend/src/pages/notifications/Detail.jsx",
+    "line": 57,
+    "text": "通知",
+    "editable": true,
+    "id": "site.0dac94af865d540e"
+  },
+  {
+    "sourceFile": "frontend/src/pages/notifications/List.jsx",
+    "line": 29,
+    "text": "通知列表",
+    "editable": true,
+    "id": "site.405493918b74e7d2"
+  },
+  {
+    "sourceFile": "frontend/src/pages/notifications/List.jsx",
+    "line": 73,
+    "text": "已将全部通知标为已读",
+    "editable": true,
+    "id": "site.3a6ffa684c57a9b6"
+  },
+  {
+    "sourceFile": "frontend/src/pages/notifications/List.jsx",
+    "line": 80,
+    "text": "已隐藏全部已读通知",
+    "editable": true,
+    "id": "site.83df7e0be066d32f"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 124,
+    "text": "﻿登录账号,姓名,身份,学校名称,班级名称,邮箱,手机号\n",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 125,
+    "text": "BJFX-2026-0001,示例学生,学生,北航附属实验学校,四年级1班,example@xx.com,13800000000\n",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 126,
+    "text": "T-BJFX-001,示例教师,教师,北航附属实验学校,四年级1班,,\n",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 127,
+    "text": "M-0001,示例导师,学术导师,,,,",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 132,
+    "text": "用户导入模板.csv",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 183,
+    "text": "正常",
+    "editable": true,
+    "id": "site.526198c6dd3a6e25"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 183,
+    "text": "已停用",
+    "editable": true,
+    "id": "site.fee10b33618e8dd9"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 183,
+    "text": "已归档",
+    "editable": true,
+    "id": "site.ae0edc438850a377"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 183,
+    "text": "全部",
+    "editable": true,
+    "id": "site.94f66c07732ad3f6"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 193,
+    "text": "学生",
+    "editable": true,
+    "id": "site.f162b806a9bc3cc1"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 193,
+    "text": "教师",
+    "editable": true,
+    "id": "site.a01198f7f082158a"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 193,
+    "text": "学术导师",
+    "editable": true,
+    "id": "site.265d5526ecb9d3b3"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 282,
+    "text": "本次导入账号.csv",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "问题发现",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "方案设计",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "动手操作",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "数据分析",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "表达展示",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 15,
+    "text": "未知",
+    "editable": true,
+    "id": "site.eee4970f985f6ddd"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 24,
+    "text": "未知",
+    "editable": true,
+    "id": "site.eee4970f985f6ddd"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 42,
+    "text": "已修改",
+    "editable": true,
+    "id": "site.635c2c39c079e914"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 42,
+    "text": "待评审",
+    "editable": true,
+    "id": "site.347651bf49604b8b"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 42,
+    "text": "通过",
+    "editable": true,
+    "id": "site.e8d21f248500af2d"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 42,
+    "text": "需修改",
+    "editable": true,
+    "id": "site.1749b70547a94071"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 49,
+    "text": "作品附件",
+    "editable": true,
+    "id": "site.1b2793e919aad93b"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/List.jsx",
+    "line": 15,
+    "text": "已修改",
+    "editable": true,
+    "id": "site.2d23c87fc3b355e5"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/List.jsx",
+    "line": 46,
+    "text": "暂无任务简介",
+    "editable": true,
+    "id": "site.9ab727d12a10b24d"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 23,
+    "text": "上次会话已退出，请重新登录。",
+    "editable": true,
+    "id": "site.c23631bde532edb5"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 51,
+    "text": "该账号已在其他页面退出，请重新登录。",
+    "editable": true,
+    "id": "site.6fd39478748f9ef4"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 86,
+    "text": "该账号已在其他页面退出，请重新登录。",
+    "editable": true,
+    "id": "site.6fd39478748f9ef4"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 107,
+    "text": "已退出登录。",
+    "editable": true,
+    "id": "site.941fb2a94a09d16c"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 117,
+    "text": "密码已经修改，但新登录信息无法保存。请恢复浏览器存储后，用新密码重新登录。",
+    "editable": true,
+    "id": "site.64ac32dacf22aa38"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 8,
+    "text": "暂无评价",
+    "editable": true,
+    "id": "site.3188a17414ed8a7e"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "问题发现",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "方案设计",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "动手操作",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "数据分析",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "表达展示",
+    "editable": false,
+    "reason": "原能力评价维度协议，同时作为对象键，保留原字段"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 18,
+    "text": "课程范围",
+    "editable": true,
+    "id": "site.b4aacec790d99c82"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 19,
+    "text": "报名关系",
+    "editable": true,
+    "id": "site.637de26214e439e0"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 36,
+    "text": "档案课程",
+    "editable": true,
+    "id": "site.dbc17c073f7ca8f2"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 37,
+    "text": "作品记录",
+    "editable": true,
+    "id": "site.a9f2f6d621ccf4e0"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 38,
+    "text": "作品记录",
+    "editable": true,
+    "id": "site.a9f2f6d621ccf4e0"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 43,
+    "text": "反思记录",
+    "editable": true,
+    "id": "site.11c1393834274716"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 44,
+    "text": "导师评价",
+    "editable": true,
+    "id": "site.4df0f89832b20a64"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 46,
+    "text": "成长记录",
+    "editable": true,
+    "id": "site.40c8c9a4076e6f7c"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 49,
+    "text": "作品记录",
+    "editable": true,
+    "id": "site.a9f2f6d621ccf4e0"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 49,
+    "text": "个人成长记录",
+    "editable": true,
+    "id": "site.815a1a8f2dd27344"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 50,
+    "text": "作品提交",
+    "editable": true,
+    "id": "site.389eea802ed7dbfe"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 51,
+    "text": "报告反思",
+    "editable": true,
+    "id": "site.8921d4ae8b74a517"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 51,
+    "text": "反思日志",
+    "editable": true,
+    "id": "site.da64363b8ec61e75"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 61,
+    "text": "课程范围",
+    "editable": true,
+    "id": "site.b4aacec790d99c82"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 69,
+    "text": "档案暂时无法读取，请重试。",
+    "editable": true,
+    "id": "site.c692bee54279ae8e"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 75,
+    "text": "草稿",
+    "editable": true,
+    "id": "site.56ad2c721b8841c8"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 75,
+    "text": "待评审",
+    "editable": true,
+    "id": "site.c706a1efa7cb4d51"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 75,
+    "text": "已通过",
+    "editable": true,
+    "id": "site.e7e8453a498e046c"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 75,
+    "text": "需修改",
+    "editable": true,
+    "id": "site.2ab89efd911a3715"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "课堂资料",
+    "editable": true,
+    "id": "site.72580f0e1b8c5a24"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "课后任务",
+    "editable": true,
+    "id": "site.12905f2c2f2f631f"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "课程",
+    "editable": true,
+    "id": "site.cfa0082ddc897314"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "课时",
+    "editable": true,
+    "id": "site.f8f53436b10210e2"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "知识卡片",
+    "editable": true,
+    "id": "site.5852d43924b2e8b6"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 33,
+    "text": "课程不存在",
+    "editable": false,
+    "reason": "业务比较或权限错误分类匹配词"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 34,
+    "text": "课程不存在或已不可访问",
+    "editable": true,
+    "id": "site.f995c7841fa138d8"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 34,
+    "text": "课程暂时无法读取",
+    "editable": true,
+    "id": "site.c52dd33e5275bcb5"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseResourceDownload.jsx",
+    "line": 37,
+    "text": "课程资料",
+    "editable": true,
+    "id": "site.785cfd66e3482f36"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseResourceDownload.jsx",
+    "line": 45,
+    "text": "重试下载",
+    "editable": true,
+    "id": "site.75c74751c4b15e03"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseResourceDownload.jsx",
+    "line": 45,
+    "text": "下载",
+    "editable": true,
+    "id": "site.6c87cdefe32538b6"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseResourceDownload.jsx",
+    "line": 45,
+    "text": "课程资料",
+    "editable": true,
+    "id": "site.785cfd66e3482f36"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseReview.jsx",
+    "line": 36,
+    "text": "课程资料",
+    "editable": true,
+    "id": "site.2769f239632b60b1"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseReview.jsx",
+    "line": 55,
+    "text": "课程不存在",
+    "editable": false,
+    "reason": "业务比较或权限错误分类匹配词"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseReview.jsx",
+    "line": 62,
+    "text": "提交记录",
+    "editable": true,
+    "id": "site.63594e340fce617c"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseReview.jsx",
+    "line": 103,
+    "text": "课程回放",
+    "editable": true,
+    "id": "site.3b9eadaf99378378"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 39,
+    "text": "实验来源无效，已返回课程选择。",
+    "editable": true,
+    "id": "site.3926c7afbd214c30"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 43,
+    "text": "来源课程已撤回或不再分配给你，请返回课程选择。",
+    "editable": true,
+    "id": "site.c4132ee2bbd85aab"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 43,
+    "text": "暂时无法确认来源课程，已返回课程选择；网络恢复后可从探索地图重新进入。",
+    "editable": true,
+    "id": "site.2d658c8a56609fad"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 47,
+    "text": "来源位置无效，已返回可访问的课程地图。",
+    "editable": true,
+    "id": "site.883c31b2574378d4"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 51,
+    "text": "来源位置与课程或课时不匹配，已返回课程地图。",
+    "editable": true,
+    "id": "site.ca486b14a36c12ec"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 55,
+    "text": "来源课时已不可访问，已返回课程地图。",
+    "editable": true,
+    "id": "site.3b7e6f3c0b837eb0"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 63,
+    "text": "来源课程已无法确认访问，已返回课程选择。",
+    "editable": true,
+    "id": "site.73a3fd04b83b4178"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 65,
+    "text": "来源课时已不可访问，已返回课程地图。",
+    "editable": true,
+    "id": "site.3b7e6f3c0b837eb0"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 65,
+    "text": "暂时无法确认来源课时，已返回课程地图，请稍后重试。",
+    "editable": true,
+    "id": "site.9cf25451a24e82a5"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 68,
+    "text": "来源课时与课程不匹配，已返回课程地图。",
+    "editable": true,
+    "id": "site.658a2be1edbb9b45"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 72,
+    "text": "原学习阶段当前尚未解锁，已返回课程地图，请按现有学习流程继续。",
+    "editable": true,
+    "id": "site.fd16bda9118c02e8"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 76,
+    "text": "原实验关联已解除或来源已变化，已返回课程地图。",
+    "editable": true,
+    "id": "site.27a09c018221fe52"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 79,
+    "text": "原知识卡片已不可访问或尚未解锁，已返回课程地图。",
+    "editable": true,
+    "id": "site.904e5c5daca21431"
+  },
+  {
+    "sourceFile": "frontend/src/student/homeData.js",
+    "line": 20,
+    "text": "课程不存在",
+    "editable": false,
+    "reason": "业务比较或权限错误分类匹配词"
+  },
+  {
+    "sourceFile": "frontend/src/student/homeData.js",
+    "line": 29,
+    "text": "任务与作品状态未能加载，待办可能不完整。请重试；已加载的课程仍可进入。",
+    "editable": true,
+    "id": "site.51ec868473526871"
+  },
+  {
+    "sourceFile": "frontend/src/student/homeData.js",
+    "line": 39,
+    "text": "一门课程已不可访问，已从当前课程与待办中移除。",
+    "editable": true,
+    "id": "site.08d32c9fb7b826ae"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 7,
+    "text": "本账号的演示数据损坏。可以重试读取，或确认后重置；当前数据尚未清除。",
+    "editable": true,
+    "id": "site.9b3b42e49ac0a0a5"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 31,
+    "text": "浏览器拒绝读取旧版演示记录。请允许本站存储后重试；旧记录尚未改变。",
+    "editable": true,
+    "id": "site.f2d529c0ec0c28e2"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 33,
+    "text": "无法读取本账号的旧版演示记录，请恢复存储权限后重试。",
+    "editable": true,
+    "id": "site.bfb7895a6afdd098"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 83,
+    "text": "服务器日期已失效，请重新核对后签到",
+    "editable": true,
+    "id": "site.a180b9d47a1d73f7"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 91,
+    "text": "演示兑换已同步（不发货）",
+    "editable": true,
+    "id": "site.d91266861354a840"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 94,
+    "text": "同一兑换编号不能更换礼品",
+    "editable": true,
+    "id": "site.4ff275ef2b159cb1"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardConfig.js",
+    "line": 14,
+    "text": "此状态由演示配置预置，正式条件待制定。",
+    "editable": true,
+    "id": "site.2b2b414f050133b7"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardConfig.js",
+    "line": 15,
+    "text": "正式获取条件待制定。",
+    "editable": true,
+    "id": "site.65b678f067c8e614"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 11,
+    "text": "浏览器不允许访问奖励数据库。请允许本站存储后重试，不会改用临时余额。",
+    "editable": true,
+    "id": "site.004c8f1e9226af9f"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 13,
+    "text": "无法打开本浏览器的奖励数据库。请检查站点存储权限后重试。",
+    "editable": true,
+    "id": "site.60ef9834ca6f017a"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 14,
+    "text": "其他旧页面正在占用奖励数据库。请关闭或刷新旧页面，再重试读取。",
+    "editable": true,
+    "id": "site.fe04533123137c8c"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 15,
+    "text": "无法打开本浏览器的奖励数据库。请检查站点存储权限后重试。",
+    "editable": true,
+    "id": "site.60ef9834ca6f017a"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 21,
+    "text": "奖励数据库初始化失败，原记录未改变。请检查存储权限后重试。",
+    "editable": true,
+    "id": "site.4ca457f743f50a79"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 42,
+    "text": "奖励事务未提交，原已保存记录未改变。请检查存储权限或空间后重试本次操作。",
+    "editable": true,
+    "id": "site.1e9ef3073d307000"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 43,
+    "text": "暂时无法读取奖励数据库。请恢复存储权限后重新读取。",
+    "editable": true,
+    "id": "site.39597c181dab03ba"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 44,
+    "text": "操作已取消",
+    "editable": true,
+    "id": "site.c32f49a8d7085186"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardEvents.js",
+    "line": 4,
+    "text": "本页会读取已保存记录，但跨页面自动刷新暂不可用。请在其他页面返回或重新读取，不要重复兑换。",
+    "editable": true,
+    "id": "site.a0efa7edcb9caf63"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 11,
+    "text": "本账号的演示数据损坏。可以重试读取，或确认后重置；当前数据尚未清除。",
+    "editable": true,
+    "id": "site.aa4606fa75a94b68"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 16,
+    "text": "已达到演示兑换次数上限",
+    "editable": true,
+    "id": "site.07666ab8081dfaa8"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 17,
+    "text": "演示库存不足",
+    "editable": true,
+    "id": "site.abfbf7a08600fbc4"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 29,
+    "text": "缺少兑换确认编号，请重新打开详情。",
+    "editable": true,
+    "id": "site.572fd0905734ce6c"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 32,
+    "text": "同一兑换编号不能更换礼品",
+    "editable": true,
+    "id": "site.14f4236a33906dec"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 36,
+    "text": "演示礼品不存在",
+    "editable": true,
+    "id": "site.c4c32ad1b6c20e19"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 39,
+    "text": "演示兑换已记录，消息待同步",
+    "editable": true,
+    "id": "site.57064789ce9d8873"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 43,
+    "text": "积分",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 43,
+    "text": "金币",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 94,
+    "text": "重置本账号的演示数据？",
+    "editable": true,
+    "id": "site.caf99e732758faee"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 94,
+    "text": "确认演示兑换",
+    "editable": true,
+    "id": "site.febb523314f74c5d"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 95,
+    "text": "演示记录已变化",
+    "editable": true,
+    "id": "site.de85d36f2df3a50d"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 95,
+    "text": "演示兑换成功",
+    "editable": true,
+    "id": "site.53081cf6cd35f1aa"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 95,
+    "text": "演示记录待同步",
+    "editable": true,
+    "id": "site.61eca7e2d1f54169"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 95,
+    "text": "演示详情",
+    "editable": true,
+    "id": "site.eb6f0b1963c1a4f5"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 137,
+    "text": "积分",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 137,
+    "text": "金币",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardStore.js",
+    "line": 23,
+    "text": "检测到旧页面更改了旧版演示记录。当前以已升级的记录为准，请刷新其他旧页面；不会合并两份余额。",
+    "editable": true,
+    "id": "site.2a4f35fa11b8ef8f"
+  },
+  {
+    "sourceFile": "frontend/src/student/routeModel.js",
+    "line": 34,
+    "text": "待安排",
+    "editable": true,
+    "id": "site.a1a656a94c873794"
+  },
+  {
+    "sourceFile": "frontend/src/student/ServerRewards.jsx",
+    "line": 20,
+    "text": "请重新登录",
+    "editable": true,
+    "id": "site.1eea9fe2e9eb0522"
+  },
+  {
+    "sourceFile": "frontend/src/student/ServerRewards.jsx",
+    "line": 20,
+    "text": "账号已切换，本次操作已停止",
+    "editable": true,
+    "id": "site.76466dce4bd9fcdb"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 2,
+    "text": "程以宁",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 2,
+    "text": "航向者",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 2,
+    "text": "长黑发、蓝领、蓝金徽记",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 3,
+    "text": "许行舟",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 3,
+    "text": "探路者",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 3,
+    "text": "短乱发、绿色领口、明朗表情",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 4,
+    "text": "江予川",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 4,
+    "text": "造物者",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 4,
+    "text": "棕短发、橙色护目镜与领口",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 5,
+    "text": "夏长庚",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 5,
+    "text": "解码者",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 5,
+    "text": "蓝黑短发、深蓝领口",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 6,
+    "text": "晏子仪",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 6,
+    "text": "协同者",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 6,
+    "text": "高马尾、三角发夹、青色领口",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 7,
+    "text": "南容",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 7,
+    "text": "守正者",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 7,
+    "text": "短黑发、金色领口",
+    "editable": false,
+    "reason": "既定角色姓名/形象设定，保留身份定义"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentScope.jsx",
+    "line": 65,
+    "text": "作品不存在",
+    "editable": false,
+    "reason": "业务比较或权限错误分类匹配词"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentScope.jsx",
+    "line": 69,
+    "text": "暂时无法重新核验当前内容，请检查网络后重试。页面中的填写内容仍保留。",
+    "editable": true,
+    "id": "site.79411935202f6cc3"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentScope.jsx",
+    "line": 75,
+    "text": "暂时无法重新检查账号与课程，请检查网络后重试。已有填写内容仍保留，提交时仍由服务器校验。",
+    "editable": true,
+    "id": "site.27da8f7fb86fb089"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentTaskRedirect.jsx",
+    "line": 27,
+    "text": "任务所属课程已不可访问，请返回探索地图。",
+    "editable": true,
+    "id": "site.9957663d3d717472"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentTaskRedirect.jsx",
+    "line": 36,
+    "text": "任务",
+    "editable": true,
+    "id": "site.26be51a635380b55"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentTasks.jsx",
+    "line": 38,
+    "text": "课后任务",
+    "editable": true,
+    "id": "site.59f68be3ae43a068"
+  },
+  {
+    "sourceFile": "frontend/src/student/useRemote.js",
+    "line": 21,
+    "text": "网络连接失败，请重试。",
+    "editable": true,
+    "id": "site.3e68874ac03a1fe3"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 4,
+    "text": "管理员",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 4,
+    "text": "学术导师",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 4,
+    "text": "教师",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 4,
+    "text": "学生",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 4,
+    "text": "新媒体",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 12,
+    "text": "姓名",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 12,
+    "text": "登录账号",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 12,
+    "text": "身份",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 12,
+    "text": "学校",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 12,
+    "text": "班级",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 26,
+    "text": "姓名",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 26,
+    "text": "登录账号",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 26,
+    "text": "临时密码",
+    "editable": false,
+    "reason": "CSV身份导入/导出协议与文件名，不能作为任意系统文案修改"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 45,
+    "text": "本次导入临时密码.csv",
+    "editable": false,
+    "reason": "业务匹配/替换或导出协议片段"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 31,
+    "text": "浏览器不允许访问登录存储。请允许本站存储后重试，或重新登录。",
+    "editable": true,
+    "id": "site.40cb08c76f9d4fa8"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 33,
+    "text": "上次登录信息未完整保存，请恢复浏览器存储后重新登录。",
+    "editable": true,
+    "id": "site.7d75c1cdc658da11"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 35,
+    "text": "上次登录信息未完整保存，请恢复浏览器存储后重新登录。",
+    "editable": true,
+    "id": "site.7d75c1cdc658da11"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 39,
+    "text": "无法读取登录信息，请检查浏览器存储权限后重试。",
+    "editable": true,
+    "id": "site.cbf6d0c1a354bba7"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 45,
+    "text": "浏览器不允许保存登录信息，请允许本站存储后重新登录。",
+    "editable": true,
+    "id": "site.9b35c4d2497eec51"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 60,
+    "text": "登录信息保存失败，未进入账号页面。请恢复浏览器存储后重新登录。",
+    "editable": true,
+    "id": "site.2ab9584105449e17"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 60,
+    "text": "登录信息保存失败，部分旧记录暂时无法清理。当前页面已停止使用这些信息，请恢复存储后重新登录。",
+    "editable": true,
+    "id": "site.276dedaabc287bf2"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 92,
+    "text": " 浏览器暂时无法清理全部登录记录；当前页面已停止使用，请恢复存储后重新登录。",
+    "editable": true,
+    "id": "site.4c71026bdf3111e1"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 5,
+    "text": "最多选择 3 个附件。已选择的文件已保留，请移除后再添加。",
+    "editable": true,
+    "id": "site.14c797e78b938855"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 7,
+    "text": "文件扩展名与类型需匹配：PNG、JPG/JPEG、WEBP 或 PDF；不支持 GIF。",
+    "editable": true,
+    "id": "site.641084bd18bdda68"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 8,
+    "text": "单个附件不能超过 10 MiB。",
+    "editable": true,
+    "id": "site.33b7e7b2e470176f"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "登录与密码",
+    "editable": true,
+    "id": "site.ad70adac5e57f6d0"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "探索入口",
+    "editable": true,
+    "id": "site.af492bcd0b6000c7"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "课程学习",
+    "editable": true,
+    "id": "site.dfabeec2c0e418ab"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "账号信息",
+    "editable": true,
+    "id": "site.a95621c951c59963"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "作品提交",
+    "editable": true,
+    "id": "site.fc7753233f5e561e"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "成长档案",
+    "editable": true,
+    "id": "site.dcb6e8e2a13e3f90"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "学习助手",
+    "editable": true,
+    "id": "site.36227347df94de45"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "其他",
+    "editable": true,
+    "id": "site.b4b2cdc382911e4b"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 5,
+    "text": "请求超时，结果暂未确认。请先重新读取记录，避免重复提交。",
+    "editable": true,
+    "id": "site.96d23b0be0a1ca36"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 6,
+    "text": "请求超时，请检查网络后重试。",
+    "editable": true,
+    "id": "site.afc0506d647eb2de"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 8,
+    "text": "未收到服务端确认。请检查网络并先查看记录，再决定是否重试。",
+    "editable": true,
+    "id": "site.265a3de82f37bba5"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 8,
+    "text": "暂时无法连接服务，请检查网络后重试。",
+    "editable": true,
+    "id": "site.ad763f0f31deeb3e"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 9,
+    "text": "失败，请稍后重试。",
+    "editable": true,
+    "id": "site.f46bf25949069f2c"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 12,
+    "text": "不存在或已不可访问",
+    "editable": true,
+    "id": "site.c17447bfc59c1b00"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 13,
+    "text": "无权访问这条",
+    "editable": true,
+    "id": "site.f38395ffc0882a3e"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 13,
+    "text": "暂时无法读取",
+    "editable": true,
+    "id": "site.865e772e54d4a87d"
+  }
+]

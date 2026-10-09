@@ -1,0 +1,12 @@
+{
+  "records": [
+    {
+      "name": "姓名旁原头像入口、头部同步、重登持久；写入失败及回读失败仍可重试",
+      "status": "passed"
+    }
+  ],
+  "browser": "154.0.4258.53",
+  "pageErrors": [],
+  "clock": "isolated child IPC + Playwright browser clock; host/production clock unchanged",
+  "fixture": "fresh synthetic DB; existing .local/teaching untouched"
+}

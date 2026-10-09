@@ -1,0 +1,48 @@
+{
+  "records": [
+    {
+      "name": "持续打开页面跨北京午夜，比较实际组合；同日刷新、独立浏览器及后端重启一致",
+      "status": "passed"
+    },
+    {
+      "name": "后台休眠后 focus/visibility 重读，跳过多天、跨年与闰日恢复正确日期",
+      "status": "passed"
+    },
+    {
+      "name": "跨日网络失败隐藏旧结果、标出上次日期，手动重试读取当天且不写奖励",
+      "status": "passed"
+    },
+    {
+      "name": "旧请求迟到不覆盖新请求，切换账号后旧运势不能落入新账号",
+      "status": "passed"
+    },
+    {
+      "name": "指定说明行消失，宜/忌、日期、图案保留，桌面平板手机文字无溢出",
+      "status": "passed"
+    },
+    {
+      "name": "原十关/空参观/独立实验入口、真实头像保存重读与机器人拖动聊天",
+      "status": "passed"
+    },
+    {
+      "name": "全部运势文案可编辑，下载 HTML 保留改稿，JSON 只导出改动且导入不覆盖其他文案",
+      "status": "passed"
+    },
+    {
+      "name": "五尺寸九条相邻路线不进入按钮、图像、文字牌；路径互不相交，前三关主题独立",
+      "status": "passed"
+    },
+    {
+      "name": "姓名旁原头像入口、头部同步、重登持久；写入失败及回读失败仍可重试",
+      "status": "passed"
+    },
+    {
+      "name": "多账号连续30日比较真实宜/忌展示文字，同日稳定且候选来自各30条",
+      "status": "passed"
+    }
+  ],
+  "browser": "154.0.4258.53",
+  "pageErrors": [],
+  "clock": "isolated child IPC + Playwright browser clock; host/production clock unchanged",
+  "fixture": "fresh synthetic DB; existing .local/teaching untouched"
+}

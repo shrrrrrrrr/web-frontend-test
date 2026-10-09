@@ -1,0 +1,22 @@
+{
+  "actualRoutes": 54,
+  "missingRoutes": [],
+  "viewFiles": 46,
+  "registryEntries": 2709,
+  "uniquePool": [
+    {
+      "type": "good",
+      "count": 30,
+      "idsExist": true,
+      "uniqueText": 30
+    },
+    {
+      "type": "avoid",
+      "count": 30,
+      "idsExist": true,
+      "uniqueText": 30
+    }
+  ],
+  "brokenLocalLinks": [],
+  "scope": "App.jsx static production/compat routes checked against per-view file list; redirects and development-only preview explicitly reported; registry count is not a claim about editable dynamic data"
+}

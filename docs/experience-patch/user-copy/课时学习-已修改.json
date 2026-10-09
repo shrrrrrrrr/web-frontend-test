@@ -1,0 +1,245 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "课时学习",
+  "edits": [
+    {
+      "id": "system.learning.003",
+      "text": "哎呀，答案提交失败了，请检查网络后再试",
+      "enabled": true,
+      "baseText": "答案未能提交，请检查网络后再试。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.014",
+      "text": "本题只有一次作答机会哦",
+      "enabled": true,
+      "baseText": "本题只有一次作答机会，提交后不能修改",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.021",
+      "text": "导师暂未设置答案详解",
+      "enabled": true,
+      "baseText": "导师暂未设置答案详解。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.026",
+      "text": "导师暂未设置答案详解",
+      "enabled": true,
+      "baseText": "导师暂未设置答案详解。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.027",
+      "text": "填写后自动保存到本浏览器，按当前账号隔离",
+      "enabled": true,
+      "baseText": "填写后自动保存到本浏览器，按当前账号隔离。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.028",
+      "text": "已保存到当前浏览器，仅当前账号可恢复。附件不会保存在草稿中",
+      "enabled": true,
+      "baseText": "已保存到当前浏览器，仅当前账号可恢复。附件不会保存在草稿中。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.029",
+      "text": "草稿保存失败，请保留页面并复制填写内容；检查浏览器存储空间后重试",
+      "enabled": true,
+      "baseText": "草稿保存失败，请保留页面并复制填写内容；检查浏览器存储空间后重试。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.030",
+      "text": "课堂回放暂时无法播放，可能已移除或网络中断。请重试或联系导师，其他学习内容仍可继续",
+      "enabled": true,
+      "baseText": "课堂回放暂时无法播放，可能已移除或网络中断。请重试或联系导师，其他学习内容仍可继续。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.032",
+      "text": "原知识卡片已不可访问或尚未解锁，已返回课程地图",
+      "enabled": true,
+      "baseText": "原知识卡片已不可访问或尚未解锁，已返回课程地图。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.033",
+      "text": "已恢复当前浏览器中此账号的报告草稿。继续填写会自动保存在本浏览器",
+      "enabled": true,
+      "baseText": "已恢复当前浏览器中此账号的报告草稿。继续填写会自动保存在本浏览器。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.034",
+      "text": "草稿恢复失败，未能读取本浏览器中的记录；请核对并保留填写内容",
+      "enabled": true,
+      "baseText": "草稿恢复失败，未能读取本浏览器中的记录；请核对并保留填写内容。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.035",
+      "text": "来源课程已不可访问，已返回课程选择",
+      "enabled": true,
+      "baseText": "来源课程已不可访问，已返回课程选择。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.036",
+      "text": "来源课时已不可访问，已返回课程地图",
+      "enabled": true,
+      "baseText": "来源课时已不可访问，已返回课程地图。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.037",
+      "text": "无法加载本课时，请检查报名和发布状态",
+      "enabled": true,
+      "baseText": "无法加载本课时，请检查报名和发布状态。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.039",
+      "text": "未能确认课堂回顾，请重试",
+      "enabled": true,
+      "baseText": "未能确认课堂回顾，请重试。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.042",
+      "text": "未能完成本卡片，请重试",
+      "enabled": true,
+      "baseText": "未能完成本卡片，请重试。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.046",
+      "text": "提交后进入导师评审；若导师退回，可根据意见提交新版本",
+      "enabled": true,
+      "baseText": "提交后进入导师评审；若导师退回，可根据意见提交新版本。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.048",
+      "text": "报告已提交，但本地草稿未能清理",
+      "enabled": true,
+      "baseText": "报告已提交，但本地草稿未能清理。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.049",
+      "text": "报告未能提交，填写内容仍保留，请检查网络后重试",
+      "enabled": true,
+      "baseText": "报告未能提交，填写内容仍保留，请检查网络后重试。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.078",
+      "text": "回看课堂，整理观察。完成后由你确认，无需等待观看时长",
+      "enabled": true,
+      "baseText": "回看课堂，整理观察。完成后由你确认，无需等待观看时长。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.083",
+      "text": "回放文件未能播放，请重试或联系导师。可以先学习其他内容",
+      "enabled": true,
+      "baseText": "回放文件未能播放，请重试或联系导师。其他学习内容仍可继续。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.094",
+      "text": "依次阅读、作答并确认完成。答错后可以查看解析，再继续学习",
+      "enabled": true,
+      "baseText": "依次阅读、作答并确认完成。答错后可以查看解析，再继续学习。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.097",
+      "text": "请联系执行导师发布本课时的知识卡片后再继续",
+      "enabled": true,
+      "baseText": "本阶段不会自动完成。请联系执行导师发布本课时的知识卡片后再继续。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.102",
+      "text": "本卡片没有配套练习，阅读后即可确认完成",
+      "enabled": true,
+      "baseText": "本卡片没有配套练习，阅读后即可确认完成。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.109",
+      "text": "记录学到了什么，以及你准备怎样改进。报告与作品会分别提交、分别评审",
+      "enabled": true,
+      "baseText": "记录学到了什么，以及你准备怎样改进。报告与作品分别提交、分别评审。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.111",
+      "text": "草稿不会上传服务器；换设备无法恢复。提交成功后会清除本地草稿",
+      "enabled": true,
+      "baseText": "草稿不会上传服务器；换设备无法恢复。提交成功后清除本地草稿。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.119",
+      "text": "提交后请等待导师评审；退回后可按意见修改",
+      "enabled": true,
+      "baseText": "提交后等待导师评审；退回后可按意见修改。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.124",
+      "text": "查看学习报告的反馈，再决定下一步",
+      "enabled": true,
+      "baseText": "查看学习报告的反馈，再决定下一步。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.126",
+      "text": "报告正在等待执行导师评审。你可以回看知识卡片、查看已提交的报告，或处理下方的作品任务",
+      "enabled": true,
+      "baseText": "报告正在等待执行导师评审。你可以回看知识卡片、查看已提交的报告，或处理下方的作品任务。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.127",
+      "text": "请根据导师意见修改报告，再提交新版本",
+      "enabled": true,
+      "baseText": "请根据导师意见修改报告，再提交新版本。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.128",
+      "text": "本版学习报告已通过。作品的提交与评审状态请在下方单独查看",
+      "enabled": true,
+      "baseText": "本版学习报告已通过。作品的提交与评审状态请在下方单独查看。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.129",
+      "text": "完成前三个阶段后进入导师评审",
+      "enabled": true,
+      "baseText": "完成前三个阶段后进入导师评审。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.learning.134",
+      "text": "导师暂未留下评语，请耐心等待~",
+      "enabled": true,
+      "baseText": "导师暂未留下评语。",
+      "baseEnabled": true
+    },
+    {
+      "id": "next.template.preparing",
+      "text": "教学内容正在准备中……",
+      "enabled": true,
+      "baseText": "教学内容正在准备，暂不记录完成",
+      "baseEnabled": true
+    }
+  ]
+}

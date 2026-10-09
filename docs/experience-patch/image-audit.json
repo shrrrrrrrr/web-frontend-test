@@ -1,0 +1,77 @@
+{
+  "screenshots": [
+    {
+      "file": "docs/experience-patch/actual/map-1440x900.png",
+      "size": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "docs/experience-patch/actual/map-768x1024.png",
+      "size": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "docs/experience-patch/actual/map-390x844.png",
+      "size": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "docs/experience-patch/actual/map-360x800.png",
+      "size": [
+        360,
+        800
+      ]
+    },
+    {
+      "file": "docs/experience-patch/actual/map-844x390.png",
+      "size": [
+        844,
+        390
+      ]
+    }
+  ],
+  "masters": [
+    {
+      "file": "frontend/public/assets/experience-patch/vr-master.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "frontend/public/assets/experience-patch/theory-master.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "frontend/public/assets/experience-patch/experiment-master.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    }
+  ]
+}

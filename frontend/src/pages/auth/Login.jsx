@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../../content/copy";
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Alert, Form, Input, Button } from 'antd';
@@ -35,7 +36,7 @@ export default function Login() {
     try {
       const user = await login(values.username.trim(), values.password);
       navigate(user.force_reset_password ? '/change-password' : homeForRole(user.role), { replace: true });
-    } catch (err) { setError(requestError(err, { action: '登录' })); }
+    } catch (err) { setError(requestError(err, { action: siteText("site.bef9ac984635f9f9") })); }
     finally { pending.current = false; setBusy(false); }
   };
   return <StudentTheme><main className="voyage-login space-login patch-login" style={{'--login-height':viewport.height+'px','--login-top':viewport.top+'px'}}>

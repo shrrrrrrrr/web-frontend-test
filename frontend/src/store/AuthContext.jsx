@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components, react-hooks/set-state-in-effect */
+import {copyText as siteText} from "../content/copy";
 import { createContext, useContext, useState, useEffect, useRef, useCallback } from 'react';
 import { authAPI } from '../api';
 import { saveAuthSession, readAuthSession, AUTH_SESSION_ENDED, AUTH_SESSION_STATE, AUTH_PENDING,
@@ -19,7 +20,7 @@ export function AuthProvider({ children }) {
     setLoading(true); setAuthError(''); updateUser(null);
     try {
       if (isSessionStopped() || persistentSessionBlocked()) {
-        setSessionNotice(getSessionNotice() || '上次会话已退出，请重新登录。');
+        setSessionNotice(getSessionNotice() || siteText("site.c23631bde532edb5"));
         return;
       }
       const { token } = readAuthSession(() => window.localStorage);
@@ -28,7 +29,7 @@ export function AuthProvider({ children }) {
         if (current === generation.current) updateUser(res.user);
       }
     } catch (error) {
-      if (current === generation.current) setAuthError(requestError(error, { action: '恢复登录' }));
+      if (current === generation.current) setAuthError(requestError(error, { action: siteText("site.fb1ebb7ecbbd784b") }));
     } finally { if (current === generation.current) setLoading(false); }
   }, [updateUser]);
   useEffect(() => {
@@ -47,7 +48,7 @@ export function AuthProvider({ children }) {
       }
       if (hint.pending) return; // The save's final marker will schedule a stable verification.
       if (hint.event?.kind === 'ended' || !hint.token) {
-        if (!isSessionStopped()) suspendAuthSession('该账号已在其他页面退出，请重新登录。');
+        if (!isSessionStopped()) suspendAuthSession(siteText("site.6fd39478748f9ef4"));
         return;
       }
       const currentUser = userRef.current;
@@ -71,7 +72,7 @@ export function AuthProvider({ children }) {
       } catch (error) {
         // Confirmed 401/FORCE_RESET already follows the global path; transient reads keep inputs.
         if (ticket === verification.current && current === generation.current && !isSessionStopped())
-          setAuthError(requestError(error, { action: '复核登录' }));
+          setAuthError(requestError(error, { action: siteText("site.238a0ae094ef1836") }));
       }
     };
     const changed = event => {
@@ -82,7 +83,7 @@ export function AuthProvider({ children }) {
       } else if (event.key === null || (event.key === 'token' && !event.newValue)) {
         try {
           const hint = sharedSessionHint();
-          if (!hint.pending && !hint.token) suspendAuthSession('该账号已在其他页面退出，请重新登录。');
+          if (!hint.pending && !hint.token) suspendAuthSession(siteText("site.6fd39478748f9ef4"));
         } catch { invalidateSessionRequests(); void restore(); }
       } else if (event.key === AUTH_PENDING && !event.newValue) {
         // Compatibility with an older tab that has not yet emitted the stable marker.
@@ -103,7 +104,7 @@ export function AuthProvider({ children }) {
   const logout = () => {
     let refreshToken;
     try { refreshToken = readAuthSession(() => window.localStorage).refresh_token; } catch { /* Still hide local content. */ }
-    stopAuthSession('已退出登录。');
+    stopAuthSession(siteText("site.941fb2a94a09d16c"));
     if (refreshToken) authAPI.logout(refreshToken).catch(() => {});
   };
   const applySession = (res, passwordChanged = false) => {
@@ -113,7 +114,7 @@ export function AuthProvider({ children }) {
       return nextUser;
     } catch (error) {
       const reason = passwordChanged
-        ? '密码已经修改，但新登录信息无法保存。请恢复浏览器存储后，用新密码重新登录。' : error.message;
+        ? siteText("site.64ac32dacf22aa38") : error.message;
       stopAuthSession(reason);
       if (res.refresh_token) authAPI.logout(res.refresh_token).catch(() => {});
       throw Object.assign(error, { message: reason, code: passwordChanged ? 'PASSWORD_CHANGED_STORAGE' : 'AUTH_STORAGE' });

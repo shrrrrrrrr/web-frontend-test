@@ -2,7 +2,7 @@ const {test,before,after}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),crypto=require('node:crypto');
 process.env.DB_PATH=path.join(fs.mkdtempSync(path.join(os.tmpdir(),'pbl-fortune-')),'test.db');process.env.JWT_SECRET=crypto.randomBytes(32).toString('hex');process.env.NODE_ENV='test';
-const {dailyFortune,VERSION}=require('../services/dailyFortune'),app=require('../app'),db=require('../config/database');
+const {dailyFortune,VERSION,goodPairs}=require('../services/dailyFortune'),app=require('../app'),db=require('../config/database');
 let server,url;const tokens={};
 before(async()=>{
  const hash=require('bcryptjs').hashSync('test123',4);for(const[id,role]of[[1,'student'],[2,'student'],[3,'teacher']])db.prepare('INSERT INTO users(id,username,password_hash,real_name,role) VALUES(?,?,?,?,?)').run(id,'u'+id,hash,'合成账号'+id,role);
@@ -12,6 +12,7 @@ before(async()=>{
 });
 after(async()=>{await new Promise(resolve=>server.close(resolve));db.close();});
 const get=(id,suffix='')=>fetch(url+'/api/account/daily-fortune'+suffix,{headers:id?{Authorization:'Bearer '+tokens[id]}:{}});
+const catalog=require('../../shared/fortunePool.json'),goodIds=catalog.good.map(id=>id.slice('fortune.good.'.length)),avoidIds=catalog.avoid.map(id=>id.slice('fortune.avoid.'.length));
 const combination = ({level,art,good,avoid}) => ({level,art,good,avoid});
 test('已知 12 月 6/7 日碰撞：比较展示组合，不用日期差异冒充刷新',()=>{
  assert.notDeepEqual(combination(dailyFortune(4,new Date('2026-12-06T00:00:00Z'))),combination(dailyFortune(4,new Date('2026-12-07T00:00:00Z'))));
@@ -21,12 +22,12 @@ test('64 个账号连续 800 日：相邻完整组合不同，宜项和枚举受
   let previous;const cycle=new Set();
   for(let day=0;day<800;day++){
    const result=dailyFortune(id,new Date(Date.UTC(2025,0,1)+day*86400000));
-   if(previous)assert.notDeepEqual(combination(result),combination(previous),`account ${id}, ${result.date}`);
+   if(previous){assert.notDeepEqual(combination(result),combination(previous),`account ${id}, ${result.date}`);assert.notDeepEqual([...result.good].sort(),[...previous.good].sort());assert.notDeepEqual(result.avoid,previous.avoid);assert.ok(result.good.every(item=>!previous.good.includes(item)));}
    if(day<720)cycle.add(JSON.stringify(combination(result)));
    assert.ok(['great','lucky','small','steady'].includes(result.level));assert.ok(['fortune-plane','fortune-star','fortune-device'].includes(result.art));
-   assert.equal(new Set(result.good).size,2);assert.ok(result.good.every(v=>['record','ask','test','organize','listen','rest'].includes(v)));assert.ok(result.avoid.every(v=>['rush','ignore','compare','guess'].includes(v)));previous=result;
+   assert.equal(new Set(result.good).size,2);assert.ok(result.good.every(v=>goodIds.includes(v)));assert.ok(result.avoid.every(v=>avoidIds.includes(v)));previous=result;
   }
-  assert.equal(cycle.size,720,`account ${id}: complete cycle is a permutation`);
+  assert.equal(cycle.size,720,`account ${id}: first 720 display combinations are distinct`);
  }
 });
 test('跨年、闰日、北京时间午夜、跳过多天均按服务端日期重新派生',()=>{
@@ -62,3 +63,5 @@ test('强制改密、停用和失效 token 沿用全局认证边界',async()=>{
  db.prepare('UPDATE users SET force_reset_password=0,is_active=0 WHERE id=1').run();assert.equal((await get(1)).status,401);
  tokens[1]='expired-token';assert.equal((await get(1)).status,401);
 });
+
+test('各30条受控候选，435个宜组合完整且循环边界也不重复昨日条目',()=>{assert.equal(goodIds.length,30);assert.equal(avoidIds.length,30);for(const seed of [1,7,500,0xffffffff]){const pairs=goodPairs(seed);assert.equal(pairs.length,435);assert.equal(new Set(pairs.map(p=>[...p].sort().join('|'))).size,435);for(let i=0;i<pairs.length;i++)assert.ok(pairs[i].every(item=>!pairs[(i+1)%pairs.length].includes(item)));}});

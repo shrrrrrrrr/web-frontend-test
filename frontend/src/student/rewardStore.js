@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 import { DEMO_REWARDS_CHANGED, REWARD_CHANNEL, rewardStorageKey, rewardSyncWarning } from './rewardEvents.js';
 
 // One account snapshot serves the header and page; broadcasts only invalidate reads.
@@ -20,7 +21,7 @@ export function createRewardStore({ accountId, adapter, target, createChannel = 
   };
   const onStorage = event => {
     if (event.key === rewardStorageKey(accountId)) {
-      publish({ ...state, syncWarning: '检测到旧页面更改了旧版演示记录。当前以已升级的记录为准，请刷新其他旧页面；不会合并两份余额。' });
+      publish({ ...state, syncWarning: siteText("site.2a4f35fa11b8ef8f") });
       refresh();
     } else if (event.key === null) refresh();
   };

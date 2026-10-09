@@ -1,0 +1,23 @@
+
+> star-voyage-student@0.1.0 lint
+> npm --prefix frontend run lint
+
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\student\StudentArchive.jsx
+  2:25  error  Parsing error: Identifier 'siteTemplate' has already been declared
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\student\StudentGliderWorkspace.jsx
+  2:25  error  Parsing error: Identifier 'siteTemplate' has already been declared
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\student\StudentWorkDetail.jsx
+  2:25  error  Parsing error: Identifier 'siteTemplate' has already been declared
+
+C:\Users\shr\Desktop\nmg前端\app\frontend\src\student\StudentWorks.jsx
+  2:25  error  Parsing error: Identifier 'siteTemplate' has already been declared
+
+✖ 4 problems (4 errors, 0 warnings)
+

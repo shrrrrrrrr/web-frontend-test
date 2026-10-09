@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/systemText.js";
 // HTTP 状态只说明这次请求失败。它不能单独证明整个学生账号或课程失效。
 export const STUDENT_ACCESS_CHECK = 'student-access-check';
 export const STUDENT_COURSES_CHANGED = 'student-courses-changed';
@@ -27,7 +28,7 @@ export function accessCheckForError(error) {
     || path === '/works' || path === '/dashboard/ai/ask' || path === '/archives/reflection';
   if (!needsCourseCheck) return null;
   return { path, courseId, lessonId, workId, taskId,
-    reason: response.data?.error || response.data?.message || '请求内容不可访问' };
+    reason: response.data?.error || response.data?.message || siteText("site.0d4cc45af4f9744d") };
 }
 
 // 返回当前页面真实依赖的对象；与实验的来源课程无关，/glider 不属于课程页面。

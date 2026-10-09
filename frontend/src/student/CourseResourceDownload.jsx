@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../content/copy";
 import Alert from '../student/visual/StudentAlert';
 import {useCourseApis} from './useCourseApis';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -33,7 +34,7 @@ export default function CourseResourceDownload({ resource, courseId }) {
       await courseAPI.detail(courseId);
       if (!live.current || ticket !== generation.current) return;
       url = URL.createObjectURL(blob); urls.current.add(url);
-      const anchor = document.createElement('a'); anchor.href = url; anchor.download = resource.title || '课程资料';
+      const anchor = document.createElement('a'); anchor.href = url; anchor.download = resource.title || siteText("site.785cfd66e3482f36");
       document.body.append(anchor); anchor.click(); anchor.remove();
     } catch (error) { if (live.current && ticket === generation.current) setState({ loading: false, error }); }
     finally {
@@ -41,6 +42,6 @@ export default function CourseResourceDownload({ resource, courseId }) {
       if (live.current && ticket === generation.current) { busy.current = false; setState(s => ({ ...s, loading: false })); }
     }
   };
-  return <div className="compat-download"><PixelButton size="small" loading={state.loading} onClick={download} aria-label={`${state.error ? '重试下载' : '下载'}：${resource.title || '课程资料'}`}>{state.error ? '重试下载' : '下载资料'}</PixelButton>
-    {state.error && <Alert role="alert" type="warning" title="这份资料暂时无法下载" description={requestError(state.error, { action: '下载' })} />}</div>;
+  return <div className="compat-download"><PixelButton size="small" loading={state.loading} onClick={download} aria-label={`${state.error ? siteText("site.75c74751c4b15e03") : siteText("site.6c87cdefe32538b6")}：${resource.title || siteText("site.785cfd66e3482f36")}`}>{state.error ? siteText("site.3e8c2bc118d18995") : siteText("site.b0e3d658df80071e")}</PixelButton>
+    {state.error && <Alert role="alert" type="warning" title={siteText("site.02249dfd912308ed")} description={requestError(state.error, { action: siteText("site.bba34fc827153819") })} />}</div>;
 }

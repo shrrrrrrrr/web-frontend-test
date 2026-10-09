@@ -1,0 +1,14 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "学习记录",
+  "edits": [
+    {
+      "id": "system.records.001",
+      "text": "暂无作品记录；完成课时中的作品任务后会出现在这里",
+      "enabled": true,
+      "baseText": "暂无作品记录；完成课时中的作品任务后会出现在这里。",
+      "baseEnabled": true
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {copyText as siteText, copyTemplate as siteTemplate} from "../content/copy";
 import Alert from '../student/visual/StudentAlert';
 import Sentence from '../content/Sentence';
 import {copyText} from '../content/copy';
@@ -30,9 +31,9 @@ function Review({ id, studentId }) {
  const {courseAPI}=useCourseApis();
   const read = useCallback(() => courseAPI.detail(id), [id,courseAPI]);
   const { data, loading, error, reload } = useCourseResource(read, id);
-  return <ServicePage title={copyText('system.review.001')} eyebrow="探索地图 / 课程资料" description={data?.course.title || copyText('system.review.002')} actions={<Link to={`/courses/${id}`}>{copyText('system.review.003')}</Link>}>
+  return <ServicePage title={copyText('system.review.001')} eyebrow={siteText("site.ba42351482812fef")} description={data?.course.title || copyText('system.review.002')} actions={<Link to={`/courses/${id}`}>{copyText('system.review.003')}</Link>}>
     {error ? <PixelPanel className="compat-main-error"><Alert role="alert" type="warning" title={courseReadError(error)} description={requestError(error)} /><div className="compat-row-actions"><PixelButton onClick={reload}>{copyText('system.review.004')}</PixelButton><Link to="/explore">{copyText('system.review.005')}</Link></div></PixelPanel>
-      : <ReadState loading={loading} object="课程资料">{data && <>
+      : <ReadState loading={loading} object={siteText("site.2769f239632b60b1")}>{data && <>
         <PixelPanel className="review-summary"><div><span className="compat-kicker">{copyText('system.review.006')}</span><h3>{data.course.driving_question || data.course.title}</h3></div>{data.course.description&&<Sentence>{data.course.description}</Sentence>}</PixelPanel>
         <div className="review-media-layout"><ReplayRegion courseId={id} /><StudySection number="03" title={copyText('system.review.008')} description={copyText('system.review.009')} className="review-resources">
           {data.resources?.length ? <ul className="compat-records">{data.resources.map(resource => <li key={resource.id}><PixelTag>{({ courseware: copyText('system.review.010'), video: copyText('system.review.011'), lesson_plan: copyText('system.review.012'), guide_card: copyText('system.review.013'), template: copyText('system.review.014'), other: copyText('system.review.015') })[resource.resource_type] || copyText('system.review.016')}</PixelTag><h4>{resource.title || copyText('system.review.017')}</h4>
@@ -58,7 +59,7 @@ function WorksRegion({ courseId, studentId, onCourseInvalid }) {
   }, [courseId, studentId, onCourseInvalid,courseAPI,workAPI]);
   const state = useRemoteResource(read);
   return <StudySection number="05" title={copyText('system.review.028')} description={copyText('system.review.029')} className="review-works">
-    <ReadState {...state} object="提交记录" empty={!state.data?.length} emptyText="本课程还没有作品提交记录。">
+    <ReadState {...state} object={siteText("site.63594e340fce617c")} empty={!state.data?.length} emptyText={siteText("site.661d71434bdc4f8a")}>
       <ul className="compat-records">{state.data?.map(work => { const status = workStatus(work); return <li key={work.id}><div className="compat-tags"><PixelTag tone={status.tone}>{status.label}</PixelTag><span>{copyText('system.review.030')}{work.version || 1}{copyText('system.review.031')}</span></div><h4>{work.title}</h4><Link to={`/works/${work.id}`}>{status.revisable ? copyText('system.review.032') : copyText('system.review.033')} →</Link></li>; })}</ul>
     </ReadState>
   </StudySection>;
@@ -99,9 +100,9 @@ function ReplayRegion({ courseId }) {
     window.dispatchEvent(new CustomEvent(STUDENT_ACCESS_CHECK));
   };
   return <StudySection number="02" title={copyText('system.review.036')} description={copyText('system.review.037')} className="review-replays">
-    <ReadState {...state} reload={reload} object="课程回放" empty={!state.data?.replays?.length} emptyText="暂无课程回放。">
+    <ReadState {...state} reload={reload} object={siteText("site.3b9eadaf99378378")} empty={!state.data?.replays?.length} emptyText={siteText("site.2cd6d88509f7f9de")}>
       <div className="review-player-area">
-        {player.url ? <video ref={attachVideo} controls preload="metadata" src={player.url} onError={mediaFailed} aria-label={`课程回放：${selection?.title}`} />
+        {player.url ? <video ref={attachVideo} controls preload="metadata" src={player.url} onError={mediaFailed} aria-label={siteTemplate("site.221ec8152d4e3d81", {slot0: (selection?.title)})} />
           : player.error ? <div className="review-player-feedback"><Alert role="alert" type="warning" title={copyText('system.review.038')} description={player.error.message && !player.error.response ? player.error.message : requestError(player.error)} /><PixelButton onClick={() => choose(selection)}>{copyText('system.review.039')}</PixelButton></div>
             : <div className="review-player-placeholder" role="status"><span aria-hidden="true">▷</span><Sentence>{player.loading ? copyText('system.review.040') : copyText('system.review.041')}</Sentence></div>}
       </div>

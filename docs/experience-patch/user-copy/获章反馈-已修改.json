@@ -1,0 +1,14 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "获章反馈",
+  "edits": [
+    {
+      "id": "next3.award.after",
+      "text": "徽章已经佩戴在你的主页啦！快去看看吧~",
+      "enabled": true,
+      "baseText": "徽章！已经佩戴在你的主页啦！快去看看吧~",
+      "baseEnabled": true
+    }
+  ]
+}

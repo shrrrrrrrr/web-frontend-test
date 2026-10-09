@@ -22,9 +22,10 @@
 .student-pixel .space-map .pixel-map-region-index { background:#f0ce80; color:#173459; font-family:var(--space-font); }
 .student-pixel .space-map .pixel-map-platform { padding-top:20px; }
 .student-pixel .space-map .pixel-map-route-canvas { position:relative; }
-.student-pixel .space-map .pixel-map-route { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px 12px; padding:0; margin:0; list-style:none; }
+.student-pixel .space-map .pixel-map-route { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:56px 36px; padding:0 32px; margin:0; list-style:none; z-index:1; }
 .student-pixel .space-map .pixel-map-route-stop { position:relative; grid-row:var(--stop-row); grid-column:var(--stop-column); padding:var(--stop-lift) 0 4px; min-width:0; }
 .student-pixel .space-map .route-node { min-height:0; gap:0; align-items:center; justify-content:flex-start; padding:0; color:#163553; flex-direction:column; text-align:center; }
+.student-pixel .space-map .pixel-map-route .route-node { width:min(100%,220px);margin-inline:auto; }
 .space-lesson-place { display:block; position:relative; width:min(100%,220px); aspect-ratio:1; flex-shrink:0; }
 .space-place-art { width:100%; height:100%; display:block; object-fit:contain; image-rendering:pixelated; }
 /* Unknown courses retain neutral markers on their campus scene. */
@@ -42,7 +43,7 @@
 .student-pixel .space-map .pixel-map-node-label strong { font-weight:500; font-size:16px; }
 .student-pixel .space-map .pixel-map-node-label .pixel-tag { font-size:13px; line-height:1.5; }
 .student-pixel .space-map .route-node:focus-visible { outline:3px solid #fff2b0; outline-offset:4px; box-shadow:0 0 0 7px #2b6699; }
-.student-pixel .space-map .pixel-map-route-track { position:absolute; inset:0; overflow:visible; width:100%; height:100%; pointer-events:none; }
+.student-pixel .space-map .pixel-map-route-track { position:absolute; inset:0; overflow:visible; width:100%; height:100%; pointer-events:none; z-index:0;stroke-linecap:round;stroke-linejoin:round; }
 .student-pixel .space-map .pixel-map-track-outline { fill:none; stroke:#0b2854; stroke-width:8; }
 .student-pixel .space-map .pixel-map-track-dashes { fill:none; stroke:#ffe8a5; stroke-width:3; stroke-dasharray:8 7; }
 .student-pixel .space-map .pixel-map-region-bridge { color:#f7db8f; border-color:#f7db8f; }
@@ -61,7 +62,7 @@
 [data-space-theme='voyage'] .space-map-extra a { color:#deebff; }
 @media(max-width:1199px) {
   .student-pixel .space-map .pixel-map-stage { padding-inline:12px; }
-  .student-pixel .space-map .pixel-map-route { column-gap:8px; }
+  .student-pixel .space-map .pixel-map-route { column-gap:24px;padding-inline:28px; }
 }
 @media(max-width:991px) {
   .student-pixel .space-map .pixel-map-layout { display:block; }
@@ -81,10 +82,9 @@
   .student-pixel .space-map .space-route-summary>span { font-size:14px; white-space:nowrap; }
   .student-pixel .space-map .pixel-map-course-progress { width:132px; }
   .student-pixel .space-map .pixel-map-course-progress>span { font-size:13px; }
-  .student-pixel .space-map .pixel-map-route { display:flex; flex-direction:column; gap:12px; margin:0; }
+  .student-pixel .space-map .pixel-map-route { display:flex; flex-direction:column; gap:36px; margin:0; padding-inline:12px; }
   .student-pixel .space-map .pixel-map-route-stop { padding:0 0 12px; width:100%; }
-  .student-pixel .space-map .route-node { width:210px; max-width:100%; margin:0 auto 0 0; flex-direction:column; align-items:center; gap:0; text-align:center; }
-  .student-pixel .space-map .pixel-map-route-stop:nth-child(even) .route-node { margin:0 0 0 auto; }
+  .student-pixel .space-map .pixel-map-route .route-node { width:210px; max-width:100%; margin-inline:auto; flex-direction:column; align-items:center; gap:0; text-align:center; }
   .student-pixel .space-map .pixel-map-node-label { width:200px; max-width:100%; align-items:center; margin-top:-8px; }
   .student-pixel .space-map .pixel-map-stage { padding-inline:10px; }
   .student-pixel .space-map .pixel-map-region-title { font-size:15px; }

@@ -1,0 +1,77 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "学习伙伴",
+  "edits": [
+    {
+      "id": "assistant.boundary",
+      "text": "尽情向我提问吧~",
+      "enabled": true,
+      "baseText": "每次只发送本次问题。记录仅保留在本次课程访问中；离开课程后清除。",
+      "baseEnabled": true
+    },
+    {
+      "id": "assistant.empty.title",
+      "text": "有什么可以帮到你的？",
+      "enabled": true,
+      "baseText": "从一个具体问题开始",
+      "baseEnabled": true
+    },
+    {
+      "id": "assistant.empty.hint",
+      "text": "你最近在干什么呀",
+      "enabled": true,
+      "baseText": "说说你正在做什么、遇到了什么困难，以及已经尝试的方法。",
+      "baseEnabled": true
+    },
+    {
+      "id": "assistant.failed",
+      "text": "哎呀，发送失败了，再试一次吧",
+      "enabled": true,
+      "baseText": "本次未取得回答",
+      "baseEnabled": true
+    },
+    {
+      "id": "assistant.restore",
+      "text": "请将原问题放回输入框",
+      "enabled": true,
+      "baseText": "将原问题放回输入框",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.assistant.004",
+      "text": "请联系老师了解开放时间哦",
+      "enabled": true,
+      "baseText": "请联系老师了解开放时间。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.assistant.005",
+      "text": "哎呀，当前课程不可用于提问",
+      "enabled": true,
+      "baseText": "当前课程不可用于提问",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.assistant.010",
+      "text": "课程资料已有变化，你可以重新提问试试~",
+      "enabled": true,
+      "baseText": "课程资料已有变化，旧引用已移除。请重新提问以取得当前依据。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.assistant.018",
+      "text": "输入框里已有文字，原问题仍保留在上方，可复制后继续编辑",
+      "enabled": true,
+      "baseText": "输入框里已有文字，原问题仍保留在上方，可复制后继续编辑。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.assistant.019",
+      "text": "编辑后由你决定是否再次发送",
+      "enabled": true,
+      "baseText": "编辑后由你决定是否再次发送。",
+      "baseEnabled": true
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "tables": [
+    {
+      "table": "ai_chunks",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "ai_documents",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "ai_settings",
+      "rows": 1,
+      "unchanged": true
+    },
+    {
+      "table": "ai_usage",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "card_exercise_attempts",
+      "rows": 1,
+      "unchanged": true
+    },
+    {
+      "table": "card_exercises",
+      "rows": 1,
+      "unchanged": true
+    },
+    {
+      "table": "classes",
+      "rows": 3,
+      "unchanged": true
+    },
+    {
+      "table": "course_avatar_preferences",
+      "rows": 1,
+      "unchanged": true
+    },
+    {
+      "table": "course_chapters",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "course_covers",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "course_experiments",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "course_plan_nodes",
+      "rows": 10,
+      "unchanged": true
+    },
+    {
+      "table": "course_replays",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "courses",
+      "rows": 6,
+      "unchanged": true
+    },
+    {
+      "table": "demo_exchange_events",
+      "rows": 1,
+      "unchanged": true
+    },
+    {
+      "table": "enrollments",
+      "rows": 6,
+      "unchanged": true
+    },
+    {
+      "table": "evaluations",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "feedback_attachments",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "feedback_messages",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "feedbacks",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "glider_simulations",
+      "rows": 4,
+      "unchanged": true
+    },
+    {
+      "table": "glider_trajectories",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "growth_records",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "knowledge_cards",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "lesson_badge_definitions",
+      "rows": 3,
+      "unchanged": true
+    },
+    {
+      "table": "lesson_learning_reports",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "lesson_progress",
+      "rows": 7,
+      "unchanged": false
+    },
+    {
+      "table": "lesson_review_completions",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "lessons",
+      "rows": 13,
+      "unchanged": true
+    },
+    {
+      "table": "media_assets",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "micro_projects",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "notifications",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "project_milestones",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "project_team_members",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "project_teams",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "reflections",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "resources",
+      "rows": 4,
+      "unchanged": true
+    },
+    {
+      "table": "schema_migrations",
+      "rows": 21,
+      "unchanged": true
+    },
+    {
+      "table": "schools",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "student_badge_grants",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "student_card_progress",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "student_status_events",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "tasks",
+      "rows": 6,
+      "unchanged": true
+    },
+    {
+      "table": "team_members",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "teams",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "user_notifications",
+      "rows": 2,
+      "unchanged": true
+    },
+    {
+      "table": "users",
+      "rows": 6,
+      "unchanged": true
+    },
+    {
+      "table": "work_reviews",
+      "rows": 0,
+      "unchanged": true
+    },
+    {
+      "table": "works",
+      "rows": 2,
+      "unchanged": true
+    }
+  ],
+  "fileBytesPreserved": true,
+  "privateConfigPreserved": true,
+  "integrity": "ok",
+  "foreignKeys": 0,
+  "noMigrationAdded": true,
+  "scope": "Read-only consistent-backup comparison. Teaching/user/grades/reflections/avatars/reward tables and upload bytes; auth refresh token lifecycle excluded. No row values or secrets exported."
+}

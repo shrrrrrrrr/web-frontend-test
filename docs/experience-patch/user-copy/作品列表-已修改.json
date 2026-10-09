@@ -1,0 +1,28 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "作品列表",
+  "edits": [
+    {
+      "id": "system.works.003",
+      "text": "精益求精，止于至善",
+      "enabled": true,
+      "baseText": "从一次尝试到一次改进，每个版本都有自己的记录。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.works.005",
+      "text": "筛选课程已不可访问，相关作品已清除",
+      "enabled": true,
+      "baseText": "筛选课程已不可访问，相关作品已清除。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.works.008",
+      "text": "按名称或课程找到自己提交的作品",
+      "enabled": true,
+      "baseText": "按名称或课程找到自己的提交。",
+      "baseEnabled": true
+    }
+  ]
+}

@@ -1,4 +1,14 @@
-# 当前交付 · 下一版第 3/3 步完成
+# 当前交付 · 地图、头像、运势与全站文案体验补修
+
+真实入口 http://127.0.0.1:4184/explore，API 3154，继续使用原持久教学数据。已合并 183 处用户改稿，完成三种原创像素关卡、九段不重叠路线、原头像入口同步、宜/忌各30条与逐页文案审阅。完成后停止等待复核。
+
+[当前验收与真实截图](docs/experience-patch/index.html) · [点字改稿目录](docs/experience-patch/copy-review/index.html) · [改稿方法](docs/experience-patch/copy-guide.md) · [实际验证](docs/experience-patch/verification.md) · [交付及保护边界](docs/experience-patch/README.md)
+
+以下为历史交付记录；当前状态以上述体验补修文档为准。
+
+---
+
+# 先前交付 · 下一版第 3/3 步完成
 
 当前入口为 http://127.0.0.1:4184/explore（API 3154），教学数据持续使用 `.local/teaching`。三步已完成：十关地图与真实空模板、维护填写/上传与开放反思、每日本地演示签到与后端真实通关徽章及两类演示兑换。当前交付完成后停止，等待最终复核。
 

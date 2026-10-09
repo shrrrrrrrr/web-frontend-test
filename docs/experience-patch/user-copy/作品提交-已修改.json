@@ -1,0 +1,126 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "作品提交",
+  "edits": [
+    {
+      "id": "system.workUpload.001",
+      "text": "文字草稿自动保存到当前浏览器，按账号与任务隔离；附件不保存",
+      "enabled": true,
+      "baseText": "文字草稿自动保存到当前浏览器，按账号与任务隔离；附件不保存。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.002",
+      "text": "无法恢复本地草稿，请重新填写；原附件需要重新选择",
+      "enabled": true,
+      "baseText": "无法恢复本地草稿，请重新填写；原附件需要重新选择。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.003",
+      "text": "文字草稿已保存到当前浏览器，仅当前账号可恢复；附件请在提交前选择",
+      "enabled": true,
+      "baseText": "文字草稿已保存到当前浏览器，仅当前账号可恢复；附件请在提交前选择。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.004",
+      "text": "草稿保存失败，请复制文字留存，再检查浏览器存储权限或空间",
+      "enabled": true,
+      "baseText": "草稿保存失败，请复制文字留存，再检查浏览器存储权限或空间。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.005",
+      "text": "请填写成果文字或选择附件，至少提供一项",
+      "enabled": true,
+      "baseText": "请填写成果文字或选择附件，至少提供一项。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.007",
+      "text": "提交或附件上传失败，文字和已选附件仍保留在本页面，请检查网络后重试",
+      "enabled": true,
+      "baseText": "提交或附件上传失败，文字和已选附件仍保留在本页面，请检查网络后重试。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.010",
+      "text": "给作品起一个名字，用文字或附件展示你的探索",
+      "enabled": true,
+      "baseText": "给作品起一个名字，用文字或附件展示你的探索。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.012",
+      "text": "只有最新版本被导师退回后才可重新提交。请返回课时查看评审状态",
+      "enabled": true,
+      "baseText": "只有最新版本被导师退回后才可重新提交。请返回课时查看评审状态。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.018",
+      "text": "说明你做了什么、依据是什么，以及改进的过程",
+      "enabled": true,
+      "baseText": "说明你做了什么、依据是什么，以及改进的过程。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.021",
+      "text": "一次提交 1 个文件，最大 100 MB。附件不会保存在浏览器草稿中",
+      "enabled": true,
+      "baseText": "一次提交 1 个文件，最大 100 MB。附件不会保存在浏览器草稿中。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.023",
+      "text": "支持 JPG、JPEG、PNG、GIF、WebP、MP4、WebM、PDF、DOC、DOCX、PPT、PPTX、ZIP、OBJ、GLB、GLTF、STL；文件类型、内容和大小由服务器检查",
+      "enabled": true,
+      "baseText": "支持 JPG、JPEG、PNG、GIF、WebP、MP4、WebM、PDF、DOC、DOCX、PPT、PPTX、ZIP、OBJ、GLB、GLTF、STL；文件类型、内容和大小由服务器检查。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.026",
+      "text": "提交后等待导师评审；学习报告需在课时中单独提交",
+      "enabled": true,
+      "baseText": "提交后等待导师评审；学习报告需在课时中单独提交。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.040",
+      "text": "是否接受提交以服务器校验为准",
+      "enabled": true,
+      "baseText": "是否接受提交以服务器校验为准。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.041",
+      "text": "请从课时中的任务入口提交作品",
+      "enabled": true,
+      "baseText": "请从课时中的任务入口提交作品。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.044",
+      "text": "根据导师意见改进，保留每一次探索的版本",
+      "enabled": true,
+      "baseText": "根据导师意见改进，保留每一次探索的版本。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.045",
+      "text": "把你的观察、方案和验证过程整理成作品",
+      "enabled": true,
+      "baseText": "把你的观察、方案和验证过程整理成作品。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.workUpload.047",
+      "text": "哎呀，网络连接失败了",
+      "enabled": true,
+      "baseText": "网络连接失败，请检查连接后重新加载。",
+      "baseEnabled": true
+    }
+  ]
+}

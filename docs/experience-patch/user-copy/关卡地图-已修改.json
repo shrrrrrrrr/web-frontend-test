@@ -1,0 +1,70 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "关卡地图",
+  "edits": [
+    {
+      "id": "system.map.012",
+      "text": "这份附件暂不可用，请联系老师补充。你可以先继续学习其他内容哦",
+      "enabled": true,
+      "baseText": "这份附件暂不可用，请联系老师补充。你可以继续学习其他内容。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.map.013",
+      "text": "这份资料未能下载，请重试一下吧",
+      "enabled": true,
+      "baseText": "这份资料未能下载，请重试；若课程权限有变化，将重新确认。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.map.024",
+      "text": "老师尚未填写本课时说明",
+      "enabled": true,
+      "baseText": "老师尚未填写本课时说明。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.map.026",
+      "text": "请查看其他课时或联系老师",
+      "enabled": true,
+      "baseText": "请查看其他课时或联系老师。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.map.040",
+      "text": "本课时暂无作品任务，可进入课时学习",
+      "enabled": true,
+      "baseText": "本课时暂无作品任务，可进入课时学习。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.map.041",
+      "text": "作品提交与评审状态，在课时内单独查看",
+      "enabled": true,
+      "baseText": "作品提交与评审状态，在课时内单独查看。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.map.051",
+      "text": "老师尚未填写课程简介",
+      "enabled": true,
+      "baseText": "老师尚未填写课程简介。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.map.075",
+      "text": "这门课程还没有课时，请等待老师发布",
+      "enabled": true,
+      "baseText": "这门课程还没有课时，请等待老师发布。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.map.077",
+      "text": "一起开启学习之旅~",
+      "enabled": true,
+      "baseText": "路线表示学习顺序，可用课时都能进入。",
+      "baseEnabled": true
+    }
+  ]
+}

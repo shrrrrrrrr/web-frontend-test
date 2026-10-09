@@ -1,0 +1,689 @@
+{
+  "source": "D:\\UserFiles\\Downloads",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "scope": "副本和纯文本差异，尚未写入网站；多个版本同ID不同值需复核，未擅自选择",
+  "files": [
+    {
+      "page": "今日运势全部词库",
+      "source": "D:\\UserFiles\\Downloads\\今日运势全部词库-已修改 (1).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (1).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (1).json",
+      "modified": 1791517466.1293187,
+      "sha256": "dbe9b084266b4f566dcb0748235ba2314b1a6c3b1b0234906484c003226f8c6e",
+      "changedIds": [
+        "fortune.avoid.compare"
+      ]
+    },
+    {
+      "page": "今日运势全部词库",
+      "source": "D:\\UserFiles\\Downloads\\今日运势全部词库-已修改 (2).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (2).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (2).json",
+      "modified": 1791517466.7188678,
+      "sha256": "dbe9b084266b4f566dcb0748235ba2314b1a6c3b1b0234906484c003226f8c6e",
+      "changedIds": [
+        "fortune.avoid.compare"
+      ]
+    },
+    {
+      "page": "今日运势全部词库",
+      "source": "D:\\UserFiles\\Downloads\\今日运势全部词库-已修改 (3).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (3).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (3).json",
+      "modified": 1791517466.9709556,
+      "sha256": "dbe9b084266b4f566dcb0748235ba2314b1a6c3b1b0234906484c003226f8c6e",
+      "changedIds": [
+        "fortune.avoid.compare"
+      ]
+    },
+    {
+      "page": "今日运势全部词库",
+      "source": "D:\\UserFiles\\Downloads\\今日运势全部词库-已修改 (4).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (4).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (4).json",
+      "modified": 1791517467.2286215,
+      "sha256": "dbe9b084266b4f566dcb0748235ba2314b1a6c3b1b0234906484c003226f8c6e",
+      "changedIds": [
+        "fortune.avoid.compare"
+      ]
+    },
+    {
+      "page": "今日运势全部词库",
+      "source": "D:\\UserFiles\\Downloads\\今日运势全部词库-已修改 (5).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (5).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (5).json",
+      "modified": 1791517467.393831,
+      "sha256": "dbe9b084266b4f566dcb0748235ba2314b1a6c3b1b0234906484c003226f8c6e",
+      "changedIds": [
+        "fortune.avoid.compare"
+      ]
+    },
+    {
+      "page": "今日运势全部词库",
+      "source": "D:\\UserFiles\\Downloads\\今日运势全部词库-已修改 (6).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (6).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (6).json",
+      "modified": 1791517467.5308602,
+      "sha256": "dbe9b084266b4f566dcb0748235ba2314b1a6c3b1b0234906484c003226f8c6e",
+      "changedIds": [
+        "fortune.avoid.compare"
+      ]
+    },
+    {
+      "page": "今日运势全部词库",
+      "source": "D:\\UserFiles\\Downloads\\今日运势全部词库-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改.json",
+      "modified": 1791517446.648418,
+      "sha256": "0ba37bb097ab279ade266c39e00f9377dee6b20f2759a4dff3375ca4e8bc4437",
+      "changedIds": [
+        "fortune.avoid.compare"
+      ]
+    },
+    {
+      "page": "作品列表",
+      "source": "D:\\UserFiles\\Downloads\\作品列表-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品列表-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品列表-已修改.json",
+      "modified": 1791527374.9840655,
+      "sha256": "e7476c5fae3a97b796bf4011cb6818b0d14fc558f8b42f18fcba2c2cef0b52c5",
+      "changedIds": [
+        "system.works.003",
+        "system.works.005",
+        "system.works.008"
+      ]
+    },
+    {
+      "page": "作品提交",
+      "source": "D:\\UserFiles\\Downloads\\作品提交-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品提交-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品提交-已修改.json",
+      "modified": 1791527299.2857492,
+      "sha256": "35399ce61c10e9b9a5279410fbcb7d3a072938e8689993284eb66652a78d2ad6",
+      "changedIds": [
+        "system.workUpload.001",
+        "system.workUpload.002",
+        "system.workUpload.003",
+        "system.workUpload.004",
+        "system.workUpload.005",
+        "system.workUpload.007",
+        "system.workUpload.010",
+        "system.workUpload.012",
+        "system.workUpload.018",
+        "system.workUpload.021",
+        "system.workUpload.023",
+        "system.workUpload.026",
+        "system.workUpload.040",
+        "system.workUpload.041",
+        "system.workUpload.044",
+        "system.workUpload.045",
+        "system.workUpload.047"
+      ]
+    },
+    {
+      "page": "作品详情",
+      "source": "D:\\UserFiles\\Downloads\\作品详情-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品详情-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品详情-已修改.json",
+      "modified": 1791527449.6267433,
+      "sha256": "5d3dfd043f8bd3cd7e854623a5144c444d8299414c95f80bfac6e0bd403e2dc2",
+      "changedIds": [
+        "system.workDetail.007",
+        "system.workDetail.008",
+        "system.workDetail.014",
+        "system.workDetail.015",
+        "system.workDetail.020",
+        "system.workDetail.022",
+        "system.workDetail.029",
+        "system.workDetail.030",
+        "system.workDetail.039",
+        "system.workDetail.044",
+        "system.workDetail.048",
+        "system.workDetail.050",
+        "system.workDetail.060"
+      ]
+    },
+    {
+      "page": "公共视觉与登录说明",
+      "source": "D:\\UserFiles\\Downloads\\公共视觉与登录说明-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\公共视觉与登录说明-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\公共视觉与登录说明-已修改.json",
+      "modified": 1791542712.611579,
+      "sha256": "7335bc49838c396b64042a7c7672b831dbb7daff99b8422ca44e3ea73d7bb85f",
+      "changedIds": [
+        "patch.login.hint",
+        "patch.login.note"
+      ]
+    },
+    {
+      "page": "关卡地图",
+      "source": "D:\\UserFiles\\Downloads\\关卡地图-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\关卡地图-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\关卡地图-已修改.json",
+      "modified": 1791518037.3548467,
+      "sha256": "6768dec44489c51c8d351cfff33a42deb4d5b2f82db09eef8318cae8593b7fd0",
+      "changedIds": [
+        "system.map.012",
+        "system.map.013",
+        "system.map.024",
+        "system.map.026",
+        "system.map.040",
+        "system.map.041",
+        "system.map.051",
+        "system.map.075",
+        "system.map.077"
+      ]
+    },
+    {
+      "page": "反思日志",
+      "source": "D:\\UserFiles\\Downloads\\反思日志-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\反思日志-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\反思日志-已修改.json",
+      "modified": 1791542572.598764,
+      "sha256": "26f30a6851cba50f7b217a6744ce35dd8a187f98d37512a8576340825192c198",
+      "changedIds": [
+        "system.reflection.001",
+        "system.reflection.002",
+        "system.reflection.003",
+        "system.reflection.004",
+        "system.reflection.005",
+        "system.reflection.006",
+        "system.reflection.010",
+        "system.reflection.016",
+        "system.reflection.020",
+        "system.reflection.040",
+        "system.reflection.043",
+        "system.reflection.045",
+        "system.reflection.046",
+        "next2.reflection.scope",
+        "next2.reflection.help"
+      ]
+    },
+    {
+      "page": "学习伙伴",
+      "source": "D:\\UserFiles\\Downloads\\学习伙伴-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习伙伴-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习伙伴-已修改.json",
+      "modified": 1791517789.1805196,
+      "sha256": "d156f4fb57dc2e160b1dd9b3b57078fc531ed1af6e8d484fffdcedd701252032",
+      "changedIds": [
+        "assistant.boundary",
+        "assistant.empty.title",
+        "assistant.empty.hint",
+        "assistant.failed",
+        "assistant.restore",
+        "system.assistant.004",
+        "system.assistant.005",
+        "system.assistant.010",
+        "system.assistant.018",
+        "system.assistant.019"
+      ]
+    },
+    {
+      "page": "学习报告",
+      "source": "D:\\UserFiles\\Downloads\\学习报告-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习报告-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习报告-已修改.json",
+      "modified": 1791535606.7517111,
+      "sha256": "47bae49e18279ed15022ca5b591cf06c02595fe263addbfd43588dabbea1dbf5",
+      "changedIds": [
+        "system.reports.001",
+        "system.reports.007",
+        "system.reports.015",
+        "system.reports.016",
+        "system.reports.017",
+        "system.reports.022",
+        "system.reports.023"
+      ]
+    },
+    {
+      "page": "学习记录",
+      "source": "D:\\UserFiles\\Downloads\\学习记录-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习记录-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习记录-已修改.json",
+      "modified": 1791536249.4283845,
+      "sha256": "bebd037e074733196355aae25bc7562ee737f5c40d810aa8ea54a1cdd4f752b2",
+      "changedIds": [
+        "system.records.001"
+      ]
+    },
+    {
+      "page": "实验室",
+      "source": "D:\\UserFiles\\Downloads\\实验室-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\实验室-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\实验室-已修改.json",
+      "modified": 1791532071.6232138,
+      "sha256": "fb0acb6c966fce49d9f9f8016e683cb38cec0fd8d02b5b9b532979ce46437eba",
+      "changedIds": [
+        "system.lab.010",
+        "system.lab.015",
+        "system.lab.017",
+        "system.lab.020"
+      ]
+    },
+    {
+      "page": "徽章配置",
+      "source": "D:\\UserFiles\\Downloads\\徽章配置-已修改 (1).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\徽章配置-已修改 (1).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\徽章配置-已修改 (1).json",
+      "modified": 1791542791.788159,
+      "sha256": "6121dc031864d80772ded9ab16cc152163e067104f458ed89556d09fe005c94b",
+      "changedIds": [
+        "next3.maintenance.scope"
+      ]
+    },
+    {
+      "page": "徽章配置",
+      "source": "D:\\UserFiles\\Downloads\\徽章配置-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\徽章配置-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\徽章配置-已修改.json",
+      "modified": 1791542789.6593082,
+      "sha256": "1c8ce4a21ce2a526b8b166a5d73a12078bd9f05d7229eacee5b3ccbc6565b2bc",
+      "changedIds": [
+        "next3.maintenance.scope"
+      ]
+    },
+    {
+      "page": "成长档案",
+      "source": "D:\\UserFiles\\Downloads\\成长档案-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\成长档案-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\成长档案-已修改.json",
+      "modified": 1791535563.8864274,
+      "sha256": "ba65d75919be68ab75f6b0bdab4023c2033f165bb0b7cb84bc887b6dda402b16",
+      "changedIds": [
+        "system.archive.002",
+        "system.archive.006",
+        "system.archive.007",
+        "system.archive.010",
+        "system.archive.011",
+        "system.archive.014",
+        "system.archive.015",
+        "system.archive.017",
+        "system.archive.026",
+        "system.archive.027",
+        "system.archive.029",
+        "system.archive.032",
+        "system.archive.035",
+        "system.archive.037",
+        "system.archive.040",
+        "system.archive.042",
+        "system.archive.046",
+        "system.archive.049",
+        "system.archive.069",
+        "system.archive.076"
+      ]
+    },
+    {
+      "page": "我的",
+      "source": "D:\\UserFiles\\Downloads\\我的-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\我的-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\我的-已修改.json",
+      "modified": 1791517935.0239868,
+      "sha256": "8102b48ba8012e3f433e7bb03ffbae029370ec1358e61114270bff6a662d31ac",
+      "changedIds": [
+        "system.me.001",
+        "system.me.006"
+      ]
+    },
+    {
+      "page": "获章反馈",
+      "source": "D:\\UserFiles\\Downloads\\获章反馈-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\获章反馈-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\获章反馈-已修改.json",
+      "modified": 1791542776.4103556,
+      "sha256": "0096aa8d911013ea89da5d0f431ac5fb3ba988a9aea00d2346a2873a12367cd6",
+      "changedIds": [
+        "next3.award.after"
+      ]
+    },
+    {
+      "page": "试飞工作区",
+      "source": "D:\\UserFiles\\Downloads\\试飞工作区-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\试飞工作区-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\试飞工作区-已修改.json",
+      "modified": 1791532862.8068395,
+      "sha256": "9cff0e76bc85dbbe8c6580408e0f455ee69172541105077403812fe4c06c10f3",
+      "changedIds": [
+        "system.flight.002",
+        "system.flight.008",
+        "system.flight.010",
+        "system.flight.011",
+        "system.flight.014",
+        "system.flight.017",
+        "system.flight.024",
+        "system.flight.025",
+        "system.flight.027",
+        "system.flight.031",
+        "system.flight.040",
+        "system.flight.047",
+        "system.flight.048",
+        "system.flight.050",
+        "system.flight.051",
+        "system.flight.057",
+        "system.flight.058",
+        "system.flight.066",
+        "system.flight.068",
+        "system.flight.071"
+      ]
+    },
+    {
+      "page": "课后任务",
+      "source": "D:\\UserFiles\\Downloads\\课后任务-已修改 (1).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课后任务-已修改 (1).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课后任务-已修改 (1).json",
+      "modified": 1791542667.862734,
+      "sha256": "338dbcc6330471193ba73dbe5a3c35ae34312f31d9c7fdf71e3ba197ca36bd91",
+      "changedIds": [
+        "system.tasks.002",
+        "system.tasks.005",
+        "system.tasks.008",
+        "system.tasks.009",
+        "system.tasks.030"
+      ]
+    },
+    {
+      "page": "课后任务",
+      "source": "D:\\UserFiles\\Downloads\\课后任务-已修改 (2).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课后任务-已修改 (2).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课后任务-已修改 (2).json",
+      "modified": 1791542670.4012232,
+      "sha256": "338dbcc6330471193ba73dbe5a3c35ae34312f31d9c7fdf71e3ba197ca36bd91",
+      "changedIds": [
+        "system.tasks.002",
+        "system.tasks.005",
+        "system.tasks.008",
+        "system.tasks.009",
+        "system.tasks.030"
+      ]
+    },
+    {
+      "page": "课后任务",
+      "source": "D:\\UserFiles\\Downloads\\课后任务-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课后任务-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课后任务-已修改.json",
+      "modified": 1791542660.6940434,
+      "sha256": "05fab0aca92f6f7c713d9392569e9c258f9882b2fa5ec17d6c825ef3eaaed47b",
+      "changedIds": [
+        "system.tasks.002",
+        "system.tasks.005",
+        "system.tasks.008",
+        "system.tasks.009",
+        "system.tasks.030"
+      ]
+    },
+    {
+      "page": "课时学习",
+      "source": "D:\\UserFiles\\Downloads\\课时学习-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课时学习-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课时学习-已修改.json",
+      "modified": 1791527035.8851225,
+      "sha256": "32fe6df894f4d3982cf2c8e9f356670b4f32e9dcfb2ddecc19a96fca9c98ec68",
+      "changedIds": [
+        "system.learning.003",
+        "system.learning.014",
+        "system.learning.021",
+        "system.learning.026",
+        "system.learning.027",
+        "system.learning.028",
+        "system.learning.029",
+        "system.learning.030",
+        "system.learning.032",
+        "system.learning.033",
+        "system.learning.034",
+        "system.learning.035",
+        "system.learning.036",
+        "system.learning.037",
+        "system.learning.039",
+        "system.learning.042",
+        "system.learning.046",
+        "system.learning.048",
+        "system.learning.049",
+        "system.learning.078",
+        "system.learning.083",
+        "system.learning.094",
+        "system.learning.097",
+        "system.learning.102",
+        "system.learning.109",
+        "system.learning.111",
+        "system.learning.119",
+        "system.learning.124",
+        "system.learning.126",
+        "system.learning.127",
+        "system.learning.128",
+        "system.learning.129",
+        "system.learning.134",
+        "next.template.preparing"
+      ]
+    },
+    {
+      "page": "课程角色头像",
+      "source": "D:\\UserFiles\\Downloads\\课程角色头像-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程角色头像-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程角色头像-已修改.json",
+      "modified": 1791517594.7542012,
+      "sha256": "a37a801e4221484e294d63bb543e47a01bf1861bdf161d1c026e2589eb878a2b",
+      "changedIds": [
+        "avatar.hint",
+        "avatar.saved",
+        "avatar.uncertain"
+      ]
+    },
+    {
+      "page": "课程资料回看",
+      "source": "D:\\UserFiles\\Downloads\\课程资料回看-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程资料回看-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程资料回看-已修改.json",
+      "modified": 1791542628.6523707,
+      "sha256": "337f5993cfc97e7b8cdf2f4e72a110d40e8c5d76da0cc6671cbb6d6337601423",
+      "changedIds": [
+        "system.review.002",
+        "system.review.007",
+        "system.review.009",
+        "system.review.018",
+        "system.review.019",
+        "system.review.021",
+        "system.review.026",
+        "system.review.029",
+        "system.review.034",
+        "system.review.035",
+        "system.review.037"
+      ]
+    },
+    {
+      "page": "课程资料维护",
+      "source": "D:\\UserFiles\\Downloads\\课程资料维护-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程资料维护-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程资料维护-已修改.json",
+      "modified": 1791545135.4905274,
+      "sha256": "102f23fdcb51ace45c5e46704c8f318cbe51fdbe943f8990ee61ce43f49bc48e",
+      "changedIds": []
+    },
+    {
+      "page": "课程选择",
+      "source": "D:\\UserFiles\\Downloads\\课程选择-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程选择-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程选择-已修改.json",
+      "modified": 1791517850.130077,
+      "sha256": "bf0b1b840d6d66eae05245b5e3669611d62cef44c09f37cf717eec4e7c26264f",
+      "changedIds": [
+        "system.platform.003",
+        "system.platform.006",
+        "system.platform.012"
+      ]
+    }
+  ],
+  "pages": 22,
+  "uniqueChangedIds": 182,
+  "conflicts": [
+    {
+      "id": "system.tasks.030",
+      "values": [
+        "学习状态来自课时进度与报告；作品评审单独显示",
+        "学习状态来自课时进度与报告；作品评审将会单独显示"
+      ]
+    }
+  ],
+  "selectedLatest": [
+    {
+      "page": "今日运势全部词库",
+      "source": "D:\\UserFiles\\Downloads\\今日运势全部词库-已修改 (6).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (6).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\今日运势全部词库-已修改 (6).json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "作品列表",
+      "source": "D:\\UserFiles\\Downloads\\作品列表-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品列表-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品列表-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "作品提交",
+      "source": "D:\\UserFiles\\Downloads\\作品提交-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品提交-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品提交-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "作品详情",
+      "source": "D:\\UserFiles\\Downloads\\作品详情-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品详情-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\作品详情-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "公共视觉与登录说明",
+      "source": "D:\\UserFiles\\Downloads\\公共视觉与登录说明-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\公共视觉与登录说明-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\公共视觉与登录说明-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "关卡地图",
+      "source": "D:\\UserFiles\\Downloads\\关卡地图-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\关卡地图-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\关卡地图-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "反思日志",
+      "source": "D:\\UserFiles\\Downloads\\反思日志-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\反思日志-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\反思日志-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "学习伙伴",
+      "source": "D:\\UserFiles\\Downloads\\学习伙伴-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习伙伴-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习伙伴-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "学习报告",
+      "source": "D:\\UserFiles\\Downloads\\学习报告-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习报告-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习报告-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "学习记录",
+      "source": "D:\\UserFiles\\Downloads\\学习记录-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习记录-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\学习记录-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "实验室",
+      "source": "D:\\UserFiles\\Downloads\\实验室-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\实验室-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\实验室-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "徽章配置",
+      "source": "D:\\UserFiles\\Downloads\\徽章配置-已修改 (1).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\徽章配置-已修改 (1).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\徽章配置-已修改 (1).json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "成长档案",
+      "source": "D:\\UserFiles\\Downloads\\成长档案-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\成长档案-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\成长档案-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "我的",
+      "source": "D:\\UserFiles\\Downloads\\我的-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\我的-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\我的-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "获章反馈",
+      "source": "D:\\UserFiles\\Downloads\\获章反馈-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\获章反馈-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\获章反馈-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "试飞工作区",
+      "source": "D:\\UserFiles\\Downloads\\试飞工作区-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\试飞工作区-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\试飞工作区-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "课后任务",
+      "source": "D:\\UserFiles\\Downloads\\课后任务-已修改 (2).html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课后任务-已修改 (2).html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课后任务-已修改 (2).json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "课时学习",
+      "source": "D:\\UserFiles\\Downloads\\课时学习-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课时学习-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课时学习-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "课程角色头像",
+      "source": "D:\\UserFiles\\Downloads\\课程角色头像-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程角色头像-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程角色头像-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "课程资料回看",
+      "source": "D:\\UserFiles\\Downloads\\课程资料回看-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程资料回看-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程资料回看-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "课程资料维护",
+      "source": "D:\\UserFiles\\Downloads\\课程资料维护-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程资料维护-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程资料维护-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    },
+    {
+      "page": "课程选择",
+      "source": "D:\\UserFiles\\Downloads\\课程选择-已修改.html",
+      "snapshot": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程选择-已修改.html",
+      "json": "C:\\Users\\shr\\Desktop\\nmg前端\\deliverables\\2026-10-09用户已保存文案\\课程选择-已修改.json",
+      "reason": "采用该页面最后保存的完整副本，旧副本保留"
+    }
+  ],
+  "resolutions": [
+    {
+      "id": "system.tasks.030",
+      "selectedSource": "D:\\UserFiles\\Downloads\\课后任务-已修改 (2).html",
+      "reason": "同页面先后保存版本，采用最后保存稿；差异明示，保留旧版可恢复"
+    }
+  ]
+}

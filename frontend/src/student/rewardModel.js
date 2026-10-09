@@ -1,19 +1,20 @@
+import {copyText as siteText, copyTemplate as siteTemplate} from "../content/systemText.js";
 import { rewardDemoConfig as config } from './rewardConfig.js';
 export const rewardFailure = (code, message) => Object.assign(new Error(message), { code });
 export const initialRewardState = () => ({ balance: config.initialPoints, records: [], ledger: [
-  { id: 'initial', title: '演示初始积分（非真实发放）', amount: config.initialPoints, time: '' },
+  { id: 'initial', title: siteText("site.59a1183105b69521"), amount: config.initialPoints, time: '' },
 ] });
 export function validateRewardState(value) {
   if (!value || !Number.isFinite(value.balance) || value.balance < 0 || !Array.isArray(value.records) || !Array.isArray(value.ledger)
     || value.records.some(r => !r || typeof r.id !== 'string' || typeof r.giftId !== 'string' || typeof r.title !== 'string' || !Number.isFinite(r.cost) || typeof r.time !== 'string')
     || value.ledger.some(r => !r || typeof r.id !== 'string' || typeof r.title !== 'string' || !Number.isFinite(r.amount) || typeof r.time !== 'string'))
-    throw rewardFailure('CORRUPT_DATA', '本账号的演示数据损坏。可以重试读取，或确认后重置；当前数据尚未清除。');
+    throw rewardFailure('CORRUPT_DATA', siteText("site.aa4606fa75a94b68"));
   return value;
 }
 export function rewardCondition(gift, state) {
   const count = state.records.filter(record => record.giftId === gift.id).length;
-  if (count >= gift.limit) return '已达到演示兑换次数上限';
-  if (count >= gift.stock) return '演示库存不足';
+  if (count >= gift.limit) return siteText("site.07666ab8081dfaa8");
+  if (count >= gift.stock) return siteText("site.abfbf7a08600fbc4");
   if (state.balance < gift.cost) return `还差 ${gift.cost - state.balance} 演示金币`;
   return '';
 }
@@ -25,18 +26,18 @@ export function rewardSnapshot(state) {
 // Pure rule application; the caller must read and apply this inside one readwrite transaction.
 export function redeemReward(state, giftId, requestId) {
   validateRewardState(state);
-  if (!requestId) throw rewardFailure('REQUEST_INVALID', '缺少兑换确认编号，请重新打开详情。');
+  if (!requestId) throw rewardFailure('REQUEST_INVALID', siteText("site.572fd0905734ce6c"));
   const previous = state.records.find(record => record.id === requestId);
   if (previous) {
-    if(previous.giftId!==giftId)throw rewardFailure('REQUEST_CONFLICT','同一兑换编号不能更换礼品');
+    if(previous.giftId!==giftId)throw rewardFailure('REQUEST_CONFLICT',siteText("site.14f4236a33906dec"));
     return { record: previous, changed: false };
   }
   const gift = config.gifts.find(item => item.id === giftId);
-  if (!gift) throw rewardFailure('REQUEST_INVALID', '演示礼品不存在');
+  if (!gift) throw rewardFailure('REQUEST_INVALID', siteText("site.c4c32ad1b6c20e19"));
   const reason = rewardCondition(gift, state);
   if (reason) throw rewardFailure('RULE_BLOCKED', reason);
-  const record = { id: requestId, giftId, title: gift.title, type:gift.type, art:gift.art, cost: gift.cost, time: new Date().toISOString(), status: '演示兑换已记录，消息待同步' };
+  const record = { id: requestId, giftId, title: gift.title, type:gift.type, art:gift.art, cost: gift.cost, time: new Date().toISOString(), status: siteText("site.57064789ce9d8873") };
   state.balance -= gift.cost; state.records.unshift(record);
-  state.ledger.unshift({ id: requestId, title: `演示兑换：${gift.title}`, amount: -gift.cost, time: record.time });
+  state.ledger.unshift({ id: requestId, title: siteTemplate("site.fa87a51e40fd73d6", {slot0: (gift.title)}), amount: -gift.cost, time: record.time });
   return { record, changed: true };
 }

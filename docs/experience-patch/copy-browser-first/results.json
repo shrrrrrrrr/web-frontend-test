@@ -1,0 +1,29 @@
+{
+  "records": [
+    {
+      "name": "46份实际页面文件可双击打开，基线与字段一致，均带角色、路由、区域和来源",
+      "status": "passed"
+    },
+    {
+      "name": "HTML改稿保存重开、纯文本脚本不执行、变化项导出与基线冲突拒绝",
+      "status": "passed"
+    },
+    {
+      "name": "管理员真实页面点字审阅、导出只含一处变化，不写教学数据",
+      "status": "failed",
+      "error": "locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '导出 1 处改稿', exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "管理员目录点字编辑、本账号草稿恢复，旧基线和存储失败明确拒绝",
+      "status": "passed"
+    },
+    {
+      "name": "学生、只读教师、新媒体、执行导师不能进入系统编辑；负责导师保留真实教学维护",
+      "status": "failed",
+      "error": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText(/该功能不属于你的工作范围/) to be visible\u001b[22m\n"
+    }
+  ],
+  "pageErrors": [],
+  "browser": "154.0.4258.53",
+  "scope": "Fresh synthetic DB; production teaching build; HTML parsed as data; actual .local/teaching untouched"
+}

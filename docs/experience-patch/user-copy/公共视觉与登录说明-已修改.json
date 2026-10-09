@@ -1,0 +1,21 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "公共视觉与登录说明",
+  "edits": [
+    {
+      "id": "patch.login.hint",
+      "text": "继续课程探索，记录新的发现",
+      "enabled": true,
+      "baseText": "继续课程探索，记录新的发现。",
+      "baseEnabled": true
+    },
+    {
+      "id": "patch.login.note",
+      "text": "还没有账号？请联系管理员创建",
+      "enabled": true,
+      "baseText": "还没有账号？请联系管理员创建。",
+      "baseEnabled": true
+    }
+  ]
+}

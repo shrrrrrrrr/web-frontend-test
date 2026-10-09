@@ -1,3 +1,4 @@
+import {copyText as siteText} from "../../content/copy";
 import Alert from '../../content/RoleAlert';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -24,32 +25,32 @@ export default function ChangePassword() {
     try {
       const next = await changePassword({ old_password: values.old_password, new_password: values.new_password });
       navigate(homeForRole(next.role), { replace: true });
-    } catch (err) { setError(requestError(err, { action: '修改密码', write: true })); }
+    } catch (err) { setError(requestError(err, { action: siteText("site.7db6a36f08beda4a"), write: true })); }
     finally { pending.current = false; setBusy(false); }
   };
   return <div className={student ? 'service-page password-page' : ''} style={!student ? { maxWidth: 520, margin: '32px auto', padding: 16 } : undefined}>
-    {student ? <StudyHeader eyebrow="账号 / PASSWORD" title={forced ? '先设置你的新密码' : '修改密码'} description={forced ? '完成这一步，就可以继续探索。' : '使用原密码验证后，设置新的登录密码。'} /> : <h2>修改密码</h2>}
+    {student ? <StudyHeader eyebrow={siteText("site.9c6b2351aaf29f3e")} title={forced ? siteText("site.87490434b0078a33") : siteText("site.7db6a36f08beda4a")} description={forced ? siteText("site.7cb0a1884ad56264") : siteText("site.b082fb9f023321c6")} /> : <h2>{siteText("site.8df185604987f98b")}</h2>}
     <Panel className="password-panel">
-      {forced && <Alert type="info" showIcon title="这是首次登录或管理员重置后的密码。修改成功后才能继续使用其他功能。" />}
+      {forced && <Alert type="info" showIcon title={siteText("site.aab5f0fb0e0893f0")} />}
       {error && <Alert role="alert" type="error" showIcon title={error} />}
       <Form layout="vertical" size="large" onFinish={onFinish}>
-        <Form.Item name="old_password" label="原密码" rules={[{ required: true, message: '请输入原密码' }]}><PasswordInput autoComplete="current-password" /></Form.Item>
-        <Form.Item name="new_password" label="新密码" dependencies={['old_password']}
-          extra="至少 8 位；大写字母、小写字母、数字、特殊字符，至少包含三类。不能与原密码相同。"
-          rules={[{ required: true, message: '请输入新密码' }, { min: 8, message: '密码至少 8 位' }, ({ getFieldValue }) => ({
+        <Form.Item name="old_password" label={siteText("site.3da3927dbfcde53c")} rules={[{ required: true, message: siteText("site.9bf86ee91fbd01cc") }]}><PasswordInput autoComplete="current-password" /></Form.Item>
+        <Form.Item name="new_password" label={siteText("site.cdcc70d7ccb21622")} dependencies={['old_password']}
+          extra={siteText("site.d53afa6d83aaa8dc")}
+          rules={[{ required: true, message: siteText("site.85937292483df5fe") }, { min: 8, message: siteText("site.815bdef0d88e214f") }, ({ getFieldValue }) => ({
             validator(_, value) {
               if (!value) return Promise.resolve();
-              if (value === getFieldValue('old_password')) return Promise.reject(new Error('新密码不能与原密码相同'));
-              if ([/[A-Z]/, /[a-z]/, /\d/, /[^A-Za-z0-9]/].filter((pattern) => pattern.test(value)).length < 3) return Promise.reject(new Error('密码需包含至少三类字符'));
+              if (value === getFieldValue('old_password')) return Promise.reject(new Error(siteText("site.9346ebcb46f169fd")));
+              if ([/[A-Z]/, /[a-z]/, /\d/, /[^A-Za-z0-9]/].filter((pattern) => pattern.test(value)).length < 3) return Promise.reject(new Error(siteText("site.415235d5e5858e30")));
               return Promise.resolve();
             },
           })]}><PasswordInput autoComplete="new-password" /></Form.Item>
-        <Form.Item name="confirm_password" label="确认新密码" dependencies={['new_password']} rules={[{ required: true, message: '请再次输入新密码' }, ({ getFieldValue }) => ({
-          validator: (_, value) => !value || value === getFieldValue('new_password') ? Promise.resolve() : Promise.reject(new Error('两次输入的密码不一致')),
+        <Form.Item name="confirm_password" label={siteText("site.ca9124491631e504")} dependencies={['new_password']} rules={[{ required: true, message: siteText("site.6c9b40e61e0de243") }, ({ getFieldValue }) => ({
+          validator: (_, value) => !value || value === getFieldValue('new_password') ? Promise.resolve() : Promise.reject(new Error(siteText("site.ba998d46f78ac46d"))),
         })]}><PasswordInput autoComplete="new-password" /></Form.Item>
-        <Button type="primary" htmlType="submit" loading={busy} block aria-label="确认修改">确认修改</Button>
+        <Button type="primary" htmlType="submit" loading={busy} block aria-label={siteText("site.e39c768ddee4d6fd")}>{siteText("site.5118582e4b5ce527")}</Button>
       </Form>
-      <div className="password-footer">{!forced && <Button onClick={() => navigate(homeForRole(user.role))}>返回</Button>}<Button onClick={() => { logout(); navigate('/login'); }}>退出登录</Button></div>
+      <div className="password-footer">{!forced && <Button onClick={() => navigate(homeForRole(user.role))}>{siteText("site.fa9d43f28f2eb2b3")}</Button>}<Button onClick={() => { logout(); navigate('/login'); }}>{siteText("site.826cccbbd27b4f4a")}</Button></div>
     </Panel>
   </div>;
 }

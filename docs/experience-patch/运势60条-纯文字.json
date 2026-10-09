@@ -1,0 +1,367 @@
+{
+  "format": "fortune-library-v1",
+  "good": [
+    {
+      "id": "fortune.good.record",
+      "text": "记录发现",
+      "baseText": "记录发现",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.ask",
+      "text": "主动提问",
+      "baseText": "主动提问",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.test",
+      "text": "先试后改",
+      "baseText": "先试后改",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.organize",
+      "text": "整理资料",
+      "baseText": "整理资料",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.listen",
+      "text": "认真倾听",
+      "baseText": "认真倾听",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.rest",
+      "text": "适当休息",
+      "baseText": "适当休息",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.share",
+      "text": "分享想法",
+      "baseText": "分享想法",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.team",
+      "text": "和同伴合作",
+      "baseText": "和同伴合作",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.thanks",
+      "text": "感谢帮助",
+      "baseText": "感谢帮助",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.new-method",
+      "text": "尝试新方法",
+      "baseText": "尝试新方法",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.check",
+      "text": "检查实验条件",
+      "baseText": "检查实验条件",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.sketch",
+      "text": "给方案画草图",
+      "baseText": "给方案画草图",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.small-step",
+      "text": "记录一次小进步",
+      "baseText": "记录一次小进步",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.encourage",
+      "text": "给朋友鼓励",
+      "baseText": "给朋友鼓励",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.perspective",
+      "text": "换个角度想",
+      "baseText": "换个角度想",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.prepare",
+      "text": "为明天做准备",
+      "baseText": "为明天做准备",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.notice",
+      "text": "留意身边的小发现",
+      "baseText": "留意身边的小发现",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.different-opinion",
+      "text": "听听不同意见",
+      "baseText": "听听不同意见",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.needs",
+      "text": "说出自己的需要",
+      "baseText": "说出自己的需要",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.help",
+      "text": "及时向老师求助",
+      "baseText": "及时向老师求助",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.split",
+      "text": "把难题拆成小步",
+      "baseText": "把难题拆成小步",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.focus",
+      "text": "认真完成一件小事",
+      "baseText": "认真完成一件小事",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.accept",
+      "text": "接纳一次失误",
+      "baseText": "接纳一次失误",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.patience",
+      "text": "给自己一点耐心",
+      "baseText": "给自己一点耐心",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.mood",
+      "text": "照顾自己的心情",
+      "baseText": "照顾自己的心情",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.stretch",
+      "text": "喝水和伸展",
+      "baseText": "喝水和伸展",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.talk",
+      "text": "和朋友聊聊天",
+      "baseText": "和朋友聊聊天",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.space",
+      "text": "给桌面留点空间",
+      "baseText": "给桌面留点空间",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.window",
+      "text": "看看窗外的风景",
+      "baseText": "看看窗外的风景",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.good.praise",
+      "text": "为自己的尝试点赞",
+      "baseText": "为自己的尝试点赞",
+      "baseEnabled": true
+    }
+  ],
+  "avoid": [
+    {
+      "id": "fortune.avoid.rush",
+      "text": "匆忙下结论",
+      "baseText": "匆忙下结论",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.ignore",
+      "text": "忽略实验记录",
+      "baseText": "忽略实验记录",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.compare",
+      "text": "和别人比分数",
+      "baseText": "和别人比分数",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.guess",
+      "text": "凭感觉猜结果",
+      "baseText": "凭感觉猜结果",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.late-night",
+      "text": "熬夜硬撑",
+      "baseText": "熬夜硬撑",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.no-water",
+      "text": "忘记喝水",
+      "baseText": "忘记喝水",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.screen",
+      "text": "一直盯着屏幕",
+      "baseText": "一直盯着屏幕",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.give-up",
+      "text": "遇到困难就放弃",
+      "baseText": "遇到困难就放弃",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.fear-question",
+      "text": "害怕提问",
+      "baseText": "害怕提问",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.interrupt",
+      "text": "打断别人说话",
+      "baseText": "打断别人说话",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.argument",
+      "text": "和别人拌嘴",
+      "baseText": "和别人拌嘴",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.result-only",
+      "text": "只看结果不看过程",
+      "baseText": "只看结果不看过程",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.many-variables",
+      "text": "一次改动太多条件",
+      "baseText": "一次改动太多条件",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.unchecked-flight",
+      "text": "没检查就开始试飞",
+      "baseText": "没检查就开始试飞",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.ignore-safety",
+      "text": "忽略安全提醒",
+      "baseText": "忽略安全提醒",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.self-blame",
+      "text": "把失误都怪给自己",
+      "baseText": "把失误都怪给自己",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.deny-self",
+      "text": "因为出错否定自己",
+      "baseText": "因为出错否定自己",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.hide-mood",
+      "text": "把情绪憋在心里",
+      "baseText": "把情绪憋在心里",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.force-self",
+      "text": "不舒服还勉强自己",
+      "baseText": "不舒服还勉强自己",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.mock",
+      "text": "拿别人的作品嘲笑",
+      "baseText": "拿别人的作品嘲笑",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.decide-for-others",
+      "text": "替同伴做所有决定",
+      "baseText": "替同伴做所有决定",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.no-explanation",
+      "text": "合作时不听解释",
+      "baseText": "合作时不听解释",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.discard-data",
+      "text": "随手丢弃实验数据",
+      "baseText": "随手丢弃实验数据",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.one-result",
+      "text": "只凭一次结果下结论",
+      "baseText": "只凭一次结果下结论",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.stop-thinking",
+      "text": "看到答案就停止思考",
+      "baseText": "看到答案就停止思考",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.hurry",
+      "text": "用着急代替耐心",
+      "baseText": "用着急代替耐心",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.too-full",
+      "text": "给自己安排太满",
+      "baseText": "给自己安排太满",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.forget-thanks",
+      "text": "忘记和帮助你的人道谢",
+      "baseText": "忘记和帮助你的人道谢",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.skip-record",
+      "text": "为了赶进度跳过记录",
+      "baseText": "为了赶进度跳过记录",
+      "baseEnabled": true
+    },
+    {
+      "id": "fortune.avoid.deny-effort",
+      "text": "因为进展慢就否定努力",
+      "baseText": "因为进展慢就否定努力",
+      "baseEnabled": true
+    }
+  ]
+}

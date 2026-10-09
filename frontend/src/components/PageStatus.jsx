@@ -1,10 +1,11 @@
+import {copyText as siteText} from "../content/copy";
 import { useEffect, useRef } from 'react';
 import { Spin } from 'antd';
 import { PixelPanel } from '../student/visual/PixelUI';
 import './PageStatus.css';
 
 // 身份确认之前保持中性，不展示任何账号内容；不接管请求或重试逻辑。
-export function PageLoading({ children = '正在加载页面，请稍候。' }) {
+export function PageLoading({ children = siteText("site.ccf62e20016289fa") }) {
   return <div className="page-loading" role="status" aria-live="polite">
     <span aria-hidden="true"><Spin /></span><p>{children}</p>
   </div>;

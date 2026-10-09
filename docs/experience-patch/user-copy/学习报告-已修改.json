@@ -1,0 +1,56 @@
+{
+  "format": "page-copy-review-v1",
+  "baseline": "8d1d74fd43e0d6a5b64fc4d72200cf776c1de2d7",
+  "page": "学习报告",
+  "edits": [
+    {
+      "id": "system.reports.001",
+      "text": "课时归属发生变化，请重新选择",
+      "enabled": true,
+      "baseText": "课时归属发生变化，请重新选择。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reports.007",
+      "text": "暂无导师评语",
+      "enabled": true,
+      "baseText": "暂无导师评语。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reports.015",
+      "text": "这里显示最新报告，不是完整版本历史。作品状态请在「作品与迭代」中查看",
+      "enabled": true,
+      "baseText": "这里显示最新报告，不是完整版本历史。作品状态请在「作品与迭代」中查看。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reports.016",
+      "text": "可以回到课时整理学习报告",
+      "enabled": true,
+      "baseText": "可以回到课时整理学习报告。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reports.017",
+      "text": "完成课堂回顾、全部知识卡片与配套练习后才能提交报告",
+      "enabled": true,
+      "baseText": "完成课堂回顾、全部知识卡片与配套练习后才能提交报告。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reports.022",
+      "text": "这门课程还没有具体的课",
+      "enabled": true,
+      "baseText": "这门课程还没有课时。",
+      "baseEnabled": true
+    },
+    {
+      "id": "system.reports.023",
+      "text": "选择一个课时，查看真实学习进度、最新报告与评审。没有作品任务的课时也可以查看",
+      "enabled": true,
+      "baseText": "选择一个课时，查看真实学习进度、最新报告与评审。没有作品任务的课时也可以查看。",
+      "baseEnabled": true
+    }
+  ]
+}

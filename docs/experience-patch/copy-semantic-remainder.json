@@ -1,0 +1,1784 @@
+[
+  {
+    "sourceFile": "frontend/src/api/client.js",
+    "line": 80,
+    "text": "刷新后的登录信息无法保存，请恢复浏览器存储后重新登录。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/api/client.js",
+    "line": 101,
+    "text": "登录已失效，请重新登录；如账号被停用，请联系老师。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/api/client.js",
+    "line": 148,
+    "text": "登录已失效，请重新登录；如账号被停用，请联系老师。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/components/notifications/NotificationBell.jsx",
+    "line": 40,
+    "text": "通知",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/components/ServiceUI.jsx",
+    "line": 28,
+    "text": "暂时没有内容",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 3,
+    "text": "功能建议",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 4,
+    "text": "程序错误",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 5,
+    "text": "使用咨询",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 7,
+    "text": "其他",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 11,
+    "text": "登录注册",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 12,
+    "text": "工作台",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 13,
+    "text": "课程管理",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 14,
+    "text": "学生管理",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 15,
+    "text": "作品管理",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 16,
+    "text": "成长档案",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 17,
+    "text": "学习助手",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/feedback.js",
+    "line": 18,
+    "text": "其他",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/constants/status.js",
+    "line": 14,
+    "text": "课堂回顾",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/constants/status.js",
+    "line": 14,
+    "text": "知识卡片与练习",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/constants/status.js",
+    "line": 14,
+    "text": "学习报告与反思",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/constants/status.js",
+    "line": 14,
+    "text": "导师评审",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 68,
+    "text": "无法读取该学生档案",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "问题发现",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "方案设计",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "动手操作",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "数据分析",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Index.jsx",
+    "line": 129,
+    "text": "表达展示",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/archives/Reflection.jsx",
+    "line": 121,
+    "text": "报名记录",
+    "context": "OptionalCallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/AIKnowledge.jsx",
+    "line": 21,
+    "text": "课程",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 84,
+    "text": "课程不存在，或当前身份无权查看。",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 120,
+    "text": "课程资源",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 323,
+    "text": "无权",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 528,
+    "text": "（执行导师）",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "调研",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "实验",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "创作",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "反思",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/Detail.jsx",
+    "line": 539,
+    "text": "展示",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/List.jsx",
+    "line": 39,
+    "text": "已发布",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/List.jsx",
+    "line": 39,
+    "text": "草稿",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/List.jsx",
+    "line": 39,
+    "text": "已归档",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/courses/List.jsx",
+    "line": 60,
+    "text": "只读",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/AI.jsx",
+    "line": 44,
+    "text": "当前课程已不可访问，已清除该课程的提问上下文。请选择其他可进入的课程；尚未发送的问题仍保留。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/AI.jsx",
+    "line": 66,
+    "text": "无法加载可提问课程，请刷新页面重试。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/AI.jsx",
+    "line": 78,
+    "text": "课程资料",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/AISettings.jsx",
+    "line": 42,
+    "text": "（已配置；留空表示不更换）",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/Index.jsx",
+    "line": 133,
+    "text": "待评审",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/Index.jsx",
+    "line": 133,
+    "text": "已通过",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/dashboard/Index.jsx",
+    "line": 133,
+    "text": "需修改",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 73,
+    "text": "反馈",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 89,
+    "text": "回复已发送",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 91,
+    "text": "已确认解决",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 97,
+    "text": "优先级已更新",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 100,
+    "text": "状态已更新",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 102,
+    "text": "内部备注已保存",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 107,
+    "text": "反馈已重新打开",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Detail.jsx",
+    "line": 112,
+    "text": "反馈已标记为已处理",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/List.jsx",
+    "line": 26,
+    "text": "反馈列表",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/pages/feedback/Manage.jsx",
+    "line": 52,
+    "text": "已注销用户",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 12,
+    "text": "滑翔机在设定时间内稳定飞行，气动布局比较合适，可以试试更高更远的目标。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 13,
+    "text": "飞机平稳落地，这是一次成功的试飞！",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 14,
+    "text": "飞机下降太快，重重地“砸”在了地面上。试试把平尾偏角调小一些，或增大机翼、减轻重量。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 15,
+    "text": "飞机发生了横滚失控。试试增大机翼上反角、把重心往前移，或适当提高投放速度。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 16,
+    "text": "飞机失速下坠了。试试把重心往前移一些、减小平尾上抬角度，或提高一点投放速度。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 17,
+    "text": "在设定时间内飞行稳定、没有落地。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 36,
+    "text": "滑翔时长",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 36,
+    "text": "水平距离",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 37,
+    "text": "升阻比 L/D",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 37,
+    "text": "平均下沉率",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 38,
+    "text": "平均空速",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/gliderModel.js",
+    "line": 38,
+    "text": "落地高度",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 73,
+    "text": "无法获取实验环境状态",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 91,
+    "text": "已返回",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 91,
+    "text": "请返回",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 160,
+    "text": "航迹图",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 160,
+    "text": "飞行遥测图",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 168,
+    "text": "飞行回放",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 197,
+    "text": "已返回",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 197,
+    "text": "请返回",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 199,
+    "text": "已返回",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 199,
+    "text": "请返回",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 220,
+    "text": "启动模拟失败，请稍后重试。",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 234,
+    "text": "正在检测实验环境…",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 238,
+    "text": "模拟引擎暂不可用，请稍后再试或联系老师。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 239,
+    "text": "正在确认来源课程…",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 288,
+    "text": "真 novaPhy 物理引擎",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/Simulator.jsx",
+    "line": 288,
+    "text": "参考后端",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/glider/useGliderRecords.js",
+    "line": 24,
+    "text": "试飞记录加载失败，请重试。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 16,
+    "text": "知识理解",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 17,
+    "text": "问题分析",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 18,
+    "text": "实践应用",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 19,
+    "text": "反思表达",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 62,
+    "text": "待评审",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 62,
+    "text": "已通过",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 62,
+    "text": "需修改",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 87,
+    "text": "分",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 88,
+    "text": "分",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 93,
+    "text": "报告已通过",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 93,
+    "text": "报告已退回修改",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/mentor/ReviewDetail.jsx",
+    "line": 93,
+    "text": "未评分",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/notifications/Detail.jsx",
+    "line": 57,
+    "text": "通知",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/pages/notifications/List.jsx",
+    "line": 29,
+    "text": "通知列表",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/pages/notifications/List.jsx",
+    "line": 73,
+    "text": "已将全部通知标为已读",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/notifications/List.jsx",
+    "line": 80,
+    "text": "已隐藏全部已读通知",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 124,
+    "text": "﻿登录账号,姓名,身份,学校名称,班级名称,邮箱,手机号\n",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 125,
+    "text": "BJFX-2026-0001,示例学生,学生,北航附属实验学校,四年级1班,example@xx.com,13800000000\n",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 126,
+    "text": "T-BJFX-001,示例教师,教师,北航附属实验学校,四年级1班,,\n",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 127,
+    "text": "M-0001,示例导师,学术导师,,,,",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 132,
+    "text": "用户导入模板.csv",
+    "context": "AssignmentExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 183,
+    "text": "正常",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 183,
+    "text": "已停用",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 183,
+    "text": "已归档",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 183,
+    "text": "全部",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 193,
+    "text": "学生",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 193,
+    "text": "教师",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 193,
+    "text": "学术导师",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/pages/students/List.jsx",
+    "line": 282,
+    "text": "本次导入账号.csv",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "问题发现",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "方案设计",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "动手操作",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "数据分析",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 12,
+    "text": "表达展示",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 15,
+    "text": "未知",
+    "context": "ReturnStatement"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 24,
+    "text": "未知",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 42,
+    "text": "已修改",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 42,
+    "text": "待评审",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 42,
+    "text": "通过",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 42,
+    "text": "需修改",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/Detail.jsx",
+    "line": 49,
+    "text": "作品附件",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/List.jsx",
+    "line": 15,
+    "text": "已修改",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/pages/works/List.jsx",
+    "line": 46,
+    "text": "暂无任务简介",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 22,
+    "text": "上次会话已退出，请重新登录。",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 50,
+    "text": "该账号已在其他页面退出，请重新登录。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 85,
+    "text": "该账号已在其他页面退出，请重新登录。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 106,
+    "text": "已退出登录。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/store/AuthContext.jsx",
+    "line": 116,
+    "text": "密码已经修改，但新登录信息无法保存。请恢复浏览器存储后，用新密码重新登录。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 8,
+    "text": "暂无评价",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "问题发现",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "方案设计",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "动手操作",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "数据分析",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 9,
+    "text": "表达展示",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 18,
+    "text": "课程范围",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 19,
+    "text": "报名关系",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 36,
+    "text": "档案课程",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 37,
+    "text": "作品记录",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 38,
+    "text": "作品记录",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 43,
+    "text": "反思记录",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 44,
+    "text": "导师评价",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 46,
+    "text": "成长记录",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 49,
+    "text": "作品记录",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 49,
+    "text": "个人成长记录",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 50,
+    "text": "作品提交",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 51,
+    "text": "报告反思",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 51,
+    "text": "反思日志",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 61,
+    "text": "课程范围",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 69,
+    "text": "档案暂时无法读取，请重试。",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 75,
+    "text": "草稿",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 75,
+    "text": "待评审",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 75,
+    "text": "已通过",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/archiveModel.js",
+    "line": 75,
+    "text": "需修改",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "课堂资料",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "课后任务",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "课程",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "课时",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 10,
+    "text": "知识卡片",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 33,
+    "text": "课程不存在",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 34,
+    "text": "课程不存在或已不可访问",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/compatibilityModel.js",
+    "line": 34,
+    "text": "课程暂时无法读取",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseResourceDownload.jsx",
+    "line": 37,
+    "text": "课程资料",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseResourceDownload.jsx",
+    "line": 45,
+    "text": "重试下载",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseResourceDownload.jsx",
+    "line": 45,
+    "text": "下载",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseResourceDownload.jsx",
+    "line": 45,
+    "text": "课程资料",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseReview.jsx",
+    "line": 36,
+    "text": "课程资料",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseReview.jsx",
+    "line": 55,
+    "text": "课程不存在",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseReview.jsx",
+    "line": 62,
+    "text": "提交记录",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/student/CourseReview.jsx",
+    "line": 103,
+    "text": "课程回放",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 39,
+    "text": "实验来源无效，已返回课程选择。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 43,
+    "text": "来源课程已撤回或不再分配给你，请返回课程选择。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 43,
+    "text": "暂时无法确认来源课程，已返回课程选择；网络恢复后可从探索地图重新进入。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 47,
+    "text": "来源位置无效，已返回可访问的课程地图。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 51,
+    "text": "来源位置与课程或课时不匹配，已返回课程地图。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 55,
+    "text": "来源课时已不可访问，已返回课程地图。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 63,
+    "text": "来源课程已无法确认访问，已返回课程选择。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 65,
+    "text": "来源课时已不可访问，已返回课程地图。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 65,
+    "text": "暂时无法确认来源课时，已返回课程地图，请稍后重试。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 68,
+    "text": "来源课时与课程不匹配，已返回课程地图。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 72,
+    "text": "原学习阶段当前尚未解锁，已返回课程地图，请按现有学习流程继续。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 76,
+    "text": "原实验关联已解除或来源已变化，已返回课程地图。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/experimentContext.js",
+    "line": 79,
+    "text": "原知识卡片已不可访问或尚未解锁，已返回课程地图。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/homeData.js",
+    "line": 20,
+    "text": "课程不存在",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/homeData.js",
+    "line": 29,
+    "text": "任务与作品状态未能加载，待办可能不完整。请重试；已加载的课程仍可进入。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/homeData.js",
+    "line": 39,
+    "text": "一门课程已不可访问，已从当前课程与待办中移除。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 7,
+    "text": "本账号的演示数据损坏。可以重试读取，或确认后重置；当前数据尚未清除。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 31,
+    "text": "浏览器拒绝读取旧版演示记录。请允许本站存储后重试；旧记录尚未改变。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 33,
+    "text": "无法读取本账号的旧版演示记录，请恢复存储权限后重试。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 83,
+    "text": "服务器日期已失效，请重新核对后签到",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 91,
+    "text": "演示兑换已同步（不发货）",
+    "context": "AssignmentExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardAdapter.js",
+    "line": 94,
+    "text": "同一兑换编号不能更换礼品",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardConfig.js",
+    "line": 14,
+    "text": "此状态由演示配置预置，正式条件待制定。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardConfig.js",
+    "line": 15,
+    "text": "正式获取条件待制定。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 11,
+    "text": "浏览器不允许访问奖励数据库。请允许本站存储后重试，不会改用临时余额。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 13,
+    "text": "无法打开本浏览器的奖励数据库。请检查站点存储权限后重试。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 14,
+    "text": "其他旧页面正在占用奖励数据库。请关闭或刷新旧页面，再重试读取。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 15,
+    "text": "无法打开本浏览器的奖励数据库。请检查站点存储权限后重试。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 21,
+    "text": "奖励数据库初始化失败，原记录未改变。请检查存储权限后重试。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 42,
+    "text": "奖励事务未提交，原已保存记录未改变。请检查存储权限或空间后重试本次操作。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 43,
+    "text": "暂时无法读取奖励数据库。请恢复存储权限后重新读取。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardDatabase.js",
+    "line": 44,
+    "text": "操作已取消",
+    "context": "NewExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardEvents.js",
+    "line": 4,
+    "text": "本页会读取已保存记录，但跨页面自动刷新暂不可用。请在其他页面返回或重新读取，不要重复兑换。",
+    "context": "VariableDeclarator"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 11,
+    "text": "本账号的演示数据损坏。可以重试读取，或确认后重置；当前数据尚未清除。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 16,
+    "text": "已达到演示兑换次数上限",
+    "context": "ReturnStatement"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 17,
+    "text": "演示库存不足",
+    "context": "ReturnStatement"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 29,
+    "text": "缺少兑换确认编号，请重新打开详情。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 32,
+    "text": "同一兑换编号不能更换礼品",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 36,
+    "text": "演示礼品不存在",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardModel.js",
+    "line": 39,
+    "text": "演示兑换已记录，消息待同步",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 43,
+    "text": "积分",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 43,
+    "text": "金币",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 94,
+    "text": "重置本账号的演示数据？",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 94,
+    "text": "确认演示兑换",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 95,
+    "text": "演示记录已变化",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 95,
+    "text": "演示兑换成功",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 95,
+    "text": "演示记录待同步",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 95,
+    "text": "演示详情",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 137,
+    "text": "积分",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/Rewards.jsx",
+    "line": 137,
+    "text": "金币",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/rewardStore.js",
+    "line": 23,
+    "text": "检测到旧页面更改了旧版演示记录。当前以已升级的记录为准，请刷新其他旧页面；不会合并两份余额。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/routeModel.js",
+    "line": 34,
+    "text": "待安排",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/ServerRewards.jsx",
+    "line": 20,
+    "text": "请重新登录",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/ServerRewards.jsx",
+    "line": 20,
+    "text": "账号已切换，本次操作已停止",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 2,
+    "text": "程以宁",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 2,
+    "text": "航向者",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 2,
+    "text": "长黑发、蓝领、蓝金徽记",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 3,
+    "text": "许行舟",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 3,
+    "text": "探路者",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 3,
+    "text": "短乱发、绿色领口、明朗表情",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 4,
+    "text": "江予川",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 4,
+    "text": "造物者",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 4,
+    "text": "棕短发、橙色护目镜与领口",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 5,
+    "text": "夏长庚",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 5,
+    "text": "解码者",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 5,
+    "text": "蓝黑短发、深蓝领口",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 6,
+    "text": "晏子仪",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 6,
+    "text": "协同者",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 6,
+    "text": "高马尾、三角发夹、青色领口",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 7,
+    "text": "南容",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 7,
+    "text": "守正者",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/space/avatars.js",
+    "line": 7,
+    "text": "短黑发、金色领口",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentScope.jsx",
+    "line": 65,
+    "text": "作品不存在",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentScope.jsx",
+    "line": 69,
+    "text": "暂时无法重新核验当前内容，请检查网络后重试。页面中的填写内容仍保留。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentScope.jsx",
+    "line": 75,
+    "text": "暂时无法重新检查账号与课程，请检查网络后重试。已有填写内容仍保留，提交时仍由服务器校验。",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentTaskRedirect.jsx",
+    "line": 27,
+    "text": "任务所属课程已不可访问，请返回探索地图。",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentTaskRedirect.jsx",
+    "line": 36,
+    "text": "任务",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/student/StudentTasks.jsx",
+    "line": 38,
+    "text": "课后任务",
+    "context": "JSXAttribute"
+  },
+  {
+    "sourceFile": "frontend/src/student/useRemote.js",
+    "line": 21,
+    "text": "网络连接失败，请重试。",
+    "context": "LogicalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 3,
+    "text": "管理员",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 3,
+    "text": "学术导师",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 3,
+    "text": "教师",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 3,
+    "text": "学生",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 3,
+    "text": "新媒体",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 11,
+    "text": "姓名",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 11,
+    "text": "登录账号",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 11,
+    "text": "身份",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 11,
+    "text": "学校",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 11,
+    "text": "班级",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 25,
+    "text": "姓名",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 25,
+    "text": "登录账号",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 25,
+    "text": "临时密码",
+    "context": "ArrayExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/accountExport.js",
+    "line": 44,
+    "text": "本次导入临时密码.csv",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 31,
+    "text": "浏览器不允许访问登录存储。请允许本站存储后重试，或重新登录。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 33,
+    "text": "上次登录信息未完整保存，请恢复浏览器存储后重新登录。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 35,
+    "text": "上次登录信息未完整保存，请恢复浏览器存储后重新登录。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 39,
+    "text": "无法读取登录信息，请检查浏览器存储权限后重试。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 45,
+    "text": "浏览器不允许保存登录信息，请允许本站存储后重新登录。",
+    "context": "CallExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 60,
+    "text": "登录信息保存失败，未进入账号页面。请恢复浏览器存储后重新登录。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 60,
+    "text": "登录信息保存失败，部分旧记录暂时无法清理。当前页面已停止使用这些信息，请恢复存储后重新登录。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/authSession.js",
+    "line": 92,
+    "text": " 浏览器暂时无法清理全部登录记录；当前页面已停止使用，请恢复存储后重新登录。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 5,
+    "text": "最多选择 3 个附件。已选择的文件已保留，请移除后再添加。",
+    "context": "ReturnStatement"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 7,
+    "text": "文件扩展名与类型需匹配：PNG、JPG/JPEG、WEBP 或 PDF；不支持 GIF。",
+    "context": "ReturnStatement"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 8,
+    "text": "单个附件不能超过 10 MiB。",
+    "context": "ReturnStatement"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "登录与密码",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "探索入口",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "课程学习",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "账号信息",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "作品提交",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "成长档案",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "学习助手",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/feedbackFiles.js",
+    "line": 11,
+    "text": "其他",
+    "context": "ObjectProperty"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 4,
+    "text": "请求超时，结果暂未确认。请先重新读取记录，避免重复提交。",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 5,
+    "text": "请求超时，请检查网络后重试。",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 7,
+    "text": "未收到服务端确认。请检查网络并先查看记录，再决定是否重试。",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 7,
+    "text": "暂时无法连接服务，请检查网络后重试。",
+    "context": "ConditionalExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 8,
+    "text": "失败，请稍后重试。",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 11,
+    "text": "不存在或已不可访问",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 12,
+    "text": "无权访问这条",
+    "context": "BinaryExpression"
+  },
+  {
+    "sourceFile": "frontend/src/utils/requestError.js",
+    "line": 12,
+    "text": "暂时无法读取",
+    "context": "BinaryExpression"
+  }
+]

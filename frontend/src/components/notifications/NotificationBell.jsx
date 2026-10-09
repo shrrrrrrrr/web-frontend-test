@@ -1,3 +1,4 @@
+import {copyText as siteText, copyTemplate as siteTemplate} from "../../content/copy";
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Badge, Button, Popover } from 'antd';
 import Alert from '../../content/RoleAlert';
@@ -29,16 +30,16 @@ function Recent({ close }) {
       void refreshUnread().catch(() => {});
       close();
       navigate(canRoleAccessPath(user.role, item.action_url) ? item.action_url : `/notifications/${item.id}`);
-    } catch (err) { if (resource.isCurrent()) setError(requestError(err, { action: '打开通知', write: true })); }
+    } catch (err) { if (resource.isCurrent()) setError(requestError(err, { action: siteText("site.ecc77aa768aa6f3a"), write: true })); }
     finally { if (resource.isCurrent()) { pending.current = false; setBusy(false); } }
   };
-  return <div className="notification-popover" role="region" aria-label="最近通知">
-    <header><strong>最近通知</strong><Button type="link" onClick={() => { close(); navigate('/notifications'); }}>查看全部</Button><Button type="text" onClick={close} aria-label="关闭最近通知">×</Button></header>
-    {countError && <Alert type="warning" title="未读数暂未读取" action={<Button aria-label="重试" onClick={() => refreshUnread().catch(() => {})}>重试</Button>} />}
+  return <div className="notification-popover" role="region" aria-label={siteText("site.2ef554fb6b27874b")}>
+    <header><strong>{siteText("site.ee45818595dc6fe2")}</strong><Button type="link" onClick={() => { close(); navigate('/notifications'); }}>{siteText("site.09ba1412b4de814e")}</Button><Button type="text" onClick={close} aria-label={siteText("site.300ec2ebfb8b03d3")}>×</Button></header>
+    {countError && <Alert type="warning" title={siteText("site.f9ebb056d8ee1643")} action={<Button aria-label={siteText("site.dcaec150da9f1658")} onClick={() => refreshUnread().catch(() => {})}>{siteText("site.59aa273395083ca9")}</Button>} />}
     {error && <Alert type="error" role="alert" title={error} />}
-    <div className="notification-popover-list"><ReadState {...resource} object="通知" empty={!resource.data?.length} emptyText="暂时没有通知">
+    <div className="notification-popover-list"><ReadState {...resource} object={siteText("site.3328b96d26841f3b")} empty={!resource.data?.length} emptyText={siteText("site.cf9a095b8189d247")}>
       {resource.data?.map((item) => <NotificationItem key={item.id} notification={item} compact disabled={busy} onClick={handleClick} />)}
-    </ReadState></div><footer>显示最近 8 条通知</footer>
+    </ReadState></div><footer>{siteText("site.6d082232dfb6a987")}</footer>
   </div>;
 }
 export default function NotificationBell({ icon, buttonClassName }) {
@@ -57,8 +58,8 @@ export default function NotificationBell({ icon, buttonClassName }) {
     rootClassName={user.role === 'student' ? 'student-pixel student-interactions service-popover' : undefined}
     content={<div>{open && <Recent key={user.id} close={close} />}</div>} styles={{ body: { padding: 0 } }}>
     <Badge count={countError ? '!' : unreadCount ?? '—'} overflowCount={99} size="small">
-      <Button ref={trigger} type="text" shape="circle" className={buttonClassName} aria-label="通知" aria-expanded={open}
-        title={countError ? '未读数读取失败' : unreadCount === null ? '正在读取未读数' : `${unreadCount} 条未读`} icon={icon || <BellOutlined />} />
+      <Button ref={trigger} type="text" shape="circle" className={buttonClassName} aria-label={siteText("site.39fb2788c08dbbd2")} aria-expanded={open}
+        title={countError ? siteText("site.4f7b1541c989a4f5") : unreadCount === null ? siteText("site.42960e8fd4036930") : siteTemplate("site.b48ef5ea93b72806", {slot0: (unreadCount)})} icon={icon || <BellOutlined />} />
     </Badge>
   </Popover>;
 }
