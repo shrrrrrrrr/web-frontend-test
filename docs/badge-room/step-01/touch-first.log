@@ -1,0 +1,43 @@
+▶ 徽章陈列室与小智交互
+  ✖ 原生模拟触屏轻触只开一次、拖动后轻触、取消拖动后下一次轻触 (10591.1528ms)
+✖ 徽章陈列室与小智交互 (15548.4104ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16368.1586
+
+✖ failing tests:
+
+test at tests\badge-room.browser.test.js:17:134
+✖ 原生模拟触屏轻触只开一次、拖动后轻触、取消拖动后下一次轻触 (10591.1528ms)
+  locator.waitFor: Timeout 8000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('#course-chat') to be visible[22m
+  [2m    19 × locator resolved to hidden <section hidden="" role="dialog" id="course-chat" aria-modal="true" class="course-chat" aria-labelledby="course-chat-title">…</section>[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:29:391
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:17:158)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:17:126)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:27:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('#course-chat') to be visible", '    19 × locator resolved to hidden <section hidden="" role="dialog" id="course-chat" aria-modal="true" class="course-chat" aria-labelledby="course-chat-title">…</section>' ]
+  }
+
+test at tests\badge-room.browser.test.js:4:1
+✖ 徽章陈列室与小智交互 (15548.4104ms)
+  locator.waitFor: Timeout 8000ms exceeded.
+  Call log:
+  [2m  - waiting for locator('#course-chat') to be visible[22m
+  [2m    19 × locator resolved to hidden <section hidden="" role="dialog" id="course-chat" aria-modal="true" class="course-chat" aria-labelledby="course-chat-title">…</section>[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:29:391
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:17:158)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:17:126)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:27:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for locator('#course-chat') to be visible", '    19 × locator resolved to hidden <section hidden="" role="dialog" id="course-chat" aria-modal="true" class="course-chat" aria-labelledby="course-chat-title">…</section>' ]
+  }

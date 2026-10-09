@@ -1,0 +1,12 @@
+{
+  "records": [
+    {
+      "name": "姓名旁徽章入口与账号头像保留；我的旧陈列及徽章页签移除，课程返回有效",
+      "status": "failed",
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+    }
+  ],
+  "pageErrors": [],
+  "browser": "154.0.4258.53",
+  "scope": "Disposable SQLite only. Native Playwright mouse/touchscreen and CDP touch events; no force clicks or DOM-dispatched activation. Existing real server grants/authorization; synthetic large gallery explicitly separated."
+}

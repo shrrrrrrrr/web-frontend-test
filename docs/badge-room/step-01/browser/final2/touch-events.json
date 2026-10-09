@@ -1,0 +1,128 @@
+[
+  {
+    "type": "pointerdown",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 557.5
+  },
+  {
+    "type": "pointerup",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 557.6000000238419
+  },
+  {
+    "type": "lostpointercapture",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 557.6000000238419
+  },
+  {
+    "type": "click",
+    "pointerType": "touch",
+    "detail": 1,
+    "time": 557.6000000238419
+  },
+  {
+    "type": "pointerdown",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 674.6000000238419
+  },
+  {
+    "type": "pointerup",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 674.8000000119209
+  },
+  {
+    "type": "lostpointercapture",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 674.8000000119209
+  },
+  {
+    "type": "click",
+    "pointerType": "touch",
+    "detail": 2,
+    "time": 674.8000000119209
+  },
+  {
+    "type": "pointerdown",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 739.1000000238419
+  },
+  {
+    "type": "pointerup",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 759.4000000357628
+  },
+  {
+    "type": "lostpointercapture",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 759.4000000357628
+  },
+  {
+    "type": "pointerdown",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 808.6999999880791
+  },
+  {
+    "type": "pointerup",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 808.8000000119209
+  },
+  {
+    "type": "lostpointercapture",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 808.8000000119209
+  },
+  {
+    "type": "pointerdown",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 918.8000000119209
+  },
+  {
+    "type": "pointercancel",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 942.9000000357628
+  },
+  {
+    "type": "lostpointercapture",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 942.9000000357628
+  },
+  {
+    "type": "pointerdown",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 990.1999999880791
+  },
+  {
+    "type": "pointerup",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 990.1999999880791
+  },
+  {
+    "type": "lostpointercapture",
+    "pointerType": "touch",
+    "detail": 0,
+    "time": 990.1999999880791
+  },
+  {
+    "type": "click",
+    "pointerType": "touch",
+    "detail": 1,
+    "time": 990.1999999880791
+  }
+]

@@ -1,0 +1,55 @@
+▶ 徽章陈列室与小智交互
+  ✖ 姓名旁徽章入口与账号头像保留；我的旧陈列及徽章页签移除，课程返回有效 (5005.7436ms)
+✖ 徽章陈列室与小智交互 (9637.4364ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10405.8152
+
+✖ failing tests:
+
+test at tests\badge-room.browser.test.js:17:134
+✖ 姓名旁徽章入口与账号头像保留；我的旧陈列及徽章页签移除，课程返回有效 (5005.7436ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/badge-room.browser.test.js:35:1051
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/badge-room.browser.test.js:17:158)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/badge-room.browser.test.js:17:126)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/badge-room.browser.test.js:34:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\badge-room.browser.test.js:4:1
+✖ 徽章陈列室与小智交互 (9637.4364ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/badge-room.browser.test.js:35:1051
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/badge-room.browser.test.js:17:158)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async scene (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/badge-room.browser.test.js:17:126)
+      at async TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/badge-room.browser.test.js:34:2)
+      at async Test.run (node:internal/test_runner/test:1373:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,45 @@
+{
+  "base": "http://127.0.0.1:4184",
+  "courseId": 9003,
+  "browser": "154.0.4258.53",
+  "events": [
+    {
+      "condition": "actual 4184 fresh mouse click at default robot position",
+      "opened": true,
+      "robot": {
+        "x": 1338,
+        "y": 780,
+        "width": 80,
+        "height": 80
+      },
+      "hitTag": "BUTTON",
+      "hitText": "发送问题",
+      "coveredByChat": true,
+      "triggerReachable": false
+    }
+  ],
+  "pointerEvents": [
+    {
+      "type": "pointerdown",
+      "pointerType": "mouse",
+      "detail": 0
+    },
+    {
+      "type": "pointerup",
+      "pointerType": "mouse",
+      "detail": 0
+    },
+    {
+      "type": "lostpointercapture",
+      "pointerType": "mouse",
+      "detail": 0
+    },
+    {
+      "type": "click",
+      "pointerType": "mouse",
+      "detail": 1
+    }
+  ],
+  "pageErrors": [],
+  "scope": "Actual persistent local teaching environment; native mouse input, no force or response overrides. Normal existing badge reconcile/presentation lifecycle may run; data audited separately."
+}

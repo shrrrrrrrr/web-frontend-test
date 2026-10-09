@@ -1,0 +1,55 @@
+{
+  "records": [
+    {
+      "name": "原生鼠标首次打开，触发器不被聊天框遮挡；再次点击可靠收起",
+      "status": "passed"
+    },
+    {
+      "name": "鼠标拖动不打开、下一次点击打开；固定视口、输入与选择不误收起、空白关闭及键盘",
+      "status": "passed"
+    },
+    {
+      "name": "原生模拟触屏轻触只开一次、拖动后轻触、取消拖动后下一次轻触",
+      "status": "passed"
+    },
+    {
+      "name": "五尺寸缩放夹紧、默认机器人不被浮窗覆盖、输入与关闭入口可见",
+      "status": "passed"
+    },
+    {
+      "name": "姓名旁徽章入口与账号头像保留；我的旧陈列及徽章页签移除，课程返回有效",
+      "status": "passed"
+    },
+    {
+      "name": "零获得与授权未获得定义，灰度下方稳定顺序，没有虚构后七课",
+      "status": "passed"
+    },
+    {
+      "name": "真实原规则满足后授予，去看看定位新徽章；重复读取与另一标签不重复反馈",
+      "status": "passed"
+    },
+    {
+      "name": "五尺寸真实陈列与中央详情，Esc/遮罩关闭、焦点恢复、短屏内部滚动",
+      "status": "passed"
+    },
+    {
+      "name": "徽章及场景图片失败仅降级；读取失败移除陈列并可重试，不清空奖励数据",
+      "status": "passed"
+    },
+    {
+      "name": "课程撤回保留安全获章历史，清除未获得项与失效链接；跨账号隔离",
+      "status": "passed"
+    },
+    {
+      "name": "大量徽章自然纵向陈列与全获得状态，数量不混入演示徽章",
+      "status": "passed"
+    },
+    {
+      "name": "非学生深链仍受角色守卫，外部返回地址被拒；未开启新业务",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "browser": "154.0.4258.53",
+  "scope": "Disposable SQLite only. Native Playwright mouse/touchscreen and CDP touch events; no force clicks or DOM-dispatched activation. Existing real server grants/authorization; synthetic large gallery explicitly separated."
+}

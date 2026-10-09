@@ -37,3 +37,4 @@ playwright-report/
 # Historical tracked deliveries remain tracked; new evidence lives in experience-patch.
 docs/next-version/step-02/browser-first/
 !docs/experience-patch/**/*.log
+!docs/badge-room/step-01/**/*.log

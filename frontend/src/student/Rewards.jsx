@@ -26,7 +26,7 @@ function trapDialogFocus(event) {
   else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
 }
 
-function RewardArt({ id, badge = false }) {
+export function RewardArt({ id, badge = false }) {
   if(id.startsWith('digital-'))return <BadgeArt art={id.slice(8)} size={128}/>;
   return <PixelImage className="reward-art" src={`/assets/pixel-v1/rewards/${badge ? 'badge' : 'gift'}-${id}.svg`} width={128} height={128} alt="" />;
 }
@@ -47,7 +47,7 @@ function RecordList({ data, ledger = false, highlight }) {
   </PixelPanel>;
 }
 
-export default function Rewards() {
+export default function Rewards({giftType="physical"}) {
   const { data, status, error, refreshing, syncWarning, store } = useRewards();
   const remote=useServerRewards();
   const [activeTab, setActiveTab] = useState('gifts');
@@ -120,11 +120,8 @@ export default function Rewards() {
         <div className="reward-gift-art"><span className="reward-item-number" aria-hidden="true">0{index + 1}</span><RewardArt id={item.id} /><span className="reward-art-caption">{siteText("site.3910ace4117760f8")}</span></div>
         <div className="reward-gift-content"><h3>{item.title}</h3><PixelTag>{item.type==='badge'?siteText("site.95d9f1b6d67966fa"):siteText("site.2e2c1ae39c52cf4d")}</PixelTag><Sentence className="reward-cost"><PixelIcon name="coin" size={20} /><strong>{item.cost}</strong><span>{siteText("site.7eb583fcfa9a8757")}</span></Sentence><GiftConditions gift={item} available={ready} /><PixelButton block onClick={(event) => open({ kind: 'gift', giftId: item.id }, event)}>{siteText("site.14fd75716f2da33a")}</PixelButton></div>
       </PixelPanel>)}</div><Sentence className="reward-footnote">{siteText("site.ad7b35ec5dcfa5e4")}</Sentence></> },
-      { key: 'ledger', label: siteText("site.dd0fbc824c15bced"), children: <RecordList data={data.ledger} ledger /> },
+      ...giftType==='badge'?[]:[{ key: 'ledger', label: siteText("site.dd0fbc824c15bced"), children: <RecordList data={data.ledger} ledger /> }],
       { key: 'records', label: siteText("site.88619bcd84f3c4c7"), children: <><RecordList data={data.records} highlight={highlight}/><PixelPanel className="reward-history"><h3>{copyText('next3.exchange.serverTitle')}</h3><Sentence>{copyText('next3.exchange.serverScope')}</Sentence>{remote.error?<Alert type="warning" title={remote.error} action={<PixelButton onClick={remote.read}>{copyText('next3.retry')}</PixelButton>}/>:<ul className="reward-record-list">{(remote.data?.exchanges||[]).map(e=><li key={e.id}><div><strong>{e.gift_name}</strong><Sentence>{e.gift_type==='badge'?copyText('next3.exchange.digitalType'):copyText('next3.exchange.physicalType')} · {formatBeijingTime(e.created_at)}{siteText("site.be9215a1a8f6daab")}</Sentence></div><PixelTag>{copyText('next3.exchange.serverSaved')}</PixelTag></li>)}</ul>}</PixelPanel></> },
-      { key: 'badges', label: siteText("site.6ed41e6c02a02e64"), children: <><div className="reward-section-intro"><h3>{siteText("site.c3326d4d88f7ae79")}</h3><span>{siteText("site.f8ea88821f85eb10")}</span></div><div className="reward-badge-grid">{data.badges.map((item) => <PixelPanel as="article" className={`reward-badge ${item.earned ? '' : 'reward-badge--unearned'}`} key={item.id}>
-        <div className="reward-badge-art"><RewardArt id={item.id} badge /></div><div><PixelTag tone={item.earned ? 'success' : 'neutral'}>{item.earned ? siteText("site.b6c1e24fdc27541c") : siteText("site.929aedc6a9663c91")}</PixelTag><h3>{item.title}</h3><Sentence>{item.description}</Sentence><PixelButton onClick={(event) => open({ kind: 'badge', badgeId: item.id }, event)}>{siteText("site.e7709f962053677a")}</PixelButton></div>
-      </PixelPanel>)}</div></> },
     ]} />}
     <Modal open={!!dialog} title={title} rootClassName="student-pixel student-interactions reward-modal-root" className="reward-modal" width={560} centered
       closable={busy ? false : { 'aria-label': siteText("site.be5f4bc48ff6dc52") }} keyboard={!busy} mask={{ closable: !busy }} onCancel={close} footer={footer} focusable={{ trap: true, focusTriggerAfterClose: false }} modalRender={(node) => <div onKeyDownCapture={trapDialogFocus}>{node}</div>}

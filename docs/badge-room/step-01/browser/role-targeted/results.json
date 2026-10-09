@@ -1,0 +1,11 @@
+{
+  "records": [
+    {
+      "name": "非学生深链仍受角色守卫，外部返回地址被拒；未开启新业务",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "browser": "154.0.4258.53",
+  "scope": "Disposable SQLite only. Native Playwright mouse/touchscreen and CDP touch events; no force clicks or DOM-dispatched activation. Existing real server grants/authorization; synthetic large gallery explicitly separated."
+}

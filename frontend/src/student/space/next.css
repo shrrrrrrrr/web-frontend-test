@@ -20,5 +20,8 @@
 .course-assistant-host .course-robot{touch-action:none;user-select:none;translate:none!important;scale:none!important;transform:none!important;right:auto;bottom:auto;}
 .course-assistant-host .course-robot img{pointer-events:none}
 .course-assistant-host .course-chat{color:#183552}
+.course-assistant-host .course-robot{z-index:1202}
+.space-personal-name{flex-wrap:wrap;max-width:100%}.space-personal-name .personal-name-text{overflow-wrap:anywhere;min-width:0}.space-personal-name .personal-badges-link{font-size:16px;white-space:nowrap;padding:8px 14px;border:2px solid #254e74;background:#fff5d8;box-shadow:3px 3px 0 #173553;color:#173553}
+.personal-badges-link:focus-visible{outline:3px solid #2479a5;outline-offset:4px}
 .robot-reset{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.robot-reset:focus{position:fixed!important;top:80px;right:20px;width:auto;height:auto;clip-path:none;z-index:1200;background:#fff7e3;color:#143858;padding:12px}
 @media(max-width:767px){.space-map--planned .pixel-map-route-stop{--stop-lift:0px!important}.space-content.student-content{padding-bottom:24px!important}.space-map--planned .space-lesson-place{width:190px}.account-avatar-grid{grid-template-columns:repeat(2,1fr)}.visit-photos{grid-template-columns:1fr}}

@@ -1,0 +1,25 @@
+✔ 四份增量审阅可双击打开，稳定ID与当前基线一致，原46份仍保留 (3208.6361ms)
+✔ 新文案点字、保存重开与变化项导出；脚本文字为纯文本，导入只改受控ID (3150.9271ms)
+✖ 旧反馈字段改稿发生基线冲突时不覆盖迁移，其他人工文案和运势词库保持 (7.8255ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7168.4845
+
+✖ failing tests:
+
+test at tests\badge-room-copy.browser.test.js:9:1
+✖ 旧反馈字段改稿发生基线冲突时不覆盖迁移，其他人工文案和运势词库保持 (7.8255ms)
+  Error: 基线冲突：next3.award.view
+      at applyPageEdits (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/scripts/copy-validation.mjs:7:83)
+      at TestContext.<anonymous> (file:///C:/Users/shr/Desktop/nmg%E5%89%8D%E7%AB%AF/app/tests/badge-room-copy.browser.test.js:10:182)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1366:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:946:18)
+      at Test.postRun (node:internal/test_runner/test:1506:19)
+      at Test.run (node:internal/test_runner/test:1431:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:946:7)

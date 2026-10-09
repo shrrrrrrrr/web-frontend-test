@@ -1,0 +1,185 @@
+{
+  "screens": [
+    {
+      "file": "actual/after/room-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "actual/after/detail-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "actual/after/robot-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "actual/after/me-1440x900.png",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "actual/after/room-768x1024.png",
+      "dimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "actual/after/detail-768x1024.png",
+      "dimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "actual/after/robot-768x1024.png",
+      "dimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "actual/after/me-768x1024.png",
+      "dimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "actual/after/room-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "actual/after/detail-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "actual/after/robot-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "actual/after/me-390x844.png",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "actual/after/room-360x800.png",
+      "dimensions": [
+        360,
+        800
+      ]
+    },
+    {
+      "file": "actual/after/detail-360x800.png",
+      "dimensions": [
+        360,
+        800
+      ]
+    },
+    {
+      "file": "actual/after/robot-360x800.png",
+      "dimensions": [
+        360,
+        800
+      ]
+    },
+    {
+      "file": "actual/after/me-360x800.png",
+      "dimensions": [
+        360,
+        800
+      ]
+    },
+    {
+      "file": "actual/after/room-844x390.png",
+      "dimensions": [
+        844,
+        390
+      ]
+    },
+    {
+      "file": "actual/after/detail-844x390.png",
+      "dimensions": [
+        844,
+        390
+      ]
+    },
+    {
+      "file": "actual/after/robot-844x390.png",
+      "dimensions": [
+        844,
+        390
+      ]
+    },
+    {
+      "file": "actual/after/me-844x390.png",
+      "dimensions": [
+        844,
+        390
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "room-master.png",
+      "bytes": 1305135,
+      "sha256": "c10f60ee042ad6d3f50c57d26f31970e27aa17a55db2d3935c9b0ea2a911abc2"
+    },
+    {
+      "name": "room-768.webp",
+      "bytes": 278992,
+      "sha256": "1a496c12bbd7b24b7e84df7ba11038f34146c57b8eea8169fa3c2fc20f725f38"
+    },
+    {
+      "name": "room-1536.webp",
+      "bytes": 829376,
+      "sha256": "764c9fe84978253200a842d30878dcf486ca6510243afecc7c20906646aa51ee"
+    }
+  ],
+  "brokenLinks": [],
+  "reviewFiles": 4,
+  "originalReviewFiles": 46,
+  "productionReviewViews": 47,
+  "newRoute": {
+    "id": "badge-room",
+    "title": "徽章陈列室",
+    "routes": [
+      "/me/badges"
+    ],
+    "roles": [
+      "student"
+    ],
+    "sources": [
+      "frontend/src/student/space/BadgeRoom.jsx"
+    ],
+    "groups": [
+      "徽章陈列室"
+    ]
+  },
+  "featureScenes": 12,
+  "rewardScenes": 16,
+  "copyScenes": 3,
+  "protectedBackendRuleDiff": null
+}

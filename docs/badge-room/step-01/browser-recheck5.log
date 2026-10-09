@@ -1,0 +1,51 @@
+▶ 徽章陈列室与小智交互
+  ✔ 原生鼠标首次打开，触发器不被聊天框遮挡；再次点击可靠收起 (964.1361ms)
+  ✔ 鼠标拖动不打开、下一次点击打开；固定视口、输入与选择不误收起、空白关闭及键盘 (476.8334ms)
+  ✔ 原生模拟触屏轻触只开一次、拖动后轻触、取消拖动后下一次轻触 (2320.1677ms)
+  ✔ 五尺寸缩放夹紧、默认机器人不被浮窗覆盖、输入与关闭入口可见 (4881.7218ms)
+  ✔ 姓名旁徽章入口与账号头像保留；我的旧陈列及徽章页签移除，课程返回有效 (2177.3364ms)
+  ✔ 零获得与授权未获得定义，灰度下方稳定顺序，没有虚构后七课 (2861.5156ms)
+  ✔ 真实原规则满足后授予，去看看定位新徽章；重复读取与另一标签不重复反馈 (4126.1151ms)
+  ✔ 五尺寸真实陈列与中央详情，Esc/遮罩关闭、焦点恢复、短屏内部滚动 (11999.1376ms)
+  ✔ 徽章及场景图片失败仅降级；读取失败移除陈列并可重试，不清空奖励数据 (2546.8106ms)
+  ✔ 课程撤回保留安全获章历史，清除未获得项与失效链接；跨账号隔离 (3555.0581ms)
+  ✖ 大量徽章自然纵向陈列与全获得状态，数量不混入演示徽章 (11683.4494ms)
+✖ 徽章陈列室与小智交互 (52453.2501ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 10
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 53270.4854
+
+✖ failing tests:
+
+test at tests\badge-room.browser.test.js:17:134
+✖ 大量徽章自然纵向陈列与全获得状态，数量不混入演示徽章 (11683.4494ms)
+  locator.waitFor: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText('目前没有待获得的课时徽章。', { exact: true }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:54:451
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:17:158)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:17:126)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:52:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByText('目前没有待获得的课时徽章。', { exact: true }) to be visible" ]
+  }
+
+test at tests\badge-room.browser.test.js:4:1
+✖ 徽章陈列室与小智交互 (52453.2501ms)
+  locator.waitFor: Timeout 10000ms exceeded.
+  Call log:
+  [2m  - waiting for getByText('目前没有待获得的课时徽章。', { exact: true }) to be visible[22m
+  
+      at C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:54:451
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:17:158)
+      at async scene (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:17:126)
+      at async TestContext.<anonymous> (C:\Users\shr\Desktop\nmg前端\app\tests\badge-room.browser.test.js:52:2) {
+    name: 'TimeoutError',
+    log: [ "  - waiting for getByText('目前没有待获得的课时徽章。', { exact: true }) to be visible" ]
+  }
