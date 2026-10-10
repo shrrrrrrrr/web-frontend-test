@@ -113,6 +113,10 @@ CREATE TABLE IF NOT EXISTS courses (
 
 -- 6. 课时
 CREATE TABLE IF NOT EXISTS lessons (
+  review_content TEXT,
+  report_guidance TEXT,
+  experiment_guidance TEXT,
+  article_blocks TEXT NOT NULL DEFAULT '[]',
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   course_id INTEGER NOT NULL,
   title TEXT NOT NULL,
@@ -164,6 +168,7 @@ CREATE TABLE IF NOT EXISTS lesson_progress (
 
 -- 9. 课程资源
 CREATE TABLE IF NOT EXISTS resources (
+  display_order INTEGER NOT NULL DEFAULT 0,
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   course_id INTEGER NOT NULL,
   lesson_id INTEGER,

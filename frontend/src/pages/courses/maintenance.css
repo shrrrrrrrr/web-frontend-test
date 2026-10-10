@@ -13,3 +13,6 @@
 .course-maintenance-page .course-detail-header {position:sticky;top:0;z-index:5; background:#f4f8f9; padding:10px;display:flex;flex-wrap:wrap; box-shadow:0 2px 0 #b8c7ce;}
 @media(max-width:600px){.maintenance-fields {grid-template-columns:1fr;} .maintenance-workspace .ant-card-body{padding:12px;} .maintenance-workspace .ant-card-head{padding:0 12px;} .maintenance-workspace .ant-tabs-content-holder{min-width:0;} .maintenance-workspace .ant-card-head-title{white-space:normal;} .maintenance-editor .ant-modal-body{max-height:calc(100dvh - 135px);} .course-maintenance-page .ant-space{flex-wrap:wrap;}}
 @media(max-width:600px){.maintenance-workspace>.ant-tabs>.ant-tabs-nav .ant-tabs-nav-list{transform:none!important;flex-wrap:wrap;gap:8px;}.maintenance-workspace>.ant-tabs>.ant-tabs-nav .ant-tabs-nav-wrap{overflow:visible;}.maintenance-workspace>.ant-tabs>.ant-tabs-nav .ant-tabs-nav-operations{display:none;}.maintenance-workspace>.ant-tabs>.ant-tabs-nav .ant-tabs-tab{margin:0;padding:10px 8px;background:#edf3f6;}.maintenance-workspace>.ant-tabs>.ant-tabs-nav .ant-tabs-ink-bar{display:none;}.maintenance-workspace .ant-tabs-tab-active{outline:2px solid #254f69;outline-offset:-2px;}}
+
+/* Keep course controls below the staff header; authoring toolbar stays in normal flow. */
+.course-maintenance-page .course-detail-header{top:64px}

@@ -15,7 +15,7 @@ const blankCard = { status: 'draft', is_required: true, estimated_minutes: 10 };
 const statusLabel = { draft: siteText("site.e018a8985a3bf3e9"), published: siteText("site.b7e0e04e6c7f8a9b"), archived: siteText("site.b8f1d565c600b2b5") };
 const typeLabel = { single_choice: siteText("site.ca96d9b36ed9cccc"), multiple_choice: siteText("site.e2f832a2961679bf"), true_false: siteText("site.8f0243233f3cdecc"), fill_blank: siteText("site.c716c74faa512c61"), short_answer: siteText("site.b9834e4dc44d2da0") };
 
-export default function LessonContentEditor({embeddedCourseId,embeddedLessonId,onBusyChange}) {
+export default function LessonContentEditor({embeddedCourseId,embeddedLessonId,onBusyChange,onDirtyChange}) {
   const params=useParams();const courseId=embeddedCourseId||params.courseId,lessonId=embeddedLessonId||params.lessonId;
   const navigate = useNavigate();
   const [cards, setCards] = useState([]);
@@ -51,7 +51,7 @@ export default function LessonContentEditor({embeddedCourseId,embeddedLessonId,o
       const payload={...values,status,...(editing?.content_revision?{expected_revision:editing.content_revision}:{})};
       const result=editing?.id?await learningManageAPI.updateCard(editing.id,payload):await learningManageAPI.createCard(lessonId,payload);
       if(!live.current)return;
-      setEditing(current=>({...current,...payload,id:result.id,content_revision:result.content_revision}));setSaved(true);
+      setEditing(current=>({...current,...payload,id:result.id,content_revision:result.content_revision}));setSaved(true);onDirtyChange?.(false);
       if(!await load())setSaveError(copyText('next2.save.readFailed'));
     } catch(err){if(live.current)setSaveError(err?.response?.data?.error||copyText('next2.save.failed'));}
     finally{busy.current=false;if(live.current)setSaving(false);}
@@ -95,12 +95,12 @@ export default function LessonContentEditor({embeddedCourseId,embeddedLessonId,o
         <Typography.Paragraph style={{ whiteSpace: 'pre-wrap' }}>{card.content}</Typography.Paragraph>
         {(card.exercises || []).length === 0
           ? <Alert type="warning" showIcon message={siteText("site.03234d068ef54c58")} />
-          : (card.exercises || []).map((exercise) => <Card size="small" key={exercise.id} style={{ marginTop: 8 }}><Space wrap><Tag>{typeLabel[exercise.question_type]}</Tag><span>{exercise.prompt}</span><Tag>{siteText("site.d9e3cbbcf034a67a")}</Tag><Popconfirm title={siteText("site.5f30f93c34256e7b")} onConfirm={async () => { await learningManageAPI.deleteExercise(exercise.id); load(); }}><Button type="link" danger>{siteText("site.e42db20e64609768")}</Button></Popconfirm></Space></Card>)}
+          : (card.exercises || []).map((exercise) => <Card size="small" key={exercise.id} style={{ marginTop: 8 }}><Space wrap><Tag>{typeLabel[exercise.question_type]}</Tag><span>{exercise.prompt}</span><Button onClick={()=>{exerciseIdentity.current=exercise.id;exerciseRevision.current=exercise.content_revision;setSaved(false);setSaveError('');setExerciseCard(card);exerciseForm.resetFields();exerciseForm.setFieldsValue({...exercise,options_text:(exercise.options||[]).map(o=>typeof o==='string'?o:o.label).join('\n'),answer:exercise.question_type==='multiple_choice'?(exercise.answer||[]).join(','):String(exercise.answer??'')});}}>{copyText('authoring.exercise.edit')}</Button><Tag>{siteText("site.d9e3cbbcf034a67a")}</Tag><Popconfirm title={siteText("site.5f30f93c34256e7b")} onConfirm={async () => { await learningManageAPI.deleteExercise(exercise.id); load(); }}><Button type="link" danger>{siteText("site.e42db20e64609768")}</Button></Popconfirm></Space></Card>)}
       </Card>)}
     </AsyncPageState>
 
     <Modal open={Boolean(editing)} title={editing?.id ? siteText("site.35d2733c5e38c7a1") : siteText("site.c2873e042212bb41")} onCancel={() => {if(!busy.current)setEditing(null);}} closable={!saving} maskClosable={!saving} footer={null} width={720} destroyOnHidden>
-      <Form form={cardForm} layout="vertical" disabled={saving} onValuesChange={()=>setSaved(false)}>{saveError&&<Alert type="warning" title={saveError}/>}{saved&&<Alert type="success" title={copyText('next2.save.saved')+' #'+editing?.id}/>}
+      <Form form={cardForm} layout="vertical" disabled={saving} onValuesChange={()=>{setSaved(false);onDirtyChange?.(true);}}>{saveError&&<Alert type="warning" title={saveError}/>}{saved&&<Alert type="success" title={copyText('next2.save.saved')+' #'+editing?.id}/>}
         <Form.Item name="title" label={siteText("site.5929135088a8a879")} rules={[{ required: true, message: siteText("site.2c46de594ed09a2b") }]}><Input /></Form.Item>
         <Form.Item name="summary" label={siteText("site.33522fe8025f7ec7")}><Input.TextArea /></Form.Item>
         <Form.Item name="content" label={siteText("site.c8623bbefa078e88")} rules={[{ required: true, message: siteText("site.e21c8903ca2a927e") }]}><Input.TextArea rows={7} /></Form.Item>

@@ -8,7 +8,7 @@ import SceneArt from '../space/SceneArt';
 import Sentence from '../../content/Sentence';
 
 export function StudyHeader({ eyebrow, title, description, children }) {
-  const look=useCoursePresentation(),id=useCourseId(),{pathname}=useLocation(),voyage=id&&look.theme==='voyage';
+  const look=useCoursePresentation(),routeId=useCourseId(),id=routeId||look.id,{pathname}=useLocation(),voyage=id&&look.theme==='voyage';
   const scene=/\/(lab|glider)$/.test(pathname)?'observatory':/\/(archives|reflection)(?:\/|$)/.test(pathname)?'planet-base':'bridge';
   return <header className={'study-header'+(id?' course-page-header':'')}>
     {id&&<SceneArt name={voyage?scene:'campus'} className="course-page-scene" priority/>}

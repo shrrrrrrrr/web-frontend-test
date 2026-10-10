@@ -1,5 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import {installTeachingLeaveHistory} from './pages/courses/useTeachingLeaveGuard';
+installTeachingLeaveHistory();
 import { ConfigProvider, App as AntApp } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import { PLATFORM_FONT } from './student/space/identity';

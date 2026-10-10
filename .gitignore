@@ -33,6 +33,16 @@ playwright-report/
 # Persistent local teaching data and private backups
 .local/
 
+# Current authoring verification is local-only: no teaching data or test output.
+docs/lesson-authoring/browser/
+docs/lesson-authoring/regression/
+docs/lesson-authoring/copy-browser/
+docs/lesson-authoring/actual-browser.json
+docs/lesson-authoring/actual-import.json
+docs/lesson-authoring/data-protection.json
+docs/lesson-authoring/migration-import-restore.json
+docs/lesson-authoring/preflight.json
+
 # A disposable regression run used the legacy test's default output name.
 # Historical tracked deliveries remain tracked; new evidence lives in experience-patch.
 docs/next-version/step-02/browser-first/

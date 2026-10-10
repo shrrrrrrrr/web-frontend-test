@@ -454,6 +454,7 @@ exports.deleteResource = (req, res) => {
       return res.status(404).json({ error: '资源不存在' });
     }
 
+    if(db.prepare("SELECT l.id FROM lessons l,json_each(l.article_blocks) b WHERE json_extract(b.value,'$.resourceId')=? LIMIT 1").get(resource.id))return res.status(409).json({error:'图片正在文章中使用，请先移除文章引用，再删除资料'});
     db.prepare('DELETE FROM resources WHERE id = ?').run(resource.id);
     removeFilesAfterCommit([resource.file_path], UPLOAD_ROOT);
     res.json({ message: '资源已删除' });

@@ -5,15 +5,15 @@ import {maintenanceText as c} from './maintenanceCopy';
 import {requestError} from '../../utils/requestError';
 import Sentence from '../../content/Sentence';
 const types=['courseware','lesson_plan','guide_card','template','video','other'];
-export default function UploadQueue({courseId,lessons,policy,kind,refresh,dirty,disabled=false}){
- const [rows,setRows]=useState([]),[lessonId,setLesson]=useState(null),[type,setType]=useState('courseware'),[busy,setBusy]=useState(false),[selectionError,setSelectionError]=useState('');
- const live=useRef(true),running=useRef(false),controller=useRef(null),rowsRef=useRef([]),dirtyRef=useRef(dirty);
- useEffect(()=>{dirtyRef.current=dirty;},[dirty]);
+export default function UploadQueue({courseId,lessons,policy,kind,refresh,dirty,disabled=false,boundLessonId,onUploaded,imageOnly=false}){
+ const [rows,setRows]=useState([]),[lessonId,setLesson]=useState(boundLessonId??null),[type,setType]=useState('courseware'),[busy,setBusy]=useState(false),[selectionError,setSelectionError]=useState('');
+ const live=useRef(true),running=useRef(false),controller=useRef(null),rowsRef=useRef([]),dirtyRef=useRef(dirty),uploadedRef=useRef(onUploaded);
+ useEffect(()=>{dirtyRef.current=dirty;uploadedRef.current=onUploaded;},[dirty,onUploaded]);
  const change=fn=>{rowsRef.current=fn(rowsRef.current);if(live.current)setRows(rowsRef.current);};
  const patch=(key,value)=>change(list=>list.map(row=>row.key===key?{...row,...value}:row));
  useEffect(()=>{live.current=true;return()=>{live.current=false;controller.current?.abort();};},[]);
  useEffect(()=>{dirtyRef.current(rows.some(row=>!['success','cancelled'].includes(row.status)));},[rows]);
- const accept=(kind==='resource'?policy.formats.map(f=>f.ext):kind==='replay'?policy.replayExtensions:policy.coverExtensions).join(',');
+ const accept=(kind==='resource'?policy.formats.filter(f=>!imageOnly||['.jpg','.jpeg','.png','.webp','.gif'].includes(f.ext)).map(f=>f.ext):kind==='replay'?policy.replayExtensions:policy.coverExtensions).join(',');
  const limit=kind==='resource'?policy.resourceLimitMB:kind==='replay'?policy.replayLimitMB:policy.coverLimitMB;
  const select=file=>{
   // Ant Design invokes beforeUpload for each file: add this immutable source exactly once.
@@ -36,7 +36,7 @@ export default function UploadQueue({courseId,lessons,policy,kind,refresh,dirty,
    if(kind==='resource'){form.append('resource_type',row.type);form.append('upload_token',row.token);}
    const abort=new AbortController();controller.current=abort;patch(row.key,{status:'uploading',error:''});
    let result;
-   try{result=await api.upload(row.courseId,kind,form,abort.signal);if(!live.current)break;patch(row.key,{status:'success',id:result.id,error:''});try{await refresh();}catch{if(live.current)patch(row.key,{readError:c('uploadReadFailed')});}}
+   try{result=await api.upload(row.courseId,kind,form,abort.signal);if(!live.current)break;patch(row.key,{status:'success',id:result.id,error:''});uploadedRef.current?.({...result,title:row.title,description:row.description});try{await refresh();}catch{if(live.current)patch(row.key,{readError:c('uploadReadFailed')});}}
    catch(error){if(!live.current)break;patch(row.key,{status:error.response?'failed':'uncertain',error:requestError(error)});}
    finally{controller.current=null;}
   }
@@ -45,7 +45,7 @@ export default function UploadQueue({courseId,lessons,policy,kind,refresh,dirty,
  const cancel=()=>{if(!window.confirm(c('upload.confirmCancel')))return;controller.current?.abort();change(list=>list.map(row=>['pending','failed','invalid','uncertain'].includes(row.status)?{...row,status:'cancelled'}:row));};
  return <Card className="maintenance-upload" title={c('upload.'+kind)} data-testid={'upload-'+kind}>
   <Sentence>{c(kind==='cover'?'cover.note':kind==='replay'?'upload.videoNote':'upload.resourceNote')}</Sentence><Sentence>{c('upload.bound')}</Sentence>
-  {kind!=='cover'&&<Space wrap><Select aria-label={c('field.lesson_id')} value={lessonId} onChange={setLesson} disabled={disabled} style={{width:220}} options={[{value:null,label:c('public')},...lessons.map(l=>({value:l.id,label:l.title,disabled:l.status==='cancelled'}))]}/>{kind==='resource'&&<Select aria-label={c('upload.type')} value={type} onChange={setType} disabled={disabled} options={types.map(value=>({value,label:c('type.'+value)}))}/>}</Space>}
+  {boundLessonId==null&&kind!=='cover'&&<Space wrap><Select aria-label={c('field.lesson_id')} value={lessonId} onChange={setLesson} disabled={disabled} style={{width:220}} options={[{value:null,label:c('public')},...lessons.map(l=>({value:l.id,label:l.title,disabled:l.status==='cancelled'}))]}/>{kind==='resource'&&<Select aria-label={c('upload.type')} value={type} onChange={setType} disabled={disabled} options={types.map(value=>({value,label:c('type.'+value)}))}/>}</Space>}
   <div className="maintenance-queue-actions"><Upload accept={accept} multiple={kind==='resource'} beforeUpload={select} showUploadList={false} disabled={disabled||busy}><Button disabled={disabled||busy}>{c('upload.choose')}</Button></Upload><Button type="primary" loading={busy} disabled={disabled||busy||!rows.some(r=>r.status==='pending')} onClick={()=>void upload(false)}>{c('upload.start')}</Button><Button disabled={disabled||busy||!rows.some(r=>r.status==='failed'||(kind==='resource'&&r.status==='uncertain'))} onClick={()=>void upload(true)}>{c('upload.retry')}</Button><Button onClick={cancel} disabled={!rows.some(r=>['pending','failed','invalid','uploading','uncertain'].includes(r.status))}>{c('upload.cancel')}</Button></div>
   {selectionError&&<Alert type="error" title={selectionError}/>}
   <div className="maintenance-list">{rows.map(row=><Card size="small" key={row.key} data-testid="upload-item"><strong>{row.file.name}</strong><div><Tag>{c('upload.'+row.status)}</Tag><Tag>{(row.file.size/1024/1024).toFixed(2)} MB</Tag><Tag>{lessons.find(l=>l.id===row.lessonId)?.title||c('public')}</Tag>{kind==='resource'&&<Tag>{c('type.'+row.type)}</Tag>}</div>{row.id!=null&&<Sentence>{c('upload.id')} #{row.id}</Sentence>}{!['success','cancelled','uploading','uncertain'].includes(row.status)&&<div className="maintenance-fields"><label>{c('field.title')}<Input aria-label={c('field.title')+' '+row.file.name} value={row.title} maxLength={120} onChange={e=>patch(row.key,{title:e.target.value})}/></label><label>{c('upload.description')}<Input.TextArea aria-label={c('upload.description')+' '+row.file.name} value={row.description} maxLength={10000} onChange={e=>patch(row.key,{description:e.target.value})}/></label></div>}{row.error&&<Alert type="error" title={row.error}/>} {row.readError&&<Alert type="warning" title={row.readError} action={<Button onClick={()=>void refresh().then(()=>patch(row.key,{readError:''})).catch(()=>{})}>{c('retryRead')}</Button>}/>}</Card>)}</div>

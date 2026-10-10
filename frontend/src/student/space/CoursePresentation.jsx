@@ -19,3 +19,5 @@ function Metadata({id,children}){
  return <Context.Provider value={value}>{children}</Context.Provider>;
 }
 export function useCoursePresentation(){return useContext(Context)||{...coursePresentation(null),experiments:[],groups:[],data:null};}
+
+export function CoursePreviewTheme({course,children}){return <Context.Provider value={{...coursePresentation(course),id:course.id,data:{course},experiments:[],groups:[]}}>{children}</Context.Provider>;}

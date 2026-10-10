@@ -26,6 +26,8 @@ export function sampleFingerprint(db,id){
   // Any saved definition or course-linked grant still changes the fingerprint and prevents archival.
   if(['lesson_badge_definitions','student_badge_grants','demo_exchange_events','student_coin_ledger'].includes(table)&&rows.length===0)continue;
   records[table]=rows.map(row=>Object.fromEntries(Object.entries(row).filter(([k,v])=>{
+   if(table==='lessons'&&((['review_content','report_guidance','experiment_guidance'].includes(k)&&v===null)||(k==='article_blocks'&&v==='[]')))return false;
+   if(table==='resources'&&k==='display_order'&&v===0)return false;
    if(['created_at','updated_at'].includes(k))return false;
    // Migration 020's untouched legacy defaults were absent in the original fingerprint.
    // Nondefault/open-reflection content remains part of the hash and prevents archival.

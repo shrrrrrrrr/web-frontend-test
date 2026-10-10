@@ -171,10 +171,10 @@ function lessonPackage(studentId, lessonId) {
     ORDER BY CASE WHEN lesson_id = ? THEN 0 ELSE 1 END, sort_order, id
   `).all(lesson.course_id, lessonId, lessonId);
   const resources = db.prepare(`
-    SELECT id, course_id, lesson_id, resource_type, title, description, file_size, file_name,file_type,created_at,
+    SELECT id, course_id, lesson_id, resource_type, title, description, display_order, file_size, file_name,file_type,created_at,
            CASE WHEN file_path IS NOT NULL THEN 1 ELSE 0 END AS has_file
     FROM resources WHERE course_id = ? AND (lesson_id = ? OR lesson_id IS NULL)
-    ORDER BY CASE WHEN lesson_id = ? THEN 0 ELSE 1 END, created_at DESC
+    ORDER BY CASE WHEN lesson_id = ? THEN 0 ELSE 1 END, display_order, created_at DESC
   `).all(lesson.course_id, lessonId, lessonId);
 
   return {
@@ -182,6 +182,7 @@ function lessonPackage(studentId, lessonId) {
     lesson: {
       id: lesson.id, title: lesson.title, description: lesson.description,teaching_tip:lesson.teaching_tip,
       presentation_type:lesson.presentation_type,content_state:lesson.content_state,article_url:lesson.article_url,article_title:lesson.article_title,moments_note:lesson.moments_note,
+      review_content:lesson.review_content,report_guidance:lesson.report_guidance,experiment_guidance:lesson.experiment_guidance,article_blocks:require('./articleBlocks').parse(lesson.article_blocks),location:lesson.location,instructor_name:db.prepare('SELECT real_name FROM users WHERE id=?').get(lesson.instructor_id)?.real_name||null,
       duration: lesson.duration, start_at: lesson.start_at, end_at: lesson.end_at,
     },
     enrollment_id: enrollment.enrollment_id,
@@ -416,6 +417,7 @@ function listManagedCards(user, lessonId) {
     content_revision:hash(card),
     exercises: exercises.filter((item) => item.card_id === card.id).map((item) => ({
       ...item,
+      content_revision:hash(item),
       options: parseStoredJson(item.options_json, []),
       answer: parseStoredJson(item.answer_json),
     })),

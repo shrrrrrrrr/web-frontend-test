@@ -70,10 +70,11 @@ router.delete('/chapters/:chapterId',action(req=>{
 }));
 router.put('/lessons/:lessonId',action(req=>{
  const row=object('lessons',req.params.lessonId,req.params.id);if(row.status==='cancelled')v.invalid('课时已取消，不能修改教学内容',409);
- fields(req.body,['title','description','teaching_tip','chapter_id','presentation_type','content_state','article_url','article_title','moments_note','duration','sort_order','start_at','end_at','location','instructor_id']);const data={};
+ fields(req.body,['title','description','teaching_tip','chapter_id','presentation_type','content_state','article_url','article_title','moments_note','review_content','report_guidance','experiment_guidance','article_blocks','duration','sort_order','start_at','end_at','location','instructor_id']);const data={};
  for(const [key,max,required]of[['title',120,true],['description',10000,false],['teaching_tip',2000,false]])if(v.own(req.body,key))data[key]=v.text(req.body[key],key,max,required);
  for(const [key,values]of [['presentation_type',['learning','visit','theory','experiment']],['content_state',['ready','preparing']]])if(v.own(req.body,key)){if(!values.includes(req.body[key]))v.invalid('课时模板状态无效');data[key]=req.body[key];}
- for(const [key,max]of [['article_title',120],['moments_note',10000]])if(v.own(req.body,key))data[key]=v.text(req.body[key],key,max);
+ for(const [key,max]of [['article_title',120],['moments_note',10000],['review_content',10000],['report_guidance',10000],['experiment_guidance',10000]])if(v.own(req.body,key))data[key]=v.text(req.body[key],key,max);
+ if(v.own(req.body,'article_blocks'))data.article_blocks=JSON.stringify(require('../services/articleBlocks').validate(req.body.article_blocks,req.params.id,row.id));
  if(v.own(req.body,'article_url')){const value=v.text(req.body.article_url,'文章地址',2000);if(value){let url;try{url=new URL(value);}catch{v.invalid('文章地址无效');}if(url.protocol!=='https:'||url.username||url.password)v.invalid('文章地址须为 HTTPS');}data.article_url=value;}
  for(const key of ['duration','sort_order'])if(v.own(req.body,key))data[key]=v.integer(req.body[key],key,{nullable:key==='duration',max:10000});
  if(v.own(req.body,'location'))data.location=v.text(req.body.location,'地点',500);
@@ -106,10 +107,11 @@ router.post('/experiments',action(req=>{const data=experiment(req.body,req.param
 router.put('/experiments/:experimentId',action(req=>{const row=object('course_experiments',req.params.experimentId,req.params.id);return update('course_experiments',row.id,experiment(req.body,req.params.id));}));
 router.delete('/experiments/:experimentId',action(req=>{const row=object('course_experiments',req.params.experimentId,req.params.id);db.prepare('DELETE FROM course_experiments WHERE id=?').run(row.id);return{deleted:true};}));
 router.put('/resources/:resourceId',action(req=>{
- const row=object('resources',req.params.resourceId,req.params.id);fields(req.body,['title','description','lesson_id','resource_type']);const data={};
+ const row=object('resources',req.params.resourceId,req.params.id);fields(req.body,['title','description','lesson_id','resource_type','display_order']);const data={};
  if(v.own(req.body,'title'))data.title=v.text(req.body.title,'资料名称',120,true);
  if(v.own(req.body,'description'))data.description=v.text(req.body.description,'资料说明',10000);
- if(v.own(req.body,'lesson_id'))data.lesson_id=v.lessonId(req.body.lesson_id,req.params.id);
+ if(v.own(req.body,'lesson_id')){data.lesson_id=v.lessonId(req.body.lesson_id,req.params.id);if(data.lesson_id!==row.lesson_id&&db.prepare("SELECT l.id FROM lessons l,json_each(l.article_blocks) b WHERE json_extract(b.value,'$.resourceId')=? LIMIT 1").get(row.id))v.invalid('图片正在文章中使用，请先移除文章引用再更改归属',409);}
+ if(v.own(req.body,'display_order'))data.display_order=v.integer(req.body.display_order,'图片/资料排序',{max:10000});
  if(v.own(req.body,'resource_type')){if(!['lesson_plan','guide_card','template','courseware','video','other'].includes(req.body.resource_type))v.invalid('资料类型无效');data.resource_type=req.body.resource_type;}
  return update('resources',row.id,data);
 }));
