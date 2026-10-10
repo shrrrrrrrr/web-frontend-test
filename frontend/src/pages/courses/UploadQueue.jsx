@@ -5,14 +5,13 @@ import {maintenanceText as c} from './maintenanceCopy';
 import {requestError} from '../../utils/requestError';
 import Sentence from '../../content/Sentence';
 const types=['courseware','lesson_plan','guide_card','template','video','other'];
-export default function UploadQueue({courseId,lessons,policy,kind,refresh,dirty,disabled=false,boundLessonId,onUploaded,imageOnly=false}){
+export default function UploadQueue({courseId,lessons,policy,kind,refresh,dirty,disabled=false,boundLessonId,onUploaded,imageOnly=false,onBusyChange}){
  const [rows,setRows]=useState([]),[lessonId,setLesson]=useState(boundLessonId??null),[type,setType]=useState('courseware'),[busy,setBusy]=useState(false),[selectionError,setSelectionError]=useState('');
- const live=useRef(true),running=useRef(false),controller=useRef(null),rowsRef=useRef([]),dirtyRef=useRef(dirty),uploadedRef=useRef(onUploaded);
- useEffect(()=>{dirtyRef.current=dirty;uploadedRef.current=onUploaded;},[dirty,onUploaded]);
- const change=fn=>{rowsRef.current=fn(rowsRef.current);if(live.current)setRows(rowsRef.current);};
+ const live=useRef(true),running=useRef(false),controller=useRef(null),rowsRef=useRef([]),dirtyRef=useRef(dirty),uploadedRef=useRef(onUploaded),busyRef=useRef(onBusyChange);
+ useEffect(()=>{dirtyRef.current=dirty;uploadedRef.current=onUploaded;busyRef.current=onBusyChange;},[dirty,onUploaded,onBusyChange]);
+ const change=fn=>{rowsRef.current=fn(rowsRef.current);if(live.current){dirtyRef.current(rowsRef.current.some(row=>!['success','cancelled'].includes(row.status)));setRows(rowsRef.current);}};
  const patch=(key,value)=>change(list=>list.map(row=>row.key===key?{...row,...value}:row));
  useEffect(()=>{live.current=true;return()=>{live.current=false;controller.current?.abort();};},[]);
- useEffect(()=>{dirtyRef.current(rows.some(row=>!['success','cancelled'].includes(row.status)));},[rows]);
  const accept=(kind==='resource'?policy.formats.filter(f=>!imageOnly||['.jpg','.jpeg','.png','.webp','.gif'].includes(f.ext)).map(f=>f.ext):kind==='replay'?policy.replayExtensions:policy.coverExtensions).join(',');
  const limit=kind==='resource'?policy.resourceLimitMB:kind==='replay'?policy.replayLimitMB:policy.coverLimitMB;
  const select=file=>{
@@ -25,7 +24,7 @@ export default function UploadQueue({courseId,lessons,policy,kind,refresh,dirty,
   setSelectionError('');return Upload.LIST_IGNORE;
  };
  const upload=async retry=>{
-  if(running.current||disabled)return;running.current=true;setBusy(true);
+  if(running.current||disabled)return;running.current=true;busyRef.current?.(true);setBusy(true);
   const selected=rowsRef.current.filter(row=>retry?row.status==='failed'||(kind==='resource'&&row.status==='uncertain'):row.status==='pending');
   for(const row of selected){
    if(!live.current)break;
@@ -40,7 +39,7 @@ export default function UploadQueue({courseId,lessons,policy,kind,refresh,dirty,
    catch(error){if(!live.current)break;patch(row.key,{status:error.response?'failed':'uncertain',error:requestError(error)});}
    finally{controller.current=null;}
   }
-  running.current=false;if(live.current)setBusy(false);
+  running.current=false;if(live.current){busyRef.current?.(false);setBusy(false);}
  };
  const cancel=()=>{if(!window.confirm(c('upload.confirmCancel')))return;controller.current?.abort();change(list=>list.map(row=>['pending','failed','invalid','uncertain'].includes(row.status)?{...row,status:'cancelled'}:row));};
  return <Card className="maintenance-upload" title={c('upload.'+kind)} data-testid={'upload-'+kind}>

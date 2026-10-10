@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>课时编辑防丢稿与报告预览 · 补修验收</title>
+<style>body{font:16px/1.8 system-ui,sans-serif;margin:0;background:#f3f6f8;color:#172b3a}main{max-width:1100px;margin:auto;padding:24px;background:white}a{color:#095d8a}nav{display:flex;gap:20px;flex-wrap:wrap}.table{overflow:auto}table{border-collapse:collapse;width:100%;min-width:550px}td,th{border:1px solid #b8c8d3;padding:12px;text-align:left}th{background:#e9f1f5}img{max-width:100%;height:auto;border:1px solid #b8c8d3}figure{margin:24px 0}.narrow{max-width:390px}code{overflow-wrap:anywhere}h2{margin-top:36px}p{overflow-wrap:anywhere}</style></head>
+<body><main><h1>课时编辑防丢稿与报告预览 · 补修验收</h1>
+<nav><a href="README.md">补修说明</a><a href="verification.md">验证与首次失败</a><a href="../真实教材录入使用指南.html">操作指南</a><a href="http://127.0.0.1:4184">真实教学平台</a></nav>
+<p>截图为真实 Edge 浏览器中的独立合成教材，不是正式教学材料或真实学生答案。截图与运行证据只留本机，未提交 Git；首次失败及纠正均见验证记录。</p>
+<p>教师进入真实平台 → 课程 → 课程内容维护 → 可视化填写 / 学生效果预览。本轮不重启教学服务、不切公网，也不把合成测试写入实际课程。</p>
+<h2>五种尺寸</h2><p>取消关闭后保留原标题、段落、图片选择与队列，服务端未写入；报告完整表单截图可一次查看全部五项名称。</p>
+<div class="table"><table><thead><tr><th>尺寸</th><th>原位输入</th><th>上传队列</th><th>报告页面</th><th>报告完整表单</th></tr></thead><tbody>
+<tr><td>1920 × 1080</td><td><a href="../browser/patch-checked/input-1920.png">查看</a></td><td><a href="../browser/patch-checked/upload-1920.png">查看</a></td><td><a href="../browser/patch-checked/report-1920.png">查看</a></td><td><a href="../browser/patch-checked/report-fields-1920.png">五标题</a></td></tr>
+<tr><td>1440 × 900</td><td><a href="../browser/patch-checked/input-1440.png">查看</a></td><td><a href="../browser/patch-checked/upload-1440.png">查看</a></td><td><a href="../browser/patch-checked/report-1440.png">查看</a></td><td><a href="../browser/patch-checked/report-fields-1440.png">五标题</a></td></tr>
+<tr><td>1024 × 768</td><td><a href="../browser/patch-checked/input-1024.png">查看</a></td><td><a href="../browser/patch-checked/upload-1024.png">查看</a></td><td><a href="../browser/patch-checked/report-1024.png">查看</a></td><td><a href="../browser/patch-checked/report-fields-1024.png">五标题</a></td></tr>
+<tr><td>768 × 1024</td><td><a href="../browser/patch-checked/input-768.png">查看</a></td><td><a href="../browser/patch-checked/upload-768.png">查看</a></td><td><a href="../browser/patch-checked/report-768.png">查看</a></td><td><a href="../browser/patch-checked/report-fields-768.png">五标题</a></td></tr>
+<tr><td>390 × 844</td><td><a href="../browser/patch-checked/input-390.png">查看</a></td><td><a href="../browser/patch-checked/upload-390.png">查看</a></td><td><a href="../browser/patch-checked/report-390.png">查看</a></td><td><a href="../browser/patch-checked/report-fields-390.png">五标题</a></td></tr>
+</tbody></table></div>
+<p><a href="../browser/patch-checked/cancel-evidence.json">五尺寸原值、队列状态与服务端未写入记录</a> · <a href="../browser/patch-checked/results.json">九项补修场景原始结果</a></p>
+<h2>关键场景</h2>
+<p><a href="../browser/patch-checked/stage-cancel.png">取消阶段切换</a> · <a href="../browser/patch-checked/queue-close-cancel.png">仅选图片取消关闭</a> · <a href="../browser/patch-checked/failed-queue-cancel.png">失败队列取消离开</a> · <a href="../browser/patch-checked/uncertain-queue-cancel.png">结果未确认保留队列</a></p>
+<p><a href="../browser/patch-checked/report-edit-fields.png">编辑模式五标题</a> · <a href="../browser/patch-checked/report-preview-fields.png">学生效果五标题</a></p>
+<figure><figcaption>窄屏：取消关闭后图片选件仍在</figcaption><img class="narrow" src="../browser/patch-checked/upload-390.png" alt="390像素宽度保留待上传队列"></figure>
+<figure><figcaption>报告预览：五项原标题与禁用提交</figcaption><img src="../browser/patch-checked/report-fields-1440.png" alt="学习总结、关键收获、应用设想、困难与疑问、下一步计划完整预览"></figure>
+<p>临时输入和队列仍为页面内存；浏览器强制关闭、崩溃或确认丢弃后无法恢复。已经成功保存的正文和上传资源不会因丢弃临时输入而撤销。更完整边界见操作指南。</p>
+</main></body></html>

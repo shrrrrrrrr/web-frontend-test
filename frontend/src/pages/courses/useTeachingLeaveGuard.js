@@ -13,11 +13,11 @@ export function installTeachingLeaveHistory(){
 
 // BrowserRouter has no public blocker API. Scope the adapter to this mounted
 // authoring workspace; restore the original navigator on cleanup.
-export default function useTeachingLeaveGuard(unsaved,message){
+export default function useTeachingLeaveGuard(unsaved,message,processing){
  const {navigator}=useContext(UNSAFE_NavigationContext);
  useEffect(()=>{
   const originals={push:navigator.push,replace:navigator.replace};
-  const allowed=to=>!unsaved.current.size||/^\/(login|change-password)(?:[/?#]|$)/.test(typeof to==='string'?to:to?.pathname||'')||window.confirm(message);
+  const allowed=to=>/^\/(login|change-password)(?:[/?#]|$)/.test(typeof to==='string'?to:to?.pathname||'')||(!processing?.current.size&&(!unsaved.current.size||window.confirm(message)));
   navigator.push=function(to,...args){if(allowed(to))return originals.push.call(this,to,...args);};
   navigator.replace=function(to,...args){if(allowed(to))return originals.replace.call(this,to,...args);};
   // go() is handled by the same popstate path as the browser Back/Forward keys.
@@ -25,18 +25,18 @@ export default function useTeachingLeaveGuard(unsaved,message){
   const pop=e=>{
    const next=e.state?.idx;
    if(restoring){e.stopImmediatePropagation();restoring=false;if(leaveDelta!==null){const delta=leaveDelta;leaveDelta=null;bypass=true;window.history.go(delta);}return;}
-   if(bypass||!unsaved.current.size||!Number.isInteger(current)||!Number.isInteger(next)){bypass=false;current=next;return;}
+   if(bypass||(!unsaved.current.size&&!processing?.current.size)||!Number.isInteger(current)||!Number.isInteger(next)){bypass=false;current=next;return;}
    if(next===current)return;
    e.stopImmediatePropagation();
-   const delta=next-current,confirmed=window.confirm(message);
+   const delta=next-current,confirmed=!processing?.current.size&&window.confirm(message);
    restoring=true;leaveDelta=confirmed?delta:null;
    window.history.go(-delta);
   };
   // Update the index after SPA pushes without creating extra history entries.
   const wrap=(name)=>{const guarded=navigator[name];navigator[name]=function(...args){const result=guarded.apply(this,args);current=window.history.state?.idx;return result;};};
   wrap('push');wrap('replace');
-  const unload=e=>{if(unsaved.current.size){e.preventDefault();e.returnValue='';}};
+  const unload=e=>{if(unsaved.current.size||processing?.current.size){e.preventDefault();e.returnValue='';}};
   activeHistoryGuard=pop;window.addEventListener('beforeunload',unload);
   return()=>{navigator.push=originals.push;navigator.replace=originals.replace;if(activeHistoryGuard===pop)activeHistoryGuard=null;window.removeEventListener('beforeunload',unload);};
- },[navigator,unsaved,message]);
+ },[navigator,unsaved,message,processing]);
 }
