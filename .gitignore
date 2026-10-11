@@ -50,3 +50,5 @@ docs/next-version/step-02/browser-first/
 !docs/badge-room/step-01/**/*.log
 
 !docs/real-coins/step-02/**/*.log
+# Private real-redemption evidence, screenshots and independent data copies.
+docs/real-redemption/evidence/

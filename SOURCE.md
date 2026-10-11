@@ -1,5 +1,7 @@
 # 引用来源
 
+2026-10-11真实礼品兑换隔离整合只读核对上游main `681328d24f9ece352305cb3ebc2e71170b2e296e`；原固定导入SHA保持如下。复用上游016–020迁移及lessonVersions.js历史快照格式，未整体合并其运行时或依赖。迁移映射与尚存冲突见 [真实兑换整合说明](docs/real-redemption/迁移与上游整合说明.md)。
+
 - 原仓库：https://github.com/nmg233/web
 - 分支：main
 - 固定提交：49c179eed0656b34d8b5a03491c8afd9a9d1de77
