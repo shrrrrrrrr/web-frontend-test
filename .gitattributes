@@ -28,3 +28,8 @@ Dockerfile    text eol=lf
 *.sqlite binary
 *.docx   binary
 *.pdf    binary
+
+# Deterministic animation checksums and cross-platform asset import.
+frontend/public/assets/pixel-motion/** text eol=lf
+art/pixel-motion/** text eol=lf
+scripts/pixel-motion/** text eol=lf

@@ -1,0 +1,876 @@
+{
+  "version": "1.0.0",
+  "compatibility": "pixel-motion-v1",
+  "namespace": "assets/pixel-motion/v1",
+  "authoring": "Original repo-native integer-grid SVG frames; no AI/model call, no third-party art or video",
+  "assets": {
+    "campus-leaves": {
+      "id": "campus-leaves",
+      "theme": "campus",
+      "kind": "leaf",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/campus-leaves.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/campus-leaves.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "campus-water": {
+      "id": "campus-water",
+      "theme": "campus",
+      "kind": "water",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/campus-water.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/campus-water.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "campus-flag": {
+      "id": "campus-flag",
+      "theme": "campus",
+      "kind": "flag",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/campus-flag.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/campus-flag.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "sky-cloud": {
+      "id": "sky-cloud",
+      "theme": "sky",
+      "kind": "cloud",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/sky-cloud.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/sky-cloud.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "sky-vane": {
+      "id": "sky-vane",
+      "theme": "sky",
+      "kind": "vane",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/sky-vane.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/sky-vane.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "sky-airflow": {
+      "id": "sky-airflow",
+      "theme": "sky",
+      "kind": "air",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/sky-airflow.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/sky-airflow.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "forest-leaves": {
+      "id": "forest-leaves",
+      "theme": "forest",
+      "kind": "leaf",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/forest-leaves.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/forest-leaves.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "forest-firefly": {
+      "id": "forest-firefly",
+      "theme": "forest",
+      "kind": "insect",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/forest-firefly.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/forest-firefly.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "forest-insect": {
+      "id": "forest-insect",
+      "theme": "forest",
+      "kind": "insect",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/forest-insect.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/forest-insect.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "beach-surf": {
+      "id": "beach-surf",
+      "theme": "beach",
+      "kind": "water",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/beach-surf.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/beach-surf.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "beach-flag": {
+      "id": "beach-flag",
+      "theme": "beach",
+      "kind": "flag",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/beach-flag.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/beach-flag.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "beach-beacon": {
+      "id": "beach-beacon",
+      "theme": "beach",
+      "kind": "beacon",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/beach-beacon.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/beach-beacon.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "voyage-star": {
+      "id": "voyage-star",
+      "theme": "voyage",
+      "kind": "star",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/voyage-star.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/voyage-star.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "voyage-signal": {
+      "id": "voyage-signal",
+      "theme": "voyage",
+      "kind": "signal",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/voyage-signal.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/voyage-signal.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "voyage-led": {
+      "id": "voyage-led",
+      "theme": "voyage",
+      "kind": "led",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/voyage-led.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/voyage-led.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "voyage-vr": {
+      "id": "voyage-vr",
+      "theme": "voyage",
+      "kind": "scan",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/voyage-vr.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/voyage-vr.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "voyage-airflow": {
+      "id": "voyage-airflow",
+      "theme": "voyage",
+      "kind": "air",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/voyage-airflow.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/voyage-airflow.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "voyage-maker": {
+      "id": "voyage-maker",
+      "theme": "voyage",
+      "kind": "led",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/voyage-maker.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/voyage-maker.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "neutral-instrument": {
+      "id": "neutral-instrument",
+      "theme": "neutral",
+      "kind": "led",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/neutral-instrument.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/neutral-instrument.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "campus-node1": {
+      "id": "campus-node1",
+      "theme": "campus",
+      "kind": "scan",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/campus-node1.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/campus-node1.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "campus-node2": {
+      "id": "campus-node2",
+      "theme": "campus",
+      "kind": "flag",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/campus-node2.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/campus-node2.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "campus-node3": {
+      "id": "campus-node3",
+      "theme": "campus",
+      "kind": "led",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/campus-node3.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/campus-node3.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "sky-node1": {
+      "id": "sky-node1",
+      "theme": "sky",
+      "kind": "scan",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/sky-node1.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/sky-node1.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "sky-node2": {
+      "id": "sky-node2",
+      "theme": "sky",
+      "kind": "air",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/sky-node2.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/sky-node2.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "sky-node3": {
+      "id": "sky-node3",
+      "theme": "sky",
+      "kind": "led",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/sky-node3.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/sky-node3.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "forest-node1": {
+      "id": "forest-node1",
+      "theme": "forest",
+      "kind": "scan",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/forest-node1.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/forest-node1.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "forest-node2": {
+      "id": "forest-node2",
+      "theme": "forest",
+      "kind": "leaf",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/forest-node2.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/forest-node2.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "forest-node3": {
+      "id": "forest-node3",
+      "theme": "forest",
+      "kind": "led",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/forest-node3.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/forest-node3.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "beach-node1": {
+      "id": "beach-node1",
+      "theme": "beach",
+      "kind": "scan",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/beach-node1.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/beach-node1.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "beach-node2": {
+      "id": "beach-node2",
+      "theme": "beach",
+      "kind": "flag",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/beach-node2.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/beach-node2.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    },
+    "beach-node3": {
+      "id": "beach-node3",
+      "theme": "beach",
+      "kind": "beacon",
+      "width": 48,
+      "height": 32,
+      "frames": 8,
+      "frameMs": 250,
+      "staticFrame": 0,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": "integer nearest-neighbor; no interpolated rotation",
+      "url": "/assets/pixel-motion/v1/beach-node3.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1/beach-node3.still.svg",
+      "frameDurations": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "loopMs": 2000
+    }
+  }
+}

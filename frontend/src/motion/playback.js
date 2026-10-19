@@ -1,0 +1,17 @@
+// One low-frequency clock per document, shared by all visible sprites.
+export function createPlayback({document:doc,storage,media,IntersectionObserver:Observer,now=()=>performance.now(),setTimer=setTimeout,clearTimer=clearTimeout,loadImage=()=>new Image()}={}){
+ const key='pbl.pixel-motion.v1.paused';let paused=false;try{paused=storage?.getItem(key)==='true';}catch{/* Browser-local preference is optional. */}
+ let timer=null,disposed=false;const entries=new Map(),subscribers=new Set();
+ const stopped=()=>paused||media?.matches||doc?.hidden;
+ const state=e=>e.failed?'failed':!e.ready?'loading':stopped()?'paused':!e.visible?'offscreen':'playing';
+ const paint=e=>{const frame=e.failed?0:media?.matches?e.asset.staticFrame:Math.floor((e.elapsed+e.phase)%e.asset.loopMs/e.asset.frameMs);e.node.style.backgroundPosition=`${-frame*e.asset.width*e.scale}px 0px`;e.node.dataset.frame=String(frame);e.node.dataset.motionState=state(e);};
+ const sync=()=>{if(disposed)return;let active=false;for(const e of entries.values()){const run=state(e)==='playing';if(!run)e.last=null;active||=run;paint(e);}if(!active&&timer!==null){clearTimer(timer);timer=null;}if(active&&timer===null)timer=setTimer(tick,250);};
+ const tick=()=>{timer=null;const time=now();for(const e of entries.values()){if(state(e)==='playing'){if(e.last!==null)e.elapsed+=Math.min(500,Math.max(0,time-e.last));e.last=time;paint(e);}}sync();};
+ const load=e=>{if(e.image||e.failed)return;const image=loadImage();e.image=image;image.onload=()=>{if(!entries.has(e.node))return;e.ready=true;e.node.style.backgroundImage=`url("${e.asset.url}")`;sync();};image.onerror=()=>{if(!entries.has(e.node))return;e.failed=true;e.node.style.backgroundImage=`url("${e.asset.fallback}")`;e.node.style.backgroundSize=`${e.asset.width*e.scale}px ${e.asset.height*e.scale}px`;e.node.style.backgroundPosition='0px 0px';e.node.dataset.motionState='failed';sync();};image.src=e.asset.url;};
+ const observer=Observer?new Observer(changes=>{for(const r of changes){const e=entries.get(r.target);if(e){e.visible=r.isIntersecting&&r.intersectionRatio>0;e.last=null;if(e.visible)load(e);}}sync();}):null;
+ const changed=()=>{for(const e of entries.values())e.last=null;sync();subscribers.forEach(fn=>fn());};
+ const storageChanged=e=>{if(e.key===key){paused=e.newValue==='true';changed();}};
+ doc?.addEventListener('visibilitychange',changed);media?.addEventListener('change',changed);
+ doc?.defaultView?.addEventListener('storage',storageChanged);
+ return{snapshot:()=>paused,subscribe:fn=>{subscribers.add(fn);return()=>subscribers.delete(fn);},toggle(){paused=!paused;try{storage?.setItem(key,String(paused));}catch{/* Keep session preference without storage. */}changed();},register(node,asset,{scale=2,phase=0}={}){const e={node,asset,scale,phase,elapsed:0,last:null,visible:!observer,ready:false,failed:false};entries.set(node,e);node.style.backgroundSize=`${asset.width*asset.frames*scale}px ${asset.height*scale}px`;paint(e);if(observer)observer.observe(node);else load(e);sync();return()=>{observer?.unobserve(node);e.image&&(e.image.onload=e.image.onerror=null);entries.delete(node);sync();};},stats:()=>({sprites:entries.size,clock:timer===null?0:1,active:[...entries.values()].filter(e=>state(e)==='playing').length}),dispose(){disposed=true;if(timer!==null)clearTimer(timer);observer?.disconnect();entries.clear();subscribers.clear();doc?.removeEventListener('visibilitychange',changed);media?.removeEventListener('change',changed);doc?.defaultView?.removeEventListener('storage',storageChanged);}};
+}

@@ -1,0 +1,322 @@
+{
+  "version": "1.0.0",
+  "compatibility": "pixel-motion-v1",
+  "namespace": "assets/pixel-motion/v1",
+  "files": [
+    {
+      "path": "assets/pixel-motion/v1/beach-beacon.sheet.svg",
+      "bytes": 4057,
+      "sha256": "d3d990f7ae82e245904c2eb0a6b5a742e1981f223bcdaed17acb83a34e06ad70"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-beacon.still.svg",
+      "bytes": 682,
+      "sha256": "55375063d6f18bf29cc43b8a2b8d18e34b42d180c5e3b78890d59ec863a23b8b"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-flag.sheet.svg",
+      "bytes": 5651,
+      "sha256": "addd4912cb7c0b735a41888bf727241e9d318a200515f691c791df2c5d827548"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-flag.still.svg",
+      "bytes": 838,
+      "sha256": "3c0a2eb94bd669f5945f19e6aad04e895a51ea4adc1a25c38638ed19fe3f1202"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-node1.sheet.svg",
+      "bytes": 15203,
+      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-node1.still.svg",
+      "bytes": 1926,
+      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-node2.sheet.svg",
+      "bytes": 5651,
+      "sha256": "addd4912cb7c0b735a41888bf727241e9d318a200515f691c791df2c5d827548"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-node2.still.svg",
+      "bytes": 838,
+      "sha256": "3c0a2eb94bd669f5945f19e6aad04e895a51ea4adc1a25c38638ed19fe3f1202"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-node3.sheet.svg",
+      "bytes": 4057,
+      "sha256": "d3d990f7ae82e245904c2eb0a6b5a742e1981f223bcdaed17acb83a34e06ad70"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-node3.still.svg",
+      "bytes": 682,
+      "sha256": "55375063d6f18bf29cc43b8a2b8d18e34b42d180c5e3b78890d59ec863a23b8b"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-surf.sheet.svg",
+      "bytes": 1667,
+      "sha256": "01118bccefe70708038e5c7ea6d06e795b14b1ac11e77c8cd79df5bec5f204c7"
+    },
+    {
+      "path": "assets/pixel-motion/v1/beach-surf.still.svg",
+      "bytes": 334,
+      "sha256": "68d56703e5bb21a2588dfacdd806dab16495ab1ae6726680dfda91a4ca9db8c4"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-flag.sheet.svg",
+      "bytes": 5651,
+      "sha256": "addd4912cb7c0b735a41888bf727241e9d318a200515f691c791df2c5d827548"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-flag.still.svg",
+      "bytes": 838,
+      "sha256": "3c0a2eb94bd669f5945f19e6aad04e895a51ea4adc1a25c38638ed19fe3f1202"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-leaves.sheet.svg",
+      "bytes": 5453,
+      "sha256": "2e504e3d56eaca78479af2f1a6497beb8e14656c80a9e1ec511cfe95724ee45c"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-leaves.still.svg",
+      "bytes": 768,
+      "sha256": "35095ddddf0b5e0dffd3e1ad961abcca04dde6c6348e2a7611d81490edd7062e"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-node1.sheet.svg",
+      "bytes": 15203,
+      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-node1.still.svg",
+      "bytes": 1926,
+      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-node2.sheet.svg",
+      "bytes": 5651,
+      "sha256": "addd4912cb7c0b735a41888bf727241e9d318a200515f691c791df2c5d827548"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-node2.still.svg",
+      "bytes": 838,
+      "sha256": "3c0a2eb94bd669f5945f19e6aad04e895a51ea4adc1a25c38638ed19fe3f1202"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-node3.sheet.svg",
+      "bytes": 10972,
+      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-node3.still.svg",
+      "bytes": 1433,
+      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-water.sheet.svg",
+      "bytes": 1694,
+      "sha256": "9ef4f58099d68f53fb2cfc7885573833f0968fe2bf7348392cf4f150cc47776d"
+    },
+    {
+      "path": "assets/pixel-motion/v1/campus-water.still.svg",
+      "bytes": 361,
+      "sha256": "9ca95b98501b3596a7d2830045751beac9c4ef197bb87d71718c500f0fc84bb8"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-firefly.sheet.svg",
+      "bytes": 1469,
+      "sha256": "0e2ab7c05114d802a72bb417a33f404fcd9011b96fe69a3164fd6657a8c88b1d"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-firefly.still.svg",
+      "bytes": 367,
+      "sha256": "71e99d22044892b6cadde6702a9481c5adbb6757ff2467bca18bc9b10ab444e8"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-insect.sheet.svg",
+      "bytes": 1469,
+      "sha256": "0e2ab7c05114d802a72bb417a33f404fcd9011b96fe69a3164fd6657a8c88b1d"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-insect.still.svg",
+      "bytes": 367,
+      "sha256": "71e99d22044892b6cadde6702a9481c5adbb6757ff2467bca18bc9b10ab444e8"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-leaves.sheet.svg",
+      "bytes": 5453,
+      "sha256": "ccd8c6001742934a6c73016218724a02029b3f2244bda2739e045f3fc726c690"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-leaves.still.svg",
+      "bytes": 768,
+      "sha256": "fe8ad123c53508df7b6f27a085e6ce52de6c00c5735c4f84f65eee84fd9e441a"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-node1.sheet.svg",
+      "bytes": 15203,
+      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-node1.still.svg",
+      "bytes": 1926,
+      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-node2.sheet.svg",
+      "bytes": 5453,
+      "sha256": "ccd8c6001742934a6c73016218724a02029b3f2244bda2739e045f3fc726c690"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-node2.still.svg",
+      "bytes": 768,
+      "sha256": "fe8ad123c53508df7b6f27a085e6ce52de6c00c5735c4f84f65eee84fd9e441a"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-node3.sheet.svg",
+      "bytes": 10972,
+      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+    },
+    {
+      "path": "assets/pixel-motion/v1/forest-node3.still.svg",
+      "bytes": 1433,
+      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+    },
+    {
+      "path": "assets/pixel-motion/v1/manifest.json",
+      "bytes": 19334,
+      "sha256": "5ad6ca5f015be2a2e8f96862edc42ef16156d625f7dab1581f6003444afb5a67"
+    },
+    {
+      "path": "assets/pixel-motion/v1/neutral-instrument.sheet.svg",
+      "bytes": 10972,
+      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+    },
+    {
+      "path": "assets/pixel-motion/v1/neutral-instrument.still.svg",
+      "bytes": 1433,
+      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-airflow.sheet.svg",
+      "bytes": 1671,
+      "sha256": "3c860b6f03e5cb4eac01d4c9d2d23a8e018e9137a418331f584acf61973d0a2c"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-airflow.still.svg",
+      "bytes": 374,
+      "sha256": "204925428f58c6313cbdf9d1369d1ba7482d9de27e747e6fb8dd852a5c0e4089"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-cloud.sheet.svg",
+      "bytes": 3377,
+      "sha256": "6f8986a9f006c82e35246b48c3f6994b5f182c53c01a143e217e439fc70bf4be"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-cloud.still.svg",
+      "bytes": 518,
+      "sha256": "32583729f4bdc6d646c4c44232baad306dfd344cef03c95d4bb6d58b4966356d"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-node1.sheet.svg",
+      "bytes": 15203,
+      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-node1.still.svg",
+      "bytes": 1926,
+      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-node2.sheet.svg",
+      "bytes": 1671,
+      "sha256": "3c860b6f03e5cb4eac01d4c9d2d23a8e018e9137a418331f584acf61973d0a2c"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-node2.still.svg",
+      "bytes": 374,
+      "sha256": "204925428f58c6313cbdf9d1369d1ba7482d9de27e747e6fb8dd852a5c0e4089"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-node3.sheet.svg",
+      "bytes": 10972,
+      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-node3.still.svg",
+      "bytes": 1433,
+      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-vane.sheet.svg",
+      "bytes": 5221,
+      "sha256": "179fd114816d6426af051a69e7f1f555f26b3ab6fe4ce51f612065244aea6d0c"
+    },
+    {
+      "path": "assets/pixel-motion/v1/sky-vane.still.svg",
+      "bytes": 772,
+      "sha256": "6c6e000e821d7dd7ad822a19eca8c8c19be0334083a7b26b92303b13447b138d"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-airflow.sheet.svg",
+      "bytes": 1671,
+      "sha256": "3c860b6f03e5cb4eac01d4c9d2d23a8e018e9137a418331f584acf61973d0a2c"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-airflow.still.svg",
+      "bytes": 374,
+      "sha256": "204925428f58c6313cbdf9d1369d1ba7482d9de27e747e6fb8dd852a5c0e4089"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-led.sheet.svg",
+      "bytes": 10972,
+      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-led.still.svg",
+      "bytes": 1433,
+      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-maker.sheet.svg",
+      "bytes": 10972,
+      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-maker.still.svg",
+      "bytes": 1433,
+      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-signal.sheet.svg",
+      "bytes": 4052,
+      "sha256": "47a22f07f4cc3a3c213b4cf07d07f2feb9ac99ce30417623055ac34556f3134e"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-signal.still.svg",
+      "bytes": 426,
+      "sha256": "54739094b023f68fb969dfa06cb86c86233b5fe7fa422482747c182099bd203d"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-star.sheet.svg",
+      "bytes": 1624,
+      "sha256": "a1dd434502a75a563bb5b220eb843dd50be9ffd7adcf6cb69b7b46476f130ebc"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-star.still.svg",
+      "bytes": 325,
+      "sha256": "a8cea84d12dfaedea62c2f0f46d631555e98b1fc4678d60a28787ba52784f6ac"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-vr.sheet.svg",
+      "bytes": 15203,
+      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+    },
+    {
+      "path": "assets/pixel-motion/v1/voyage-vr.still.svg",
+      "bytes": 1926,
+      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+    }
+  ]
+}
