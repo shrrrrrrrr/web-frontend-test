@@ -1,0 +1,3901 @@
+{
+  "records": [
+    {
+      "label": "login-desktop-alignment",
+      "key": "login-desktop",
+      "kind": "scenes",
+      "id": "campus-water",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "sprite": {
+        "x": 424,
+        "y": 666.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/visual-patch/web/login-desktop-1536.webp",
+      "semantic": "水面波纹",
+      "sourcePoint": [
+        0.34,
+        0.77
+      ],
+      "sourceRegion": [
+        0.29,
+        0.69,
+        0.14,
+        0.18
+      ],
+      "projection": {
+        "x": 424.0000000000001,
+        "y": 666.3333333333334,
+        "width": 80,
+        "height": 53.333333333333336,
+        "scale": 1.6666666666666667,
+        "region": {
+          "x": 384,
+          "y": 621,
+          "width": 224.00000000000003,
+          "height": 162
+        },
+        "visibleBounds": {
+          "x": 424.0000000000001,
+          "y": 666.3333333333334,
+          "width": 80,
+          "height": 53.333333333333336
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "login-1440x900",
+      "box": {
+        "x": 424,
+        "y": 666.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "frames": [
+        "4",
+        "5"
+      ],
+      "hashes": [
+        "63b2390d2ce26ecd1fd7d119095ccabd7741a157bf8dfd60483a28b71c0d669c",
+        "04986b580f1a5637c7694d536163c2824567a55e728ac517bff11487ac3b3a6e"
+      ],
+      "absentHash": "b8886ea9fdcdd264cad3ed40d11d4ffc97be1f432e1e8a87b4888725f7418d82",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          80,
+          54
+        ],
+        "b": [
+          80,
+          54
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "login-desktop-alignment",
+      "key": "login-desktop",
+      "kind": "scenes",
+      "id": "campus-water",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 1024
+      },
+      "sprite": {
+        "x": 47.203125,
+        "y": 758.125,
+        "width": 91.015625,
+        "height": 60.671875
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/visual-patch/web/login-desktop-960.webp",
+      "semantic": "水面波纹",
+      "sourcePoint": [
+        0.34,
+        0.77
+      ],
+      "sourceRegion": [
+        0.29,
+        0.69,
+        0.14,
+        0.18
+      ],
+      "projection": {
+        "x": 47.21777777777783,
+        "y": 758.1392592592592,
+        "width": 91.02222222222223,
+        "height": 60.681481481481484,
+        "scale": 1.8962962962962964,
+        "region": {
+          "x": 1.7066666666665924,
+          "y": 706.56,
+          "width": 254.86222222222224,
+          "height": 184.32000000000002
+        },
+        "visibleBounds": {
+          "x": 47.21777777777783,
+          "y": 758.1392592592592,
+          "width": 91.02222222222223,
+          "height": 60.681481481481484
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "login-768x1024",
+      "box": {
+        "x": 47.203125,
+        "y": 758.125,
+        "width": 91.015625,
+        "height": 60.671875
+      },
+      "frames": [
+        "3",
+        "4"
+      ],
+      "hashes": [
+        "8bcf0b6067ea64b1a4243d9c957ace11988aeab757cee628498f7996cdfb5cf3",
+        "6f2ffaacb8485794606d42c1a3c697ccfe09bc71ed23dc5cdbf76c6130461b82"
+      ],
+      "absentHash": "88fb5f7ac2e25af2bbe6d14d7a9d39f551358ebae95d1840bc222fe518ee400f",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          92,
+          61
+        ],
+        "b": [
+          92,
+          61
+        ],
+        "page": [
+          768,
+          1024
+        ]
+      }
+    },
+    {
+      "label": "login-mobile-alignment",
+      "key": "login-mobile",
+      "kind": "scenes",
+      "id": "campus-water",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "sprite": {
+        "x": 50.140625,
+        "y": 705.25,
+        "width": 23.734375,
+        "height": 15.828125
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/visual-patch/web/login-mobile-480.webp",
+      "semantic": "水面波纹",
+      "sourcePoint": [
+        0.22,
+        0.845
+      ],
+      "sourceRegion": [
+        0.14,
+        0.82,
+        0.25,
+        0.045
+      ],
+      "projection": {
+        "x": 50.144665885111365,
+        "y": 705.264407971864,
+        "width": 23.746776084407973,
+        "height": 15.831184056271981,
+        "scale": 0.4947245017584994,
+        "region": {
+          "x": 24.023212192262605,
+          "y": 692.0799999999999,
+          "width": 118.73388042203986,
+          "height": 37.98
+        },
+        "visibleBounds": {
+          "x": 50.144665885111365,
+          "y": 705.264407971864,
+          "width": 23.746776084407973,
+          "height": 15.831184056271981
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "login-390x844",
+      "box": {
+        "x": 50.140625,
+        "y": 705.25,
+        "width": 23.734375,
+        "height": 15.828125
+      },
+      "frames": [
+        "3",
+        "3",
+        "5"
+      ],
+      "hashes": [
+        "0db51176cca797cb96fec244f3d9629406997e93a7902983e4e608bb4f2e016f",
+        "0db51176cca797cb96fec244f3d9629406997e93a7902983e4e608bb4f2e016f",
+        "dbfbe5a474de2d63986a5fe47cedaecec36453797ced491b4d598be4f9752b2e"
+      ],
+      "absentHash": "1a26927858c3a07d4f095bfdcd8637e30f6f72c4396fefaa772d10f2633a6390",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          24,
+          17
+        ],
+        "b": [
+          24,
+          17
+        ],
+        "page": [
+          390,
+          844
+        ]
+      }
+    },
+    {
+      "label": "login-mobile-alignment",
+      "key": "login-mobile",
+      "kind": "scenes",
+      "id": "campus-water",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 640
+      },
+      "sprite": {
+        "x": 70.15625,
+        "y": 534.796875,
+        "width": 18,
+        "height": 12
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/visual-patch/web/login-mobile-480.webp",
+      "semantic": "水面波纹",
+      "sourcePoint": [
+        0.22,
+        0.845
+      ],
+      "sourceRegion": [
+        0.14,
+        0.82,
+        0.25,
+        0.045
+      ],
+      "projection": {
+        "x": 70.15709261430247,
+        "y": 534.7976553341149,
+        "width": 18.007033997655334,
+        "height": 12.004689331770223,
+        "scale": 0.37514654161781946,
+        "region": {
+          "x": 50.34935521688161,
+          "y": 524.8,
+          "width": 90.03516998827666,
+          "height": 28.799999999999997
+        },
+        "visibleBounds": {
+          "x": 70.15709261430247,
+          "y": 534.7976553341149,
+          "width": 18.007033997655334,
+          "height": 12.004689331770223
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "login-360x640",
+      "box": {
+        "x": 70.15625,
+        "y": 534.796875,
+        "width": 18,
+        "height": 12
+      },
+      "frames": [
+        "4",
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "aa569deddfbdc544f05fbbedc28aba7f0581e672bf4c6c7995e5f79f0ca1da2f",
+        "aa569deddfbdc544f05fbbedc28aba7f0581e672bf4c6c7995e5f79f0ca1da2f",
+        "2f8320ab216b818b569a34641ab6007258964ca4d6c65d7f9205443cfee1eb5b"
+      ],
+      "absentHash": "08117e46f63f4d2fee8893c8ff031cd52792cdcdf393c78b42db9e01ed8c4339",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          19,
+          13
+        ],
+        "b": [
+          19,
+          13
+        ],
+        "page": [
+          360,
+          640
+        ]
+      }
+    },
+    {
+      "label": "login-desktop-alignment",
+      "key": "login-desktop",
+      "kind": "scenes",
+      "id": "campus-water",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390
+      },
+      "sprite": {
+        "x": 265.859375,
+        "y": 309.109375,
+        "width": 42.1875,
+        "height": 28.125
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/visual-patch/web/login-desktop-960.webp",
+      "semantic": "水面波纹",
+      "sourcePoint": [
+        0.34,
+        0.77
+      ],
+      "sourceRegion": [
+        0.29,
+        0.69,
+        0.14,
+        0.18
+      ],
+      "projection": {
+        "x": 265.86,
+        "y": 309.11583333333334,
+        "width": 42.2,
+        "height": 28.133333333333333,
+        "scale": 0.8791666666666667,
+        "region": {
+          "x": 244.75999999999996,
+          "y": 285.2025,
+          "width": 118.16,
+          "height": 85.455
+        },
+        "visibleBounds": {
+          "x": 265.86,
+          "y": 309.11583333333334,
+          "width": 42.2,
+          "height": 28.133333333333333
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "login-844x390",
+      "box": {
+        "x": 265.859375,
+        "y": 309.109375,
+        "width": 42.1875,
+        "height": 28.125
+      },
+      "frames": [
+        "4",
+        "5"
+      ],
+      "hashes": [
+        "f8429a5e1b24875cb23cd99b8b6cb3d6c4f31e5f6b8d3ff25c86e4c8d2c6a0f4",
+        "81fda806c5b6727c5217c1d08de915b4c8a8248839897bc2deac6522352f08d4"
+      ],
+      "absentHash": "5663e9e130a3e28a67626facd5ae1adb4277a6e6de2dea5844e25b3ddbb45125",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          44,
+          29
+        ],
+        "b": [
+          44,
+          29
+        ],
+        "page": [
+          844,
+          390
+        ]
+      }
+    },
+    {
+      "label": "login-resume",
+      "box": {
+        "x": 265.859375,
+        "y": 309.109375,
+        "width": 42.1875,
+        "height": 28.125
+      },
+      "frames": [
+        "7",
+        "7",
+        "1"
+      ],
+      "hashes": [
+        "26be56ca5cb06dbeda7b9118b6afbab8855ebda7723763fa347030601dd7bbef",
+        "26be56ca5cb06dbeda7b9118b6afbab8855ebda7723763fa347030601dd7bbef",
+        "64b7f93e42bddaa8d9a8b78299f1d40befa8e0b4ea2d13e2760dd67aa562db78"
+      ],
+      "absentHash": "5663e9e130a3e28a67626facd5ae1adb4277a6e6de2dea5844e25b3ddbb45125",
+      "status": "passed"
+    },
+    {
+      "label": "campus-alignment",
+      "key": "campus",
+      "kind": "scenes",
+      "id": "campus-leaves",
+      "slot": "0",
+      "host": {
+        "x": 254,
+        "y": 279.875,
+        "width": 1156,
+        "height": 661.09375
+      },
+      "sprite": {
+        "x": 878.234375,
+        "y": 614.21875,
+        "width": 57.796875,
+        "height": 38.53125
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/web/campus-1536.webp",
+      "semantic": "银杏树冠叶片",
+      "sourcePoint": [
+        0.565,
+        0.53
+      ],
+      "sourceRegion": [
+        0.515,
+        0.44,
+        0.105,
+        0.2
+      ],
+      "projection": {
+        "x": 624.24,
+        "y": 334.4002083333334,
+        "width": 57.8,
+        "height": 38.53333333333333,
+        "scale": 1.2041666666666666,
+        "region": {
+          "x": 595.34,
+          "y": 284.30687500000005,
+          "width": 121.38,
+          "height": 154.13333333333333
+        },
+        "visibleBounds": {
+          "x": 624.24,
+          "y": 334.4002083333334,
+          "width": 57.8,
+          "height": 38.53333333333333
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "campus-background-0",
+      "box": {
+        "x": 878.234375,
+        "y": 614.21875,
+        "width": 57.796875,
+        "height": 38.53125
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "0c22abdce7971eca911f8b342b5d4358beee3c436309d90fd2c022ed6f99cf49",
+        "b76f372d47eebf9db7b25f99f01079a5376292763554fff9c05c97be20e0e039"
+      ],
+      "absentHash": "c3f0c8a4512d21e1a9748eee954175ee81e7ec6270dcdb3b62faa612cf288f9e",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          59,
+          39
+        ],
+        "b": [
+          59,
+          39
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "campus-node1-alignment",
+      "key": "campus-node1",
+      "kind": "nodes",
+      "id": "campus-node1",
+      "slot": "0",
+      "host": {
+        "x": 356.65625,
+        "y": 319.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 401.75,
+        "y": 369.734375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/campus-node1-384.webp",
+      "semantic": "培养罐气泡",
+      "sourcePoint": [
+        0.33,
+        0.31
+      ],
+      "sourceRegion": [
+        0.22,
+        0.22,
+        0.25,
+        0.18
+      ],
+      "projection": {
+        "x": 45.099999999999994,
+        "y": 49.86666666666666,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 48.4,
+          "y": 48.4,
+          "width": 55,
+          "height": 39.6
+        },
+        "visibleBounds": {
+          "x": 63.43333333333332,
+          "y": 61.32499999999999,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "campus-node-1",
+      "box": {
+        "x": 401.75,
+        "y": 369.734375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "88a8b8ead7b07f291daea90dd08f2f1f60e07bc0c7c366ab7e5b1bcb9d2b7d08",
+        "fc03a0952f04ef0b5d288463b93beeb1c50ef2e925f9a9caa6cc18d6b2c9cb3d"
+      ],
+      "absentHash": "248ad25cd64442aaea0ccf1eb8259e3ab061526f223b1384e16f0763ceb6d134",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          38
+        ],
+        "b": [
+          56,
+          38
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "campus-node2-alignment",
+      "key": "campus-node2",
+      "kind": "nodes",
+      "id": "campus-node2",
+      "slot": "0",
+      "host": {
+        "x": 721.984375,
+        "y": 335.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 868.28125,
+        "y": 379.140625,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/campus-node2-384.webp",
+      "semantic": "后部仪表灯",
+      "sourcePoint": [
+        0.79,
+        0.28
+      ],
+      "sourceRegion": [
+        0.68,
+        0.18,
+        0.23,
+        0.2
+      ],
+      "projection": {
+        "x": 146.29999999999998,
+        "y": 43.266666666666666,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 149.6,
+          "y": 39.6,
+          "width": 50.6,
+          "height": 44.00000000000001
+        },
+        "visibleBounds": {
+          "x": 164.63333333333333,
+          "y": 54.724999999999994,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "campus-node-2",
+      "box": {
+        "x": 868.28125,
+        "y": 379.140625,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "3",
+        "5"
+      ],
+      "hashes": [
+        "7424b72c3127032fabc04154e0f23dee996845dd79db2541e19e62ef7eed1d82",
+        "623e479422596c6bcfff445422a88d7e031cec7077dbb8340c6012f7806114ce"
+      ],
+      "absentHash": "8680a787cbb4cb4eb746d35e2e0a710fc2e4625ecd0cf5b96b2fbfa9081cbdf1",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          37
+        ],
+        "b": [
+          56,
+          37
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "campus-node3-alignment",
+      "key": "campus-node3",
+      "kind": "nodes",
+      "id": "campus-node3",
+      "slot": "0",
+      "host": {
+        "x": 1087.328125,
+        "y": 319.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 1227.015625,
+        "y": 396.140625,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/campus-node3-384.webp",
+      "semantic": "展示屏扫描",
+      "sourcePoint": [
+        0.76,
+        0.43
+      ],
+      "sourceRegion": [
+        0.64,
+        0.3,
+        0.27,
+        0.27
+      ],
+      "projection": {
+        "x": 139.70000000000002,
+        "y": 76.26666666666667,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 140.79999999999998,
+          "y": 65.99999999999999,
+          "width": 59.4,
+          "height": 59.4
+        },
+        "visibleBounds": {
+          "x": 158.03333333333336,
+          "y": 87.725,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "campus-node-3",
+      "box": {
+        "x": 1227.015625,
+        "y": 396.140625,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "2",
+        "3"
+      ],
+      "hashes": [
+        "5bdad32e51bdb477c06be0990f751137ece6169c84768bc7ec98a4cd4b3d9475",
+        "5237d63225681cf3b274055873d4059bd1264cbd5c94bb3ed2bb5f9279f5f3f3"
+      ],
+      "absentHash": "74dbfb4197378385ad02a3b0dce40a86a9c3cdb34acd0b2efd315dc6185f1db6",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          37
+        ],
+        "b": [
+          56,
+          37
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "campus-alignment",
+      "key": "campus",
+      "kind": "scenes",
+      "id": "campus-leaves",
+      "slot": "0",
+      "host": {
+        "x": 16,
+        "y": 749.21875,
+        "width": 189,
+        "height": 180
+      },
+      "sprite": {
+        "x": 121.296875,
+        "y": 840.109375,
+        "width": 13.5,
+        "height": 9
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/web/campus-1536.webp",
+      "semantic": "银杏树冠叶片",
+      "sourcePoint": [
+        0.565,
+        0.53
+      ],
+      "sourceRegion": [
+        0.515,
+        0.44,
+        0.105,
+        0.2
+      ],
+      "projection": {
+        "x": 105.29999999999998,
+        "y": 90.9,
+        "width": 13.5,
+        "height": 9,
+        "scale": 0.28125,
+        "region": {
+          "x": 98.55000000000001,
+          "y": 79.2,
+          "width": 28.349999999999998,
+          "height": 36
+        },
+        "visibleBounds": {
+          "x": 105.29999999999998,
+          "y": 90.9,
+          "width": 13.5,
+          "height": 9
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "campus-sidebar",
+      "box": {
+        "x": 121.296875,
+        "y": 840.109375,
+        "width": 13.5,
+        "height": 9
+      },
+      "frames": [
+        "3",
+        "4"
+      ],
+      "hashes": [
+        "d2844e841a01ee60188def77325db2dea903c8ed7cb3765f7c7c0eaa316f7ab0",
+        "0dd69b0d4d87f314bc50d0a702483d19abda94215a6ef60f2c6f3c326087de88"
+      ],
+      "absentHash": "f17204a5ced96e6d943955bcc2d19488330d38f518b3449f7f6518cbd0ba97d3",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          14,
+          10
+        ],
+        "b": [
+          14,
+          10
+        ],
+        "page": [
+          1920,
+          1080
+        ]
+      }
+    },
+    {
+      "label": "sky-desktop-alignment",
+      "key": "sky-desktop",
+      "kind": "scenes",
+      "id": "sky-cloud",
+      "slot": "0",
+      "host": {
+        "x": 254,
+        "y": 279.875,
+        "width": 1156,
+        "height": 661.09375
+      },
+      "sprite": {
+        "x": 779.109375,
+        "y": 696.546875,
+        "width": 58.75,
+        "height": 39.15625
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/sky-desktop-1536.webp",
+      "semantic": "云海边缘",
+      "sourcePoint": [
+        0.48,
+        0.66
+      ],
+      "sourceRegion": [
+        0.38,
+        0.58,
+        0.23,
+        0.19
+      ],
+      "projection": {
+        "x": 525.1124999999998,
+        "y": 416.73391203703704,
+        "width": 58.763888888888886,
+        "height": 39.175925925925924,
+        "scale": 1.2242476851851851,
+        "region": {
+          "x": 436.96666666666664,
+          "y": 383.434375,
+          "width": 270.31388888888887,
+          "height": 125.60781249999998
+        },
+        "visibleBounds": {
+          "x": 525.1124999999998,
+          "y": 416.73391203703704,
+          "width": 58.763888888888886,
+          "height": 39.175925925925924
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "sky-background-0",
+      "box": {
+        "x": 779.109375,
+        "y": 696.546875,
+        "width": 58.75,
+        "height": 39.15625
+      },
+      "frames": [
+        "6",
+        "7"
+      ],
+      "hashes": [
+        "d8441553d0b08ede395aef4343d59a20661875ab2de511a6497ef6b83a272596",
+        "bfdaae9726135ff058c194f8833d4cb7e7a30a693be5e67020e57b872ba3a430"
+      ],
+      "absentHash": "5ef70f27bee3c243e221490f43693fe4455572416dc47cf8502b061b5f309e95",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          59,
+          40
+        ],
+        "b": [
+          59,
+          40
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "sky-node1-alignment",
+      "key": "sky-node1",
+      "kind": "nodes",
+      "id": "sky-node1",
+      "slot": "0",
+      "host": {
+        "x": 356.65625,
+        "y": 319.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 496.34375,
+        "y": 363.140625,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/sky-node1-384.webp",
+      "semantic": "风速仪气流",
+      "sourcePoint": [
+        0.76,
+        0.28
+      ],
+      "sourceRegion": [
+        0.65,
+        0.17,
+        0.24,
+        0.23
+      ],
+      "projection": {
+        "x": 139.70000000000002,
+        "y": 43.266666666666666,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 143,
+          "y": 37.4,
+          "width": 52.8,
+          "height": 50.6
+        },
+        "visibleBounds": {
+          "x": 158.03333333333336,
+          "y": 54.724999999999994,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "sky-node-1",
+      "box": {
+        "x": 496.34375,
+        "y": 363.140625,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "6",
+        "7"
+      ],
+      "hashes": [
+        "a1a8d1386ab0373019d07ba512e5ad96741b2060111fb08bf1785f590690e1b4",
+        "7584464e2f7af39fd317f36f7efc3d027479aac45dbf6c6d75ce69c9e6609524"
+      ],
+      "absentHash": "fc9cb17c77b78ab2a082b1492611fabbe2688ccc8ee68a86b40265403c5162b3",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          37
+        ],
+        "b": [
+          56,
+          37
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "sky-node2-alignment",
+      "key": "sky-node2",
+      "kind": "nodes",
+      "id": "sky-node2",
+      "slot": "0",
+      "host": {
+        "x": 721.984375,
+        "y": 335.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 859.484375,
+        "y": 392.328125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/sky-node2-384.webp",
+      "semantic": "测风台气流",
+      "sourcePoint": [
+        0.75,
+        0.34
+      ],
+      "sourceRegion": [
+        0.64,
+        0.23,
+        0.24,
+        0.23
+      ],
+      "projection": {
+        "x": 137.5,
+        "y": 56.46666666666667,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 140.79999999999998,
+          "y": 50.6,
+          "width": 52.8,
+          "height": 50.6
+        },
+        "visibleBounds": {
+          "x": 155.83333333333334,
+          "y": 67.925,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "sky-node-2",
+      "box": {
+        "x": 859.484375,
+        "y": 392.328125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "626b68ead173358360178c9655002645cfbd26251ea144ee391e8c0d4574f6ac",
+        "d696c8c56ce64d8616b0a9f4b53b16140df5779c9b813eb2b861a7291df81557"
+      ],
+      "absentHash": "d1b63123bbde094b0313fb2b9ff71d48be3774bb632279a9d2e1ea4308358799",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          37
+        ],
+        "b": [
+          56,
+          37
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "sky-node3-alignment",
+      "key": "sky-node3",
+      "kind": "nodes",
+      "id": "sky-node3",
+      "slot": "0",
+      "host": {
+        "x": 1087.328125,
+        "y": 319.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 1216.015625,
+        "y": 380.734375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/sky-node3-384.webp",
+      "semantic": "观察屏指示",
+      "sourcePoint": [
+        0.71,
+        0.36
+      ],
+      "sourceRegion": [
+        0.6,
+        0.25,
+        0.25,
+        0.22
+      ],
+      "projection": {
+        "x": 128.7,
+        "y": 60.866666666666674,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 131.99999999999997,
+          "y": 55,
+          "width": 55,
+          "height": 48.4
+        },
+        "visibleBounds": {
+          "x": 147.03333333333333,
+          "y": 72.325,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "sky-node-3",
+      "box": {
+        "x": 1216.015625,
+        "y": 380.734375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "4",
+        "6"
+      ],
+      "hashes": [
+        "fe6dfa9e14633b1f18174cf8b0b9ee769f5aff7b21fd584dfae8f200871329c7",
+        "5e293b7e154c60d2c33c0a4233440c51fad45b0e926f8945902fe323c1c25610"
+      ],
+      "absentHash": "bc60811aa1086a46ca11cf82785ca7c3b4f994e99f0b7c58f7a9615ec11c107c",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          38
+        ],
+        "b": [
+          56,
+          38
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "sky-desktop-alignment",
+      "key": "sky-desktop",
+      "kind": "scenes",
+      "id": "sky-cloud",
+      "slot": "0",
+      "host": {
+        "x": 16,
+        "y": 752.875,
+        "width": 189,
+        "height": 180
+      },
+      "sprite": {
+        "x": 96.09375,
+        "y": 866.328125,
+        "width": 16,
+        "height": 10.65625
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/sky-desktop-1536.webp",
+      "semantic": "云海边缘",
+      "sourcePoint": [
+        0.48,
+        0.66
+      ],
+      "sourceRegion": [
+        0.38,
+        0.58,
+        0.23,
+        0.19
+      ],
+      "projection": {
+        "x": 80.09999999999997,
+        "y": 113.46666666666668,
+        "width": 16,
+        "height": 10.666666666666666,
+        "scale": 0.3333333333333333,
+        "region": {
+          "x": 56.099999999999994,
+          "y": 104.39999999999999,
+          "width": 73.6,
+          "height": 34.199999999999996
+        },
+        "visibleBounds": {
+          "x": 80.09999999999997,
+          "y": 113.46666666666668,
+          "width": 16,
+          "height": 10.666666666666666
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "sky-sidebar",
+      "box": {
+        "x": 96.09375,
+        "y": 866.328125,
+        "width": 16,
+        "height": 10.65625
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "f31abf9e5dd27d815b1b4ce794fa49e34e641154730c27c439a1601b7892050f",
+        "fede5919957169a4077efab14ab371ccdf77489f88f9d91f3320e628cf77e67f"
+      ],
+      "absentHash": "ad40377a2d34ed96f17cb700c90e956ab5a500e0cb161f2914f7fd8b9edd79e0",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          17,
+          11
+        ],
+        "b": [
+          17,
+          11
+        ],
+        "page": [
+          1920,
+          1080
+        ]
+      }
+    },
+    {
+      "label": "forest-desktop-alignment",
+      "key": "forest-desktop",
+      "kind": "scenes",
+      "id": "forest-leaves",
+      "slot": "0",
+      "host": {
+        "x": 254,
+        "y": 279.875,
+        "width": 1156,
+        "height": 661.09375
+      },
+      "sprite": {
+        "x": 555.84375,
+        "y": 313.15625,
+        "width": 58.75,
+        "height": 39.15625
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/forest-desktop-1536.webp",
+      "semantic": "顶部树冠",
+      "sourcePoint": [
+        0.29,
+        0.08
+      ],
+      "sourceRegion": [
+        0.21,
+        0.015,
+        0.18,
+        0.18
+      ],
+      "projection": {
+        "x": 301.80972222222215,
+        "y": 33.29953703703704,
+        "width": 58.763888888888886,
+        "height": 39.175925925925924,
+        "scale": 1.2242476851851851,
+        "region": {
+          "x": 237.1694444444444,
+          "y": 9.91640625,
+          "width": 211.54999999999995,
+          "height": 118.996875
+        },
+        "visibleBounds": {
+          "x": 301.80972222222215,
+          "y": 33.29953703703704,
+          "width": 58.763888888888886,
+          "height": 39.175925925925924
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "forest-background-0",
+      "box": {
+        "x": 555.84375,
+        "y": 313.15625,
+        "width": 58.75,
+        "height": 39.15625
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "9ad1fbadc3c0bf29a32a422896e011a1457caa2e3c85e5e13019c45e2b449243",
+        "609ce99c3413ecdcf792970b4cecdd4ef5a612574a20da54f4ae1e937e27bc9d"
+      ],
+      "absentHash": "20b321b681b2776d21b2abe4ecb75dc11865c66067cbb1e9a0f5d6991284e880",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          60,
+          40
+        ],
+        "b": [
+          60,
+          40
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "forest-node1-alignment",
+      "key": "forest-node1",
+      "kind": "nodes",
+      "id": "forest-node1",
+      "slot": "0",
+      "host": {
+        "x": 356.65625,
+        "y": 319.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 511.75,
+        "y": 380.734375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/forest-node1-384.webp",
+      "semantic": "生态观察屏扫描",
+      "sourcePoint": [
+        0.83,
+        0.36
+      ],
+      "sourceRegion": [
+        0.71,
+        0.25,
+        0.25,
+        0.23
+      ],
+      "projection": {
+        "x": 155.09999999999997,
+        "y": 60.866666666666674,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 156.2,
+          "y": 55,
+          "width": 55,
+          "height": 50.6
+        },
+        "visibleBounds": {
+          "x": 173.4333333333333,
+          "y": 72.325,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "forest-node-1",
+      "box": {
+        "x": 511.75,
+        "y": 380.734375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "5",
+        "7"
+      ],
+      "hashes": [
+        "8fc85518752feea0423d75aee6eea89e2b2f84febd1b171f5409eaba3cee4387",
+        "c8c0084defaf7861eb5a86caf6dedad92283ec5b046a9c51ab29dbf46fd7c807"
+      ],
+      "absentHash": "71def3da5c90830467e6968705efaba50cc6e0175d79e087f67a5775294f7f9e",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          38
+        ],
+        "b": [
+          56,
+          38
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "forest-node2-alignment",
+      "key": "forest-node2",
+      "kind": "nodes",
+      "id": "forest-node2",
+      "slot": "0",
+      "host": {
+        "x": 721.984375,
+        "y": 335.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 863.875,
+        "y": 348.328125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/forest-node2-384.webp",
+      "semantic": "棚顶藤叶",
+      "sourcePoint": [
+        0.77,
+        0.14
+      ],
+      "sourceRegion": [
+        0.65,
+        0.04,
+        0.25,
+        0.23
+      ],
+      "projection": {
+        "x": 141.9,
+        "y": 12.466666666666669,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 143,
+          "y": 8.799999999999999,
+          "width": 55,
+          "height": 50.6
+        },
+        "visibleBounds": {
+          "x": 160.23333333333335,
+          "y": 23.925,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "forest-node-2",
+      "box": {
+        "x": 863.875,
+        "y": 348.328125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "4",
+        "5"
+      ],
+      "hashes": [
+        "332be5c49f5588d5e77f3ba7ac11d33d01e0b91f26cae010f1f02fbddbb58591",
+        "c8b655cdb786f6f44c5791e4d882bf985fc8dea72fb871ef244e9b62b4c12442"
+      ],
+      "absentHash": "02e3acdf15f1985d6701d98de57e985199f66d8567444bb89b2aedbe155bd89b",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          37
+        ],
+        "b": [
+          56,
+          37
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "forest-node3-alignment",
+      "key": "forest-node3",
+      "kind": "nodes",
+      "id": "forest-node3",
+      "slot": "0",
+      "host": {
+        "x": 1087.328125,
+        "y": 319.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 1218.21875,
+        "y": 341.140625,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/forest-node3-384.webp",
+      "semantic": "棚顶藤叶",
+      "sourcePoint": [
+        0.72,
+        0.18
+      ],
+      "sourceRegion": [
+        0.6,
+        0.07,
+        0.26,
+        0.23
+      ],
+      "projection": {
+        "x": 130.9,
+        "y": 21.26666666666667,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 131.99999999999997,
+          "y": 15.4,
+          "width": 57.199999999999996,
+          "height": 50.6
+        },
+        "visibleBounds": {
+          "x": 149.23333333333335,
+          "y": 32.725,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "forest-node-3",
+      "box": {
+        "x": 1218.21875,
+        "y": 341.140625,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "2",
+        "4"
+      ],
+      "hashes": [
+        "0269fb91793e3848e2631ff56e11fd842b4423be269b7a8eb830f4009054debc",
+        "59d21c87e3c73ba07306328be37cd2351ccdfb988091fcc702a5e863c46b4fe5"
+      ],
+      "absentHash": "63d22b0b162d834e99742202e57c6a65fbaf139e70fe99c7ff7d5349203147de",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          37
+        ],
+        "b": [
+          56,
+          37
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "forest-desktop-alignment",
+      "key": "forest-desktop",
+      "kind": "scenes",
+      "id": "forest-leaves",
+      "slot": "0",
+      "host": {
+        "x": 16,
+        "y": 781.21875,
+        "width": 189,
+        "height": 180
+      },
+      "sprite": {
+        "x": 35.296875,
+        "y": 790.28125,
+        "width": 16,
+        "height": 10.65625
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/forest-desktop-1536.webp",
+      "semantic": "顶部树冠",
+      "sourcePoint": [
+        0.29,
+        0.08
+      ],
+      "sourceRegion": [
+        0.21,
+        0.015,
+        0.18,
+        0.18
+      ],
+      "projection": {
+        "x": 19.299999999999983,
+        "y": 9.066666666666666,
+        "width": 16,
+        "height": 10.666666666666666,
+        "scale": 0.3333333333333333,
+        "region": {
+          "x": 1.6999999999999886,
+          "y": 2.6999999999999997,
+          "width": 57.599999999999994,
+          "height": 32.4
+        },
+        "visibleBounds": {
+          "x": 19.299999999999983,
+          "y": 9.066666666666666,
+          "width": 16,
+          "height": 10.666666666666666
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "forest-sidebar",
+      "box": {
+        "x": 35.296875,
+        "y": 790.28125,
+        "width": 16,
+        "height": 10.65625
+      },
+      "frames": [
+        "4",
+        "5"
+      ],
+      "hashes": [
+        "13f206c6708f34dc43b9b9c92d12bdf580b696fb547e92822698a0064721043a",
+        "b9299e9b93ecee47478c1bdb4967d2a86ec729d4817df480f47071a495918336"
+      ],
+      "absentHash": "36bc14083500da100849b4c66ec799d9a2d5ef48d35af2f69fe2d5155b4da5de",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          17,
+          11
+        ],
+        "b": [
+          17,
+          11
+        ],
+        "page": [
+          1920,
+          1080
+        ]
+      }
+    },
+    {
+      "label": "beach-desktop-alignment",
+      "key": "beach-desktop",
+      "kind": "scenes",
+      "id": "beach-surf",
+      "slot": "0",
+      "host": {
+        "x": 254,
+        "y": 279.875,
+        "width": 1156,
+        "height": 661.09375
+      },
+      "sprite": {
+        "x": 779.109375,
+        "y": 802.296875,
+        "width": 58.75,
+        "height": 39.15625
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/beach-desktop-1536.webp",
+      "semantic": "近岸海水浪花",
+      "sourcePoint": [
+        0.48,
+        0.82
+      ],
+      "sourceRegion": [
+        0.31,
+        0.72,
+        0.38,
+        0.2
+      ],
+      "projection": {
+        "x": 525.1124999999998,
+        "y": 522.508912037037,
+        "width": 58.763888888888886,
+        "height": 39.175925925925924,
+        "scale": 1.2242476851851851,
+        "region": {
+          "x": 354.6972222222222,
+          "y": 475.9875,
+          "width": 446.60555555555555,
+          "height": 132.21875
+        },
+        "visibleBounds": {
+          "x": 525.1124999999998,
+          "y": 522.508912037037,
+          "width": 58.763888888888886,
+          "height": 39.175925925925924
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "beach-background-0",
+      "box": {
+        "x": 779.109375,
+        "y": 802.296875,
+        "width": 58.75,
+        "height": 39.15625
+      },
+      "frames": [
+        "4",
+        "5"
+      ],
+      "hashes": [
+        "6de800029ef62eeb0e26eca147e42b530abd1a4d29e5138c1570d766f10975d7",
+        "5bf8caeac1292653bbdd1d8bc3c7557f745cf0cf3adf619fe906fd6c1a09af4c"
+      ],
+      "absentHash": "e70708155d61ddcad4a6cdc9b66cc28c284ead71c07de840c68069d5d24cd045",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          59,
+          40
+        ],
+        "b": [
+          59,
+          40
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "beach-node1-alignment",
+      "key": "beach-node1",
+      "kind": "nodes",
+      "id": "beach-node1",
+      "slot": "0",
+      "host": {
+        "x": 356.65625,
+        "y": 319.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 491.953125,
+        "y": 349.9375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/beach-node1-384.webp",
+      "semantic": "海水监测仪指示",
+      "sourcePoint": [
+        0.74,
+        0.22
+      ],
+      "sourceRegion": [
+        0.62,
+        0.11,
+        0.26,
+        0.22
+      ],
+      "projection": {
+        "x": 135.29999999999998,
+        "y": 30.066666666666666,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 136.39999999999998,
+          "y": 24.2,
+          "width": 57.199999999999996,
+          "height": 48.4
+        },
+        "visibleBounds": {
+          "x": 153.63333333333333,
+          "y": 41.525,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "beach-node-1",
+      "box": {
+        "x": 491.953125,
+        "y": 349.9375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "3",
+        "4"
+      ],
+      "hashes": [
+        "4ecf85308d29bbaa58fdb675b4eb1b1bc034e8e3fa803da80a87f0e131fb21d7",
+        "d8efc81fe1759f2e95a863936f456bddc3cd761c6b7a41ca0297de5e25954f3c"
+      ],
+      "absentHash": "ad83a4dfe939568e7063e8232f2bbb06af12948991a4696502a1a0ac38f6ee95",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          38
+        ],
+        "b": [
+          56,
+          38
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "beach-node2-alignment",
+      "key": "beach-node2",
+      "kind": "nodes",
+      "id": "beach-node2",
+      "slot": "0",
+      "host": {
+        "x": 721.984375,
+        "y": 335.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 778.078125,
+        "y": 374.734375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/beach-node2-384.webp",
+      "semantic": "水轮控制台指示",
+      "sourcePoint": [
+        0.38,
+        0.26
+      ],
+      "sourceRegion": [
+        0.25,
+        0.14,
+        0.27,
+        0.24
+      ],
+      "projection": {
+        "x": 56.10000000000001,
+        "y": 38.86666666666666,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 55,
+          "y": 30.8,
+          "width": 59.4,
+          "height": 52.8
+        },
+        "visibleBounds": {
+          "x": 74.43333333333334,
+          "y": 50.32499999999999,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "beach-node-2",
+      "box": {
+        "x": 778.078125,
+        "y": 374.734375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "2",
+        "3"
+      ],
+      "hashes": [
+        "71a18a42974d31f65c9902a91690c456fca5dc4cd2d8fc614c4e80edf1ebbb91",
+        "25d225f4bbf3578f063a3c5acbb6dfb0fcc92237294acdda8f8f947882afd191"
+      ],
+      "absentHash": "d4dc3bff68ea031c4c4aa1510d6e5f8fa79f280e05100aac920f85e64a58a96d",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          38
+        ],
+        "b": [
+          56,
+          38
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "beach-node3-alignment",
+      "key": "beach-node3",
+      "kind": "nodes",
+      "id": "beach-node3",
+      "slot": "0",
+      "host": {
+        "x": 1087.328125,
+        "y": 319.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 1141.21875,
+        "y": 334.53125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/beach-node3-384.webp",
+      "semantic": "灯塔灯室",
+      "sourcePoint": [
+        0.37,
+        0.15
+      ],
+      "sourceRegion": [
+        0.24,
+        0.04,
+        0.27,
+        0.23
+      ],
+      "projection": {
+        "x": 53.89999999999999,
+        "y": 14.66666666666666,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 52.8,
+          "y": 8.799999999999999,
+          "width": 59.4,
+          "height": 50.6
+        },
+        "visibleBounds": {
+          "x": 72.23333333333332,
+          "y": 26.124999999999993,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "beach-node-3",
+      "box": {
+        "x": 1141.21875,
+        "y": 334.53125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "1",
+        "2"
+      ],
+      "hashes": [
+        "8034643afd28e18179b2a7d0c4a34d5f6d798cea33cd57dc0d92b33de36dec29",
+        "46c5ce64dc02613415e19138d872f647a812dc9d37348eae70a68718c2b3d662"
+      ],
+      "absentHash": "8890cea034f1d2f150d4d051e19b61e8e12de8c331dd8b712dcacbf5124fbb0d",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          38
+        ],
+        "b": [
+          56,
+          38
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "beach-desktop-alignment",
+      "key": "beach-desktop",
+      "kind": "scenes",
+      "id": "beach-surf",
+      "slot": "0",
+      "host": {
+        "x": 16,
+        "y": 781.21875,
+        "width": 189,
+        "height": 180
+      },
+      "sprite": {
+        "x": 96.09375,
+        "y": 923.484375,
+        "width": 16,
+        "height": 10.65625
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/beach-desktop-1536.webp",
+      "semantic": "近岸海水浪花",
+      "sourcePoint": [
+        0.48,
+        0.82
+      ],
+      "sourceRegion": [
+        0.31,
+        0.72,
+        0.38,
+        0.2
+      ],
+      "projection": {
+        "x": 80.09999999999997,
+        "y": 142.26666666666662,
+        "width": 16,
+        "height": 10.666666666666666,
+        "scale": 0.3333333333333333,
+        "region": {
+          "x": 33.7,
+          "y": 129.6,
+          "width": 121.6,
+          "height": 36
+        },
+        "visibleBounds": {
+          "x": 80.09999999999997,
+          "y": 142.26666666666662,
+          "width": 16,
+          "height": 10.666666666666666
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "beach-sidebar",
+      "box": {
+        "x": 96.09375,
+        "y": 923.484375,
+        "width": 16,
+        "height": 10.65625
+      },
+      "frames": [
+        "3",
+        "4"
+      ],
+      "hashes": [
+        "6b28831829d53d663a2d8ffc8d5c68f4d1bf4210350d78c688db142545e1a19b",
+        "3ec26a8f1377127cd607ee13342654db1337176836070c5e378174d7339eb781"
+      ],
+      "absentHash": "c5649214a962cefd89a5c2aa69f7bcf30cbb7e19b5c3a23c5b9d35f243097edd",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          17,
+          12
+        ],
+        "b": [
+          17,
+          12
+        ],
+        "page": [
+          1920,
+          1080
+        ]
+      }
+    },
+    {
+      "label": "cosmos-alignment",
+      "key": "cosmos",
+      "kind": "scenes",
+      "id": "voyage-star",
+      "slot": "0",
+      "host": {
+        "x": 254,
+        "y": 331.875,
+        "width": 1156,
+        "height": 881.09375
+      },
+      "sprite": {
+        "x": 666.8125,
+        "y": 486.046875,
+        "width": 66.0625,
+        "height": 44.046875
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/web/cosmos-1536.webp",
+      "semantic": "深空星点",
+      "sourcePoint": [
+        0.4,
+        0.2
+      ],
+      "sourceRegion": [
+        0.34,
+        0.13,
+        0.13,
+        0.16
+      ],
+      "projection": {
+        "x": 412.794921875,
+        "y": 154.19140625,
+        "width": 66.08203125,
+        "height": 44.0546875,
+        "scale": 1.376708984375,
+        "region": {
+          "x": 366.5375,
+          "y": 114.5421875,
+          "width": 171.81328125000002,
+          "height": 140.975
+        },
+        "visibleBounds": {
+          "x": 412.794921875,
+          "y": 154.19140625,
+          "width": 66.08203125,
+          "height": 44.0546875
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "voyage-background-0",
+      "box": {
+        "x": 666.8125,
+        "y": 486.046875,
+        "width": 66.0625,
+        "height": 44.046875
+      },
+      "frames": [
+        "6",
+        "7"
+      ],
+      "hashes": [
+        "8ab567e686ce78832ed1b1ddc767f441290611ed1cceff47dca652839aaab329",
+        "aa310ff9352b54597d2fa510877eadbaf39f597420721e5b0cf6a3bf4fb9ec30"
+      ],
+      "absentHash": "c176fb0a83d2f0538862005ab37b269fca3b768f7098575faabc469570466acd",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          67,
+          45
+        ],
+        "b": [
+          67,
+          45
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "vr-alignment",
+      "key": "vr",
+      "kind": "nodes",
+      "id": "voyage-vr",
+      "slot": "0",
+      "host": {
+        "x": 356.65625,
+        "y": 413.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 436.953125,
+        "y": 483.53125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/experience-patch/vr-384.webp",
+      "semantic": "全息设备扫描",
+      "sourcePoint": [
+        0.49,
+        0.4
+      ],
+      "sourceRegion": [
+        0.36,
+        0.28,
+        0.27,
+        0.25
+      ],
+      "projection": {
+        "x": 80.3,
+        "y": 69.66666666666669,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 79.2,
+          "y": 61.6,
+          "width": 59.4,
+          "height": 55
+        },
+        "visibleBounds": {
+          "x": 98.63333333333333,
+          "y": 81.12500000000001,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "voyage-node-1",
+      "box": {
+        "x": 436.953125,
+        "y": 483.53125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "5f2c668327047b2e27eecf204a324d900876008742dd2e1c6585ed13ad447c1d",
+        "abb7ab3925d2d639194e4382027e5980e7d4123218c8cec117cdefbffd1e037b"
+      ],
+      "absentHash": "94236fb9295d48ab17dc6a8e2287e2facec78e008f24e9441eae7430386ce1e5",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          38
+        ],
+        "b": [
+          56,
+          38
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "theory-alignment",
+      "key": "theory",
+      "kind": "nodes",
+      "id": "voyage-airflow",
+      "slot": "0",
+      "host": {
+        "x": 721.984375,
+        "y": 429.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 846.28125,
+        "y": 459.9375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/experience-patch/theory-384.webp",
+      "semantic": "风洞仪表气流",
+      "sourcePoint": [
+        0.69,
+        0.22
+      ],
+      "sourceRegion": [
+        0.56,
+        0.1,
+        0.27,
+        0.24
+      ],
+      "projection": {
+        "x": 124.29999999999998,
+        "y": 30.066666666666666,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 123.2,
+          "y": 22.000000000000004,
+          "width": 59.4,
+          "height": 52.8
+        },
+        "visibleBounds": {
+          "x": 142.63333333333333,
+          "y": 41.525,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "voyage-node-2",
+      "box": {
+        "x": 846.28125,
+        "y": 459.9375,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "3",
+        "4"
+      ],
+      "hashes": [
+        "5b6318a95c83fc84d60ac4da3a23e01a21c6418c7fc715513a1096f566507c40",
+        "4132d7cb0cfa1e1339947a083181f38a36a8ed22ef61f5c4142f147f1a82b6dd"
+      ],
+      "absentHash": "d85036d1d1182659520b901fd6be4b83eb034606ef908f6cae9df699febff955",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          38
+        ],
+        "b": [
+          56,
+          38
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "experiment-alignment",
+      "key": "experiment",
+      "kind": "nodes",
+      "id": "voyage-maker",
+      "slot": "0",
+      "host": {
+        "x": 1087.328125,
+        "y": 413.875,
+        "width": 220,
+        "height": 220
+      },
+      "sprite": {
+        "x": 1114.828125,
+        "y": 481.328125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/experience-patch/experiment-384.webp",
+      "semantic": "试飞台仪表灯",
+      "sourcePoint": [
+        0.25,
+        0.39
+      ],
+      "sourceRegion": [
+        0.12,
+        0.27,
+        0.27,
+        0.25
+      ],
+      "projection": {
+        "x": 27.5,
+        "y": 67.46666666666665,
+        "width": 55,
+        "height": 36.666666666666664,
+        "scale": 1.1458333333333333,
+        "region": {
+          "x": 26.4,
+          "y": 59.4,
+          "width": 59.4,
+          "height": 55
+        },
+        "visibleBounds": {
+          "x": 45.83333333333333,
+          "y": 78.92499999999998,
+          "width": 20.625,
+          "height": 16.041666666666664
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "voyage-node-3",
+      "box": {
+        "x": 1114.828125,
+        "y": 481.328125,
+        "width": 55,
+        "height": 36.65625
+      },
+      "frames": [
+        "1",
+        "2"
+      ],
+      "hashes": [
+        "a41bfe18ac73a6f1d3900b56129122e2c7558e3c3cf5a0138502707e61f6ef56",
+        "c6b1deae42a81e1195cb8eb6c7133b2f9399f88f6422b8f9662b7b5907870d1b"
+      ],
+      "absentHash": "71873f0968c46736affb26f59939ebef2e01b1cec8e3ee8a2813812b4773fba0",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          56,
+          37
+        ],
+        "b": [
+          56,
+          37
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "cosmos-alignment",
+      "key": "cosmos",
+      "kind": "scenes",
+      "id": "voyage-star",
+      "slot": "0",
+      "host": {
+        "x": 16,
+        "y": 781.21875,
+        "width": 189,
+        "height": 180
+      },
+      "sprite": {
+        "x": 76.75,
+        "y": 812.71875,
+        "width": 13.5,
+        "height": 9
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/web/cosmos-1536.webp",
+      "semantic": "深空星点",
+      "sourcePoint": [
+        0.4,
+        0.2
+      ],
+      "sourceRegion": [
+        0.34,
+        0.13,
+        0.13,
+        0.16
+      ],
+      "projection": {
+        "x": 60.75,
+        "y": 31.5,
+        "width": 13.5,
+        "height": 9,
+        "scale": 0.28125,
+        "region": {
+          "x": 51.30000000000001,
+          "y": 23.400000000000002,
+          "width": 35.1,
+          "height": 28.8
+        },
+        "visibleBounds": {
+          "x": 60.75,
+          "y": 31.5,
+          "width": 13.5,
+          "height": 9
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "voyage-sidebar",
+      "box": {
+        "x": 76.75,
+        "y": 812.71875,
+        "width": 13.5,
+        "height": 9
+      },
+      "frames": [
+        "1",
+        "2"
+      ],
+      "hashes": [
+        "b7ea491fa9dce1e737e8025bf3053f44a9f5036716ebd29c8243a3cd0e0db0a4",
+        "b4221b77ebf981e6c41193d1d4faf3099bff27e940dba2e3f8f84f40e5db92eb"
+      ],
+      "absentHash": "23100f41136ef9f457f728f66f32d9e1b27925b8e133ddc96a96277f97497053",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          15,
+          10
+        ],
+        "b": [
+          15,
+          10
+        ],
+        "page": [
+          1920,
+          1080
+        ]
+      }
+    },
+    {
+      "label": "counterexample-dock-keeps-playing",
+      "box": {
+        "x": 14,
+        "y": 810,
+        "width": 48,
+        "height": 32
+      },
+      "frames": [
+        "0",
+        "1"
+      ],
+      "hashes": [
+        "60119c47006ffb060505e48a7b0e5f1b2f08f323af597e0742ebbdcade35e2c6",
+        "06d1355e144d623479c83efc6fca512f19daeb63d35b55deefd1d5d8ca1b9309"
+      ],
+      "absentHash": "9801273c509af1d6acce47ef43d830266ec7e337dc981544c609fb18a7c2056b",
+      "status": "passed"
+    },
+    {
+      "label": "background-negative-control",
+      "status": "correctly rejected while dock plays"
+    },
+    {
+      "label": "node-negative-control",
+      "status": "correctly rejected while dock remains mounted"
+    },
+    {
+      "label": "campus-select-alignment",
+      "key": "campus-select",
+      "kind": "scenes",
+      "id": "campus-water",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "sprite": {
+        "x": 760,
+        "y": 693.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/visual-patch/web/campus-select-1536.webp",
+      "semantic": "水面波纹",
+      "sourcePoint": [
+        0.55,
+        0.8
+      ],
+      "sourceRegion": [
+        0.42,
+        0.66,
+        0.25,
+        0.22
+      ],
+      "projection": {
+        "x": 760,
+        "y": 693.3333333333334,
+        "width": 80,
+        "height": 53.333333333333336,
+        "scale": 1.6666666666666667,
+        "region": {
+          "x": 592,
+          "y": 594.0000000000001,
+          "width": 400,
+          "height": 198
+        },
+        "visibleBounds": {
+          "x": 760,
+          "y": 693.3333333333334,
+          "width": 80,
+          "height": 53.333333333333336
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "explore-background",
+      "box": {
+        "x": 760,
+        "y": 693.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "frames": [
+        "0",
+        "2"
+      ],
+      "hashes": [
+        "80c5e1ff0ccc4566cdf893ed492b6a032ced8d4f718e4be762a1def91f06915a",
+        "87dcb9a234d4fe65175657978f5aa183b0eeecc5a2c68576a96f3a31748cb14d"
+      ],
+      "absentHash": "91d579ce94526891c56fc383f6c0d08b55307de1d924b9386d2edcd6fd629c6c",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          80,
+          54
+        ],
+        "b": [
+          80,
+          54
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "campus-personal-alignment",
+      "key": "campus-personal",
+      "kind": "scenes",
+      "id": "campus-water",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "sprite": {
+        "x": 1160,
+        "y": 729.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/redesign-v2/visual-patch/web/campus-personal-1536.webp",
+      "semantic": "水面波纹",
+      "sourcePoint": [
+        0.8,
+        0.84
+      ],
+      "sourceRegion": [
+        0.69,
+        0.76,
+        0.26,
+        0.18
+      ],
+      "projection": {
+        "x": 1160,
+        "y": 729.3333333333334,
+        "width": 80,
+        "height": 53.333333333333336,
+        "scale": 1.6666666666666667,
+        "region": {
+          "x": 1024,
+          "y": 684,
+          "width": 416.00000000000006,
+          "height": 162
+        },
+        "visibleBounds": {
+          "x": 1160,
+          "y": 729.3333333333334,
+          "width": 80,
+          "height": 53.333333333333336
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "me-background",
+      "box": {
+        "x": 1160,
+        "y": 729.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "frames": [
+        "2",
+        "3"
+      ],
+      "hashes": [
+        "cae7bfe2ab00cbbd8f34fb8921f0f839ce5513f05758427a9b29c7a6598bb7ec",
+        "50a27d4f13ee51a2ea176cb8044d7d76b66d84c4b14cef131bf1ed60ff12ba9f"
+      ],
+      "absentHash": "a76863bc926d68b92f7001fb2011739348edb1c79dd94ed5f3f750fb2330984b",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          80,
+          54
+        ],
+        "b": [
+          80,
+          54
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "forest-node1-alignment",
+      "key": "forest-node1",
+      "kind": "nodes",
+      "id": "forest-node1",
+      "slot": "0",
+      "host": {
+        "x": 100,
+        "y": 302.875,
+        "width": 190,
+        "height": 190
+      },
+      "sprite": {
+        "x": 233.9375,
+        "y": 355.4375,
+        "width": 47.5,
+        "height": 31.65625
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "currentSrc": "http://127.0.0.1:4614/assets/public-themes/forest-node1-384.webp",
+      "semantic": "生态观察屏扫描",
+      "sourcePoint": [
+        0.83,
+        0.36
+      ],
+      "sourceRegion": [
+        0.71,
+        0.25,
+        0.25,
+        0.23
+      ],
+      "projection": {
+        "x": 133.95,
+        "y": 52.56666666666667,
+        "width": 47.5,
+        "height": 31.666666666666668,
+        "scale": 0.9895833333333334,
+        "region": {
+          "x": 134.9,
+          "y": 47.5,
+          "width": 47.5,
+          "height": 43.7
+        },
+        "visibleBounds": {
+          "x": 149.78333333333333,
+          "y": 62.462500000000006,
+          "width": 17.8125,
+          "height": 13.854166666666668
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "forest-node-mobile",
+      "box": {
+        "x": 233.9375,
+        "y": 355.4375,
+        "width": 47.5,
+        "height": 31.65625
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "369f2e462c9b0488db6cb72a15e5990e6f619e2e40fc424f1486dfe375310d80",
+        "9345c374eed7989b9b82a6901a6fbccdfeff406c32253bb6e2b71ae8dc99be17"
+      ],
+      "absentHash": "5c78af282e0283e43e411dcae46d8b7b7a5a079efa3f5799e4d077da9e7085f2",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          49,
+          33
+        ],
+        "b": [
+          49,
+          33
+        ],
+        "page": [
+          390,
+          844
+        ]
+      }
+    },
+    {
+      "label": "campus-workspace-alignment",
+      "key": "campus-workspace",
+      "kind": "scenes",
+      "id": "campus-leaves",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "sprite": {
+        "x": 1272,
+        "y": 99.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "semantic": "银杏树冠叶片",
+      "sourcePoint": [
+        0.87,
+        0.14
+      ],
+      "sourceRegion": [
+        0.77,
+        0.02,
+        0.22,
+        0.27
+      ],
+      "projection": {
+        "x": 1272.0000000000002,
+        "y": 99.33333333333334,
+        "width": 80,
+        "height": 53.333333333333336,
+        "scale": 1.6666666666666667,
+        "region": {
+          "x": 1152.0000000000002,
+          "y": 18.000000000000004,
+          "width": 352,
+          "height": 243.00000000000003
+        },
+        "visibleBounds": {
+          "x": 1272.0000000000002,
+          "y": 99.33333333333334,
+          "width": 80,
+          "height": 53.333333333333336
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "admin-1440-background",
+      "box": {
+        "x": 1272,
+        "y": 99.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "d6e9ee1d27940d35b3603974ff3532404c50451932d241f133097ee4908a279d",
+        "5f38534cdd9ea0e660d663ec5a2755d93b4c8554381dec48b95ee5d3bec1e9bb"
+      ],
+      "absentHash": "ff680f35b204bef6cc411304d6e406e3196f11fdfc7834a66dc1da3a4e44da5b",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          80,
+          54
+        ],
+        "b": [
+          80,
+          54
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "campus-mobile-alignment",
+      "key": "campus-mobile",
+      "kind": "scenes",
+      "id": "campus-leaves",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "sprite": {
+        "x": 12.140625,
+        "y": 456.28125,
+        "width": 23.734375,
+        "height": 15.828125
+      },
+      "fit": "cover",
+      "position": "50% 0%",
+      "semantic": "同一近景树冠内侧（窄幅cover裁切候选）",
+      "sourcePoint": [
+        0.14,
+        0.55
+      ],
+      "sourceRegion": [
+        0.07,
+        0.48,
+        0.16,
+        0.14
+      ],
+      "projection": {
+        "x": 12.149824150058619,
+        "y": 456.284407971864,
+        "width": 23.746776084407973,
+        "height": 15.831184056271981,
+        "scale": 0.4947245017584994,
+        "region": {
+          "x": -9.222274325908558,
+          "y": 405.12,
+          "width": 75.9896834701055,
+          "height": 118.16000000000001
+        },
+        "visibleBounds": {
+          "x": 12.149824150058619,
+          "y": 456.284407971864,
+          "width": 23.746776084407973,
+          "height": 15.831184056271981
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "admin-390-background",
+      "box": {
+        "x": 12.140625,
+        "y": 456.28125,
+        "width": 23.734375,
+        "height": 15.828125
+      },
+      "frames": [
+        "7",
+        "0"
+      ],
+      "hashes": [
+        "1d3c048b004704df1b44b35392e23db129b0b18642aa9c5e8c2db0fad221fca9",
+        "200c2172b375421d9919f85fce04523e7bbe64488f1eeb3c04639b0e5a701f53"
+      ],
+      "absentHash": "8fb743ddd43be4a380601632e518482257891f19b67796e2abc29780383ddd62",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          24,
+          17
+        ],
+        "b": [
+          24,
+          17
+        ],
+        "page": [
+          390,
+          844
+        ]
+      }
+    },
+    {
+      "label": "campus-workspace-alignment",
+      "key": "campus-workspace",
+      "kind": "scenes",
+      "id": "campus-leaves",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "sprite": {
+        "x": 1272,
+        "y": 99.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "fit": "cover",
+      "position": "50% 50%",
+      "semantic": "银杏树冠叶片",
+      "sourcePoint": [
+        0.87,
+        0.14
+      ],
+      "sourceRegion": [
+        0.77,
+        0.02,
+        0.22,
+        0.27
+      ],
+      "projection": {
+        "x": 1272.0000000000002,
+        "y": 99.33333333333334,
+        "width": 80,
+        "height": 53.333333333333336,
+        "scale": 1.6666666666666667,
+        "region": {
+          "x": 1152.0000000000002,
+          "y": 18.000000000000004,
+          "width": 352,
+          "height": 243.00000000000003
+        },
+        "visibleBounds": {
+          "x": 1272.0000000000002,
+          "y": 99.33333333333334,
+          "width": 80,
+          "height": 53.333333333333336
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "mentor-1440-background",
+      "box": {
+        "x": 1272,
+        "y": 99.328125,
+        "width": 80,
+        "height": 53.328125
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "7d913fc8935c5e6f36e8f4eaa3125b56a4e348cb491b8bc7d388dee9cd03b762",
+        "968450ffc90fcb9b63109474c21a376ba25d93a7bea2fb28d30c345a094d17c6"
+      ],
+      "absentHash": "7b8b44f19fd4107cd0bafc655247186ad0838eaa7b613c2940ad7568bb0a3d40",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          80,
+          54
+        ],
+        "b": [
+          80,
+          54
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "campus-mobile-alignment",
+      "key": "campus-mobile",
+      "kind": "scenes",
+      "id": "campus-leaves",
+      "slot": "1",
+      "host": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "sprite": {
+        "x": 12.140625,
+        "y": 456.28125,
+        "width": 23.734375,
+        "height": 15.828125
+      },
+      "fit": "cover",
+      "position": "50% 0%",
+      "semantic": "同一近景树冠内侧（窄幅cover裁切候选）",
+      "sourcePoint": [
+        0.14,
+        0.55
+      ],
+      "sourceRegion": [
+        0.07,
+        0.48,
+        0.16,
+        0.14
+      ],
+      "projection": {
+        "x": 12.149824150058619,
+        "y": 456.284407971864,
+        "width": 23.746776084407973,
+        "height": 15.831184056271981,
+        "scale": 0.4947245017584994,
+        "region": {
+          "x": -9.222274325908558,
+          "y": 405.12,
+          "width": 75.9896834701055,
+          "height": 118.16000000000001
+        },
+        "visibleBounds": {
+          "x": 12.149824150058619,
+          "y": 456.284407971864,
+          "width": 23.746776084407973,
+          "height": 15.831184056271981
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "label": "mentor-390-background",
+      "box": {
+        "x": 12.140625,
+        "y": 456.28125,
+        "width": 23.734375,
+        "height": 15.828125
+      },
+      "frames": [
+        "7",
+        "0"
+      ],
+      "hashes": [
+        "aaa95e9ee2f9fc083fcf5bbaef0bac7c47b2bf0260202e7c5e578f7c70b79372",
+        "19e6596eba87741d62c5e6cf362144a8b2a4937693e7254f9df56ed9ac6092d2"
+      ],
+      "absentHash": "b6119c85b6ba1c73f535ca376502e6ff79086f04b68ff647e439fa13bde35445",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          24,
+          17
+        ],
+        "b": [
+          24,
+          17
+        ],
+        "page": [
+          390,
+          844
+        ]
+      }
+    },
+    {
+      "label": "source-login-desktop",
+      "box": {
+        "x": 486.1875,
+        "y": 429.140625,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "1",
+        "2"
+      ],
+      "hashes": [
+        "dc00eaf8657ae30dacefe7ed7b82e60214785cb015300b6bba3fc9874deb6acf",
+        "ec124dd6d609253aca46db0e2ee4d36fd84a5e6d5b855ba7b4819e016efd0409"
+      ],
+      "absentHash": "26e62235426051e391e06d0f61305704106bb1cfa2d085045e56fb7a27dfeed1",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          43
+        ],
+        "b": [
+          65,
+          43
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-login-mobile",
+      "box": {
+        "x": 332.53125,
+        "y": 429.109375,
+        "width": 64,
+        "height": 42.671875
+      },
+      "frames": [
+        "5",
+        "7",
+        "0"
+      ],
+      "hashes": [
+        "710d43d725ed4caff0f67adc3d87704ff555fe76f78581099fdf6adfea489cda",
+        "710d43d725ed4caff0f67adc3d87704ff555fe76f78581099fdf6adfea489cda",
+        "9d914e542616259d55f637e66ce2a879fa9d06ef1c2d5fc6415a4a48890c8dd8"
+      ],
+      "absentHash": "2f9016bc87852398fd027a93ce02f9decb9502944536c4b8af5333cddd3b796d",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          43
+        ],
+        "b": [
+          65,
+          43
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-campus-select",
+      "box": {
+        "x": 755,
+        "y": 13.734375,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "4",
+        "6"
+      ],
+      "hashes": [
+        "832cd64e7dab6d09858abd87acaee8a9a4d4bec1dba4fef42710f91c8b473bdb",
+        "3ef5fa464bea769a9a67c577b77677d8ced701c9869d01cf780dffd014b78073"
+      ],
+      "absentHash": "30cf7bbe34e789e8fa468f1be688d61b802421c5a152118d57d2d66e616d07bd",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          64,
+          44
+        ],
+        "b": [
+          64,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-campus-personal",
+      "box": {
+        "x": 1075,
+        "y": 42.53125,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "0",
+        "1"
+      ],
+      "hashes": [
+        "4d63daea1373253493aabfb0c5efd3050b8bae422cdcd01f6a47c737fcab2f0c",
+        "5122c84d6ab48ee9acadcce2eb37b329afb3ca9d4676b803c94ef5602f43cb5f"
+      ],
+      "absentHash": "fdcb4c7b5f4885f3c37b8cf600ae3d66fa2fb26b8345a034ef6c3333ac800593",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          64,
+          44
+        ],
+        "b": [
+          64,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-campus",
+      "box": {
+        "x": 1126.1875,
+        "y": 429.109375,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "4",
+        "5"
+      ],
+      "hashes": [
+        "da780bd870fc48a42b7ef83f0118f65bfe7512b1b38b6d83460660cf73f1e146",
+        "facce11d81a45cb0d7bfb8d2a7f61e56c16bfded773d390bdeadf17623e19d7d"
+      ],
+      "absentHash": "89e13c5740094d1d7c7370b939e0a546cdb16595025be2cc845a6fcfa77a1c26",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          43
+        ],
+        "b": [
+          65,
+          43
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-campus-workspace",
+      "box": {
+        "x": 1164.59375,
+        "y": 428.53125,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "1",
+        "2"
+      ],
+      "hashes": [
+        "06df56b2932f0446ea334cf3b7703006e029b562bd4c5738bd818a689332642f",
+        "829d5e1a91d06eaf65f2fcd5577e69d0c9d7e9a3f78649536a2c054c2e6d6da1"
+      ],
+      "absentHash": "796ccd42fbec97c834abcbc7140ed256274cbb5709d4490bbf77fa23ca15e747",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          44
+        ],
+        "b": [
+          65,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-campus-mobile",
+      "box": {
+        "x": 755,
+        "y": 428.734375,
+        "width": 64,
+        "height": 42.671875
+      },
+      "frames": [
+        "5",
+        "7",
+        "0"
+      ],
+      "hashes": [
+        "5cd070435a7d3eaa512c37d128100753f7b5ca0081305f53d06b89b85c1939b7",
+        "5cd070435a7d3eaa512c37d128100753f7b5ca0081305f53d06b89b85c1939b7",
+        "2c87cca1822dfd40043aa82a3bb3a7723c6827f9dc418f4446477cb861f209c2"
+      ],
+      "absentHash": "b1b0c731092820b8343178406b2a3e1b12c95285af7173f98c722d4aa34801cd",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          64,
+          44
+        ],
+        "b": [
+          64,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-sky-desktop",
+      "box": {
+        "x": 1011,
+        "y": 428.734375,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "3",
+        "5"
+      ],
+      "hashes": [
+        "c61e3fb042bfbfb47cc5cfaecac11f17c6cab4d72697702c7a3326f62306468a",
+        "1cdc90e015b9df852ff6ddb331585d34979e8c41de6a4d622115bd78de5ddd95"
+      ],
+      "absentHash": "e3c1f7ee489635aff6feada6779cc3476c7dfa20a9000739373489b83e10a262",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          64,
+          44
+        ],
+        "b": [
+          64,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-sky-mobile",
+      "box": {
+        "x": 998.234375,
+        "y": 694.234375,
+        "width": 64,
+        "height": 42.671875
+      },
+      "frames": [
+        "0",
+        "2"
+      ],
+      "hashes": [
+        "294bc8039c9d7fd31a60cb50f05957455f8bf516d5cd50dc136d85266b5bbe01",
+        "b4bc2a6ce8837b6278346afc1204c47f854cc6484348d2270aa166d99513e826"
+      ],
+      "absentHash": "5c284c40c8d9335c2724567cc5a538139b3ecd0b6fb1b267d49c6dcc9f1854d2",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          43
+        ],
+        "b": [
+          65,
+          43
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-sky-cover",
+      "box": {
+        "x": 486.1875,
+        "y": 774.34375,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "70839fc875b94333db8bc20ed6c70d511e2bd023fd76097bb3e784723295c85c",
+        "9493340dea47fdc0b5e1b4a198294579ae55c47b5f05298e661166e0e61d77a9"
+      ],
+      "absentHash": "a4226043ea60faf93ec7167af98b5f36d4cf83da88d7b3356984608aac52781f",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          43
+        ],
+        "b": [
+          65,
+          43
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-forest-desktop",
+      "box": {
+        "x": 281.390625,
+        "y": 839.140625,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "2",
+        "3"
+      ],
+      "hashes": [
+        "162fde7428dd82bd1e84fa5edafba316f4ed26e0af5b483d31fa6a15a98980c1",
+        "bcf34241c22e326d83c00c264cd83f66ed96a5418302a86d4855b8109c7c5b03"
+      ],
+      "absentHash": "6f3ef103e9262d1f3097986e2d88747acd7ed4042dd8afb8ef36fdf250260207",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          43
+        ],
+        "b": [
+          65,
+          43
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-forest-mobile",
+      "box": {
+        "x": 294.125,
+        "y": 428.734375,
+        "width": 64,
+        "height": 42.671875
+      },
+      "frames": [
+        "7",
+        "0"
+      ],
+      "hashes": [
+        "a27ac4e828bcf6ef42ef270b8a76b9b21f8af50645e4e6ebafb4c4596d0d1a27",
+        "30476fad31ae44109df21290470126dec69ae6e86ae791ebd15ded422cb21e39"
+      ],
+      "absentHash": "e35651d310290cea2cf4e8b94105a7a8062fefcf9aeccc76690ba8f80ed85607",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          44
+        ],
+        "b": [
+          65,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-forest-cover",
+      "box": {
+        "x": 307,
+        "y": 20.9375,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "4",
+        "5"
+      ],
+      "hashes": [
+        "3293dddb5b04c8f05da647706f24d669fb40b7578d9c26b4fcef21e0de2c3ad0",
+        "0ae076caa63bea78fbd9fef24da0fd4f5e3d670fc8bae97cb457a8252239a581"
+      ],
+      "absentHash": "b1aaff308a916e65b7a0a26ab925fa74c607c8b161545d3346f66039ca7b0d6b",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          64,
+          44
+        ],
+        "b": [
+          64,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-beach-desktop",
+      "box": {
+        "x": 1258.03125,
+        "y": 428.578125,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "0",
+        "1"
+      ],
+      "hashes": [
+        "a80b92990928e1f4924892aace6ed98212852aace9f5258e6ae65605297dc62c",
+        "736130a29d4e16398693eeabc6ecf5963b318a16c053d24664cee73ae383c9cd"
+      ],
+      "absentHash": "3335d49c9cd01a7941892c44a89671a1777ca0a9563eb270ddf4153bde0e89d4",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          44
+        ],
+        "b": [
+          65,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-beach-mobile",
+      "box": {
+        "x": 1215.859375,
+        "y": 630.859375,
+        "width": 64,
+        "height": 42.671875
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "8049fa6514c038d38c20190e51c73b5e00821f6137a5990dc2c7c1273f535876",
+        "2d3b5b0d9578ed41a3c2f9fa5df7949b3da5b7bf4c5aa4247c3cef0dd10b21d4"
+      ],
+      "absentHash": "b08b643bc70a23099927c8ffd090f553e320f2007a56e4608e12e27b35ba0fcc",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          44
+        ],
+        "b": [
+          65,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-beach-cover",
+      "box": {
+        "x": 1190.1875,
+        "y": 376.734375,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "1",
+        "3"
+      ],
+      "hashes": [
+        "6792dfdd01533be94035546909a56b83dbf1a6508e331e38e6206559040c76e0",
+        "40a5727d6b50fa1985d2b158ce5b982e4879713bfea97cfb3a2a8134bab21bcc"
+      ],
+      "absentHash": "d120a12810634e0aedac90fb22afe5a495c37f02287187b3179d65c6bf354879",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          44
+        ],
+        "b": [
+          65,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-cosmos",
+      "box": {
+        "x": 774.1875,
+        "y": 770.171875,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "6",
+        "0"
+      ],
+      "hashes": [
+        "5b2b8d86d3e367a163f0281cf25fb9c5d6ae7cbf83996ae3a16f966337994b50",
+        "8d01fcd4d0454df90486fcc413ded8c9e7c696a16d3cc220a1d07caca316a3e7"
+      ],
+      "absentHash": "e2333d4cd07825fa5d65c8b7bbe8cf649c45b2de6deec481328535a0ec88325c",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          43
+        ],
+        "b": [
+          65,
+          43
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-vertical",
+      "box": {
+        "x": 1049.390625,
+        "y": 428.9375,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "3",
+        "4"
+      ],
+      "hashes": [
+        "d330882528d028d9e319ea8cdd034cbfc12357f519b1279874b78feff66bdd7d",
+        "6263e84437fea0775b2716501463db6ca0d942b04081cca9a9ff04ef2baa8317"
+      ],
+      "absentHash": "3d62060a281a53c703919df1f1cc87dc7aa1d4be2cdac79a713f4bb52de37ad2",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          44
+        ],
+        "b": [
+          65,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-voyage-reading",
+      "box": {
+        "x": 1087.796875,
+        "y": 428.734375,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "0",
+        "1"
+      ],
+      "hashes": [
+        "30ba31ccfe7a13ee0c4740b9b574152d976e7a86d75d8cc4501a07344a4ea61a",
+        "132a4eb9bbef614e2c74734d2b7c810a18bc90d9096f833a2f16cfed7a890efc"
+      ],
+      "absentHash": "23cd21b83d5480a1b1b9b0926c05c670aa079aac547893c450dd2a06e2d7d13b",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          44
+        ],
+        "b": [
+          65,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    },
+    {
+      "label": "source-voyage-lab",
+      "box": {
+        "x": 703.796875,
+        "y": 428.734375,
+        "width": 64,
+        "height": 42.65625
+      },
+      "frames": [
+        "5",
+        "6"
+      ],
+      "hashes": [
+        "72010053852069e720c3cfdf0d0b158e2e33ed26070dbee3f4e124615992ae0c",
+        "e31d92dd403b8fc38b362a4946cce43725f07f827e6a8612f50f5a20482d5567"
+      ],
+      "absentHash": "7073bef805fefb62e722eb548d529e3bcef948ce901ef27523192b1735b22438",
+      "status": "passed",
+      "imageDimensions": {
+        "a": [
+          65,
+          44
+        ],
+        "b": [
+          65,
+          44
+        ],
+        "page": [
+          1440,
+          900
+        ]
+      }
+    }
+  ],
+  "pageErrors": [],
+  "scope": "fresh synthetic SQLite; real Edge screenshots of background/node sprite bounding crops, not dock inference; explicit negative controls",
+  "nativeHidden": "not_verified"
+}

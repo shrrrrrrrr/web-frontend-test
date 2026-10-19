@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "compatibility": "pixel-motion-v1",
-  "namespace": "assets/pixel-motion/v1",
+  "version": "1.1.0",
+  "compatibility": "pixel-motion-v1.1",
+  "namespace": "assets/pixel-motion/v1.1",
   "authoring": "Original repo-native integer-grid SVG frames; no AI/model call, no third-party art or video",
   "assets": {
     "campus-leaves": {
@@ -18,8 +18,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/campus-leaves.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/campus-leaves.still.svg",
+      "url": "/assets/pixel-motion/v1.1/campus-leaves.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/campus-leaves.still.svg",
       "frameDurations": [
         250,
         250,
@@ -46,8 +46,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/campus-water.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/campus-water.still.svg",
+      "url": "/assets/pixel-motion/v1.1/campus-water.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/campus-water.still.svg",
       "frameDurations": [
         250,
         250,
@@ -74,8 +74,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/campus-flag.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/campus-flag.still.svg",
+      "url": "/assets/pixel-motion/v1.1/campus-flag.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/campus-flag.still.svg",
       "frameDurations": [
         250,
         250,
@@ -102,8 +102,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/sky-cloud.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/sky-cloud.still.svg",
+      "url": "/assets/pixel-motion/v1.1/sky-cloud.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/sky-cloud.still.svg",
       "frameDurations": [
         250,
         250,
@@ -130,8 +130,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/sky-vane.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/sky-vane.still.svg",
+      "url": "/assets/pixel-motion/v1.1/sky-vane.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/sky-vane.still.svg",
       "frameDurations": [
         250,
         250,
@@ -158,8 +158,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/sky-airflow.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/sky-airflow.still.svg",
+      "url": "/assets/pixel-motion/v1.1/sky-airflow.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/sky-airflow.still.svg",
       "frameDurations": [
         250,
         250,
@@ -186,8 +186,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/forest-leaves.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/forest-leaves.still.svg",
+      "url": "/assets/pixel-motion/v1.1/forest-leaves.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/forest-leaves.still.svg",
       "frameDurations": [
         250,
         250,
@@ -214,8 +214,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/forest-firefly.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/forest-firefly.still.svg",
+      "url": "/assets/pixel-motion/v1.1/forest-firefly.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/forest-firefly.still.svg",
       "frameDurations": [
         250,
         250,
@@ -242,8 +242,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/forest-insect.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/forest-insect.still.svg",
+      "url": "/assets/pixel-motion/v1.1/forest-insect.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/forest-insect.still.svg",
       "frameDurations": [
         250,
         250,
@@ -270,8 +270,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/beach-surf.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/beach-surf.still.svg",
+      "url": "/assets/pixel-motion/v1.1/beach-surf.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/beach-surf.still.svg",
       "frameDurations": [
         250,
         250,
@@ -298,8 +298,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/beach-flag.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/beach-flag.still.svg",
+      "url": "/assets/pixel-motion/v1.1/beach-flag.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/beach-flag.still.svg",
       "frameDurations": [
         250,
         250,
@@ -326,8 +326,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/beach-beacon.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/beach-beacon.still.svg",
+      "url": "/assets/pixel-motion/v1.1/beach-beacon.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/beach-beacon.still.svg",
       "frameDurations": [
         250,
         250,
@@ -354,8 +354,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/voyage-star.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/voyage-star.still.svg",
+      "url": "/assets/pixel-motion/v1.1/voyage-star.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/voyage-star.still.svg",
       "frameDurations": [
         250,
         250,
@@ -382,8 +382,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/voyage-signal.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/voyage-signal.still.svg",
+      "url": "/assets/pixel-motion/v1.1/voyage-signal.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/voyage-signal.still.svg",
       "frameDurations": [
         250,
         250,
@@ -410,8 +410,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/voyage-led.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/voyage-led.still.svg",
+      "url": "/assets/pixel-motion/v1.1/voyage-led.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/voyage-led.still.svg",
       "frameDurations": [
         250,
         250,
@@ -438,8 +438,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/voyage-vr.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/voyage-vr.still.svg",
+      "url": "/assets/pixel-motion/v1.1/voyage-vr.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/voyage-vr.still.svg",
       "frameDurations": [
         250,
         250,
@@ -466,8 +466,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/voyage-airflow.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/voyage-airflow.still.svg",
+      "url": "/assets/pixel-motion/v1.1/voyage-airflow.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/voyage-airflow.still.svg",
       "frameDurations": [
         250,
         250,
@@ -494,8 +494,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/voyage-maker.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/voyage-maker.still.svg",
+      "url": "/assets/pixel-motion/v1.1/voyage-maker.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/voyage-maker.still.svg",
       "frameDurations": [
         250,
         250,
@@ -522,8 +522,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/neutral-instrument.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/neutral-instrument.still.svg",
+      "url": "/assets/pixel-motion/v1.1/neutral-instrument.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/neutral-instrument.still.svg",
       "frameDurations": [
         250,
         250,
@@ -550,8 +550,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/campus-node1.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/campus-node1.still.svg",
+      "url": "/assets/pixel-motion/v1.1/campus-node1.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/campus-node1.still.svg",
       "frameDurations": [
         250,
         250,
@@ -578,8 +578,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/campus-node2.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/campus-node2.still.svg",
+      "url": "/assets/pixel-motion/v1.1/campus-node2.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/campus-node2.still.svg",
       "frameDurations": [
         250,
         250,
@@ -606,8 +606,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/campus-node3.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/campus-node3.still.svg",
+      "url": "/assets/pixel-motion/v1.1/campus-node3.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/campus-node3.still.svg",
       "frameDurations": [
         250,
         250,
@@ -634,8 +634,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/sky-node1.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/sky-node1.still.svg",
+      "url": "/assets/pixel-motion/v1.1/sky-node1.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/sky-node1.still.svg",
       "frameDurations": [
         250,
         250,
@@ -662,8 +662,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/sky-node2.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/sky-node2.still.svg",
+      "url": "/assets/pixel-motion/v1.1/sky-node2.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/sky-node2.still.svg",
       "frameDurations": [
         250,
         250,
@@ -690,8 +690,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/sky-node3.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/sky-node3.still.svg",
+      "url": "/assets/pixel-motion/v1.1/sky-node3.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/sky-node3.still.svg",
       "frameDurations": [
         250,
         250,
@@ -718,8 +718,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/forest-node1.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/forest-node1.still.svg",
+      "url": "/assets/pixel-motion/v1.1/forest-node1.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/forest-node1.still.svg",
       "frameDurations": [
         250,
         250,
@@ -746,8 +746,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/forest-node2.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/forest-node2.still.svg",
+      "url": "/assets/pixel-motion/v1.1/forest-node2.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/forest-node2.still.svg",
       "frameDurations": [
         250,
         250,
@@ -774,8 +774,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/forest-node3.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/forest-node3.still.svg",
+      "url": "/assets/pixel-motion/v1.1/forest-node3.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/forest-node3.still.svg",
       "frameDurations": [
         250,
         250,
@@ -802,8 +802,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/beach-node1.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/beach-node1.still.svg",
+      "url": "/assets/pixel-motion/v1.1/beach-node1.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/beach-node1.still.svg",
       "frameDurations": [
         250,
         250,
@@ -830,8 +830,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/beach-node2.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/beach-node2.still.svg",
+      "url": "/assets/pixel-motion/v1.1/beach-node2.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/beach-node2.still.svg",
       "frameDurations": [
         250,
         250,
@@ -858,8 +858,8 @@
         0.5
       ],
       "scale": "integer nearest-neighbor; no interpolated rotation",
-      "url": "/assets/pixel-motion/v1/beach-node3.sheet.svg",
-      "fallback": "/assets/pixel-motion/v1/beach-node3.still.svg",
+      "url": "/assets/pixel-motion/v1.1/beach-node3.sheet.svg",
+      "fallback": "/assets/pixel-motion/v1.1/beach-node3.still.svg",
       "frameDurations": [
         250,
         250,

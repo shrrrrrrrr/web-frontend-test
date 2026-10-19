@@ -38,3 +38,8 @@ frontend/public/pixel-motion-preview/** text eol=lf
 docs/pixel-motion/*.md text eol=lf
 docs/pixel-motion/*.html text eol=lf
 docs/pixel-motion/*.json text eol=lf
+
+docs/pixel-motion/placement-patch/**/*.md text eol=lf
+docs/pixel-motion/placement-patch/**/*.json text eol=lf
+docs/pixel-motion/placement-patch/**/*.html text eol=lf
+docs/pixel-motion/placement-patch/**/*.log text eol=lf

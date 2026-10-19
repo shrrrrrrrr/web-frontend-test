@@ -1,5 +1,5 @@
 // Original editable integer-grid drawing source. No raster editing or model calls.
-export const VERSION='1.0.0',NAMESPACE='assets/pixel-motion/v1',FRAMES=8,FRAME_MS=250;
+export const VERSION='1.1.0',NAMESPACE='assets/pixel-motion/v1.1',FRAMES=8,FRAME_MS=250;
 export const palette={ink:'#132a49',paper:'#fbf6e8',teal:'#087f80',cyan:'#89e5ec',gold:'#e6b84d',leaf:'#759c49',dark:'#355e4a',foam:'#fff9dd',water:'#46a6c3',cloud:'#dcecf2'};
 export const specs=[
  ['campus-leaves','campus','leaf'],['campus-water','campus','water'],['campus-flag','campus','flag'],
@@ -20,8 +20,28 @@ export function draw(spec,frame){
  const wave=[0,1,2,1,0,-1,-2,-1][frame];
  const leaf=spec.theme==='forest'?'leaf':'gold';
  const detail=spec.id.includes('-node')||['voyage-vr','voyage-maker'].includes(spec.id);
+ // Small local details fit the already drawn jars, screens, canopy and lamps.
+ // Never add another complete instrument on top of the source device.
+ if(detail||spec.id==='voyage-led'||spec.id==='beach-beacon'){
+  const id=spec.id;
+  if(id==='campus-node1'){
+   for(let n=0;n<3;n++){dot(18+n*5,20-(frame+n*2)%8,'cyan');dot(19+n*5,19-(frame+n*2)%8,'paper');}
+  }else if(['campus-node3','forest-node1','voyage-vr','sky-node3'].includes(id)){
+   rect(19+frame%6,12,1,9,'cyan');dot(29,20,frame%4===0?'gold':'teal');
+  }else if(id==='forest-node2'||id==='forest-node3'){
+   for(const[x,y]of[[18,13],[25,17]]){rect(x+wave,y,4,2,'leaf');dot(x+wave+1,y-1,'gold');}
+  }else if(id==='sky-node1'||id==='sky-node2'){
+   for(let n=0;n<3;n++)for(let x=17;x<31;x++)if((x+frame*2+n)%9<4)dot(x,12+n*4,'cyan');
+  }else if(id==='beach-node3'||id==='beach-beacon'){
+   rect(22,14,3+(frame%4),3,frame%2?'foam':'gold');
+  }else{
+   for(let n=0;n<3;n++)rect(19+n*4,14,2,2,n===Math.floor(frame/2)%3?'gold':'teal');
+   dot(24+frame%4,19,'cyan');
+  }
+  return p;
+ }
  if(spec.kind==='leaf'){
-  if(!detail){line(1,15,1,0,28,'dark');line(8,15,1,-1,7,'dark');line(22,15,1,1,6,'dark');}
+  // Crown-local leaves only; a floating duplicate branch is not part of the background.
   for(const[x,y]of[[6,8],[16,6],[27,10],[25,20]]){rect(x+wave,y,8,3,leaf);rect(x+1+wave,y-2,5,2,leaf);rect(x+2+wave,y+3,4,2,'dark');dot(x+6+wave,y,'paper');}
  }else if(spec.kind==='water'){
   for(let row=0;row<3;row++){let x=(wave*(row===1?-1:1)+row*9+48)%23;const y=8+row*7+Math.abs(wave)%2;rect(x,y,13-row*2,2,spec.theme==='beach'?'foam':'cyan');rect(x+7,y+2,7,1,'water');rect((x+23)%38,y-2,6,1,'foam');}

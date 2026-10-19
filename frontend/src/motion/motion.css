@@ -1,13 +1,8 @@
 /* Discrete sprite crops only. Backgrounds, hit boxes and reading layers do not move. */
 .pixel-sprite{display:block;position:absolute;pointer-events:none!important;user-select:none;image-rendering:pixelated;background-repeat:no-repeat;contain:strict;flex:none}
 .motion-scene{position:absolute;inset:0;display:block;overflow:hidden;pointer-events:none!important;z-index:0}
-.motion-scene-first{left:1%;top:12%}.motion-scene-second{left:7%;bottom:14%}
-.motion-scene--sky .motion-scene-first{left:30%;top:10%}.motion-scene--sky .motion-scene-second{left:6%;bottom:21%}
-.motion-scene--forest .motion-scene-first{left:1%;top:8%}.motion-scene--forest .motion-scene-second{left:78%;bottom:15%}
-.motion-scene--beach .motion-scene-first{left:12%;top:76%}.motion-scene--beach .motion-scene-second{left:87%;bottom:24%}
-.motion-scene--voyage .motion-scene-first{left:78%;top:13%}.motion-scene--voyage .motion-scene-second{left:54%;bottom:32%}
 .motion-art{position:relative;display:block;overflow:hidden;min-width:0}.motion-art>.motion-picture{display:block;width:100%;height:100%}.motion-art>.motion-picture>img,.motion-art>img{width:100%;height:100%;object-fit:cover;display:block}
-.motion-art--mark{display:inline-block;width:112px;height:80px}.motion-art--mark>img{object-fit:contain}.motion-art--mark .pixel-sprite{scale:.5;transform-origin:top left}
+.motion-art--mark{display:inline-block;width:112px;height:80px}.motion-art--mark>img{object-fit:contain}
 .motion-art--cover{aspect-ratio:16/9}
 .motion-dock{position:fixed;left:12px;bottom:12px;width:104px;z-index:40;color:#132a49;pointer-events:none;font-family:var(--space-font);font-synthesis:none}
 .motion-diorama{position:relative;height:36px;width:100%;overflow:hidden;background:#b8d8dc;border:2px solid #32566e;border-bottom:0;pointer-events:none;box-sizing:border-box}
@@ -18,14 +13,14 @@
 .motion-dock--sky .motion-diorama{background:#a4cee9}.motion-dock--sky .motion-diorama:before{background:#dcecf2}
 .motion-toggle{pointer-events:auto;display:block;min-height:44px;width:100%;padding:6px;background:#fff9e9;color:#132a49;border:2px solid #32566e;border-radius:0;font:500 14px/1.5 var(--space-font);cursor:pointer;box-shadow:2px 3px #132a4930}
 .motion-toggle:focus-visible{outline:3px solid #96620d;outline-offset:3px}.motion-toggle:hover{background:#e1efe2}.motion-toggle:active{box-shadow:none}
-.staff-campus-ui .motion-background{position:fixed;inset:0;z-index:0;pointer-events:none}.staff-campus-ui .motion-background>.motion-scene-first{left:1%;top:66%}.staff-campus-ui .motion-background>.motion-scene-second{left:1%;bottom:9%}
 body[data-staff-campus='true'] .motion-dock{bottom:64px;z-index:65}
-.motion-node{position:absolute;left:62%;top:23%;width:48px;height:32px;pointer-events:none;z-index:1}
-.motion-node--theory{left:42%;top:18%}.motion-node--visit{left:57%;top:24%}
-@media(max-width:767px){.motion-dock,body[data-staff-campus='true'] .motion-dock{left:8px;bottom:8px;width:96px}.motion-scene-first{top:15%}.motion-scene-second{bottom:8%}}
+@media(max-width:767px){.motion-dock,body[data-staff-campus='true'] .motion-dock{left:8px;bottom:8px;width:96px}}
 /* The fixed control needs a scrollable safe area below the last form action. */
 @media(max-width:767px){body:has(.motion-dock) .space-shell:not(.space-shell--course) .space-content.student-content,body[data-staff-campus='true'] .staff-content{padding-bottom:108px}}
 @media(max-height:500px){.motion-diorama{height:24px}.motion-toggle{min-height:36px;font-size:13px}.motion-dock,body[data-staff-campus='true'] .motion-dock{bottom:5px}}
 @media(min-width:768px) and (max-height:500px){body[data-staff-campus='true'] .motion-dock{left:auto;right:8px;bottom:8px}body[data-staff-campus='true'] .staff-content{padding-bottom:92px}body:has(.space-sidebar) .motion-dock{left:236px}}
 @media(max-width:767px){body[data-staff-campus='true']:has(.staff-sidebar-mobile:not(.ant-layout-sider-collapsed)) .motion-dock{visibility:hidden}}
 @media(prefers-reduced-motion:reduce){.pixel-sprite{animation:none!important;transition:none!important}}
+
+.staff-campus-ui .staff-content>.motion-background{position:fixed;inset:0;z-index:-2;pointer-events:none}
+.motion-node{z-index:1}

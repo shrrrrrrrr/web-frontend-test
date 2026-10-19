@@ -1,0 +1,1290 @@
+{
+  "version": "1.1.0",
+  "coordinateSystem": "Normalized coordinates on the named source image; size is the canonical source pixel space. Region is a visually reviewed semantic box, never a viewport percentage. Cropped anchors are omitted, never moved.",
+  "scenes": {
+    "login-desktop": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "campus-leaves",
+          "point": [
+            0.12,
+            0.12
+          ],
+          "region": [
+            0.03,
+            0.02,
+            0.22,
+            0.23
+          ],
+          "semantic": "银杏树冠叶片",
+          "pixelScale": 1
+        },
+        {
+          "id": "campus-water",
+          "point": [
+            0.34,
+            0.77
+          ],
+          "region": [
+            0.29,
+            0.69,
+            0.14,
+            0.18
+          ],
+          "semantic": "水面波纹",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "login-mobile": {
+      "size": [
+        960,
+        1706
+      ],
+      "items": [
+        {
+          "id": "campus-leaves",
+          "point": [
+            0.09,
+            0.59
+          ],
+          "region": [
+            0.01,
+            0.49,
+            0.22,
+            0.22
+          ],
+          "semantic": "银杏树冠叶片",
+          "pixelScale": 1
+        },
+        {
+          "id": "campus-water",
+          "point": [
+            0.22,
+            0.845
+          ],
+          "region": [
+            0.14,
+            0.82,
+            0.25,
+            0.045
+          ],
+          "semantic": "水面波纹",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "campus-select": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "campus-leaves",
+          "point": [
+            0.18,
+            0.12
+          ],
+          "region": [
+            0.1,
+            0.03,
+            0.2,
+            0.24
+          ],
+          "semantic": "银杏树冠叶片",
+          "pixelScale": 1
+        },
+        {
+          "id": "campus-water",
+          "point": [
+            0.55,
+            0.8
+          ],
+          "region": [
+            0.42,
+            0.66,
+            0.25,
+            0.22
+          ],
+          "semantic": "水面波纹",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "campus-personal": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "campus-leaves",
+          "point": [
+            0.15,
+            0.28
+          ],
+          "region": [
+            0.05,
+            0.15,
+            0.22,
+            0.27
+          ],
+          "semantic": "银杏树冠叶片",
+          "pixelScale": 1
+        },
+        {
+          "id": "campus-water",
+          "point": [
+            0.8,
+            0.84
+          ],
+          "region": [
+            0.69,
+            0.76,
+            0.26,
+            0.18
+          ],
+          "semantic": "水面波纹",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "campus": {
+      "size": [
+        960,
+        640
+      ],
+      "items": [
+        {
+          "id": "campus-leaves",
+          "point": [
+            0.565,
+            0.53
+          ],
+          "region": [
+            0.515,
+            0.44,
+            0.105,
+            0.2
+          ],
+          "semantic": "银杏树冠叶片",
+          "pixelScale": 1
+        },
+        {
+          "id": "campus-water",
+          "point": [
+            0.84,
+            0.76
+          ],
+          "region": [
+            0.76,
+            0.7,
+            0.18,
+            0.13
+          ],
+          "semantic": "水面波纹",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "campus-workspace": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "campus-leaves",
+          "point": [
+            0.12,
+            0.13
+          ],
+          "region": [
+            0.03,
+            0.02,
+            0.21,
+            0.27
+          ],
+          "semantic": "银杏树冠叶片",
+          "pixelScale": 1
+        },
+        {
+          "id": "campus-leaves",
+          "point": [
+            0.87,
+            0.14
+          ],
+          "region": [
+            0.77,
+            0.02,
+            0.22,
+            0.27
+          ],
+          "semantic": "银杏树冠叶片",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "campus-mobile": {
+      "size": [
+        960,
+        1706
+      ],
+      "items": [
+        {
+          "id": "campus-leaves",
+          "point": [
+            0.035,
+            0.55
+          ],
+          "region": [
+            0,
+            0.48,
+            0.1,
+            0.14
+          ],
+          "semantic": "左侧近景银杏树冠（避开顶栏遮挡）",
+          "pixelScale": 1
+        },
+        {
+          "id": "campus-leaves",
+          "point": [
+            0.14,
+            0.55
+          ],
+          "region": [
+            0.07,
+            0.48,
+            0.16,
+            0.14
+          ],
+          "semantic": "同一近景树冠内侧（窄幅cover裁切候选）",
+          "pixelScale": 1
+        },
+        {
+          "id": "campus-water",
+          "point": [
+            0.55,
+            0.96
+          ],
+          "region": [
+            0.46,
+            0.94,
+            0.22,
+            0.045
+          ],
+          "semantic": "水面波纹",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "sky-desktop": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "sky-cloud",
+          "point": [
+            0.48,
+            0.66
+          ],
+          "region": [
+            0.38,
+            0.58,
+            0.23,
+            0.19
+          ],
+          "semantic": "云海边缘",
+          "pixelScale": 1
+        },
+        {
+          "id": "sky-airflow",
+          "point": [
+            0.75,
+            0.2
+          ],
+          "region": [
+            0.63,
+            0.13,
+            0.25,
+            0.14
+          ],
+          "semantic": "高空云层气流",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "sky-mobile": {
+      "size": [
+        960,
+        1706
+      ],
+      "items": [
+        {
+          "id": "sky-cloud",
+          "point": [
+            0.39,
+            0.69
+          ],
+          "region": [
+            0.29,
+            0.65,
+            0.2,
+            0.08
+          ],
+          "semantic": "左侧云海边缘",
+          "pixelScale": 1
+        },
+        {
+          "id": "sky-airflow",
+          "point": [
+            0.74,
+            0.18
+          ],
+          "region": [
+            0.62,
+            0.15,
+            0.25,
+            0.07
+          ],
+          "semantic": "高空云层气流",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "sky-cover": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "sky-cloud",
+          "point": [
+            0.34,
+            0.68
+          ],
+          "region": [
+            0.24,
+            0.59,
+            0.23,
+            0.2
+          ],
+          "semantic": "云海边缘",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "forest-desktop": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "forest-leaves",
+          "point": [
+            0.29,
+            0.08
+          ],
+          "region": [
+            0.21,
+            0.015,
+            0.18,
+            0.18
+          ],
+          "semantic": "顶部树冠",
+          "pixelScale": 1
+        },
+        {
+          "id": "forest-insect",
+          "point": [
+            0.18,
+            0.77
+          ],
+          "region": [
+            0.08,
+            0.68,
+            0.23,
+            0.2
+          ],
+          "semantic": "林缘草丛昆虫",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "forest-mobile": {
+      "size": [
+        960,
+        1706
+      ],
+      "items": [
+        {
+          "id": "forest-leaves",
+          "point": [
+            0.34,
+            0.075
+          ],
+          "region": [
+            0.23,
+            0.02,
+            0.25,
+            0.12
+          ],
+          "semantic": "顶部树冠",
+          "pixelScale": 1
+        },
+        {
+          "id": "forest-insect",
+          "point": [
+            0.19,
+            0.76
+          ],
+          "region": [
+            0.09,
+            0.7,
+            0.24,
+            0.13
+          ],
+          "semantic": "林缘草丛昆虫",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "forest-cover": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "forest-leaves",
+          "point": [
+            0.72,
+            0.065
+          ],
+          "region": [
+            0.61,
+            0.005,
+            0.23,
+            0.14
+          ],
+          "semantic": "顶部树冠",
+          "pixelScale": 1
+        },
+        {
+          "id": "forest-insect",
+          "point": [
+            0.2,
+            0.81
+          ],
+          "region": [
+            0.08,
+            0.7,
+            0.26,
+            0.22
+          ],
+          "semantic": "林缘草丛昆虫",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "beach-desktop": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "beach-surf",
+          "point": [
+            0.48,
+            0.82
+          ],
+          "region": [
+            0.31,
+            0.72,
+            0.38,
+            0.2
+          ],
+          "semantic": "近岸海水浪花",
+          "pixelScale": 1
+        },
+        {
+          "id": "beach-beacon",
+          "point": [
+            0.943,
+            0.272
+          ],
+          "region": [
+            0.9,
+            0.2,
+            0.09,
+            0.15
+          ],
+          "semantic": "现有灯塔灯室",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "beach-mobile": {
+      "size": [
+        960,
+        1706
+      ],
+      "items": [
+        {
+          "id": "beach-surf",
+          "point": [
+            0.55,
+            0.84
+          ],
+          "region": [
+            0.39,
+            0.77,
+            0.31,
+            0.13
+          ],
+          "semantic": "近岸海水浪花",
+          "pixelScale": 1
+        },
+        {
+          "id": "beach-beacon",
+          "point": [
+            0.91,
+            0.175
+          ],
+          "region": [
+            0.85,
+            0.14,
+            0.12,
+            0.07
+          ],
+          "semantic": "现有灯塔灯室",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "beach-cover": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "beach-surf",
+          "point": [
+            0.25,
+            0.69
+          ],
+          "region": [
+            0.14,
+            0.6,
+            0.25,
+            0.18
+          ],
+          "semantic": "近岸海水浪花",
+          "pixelScale": 1
+        },
+        {
+          "id": "beach-beacon",
+          "point": [
+            0.89,
+            0.2
+          ],
+          "region": [
+            0.84,
+            0.13,
+            0.11,
+            0.15
+          ],
+          "semantic": "现有灯塔灯室",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "cosmos": {
+      "size": [
+        960,
+        640
+      ],
+      "items": [
+        {
+          "id": "voyage-star",
+          "point": [
+            0.4,
+            0.2
+          ],
+          "region": [
+            0.34,
+            0.13,
+            0.13,
+            0.16
+          ],
+          "semantic": "深空星点",
+          "pixelScale": 1
+        },
+        {
+          "id": "voyage-led",
+          "point": [
+            0.565,
+            0.63
+          ],
+          "region": [
+            0.51,
+            0.58,
+            0.12,
+            0.1
+          ],
+          "semantic": "空间站灯带",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "vertical": {
+      "size": [
+        960,
+        1440
+      ],
+      "items": [
+        {
+          "id": "voyage-star",
+          "point": [
+            0.48,
+            0.36
+          ],
+          "region": [
+            0.42,
+            0.31,
+            0.13,
+            0.12
+          ],
+          "semantic": "深空星点",
+          "pixelScale": 1
+        },
+        {
+          "id": "voyage-led",
+          "point": [
+            0.78,
+            0.51
+          ],
+          "region": [
+            0.72,
+            0.47,
+            0.13,
+            0.09
+          ],
+          "semantic": "空间站灯带",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "voyage-reading": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "voyage-led",
+          "point": [
+            0.065,
+            0.55
+          ],
+          "region": [
+            0.005,
+            0.48,
+            0.13,
+            0.14
+          ],
+          "semantic": "左舷控制台灯带",
+          "pixelScale": 1
+        },
+        {
+          "id": "voyage-star",
+          "point": [
+            0.81,
+            0.15
+          ],
+          "region": [
+            0.75,
+            0.08,
+            0.18,
+            0.16
+          ],
+          "semantic": "右舷窗外星点",
+          "pixelScale": 1
+        }
+      ]
+    },
+    "voyage-lab": {
+      "size": [
+        960,
+        540
+      ],
+      "items": [
+        {
+          "id": "voyage-led",
+          "point": [
+            0.24,
+            0.42
+          ],
+          "region": [
+            0.19,
+            0.35,
+            0.12,
+            0.16
+          ],
+          "semantic": "实验机柜指示灯",
+          "pixelScale": 1
+        },
+        {
+          "id": "voyage-star",
+          "point": [
+            0.51,
+            0.15
+          ],
+          "region": [
+            0.44,
+            0.08,
+            0.15,
+            0.15
+          ],
+          "semantic": "舱外星点",
+          "pixelScale": 1
+        }
+      ]
+    }
+  },
+  "nodes": {
+    "campus-node1": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "campus-node1",
+          "point": [
+            0.33,
+            0.31
+          ],
+          "region": [
+            0.22,
+            0.22,
+            0.25,
+            0.18
+          ],
+          "semantic": "培养罐气泡",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "campus-node2": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "campus-node2",
+          "point": [
+            0.79,
+            0.28
+          ],
+          "region": [
+            0.68,
+            0.18,
+            0.23,
+            0.2
+          ],
+          "semantic": "后部仪表灯",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "campus-node3": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "campus-node3",
+          "point": [
+            0.76,
+            0.43
+          ],
+          "region": [
+            0.64,
+            0.3,
+            0.27,
+            0.27
+          ],
+          "semantic": "展示屏扫描",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "sky-node1": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "sky-node1",
+          "point": [
+            0.76,
+            0.28
+          ],
+          "region": [
+            0.65,
+            0.17,
+            0.24,
+            0.23
+          ],
+          "semantic": "风速仪气流",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "sky-node2": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "sky-node2",
+          "point": [
+            0.75,
+            0.34
+          ],
+          "region": [
+            0.64,
+            0.23,
+            0.24,
+            0.23
+          ],
+          "semantic": "测风台气流",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "sky-node3": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "sky-node3",
+          "point": [
+            0.71,
+            0.36
+          ],
+          "region": [
+            0.6,
+            0.25,
+            0.25,
+            0.22
+          ],
+          "semantic": "观察屏指示",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "forest-node1": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "forest-node1",
+          "point": [
+            0.83,
+            0.36
+          ],
+          "region": [
+            0.71,
+            0.25,
+            0.25,
+            0.23
+          ],
+          "semantic": "生态观察屏扫描",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "forest-node2": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "forest-node2",
+          "point": [
+            0.77,
+            0.14
+          ],
+          "region": [
+            0.65,
+            0.04,
+            0.25,
+            0.23
+          ],
+          "semantic": "棚顶藤叶",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "forest-node3": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "forest-node3",
+          "point": [
+            0.72,
+            0.18
+          ],
+          "region": [
+            0.6,
+            0.07,
+            0.26,
+            0.23
+          ],
+          "semantic": "棚顶藤叶",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "beach-node1": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "beach-node1",
+          "point": [
+            0.74,
+            0.22
+          ],
+          "region": [
+            0.62,
+            0.11,
+            0.26,
+            0.22
+          ],
+          "semantic": "海水监测仪指示",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "beach-node2": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "beach-node2",
+          "point": [
+            0.38,
+            0.26
+          ],
+          "region": [
+            0.25,
+            0.14,
+            0.27,
+            0.24
+          ],
+          "semantic": "水轮控制台指示",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "beach-node3": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "beach-node3",
+          "point": [
+            0.37,
+            0.15
+          ],
+          "region": [
+            0.24,
+            0.04,
+            0.27,
+            0.23
+          ],
+          "semantic": "灯塔灯室",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "vr": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "voyage-vr",
+          "point": [
+            0.49,
+            0.4
+          ],
+          "region": [
+            0.36,
+            0.28,
+            0.27,
+            0.25
+          ],
+          "semantic": "全息设备扫描",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "theory": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "voyage-airflow",
+          "point": [
+            0.69,
+            0.22
+          ],
+          "region": [
+            0.56,
+            0.1,
+            0.27,
+            0.24
+          ],
+          "semantic": "风洞仪表气流",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "experiment": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "voyage-maker",
+          "point": [
+            0.25,
+            0.39
+          ],
+          "region": [
+            0.12,
+            0.27,
+            0.27,
+            0.25
+          ],
+          "semantic": "试飞台仪表灯",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "moon-base": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "voyage-led",
+          "point": [
+            0.34,
+            0.18
+          ],
+          "region": [
+            0.21,
+            0.06,
+            0.27,
+            0.25
+          ],
+          "semantic": "月面基站灯",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "orbital-berth": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "voyage-led",
+          "point": [
+            0.48,
+            0.3
+          ],
+          "region": [
+            0.35,
+            0.18,
+            0.27,
+            0.25
+          ],
+          "semantic": "轨道港灯",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    },
+    "asteroid-outpost": {
+      "size": [
+        192,
+        192
+      ],
+      "items": [
+        {
+          "id": "voyage-led",
+          "point": [
+            0.7,
+            0.3
+          ],
+          "region": [
+            0.57,
+            0.18,
+            0.27,
+            0.25
+          ],
+          "semantic": "小行星基地灯",
+          "pixelScale": 1,
+          "ink": [
+            16,
+            10,
+            18,
+            14
+          ]
+        }
+      ]
+    }
+  }
+}

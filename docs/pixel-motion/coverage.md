@@ -1,3 +1,7 @@
+# 定位补修验收入口
+
+当前定位与实际换帧证据以[placement-patch/README.md](placement-patch/README.md)、[逐图定位表](placement-patch/PLACEMENT.md)和[时序图](placement-patch/index.html)为准。下面保留的上一轮逐路由记录主要证明共享小器件换帧及业务页面可到达，**不能外推为各背景或关卡已验收**。旧尺寸/精灵数量为旧版本记录，不是本轮重新测得。
+
 # 全端动效覆盖矩阵
 
 起点f03e585；开始时只读查询PR49为OPEN，上游main为82b021bfbb23a31da21190e302f703fc747001ee。独立分支feat/pixel-scene-motion，未追加旧PR分支。以下是实际接入及已执行的逐页记录，原生后台隐藏一项仍待人工复核，详见verification.md。

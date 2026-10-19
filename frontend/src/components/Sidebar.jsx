@@ -16,6 +16,7 @@ import {
 } from '@ant-design/icons';
 import { useAuth } from '../store/AuthContext';
 import StaffPixelIcon from './StaffPixelIcon';
+import {SceneMotion} from '../motion/Motion';
 
 const { Sider } = Layout;
 const adminIcons = {
@@ -112,7 +113,7 @@ export default function Sidebar() {
         })) : items}
         onClick={({ key }) => {navigate(key);if(broken)setCollapsed(true);}}
       />
-      {campusStaff && <div className="staff-campus-sidebar-scene" aria-hidden="true" />}
+      {campusStaff && <div className="staff-campus-sidebar-scene" aria-hidden="true"><SceneMotion background="sidebar"/></div>}
     </Sider>
   );
 }
