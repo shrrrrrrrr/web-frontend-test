@@ -4,6 +4,10 @@
 
 ## 先确认代码，再决定是否导入
 
+配套完整代码来源：`https://github.com/shrrrrrrrr/web-frontend-test.git`，本轮分支`feat/pixel-scene-motion`；准确提交以本包`PACKAGE.json.codeCommit`为准。本ZIP不是完整网站源码。当前没有提交/合并本轮上游PR，不能假定`nmg233/web`正式站旧代码已包含这些组件；先做隔离验收，未经后续授权不要替换正式站。
+
+如需联网取得代码，可在**尚不存在的新目录**执行`git clone --branch feat/pixel-scene-motion https://github.com/shrrrrrrrr/web-frontend-test.git C:\pbl-release`（Linux目标改为`/srv/pbl-release`）。目录已存在则不要覆盖：使用既有代码交付/发布流程。解压本包后，读取`PACKAGE.json`中的codeCommit，并与`git -C C:\pbl-release rev-parse HEAD`或`git -C /srv/pbl-release rev-parse HEAD`核对；分支后来前进时须明确取对应提交。代码必须是完整且匹配版本，不能只复制source/中的几个组件。如果Git已带齐本批资源，后面的导入预演应显示零写入，不用再次apply。
+
 **常规Git途径**：部署包含本轮SiteMotionGate、SceneMotion、PixelSprite和课程/后台接入的完整代码。资源已随Git提交在frontend/public/assets/pixel-motion/v1，通常不必重复导入ZIP。按项目现有构建/静态发布流程执行npm ci --prefix frontend及npm run build（本轮开发未升级依赖/锁文件）；部署完整frontend/dist，保留现有后端运行方式。不要只覆盖几个JS或只传SVG。检查站点根/assets/pixel-motion/v1能读取SVG/JSON，缓存与JS产物同批更新。
 
 **离线素材途径**：确认PACKAGE.json.developmentOnly=false及workingTreeDirty=false，先取得并部署匹配PACKAGE.json.codeCommit的完整前端代码，再将本ZIP解压到staging，预演校验、明确apply导入frontend/public，随后构建和发布完整产物。**单独上传素材不能让旧前端自动拥有动画**。staging校验成功不等于已经上线。若已采用Git途径，运行预演应显示wouldCopy=0，无需再次apply。
