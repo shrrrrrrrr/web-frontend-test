@@ -1,0 +1,7 @@
+{
+  "status": "not_verified",
+  "attempt": "Separate headed Edge, fresh temporary browser profile, ordinary tab/window activation/minimize, default focus emulation explicitly disabled",
+  "actual": "Timed out waiting for document.hidden=true; not counted as passed",
+  "implemented": "visibilitychange and window blur/focus stop the single clock, recover without catch-up; lifecycle/unit tests passed",
+  "next": "Manual verification in a normal user browser; no claim of real native-background success"
+}

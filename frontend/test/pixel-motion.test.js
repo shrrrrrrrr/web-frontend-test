@@ -18,7 +18,7 @@ test('可见内容真实换帧；多个精灵共享一个4fps时钟，离屏/隐
  const h=harness(),a=node(),b=node(),offA=h.player.register(a,asset),offB=h.player.register(b,asset,{phase:750});
  assert.equal(h.jobs.size,0);h.visible(a,true);h.visible(b,true);assert.equal(h.jobs.size,1);h.advance();h.advance();assert.notEqual(a.dataset.frame,'0');assert.notEqual(a.dataset.frame,b.dataset.frame);
  h.doc.hidden=true;h.doc.dispatchEvent(new Event('visibilitychange'));const frozen=a.dataset.frame;assert.equal(h.jobs.size,0);h.advance(60000);assert.equal(a.dataset.frame,frozen);
- h.doc.hidden=false;h.doc.dispatchEvent(new Event('visibilitychange'));h.advance();assert.equal(a.dataset.frame,frozen);h.visible(a,false);h.visible(b,false);assert.equal(h.jobs.size,0);offA();offB();h.player.dispose();assert.equal(h.player.stats().sprites,0);
+ h.doc.defaultView.dispatchEvent(new Event('blur'));h.doc.hidden=false;h.doc.dispatchEvent(new Event('visibilitychange'));h.advance();assert.equal(a.dataset.frame,frozen);assert.equal(h.jobs.size,0);h.doc.defaultView.dispatchEvent(new Event('focus'));assert.equal(h.jobs.size,1);h.visible(a,false);h.visible(b,false);assert.equal(h.jobs.size,0);offA();offB();h.player.dispose();assert.equal(h.player.stats().sprites,0);
 });
 test('暂停与减少运动稳定静态帧，存储失败不崩溃；清理时钟与observer',()=>{
  const h=harness({denied:true}),n=node(),off=h.player.register(n,asset);h.visible(n,true);h.advance();h.advance();h.player.toggle();const frame=n.dataset.frame;h.advance(1000);assert.equal(n.dataset.frame,frame);assert.equal(h.player.snapshot(),true);h.player.toggle();h.advance();h.advance();assert.notEqual(n.dataset.frame,frame);
@@ -26,4 +26,17 @@ test('暂停与减少运动稳定静态帧，存储失败不崩溃；清理时�
 });
 test('精灵404使用静态后备，不留离散帧偏移或继续运行时钟',()=>{
  const h=harness({fail:true}),n=node(),off=h.player.register(n,asset,{phase:750});h.visible(n,true);assert.equal(n.dataset.motionState,'failed');assert.equal(n.style.backgroundPosition,'0px 0px');assert.match(n.style.backgroundImage,/still.svg/);assert.equal(h.jobs.size,0);off();h.player.dispose();
+});
+
+test('重复挂载/卸载释放同一document的控制器与监听，嵌套主题恢复外层',async()=>{
+ const old=Object.fromEntries(['window','document','Image'].map(k=>[k,Object.getOwnPropertyDescriptor(globalThis,k)]));
+ class Target extends EventTarget{count=0;addEventListener(...args){this.count++;super.addEventListener(...args);}removeEventListener(...args){this.count--;super.removeEventListener(...args);}}
+ const doc=new Target(),win=new Target(),media=new Target();doc.defaultView=win;doc.hidden=false;media.matches=false;win.matchMedia=()=>media;win.localStorage={getItem:()=>null};
+ const observers=[];win.IntersectionObserver=class{constructor(fn){this.fn=fn;observers.push(this);}observe(node){this.fn([{target:node,isIntersecting:true,intersectionRatio:1}]);}unobserve(){}disconnect(){this.disconnected=true;}};
+ try{
+  Object.assign(globalThis,{document:doc,window:win,Image:class{set src(_v){this.onload();}}});
+  const state=await import('../src/motion/state.js');
+  for(let n=0;n<20;n++){const off=state.subscribePaused(()=>{}),p=state.getPlayer(),offA=state.registerSprite(node(),asset),offB=state.registerSprite(node(),asset);assert.equal(state.getPlayer(),p);assert.equal(p.stats().clock,1);offA();offB();off();assert.equal(p.stats().clock,0);assert.equal(p.stats().sprites,0);assert.equal(doc.count,0);assert.equal(win.count,0);assert.equal(media.count,0);}
+  assert.ok(observers.every(o=>o.disconnected));const a=state.publishSurface({theme:'campus'}),b=state.publishSurface({theme:'forest'});assert.equal(state.surfaceSnapshot().theme,'forest');b();assert.equal(state.surfaceSnapshot().theme,'campus');a();
+ }finally{for(const[k,d]of Object.entries(old)){if(d)Object.defineProperty(globalThis,k,d);else delete globalThis[k];}}
 });

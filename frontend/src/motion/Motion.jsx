@@ -1,13 +1,14 @@
-import{useEffect,useRef,useSyncExternalStore}from 'react';
+import{useEffect,useId,useRef,useSyncExternalStore}from 'react';
 import{useLocation}from 'react-router-dom';
 import{useAuth}from '../store/AuthContext';
 import catalog from './catalog.json';import copy from './copy.json';
 import{getPlayer,registerSprite,subscribePaused,pausedSnapshot,publishSurface,subscribeSurface,surfaceSnapshot}from './state';
 import './motion.css';
-export function PixelSprite({id,scale=2,phase=0,className='',style}){
- const node=useRef(null),asset=catalog.assets[id];
- useEffect(()=>{if(node.current&&asset)return registerSprite(node.current,asset,{scale,phase});},[asset,scale,phase]);
- return asset?<span ref={node} className={'pixel-sprite '+className} style={{width:asset.width*scale,height:asset.height*scale,...style}} data-motion-id={id} data-motion-state="loading" aria-hidden="true"/>:null;
+export function PixelSprite({id,scale=2,phase,className='',style}){
+ const instance=useId(),offset=phase??([...instance].reduce((n,c)=>n+c.codePointAt(0),0)%8*250);
+ const node=useRef(null),asset=catalog.assets[id],{user}=useAuth(),allowed=!user||['student','admin','academic_mentor'].includes(user.role);
+ useEffect(()=>{if(allowed&&node.current&&asset)return registerSprite(node.current,asset,{scale,phase:offset});},[asset,scale,offset,allowed]);
+ return allowed&&asset?<span ref={node} className={'pixel-sprite '+className} style={{width:asset.width*scale,height:asset.height*scale,...style}} data-motion-id={id} data-motion-state="loading" aria-hidden="true"/>:null;
 }
 const scenes={campus:['campus-leaves','campus-water'],sky:['sky-cloud','sky-vane'],forest:['forest-leaves','forest-insect'],beach:['beach-surf','beach-flag'],voyage:['voyage-star','voyage-signal']};
 export function SceneMotion({theme='campus',custom=false,className=''}){
@@ -19,12 +20,16 @@ export function MotionSurface({theme='campus',custom=false}){
  useEffect(()=>publishSurface({theme,custom}),[theme,custom]);return null;
 }
 export function SiteMotionGate(){
- const{user}=useAuth(),{pathname}=useLocation(),surface=useSyncExternalStore(subscribeSurface,surfaceSnapshot,surfaceSnapshot),paused=useSyncExternalStore(subscribePaused,pausedSnapshot,()=>false);
+ const{user}=useAuth(),{pathname}=useLocation();
  if(pathname!=='/login'&&!['student','admin','academic_mentor'].includes(user?.role))return null;
+ return <MotionDock/>;
+}
+function MotionDock(){
+ const surface=useSyncExternalStore(subscribeSurface,surfaceSnapshot,surfaceSnapshot),paused=useSyncExternalStore(subscribePaused,pausedSnapshot,()=>false);
  const theme=surface.custom?'neutral':surface.theme,ids=surface.custom?['neutral-instrument']:(scenes[theme]||scenes.campus);
  return <aside className={'motion-dock motion-dock--'+theme} aria-label={copy['motion.control']} data-motion-surface={theme}>
   <div className="motion-diorama" aria-hidden="true">{ids.map((id,i)=><PixelSprite key={id} id={id} scale={1} phase={i*750} style={{left:i*48,top:0}}/>)}</div>
-  <button type="button" className="motion-toggle" onClick={()=>getPlayer().toggle()} aria-pressed={paused} data-motion-copy={paused?'motion.resume':'motion.pause'}>{copy[paused?'motion.resume':'motion.pause']}</button>
+  <button type="button" className="motion-toggle" data-motion-control onClick={()=>getPlayer().toggle()} aria-pressed={paused} data-motion-copy={paused?'motion.resume':'motion.pause'}>{copy[paused?'motion.resume':'motion.pause']}</button>
  </aside>;
 }
 export function NodeMotion({art,theme,type,custom=false,unknown=false}){

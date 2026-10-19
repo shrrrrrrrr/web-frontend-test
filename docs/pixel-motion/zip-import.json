@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "members": 112,
+  "hashes": "all match",
+  "records": [
+    {
+      "name": "dry",
+      "output": {
+        "status": "dry-run",
+        "files": 63,
+        "wouldCopy": 63,
+        "writes": 0,
+        "namespace": "assets/pixel-motion/v1"
+      }
+    },
+    {
+      "name": "apply",
+      "output": {
+        "status": "applied",
+        "files": 63,
+        "writes": 63,
+        "backup": "D:\\Temp\\pbl-motion-final-9tcbjmqc\\backup",
+        "namespace": "assets/pixel-motion/v1"
+      }
+    },
+    {
+      "name": "repeat",
+      "output": {
+        "status": "unchanged",
+        "files": 63,
+        "wouldCopy": 0,
+        "writes": 0,
+        "namespace": "assets/pixel-motion/v1"
+      }
+    },
+    {
+      "name": "rollback-dry",
+      "output": {
+        "status": "rollback-dry-run",
+        "files": 63,
+        "writes": 0
+      }
+    },
+    {
+      "name": "rollback",
+      "output": {
+        "status": "rolled-back",
+        "files": 63,
+        "writes": 63
+      }
+    }
+  ],
+  "unrelatedUpload": "preserved",
+  "databaseTouched": false,
+  "scope": "Current complete ZIP rehearsal before code commit; final package regenerated with clean HEAD and independently verified."
+}

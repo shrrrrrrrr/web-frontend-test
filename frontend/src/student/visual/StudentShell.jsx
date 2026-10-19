@@ -25,6 +25,7 @@ import PublicThemeArt from '../space/PublicThemeArt';
 import CourseThemeImage from '../space/CourseThemeImage';
 import {useCoursePresentation} from '../space/CoursePresentation';
 import StudentGuideModal from '../guide/StudentGuideModal';
+import {MotionSurface} from '../../motion/Motion';
 
 function Points({to}){const {data,error,loading}=useRealCoins();return <Link to={to} className="student-points" data-testid="header-real-coins" aria-label={copyText('coins.title')+' '+(data?data.balance:copyText(error?'coins.readFailed':'coins.loading'))} data-copy-bindings={JSON.stringify(['coins.title',error?'coins.readFailed':'coins.loading'])}><PixelIcon name="coin"/><strong data-business-value="真实金币余额">{data?data.balance:'—'}</strong><span>{<StudentCopyText id={loading?'coins.shortLoading':error?'coins.shortError':'coins.unit'}/>}</span></Link>;}
 function CourseNavigation({id,course,close}){
@@ -72,7 +73,7 @@ export default function StudentShell({children}){
 function ThemedShell({children}){
  const {user,logout}=useAuth(),id=useCourseId();
  const look=useCoursePresentation();
- return <StudentTheme variant={id?look.theme:'campus'}>
+ return <StudentTheme variant={id?look.theme:'campus'}><MotionSurface theme={id?look.theme:'campus'} custom={!!(id&&(look.data?.themeImages?.desktop||look.data?.themeImages?.mobile))}/>
   {user.force_reset_password?<div className="forced-shell"><header className="forced-header"><strong><StudentCopyText id="platform.name"/>{<StudentCopyText id={'system.shell.018'}/>}</strong><button onClick={logout}>{<StudentCopyText id={'system.shell.019'}/>}</button></header><main id="student-main">{children}</main></div>:<RewardProvider key={user.id} accountId={user.id}><a href="#student-main" className="student-skip-link">{<StudentCopyText id={'system.shell.020'}/>}</a><Shell>{children}</Shell></RewardProvider>}
  </StudentTheme>;
 }

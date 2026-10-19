@@ -1,4 +1,4 @@
-import{createPlayback}from './playback';
+import{createPlayback}from './playback.js';
 let player,users=0;const surfaces=new Map(),listeners=new Set(),fallback=Object.freeze({theme:'campus',custom:false});let surface=fallback;
 const storage=()=>{try{return window.localStorage;}catch{return undefined;}};
 export function getPlayer(){return player??=createPlayback({document,storage:storage(),media:window.matchMedia('(prefers-reduced-motion: reduce)'),IntersectionObserver:window.IntersectionObserver});}

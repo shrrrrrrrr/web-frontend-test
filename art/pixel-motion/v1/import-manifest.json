@@ -25,38 +25,38 @@
     },
     {
       "path": "assets/pixel-motion/v1/beach-node1.sheet.svg",
-      "bytes": 15203,
-      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+      "bytes": 1779,
+      "sha256": "c3ab3aa73fa1aa34c6a255b9e0210755a31647d93ec80ca58a2080d9c9aba636"
     },
     {
       "path": "assets/pixel-motion/v1/beach-node1.still.svg",
-      "bytes": 1926,
-      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+      "bytes": 354,
+      "sha256": "d77775066fefb795acd1fbda614f7cc1fa631953cc31a911eb16c420bcb4181f"
     },
     {
       "path": "assets/pixel-motion/v1/beach-node2.sheet.svg",
-      "bytes": 5651,
-      "sha256": "addd4912cb7c0b735a41888bf727241e9d318a200515f691c791df2c5d827548"
+      "bytes": 2308,
+      "sha256": "7696c62dcefc26c420c0492eea55071862ab49e0f238de7989f581c52e7b0970"
     },
     {
       "path": "assets/pixel-motion/v1/beach-node2.still.svg",
-      "bytes": 838,
-      "sha256": "3c0a2eb94bd669f5945f19e6aad04e895a51ea4adc1a25c38638ed19fe3f1202"
+      "bytes": 437,
+      "sha256": "bc6a0b5614bfcb30705f18068392976e7cb3e43d0d5946b4282817e91ce9d446"
     },
     {
       "path": "assets/pixel-motion/v1/beach-node3.sheet.svg",
-      "bytes": 4057,
-      "sha256": "d3d990f7ae82e245904c2eb0a6b5a742e1981f223bcdaed17acb83a34e06ad70"
+      "bytes": 877,
+      "sha256": "6e1e6d4718936de622f52d160427be3f0d4cfa3c8a1dc296e52d6ee2357facc5"
     },
     {
       "path": "assets/pixel-motion/v1/beach-node3.still.svg",
-      "bytes": 682,
-      "sha256": "55375063d6f18bf29cc43b8a2b8d18e34b42d180c5e3b78890d59ec863a23b8b"
+      "bytes": 251,
+      "sha256": "d8262eb4e59ddb8ba2acd92035f3128013ef2e34df4500592831a676b2692cc7"
     },
     {
       "path": "assets/pixel-motion/v1/beach-surf.sheet.svg",
       "bytes": 1667,
-      "sha256": "01118bccefe70708038e5c7ea6d06e795b14b1ac11e77c8cd79df5bec5f204c7"
+      "sha256": "5855843f75aab9a66779603f72aea44fa035a00772f6c1da5488f20a2d35afed"
     },
     {
       "path": "assets/pixel-motion/v1/beach-surf.still.svg",
@@ -85,38 +85,38 @@
     },
     {
       "path": "assets/pixel-motion/v1/campus-node1.sheet.svg",
-      "bytes": 15203,
-      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+      "bytes": 1779,
+      "sha256": "c3ab3aa73fa1aa34c6a255b9e0210755a31647d93ec80ca58a2080d9c9aba636"
     },
     {
       "path": "assets/pixel-motion/v1/campus-node1.still.svg",
-      "bytes": 1926,
-      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+      "bytes": 354,
+      "sha256": "d77775066fefb795acd1fbda614f7cc1fa631953cc31a911eb16c420bcb4181f"
     },
     {
       "path": "assets/pixel-motion/v1/campus-node2.sheet.svg",
-      "bytes": 5651,
-      "sha256": "addd4912cb7c0b735a41888bf727241e9d318a200515f691c791df2c5d827548"
+      "bytes": 2308,
+      "sha256": "7696c62dcefc26c420c0492eea55071862ab49e0f238de7989f581c52e7b0970"
     },
     {
       "path": "assets/pixel-motion/v1/campus-node2.still.svg",
-      "bytes": 838,
-      "sha256": "3c0a2eb94bd669f5945f19e6aad04e895a51ea4adc1a25c38638ed19fe3f1202"
+      "bytes": 437,
+      "sha256": "bc6a0b5614bfcb30705f18068392976e7cb3e43d0d5946b4282817e91ce9d446"
     },
     {
       "path": "assets/pixel-motion/v1/campus-node3.sheet.svg",
-      "bytes": 10972,
-      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+      "bytes": 2682,
+      "sha256": "fbd13513bb0e553cc3ef679ac2cd401e1aef708d570a0347864edceefaee0f62"
     },
     {
       "path": "assets/pixel-motion/v1/campus-node3.still.svg",
-      "bytes": 1433,
-      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+      "bytes": 480,
+      "sha256": "2251c380aa2ee578ff55ffe50e859336430b6ec45f009de310c4df8920f12330"
     },
     {
       "path": "assets/pixel-motion/v1/campus-water.sheet.svg",
       "bytes": 1694,
-      "sha256": "9ef4f58099d68f53fb2cfc7885573833f0968fe2bf7348392cf4f150cc47776d"
+      "sha256": "c4a58c137051fe516ce7160767e800f389c05550d33de24d73feb265373c6c8c"
     },
     {
       "path": "assets/pixel-motion/v1/campus-water.still.svg",
@@ -155,33 +155,33 @@
     },
     {
       "path": "assets/pixel-motion/v1/forest-node1.sheet.svg",
-      "bytes": 15203,
-      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+      "bytes": 1779,
+      "sha256": "c3ab3aa73fa1aa34c6a255b9e0210755a31647d93ec80ca58a2080d9c9aba636"
     },
     {
       "path": "assets/pixel-motion/v1/forest-node1.still.svg",
-      "bytes": 1926,
-      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+      "bytes": 354,
+      "sha256": "d77775066fefb795acd1fbda614f7cc1fa631953cc31a911eb16c420bcb4181f"
     },
     {
       "path": "assets/pixel-motion/v1/forest-node2.sheet.svg",
-      "bytes": 5453,
-      "sha256": "ccd8c6001742934a6c73016218724a02029b3f2244bda2739e045f3fc726c690"
+      "bytes": 4524,
+      "sha256": "e55ee7d55d3517b95444d15c1d427943f5b0468ea95431c0a1498613eb8060c4"
     },
     {
       "path": "assets/pixel-motion/v1/forest-node2.still.svg",
-      "bytes": 768,
-      "sha256": "fe8ad123c53508df7b6f27a085e6ce52de6c00c5735c4f84f65eee84fd9e441a"
+      "bytes": 674,
+      "sha256": "a8988afbf98cf05ad49c7b014a7972532906f44e2e65574e75a7a77bf98db65c"
     },
     {
       "path": "assets/pixel-motion/v1/forest-node3.sheet.svg",
-      "bytes": 10972,
-      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+      "bytes": 2682,
+      "sha256": "fbd13513bb0e553cc3ef679ac2cd401e1aef708d570a0347864edceefaee0f62"
     },
     {
       "path": "assets/pixel-motion/v1/forest-node3.still.svg",
-      "bytes": 1433,
-      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+      "bytes": 480,
+      "sha256": "2251c380aa2ee578ff55ffe50e859336430b6ec45f009de310c4df8920f12330"
     },
     {
       "path": "assets/pixel-motion/v1/manifest.json",
@@ -220,13 +220,13 @@
     },
     {
       "path": "assets/pixel-motion/v1/sky-node1.sheet.svg",
-      "bytes": 15203,
-      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+      "bytes": 1779,
+      "sha256": "c3ab3aa73fa1aa34c6a255b9e0210755a31647d93ec80ca58a2080d9c9aba636"
     },
     {
       "path": "assets/pixel-motion/v1/sky-node1.still.svg",
-      "bytes": 1926,
-      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+      "bytes": 354,
+      "sha256": "d77775066fefb795acd1fbda614f7cc1fa631953cc31a911eb16c420bcb4181f"
     },
     {
       "path": "assets/pixel-motion/v1/sky-node2.sheet.svg",
@@ -240,13 +240,13 @@
     },
     {
       "path": "assets/pixel-motion/v1/sky-node3.sheet.svg",
-      "bytes": 10972,
-      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+      "bytes": 2682,
+      "sha256": "fbd13513bb0e553cc3ef679ac2cd401e1aef708d570a0347864edceefaee0f62"
     },
     {
       "path": "assets/pixel-motion/v1/sky-node3.still.svg",
-      "bytes": 1433,
-      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+      "bytes": 480,
+      "sha256": "2251c380aa2ee578ff55ffe50e859336430b6ec45f009de310c4df8920f12330"
     },
     {
       "path": "assets/pixel-motion/v1/sky-vane.sheet.svg",
@@ -280,13 +280,13 @@
     },
     {
       "path": "assets/pixel-motion/v1/voyage-maker.sheet.svg",
-      "bytes": 10972,
-      "sha256": "471d77e733402b973b65b443dc5755037930aacd3c9ca7e0c3a6366ebaffbe04"
+      "bytes": 2682,
+      "sha256": "fbd13513bb0e553cc3ef679ac2cd401e1aef708d570a0347864edceefaee0f62"
     },
     {
       "path": "assets/pixel-motion/v1/voyage-maker.still.svg",
-      "bytes": 1433,
-      "sha256": "b4b0c0bec5c4cd9d84e1f9adabad1c5590d416cdd4cf8913ed913a6c20f03da9"
+      "bytes": 480,
+      "sha256": "2251c380aa2ee578ff55ffe50e859336430b6ec45f009de310c4df8920f12330"
     },
     {
       "path": "assets/pixel-motion/v1/voyage-signal.sheet.svg",
@@ -310,13 +310,13 @@
     },
     {
       "path": "assets/pixel-motion/v1/voyage-vr.sheet.svg",
-      "bytes": 15203,
-      "sha256": "20c9507a2285ff9d289f6c3d6fad82019c224c69469ce4f535834c4c25cf3b9f"
+      "bytes": 1779,
+      "sha256": "c3ab3aa73fa1aa34c6a255b9e0210755a31647d93ec80ca58a2080d9c9aba636"
     },
     {
       "path": "assets/pixel-motion/v1/voyage-vr.still.svg",
-      "bytes": 1926,
-      "sha256": "95a82871abba40941baa72446b02e70b4da2c935d6fe5a93f92ab8a1976286fe"
+      "bytes": 354,
+      "sha256": "d77775066fefb795acd1fbda614f7cc1fa631953cc31a911eb16c420bcb4181f"
     }
   ]
 }

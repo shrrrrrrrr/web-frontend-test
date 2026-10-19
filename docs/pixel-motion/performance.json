@@ -1,0 +1,187 @@
+{
+  "results": [
+    {
+      "mode": "playing",
+      "width": 1440,
+      "height": 900,
+      "visibleSprites": 13,
+      "resources": [
+        {
+          "path": "/assets/pixel-motion/v1/campus-leaves.sheet.svg",
+          "decodedBytes": 5453,
+          "transferBytes": 5753
+        },
+        {
+          "path": "/assets/pixel-motion/v1/campus-water.sheet.svg",
+          "decodedBytes": 1694,
+          "transferBytes": 1994
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-leaves.sheet.svg",
+          "decodedBytes": 5453,
+          "transferBytes": 5753
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-insect.sheet.svg",
+          "decodedBytes": 1469,
+          "transferBytes": 1769
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node1.sheet.svg",
+          "decodedBytes": 1779,
+          "transferBytes": 2079
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node2.sheet.svg",
+          "decodedBytes": 4524,
+          "transferBytes": 4824
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node3.sheet.svg",
+          "decodedBytes": 2682,
+          "transferBytes": 2982
+        }
+      ],
+      "sampleSeconds": 2.0174880000413395,
+      "taskSeconds": 0.02142900000000003,
+      "scriptSeconds": 0.0030100000000000127,
+      "layouts": 0,
+      "heapBytes": 23163984
+    },
+    {
+      "mode": "paused",
+      "width": 1440,
+      "height": 900,
+      "visibleSprites": 0,
+      "resources": [
+        {
+          "path": "/assets/pixel-motion/v1/campus-leaves.sheet.svg",
+          "decodedBytes": 5453,
+          "transferBytes": 5753
+        },
+        {
+          "path": "/assets/pixel-motion/v1/campus-water.sheet.svg",
+          "decodedBytes": 1694,
+          "transferBytes": 1994
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-leaves.sheet.svg",
+          "decodedBytes": 5453,
+          "transferBytes": 5753
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-insect.sheet.svg",
+          "decodedBytes": 1469,
+          "transferBytes": 1769
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node1.sheet.svg",
+          "decodedBytes": 1779,
+          "transferBytes": 2079
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node2.sheet.svg",
+          "decodedBytes": 4524,
+          "transferBytes": 4824
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node3.sheet.svg",
+          "decodedBytes": 2682,
+          "transferBytes": 2982
+        }
+      ],
+      "sampleSeconds": 2.0093919999781065,
+      "taskSeconds": 0.003014000000000072,
+      "scriptSeconds": 0.000014999999999987246,
+      "layouts": 0,
+      "heapBytes": 23554700
+    },
+    {
+      "mode": "playing",
+      "width": 390,
+      "height": 844,
+      "visibleSprites": 7,
+      "resources": [
+        {
+          "path": "/assets/pixel-motion/v1/campus-leaves.sheet.svg",
+          "decodedBytes": 5453,
+          "transferBytes": 5753
+        },
+        {
+          "path": "/assets/pixel-motion/v1/campus-water.sheet.svg",
+          "decodedBytes": 1694,
+          "transferBytes": 1994
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-leaves.sheet.svg",
+          "decodedBytes": 5453,
+          "transferBytes": 5753
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-insect.sheet.svg",
+          "decodedBytes": 1469,
+          "transferBytes": 1769
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node1.sheet.svg",
+          "decodedBytes": 1779,
+          "transferBytes": 2079
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node2.sheet.svg",
+          "decodedBytes": 4524,
+          "transferBytes": 4824
+        }
+      ],
+      "sampleSeconds": 2.0046580000198446,
+      "taskSeconds": 0.017945000000000044,
+      "scriptSeconds": 0.0019669999999999965,
+      "layouts": 0,
+      "heapBytes": 21319296
+    },
+    {
+      "mode": "paused",
+      "width": 390,
+      "height": 844,
+      "visibleSprites": 0,
+      "resources": [
+        {
+          "path": "/assets/pixel-motion/v1/campus-leaves.sheet.svg",
+          "decodedBytes": 5453,
+          "transferBytes": 5753
+        },
+        {
+          "path": "/assets/pixel-motion/v1/campus-water.sheet.svg",
+          "decodedBytes": 1694,
+          "transferBytes": 1994
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-leaves.sheet.svg",
+          "decodedBytes": 5453,
+          "transferBytes": 5753
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-insect.sheet.svg",
+          "decodedBytes": 1469,
+          "transferBytes": 1769
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node1.sheet.svg",
+          "decodedBytes": 1779,
+          "transferBytes": 2079
+        },
+        {
+          "path": "/assets/pixel-motion/v1/forest-node2.sheet.svg",
+          "decodedBytes": 4524,
+          "transferBytes": 4824
+        }
+      ],
+      "sampleSeconds": 2.005875999981072,
+      "taskSeconds": 0.0035129999999999884,
+      "scriptSeconds": 0.000017999999999990246,
+      "layouts": 0,
+      "heapBytes": 21685028
+    }
+  ],
+  "scope": "Local Windows Edge headless measurement; includes app/API/browser overhead; not a phone, GPU or Linux benchmark"
+}

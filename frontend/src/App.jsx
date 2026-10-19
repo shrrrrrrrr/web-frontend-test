@@ -6,6 +6,7 @@ import MentorOrganization from './pages/mentor/Organization';
 import MentorTeaching from './pages/mentor/TeachingHub';
 import MentorGuide from './pages/mentor/Guide';
 import RuntimeCopyProvider from './content/RuntimeCopyProvider';
+import {SiteMotionGate} from './motion/Motion';
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import {installTeachingLeaveHistory} from './pages/courses/useTeachingLeaveGuard';
@@ -101,7 +102,7 @@ function App() {
     }}>
       <AntApp>
         <AuthProvider>
-          <BrowserRouter><RuntimeCopyProvider>
+          <BrowserRouter><RuntimeCopyProvider><SiteMotionGate/>
             <NotificationProvider>
               <Suspense fallback={<PageFallback />}>
               <Routes>
