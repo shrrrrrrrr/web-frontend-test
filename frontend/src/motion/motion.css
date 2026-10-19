@@ -26,4 +26,6 @@ body[data-staff-campus='true'] .motion-dock{bottom:64px;z-index:65}
 /* The fixed control needs a scrollable safe area below the last form action. */
 @media(max-width:767px){body:has(.motion-dock) .space-shell:not(.space-shell--course) .space-content.student-content,body[data-staff-campus='true'] .staff-content{padding-bottom:108px}}
 @media(max-height:500px){.motion-diorama{height:24px}.motion-toggle{min-height:36px;font-size:13px}.motion-dock,body[data-staff-campus='true'] .motion-dock{bottom:5px}}
+@media(min-width:768px) and (max-height:500px){body[data-staff-campus='true'] .motion-dock{left:auto;right:8px;bottom:8px}body[data-staff-campus='true'] .staff-content{padding-bottom:92px}body:has(.space-sidebar) .motion-dock{left:236px}}
+@media(max-width:767px){body[data-staff-campus='true']:has(.staff-sidebar-mobile:not(.ant-layout-sider-collapsed)) .motion-dock{visibility:hidden}}
 @media(prefers-reduced-motion:reduce){.pixel-sprite{animation:none!important;transition:none!important}}

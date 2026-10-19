@@ -141,3 +141,5 @@
 | student | /change-password | forced | 先设置你的新密码 | campus | 2 |
 | student | /lab | /lab | 实验室 | campus | 4 |
 | student | /glider | /glider | 滑翔机模拟实验室 | campus | 4 |
+
+最终补查：短横屏后台暂停入口移至主内容右侧，折叠键实际点击通过；手机菜单展开时控件让位，原课程管理导航通过。三角色六视口及1440×390课程侧栏补查见responsive-patch.json，重复记录不相加。
